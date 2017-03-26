@@ -27,6 +27,7 @@ namespace Nikolai
             bundles.Add(new ScriptBundle("~/Content/libraries").Include(
                 "~/Scripts/jquery-{version}.js",
                 "~/Scripts/jquery-ui-{version}.js",
+                "~/Scripts/jquery.ui.touch-punch.js",
                 "~/Scripts/imagesloaded.pkgd.js"
             ));
 
