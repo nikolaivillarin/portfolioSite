@@ -1,0 +1,17 @@
+﻿@import '../Atoms/_boxes';
+@import '../Atoms/_fonts';
+@import '../Atoms/_mixins';
+
+.textbox {
+    background-color: #FFF;
+    font-family: 'Slabo27px-Regular', 'Times New Roman', Times, serif;
+    padding: 5px;
+    min-width: 200px;
+
+    @extend %box--rounded;
+    @include box-sizing(border-box);
+}
+
+.textbox--full {
+    width: 100%;
+}

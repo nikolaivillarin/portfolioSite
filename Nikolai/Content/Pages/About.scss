@@ -1,0 +1,136 @@
+﻿@import '../Atoms/_colors';
+@import '../Atoms/_boxes';
+@import '../Atoms/_mixins';
+@import '../Atoms/_transitions';
+@import '../Breakpoint/_breakpoint';
+@import '../Atoms/_breakpoints';
+
+.about-bg {
+    background-color: $color-background--black;
+}
+
+.about {
+    padding-bottom: 150px; // So the dial doesn't cover content
+    position: relative;
+
+    @include breakpoint(min-width $breakpoint-tablet) {
+        &:before {
+            background-color: $color-lineAccent--dark;
+            display: block;
+            content: "";
+            height: 100%;
+            left: 50%;
+            min-height: 100vh;
+            position: absolute;
+            top: 0;
+            width: 2px;
+
+            @extend %box-level--back;
+        }
+    }
+}
+
+.about-header {
+    @extend %slide-top--initialState;
+}
+
+.about-header.in-view {
+    @extend %slide-top--endState;
+}
+
+.about-profile {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.about-profilePic {
+    max-width: 175px;
+    width: 40%;
+}
+
+.about-overview {
+    border-bottom: 1px solid $color-lineAccent--dark;
+    float: left;
+    padding-bottom: 5em;
+    padding-top: 3em;
+    width: 100%;
+
+    @extend %box--spacious;
+    @include box-sizing(border-box);
+
+    @include breakpoint(min-width $breakpoint-tablet) {
+        border-bottom: none;
+        width: 50%;
+    }
+}
+
+.about-overview__content {
+    @extend %slide-left--initialState;
+}
+
+.about-overview__content.in-view {
+    @extend %slide-left--endState;
+}
+
+.about-qualifications {
+    float: left;
+    padding-top: 3em;
+    width: 100%;
+    
+    @extend %box--spacious;
+
+    @include box-sizing(border-box);
+
+    @include breakpoint(min-width $breakpoint-tablet) {
+        padding-bottom: 0;
+        width: 50%;
+    }
+}
+
+.about-qualifications__icon {
+    float: left;
+    padding-top: 20px;
+    width: 12%;
+
+    @include transition-delay(0);
+    @extend %pop--initialState;
+
+    &--windows {
+        max-width: 72px;
+    }
+
+    &--agile {
+        max-width: 72px;
+    }
+
+    &--code {
+        max-width: 72px;
+    }
+
+    &--brush {
+        max-width: 72px;
+    }
+}
+.about-qualifications__img {
+    width: 100%;
+}
+
+
+.about-qualifications__icon.in-view {
+    @include transition-delay(0.5s);
+    @extend %pop--endState;
+}
+
+.about-qualifications__content {
+    float: left;
+    padding-left: 15px;
+    width: 88%;
+
+    @include transition-delay(0);
+    @extend %slide-right--initialState;
+}
+
+.about-qualifications__content.in-view {
+    @include transition-delay(1s);
+    @extend %slide-right--endState;
+}

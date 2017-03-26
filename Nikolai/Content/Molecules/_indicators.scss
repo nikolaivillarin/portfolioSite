@@ -1,0 +1,178 @@
+﻿@import '../Atoms/_colors';
+
+$indicator-line--height: 70px;
+$indicator-line--width: 1px;
+$indicator-circle--diameter: 7px;
+
+%indicator__line {
+    content: "";
+    display: block;
+    height: $indicator-line--height;
+    margin: 0 auto;
+    width: $indicator-line--width;
+}
+
+%indicator__circle {
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: $indicator-circle--diameter;
+    margin: 0 auto;
+    width: $indicator-circle--diameter;
+}
+
+%font-smoothing {
+    text-shadow: 0 1px 1px $color-smoothing--light;
+}
+
+%font-smoothing--onDark {
+    text-shadow: $color-smoothing--dark;
+}
+
+@include keyframes(indicator-lineAnim--down) {
+    0% {
+        opacity: 1;
+
+        @include transform(translateY(0px) scale(1, 1));
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+
+        @include transform(translateY($indicator-line--height/2) scale(1, 0.01));
+    }
+}
+
+@include keyframes(indicator-lineAnim--up) {
+    0% {
+        opacity: 1;
+
+        @include transform(translateY($indicator-line--height/2) scale(1, 0.01));
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+
+        @include transform(translateY(0px) scale(1, 1));
+    }
+}
+
+@include keyframes(indicator-circleAnim--down) {
+    0% {
+        opacity: 1;
+
+        @include transform(translateY($indicator-line--height * -1));
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+
+        @include transform(translateY(0px));
+    }
+}
+
+@include keyframes(indicator-circleAnim--up) {
+    0% {
+        opacity: 1;
+
+        @include transform(translateY(0px));
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+
+        @include transform(translateY($indicator-line--height * -1));
+    }
+}
+
+.scroll-indicator {
+    text-align: center;
+}
+
+.scroll-indicator--dark {
+    color: $color-font--primary;
+
+    @extend %font-smoothing;
+
+    .scroll-indicator__line {
+        background-color: $color-font--primary;
+
+        @extend %indicator__line;
+        @include animation(1.5s indicator-lineAnim--down infinite cubic-bezier(.17,.84,.44,1));
+    }
+
+    .scroll-indicator__circle {
+        background-color: $color-font--primary;
+
+        @extend %indicator__circle;
+        @include animation(1.5s indicator-circleAnim--down infinite cubic-bezier(.17,.84,.44,1));
+    }
+}
+
+.scroll-indicator--light {
+    color: $color-font--primaryOnDark;
+
+    @extend %font-smoothing--onDark;
+
+    .scroll-indicator__line {
+        background-color: $color-font--primaryOnDark;
+
+        @extend %indicator__line;
+        @include animation(1.5s indicator-lineAnim--down infinite cubic-bezier(.17,.84,.44,1));
+    }
+
+    .scroll-indicator__circle {
+        background-color: $color-font--primaryOnDark;
+
+        @extend %indicator__circle;
+        @include animation(1.5s indicator-circleAnim--down infinite cubic-bezier(.17,.84,.44,1));
+    }
+}
+
+.moreInfo-indicator {
+    text-align: center;
+}
+
+.moreInfo-indicator--dark {
+    color: $color-font--primary;
+
+    .moreInfo-indicator__line {
+        background-color: $color-font--primary;
+
+        @extend %indicator__line;
+        @include animation(1.5s indicator-lineAnim--up infinite cubic-bezier(.17,.84,.44,1));
+    }
+
+    .moreInfo-indicator__circle {
+        background-color: $color-font--primary;
+
+        @extend %indicator__circle;
+        @include animation(1.5s indicator-circleAnim--up infinite cubic-bezier(.17,.84,.44,1));
+    }
+}
+
+.moreInfo-indicator--light {
+    color: $color-font--primaryOnDark;
+
+    .moreInfo-indicator__line {
+        background-color: $color-font--primaryOnDark;
+
+        @extend %indicator__line;
+        @include animation(1.5s indicator-lineAnim--up infinite cubic-bezier(.17,.84,.44,1));
+    }
+
+    .moreInfo-indicator__circle {
+        background-color: $color-font--primaryOnDark;
+
+        @extend %indicator__circle;
+        @include animation(1.5s indicator-circleAnim--up infinite cubic-bezier(.17,.84,.44,1));
+    }
+}

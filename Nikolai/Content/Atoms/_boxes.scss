@@ -1,0 +1,87 @@
+﻿@import '../Breakpoint/_breakpoint';
+@import '../Atoms/_breakpoints';
+
+/*------------------------------------*\
+    Partials
+\*------------------------------------*/
+%__circle {
+    border-radius: 50%;
+}
+
+%box--fullPage {
+    left: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    @extend %box-level--middle;
+}
+
+%box--absoluteCenter {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+%box--dialPlaceholder {
+    background-color: #f2f2f2;
+    border-radius: 50%;
+    display: inline-block;
+    height: 80px;
+    width: 80px;
+}
+
+%box--centerTop {
+    bottom: auto;
+    top: 15%;
+
+    @extend %box--absoluteCenter;
+}
+
+%box--rounded {
+    border-radius: 6px;
+}
+
+%box--spacious {
+    padding: 3em 2em;
+
+    @include breakpoint(min-width $breakpoint-phablet) {
+        padding: 2em 3em;
+    }
+}
+
+%box--compact {
+    padding: 3em 1.5em;
+}
+
+%box--squished {
+    padding: 1.3em;
+}
+
+%box-level--back {
+    z-index: -1;
+}
+
+%box-level--default {
+    z-index: 0;
+}
+
+%box-level--middle {
+    z-index: 1;
+}
+
+%box-level--top {
+    z-index: 3;
+}
+
+%box-level--modular {
+    z-index: 4;
+}
+
+%box-level--dial {
+    z-index: 5;
+}

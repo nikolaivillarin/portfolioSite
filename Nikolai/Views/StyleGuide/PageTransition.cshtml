@@ -1,0 +1,74 @@
+﻿@using Prototyping.Ipsum;
+@using Prototyping.Placeholdit;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Page Transition</title>
+    @Styles.Render("~/Content/Styles")
+    <meta name="description" content="Style guide for my website's page transitions" />
+</head>
+<body style="background-color: #F2F2F2">
+    <article id="pnlPages">
+        <section id="page1" class="expand-container" style="background-color: #2294e5">
+            <div class="expand-contianer__content">
+                <h1 class="header-main--onDark header-large">Page 1</h1>
+                <br />
+                <p class="text-primary--OnDark">
+                    @Html.Ipsum().Words(50)
+                </p>
+                <br /><br /><br />
+                <button id="Page1NextBtn" data-nv-expand="page2" data-nv-shrink="page1"
+                        style="display: block; position: relative; left: 95%">Next Page</button>
+            </div>
+        </section>
+        <section id="page2" class="expand-container" style="background-color: #e59022">
+            <div class="expand-contianer__content">
+                <h1 class="header-main--onDark header-large">Page 2</h1>
+                <br />
+                <p class="text-primary--OnDark">
+                    @Html.Ipsum().Words(50)
+                </p>
+                <br /><br /><br />
+                <button id="Page2Previous" data-nv-expand="page1" data-nv-shrink="page2"
+                        style="display: block; position: relative">
+                    Previous Page
+                </button>
+                <button id="Page2Next" data-nv-expand="page3" data-nv-shrink="page2"
+                        style="display: block; position: relative; left: 95%">
+                    Next Page
+                </button>
+            </div>
+        </section>
+        <section id="page3" class="expand-container" style="background-color: #e52242">
+            <div class="expand-contianer__content">
+                <h1 class="header-main--onDark header-large">Page 3</h1>
+                <br />
+                <p class="text-primary--OnDark">
+                    @Html.Ipsum().Words(50)
+                </p>
+                <br /><br /><br />
+                <button id="Page3Previous" data-nv-expand="page2" data-nv-shrink="page3"
+                        style="display: block; position: relative">
+                    Previous Page
+                </button>
+            </div>
+        </section>
+    </article>
+
+    @Scripts.Render("~/Content/libraries")
+    @Scripts.Render("~/Content/scripts")
+
+    <script>
+        $(document).ready(function ($) {
+            new NavigationTransition('page1', 'pnlPages');
+        });
+    </script>
+</body>
+</html>

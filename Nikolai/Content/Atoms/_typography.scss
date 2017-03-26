@@ -1,0 +1,335 @@
+﻿@import '_fonts';
+@import '_colors';
+@import '_mixins';
+@import '../Breakpoint/_breakpoint';
+@import '../Atoms/_breakpoints';
+
+/*------------------------------------*\
+    Global
+\*------------------------------------*/
+body {
+    font-family: 'RobotoSlab', 'Times New Roman', Times, serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 10px;
+    line-height: 1.3em;
+
+    @include breakpoint(400px $breakpoint-phablet) {
+        font-size: 13px;
+    }
+
+    @include breakpoint($breakpoint-phablet $breakpoint-tablet) {
+        font-size: 14px;
+    }
+
+    @include breakpoint(min-width $breakpoint-tablet) {
+        font-size: 16px;
+    }
+}
+
+%font-smoothing {
+    text-shadow: 0 1px 1px $color-smoothing--light;
+}
+
+%font-smoothing--onDark {
+    text-shadow: $color-smoothing--dark;
+}
+
+/*------------------------------------*\
+    Headers
+\*------------------------------------*/
+.header-large {
+    font-size: 3.5em;
+    line-height: 1em;
+}
+
+.header-medium {
+    font-size: 2em;
+    line-height: 1.5em;
+}
+
+.header-small {
+    font-size: 1.333em;
+    line-height: 1.2em;
+}
+
+.header-tiny {
+    font-size: 1em;
+    line-height: 1em;
+}
+
+.header-main {
+    color: $color-font--primary;
+    font-family: 'Raleway', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    margin-bottom: 0.1em;
+
+    @extend %font-smoothing;
+}
+
+.header-main--onDark {
+    color: $color-font--primaryOnDark;
+    font-family: 'Raleway', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    margin-bottom: 0.1em;
+
+    @extend %font-smoothing--onDark;
+}
+
+.header-main--faded {
+    color: $color-font--primaryFaded;
+    font-family: 'Raleway', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    margin-bottom: 0.1em;
+}
+
+.header-secondary {
+    color: $color-font--secondary;
+    font-family: 'RobotoSlab', 'Times New Roman', Times, serif;
+    font-weight: 300;
+    font-style: normal;
+    margin-bottom: 0.2em;
+
+    @extend %font-smoothing;
+}
+
+.header-secondary--onDark {
+    color: $color-font--secondaryOnDark;
+    font-family: 'RobotoSlab', 'Times New Roman', Times, serif;
+    font-weight: 300;
+    font-style: normal;
+    margin-bottom: 0.2em;
+
+    @extend %font-smoothing--onDark;
+}
+
+/*------------------------------------*\
+    Text Elements
+\*------------------------------------*/
+p {
+    color: $color-font--secondary;
+}
+
+mark {
+    padding: 0.2em;
+    background-color: $color-text--highlight;
+}
+
+.mark {
+    @extend mark;
+}
+
+small {
+    font-size: 0.8em;
+}
+
+.small {
+    @extend small;
+}
+
+b {
+    font-weight: bold;
+}
+
+strong {
+    @extend b;
+}
+
+.strong {
+    @extend b;
+}
+
+i {
+    font-style: italic;
+}
+
+em {
+    @extend i;
+}
+
+a {
+    color: $color-link;
+    cursor: pointer;
+    text-decoration: none;
+
+    @include transition(color 0.3s linear);
+
+    &:visited {
+        color: $color-link;
+    }
+
+    &:hover {
+        color: $color-link--focus;
+    }
+
+    &:active {
+        color: $color-link--focus;
+    }
+
+    &:focus {
+        color: $color-link;
+    }
+}
+
+.link {
+    @extend a;
+}
+
+.link--onDark {
+    color: $color-link--onDark;
+    cursor: pointer;
+    text-decoration: none;
+
+    @include transition(color 0.3s linear);
+
+    &:visited {
+        color: $color-link--onDark;
+    }
+
+    &:hover {
+        color: $color-link--focusOnDark;
+    }
+
+    &:active {
+        color: $color-link--focusOnDark;
+    }
+
+    &:focus {
+        color: $color-link--onDark;
+    }
+}
+
+.link--blue {
+    color: $color-link--blue;
+    cursor: pointer;
+    text-decoration: none;
+
+    @include transition(color 0.3s linear);
+
+    &:visited {
+        color: $color-link--blue;
+    }
+
+    &:hover {
+        color: $color-link--focusBlue;
+    }
+
+    &:active {
+        color: $color-link--focusBlue;
+    }
+
+    &:focus {
+        color: $color-link--blue;
+    }
+}
+
+.link--large {
+    font-size: 1.5em;
+    line-height: 1em;
+}
+
+/*------------------------------------*\
+    Lists
+\*------------------------------------*/
+ul {
+    color: $color-font--secondary;
+    padding: 0 1.2em;
+}
+
+ol {
+    @extend ul;
+}
+
+.list-unstyled {
+    padding: 0;
+    list-style: none;
+}
+
+.list-inline {
+    padding: 0;
+    list-style: none;
+
+    li {
+        display: inline-block;
+        padding: 0 0.5em;
+
+        &:first-child {
+            padding: 0;
+        }
+    }
+}
+
+.list-spacious {
+    li {
+        padding-bottom: 1em;
+    }
+}
+
+
+/*------------------------------------*\
+    Text modifiers
+\*------------------------------------*/
+.text-primary {
+    color: $color-font--secondary;
+
+    @extend %font-smoothing;
+}
+
+.text-primary--OnDark {
+    color: $color-font--primaryOnDark;
+
+    @extend %font-smoothing--onDark;
+}
+
+.text-secondary {
+    color: $color-font--secondary;
+
+    @extend %font-smoothing;
+}
+
+.text-secondary--OnDark {
+    color: $color-font--secondaryOnDark;
+
+    @extend %font-smoothing--onDark;
+}
+
+/*------------------------------------*\
+    Alignment
+\*------------------------------------*/
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-nowrap {
+    white-space: nowrap;
+}
+
+/*------------------------------------*\
+    Transformation CLasses
+\*------------------------------------*/
+.text-lowercase {
+    text-transform: lowercase;
+}
+
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+.text-capitalize {
+    text-transform: capitalize;
+}

@@ -1,0 +1,343 @@
+﻿@import '../Atoms/_math';
+@import '../Atoms/_colors';
+@import '../Atoms/_utilities';
+@import '../Atoms/_mixins';
+@import '../Atoms/_boxes';
+@import '../Breakpoint/_breakpoint';
+@import '../Atoms/_breakpoints';
+
+/*------------------------------------*\
+    Variables
+\*------------------------------------*/
+$button-diameter: 90px;
+$button-border-size: 4px;
+$button-light-size: 14px;
+$button__logo-border-size: 1px;
+$button__light-diameter: $button-diameter - $button-border-size;
+$button__logo-diameter: $button__light-diameter - $button__logo-border-size - $button-light-size;
+
+$spinner-width: 2px;
+$spinner-diameter--inner: 110px;
+$spinner-diameter--middle: 130px;
+$spinner-diameter--outer: 150px;
+
+$pointer-diameter: 8px;
+
+
+/*------------------------------------*\
+    Variables Positioning
+\*------------------------------------*/
+$pointer-position--middle: ($spinner-diameter--outer - $spinner-diameter--middle) / 2;
+$pointer-position--inner: ($spinner-diameter--outer - $spinner-diameter--inner) / 2;
+
+$pointer-positionX--inner: ($spinner-diameter--inner/2) + sin(-139deg) * ($spinner-diameter--inner/2);
+$pointer-positionY--inner: ($spinner-diameter--inner/2) + cos(-139deg) * ($spinner-diameter--inner/2);
+
+$pointer-positionX--middle: ($spinner-diameter--middle/2) + sin(139deg) * ($spinner-diameter--middle/2);
+$pointer-positionY--middle: ($spinner-diameter--middle/2) + cos(139deg) * ($spinner-diameter--middle/2);
+
+$pointer-positionX--outer: ($spinner-diameter--outer/2) + sin(-139deg) * ($spinner-diameter--outer/2);
+$pointer-positionY--outer: ($spinner-diameter--outer/2) + cos(-139deg) * ($spinner-diameter--outer/2);
+
+$button-position: (($spinner-diameter--outer - $button-diameter) / 2);
+
+/*------------------------------------*\
+    Styles
+\*------------------------------------*/
+%__circle {
+    position: absolute;
+    border-radius: 50%;
+}
+
+.nvDial {
+    cursor: pointer;
+    height: $button-diameter;
+    position: relative;
+    width: $button-diameter;
+    
+    @extend %box-level--dial;
+
+    %__spinner {
+        @extend %__circle;
+        border-width: $spinner-width;
+        border-style: solid;
+        border-top-color: rgba(0, 0, 0, 0);
+        @extend %box-level--top;
+    }
+
+    %__pointer {
+        height: $pointer-diameter;
+        width: $pointer-diameter;
+        border-radius: 50%;
+    }
+
+    &__pointer--outer {
+        background-color: $color-dial--ring3;
+
+        $pos-x: $pointer-positionX--outer - ($pointer-diameter/2);
+        $pos-y: $pointer-positionY--outer - ($pointer-diameter/2);
+
+        @extend %__pointer;
+        @include transform(translate($pos-x, $pos-y));
+    }
+
+    &__pointer--middle {
+        background-color: $color-dial--ring2;
+
+        $pos-x: $pointer-positionX--middle - ($pointer-diameter/2);
+        $pos-y: $pointer-positionY--middle - ($pointer-diameter/2);
+
+        @extend %__pointer;
+        @include transform(translate($pos-x, $pos-y));
+    }
+
+    &__pointer--inner {
+        background-color: $color-dial--ring1;
+
+        $pos-x: $pointer-positionX--inner - ($pointer-diameter/2);
+        $pos-y: $pointer-positionY--inner - ($pointer-diameter/2);
+
+        @extend %__pointer;
+        @include transform(translate($pos-x, $pos-y));
+    }
+
+    @include keyframes(spinnerAnim--outer) {
+        0% {
+            @include transform(rotate(0deg));
+        }
+        100% {
+            @include transform(rotate(360deg));
+        }
+    }
+
+    @include keyframes(spinnerAnim--middle) {
+        0% {
+            @include transform(translate($pointer-position--middle, $pointer-position--middle) rotate(0deg));
+        }
+        100% {
+            @include transform(translate($pointer-position--middle, $pointer-position--middle) rotate(-360deg));
+        }
+    }
+
+    @include keyframes(spinnerAnim--inner) {
+        0% {
+            @include transform(translate($pointer-position--inner, $pointer-position--inner) rotate(0deg));
+        }
+        100% {
+            @include transform(translate($pointer-position--inner, $pointer-position--inner) rotate(360deg));
+        }
+    }
+
+    &__spinner--outer {
+        height: 100%;
+        width: 100%;
+        border-color: $color-dial--ring3;
+
+        @extend %__spinner;
+        @include animation(spinnerAnim--outer 3s infinite linear);
+    }
+
+    &__spinner--middle {
+        height: 100%;
+        width: 100%;
+        border-color: $color-dial--ring2;
+
+        @extend %__spinner;
+        @include animation(spinnerAnim--middle 4s infinite linear);
+    }
+
+    &__spinner--inner {
+        height: 100%;
+        width: 100%;
+        border-color: $color-dial--ring1;
+
+        @extend %__spinner;
+        @include animation(spinnerAnim--inner 5s infinite linear);
+    }
+
+    %__spinner-container {
+        position: absolute;
+        top: 0;
+        opacity: 0;
+    }
+
+    &__spinner-container--outer {
+        height: $spinner-diameter--outer;
+        width: $spinner-diameter--outer;
+
+        @extend %__spinner-container;
+        @include transform(scale(0.5));
+        @include transition(transform 0.5s ease-out, opacity 0.3s ease-out);
+    }
+
+    &__spinner-container--middle {
+        height: $spinner-diameter--middle;
+        width: $spinner-diameter--middle;
+
+        @extend %__spinner-container;
+        @include transform(scale(0.6));
+        @include transition(transform 0.5s ease-out, opacity 0.3s ease-out);
+    }
+
+    &__spinner-container--inner {
+        height: $spinner-diameter--inner;
+        width: $spinner-diameter--inner;
+
+        @extend %__spinner-container;
+        @include transform(scale(0.7));
+        @include transition(transform 0.5s ease-out, opacity 0.3s ease-out);
+    }
+
+    &__button {
+        background-color: #f3f3f3;
+        height: $button-diameter;
+        top: 0;
+        width: $button-diameter;
+
+        @extend %__circle;
+        @include transform(translate($button-position, $button-position));
+    }
+
+    &__button-light {
+        background-color: #007ae4;
+        background: linear-gradient(135deg, $color-accent--blue 0, $color-accent--yellow 50%, $color-accent--orange 100%);
+        height: $button__light-diameter;
+        width: $button__light-diameter;
+        box-shadow: inset 1px 1px rgba(0, 0, 0, 0.85);
+
+        @extend %__circle;
+        @include transform(translate($button-border-size/2, $button-border-size/2));
+        @include transition(background-color 1s linear);
+
+        &--blue {
+            background: #3a93e1;
+        }
+
+        &--red {
+            background: #d43636;
+        }
+    }
+
+    &__button-logo {
+        background-color: rgb(243, 243, 243);
+        border: 1px solid #FFF;
+        height: $button__logo-diameter;
+        opacity: 0.8;
+        text-align: center;
+        width: $button__logo-diameter;
+        box-shadow: 1px 1px rgba(0, 0, 0, 0.85);
+
+        @extend %__circle;
+        @include transform(translate($button-light-size/2, $button-light-size/2));
+        @include transition(opacity 0.5s ease-in);
+    }
+}
+
+.nvDial--draggable {
+    left: 0;
+    position: absolute;
+    top: 0;
+}
+
+.nvDial--responsive {
+    @include breakpoint(max-width $breakpoint-phablet) {
+        @include transform(scale(0.6));
+    }
+}
+
+.nvDial--loading {
+    left: calc(50% - #{$spinner-diameter--outer / 2});
+    position: absolute;
+    top: calc(40% - #{$spinner-diameter--outer / 2});
+
+    .nvDial__spinner-container--outer {
+        opacity: 1;
+
+        @include transform(scale(1));
+    }
+
+    .nvDial__spinner-container--middle {
+        opacity: 1;
+
+        @include transform(scale(1));
+    }
+
+    .nvDial__spinner-container--inner {
+        opacity: 1;
+
+        @include transform(scale(1));
+    }
+
+    .nvDial__button-logo {
+        opacity: 1;
+    }
+}
+
+.nvDial-Placeholder {
+    @extend %box--dialPlaceholder;
+}
+
+.nvDial--pulsing {
+    &::before {
+        display: block;
+        content: "Drop Dial";
+        color: $color-font--primaryOnDark;
+        left: 40%;
+        opacity: 0;
+        position: absolute;
+        top: -20%;
+        width: 100%;
+        @include animation(dropAnim 3s infinite linear);
+    }
+
+    &::after {
+        display: block;
+        content: attr(data-page-num);
+        color: $color-font--primaryOnDark;
+        left: 35%;
+        opacity: 0;
+        position: absolute;
+        top: 160%;
+        width: 110%;
+        @include animation(dropAnim 3s infinite linear);
+    }
+
+    @include keyframes(dropAnim) {
+        0% {
+            opacity: 0;
+        }
+        20% {
+            opacity: 1;
+        }
+        40% {
+            opacity: 0;
+        }
+        60% {
+            opacity: 0;
+        }
+        80% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+
+    .nvDial__button {
+        box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.4), 0 0 0 0 rgba(255, 255, 255, 1);
+
+        @include animation(pulseAnim 3s infinite cubic-bezier(0.075, 0.82, 0.165, 1));
+    }
+
+    @include keyframes(pulseAnim) {
+        0% {
+            box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.4), 0 0 0 0 rgba(255, 255, 255, 0.5);
+        }
+        70% {
+            box-shadow: 0 0 0 100px rgba(0, 255, 255, 0), 0 0 0 102px rgba(255, 255, 255, 0);
+        }
+        100% {
+            box-shadow: 0 0 0 0 rgba(0, 255, 255, 0), 0 0 0 0 rgba(255, 255, 255, 0);
+        }
+    }
+}

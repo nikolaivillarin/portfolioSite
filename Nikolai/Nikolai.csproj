@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BB3918E0-FC6D-4C7F-B59F-257D7930C3CF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Nikolai</RootNamespace>
+    <AssemblyName>Nikolai</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NLipsum.Core, Version=0.9.0.0, Culture=neutral, PublicKeyToken=593e1df460e1bda0, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prototyping_MVC.1.3\lib\NLipsum.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Prototyping.Ipsum, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prototyping_MVC.1.3\lib\Prototyping.Ipsum.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Prototyping.Placeholdit, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Prototyping_MVC.1.3\lib\Prototyping.Placeholdit.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.DynamicData">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Entity">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.ApplicationServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Extensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Services">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.EnterpriseServices">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease, Version=1.5.2.14234, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Readme\Elmah.txt" />
+    <Content Include="browserconfig.xml" />
+    <Content Include="Content\Atoms\reset.css">
+      <DependentUpon>reset.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Atoms\reset.min.css">
+      <DependentUpon>reset.css</DependentUpon>
+    </Content>
+    <Content Include="Content\ImagesAbout\icon_agile.svg" />
+    <Content Include="Content\ImagesAbout\icon_brush.svg" />
+    <Content Include="Content\ImagesAbout\icon_code.svg" />
+    <Content Include="Content\ImagesAbout\icon_windows.svg" />
+    <Content Include="Content\ImagesAbout\profilePic.png" />
+    <Content Include="Content\ImagesContact\beachScene.jpg" />
+    <Content Include="Content\ImagesHome\HeroImage_Medium.png" />
+    <Content Include="Content\ImagesHome\HeroImage_Small.png" />
+    <Content Include="Content\ImagesWork\boxgrove-heroImage.jpg" />
+    <Content Include="Content\ImagesWork\boxgrove-image1.png" />
+    <Content Include="Content\ImagesWork\boxgrove-image2.png" />
+    <Content Include="Content\ImagesWork\boxgrove-tile.jpg" />
+    <Content Include="Content\ImagesWork\hr-heroImage.jpg" />
+    <Content Include="Content\ImagesWork\hr-image1.png" />
+    <Content Include="Content\ImagesWork\hr-image2.png" />
+    <Content Include="Content\ImagesWork\hr-image3.png" />
+    <Content Include="Content\ImagesWork\hr-image4.png" />
+    <Content Include="Content\ImagesWork\hr-image5.png" />
+    <Content Include="Content\ImagesWork\hr-image6.png" />
+    <Content Include="Content\ImagesWork\hr-image7.png" />
+    <Content Include="Content\ImagesWork\hr-tile.jpg" />
+    <Content Include="Content\ImagesWork\placeholder-heroImage.jpg" />
+    <Content Include="Content\ImagesWork\placeholder-tile.jpg" />
+    <Content Include="Content\ImagesWork\multiplex-heroImage.jpg" />
+    <Content Include="Content\ImagesWork\multiplex-image1.png" />
+    <Content Include="Content\ImagesWork\multiplex-image2.png" />
+    <Content Include="Content\ImagesWork\multiplex-image3.png" />
+    <Content Include="Content\ImagesWork\multiplex-image4.png" />
+    <Content Include="Content\ImagesWork\multiplex-tile.jpg" />
+    <Content Include="Content\ImagesWork\ratequote-bgImg1.png" />
+    <Content Include="Content\ImagesWork\rateQuote-heroImage.jpg" />
+    <Content Include="Content\ImagesWork\ratequote-image1.png" />
+    <Content Include="Content\ImagesWork\ratequote-image2.png" />
+    <Content Include="Content\ImagesWork\ratequote-image3.png" />
+    <Content Include="Content\ImagesWork\ratequote-image4.png" />
+    <Content Include="Content\ImagesWork\rateQuote-tile.jpg" />
+    <Content Include="Content\ImagesHome\HeroImage_Large.png" />
+    <Content Include="Content\Images\icon-about--onDark.svg" />
+    <Content Include="Content\Images\icon-about.svg" />
+    <Content Include="Content\Images\icon-arrow.svg" />
+    <Content Include="Content\Images\icon-contact--onDark.svg" />
+    <Content Include="Content\Images\icon-contact.svg" />
+    <Content Include="Content\Images\icon-home--onDark.svg" />
+    <Content Include="Content\Images\icon-home.svg" />
+    <Content Include="Content\Images\icon-linkedin.svg" />
+    <Content Include="Content\Images\icon-work--onDark.svg" />
+    <Content Include="Content\Images\icon-work.svg" />
+    <Content Include="Content\Images\LogoSprite.png" />
+    <Content Include="Content\Pages\About.css">
+      <DependentUpon>About.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\About.min.css">
+      <DependentUpon>About.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Contact.css">
+      <DependentUpon>Contact.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Contact.min.css">
+      <DependentUpon>Contact.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Home.css">
+      <DependentUpon>Home.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Home.min.css">
+      <DependentUpon>Home.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Loading.css">
+      <DependentUpon>Loading.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Loading.min.css">
+      <DependentUpon>Loading.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Styles.css">
+      <DependentUpon>Styles.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Styles.min.css">
+      <DependentUpon>Styles.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Work-Boxgrove.css">
+      <DependentUpon>Work-Boxgrove.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Work-Boxgrove.min.css">
+      <DependentUpon>Work-Boxgrove.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Work-hr.css">
+      <DependentUpon>Work-HR.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Work-hr.min.css">
+      <DependentUpon>Work-hr.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Work-Multiplex.css">
+      <DependentUpon>Work-Multiplex.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Work-Multiplex.min.css">
+      <DependentUpon>Work-Multiplex.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Work-RateQuote.css">
+      <DependentUpon>Work-RateQuote.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Work-RateQuote.min.css">
+      <DependentUpon>Work-RateQuote.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Work.css">
+      <DependentUpon>Work.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Work.min.css">
+      <DependentUpon>Work.css</DependentUpon>
+    </Content>
+    <Content Include="favicon.ico" />
+    <Content Include="Favicon\android-icon-144x144.png" />
+    <Content Include="Favicon\android-icon-192x192.png" />
+    <Content Include="Favicon\android-icon-36x36.png" />
+    <Content Include="Favicon\android-icon-48x48.png" />
+    <Content Include="Favicon\android-icon-72x72.png" />
+    <Content Include="Favicon\android-icon-96x96.png" />
+    <Content Include="Favicon\apple-icon-114x114.png" />
+    <Content Include="Favicon\apple-icon-120x120.png" />
+    <Content Include="Favicon\apple-icon-144x144.png" />
+    <Content Include="Favicon\apple-icon-152x152.png" />
+    <Content Include="Favicon\apple-icon-180x180.png" />
+    <Content Include="Favicon\apple-icon-57x57.png" />
+    <Content Include="Favicon\apple-icon-60x60.png" />
+    <Content Include="Favicon\apple-icon-72x72.png" />
+    <Content Include="Favicon\apple-icon-76x76.png" />
+    <Content Include="Favicon\apple-icon-precomposed.png" />
+    <Content Include="Favicon\apple-icon.png" />
+    <Content Include="Favicon\favicon-16x16.png" />
+    <Content Include="Favicon\favicon-32x32.png" />
+    <Content Include="Favicon\favicon-96x96.png" />
+    <Content Include="Favicon\ms-icon-144x144.png" />
+    <Content Include="Favicon\ms-icon-150x150.png" />
+    <Content Include="Favicon\ms-icon-310x310.png" />
+    <Content Include="Favicon\ms-icon-70x70.png" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Atoms\reset.scss" />
+    <Content Include="Content\Atoms\_math.scss" />
+    <Content Include="Content\Atoms\_colors.scss" />
+    <Content Include="Content\Molecules\_icons.scss" />
+    <Content Include="Content\Atoms\_utilities.scss" />
+    <Content Include="Content\Atoms\_mixins.scss" />
+    <Content Include="Content\Molecules\_dialControl.scss" />
+    <Content Include="Content\Pages\Styles.scss" />
+    <Content Include="Content\Pages\Styles.css.map">
+      <DependentUpon>Styles.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Molecules\_navControl.scss" />
+    <Content Include="Content\Atoms\reset.css.map">
+      <DependentUpon>reset.css</DependentUpon>
+    </Content>
+    <Content Include="Fonts\Raleway-Light.ttf" />
+    <Content Include="Fonts\Raleway-Medium.ttf" />
+    <Content Include="Fonts\Raleway-Regular.ttf" />
+    <Content Include="Fonts\Slabo27px-Regular.ttf" />
+    <Content Include="Content\Atoms\_fonts.scss" />
+    <Content Include="Fonts\Raleway-Black.ttf" />
+    <Content Include="Fonts\Raleway-BlackItalic.ttf" />
+    <Content Include="Fonts\Raleway-Bold.ttf" />
+    <Content Include="Fonts\Raleway-BoldItalic.ttf" />
+    <Content Include="Fonts\Raleway-ExtraBold.ttf" />
+    <Content Include="Fonts\Raleway-ExtraBoldItalic.ttf" />
+    <Content Include="Fonts\Raleway-ExtraLight.ttf" />
+    <Content Include="Fonts\Raleway-ExtraLightItalic.ttf" />
+    <Content Include="Fonts\Raleway-Italic.ttf" />
+    <Content Include="Fonts\Raleway-LightItalic.ttf" />
+    <Content Include="Fonts\Raleway-MediumItalic.ttf" />
+    <Content Include="Fonts\Raleway-SemiBold.ttf" />
+    <Content Include="Fonts\Raleway-SemiBoldItalic.ttf" />
+    <Content Include="Fonts\Raleway-Thin.ttf" />
+    <Content Include="Fonts\Raleway-ThinItalic.ttf" />
+    <Content Include="Content\Molecules\_expandControl.scss" />
+    <Content Include="Content\Atoms\_boxes.scss" />
+    <Content Include="Content\Molecules\_content.scss" />
+    <Content Include="Content\Molecules\_buttons.scss" />
+    <Content Include="Content\Pages\Home.scss" />
+    <Content Include="Content\Pages\Home.css.map">
+      <DependentUpon>Home.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Atoms\_typography.scss" />
+    <Content Include="Content\Pages\Work.scss" />
+    <Content Include="Content\Pages\Work.css.map">
+      <DependentUpon>Work.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Molecules\_indicators.scss" />
+    <Content Include="Content\Pages\About.scss" />
+    <Content Include="Content\Pages\About.css.map">
+      <DependentUpon>About.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Contact.scss" />
+    <Content Include="Content\Pages\Contact.css.map">
+      <DependentUpon>Contact.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Molecules\_textboxes.scss" />
+    <Content Include="Content\Pages\Loading.scss" />
+    <Content Include="Content\Pages\Loading.css.map">
+      <DependentUpon>Loading.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Work-Multiplex.scss" />
+    <Content Include="Content\Pages\Work-Multiplex.css.map">
+      <DependentUpon>Work-Multiplex.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Work-Boxgrove.scss" />
+    <Content Include="Content\Pages\Work-Boxgrove.css.map">
+      <DependentUpon>Work-Boxgrove.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Work-RateQuote.scss" />
+    <Content Include="Content\Pages\Work-RateQuote.css.map">
+      <DependentUpon>Work-RateQuote.css</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Work-HR.scss" />
+    <Content Include="Content\Pages\Work-hr.css.map">
+      <DependentUpon>Work-hr.css</DependentUpon>
+    </Content>
+    <Content Include="manifest.json" />
+    <Content Include="Content\Atoms\_transitions.scss" />
+    <Content Include="Fonts\RobotoSlab-Bold.ttf" />
+    <Content Include="Fonts\RobotoSlab-Light.ttf" />
+    <Content Include="Fonts\RobotoSlab-Regular.ttf" />
+    <Content Include="Fonts\RobotoSlab-Thin.ttf" />
+    <Content Include="Content\Breakpoint\breakpoint\parsers\double\_default-pair.scss" />
+    <Content Include="Content\Breakpoint\breakpoint\parsers\double\_default.scss" />
+    <Content Include="Content\Breakpoint\breakpoint\parsers\double\_double-string.scss" />
+    <Content Include="Content\Breakpoint\breakpoint\parsers\resolution\_resolution.scss" />
+    <Content Include="Content\Breakpoint\breakpoint\parsers\single\_default.scss" />
+    <Content Include="Content\Breakpoint\breakpoint\parsers\triple\_default.scss" />
+    <Content Include="Content\Breakpoint\breakpoint\parsers\_double.scss" />
+    <Content Include="Content\Breakpoint\breakpoint\parsers\_query.scss" />
+    <Content Include="Content\Breakpoint\breakpoint\parsers\_resolution.scss" />
+    <Content Include="Content\Breakpoint\breakpoint\parsers\_single.scss" />
+    <Content Include="Content\Breakpoint\breakpoint\parsers\_triple.scss" />
+    <Content Include="Content\Breakpoint\breakpoint\_context.scss" />
+    <Content Include="Content\Breakpoint\breakpoint\_helpers.scss" />
+    <Content Include="Content\Breakpoint\breakpoint\_legacy-settings.scss" />
+    <Content Include="Content\Breakpoint\breakpoint\_no-query.scss" />
+    <Content Include="Content\Breakpoint\breakpoint\_parsers.scss" />
+    <Content Include="Content\Breakpoint\breakpoint\_respond-to.scss" />
+    <Content Include="Content\Breakpoint\breakpoint\_settings.scss" />
+    <Content Include="Content\Breakpoint\_breakpoint.scss" />
+    <Content Include="Content\Atoms\_breakpoints.scss" />
+    <None Include="Properties\PublishProfiles\Winhost Release.pubxml" />
+    <None Include="Scripts\jquery-3.1.1.intellisense.js" />
+    <Content Include="robots.txt" />
+    <Content Include="Scripts\clientErrorLogger.js" />
+    <Content Include="Scripts\floatingBall.js" />
+    <Content Include="Scripts\imagesloaded.pkgd.js" />
+    <Content Include="Scripts\jquery-3.1.1.js" />
+    <Content Include="Scripts\jquery-3.1.1.min.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.js" />
+    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
+    <Content Include="Scripts\jquery-ui-1.12.1.js" />
+    <Content Include="ViewScripts\loader.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\navigation.js" />
+    <Content Include="Scripts\navigationBar.js" />
+    <Content Include="Scripts\navigationTransition.js" />
+    <Content Include="ViewScripts\contactPage.js" />
+    <Content Include="ViewScripts\homePage.js" />
+    <Content Include="ViewScripts\menuPage.js" />
+    <Content Include="ViewScripts\workBoxgrove.js" />
+    <Content Include="ViewScripts\workHR.js" />
+    <Content Include="ViewScripts\workMultiplex.js" />
+    <Content Include="ViewScripts\workPage.js" />
+    <Content Include="ViewScripts\workRateQuote.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.1.1.min.map" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AboutController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\ErrorController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\StyleGuideController.cs" />
+    <Compile Include="Controllers\WorkController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EmailHelper.cs" />
+    <Compile Include="Models\EmailTemplateEngine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="packages.config" />
+    <Content Include="Views\StyleGuide\DialControl.cshtml" />
+    <Content Include="Views\StyleGuide\NavigationControl.cshtml" />
+    <Content Include="Views\StyleGuide\Content.cshtml" />
+    <Content Include="Views\StyleGuide\PageTransition.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\_home.cshtml" />
+    <Content Include="Views\Work\_work.cshtml" />
+    <Content Include="Views\Shared\_dial.cshtml" />
+    <Content Include="Views\Shared\_nav.cshtml" />
+    <Content Include="Views\Menu\_menu.cshtml" />
+    <Content Include="Views\About\_about.cshtml" />
+    <Content Include="Views\Contact\_contact.cshtml" />
+    <Content Include="Views\Shared\_loading.cshtml" />
+    <Content Include="Views\Work\Multiplex.cshtml" />
+    <Content Include="Views\Work\_multiplex.cshtml" />
+    <Content Include="Views\About\Index.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
+    <Content Include="Views\Work\Index.cshtml" />
+    <Content Include="Views\Work\Boxgrove.cshtml" />
+    <Content Include="Views\Work\_boxgrove.cshtml" />
+    <Content Include="Views\Work\_rateQuote.cshtml" />
+    <Content Include="Views\Work\RateQuote.cshtml" />
+    <Content Include="Views\Work\HR.cshtml" />
+    <Content Include="Views\Work\_hr.cshtml" />
+    <Content Include="Views\Menu\Index.cshtml" />
+    <Content Include="Views\StyleGuide\ResponsiveImage.cshtml" />
+    <Content Include="Views\Error\Index.cshtml" />
+    <Content Include="Views\Error\Http404.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>26700</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:26700/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

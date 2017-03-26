@@ -1,0 +1,100 @@
+﻿@import '../Atoms/_boxes';
+@import '../Atoms/_colors';
+@import '../Atoms/_transitions';
+@import '../Atoms/_mixins';
+
+.menu {
+    background-color: $color-background--blue;
+    text-align: center;
+
+    @extend %box--fullPage;
+    @extend %box-level--modular;
+
+    &:before {
+        background-color: $color-lineAccent--blue;
+        display: block;
+        content: "";
+        height: 100vh;
+        left: 50%;
+        position: absolute;
+        top: 0;
+        width: 2px;
+
+        @extend %box-level--back;
+    }
+}
+
+.menu-header {
+    @extend %slide-top--initialState;
+}
+
+.menu-header.in-view {
+    @extend %slide-top--endState;
+}
+
+.menu-links {
+    @extend %box--squished;
+}
+
+.menu-links--1 {
+    @include transition-delay(0);
+    @extend %slide-top--initialState;
+}
+
+.menu-links--1.in-view {
+    @include transition-delay(0);
+    @extend %slide-top--endState;
+}
+
+.menu-links--2 {
+    @include transition-delay(0);
+    @extend %slide-top--initialState;
+}
+
+.menu-links--2.in-view {
+    @include transition-delay(0.1s);
+    @extend %slide-top--endState;
+}
+
+.menu-links--3 {
+    @include transition-delay(0);
+    @extend %slide-top--initialState;
+}
+
+.menu-links--3.in-view {
+    @include transition-delay(0.2s);
+    @extend %slide-top--endState;
+}
+
+.menu-links--4 {
+    @include transition-delay(0);
+    @extend %slide-top--initialState;
+}
+
+.menu-links--4.in-view {
+    @include transition-delay(0.3s);
+    @extend %slide-top--endState;
+}
+
+%menu-selectedLine {
+    background-color: $color-font--primaryOnDark;
+    display: inline-block;
+    content: "";
+    height: 1px;
+    margin-top: -0.6em;
+    vertical-align: middle;
+    width: 3em;
+}
+
+.menu-links--selected {
+    &:before {
+        margin-right: 10px;
+
+        @extend %menu-selectedLine;
+    }
+    &:after {
+        margin-left: 10px;
+
+        @extend %menu-selectedLine;
+    }
+}

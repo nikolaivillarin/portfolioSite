@@ -1,0 +1,17 @@
+﻿/*------------------------------------*\
+    $CLEARFIX
+\*------------------------------------*/
+.cf{
+    &::before,
+    &::after {
+        content: " ";
+        display: table;
+    }
+    &::after {
+        clear: both;
+    }
+}
+
+.hidden {
+    display: none;
+}

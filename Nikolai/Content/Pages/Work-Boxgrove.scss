@@ -1,0 +1,193 @@
+﻿@import '../Atoms/_boxes';
+@import '../Atoms/_mixins';
+@import '../Atoms/_transitions';
+@import '../Breakpoint/_breakpoint';
+@import '../Atoms/_breakpoints';
+
+.work-imgTile--boxgrove {
+    background-image: url(../ImagesWork/boxgrove-tile.jpg);
+}
+
+.work-heroImage--boxgrove {
+    background-image: url(../ImagesWork/boxgrove-heroImage.jpg);
+}
+
+.boxgrove-headings {
+    @include breakpoint(max-width $breakpoint-phablet) {
+        margin-left: 2em;
+        max-width: 23em;
+        padding-top: 10px;
+    }
+
+    @include breakpoint(min-width $breakpoint-phablet) {
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    @include breakpoint(max-height $breakpoint-phablet) {
+        padding-top: 5px;
+    }
+}
+
+.boxgrove-header {
+    @extend %slide-top--initialState;
+    @include transition-delay(0);
+}
+
+.boxgrove-header.in-view {
+    @extend %slide-top--endState;
+    @include transition-delay(0.5s);
+}
+
+.boxgrove-subHeader {
+    @extend %slide-bottom--initialState;
+    @include transition-delay(0);
+}
+
+.boxgrove-subHeader.in-view {
+    @extend %slide-bottom--endState;
+    @include transition-delay(0.5s);
+}
+
+.boxgrove-screens {
+    background-color: #CCC;
+    background: linear-gradient(to bottom right,#F2F2F2, #CCC);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    @include breakpoint(max-width $breakpoint-mobile) {
+        height: 750px;
+    }
+
+    @include breakpoint($breakpoint-mobile $breakpoint-mobileBig) {
+        height: 1050px;
+    }
+
+    @include breakpoint($breakpoint-mobileBig $breakpoint-tablet) {
+        height: 1200px;
+    }
+
+    @include breakpoint(min-width $breakpoint-tablet) {
+        height: 1400px;
+    }
+
+    .boxgrove-screensImg--image1 {
+        @extend %slide-bottom--initialState;
+        @include transition-delay(0);
+    }
+
+    .boxgrove-screensImg--image2 {
+        @extend %slide-bottom--initialState;
+        @include transition-delay(0);
+    }
+}
+
+.boxgrove-screens.in-view {
+    .boxgrove-screensImg--image1 {
+        @extend %slide-bottom--endState;
+        @include transition-delay(1s);
+    }
+
+    .boxgrove-screensImg--image2 {
+        @extend %slide-bottom--endState;
+        @include transition-delay(1.3s);
+    }
+}
+
+.boxgrove-screensImg {
+    position: absolute;
+
+    &--title {
+        float: right;
+        margin-right: 15%;
+        margin-top: 2%;
+        max-width: 370px;
+
+        @include breakpoint(max-width $breakpoint-phablet) {
+            margin-left: 2%;
+        }
+    }
+
+    &--image1 {
+        left: -10px;
+        max-width: 2500px;
+        width: 300vw;
+
+        @include breakpoint(max-width $breakpoint-mobile) {
+            top: 120px;
+        }
+
+        @include breakpoint($breakpoint-mobile $breakpoint-mobileBig) {
+            top: 160px;
+        }
+
+        @include breakpoint($breakpoint-mobileBig $breakpoint-phablet) {
+            top: 160px;
+        }
+
+        @include breakpoint($breakpoint-phablet $breakpoint-phabletBig) {
+            top: 160px;
+        }
+
+        @include breakpoint($breakpoint-phabletBig $breakpoint-tablet) {
+            top: 160px;
+        }
+
+        @include breakpoint(min-width $breakpoint-tablet) {
+            left: -15px;
+            top: 230px;
+        }
+    }
+
+    &--image2 {
+        left: -9px;
+        max-width: 1450px;
+        width: 175vw;
+
+        @include breakpoint(max-width $breakpoint-mobile) {
+            top: 360px;
+        }
+
+        @include breakpoint($breakpoint-mobile $breakpoint-mobileBig) {
+            top: 480px;
+        }
+
+        @include breakpoint($breakpoint-mobileBig $breakpoint-phablet) {
+            top: 530px;
+        }
+
+        @include breakpoint($breakpoint-phablet $breakpoint-phabletBig) {
+            top: 600px;
+        }
+
+        @include breakpoint($breakpoint-phabletBig $breakpoint-tablet) {
+            top: 700px;
+        }
+
+        @include breakpoint(min-width $breakpoint-tablet) {
+            top: 840px;
+        }
+    }
+}
+
+.boxgrove-summary {
+    height: 100%;
+    width: 100%;
+
+    &__content {
+        text-align: center;
+
+        @extend %box--spacious;
+    }
+}
+
+.boxgrove-summaryContent {
+    @extend %slide-top--initialState;
+    @include transition-delay(0);
+}
+
+.boxgrove-summaryContent.in-view {
+    @extend %slide-top--endState;
+    @include transition-delay(1s);
+}

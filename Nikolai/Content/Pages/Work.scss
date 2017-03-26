@@ -1,0 +1,180 @@
+﻿@import '../Atoms/_mixins.scss';
+@import '../Atoms/_boxes';
+@import '../Atoms/_transitions';
+@import '../Breakpoint/_breakpoint';
+@import '../Atoms/_breakpoints';
+
+.work-bg {
+    background-color: #1a1a1a;
+}
+
+.work {
+    display: table;
+    float: left;
+    height: 100vh;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    
+    @include box-sizing(border-box);
+
+    @include breakpoint(400px $breakpoint-phablet) {
+        width: 50%;
+    }
+
+    @include breakpoint($breakpoint-phablet $breakpoint-netbook) {
+        width: 33.33%;
+    }
+
+    @include breakpoint(min-width $breakpoint-netbook) {
+        width: 25%;
+    }
+
+    @include breakpoint(max-height $breakpoint-phablet) {
+        font-size: 0.6em;
+    }
+
+    &__content {
+        display: table-cell;
+        position: relative;
+        vertical-align: middle;
+
+        @extend %box-level--middle;
+
+        @include breakpoint(max-height $breakpoint-phablet) {
+            display: block;
+            padding-top: 30%;
+        }
+    }
+
+    &__overlay {
+        background-color: #000;
+        left: 0;
+        height: 100%;
+        opacity: 0.7;
+        position: absolute;
+        top: 0;
+        width: 100%;
+
+        @extend %box-level--default;
+        @include transition(1s opacity);
+    }
+
+    h1, h2, .work-header.in-view, .work-subHeader.in-view {
+        /*opacity: 1;*/
+
+        @include transition(0.3s opacity cubic-bezier(0.55, 0.055, 0.675, 0.19));
+    }
+
+    .work-header {
+        @extend %slide-top--initialState;
+    }
+
+    .work-header.in-view {
+        @extend %slide-top--endState;
+    }
+
+    .work-subHeader {
+        @extend %slide-top--initialState;
+    }
+
+    .work-subHeader.in-view {
+        @extend %slide-top--endState;
+    }
+
+    .work-btnView {
+        @extend %pop--initialState;
+        @include transition-delay(0);
+    }
+
+    .work-btnView.in-view {
+        @extend %pop--endState;
+        @include transition-delay(0.5s);
+    }
+}
+
+.work--hoverable {
+    &:hover {
+        h1, h2, .work-header.in-view, .work-subHeader.in-view {
+            opacity: 0;
+
+            @include transition-delay(0);
+        }
+
+        .work__overlay {
+            opacity: 0.2;
+
+            @include transition-delay(0);
+        }
+    }
+}
+
+.work-imgTile--placeholder {
+    background-image: url(../ImagesWork/placeholder-tile.jpg);
+}
+
+.work-heroImage--placeholder {
+    background-image: url(../ImagesWork/placeholder-heroImage.jpg);
+}
+
+.work--separator {
+    @include box-sizing(border-box);
+
+    @include breakpoint(min-width 400px) {
+        border-right: 1px solid #FFF;
+    }
+}
+
+.work-imgTile {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.work-closeTarget {
+    opacity: 0;
+    position: fixed;
+
+    @extend %box--dialPlaceholder;
+
+    @include breakpoint(max-width $breakpoint-phablet) {
+        right: 0;
+        top: 0;
+
+        @include transform(scale(0.6));
+    }
+
+    @include breakpoint($breakpoint-phablet $breakpoint-tablet) {
+        right: 10px;
+        top: 10px;
+    }
+
+    @include breakpoint(min-width $breakpoint-tablet) {
+        right: 40px;
+        top: 20px;
+    }
+}
+
+.work-heroImage {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.work-IndicatorContainer {
+    bottom: 0;
+    display: block;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+.work-IndicatorContainer--MoreInfo {
+    bottom: 125px;
+
+    @extend %box-level--middle;
+}

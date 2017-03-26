@@ -1,0 +1,147 @@
+﻿@import '../Atoms/_mixins';
+@import '../Atoms/_colors';
+
+/*------------------------------------*\
+    Logo
+\*------------------------------------*/
+$logo-retina--width: 1360px;
+$logo-retina--height: 156px;
+$logo-retina--totalFrames: 16;
+$logo-retina--totalAnimations: 2;
+$logo-retina--totalFramesToPlay: $logo-retina--totalFrames - 1; // 0 based index
+$logo-container--height: $logo-retina--height/2/$logo-retina--totalAnimations;
+$logo-container--width: $logo-retina--width/$logo-retina--totalFrames/2;
+
+.logo {
+    background-position: 0 0;
+    background-size: $logo-retina--width/2 $logo-retina--height/2;
+    background-image: url(/Content/Images/LogoSprite.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: $logo-container--height;
+    margin-top: 15px;
+    width: $logo-container--width;
+
+    &--send {
+        @include animation(logo-animate--send 0.8s steps($logo-retina--totalFramesToPlay) forwards);
+    }
+
+    &--sendReverse {
+        @include animation(logo-animate--sendReverse 0.8s steps($logo-retina--totalFramesToPlay) backwards);
+    }
+
+    &--close {
+        @include animation(logo-animate--close 0.5s steps($logo-retina--totalFramesToPlay) forwards);
+    }
+
+    &--closeReverse {
+        @include animation(logo-animate--closeReverse 0.5s steps($logo-retina--totalFramesToPlay) backwards);
+    }
+}
+
+@include keyframes(logo-animate--send) {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: -($logo-retina--width/2 - $logo-container--width) 0;
+    }
+}
+
+@include keyframes(logo-animate--sendReverse) {
+    0% {
+        background-position: -($logo-retina--width/2 - $logo-container--width) 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+@include keyframes(logo-animate--close) {
+    0% {
+        background-position: 0 #{-$logo-container--height};
+    }
+    100% {
+        background-position: #{-($logo-retina--width/2 - $logo-container--width)} #{-$logo-container--height};
+    }
+}
+
+@include keyframes(logo-animate--closeReverse) {
+    0% {
+        background-position: #{-($logo-retina--width/2 - $logo-container--width)} #{-$logo-container--height};
+    }
+    100% {
+        background-position: 0 #{-$logo-container--height};
+    }
+}
+
+/*------------------------------------*\
+    Icons
+\*------------------------------------*/
+$navIcon-retina--height: 50px;
+$navIcon-retina--width: 50px;
+
+.icon {
+    background-position: 0 0;
+    background-size: $navIcon-retina--width/2 $navIcon-retina--height/2;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: $navIcon-retina--height/2;
+    width: $navIcon-retina--width/2;
+
+    &--home {
+        background-image: url(../Images/icon-home.svg);
+    }
+
+    &--homeOnDark {
+        background-image: url(../Images/icon-home--onDark.svg);
+    }
+
+    &--work {
+        background-image: url(../Images/icon-work.svg);
+    }
+
+    &--workOnDark {
+        background-image: url(../Images/icon-work--onDark.svg);
+    }
+
+    &--about {
+        background-image: url(../Images/icon-about.svg);
+    }
+
+    &--aboutOnDark {
+        background-image: url(../Images/icon-about--onDark.svg);
+    }
+
+    &--contact {
+        background-image: url(../Images/icon-contact.svg);
+    }
+
+    &--contactOnDark {
+        background-image: url(../Images/icon-contact--onDark.svg);
+    }
+}
+
+.socialIcon {
+    background-position: 0 0;
+    background-size: 14px 14px;
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+
+    &:before {
+        border: 1px solid $color-font--primaryOnDark;
+        border-radius: 50%;
+        display: inline-block;
+        content: "";
+        height: 25px;
+        margin-left: -7px;
+        margin-top: -5px;
+        width: 25px;
+    }
+
+    &--linkedin {
+        background-image: url(../Images/icon-linkedin.svg);
+    }
+}

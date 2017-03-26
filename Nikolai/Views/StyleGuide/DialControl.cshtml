@@ -1,0 +1,239 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Dial Control</title>
+    @Styles.Render("~/Content/Styles")
+</head>
+<body style="background-color: #F2F2F2">
+    <section>
+        <h1>Logo - Default State</h1>
+        <br />
+        <div class="nvDial nvDial--draggable cf">
+            <div class="nvDial__spinner-container--outer">
+                <div class="nvDial__spinner--outer">
+                    <div class="nvDial__pointer--outer"></div>
+                </div>
+            </div>
+            <div class="nvDial__spinner-container--middle">
+                <div class="nvDial__spinner--middle">
+                    <div class="nvDial__pointer--middle"></div>
+                </div>
+            </div>
+            <div class="nvDial__spinner-container--inner">
+                <div class="nvDial__spinner--inner">
+                    <div class="nvDial__pointer--inner"></div>
+                </div>
+            </div>
+            <div class="nvDial__button">
+                <div class="nvDial__button-light">
+                    <div class="nvDial__button-logo">
+                        <span class="logo"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br /><br /><br /><br />
+    <section class="cf">
+        <h1>Logo - Loading</h1>
+        <br />
+        <div style="float: left; position: relative; height: 200px; width: 200px">
+            <div class="nvDial nvDial--loading cf">
+                <div class="nvDial__spinner-container--outer">
+                    <div class="nvDial__spinner--outer">
+                        <div class="nvDial__pointer--outer"></div>
+                    </div>
+                </div>
+                <div class="nvDial__spinner-container--middle">
+                    <div class="nvDial__spinner--middle">
+                        <div class="nvDial__pointer--middle"></div>
+                    </div>
+                </div>
+                <div class="nvDial__spinner-container--inner">
+                    <div class="nvDial__spinner--inner">
+                        <div class="nvDial__pointer--inner"></div>
+                    </div>
+                </div>
+                <div class="nvDial__button">
+                    <div class="nvDial__button-light">
+                        <div class="nvDial__button-logo">
+                            <span class="logo"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br />
+    <section class="cf">
+        <h1>Logo - Pulsing</h1>
+        <br />
+        <div style="background-color: #333; float: left; position: relative; height: 300px; width: 100%; padding: 90px">
+            <div class="nvDial nvDial--pulsing cf">
+                <div class="nvDial__spinner-container--outer">
+                    <div class="nvDial__spinner--outer">
+                        <div class="nvDial__pointer--outer"></div>
+                    </div>
+                </div>
+                <div class="nvDial__spinner-container--middle">
+                    <div class="nvDial__spinner--middle">
+                        <div class="nvDial__pointer--middle"></div>
+                    </div>
+                </div>
+                <div class="nvDial__spinner-container--inner">
+                    <div class="nvDial__spinner--inner">
+                        <div class="nvDial__pointer--inner"></div>
+                    </div>
+                </div>
+                <div class="nvDial__button">
+                    <div class="nvDial__button-light">
+                        <div class="nvDial__button-logo">
+                            <span class="logo"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br /><br />
+    <section class="cf">
+        <h1>Logo - On Placeholder</h1>
+        <br />
+        <div id="dialPlaceholder" class="nvDial-Placeholder" style="border: 1px solid #000; float: left"></div>
+        <div id="dialForPlaceholder" class="nvDial nvDial--draggable cf">
+            <div class="nvDial__spinner-container--outer">
+                <div class="nvDial__spinner--outer">
+                    <div class="nvDial__pointer--outer"></div>
+                </div>
+            </div>
+            <div class="nvDial__spinner-container--middle">
+                <div class="nvDial__spinner--middle">
+                    <div class="nvDial__pointer--middle"></div>
+                </div>
+            </div>
+            <div class="nvDial__spinner-container--inner">
+                <div class="nvDial__spinner--inner">
+                    <div class="nvDial__pointer--inner"></div>
+                </div>
+            </div>
+            <div class="nvDial__button">
+                <div class="nvDial__button-light">
+                    <div class="nvDial__button-logo">
+                        <span class="logo"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br /><br />
+    <section>
+        <h1>Logo - Send Button Animation</h1>
+        <br />
+        <div class="nvDial cf">
+            <div class="nvDial__spinner-container--outer">
+                <div class="nvDial__spinner--outer">
+                    <div class="nvDial__pointer--outer"></div>
+                </div>
+            </div>
+            <div class="nvDial__spinner-container--middle">
+                <div class="nvDial__spinner--middle">
+                    <div class="nvDial__pointer--middle"></div>
+                </div>
+            </div>
+            <div class="nvDial__spinner-container--inner">
+                <div class="nvDial__spinner--inner">
+                    <div class="nvDial__pointer--inner"></div>
+                </div>
+            </div>
+            <div class="nvDial__button">
+                <div id="pnlAirplaneLogoLight" class="nvDial__button-light">
+                    <div class="nvDial__button-logo">
+                        <span id="pnlAirplaneLogo" class="logo"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <button id="btnSendDefaultState" class="btn btn-default">Default State</button>
+        <button id="btnSendState" class="btn btn-default">Send State</button>
+    </section>
+    <br /><br />
+    <section>
+        <h1>Logo - Close Button Animation</h1>
+        <br />
+        <div class="nvDial cf">
+            <div class="nvDial__spinner-container--outer">
+                <div class="nvDial__spinner--outer">
+                    <div class="nvDial__pointer--outer"></div>
+                </div>
+            </div>
+            <div class="nvDial__spinner-container--middle">
+                <div class="nvDial__spinner--middle">
+                    <div class="nvDial__pointer--middle"></div>
+                </div>
+            </div>
+            <div class="nvDial__spinner-container--inner">
+                <div class="nvDial__spinner--inner">
+                    <div class="nvDial__pointer--inner"></div>
+                </div>
+            </div>
+            <div class="nvDial__button">
+                <div id="pnlCloseLogoLight" class="nvDial__button-light">
+                    <div class="nvDial__button-logo">
+                        <span id="pnlCloseLogo" class="logo"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br />
+        <br />
+        <button id="btnCloseDefaultState" class="btn btn-default">Default State</button>
+        <button id="btnCloseState" class="btn btn-default">Close State</button>
+    </section>
+
+    @Scripts.Render("~/Content/libraries")
+
+    <script>
+        $(document).ready(function ($) {
+            $('#btnSendDefaultState').click(function () {
+                $('#pnlAirplaneLogoLight').removeClass('nvDial__button-light--blue');
+                $('#pnlAirplaneLogo').addClass('logo--sendReverse').removeClass('logo--send');
+            });
+
+            $('#btnSendState').click(function () {
+                $('#pnlAirplaneLogoLight').addClass('nvDial__button-light--blue');
+                $('#pnlAirplaneLogo').removeClass('logo--sendReverse').addClass('logo--send');
+            });
+
+            $('#btnCloseDefaultState').click(function () {
+                $('#pnlCloseLogoLight').removeClass('nvDial__button-light--red');
+                $('#pnlCloseLogo').addClass('logo--closeReverse').removeClass('logo--close');
+            });
+
+            $('#btnCloseState').click(function () {
+                $('#pnlCloseLogoLight').addClass('nvDial__button-light--red');
+                $('#pnlCloseLogo').removeClass('logo--closeReverse').addClass('logo--close');
+            });
+
+            // Test for positioning logic
+            var $placeholder = $('#dialPlaceholder');
+            var $dial = $('#dialForPlaceholder');
+
+            var placeholderPos = $placeholder.offset();
+
+            $dial.css({
+                left: placeholderPos.left - 32 // Dial offset + border
+                , top: placeholderPos.top - 32 // Dial offset + border
+            });
+        });
+    </script>
+</body>
+</html>

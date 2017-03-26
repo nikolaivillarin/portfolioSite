@@ -1,0 +1,228 @@
+﻿@import '../Atoms/_boxes.scss';
+@import '../Atoms/_typography.scss';
+@import '../Atoms/_colors';
+@import '../Atoms/_mixins';
+@import '../Breakpoint/_breakpoint';
+@import '../Atoms/_breakpoints';
+
+.button-hamburger {
+    cursor: pointer;
+    display: block;
+    width: 2em;
+}
+
+.button-hamburger--right {
+    float: right;
+    margin: 1.5em 1.5em 0 0;
+    position: relative;
+
+    @extend %box-level--top;
+
+    @include breakpoint(min-width $breakpoint-phablet) {
+        margin: 2em 2em 0 0;
+    }
+}
+
+%button-hamburger__line {
+    display: block;
+    float: left;
+    height: 0.3em;
+    max-height: 5px;
+    max-width: 40px;
+    width: 2.5em;
+}
+
+.button-hamburger__line {
+    background-color: #000;
+    box-shadow: $color-smoothing--light 0 1px 1px;
+
+    @extend %button-hamburger__line;
+}
+
+.button-hamburger__separator {
+    background-color: transparent;
+
+    @extend %button-hamburger__line;
+}
+
+.button-hamburger__lineOnDark {
+    background-color: #FFF;
+
+    @extend %button-hamburger__line;
+}
+
+$viewMore-circle--diameter: 14px;
+$viewMore-animation--duration: 0.5s;
+$viewMore-animation--easing: cubic-bezier(0.645, 0.045, 0.355, 1);
+
+@include keyframes(viewMore-separatorAnim) {
+    0% {
+        @include transform(rotate(0) scale(1));
+    }
+    100% {
+        @include transform(rotate(-45deg) scale(1.2, 1));
+    }
+}
+
+@include keyframes(viewMore-separatorAnim--reverse) {
+    0% {
+        @include transform(rotate(-45deg) scale(1.2, 1));
+    }
+    100% {
+        @include transform(rotate(0) scale(1));
+    }
+}
+
+@include keyframes(viewMore-topCircleAnim) {
+    0% {
+        @include transform(rotate(0) scale(1) translate(0, 0));
+    }
+    100% {
+        @include transform(rotate(-45deg) scale(6) translate(-1px, -3px));
+    }
+}
+
+@include keyframes(viewMore-topCircleAnim--reverse) {
+    0% {
+        @include transform(rotate(-45deg) scale(6) translate(-1px, -3px));
+    }
+    100% {
+        @include transform(rotate(0) scale(1) translate(0, 0));
+    }
+}
+
+@include keyframes(viewMore-bottomCircleAnim) {
+    0% {
+        @include transform(rotate(0) scale(1) translate(0, 0));
+    }
+    100% {
+        @include transform(rotate(-45deg) scale(6) translate(1px, 3px));
+    }
+}
+
+@include keyframes(viewMore-bottomCircleAnim--reverse) {
+    0% {
+        @include transform(rotate(-45deg) scale(6) translate(1px, 3px));
+    }
+    100% {
+        @include transform(rotate(0) scale(1) translate(0, 0));
+    }
+}
+
+%viewMore__indicator {
+    background-color: #FFF;
+    content: "";
+    display: block;
+    height: $viewMore-circle--diameter / 2;
+    left: calc(50% - #{$viewMore-circle--diameter / 2});
+    position: absolute;
+    width: $viewMore-circle--diameter;
+
+    @extend %box-level--middle;
+}
+
+.button-container-viewMore {
+    cursor: pointer;
+
+    // Button Transition specified here so that
+    // there are two different transitions from mouse-on and mouse-out
+    .button-viewMore__link {
+        @include transition(0.1s opacity);
+    }
+
+    &:hover {
+        .button-viewMore:before {
+            @include animation(viewMore-topCircleAnim $viewMore-animation--duration $viewMore-animation--easing forwards);
+        }
+
+        .button-viewMore:after {
+            @include animation(viewMore-bottomCircleAnim $viewMore-animation--duration $viewMore-animation--easing forwards);
+        }
+
+        .button-viewMore__separator {
+            @include animation(viewMore-separatorAnim $viewMore-animation--duration $viewMore-animation--easing forwards);
+        }
+
+        .button-viewMore__link {
+            opacity: 1;
+
+            @include transition(0.1s 0.4s opacity);
+        }
+    }
+}
+
+.button-viewMore {
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+
+    &__separator {
+        background-color: #FFF;
+        display: block;
+        height: 1px;
+        left: calc(50% - 45px);
+        position: absolute;
+        top: $viewMore-circle--diameter / 2;
+        width: 90px;
+        
+        @include animation(viewMore-separatorAnim--reverse $viewMore-animation--duration $viewMore-animation--easing forwards);
+    }
+
+    &:before {
+        border-top-left-radius: $viewMore-circle--diameter;
+        border-top-right-radius: $viewMore-circle--diameter;
+        top: 0;
+
+        @extend %viewMore__indicator;
+        @include animation(viewMore-topCircleAnim--reverse $viewMore-animation--duration $viewMore-animation--easing forwards);
+    }
+
+    &:after {
+        border-bottom-left-radius: $viewMore-circle--diameter;
+        border-bottom-right-radius: $viewMore-circle--diameter;
+        top: $viewMore-circle--diameter / 2 + 1px;
+        
+        @extend %viewMore__indicator;
+        @include animation(viewMore-bottomCircleAnim--reverse $viewMore-animation--duration $viewMore-animation--easing forwards);
+    }
+
+    &__link {
+        color: $color-font--primary;
+        display: inline-block;
+        font-size: 1.7em;
+        margin-top: -1em;
+        opacity: 0;
+        position: relative;
+
+        @extend %box-level--top;
+
+        &:hover, &:active, &:visited {
+            color: $color-font--primary;
+        }
+    }
+}
+
+$button-padding--default: 6px 12px;
+$button-border--radius: 4px;
+
+.btn {
+    border: 1px solid transparent;
+    border-radius: $button-border--radius;
+    cursor: pointer;
+    display: inline-block;
+    padding: $button-padding--default;
+    text-align: center;
+
+    @include transition(background-color 2s);
+}
+
+.btn-default {
+    color: $color-font--primary;
+    background-color: $btnColor-background;
+    border-color: $btnColor-border;
+
+    &:hover {
+        background-color: $btnColor-background--hover;
+    }
+}

@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Nikolai Villarin | Site Menu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section MetaDescription {
+    <meta name="description" content="Nikolai Villarin Web Portfolio, Site Menu, Menu" />
+}
+
+<div id="pnlPages" class="pages-container"
+     data-nv-eagerlyload="\Work\WorkPartial, \About\AboutPartial, \Contact\ContactPartial">
+    @Html.Partial("~/Views/Home/_home.cshtml")
+</div>

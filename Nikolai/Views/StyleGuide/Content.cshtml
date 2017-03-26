@@ -1,0 +1,310 @@
+﻿@using Prototyping.Ipsum;
+@using Prototyping.Placeholdit;
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Content</title>
+    @Styles.Render("~/Content/Styles")
+</head>
+<body>
+    <article>
+        <h1 class="header-main header-large" style="text-align: center">
+            Content Typography
+        </h1>
+        <br /><br />
+        <section style="background-color: #F2F2F2">
+            <h1 class="header-main header-large">
+                Main Header - On Light BG
+            </h1>
+            <h2 class="header-secondary header-medium">
+                Sub Header - On Light BG
+            </h2>
+            <h3 class="header-secondary header-small">
+                Small header
+            </h3>
+        </section>
+        <br />
+        <section style="background-color: #333">
+            <h1 class="header-main--onDark header-large">
+                Main Header - On Dark BG
+            </h1>
+            <h2 class="header-secondary--onDark header-medium">
+                Sub Header - On Dark BG
+            </h2>
+            <h3 class="header-secondary--onDark header-small">
+                Small header - On Dark BG
+            </h3>
+        </section>
+        <br />
+        <section style="background-color: #F2F2F2">
+            <p class="text-primary">
+                Paragraph on light BG
+                @Html.Ipsum().p(htmlAttributes: new { @class = "text-primary" })
+            </p>
+        </section>
+        <br />
+        <section style="background-color: #333">
+            <p class="text-primary--OnDark">
+                Paragraph on dark BG
+                @Html.Ipsum().p(htmlAttributes: new { @class = "text-primary--OnDark" })
+            </p>
+        </section>
+        <br />
+        <section style="background-color: #F2F2F2">
+            <h1 class="header-secondary header-medium">
+                Link on light BG
+            </h1>
+            <p class="text-primary">
+                <a>This is a link element</a>
+            </p>
+        </section>
+        <br />
+        <section style="background-color: #333">
+            <h1 class="header-secondary--onDark header-medium">
+                Link on dark BG
+            </h1>
+            <p class="text-primary">
+                <a class="link--onDark">This is a link element</a>
+            </p>
+        </section>
+        <br />
+        <section style="background-color: #F2F2F2">
+            <h1 class="header-secondary header-medium">
+                Marked Text
+            </h1>
+            <p class="text-primary">
+                You can use the mark tag to <mark>highlight</mark> text.
+            </p>
+        </section>
+        <br />
+        <section style="background-color: #F2F2F2">
+            <h1 class="header-secondary header-medium">
+                Deleted Text
+            </h1>
+            <p class="text-primary">
+                <del>This line of text is meant to be treated as deleted text.</del>
+            </p>
+        </section>
+        <br />
+        <section style="background-color: #F2F2F2">
+            <h1 class="header-secondary header-medium">
+                Strike through text
+            </h1>
+            <p class="text-primary">
+                <s>This line of text is meant to be treated as no longer accurate.</s>
+            </p>
+        </section>
+        <br />
+        <section style="background-color: #F2F2F2">
+            <h1 class="header-secondary header-medium">
+                Inserted Text
+            </h1>
+            <p class="text-primary">
+                <ins>This line of text is meant to be treated as an addition to the document.</ins>
+            </p>
+        </section>
+        <br />
+        <section style="background-color: #F2F2F2">
+            <h1 class="header-secondary header-medium">
+                Underlined text
+            </h1>
+            <p class="text-primary">
+                <u>This line of text will render as underlined</u>
+            </p>
+        </section>
+        <br />
+        <section style="background-color: #F2F2F2">
+            <h1 class="header-secondary header-medium">
+                Small text
+            </h1>
+            <p class="text-primary">
+                <small>This line of text is meant to be treated as fine print.</small>
+            </p>
+        </section>
+        <br />
+        <section style="background-color: #F2F2F2">
+            <h1 class="header-secondary header-medium">
+                Bold
+            </h1>
+            <p class="text-primary">
+                The following snippet of text is <b>rendered as bold text.</b>
+            </p>
+        </section>
+        <br />
+        <section style="background-color: #F2F2F2">
+            <h1 class="header-secondary header-medium">
+                Italics
+            </h1>
+            <p class="text-primary">
+                <i>rendered as italicized text</i>
+            </p>
+        </section>
+        <br />
+        <section style="background-color: #F2F2F2">
+            <h1 class="header-secondary header-medium">
+                Alignment Classes
+            </h1>
+            <p class="text-left">Left aligned text.</p>
+            <p class="text-center">Center aligned text.</p>
+            <p class="text-right">Right aligned text.</p>
+            <p class="text-justify">Justified text.</p>
+            <p class="text-nowrap">No wrap text.</p>
+        </section>
+        <br />
+        <section style="background-color: #F2F2F2">
+            <h1 class="header-secondary header-medium">
+                Transformation classes
+            </h1>
+            <p class="text-lowercase">Lowercased text.</p>
+            <p class="text-uppercase">Uppercased text.</p>
+            <p class="text-capitalize">Capitalized text.</p>
+        </section>
+        <br />
+        <section style="background-color: #F2F2F2; text-align: center">
+            <h1 class="header-main header-large">
+                Lists
+            </h1>
+            <h2 class="header-secondary header-medium">
+                Unordered
+            </h2>
+            <ul>
+                <li>@Html.Ipsum().Words(5)</li>
+                <li>@Html.Ipsum().Words(5)</li>
+                <li>@Html.Ipsum().Words(5)</li>
+                <li>
+                    @Html.Ipsum().Words(5)
+                    <ul>
+                        <li>@Html.Ipsum().Words(5)</li>
+                        <li>@Html.Ipsum().Words(5)</li>
+                        <li>@Html.Ipsum().Words(5)</li>
+                    </ul>
+                </li>
+                <li>@Html.Ipsum().Words(5)</li>
+                <li>@Html.Ipsum().Words(5)</li>
+                <li>@Html.Ipsum().Words(5)</li>
+            </ul>
+            <br />
+            <br />
+            <h2 class="header-secondary header-medium">
+                Ordered
+            </h2>
+            <ol>
+                <li>@Html.Ipsum().Words(5)</li>
+                <li>@Html.Ipsum().Words(5)</li>
+                <li>@Html.Ipsum().Words(5)</li>
+                <li>
+                    @Html.Ipsum().Words(5)
+                    <ol>
+                        <li>@Html.Ipsum().Words(5)</li>
+                        <li>@Html.Ipsum().Words(5)</li>
+                        <li>@Html.Ipsum().Words(5)</li>
+                    </ol>
+                </li>
+                <li>@Html.Ipsum().Words(5)</li>
+                <li>@Html.Ipsum().Words(5)</li>
+                <li>@Html.Ipsum().Words(5)</li>
+            </ol>
+            <br />
+            <br />
+            <h2 class="header-secondary header-medium">
+                Unstyled
+            </h2>
+            <ul class="list-unstyled">
+                <li>@Html.Ipsum().Words(5)</li>
+                <li>@Html.Ipsum().Words(5)</li>
+                <li>@Html.Ipsum().Words(5)</li>
+                <li>
+                    @Html.Ipsum().Words(5)
+                    <ul>
+                        <li>@Html.Ipsum().Words(5)</li>
+                        <li>@Html.Ipsum().Words(5)</li>
+                        <li>@Html.Ipsum().Words(5)</li>
+                    </ul>
+                </li>
+                <li>@Html.Ipsum().Words(5)</li>
+                <li>@Html.Ipsum().Words(5)</li>
+                <li>@Html.Ipsum().Words(5)</li>
+            </ul>
+            <br />
+            <br />
+            <h2 class="header-secondary header-medium">
+                List Inline
+            </h2>
+            <ul class="list-inline">
+                <li>@Html.Ipsum().Words(5)</li>
+                <li>@Html.Ipsum().Words(5)</li>
+                <li>@Html.Ipsum().Words(5)</li>
+            </ul>
+        </section>
+        <br />
+        <section style="background-color: #F2F2F2">
+            <h1 class="header-main header-large">
+                Canvas Gradient
+            </h1>
+            <br />
+            <canvas id="canvasColorDodge" height="300" width="600"></canvas>
+            <script>
+                var utils = {};
+
+                utils.colorToRGB = function (color, alpha) {
+                    /// <summary>
+                    /// Converts a Hex color to an RGB or RGBA color.
+                    /// </summary>
+                    /// <param name="color" type="Hex">Color to be converted</param>
+                    /// <param name="alpha" type="Double">[Optional] Alpha Channel</param>
+                    /// <returns>RGB/RBGA string</returns>
+                    // If string format, convert to a Hex
+                    if (typeof color === 'string' && color[0] === '#') {
+                        color = window.parseInt(color.slice(1), 16);
+                    }
+                    alpha = (alpha === undefined) ? 1 : alpha;
+
+                    // Extract component values
+                    var r = color >> 16 & 0xff;
+                    var g = color >> 8 & 0xff;
+                    var b = color & 0xff;
+                    var a = (alpha < 0) ? 0 : ((alpha > 1) ? 1 : alpha); // Check Range
+
+                    // Use 'rgba' if needed
+                    if (a === 1) {
+                        return 'rgb(' + r + ',' + g + ',' + b + ')';
+                    } else {
+                        return 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';
+                    }
+                };
+
+                var canvas = document.getElementById('canvasColorDodge');
+                var context = canvas.getContext('2d');
+
+                var bgGradient = context.createLinearGradient(canvas.width, 0, 0, canvas.height);
+
+                bgGradient.addColorStop(0, 'rgba(27, 218, 235, 0.4)');
+                bgGradient.addColorStop(0.74, 'rgba(155, 59, 129, 0.5)');
+                bgGradient.addColorStop(1, 'rgba(210, 126, 52, 0.5)');
+
+                context.fillStyle = bgGradient;
+                context.fillRect(0, 0, canvas.width, canvas.height);
+
+                context.globalCompositeOperation = 'lighter';
+
+                context.lineWidth = 1;
+                context.strokeStyle = utils.colorToRGB('#FFFFFF', 0.9);
+                context.fillStyle = utils.colorToRGB('#FFFFFF', 0.5);
+                context.beginPath();
+                context.arc(100, 100, 50, 0, (Math.PI * 2), true);
+                context.closePath();
+
+                context.fill();
+                context.stroke();
+            </script>
+        </section>
+    </article>
+</body>
+</html>

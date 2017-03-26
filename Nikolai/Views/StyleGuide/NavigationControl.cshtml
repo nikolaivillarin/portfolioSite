@@ -1,0 +1,293 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Navigation Control</title>
+    @Styles.Render("~/Content/Styles")
+    <meta name="description" content="Style guide for my website's single page navigation control" />
+</head>
+<body style="background-color: #F2F2F2">
+    <article>
+        <h1 class="header-main header-large text-center">Navigation Elements</h1>
+        <br />
+        <br />
+        <section>
+            <h1 class="header-secondary header-medium">Scroll Indicator</h1>
+            <br />
+            <div class="scroll-indicator scroll-indicator--dark">
+                <span>Scroll</span>
+                <span class="scroll-indicator__line"></span>
+                <span class="scroll-indicator__circle"></span>
+            </div>
+        </section>
+        <br />
+        <section>
+            <h1 class="header-secondary header-medium">More Info Indicator</h1>
+            <br />
+            <div class="moreInfo-indicator moreInfo-indicator--dark">
+                <span class="moreInfo-indicator__line"></span>
+                <span class="moreInfo-indicator__circle"></span>
+                <span>More Info</span>
+            </div>
+        </section>
+        <br />
+        <section>
+            <h1 class="header-secondary header-medium">Hamburger Button</h1>
+            <br />
+            <a href="#" class="button-hamburger cf">
+                <span class="button-hamburger__line"></span>
+                <span class="button-hamburger__line"></span>
+                <span class="button-hamburger__line"></span>
+            </a>
+        </section>
+        <br />
+        <section style="background-color: #333; padding: 50px 0" class="button-container-viewMore">
+            <h1 class="header-secondary--onDark header-medium">View More Button</h1>
+            <br />
+            <div class="button-viewMore">
+                <span class="button-viewMore__separator"></span>
+                <a href="#" class="button-viewMore__link">View</a>
+            </div>
+        </section>
+        <br />
+        <section>
+            <h1 class="header-secondary header-medium">Navigation Icon - Home</h1>
+            <br />
+            <div id="pnlHome" class="nav__itemContainer cf" style="margin-left: 10px">
+                <div class="nav__item">
+                    <span class="nav-item__circle"></span>
+                    <span class="nav-item__icon icon icon--home"></span>
+                    <span class="nav-item__dummyLink">Home</span>
+                </div>
+                <br />
+                <span class="nav__link">Home</span>
+            </div>
+            <br />
+            <button id="btnHomeDefaultState" class="btn btn-default">Default State</button>
+            <button id="btnHomeExpandedState" class="btn btn-default">Expanded State</button>
+        </section>
+        <br />
+        <section>
+            <h1 class="header-secondary header-medium">Navigation Icon - About</h1>
+            <br />
+            <div id="pnlAbout" class="nav__itemContainer cf" style="margin-left: 10px">
+                <div class="nav__item">
+                    <span class="nav-item__circle"></span>
+                    <span class="nav-item__icon icon icon--about"></span>
+                    <span class="nav-item__dummyLink">About</span>
+                </div>
+                <br />
+                <span class="nav__link">About</span>
+            </div>
+            <br />
+            <button id="btnAboutDefaultState" class="btn btn-default">Default State</button>
+            <button id="btnAboutExpandedState" class="btn btn-default">Expanded State</button>
+        </section>
+        <br />
+        <section>
+            <h1 class="header-secondary header-medium">Navigation Icon - Contact</h1>
+            <br />
+            <div id="pnlContact" class="nav__itemContainer cf" style="margin-left: 10px">
+                <div class="nav__item">
+                    <span class="nav-item__circle"></span>
+                    <span class="nav-item__icon icon icon--contact"></span>
+                    <span class="nav-item__dummyLink">Contact</span>
+                </div>
+                <br />
+                <span class="nav__link">Contact</span>
+            </div>
+            <br />
+            <button id="btnContactDefaultState" class="btn btn-default">Default State</button>
+            <button id="btnContactExpandedState" class="btn btn-default">Expanded State</button>
+        </section>
+        <br />
+        <section>
+            <h1 class="header-secondary header-medium">Navigation Icon - Work</h1>
+            <br />
+            <div id="pnlWork" class="nav__itemContainer cf" style="margin-left: 10px">
+                <div class="nav__item">
+                    <span class="nav-item__circle"></span>
+                    <span class="nav-item__icon icon icon--work"></span>
+                    <span class="nav-item__dummyLink">Work</span>
+                </div>
+                <br />
+                <span class="nav__link">Work</span>
+            </div>
+            <br />
+            <button id="btnWorkDefaultState" class="btn btn-default">Default State</button>
+            <button id="btnWorkExpandedState" class="btn btn-default">Expanded State</button>
+        </section>
+        <br />
+        <section>
+            <h1 class="header-secondary header-medium">Navigation Icon Expanded With Dial</h1>
+            <br />
+            <div id="navItemPlaceholder" class="nav__itemContainer nav__itemContainer--selected cf" style="margin-left: 10px">
+                <div class="nav__item">
+                    <span class="nav-item__circle"></span>
+                    <span class="nav-item__icon icon icon--work"></span>
+                    <span class="nav-item__dummyLink">Work</span>
+                </div>
+                <br />
+                <span class="nav__link">Work</span>
+            </div>
+            <div id="dialForPlaceholder" class="nvDial nvDial--draggable cf">
+                <div class="nvDial__spinner-container--outer">
+                    <div class="nvDial__spinner--outer">
+                        <div class="nvDial__pointer--outer"></div>
+                    </div>
+                </div>
+                <div class="nvDial__spinner-container--middle">
+                    <div class="nvDial__spinner--middle">
+                        <div class="nvDial__pointer--middle"></div>
+                    </div>
+                </div>
+                <div class="nvDial__spinner-container--inner">
+                    <div class="nvDial__spinner--inner">
+                        <div class="nvDial__pointer--inner"></div>
+                    </div>
+                </div>
+                <div class="nvDial__button">
+                    <div class="nvDial__button-light">
+                        <div class="nvDial__button-logo">
+                            <span class="logo"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br />
+        </section>
+        <br />
+        <section>
+            <h1 class="header-secondary header-medium">Navigation Bar</h1>
+            <br />
+            <div data-js-hook="nvDial" class="nvDial nvDial--draggable cf">
+                <div class="nvDial__spinner-container--outer">
+                    <div class="nvDial__spinner--outer">
+                        <div class="nvDial__pointer--outer"></div>
+                    </div>
+                </div>
+                <div class="nvDial__spinner-container--middle">
+                    <div class="nvDial__spinner--middle">
+                        <div class="nvDial__pointer--middle"></div>
+                    </div>
+                </div>
+                <div class="nvDial__spinner-container--inner">
+                    <div class="nvDial__spinner--inner">
+                        <div class="nvDial__pointer--inner"></div>
+                    </div>
+                </div>
+                <div class="nvDial__button">
+                    <div class="nvDial__button-light">
+                        <div class="nvDial__button-logo">
+                            <span class="logo"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="nav-container" style="padding-top: 20px">
+                <ul id="pnlNavBar" class="list-unstyled nav-bar cf">
+                    <li class="nav-bar__startLine"></li>
+                    <li data-js-hook="linkBtn" class="nav__itemContainer nav-bar__item cf">
+                        <div class="nav__item">
+                            <span class="nav-item__circle"></span>
+                            <span class="nav-item__icon icon icon--home"></span>
+                            <span class="nav-item__dummyLink">Home</span>
+                        </div>
+                        <br />
+                        <a class="nav__link" href="">Home</a>
+                    </li>
+                    <li class="nav-bar__fillerLine"></li>
+                    <li data-js-hook="linkBtn" class="nav__itemContainer nav-bar__item cf">
+                        <div class="nav__item">
+                            <span class="nav-item__circle"></span>
+                            <span class="nav-item__icon icon icon--work"></span>
+                            <span class="nav-item__dummyLink">Work</span>
+                        </div>
+                        <br />
+                        <a class="nav__link" href="">Work</a>
+                    </li>
+                    <li class="nav-bar__fillerLine"></li>
+                    <li data-js-hook="linkBtn" class="nav__itemContainer nav-bar__item cf">
+                        <div class="nav__item">
+                            <span class="nav-item__circle"></span>
+                            <span class="nav-item__icon icon icon--about"></span>
+                            <span class="nav-item__dummyLink">About</span>
+                        </div>
+                        <br />
+                        <a class="nav__link" href="">About</a>
+                    </li>
+                    <li class="nav-bar__fillerLine"></li>
+                    <li data-js-hook="linkBtn"
+                        class="nav__itemContainer nav__itemContainer--lastItem nav-bar__item cf">
+                        <div class="nav__item">
+                            <span class="nav-item__circle"></span>
+                            <span class="nav-item__icon icon icon--contact"></span>
+                            <span class="nav-item__dummyLink">Contact</span>
+                        </div>
+                        <br />
+                        <a class="nav__link" href="">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </section>
+    </article>
+
+    @Scripts.Render("~/Content/libraries")
+    @Scripts.Render("~/Content/scripts")
+    <script>
+        $(document).ready(function ($) {
+            // Home
+            $('#btnHomeDefaultState').click(function () {
+                $('#pnlHome').removeClass('nav__itemContainer--selected');
+            });
+            $('#btnHomeExpandedState').click(function () {
+                $('#pnlHome').addClass('nav__itemContainer--selected');
+            });
+
+            // About
+            $('#btnAboutDefaultState').click(function () {
+                $('#pnlAbout').removeClass('nav__itemContainer--selected');
+            });
+            $('#btnAboutExpandedState').click(function () {
+                $('#pnlAbout').addClass('nav__itemContainer--selected');
+            });
+
+            // Contact
+            $('#btnContactDefaultState').click(function () {
+                $('#pnlContact').removeClass('nav__itemContainer--selected');
+            });
+            $('#btnContactExpandedState').click(function () {
+                $('#pnlContact').addClass('nav__itemContainer--selected');
+            });
+
+            // Work
+            $('#btnWorkDefaultState').click(function () {
+                $('#pnlWork').removeClass('nav__itemContainer--selected');
+            });
+            $('#btnWorkExpandedState').click(function () {
+                $('#pnlWork').addClass('nav__itemContainer--selected');
+            });
+
+            // Initialize Navigation Control
+            var nvNavBar = new NVNavBar('pnlNavBar');
+
+            // Test for positioning logic
+            var $placeholder = $('#navItemPlaceholder .nav-item__circle');
+            var $dial = $('#dialForPlaceholder');
+
+            var placeholderPos = $placeholder.offset();
+
+            $dial.css({
+                left: placeholderPos.left - 32 // Dial offset + border
+                , top: placeholderPos.top - 32 // Dial offset + border
+            });
+        });
+    </script>
+</body>
+</html>

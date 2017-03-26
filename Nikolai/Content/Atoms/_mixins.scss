@@ -1,0 +1,89 @@
+﻿@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin animation($animate...) {
+    $max: length($animate);
+    $animations: '';
+
+    @for $i from 1 through $max {
+        $animations: #{$animations + nth($animate, $i)};
+
+        @if $i < $max {
+            $animations: #{$animations + ", "};
+        }
+    }
+
+    -moz-animation: $animations;
+    -o-animation: $animations;
+    -webkit-animation: $animations;
+    animation: $animations;
+}
+
+@mixin transform($transform...) {
+    $max: length($transform);
+    $transforms: '';
+
+    @for $i from 1 through $max {
+        $transforms: #{$transforms + nth($transform, $i)};
+
+        @if $i < $max {
+            $transforms: #{$transforms + ", "};
+        }
+    }
+
+    -moz-transform: $transforms;
+    -ms-transform: $transforms;
+    -o-transform: $transforms;
+    -webkit-transform: $transforms;
+    transform: $transforms;
+}
+
+@mixin transition($transition...) {
+    $max: length($transition);
+    $transitions: '';
+
+    @for $i from 1 through $max {
+        $transitions: #{$transitions + nth($transition, $i)};
+
+        @if $i < $max {
+            $transitions: #{$transitions + ", "};
+        }
+    }
+
+    -moz-transition: $transitions;
+    -o-transition: $transitions;
+    -webkit-transition: $transitions;
+    transition: $transitions;
+}
+
+@mixin transition-delay($delay) {
+    -moz-transition-delay: $delay;
+    -o-transition-delay: $delay;
+    -webkit-transition-delay: $delay;
+    transition-delay: $delay;
+}
+
+@mixin transition-duration($duration...) {
+    -moz-transition-duration: $duration;
+    -o-transition-duration: $duration;
+    -webkit-transition-duration: $duration;
+    transition-duration: $duration;
+}
+
+@mixin box-sizing($property) {
+    -moz-box-sizing: $property;
+    -webkit-box-sizing: $property;
+    box-sizing: $property;
+}

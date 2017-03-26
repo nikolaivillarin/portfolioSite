@@ -1,0 +1,31 @@
+﻿/*------------------------------------*\
+    Summary: 
+    Styles for the expand control which sets
+    the transitions when the user goes from page to page
+\*------------------------------------*/
+@import '../Atoms/_boxes';
+@import '../Atoms/_mixins';
+
+
+/*------------------------------------*\
+    Styles
+\*------------------------------------*/
+.pages-container {
+    height: 100vh;
+    width: 100vw;
+}
+
+.expand-container {
+    overflow: hidden;
+
+    @extend %box--fullPage;
+}
+
+.expand-contianer__content {
+    height: 100vh;
+    width: 100vw;
+}
+
+.expand-contianer__content--spacious {
+    @extend %box--spacious;
+}

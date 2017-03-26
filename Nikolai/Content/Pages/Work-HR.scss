@@ -1,0 +1,184 @@
+﻿@import '../Atoms/_boxes';
+@import '../Atoms/_mixins';
+@import '../Atoms/_transitions';
+@import '../Breakpoint/_breakpoint';
+@import '../Atoms/_breakpoints';
+
+.work-imgTile--hr {
+    background-image: url(../ImagesWork/hr-tile.jpg);
+}
+
+.work-heroImage--hr {
+    background-image: url(../ImagesWork/hr-heroImage.jpg);
+    background-position: top center;
+}
+
+.hr-header {
+    padding: 0.4em 0.5em 0.1em 0.5em;
+
+    @include breakpoint(max-width $breakpoint-netbook) {
+        max-width: 6em;
+    }
+
+    @extend %slide-top--initialState;
+    @include transition-delay(0);
+}
+
+.hr-header.in-view {
+    @extend %slide-top--endState;
+    @include transition-delay(0.5s);
+}
+
+.hr-subHeader {
+    padding: 0 2em;
+
+    @include breakpoint(max-width $breakpoint-netbook) {
+        display: none;
+    }
+
+    @extend %slide-bottom--initialState;
+    @include transition-delay(0);
+}
+
+.hr-subHeader.in-view {
+    @extend %slide-bottom--endState;
+    @include transition-delay(0.5s);
+}
+
+.hr__screensContainer {
+    background-color: #cfcfcf;
+    background: linear-gradient(to bottom right,#cfcfcf, #ffffff);
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.hr__screensContainer-img {
+    position: absolute;
+
+    &--caption {
+        left: 46vw;
+        text-align: center;
+        top: 4vh;
+        width: 20vw;
+    }
+
+    &--image1 {
+        left: -5vw;
+        top: -4vh;
+        width: 37vw;
+
+        @extend %slide-right--initialState;
+        @include transition-delay(0);
+    }
+
+    &--image1.in-view {
+        @extend %slide-right--endState;
+        @include transition-delay(0.5s);
+    }
+
+    &--image2 {
+        left: -13vw;
+        top: 35vh;
+        width: 44vw;
+
+        @extend %slide-right--initialState;
+        @include transition-delay(0);
+    }
+
+    &--image2.in-view {
+        @extend %slide-right--endState;
+        @include transition-delay(0.5s);
+    }
+
+    &--image3 {
+        left: 14vw;
+        top: 16vh;
+        width: 41vw;
+
+        @extend %slide-right--initialState;
+        @include transition-delay(0);
+    }
+
+    &--image3.in-view {
+        @extend %slide-right--endState;
+        @include transition-delay(0.5s);
+    }
+
+    &--image4 {
+        left: 10vw;
+        top: 63vh;
+        width: 43vw;
+
+        @extend %slide-right--initialState;
+        @include transition-delay(0);
+    }
+
+    &--image4.in-view {
+        @extend %slide-right--endState;
+        @include transition-delay(0.5s);
+    }
+
+    &--image5 {
+        left: 58vw;
+        top: 63vh;
+        width: 44vw;
+
+        @extend %slide-right--initialState;
+        @include transition-delay(0);
+    }
+
+    &--image5.in-view {
+        @extend %slide-right--endState;
+        @include transition-delay(0.5s);
+    }
+
+    &--image6 {
+        left: 36vw;
+        top: 39vh;
+        width: 42vw;
+
+        @extend %slide-right--initialState;
+        @include transition-delay(0);
+    }
+
+    &--image6.in-view {
+        @extend %slide-right--endState;
+        @include transition-delay(0.5s);
+    }
+
+    &--image7 {
+        left: 61vw;
+        top: -34vh;
+        width: 53vw;
+
+        @extend %slide-right--initialState;
+        @include transition-delay(0);
+    }
+
+    &--image7.in-view {
+        @extend %slide-right--endState;
+        @include transition-delay(0.5s);
+    }
+}
+
+.hr__summaryContainer {
+    height: 100%;
+}
+
+.hr__summaryContainer-content {
+    text-align: center;
+
+    @extend %box--spacious;
+}
+
+.hr__summaryText {
+    @extend %slide-top--initialState;
+    @include transition-delay(0);
+}
+
+.hr__summaryText.in-view {
+    @extend %slide-top--endState;
+    @include transition-delay(1s);
+}

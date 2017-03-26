@@ -1,0 +1,272 @@
+﻿@import '../Atoms/_colors';
+@import '../Atoms/_mixins';
+@import '../Atoms/_boxes';
+
+/*------------------------------------*\
+    Variables
+\*------------------------------------*/
+$nav-item--diameter: 40px;
+$nav-icon--diameter: 25px; // This value must match was is specified in the icons
+$nav-label--spacing: 25px; // Spacing for the selected nav label
+$nav-itemContainer--width: $nav-item--diameter * 2;
+$nav-itemContainer--height: $nav-item--diameter * 2;
+$filler-line--width: $nav-item--diameter / 2;
+$total-pages: 4;
+
+/*------------------------------------*\
+    Styles
+\*------------------------------------*/
+%__centerLine {
+    background-color: #000;
+    box-shadow: $color-smoothing--light 0 1px;
+    content: "";
+    display: inline-block;
+    height: 1px;
+}
+
+%__centerLine--onDark {
+    background-color: #FFF;
+    box-shadow: none;
+    content: "";
+    display: inline-block;
+    height: 1px;
+}
+
+%font-smoothing {
+    text-shadow: 0 1px 1px $color-smoothing--light;
+}
+
+.nav__itemContainer {
+    height: $nav-itemContainer--height;
+    text-align: center;
+    position: relative;
+    width: $nav-itemContainer--width;
+
+    &::before {
+        left: 0;
+        opacity: 1;
+        position: absolute;
+        top: $nav-item--diameter / 2;
+        width: $filler-line--width;
+
+        @extend %__centerLine;
+        @include transition(opacity 0.3s ease-out);
+    }
+
+    &::after {
+        opacity: 1;
+        position: absolute;
+        right: 0;
+        top: $nav-item--diameter / 2;
+        width: $filler-line--width;
+
+        @extend %__centerLine;
+        @include transition(opacity 0.3s ease-out);
+    }
+}
+
+.nav__item {
+    cursor: pointer;
+    display: inline-block;
+    height: $nav-item--diameter;
+    position: relative;
+    text-align: center;
+    width: $nav-item--diameter;
+}
+
+.nav-item__circle {
+    border-radius: 50%;
+    border: 1px solid #000;
+    box-shadow: $color-smoothing--light 0 1px, $color-smoothing--light 0 1px inset;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    @extend %box-level--back;
+    @include transition(transform 0.5s ease-out);
+}
+
+.nav-item__icon {
+    left: $nav-item--diameter/2 -  $nav-icon--diameter/2;
+    opacity: 1;
+    position: absolute;
+    top: $nav-item--diameter/2 -  $nav-icon--diameter/2;
+
+    @include transition(opacity 0.3s ease-out);
+}
+
+.nav-item__dummyLink {
+    font-size: 18px;
+    left: -$nav-item--diameter / 2;
+    line-height: 10px;
+    color: $color-font--primary;
+    opacity: 0;
+    position: absolute;
+    top: 14px;
+    width: $nav-item--diameter * 2;
+
+    @extend %font-smoothing;
+    @include transition(0.3s opacity ease-in);
+}
+
+.nav__link {
+    color: $color-font--primary;
+    opacity: 1;
+
+    @extend %font-smoothing;
+    @include transition(opacity 0.3s ease-in);
+}
+
+.nav__itemContainer--onDark {
+    .nav__itemContainer::before {
+        @extend %__centerLine--onDark;
+    }
+
+    .nav__itemContainer::after {
+        @extend %__centerLine--onDark;
+    }
+
+    .nav__item {
+        .nav-item__dummyLink {
+            color: $color-font--primaryOnDark;
+            text-shadow: none;
+        }
+
+        .nav-item__circle {
+            border: 1px solid #FFF;
+            box-shadow: none;
+        }
+    }
+
+    .nav__link {
+        color: $color-font--primaryOnDark;
+        text-shadow: none;
+    }
+}
+
+.nav__itemContainer--expanded {
+    &::before {
+        opacity: 0;
+    }
+
+    &::after {
+        opacity: 0;
+    }
+
+    .nav__item {
+        .nav-item__icon {
+            opacity: 0;
+        }
+
+        .nav-item__dummyLink {
+            opacity: 1;
+        }
+
+        .nav-item__circle {
+            box-shadow: none;
+
+            @include transform(scale(2));
+        }
+    }
+
+    .nav__link {
+        opacity: 0;
+    }
+}
+
+.nav__itemContainer--selected {
+    @extend .nav__itemContainer--expanded;
+
+    .nav__item {
+        .nav-item__dummyLink {
+            opacity: 0;
+        }
+    }
+
+    .nav__link {
+        display: inline-block;
+        margin-top: $nav-label--spacing;
+        opacity: 1;
+    }
+}
+
+.nav__itemContainer--lastItem {
+    &::after {
+        opacity: 0;
+    }
+}
+
+.nav-container {
+    height: 130px; // Used for positioning when nav control is hidden
+    overflow: hidden;
+    width: 100%;
+}
+
+.nav-container--footer {
+    bottom: 0;
+    position: absolute;
+
+    @extend %box-level--top;
+}
+
+.nav-bar {
+    display: block;
+    list-style: none;
+    padding: #{$nav-itemContainer--height / 2} 0 1em 0;
+    width: calc(100% * #{$total-pages});
+
+    @include transition(all 0.5s cubic-bezier(0.6, -0.28, 0.735, 0.045)); // easeInBack
+
+    &__item {
+        float: left;
+    }
+
+    &__startLine {
+        float: left;
+        margin-top: $nav-item--diameter / 2;
+        width: calc(100%/#{$total-pages}/2 - #{$nav-itemContainer--width / 2});
+
+        @extend %__centerLine;
+    }
+
+    &__fillerLine {
+        float: left;
+        margin-top: $nav-item--diameter / 2;
+        width: calc(100%/#{$total-pages}/2 - #{($nav-itemContainer--width / 2) + $nav-itemContainer--width});
+
+        @extend %__centerLine;
+    }
+}
+
+.nav-bar--onDark {
+    .nav-bar::before {
+        @extend %__centerLine--onDark;
+    }
+
+    .nav-bar__startLine {
+        @extend %__centerLine--onDark;
+    }
+
+    .nav-bar__fillerLine {
+        @extend %__centerLine--onDark;
+    }
+}
+
+.nav-bar--page1 {
+    @include transform(translateX(0));
+}
+
+.nav-bar--page2 {
+    @include transform(translateX(100%/$total-pages/2 * -1) translateX(#{($nav-itemContainer--width / 2)}));
+}
+
+.nav-bar--page3 {
+    @include transform(translateX((100%/$total-pages/2) * -2) translateX(($nav-itemContainer--width / 2 * 2)));
+}
+
+.nav-bar--page4 {
+    @include transform(translateX((100%/$total-pages/2) * -3) translateX(($nav-itemContainer--width / 2 * 3)));
+}

@@ -1,0 +1,257 @@
+﻿@import '../Atoms/_boxes';
+@import '../Atoms/_mixins';
+@import '../Atoms/_transitions';
+@import '../Breakpoint/_breakpoint';
+@import '../Atoms/_breakpoints';
+
+.work-imgTile--rateQuote {
+    background-image: url(../ImagesWork/rateQuote-tile.jpg);
+}
+
+.work-heroImage--rateQuote {
+    background-image: url(../ImagesWork/rateQuote-heroImage.jpg);
+    padding: 20px;
+    text-align: center;
+}
+
+.rateQuote-header {
+    > span {
+        border: 1px solid #FFF;
+        background-color: rgba(255, 255, 255, 0.5);
+        display: inline-block;
+        padding: 0.1em 1em;
+    }
+
+    @extend %slide-top--initialState;
+}
+
+.rateQuote-header.in-view {
+    @extend %slide-top--endState;
+}
+
+.rateQuote__content {
+    height: 100%;
+    position: relative;
+}
+
+.rateQuote__header {
+    @extend %slide-top--initialState;
+}
+
+.rateQuote__header.in-view {
+    @extend %slide-top--endState;
+}
+
+.rateQuote__screensContainer {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+
+    @include breakpoint(max-width $breakpoint-mobileBig) {
+        height: 500px;
+    }
+
+    @include breakpoint($breakpoint-mobileBig $breakpoint-phablet) {
+        height: 700px;
+    }
+
+    @include breakpoint($breakpoint-phablet $breakpoint-tablet) {
+        height: 900px;
+    }
+
+    @include breakpoint(min-width $breakpoint-tablet) {
+        height: 100%;
+        min-height: 800px;
+        width: 65%;
+    }
+}
+
+.rateQuote__screensContainer--top {
+    background-color: #d9d9d9;
+    background: url(../ImagesWork/ratequote-bgImg1.png) no-repeat transparent 20% 50%;
+    float: right;
+
+    .rateQuote__imgContainer--container1 {
+        @extend %slide-top--initialState;
+        @include transition-delay(0);
+    }
+
+    .rateQuote__imgContainer--container2 {
+        @extend %slide-top--initialState;
+        @include transition-delay(0);
+    }
+}
+
+.rateQuote__screensContainer--top.in-view {
+    .rateQuote__imgContainer--container1 {
+        @extend %slide-top--endState;
+        @include transition-delay(2s);
+    }
+
+    .rateQuote__imgContainer--container2 {
+        @extend %slide-top--endState;
+        @include transition-delay(1s);
+    }
+}
+
+.rateQuote__screensContainer--bottom {
+    background-color: #184d82;
+    background: linear-gradient(to bottom, #1b5692, #164778);
+    float: left;
+
+    .rateQuote__imgContainer--container1 {
+        @extend %slide-top--initialState;
+        @include transition-delay(0);
+    }
+
+    .rateQuote__imgContainer--container2 {
+        @extend %slide-top--initialState;
+        @include transition-delay(0);
+    }
+}
+
+.rateQuote__screensContainer--bottom.in-view {
+    .rateQuote__imgContainer--container1 {
+        @extend %slide-top--endState;
+        @include transition-delay(2s);
+    }
+
+    .rateQuote__imgContainer--container2 {
+        @extend %slide-top--endState;
+        @include transition-delay(1s);
+    }
+}
+
+.rateQuote__screen {
+    width: 100%;
+}
+
+.rateQuote__imgContainer  {
+    position: absolute;
+
+    &--container1 {
+        @include breakpoint(max-width $breakpoint-mobile) {
+            left: 18px;
+            top: 150px;
+            width: 135vw;
+        }
+
+        @include breakpoint($breakpoint-mobile $breakpoint-mobileBig) {
+            left: 18px;
+            top: 150px;
+            width: 135vw;
+        }
+
+        @include breakpoint($breakpoint-mobileBig $breakpoint-phablet) {
+            left: 18px;
+            top: 200px;
+            width: 135vw;
+        }
+
+        @include breakpoint($breakpoint-phablet $breakpoint-phabletBig) {
+            left: 18px;
+            top: 230px;
+            width: 135vw;
+        }
+
+        @include breakpoint($breakpoint-phabletBig $breakpoint-tablet) {
+            left: 18px;
+            top: 230px;
+            width: 135vw;
+        }
+
+        @include breakpoint($breakpoint-tablet $breakpoint-netbook) {
+            left: 18px;
+            top: 230px;
+            width: 95vw;
+        }
+
+        @include breakpoint(min-width $breakpoint-netbook) {
+            left: 18px;
+            top: 230px;
+            width: 57vw;
+        }
+
+        @include breakpoint((min-height $breakpoint-netbook) (orientation portrait)) {
+            left: 68px;
+            top: 480px;
+            width: 97vw;
+        }
+    }
+
+    &--container2 {
+        @include breakpoint(max-width $breakpoint-mobile) {
+            left: 8px;
+            top: 0;
+            width: 140vw;
+        }
+
+        @include breakpoint($breakpoint-mobile $breakpoint-mobileBig) {
+            left: 8px;
+            top: 0;
+            width: 140vw;
+        }
+
+        @include breakpoint($breakpoint-mobileBig $breakpoint-phablet) {
+            left: 8px;
+            top: 0;
+            width: 140vw;
+        }
+
+        @include breakpoint($breakpoint-phablet $breakpoint-phabletBig) {
+            left: 8px;
+            top: 0;
+            width: 140vw;
+        }
+
+        @include breakpoint($breakpoint-phabletBig $breakpoint-tablet) {
+            left: 8px;
+            top: 0;
+            width: 140vw;
+        }
+
+        @include breakpoint($breakpoint-tablet $breakpoint-netbook) {
+            left: 8px;
+            top: 0;
+            width: 100vw;
+        }
+
+        @include breakpoint(min-width $breakpoint-netbook) {
+            left: 8px;
+            top: 0;
+            width: 60vw;
+        }
+
+        @include breakpoint((min-height $breakpoint-netbook) (orientation portrait)) {
+            left: 8px;
+            top: 70px;
+            width: 100vw;
+        }
+    }
+}
+
+.rateQuote__overviewContainer {
+    float: right;
+    width: 100%;
+
+    @extend %box--spacious;
+
+    @include breakpoint(min-width $breakpoint-tablet) {
+        font-size: 0.8em;
+        height: 100%;
+        min-height: 800px;
+        width: 35%;
+    }
+
+    @include breakpoint((min-height $breakpoint-netbook) (orientation portrait)) {
+        font-size: 1em;
+    }
+}
+
+.rateQuote__overviewContent {
+    @extend %slide-bottom--initialState;
+}
+
+.rateQuote__overviewContent.in-view {
+    @extend %slide-bottom--endState;
+}

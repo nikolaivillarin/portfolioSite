@@ -1,0 +1,151 @@
+﻿@import '../Atoms/_boxes';
+@import '../Atoms/_mixins';
+@import '../Atoms/_transitions';
+@import '../Breakpoint/_breakpoint';
+@import '../Atoms/_breakpoints';
+
+$breakpoing-minHeight: 400px;
+
+.contact {
+    background: url(../ImagesContact/beachScene.jpg);
+    background-position: left top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.contact__container {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid #FFF;
+    max-width: 700px;
+    overflow: hidden;
+    top: 10vw;
+    width: 100%;
+
+    @extend %box--centerTop;
+
+    @include breakpoint(max-height 460px) {
+        top: 0;
+    }
+}
+
+.contact__content {
+    float: left;
+
+    @extend %box--squished;
+    @include box-sizing(border-box);
+
+    @include breakpoint((max-width $breakpoint-phablet) (max-height $breakpoing-minHeight)) {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+}
+
+.contact__separator {
+    border-top: 2px solid #FFF;
+
+    @include breakpoint(min-width $breakpoint-phablet) {
+        border-top: none;
+        border-left: 1px solid #000;
+    }
+
+    @include breakpoint((max-width $breakpoint-phablet) (max-height $breakpoing-minHeight)) {
+        border-top: none;
+    }
+}
+
+.contact__header {
+    @extend %slide-top--initialState;
+}
+
+.contact__header.in-view {
+    @extend %slide-top--endState;
+}
+
+.contact__summary {
+    width: 100%;
+
+    @include breakpoint(min-width $breakpoint-phablet) {
+        width: 40%;
+    }
+}
+
+.contact__text {
+    @include breakpoint((max-width $breakpoint-phablet) (max-height $breakpoing-minHeight)) {
+        display: none;
+    }
+}
+
+.contact__summary-content {
+    @extend %slide-bottom--initialState;
+}
+
+.contact__summary-content.in-view {
+    @extend %slide-bottom--endState;
+}
+
+.contact__form {
+    width: 100%;
+
+    @include breakpoint(min-width $breakpoint-phablet) {
+        width: 60%;
+    }
+}
+
+.contact__form-content {
+    @include transition-delay(0);
+    @extend %slide-right--initialState;
+}
+
+.contact__form-content.in-view {
+    @include transition-delay(0.3s);
+    @extend %slide-right--endState;
+}
+
+.contact__placeholder {
+    float: right;
+
+    @extend %box--dialPlaceholder;
+}
+
+.contact__name {
+    margin-bottom: 1em;
+
+    @include breakpoint((max-width $breakpoint-phablet) (max-height $breakpoing-minHeight)) {
+        float: left;
+        margin-bottom: 0;
+        margin-right: 70px;
+        width: 100px;
+
+        input {
+            min-width: 100px;
+        }
+    }
+}
+
+.contact__email {
+    margin-bottom: 1em;
+
+    @include breakpoint((max-width $breakpoint-phablet) (max-height $breakpoing-minHeight)) {
+        float: left;
+        margin-bottom: 0;
+        width: 100px;
+
+        input {
+            min-width: 100px;
+        }
+    }
+}
+
+.contact__message {
+    margin-bottom: 1em;
+
+    @include breakpoint((max-width $breakpoint-phablet) (max-height $breakpoing-minHeight)) {
+        clear: both;
+        margin-bottom: 0;
+        margin-top: 1em;
+        width: 100%;
+    }
+}

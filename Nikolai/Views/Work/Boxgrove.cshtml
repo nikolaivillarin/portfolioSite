@@ -1,0 +1,13 @@
+﻿@{
+    ViewBag.Title = "Nikolai Villarin | Work Boxgrove";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section MetaDescription {
+    <meta name="description" content="Nikolai Villarin Web Portfolio, Work, Boxgrove, Work Boxgrove, Boxgrove Cleaners" />
+}
+
+<div id="pnlPages" class="pages-container"
+     data-nv-eagerlyload="\Home\HomePartial, \Work\WorkPartial, \About\AboutPartial, \Contact\ContactPartial">
+    @Html.Partial("_boxgrove")
+</div>

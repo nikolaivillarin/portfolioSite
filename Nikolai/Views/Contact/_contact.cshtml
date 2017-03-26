@@ -1,0 +1,45 @@
+﻿<section id="contact" data-nv-page="true" data-nv-state="send" data-nv-nav-state="previousOnly"
+         data-nv-dial-target="sendBtnPlaceholder" data-nv-theme="dark" class="expand-container">
+    <div class="expand-contianer__content cf">
+        <div data-nv-bgimage="true" class="contact">
+            <section class="contact__container cf">
+                <div class="contact__content contact__summary">
+                    <h1 data-nv-animate="true" class="contact__header header-main header-medium">Contact Me</h1>
+                    <br />
+                    <div class="contact__text">
+                        <p data-nv-animate="true" class="contact__summary-content text-secondary">
+                            I am always open to “interesting” projects, or people who just want to say
+                            hello. So, feel free to send me a message.
+                        </p>
+                        <br />
+                        <p data-nv-animate="true" class="contact__summary-content text-secondary">
+                            If you prefer to contact me directly email me at
+                            <a href="mailto:nikolai.villarin@gmail.com" target="_top" class="link--blue">nikolai.villarin@gmail.com</a>
+                        </p>
+                    </div>
+                </div>
+                <form id="frmContact" action="/Contact/Message" method="post" class="contact__content contact__form contact__separator">
+                    <div data-nv-animate="true" class="contact__form-content cf">
+                        <div class="contact__name">
+                            <label for="Name" class="text-primary">Name:</label><br />
+                            <input id="Name" name="Name" type="text" class="textbox" placeholder="Your Name" />
+                        </div>
+                        <div class="contact__email">
+                            <label for="Email" class="text-primary">Email:</label><br />
+                            <input id="Email" name="Email" type="text" class="textbox" placeholder="Your Email Address" />
+                        </div>
+                        <div class="contact__message">
+                            <label for="Message" class="text-primary">Message:</label><br />
+                            <textarea id="Message" name="Message" class="textbox textbox--full"
+                                      rows="3" placeholder="Your Message to Me"></textarea>
+                        </div>
+                    </div>
+                    <br /><br />
+                    <div id="sendBtnPlaceholder" class="contact__placeholder"></div>
+                </form>
+            </section>
+        </div>
+    </div>
+</section>
+
+@Scripts.Render("~/ViewScripts/contactPage.js")
