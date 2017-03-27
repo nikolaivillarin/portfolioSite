@@ -29,6 +29,11 @@ WorkPage.prototype.Initialize = function () {
     );
 
     $('#work [data-nv-bgimage]').click(this.ItemClick);
+
+    // Global Event Handlers
+    $(window).resize(
+        $.proxy(this.WindowResize, this)
+    );
 };
 
 WorkPage.prototype.ItemClick = function (evt) {
@@ -89,6 +94,16 @@ WorkPage.prototype.OnDialDragged = function (x, y) {
             }
         }
     }
+};
+
+WorkPage.prototype.WindowResize = function () {
+    /// <summary>
+    /// When window is resized the position for the work tiles are off.
+    /// Reposition work items
+    /// </summary>
+    this.$WorkSlider.stop().css('margin-top', '0');
+
+    this.IsAnimating = false;
 };
 
 WorkPage.prototype.NextPage = function () {
