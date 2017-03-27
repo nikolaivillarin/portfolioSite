@@ -20,6 +20,8 @@ namespace Nikolai.Controllers
 
             //emailHelper.Send();
 
+            //throw new Exception("Test Error Handler 2");
+
             return View();
         }
 

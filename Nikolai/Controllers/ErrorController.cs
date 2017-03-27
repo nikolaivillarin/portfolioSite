@@ -31,11 +31,14 @@ namespace Nikolai.Controllers
                     sb.AppendLine();
                 }
                 string errorMessage = sb.ToString();
-                Elmah.ErrorSignal.FromCurrentContext().Raise(new Exception(errorMessage));
+                //Elmah.ErrorSignal.FromCurrentContext().Raise(new Exception(errorMessage));
             }
 
             Response.StatusCode = 500;
             Response.TrySkipIisCustomErrors = true;
+
+            ViewBag.Error = exception.ToString();
+
             return View();
         }
 
@@ -46,7 +49,7 @@ namespace Nikolai.Controllers
             Response.TrySkipIisCustomErrors = true;
 
             var exception = new Exception(string.Format("Page Not Found: {0}", Request.Url));
-            Elmah.ErrorSignal.FromCurrentContext().Raise(exception);
+            //Elmah.ErrorSignal.FromCurrentContext().Raise(exception);
             return View();
         }
 
@@ -65,7 +68,7 @@ namespace Nikolai.Controllers
                         , errorMsg, errorUrl, linenumber)
                     );
 
-                Elmah.ErrorSignal.FromCurrentContext().Raise(jsException);
+                //Elmah.ErrorSignal.FromCurrentContext().Raise(jsException);
             }
         }
     }
