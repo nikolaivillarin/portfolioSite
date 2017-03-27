@@ -129,25 +129,25 @@ $viewMore-animation--easing: cubic-bezier(0.645, 0.045, 0.355, 1);
     .button-viewMore__link {
         @include transition(0.1s opacity);
     }
+}
 
-    &:hover {
-        .button-viewMore:before {
-            @include animation(viewMore-topCircleAnim $viewMore-animation--duration $viewMore-animation--easing forwards);
-        }
+.no-touch .button-container-viewMore:hover {
+    .button-viewMore:before {
+        @include animation(viewMore-topCircleAnim $viewMore-animation--duration $viewMore-animation--easing forwards);
+    }
 
-        .button-viewMore:after {
-            @include animation(viewMore-bottomCircleAnim $viewMore-animation--duration $viewMore-animation--easing forwards);
-        }
+    .button-viewMore:after {
+        @include animation(viewMore-bottomCircleAnim $viewMore-animation--duration $viewMore-animation--easing forwards);
+    }
 
-        .button-viewMore__separator {
-            @include animation(viewMore-separatorAnim $viewMore-animation--duration $viewMore-animation--easing forwards);
-        }
+    .button-viewMore__separator {
+        @include animation(viewMore-separatorAnim $viewMore-animation--duration $viewMore-animation--easing forwards);
+    }
 
-        .button-viewMore__link {
-            opacity: 1;
+    .button-viewMore__link {
+        opacity: 1;
 
-            @include transition(0.1s 0.4s opacity);
-        }
+        @include transition(0.1s 0.4s opacity);
     }
 }
 

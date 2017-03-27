@@ -93,7 +93,7 @@
     }
 }
 
-.work--hoverable {
+.no-touch .work--hoverable {
     &:hover {
         h1, h2, .work-header.in-view, .work-subHeader.in-view {
             opacity: 0;

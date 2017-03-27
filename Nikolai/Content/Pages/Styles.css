@@ -2976,28 +2976,28 @@ $color-dial--ring3: #2294e5;*/
   transition: 0.1s opacity;
 }
 
-.button-container-viewMore:hover .button-viewMore:before {
+.no-touch .button-container-viewMore:hover .button-viewMore:before {
   -moz-animation: viewMore-topCircleAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
   -o-animation: viewMore-topCircleAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
   -webkit-animation: viewMore-topCircleAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
   animation: viewMore-topCircleAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 }
 
-.button-container-viewMore:hover .button-viewMore:after {
+.no-touch .button-container-viewMore:hover .button-viewMore:after {
   -moz-animation: viewMore-bottomCircleAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
   -o-animation: viewMore-bottomCircleAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
   -webkit-animation: viewMore-bottomCircleAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
   animation: viewMore-bottomCircleAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 }
 
-.button-container-viewMore:hover .button-viewMore__separator {
+.no-touch .button-container-viewMore:hover .button-viewMore__separator {
   -moz-animation: viewMore-separatorAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
   -o-animation: viewMore-separatorAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
   -webkit-animation: viewMore-separatorAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
   animation: viewMore-separatorAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 }
 
-.button-container-viewMore:hover .button-viewMore__link {
+.no-touch .button-container-viewMore:hover .button-viewMore__link {
   opacity: 1;
   -moz-transition: 0.1s 0.4s opacity;
   -o-transition: 0.1s 0.4s opacity;

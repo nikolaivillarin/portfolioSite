@@ -25,6 +25,7 @@ namespace Nikolai
             ));
 
             bundles.Add(new ScriptBundle("~/Content/libraries").Include(
+                "~/Scripts/modernizr-{version}.js",
                 "~/Scripts/jquery-{version}.js",
                 "~/Scripts/jquery-ui-{version}.js",
                 "~/Scripts/jquery.ui.touch-punch.js",

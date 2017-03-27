@@ -151,7 +151,7 @@
   transition-delay: 0.5s;
 }
 
-.work--hoverable:hover h1, .work--hoverable:hover h2, .work--hoverable:hover .work-header.in-view, .work--hoverable:hover .work-subHeader.in-view {
+.no-touch .work--hoverable:hover h1, .no-touch .work--hoverable:hover h2, .no-touch .work--hoverable:hover .work-header.in-view, .no-touch .work--hoverable:hover .work-subHeader.in-view {
   opacity: 0;
   -moz-transition-delay: 0;
   -o-transition-delay: 0;
@@ -159,7 +159,7 @@
   transition-delay: 0;
 }
 
-.work--hoverable:hover .work__overlay {
+.no-touch .work--hoverable:hover .work__overlay {
   opacity: 0.2;
   -moz-transition-delay: 0;
   -o-transition-delay: 0;
