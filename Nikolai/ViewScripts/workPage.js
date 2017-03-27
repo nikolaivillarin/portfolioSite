@@ -78,6 +78,13 @@ WorkPage.prototype.OnDialDragged = function (x, y) {
             centerY = Math.floor($(window).outerHeight() / 2);
         }
 
+        // Have max distance, make sure user does not have to drag too far to trigger navigation
+        var maxDistance = 400;
+
+        if (centerY < ($(window).outerHeight() - maxDistance)) {
+            centerY = $(window).outerHeight() - maxDistance;
+        }
+
         if (y <= centerY && x >= centerX - xTolerance && x <= centerX + xTolerance) {
             var pageNumText = 'Page ' + this.GetCurrentPageNum() + ' of ' + this.GetNumPages();
 
