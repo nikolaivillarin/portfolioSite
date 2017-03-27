@@ -65,12 +65,12 @@ WorkPage.prototype.OnDialDragged = function (x, y) {
         var centerX = 0;
         var centerY = 0;
 
-        if ($(window).height() > $(window).width()) { // Portrait
-            centerX = Math.floor($(window).width() / 2);
-            centerY = Math.floor($(window).height() - ($(window).height() / 4 * 3));
+        if ($(window).outerHeight() > $(window).outerWidth()) { // Portrait
+            centerX = Math.floor($(window).outerWidth() / 2);
+            centerY = Math.floor($(window).outerHeight() - ($(window).outerHeight() / 4 * 3));
         } else { // Landscape
-            centerX = Math.floor($(window).width() / 2);
-            centerY = Math.floor($(window).height() / 2);
+            centerX = Math.floor($(window).outerWidth() / 2);
+            centerY = Math.floor($(window).outerHeight() / 2);
         }
 
         if (y <= centerY && x >= centerX - xTolerance && x <= centerX + xTolerance) {
@@ -109,8 +109,10 @@ WorkPage.prototype.NextPage = function () {
                 $('#work').trigger('scroll');
             });
         } else {
+            var itemHeight = $('#workSlider > section').outerHeight();
+
             this.$WorkSlider.animate({
-                'margin-top': '+=' + ($(window).height() * -1)
+                'margin-top': '+=' + (itemHeight * -1)
             }, 1500, 'easeOutCubic', function () {
                 that.IsAnimating = false;
 
@@ -124,12 +126,19 @@ WorkPage.prototype.GetNumPages = function () {
     /// <summary>
     /// Returns the number of work pages available
     /// </summary>
-    var areaOfWindow = $(window).height() * $(window).width();
+    var areaOfWindow = $(window).outerHeight() * $(window).outerWidth();
 
     var $workItem = $('> section', this.$WorkSlider);
     var areaOfWorkItem = $workItem.first().height() * $workItem.first().width();
 
+    console.log('Area of window: ' + areaOfWindow);
+    console.log('Area of item: ' + areaOfWorkItem);
+
     var maxItemsPerPage = Math.floor(areaOfWindow / areaOfWorkItem);
+
+    if (maxItemsPerPage === 0) {
+        maxItemsPerPage = 1;
+    }
 
     var numPages = Math.ceil($workItem.length / maxItemsPerPage);
 
@@ -138,7 +147,8 @@ WorkPage.prototype.GetNumPages = function () {
 
 WorkPage.prototype.GetCurrentPageNum = function () {
     var topMargin = parseInt(this.$WorkSlider.css('margin-top')) * -1;
-    var currentPageNum = Math.floor(topMargin / $(window).height()) + 1;
+    var itemHeight = $('#workSlider > section').outerHeight();
+    var currentPageNum = Math.floor(topMargin / itemHeight) + 1;
 
     return currentPageNum;
 };

@@ -278,6 +278,8 @@ $button-position: (($spinner-diameter--outer - $button-diameter) / 2);
 }
 
 .nvDial--pulsing {
+    font-size: 16px;
+
     &::before {
         display: block;
         content: "Drop Dial";
