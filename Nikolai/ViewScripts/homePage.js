@@ -11,6 +11,7 @@
 HomePage.prototype = {
     $Element: null
     , $Canvas: null
+    , BubbleCanvas: null
     , DialJiggleIntervalID: 0
 };
 
@@ -35,7 +36,7 @@ HomePage.prototype.SetupCanvas = function () {
     if (window.BubbleCanvas === null || window.BubbleCanvas === undefined) {
         throw new Error('Script BubbleCanvas is missing');
     } else {
-        new window.BubbleCanvas('heroImageCanvas');
+        this.BubbleCanvas = new window.BubbleCanvas('heroImageCanvas');
     }
 };
 
@@ -45,7 +46,10 @@ HomePage.prototype.DisableCanvas = function () {
     /// </summary>
     if (this.$Element.hasClass('home-effect--disabled') === false) {
         this.$Element.addClass('home-effect--disabled');
+
         this.$Canvas.hide();
+
+        this.BubbleCanvas.PauseAnimation();
     }
 };
 
@@ -55,7 +59,10 @@ HomePage.prototype.EnableCanvas = function () {
     /// </summary>
     if (this.$Element.hasClass('home-effect--disabled') === true) {
         this.$Element.removeClass('home-effect--disabled');
+
         this.$Canvas.show();
+
+        this.BubbleCanvas.StartAnimation();
     }
 };
 
@@ -80,8 +87,6 @@ HomePage.prototype.EnableDialJiggle = function () {
     /// notify the user to drag the dial
     /// </summary>
     if (this.DialJiggleIntervalID === 0) {
-        var that = this;
-
         this.DialJiggleIntervalID = window.setInterval(function () {
             window.MainNav.NavBar.DialControl.$Element.effect({
                 effect: 'shake'

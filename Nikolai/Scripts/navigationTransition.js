@@ -47,6 +47,8 @@ NavigationTransition.prototype = {
         /// Callback when page is changed
         /// </summary>
     }
+    // Duration of transition in milliseconds
+    , TransitionDuration: 300
 };
 //#endregion
 
@@ -222,7 +224,7 @@ NavigationTransition.prototype.TransitionToPage = function (pageID) {
             border: '1px solid #FFF'
         })
         .animate(propertiesToAnimate, {
-            duration: 600
+            duration: this.TransitionDuration
             , easing: 'easeInQuart'
             , start: function () {
                 if (that.PageChangingCallback) {

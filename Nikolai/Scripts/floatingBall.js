@@ -67,12 +67,14 @@ BubbleCanvas.prototype = {
     , CanvasContext: {}
     , TotalBubbles: 30
     , Bubbles: []
+    , AnimationPaused: true
 };
 
 BubbleCanvas.prototype.Initialize = function () {
-    var that = this;
-    var canvas = document.getElementById(this.CanvasID);
-
+    /// <summary>
+    /// Initializes bubble canvas but does not start the animation.
+    /// You must call start animation to start the bubble animation
+    /// </summary>
     for (var i = 0; i <= this.TotalBubbles; i++) {
         if (i % 2) {
             this.Bubbles.push(new FloatingBall(this.CanvasID, {
@@ -82,18 +84,31 @@ BubbleCanvas.prototype.Initialize = function () {
             this.Bubbles.push(new FloatingBall(this.CanvasID));
         }
     }
+};
+
+BubbleCanvas.prototype.StartAnimation = function () {
+    var that = this;
+    var canvas = document.getElementById(this.CanvasID);
+    
+    this.AnimationPaused = false;
 
     (function drawFrame() {
-        window.requestAnimationFrame(drawFrame);
+        if (that.AnimationPaused === false) {
+            window.requestAnimationFrame(drawFrame);
 
-        that.CanvasContext.clearRect(0, 0, canvas.width, canvas.height);
+            that.CanvasContext.clearRect(0, 0, canvas.width, canvas.height);
 
-        $.proxy(that.DrawCanvasBG(), that);
+            $.proxy(that.DrawCanvasBG(), that);
 
-        for (var i = 0; i < that.Bubbles.length; i++) {
-            that.Bubbles[i].Draw();
+            for (var i = 0; i < that.Bubbles.length; i++) {
+                that.Bubbles[i].Draw();
+            }
         }
     }());
+};
+
+BubbleCanvas.prototype.PauseAnimation = function () {
+    this.AnimationPaused = true;
 };
 
 BubbleCanvas.prototype.SetSize = function () {

@@ -529,21 +529,32 @@ MainNavigation.prototype.PageLoaded = function (url, markup) {
     /// <param name="markup" type="string">
     /// The page markup to render
     /// </param>
+    var that = this;
     var $markup = $('<div />', { html: markup }).contents();
 
     $markup = this.PageTransitions.HidePage(null, $markup);
 
     $('#pnlPages').append($markup);
 
-    $markup
-        .on('scroll', this.TriggerScrollAnimation)
-        .trigger('scroll');
+    var route = this.GetRoute(url);
 
-    $('#mainLoadingOverlay').removeClass('loading-overlay--active');
+    var imageLoader = window.imagesLoaded('#' + route.PageID, { background: '[data-nv-bgimage]' });
 
-    this.AsyncPageLoaded();
+    var renderNewPage = function () {
+        $markup
+            .on('scroll', that.TriggerScrollAnimation)
+            .trigger('scroll');
 
-    this.NavigateTo(url);
+        $('#mainLoadingOverlay').removeClass('loading-overlay--active');
+
+        that.AsyncPageLoaded();
+
+        that.NavigateTo(url);
+    };
+
+    imageLoader.on('done', renderNewPage);
+
+    imageLoader.on('fail', renderNewPage);
 };
 
 MainNavigation.prototype.TriggerScrollAnimation = function () {
