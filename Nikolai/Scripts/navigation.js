@@ -98,6 +98,7 @@ MainNavigation.prototype.Initialize = function () {
 
     $('[data-nv-page]')
         .on('scroll', this.TriggerScrollAnimation)
+        .on('touchmove', this.PreventWindowBounce)
         .trigger('scroll');
 
     this.OnNavigationLoadedHandlers.forEach(function (item) {
@@ -543,6 +544,7 @@ MainNavigation.prototype.PageLoaded = function (url, markup) {
     var renderNewPage = function () {
         $markup
             .on('scroll', that.TriggerScrollAnimation)
+            .on('touchmove', this.PreventWindowBounce)
             .trigger('scroll');
 
         $('#mainLoadingOverlay').removeClass('loading-overlay--active');
@@ -555,6 +557,18 @@ MainNavigation.prototype.PageLoaded = function (url, markup) {
     imageLoader.on('done', renderNewPage);
 
     imageLoader.on('fail', renderNewPage);
+};
+
+MainNavigation.prototype.PreventWindowBounce = function (evt) {
+    // TO DO: Fix issue where on iOS screen can be scrolled past the actual height showing
+    // a portion of an empty screen
+
+    //var scrollableState = $(evt.target).data('nv-page-state')
+    //    ? $(evt.target).data('nv-page-state') : '';
+
+    //if (scrollableState !== 'scrollable') {
+    //    evt.preventDefault();
+    //}
 };
 
 MainNavigation.prototype.TriggerScrollAnimation = function () {
