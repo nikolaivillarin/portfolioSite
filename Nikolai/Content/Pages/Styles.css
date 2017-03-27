@@ -211,35 +211,35 @@ $color-dial--ring3: #2294e5;*/
 }
 
 .icon--home {
-  background-image: url(../Images/icon-home.svg);
+  background-image: url(/Content/Images/icon-home.svg);
 }
 
 .icon--homeOnDark {
-  background-image: url(../Images/icon-home--onDark.svg);
+  background-image: url(/Content/Images/icon-home--onDark.svg);
 }
 
 .icon--work {
-  background-image: url(../Images/icon-work.svg);
+  background-image: url(/Content/Images/icon-work.svg);
 }
 
 .icon--workOnDark {
-  background-image: url(../Images/icon-work--onDark.svg);
+  background-image: url(/Content/Images/icon-work--onDark.svg);
 }
 
 .icon--about {
-  background-image: url(../Images/icon-about.svg);
+  background-image: url(/Content/Images/icon-about.svg);
 }
 
 .icon--aboutOnDark {
-  background-image: url(../Images/icon-about--onDark.svg);
+  background-image: url(/Content/Images/icon-about--onDark.svg);
 }
 
 .icon--contact {
-  background-image: url(../Images/icon-contact.svg);
+  background-image: url(/Content/Images/icon-contact.svg);
 }
 
 .icon--contactOnDark {
-  background-image: url(../Images/icon-contact--onDark.svg);
+  background-image: url(/Content/Images/icon-contact--onDark.svg);
 }
 
 .socialIcon {
@@ -263,7 +263,7 @@ $color-dial--ring3: #2294e5;*/
 }
 
 .socialIcon--linkedin {
-  background-image: url(../Images/icon-linkedin.svg);
+  background-image: url(/Content/Images/icon-linkedin.svg);
 }
 
 /*------------------------------------*    Accent Colors
@@ -2118,63 +2118,63 @@ $color-dial--ring3: #2294e5;*/
 
 @font-face {
   font-family: 'Raleway';
-  src: url("../../Fonts/Raleway-Thin.ttf") format("truetype");
+  src: url("/Fonts/Raleway-Thin.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Raleway';
-  src: url("../../Fonts/Raleway-ThinItalic.ttf") format("truetype");
+  src: url("/Fonts/Raleway-ThinItalic.ttf") format("truetype");
   font-weight: 100;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Raleway';
-  src: url("../../Fonts/Raleway-ExtraLight.ttf") format("truetype");
+  src: url("/Fonts/Raleway-ExtraLight.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Raleway';
-  src: url("../../Fonts/Raleway-ExtraLightItalic.ttf") format("truetype");
+  src: url("/Fonts/Raleway-ExtraLightItalic.ttf") format("truetype");
   font-weight: 200;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Slabo27px-Regular';
-  src: url("../../Fonts/Slabo27px-Regular.ttf") format("truetype");
+  src: url("/Fonts/Slabo27px-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'RobotoSlab';
-  src: url("../../Fonts/RobotoSlab-Thin.ttf") format("truetype");
+  src: url("/Fonts/RobotoSlab-Thin.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'RobotoSlab';
-  src: url("../../Fonts/RobotoSlab-Light.ttf") format("truetype");
+  src: url("/Fonts/RobotoSlab-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'RobotoSlab';
-  src: url("../../Fonts/RobotoSlab-Regular.ttf") format("truetype");
+  src: url("/Fonts/RobotoSlab-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'RobotoSlab';
-  src: url("../../Fonts/RobotoSlab-Bold.ttf") format("truetype");
+  src: url("/Fonts/RobotoSlab-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }
@@ -3142,63 +3142,63 @@ $color-dial--ring3: #2294e5;*/
 
 @font-face {
   font-family: 'Raleway';
-  src: url("../../Fonts/Raleway-Thin.ttf") format("truetype");
+  src: url("/Fonts/Raleway-Thin.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Raleway';
-  src: url("../../Fonts/Raleway-ThinItalic.ttf") format("truetype");
+  src: url("/Fonts/Raleway-ThinItalic.ttf") format("truetype");
   font-weight: 100;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Raleway';
-  src: url("../../Fonts/Raleway-ExtraLight.ttf") format("truetype");
+  src: url("/Fonts/Raleway-ExtraLight.ttf") format("truetype");
   font-weight: 200;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'Raleway';
-  src: url("../../Fonts/Raleway-ExtraLightItalic.ttf") format("truetype");
+  src: url("/Fonts/Raleway-ExtraLightItalic.ttf") format("truetype");
   font-weight: 200;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'Slabo27px-Regular';
-  src: url("../../Fonts/Slabo27px-Regular.ttf") format("truetype");
+  src: url("/Fonts/Slabo27px-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'RobotoSlab';
-  src: url("../../Fonts/RobotoSlab-Thin.ttf") format("truetype");
+  src: url("/Fonts/RobotoSlab-Thin.ttf") format("truetype");
   font-weight: 100;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'RobotoSlab';
-  src: url("../../Fonts/RobotoSlab-Light.ttf") format("truetype");
+  src: url("/Fonts/RobotoSlab-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'RobotoSlab';
-  src: url("../../Fonts/RobotoSlab-Regular.ttf") format("truetype");
+  src: url("/Fonts/RobotoSlab-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'RobotoSlab';
-  src: url("../../Fonts/RobotoSlab-Bold.ttf") format("truetype");
+  src: url("/Fonts/RobotoSlab-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
 }

@@ -72,15 +72,15 @@
     width: 100%;
 
     @include breakpoint(max-width $breakpoint-mobileBig) {
-        background-image: url(../ImagesHome/HeroImage_Small.png);
+        background-image: url(/Content/ImagesHome/HeroImage_Small.png);
     }
 
     @include breakpoint($breakpoint-mobileBig $breakpoint-phablet) {
-        background-image: url(../ImagesHome/HeroImage_Medium.png);
+        background-image: url(/Content/ImagesHome/HeroImage_Medium.png);
     }
 
     @include breakpoint(min-width $breakpoint-phablet) {
-        background-image: url(../ImagesHome/HeroImage_Large.png);
+        background-image: url(/Content/ImagesHome/HeroImage_Large.png);
     }
 }
 

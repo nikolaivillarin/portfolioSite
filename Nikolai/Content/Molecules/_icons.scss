@@ -90,35 +90,35 @@ $navIcon-retina--width: 50px;
     width: $navIcon-retina--width/2;
 
     &--home {
-        background-image: url(../Images/icon-home.svg);
+        background-image: url(/Content/Images/icon-home.svg);
     }
 
     &--homeOnDark {
-        background-image: url(../Images/icon-home--onDark.svg);
+        background-image: url(/Content/Images/icon-home--onDark.svg);
     }
 
     &--work {
-        background-image: url(../Images/icon-work.svg);
+        background-image: url(/Content/Images/icon-work.svg);
     }
 
     &--workOnDark {
-        background-image: url(../Images/icon-work--onDark.svg);
+        background-image: url(/Content/Images/icon-work--onDark.svg);
     }
 
     &--about {
-        background-image: url(../Images/icon-about.svg);
+        background-image: url(/Content/Images/icon-about.svg);
     }
 
     &--aboutOnDark {
-        background-image: url(../Images/icon-about--onDark.svg);
+        background-image: url(/Content/Images/icon-about--onDark.svg);
     }
 
     &--contact {
-        background-image: url(../Images/icon-contact.svg);
+        background-image: url(/Content/Images/icon-contact.svg);
     }
 
     &--contactOnDark {
-        background-image: url(../Images/icon-contact--onDark.svg);
+        background-image: url(/Content/Images/icon-contact--onDark.svg);
     }
 }
 
@@ -142,6 +142,6 @@ $navIcon-retina--width: 50px;
     }
 
     &--linkedin {
-        background-image: url(../Images/icon-linkedin.svg);
+        background-image: url(/Content/Images/icon-linkedin.svg);
     }
 }

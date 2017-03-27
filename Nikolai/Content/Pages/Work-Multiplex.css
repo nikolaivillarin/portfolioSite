@@ -81,11 +81,11 @@
 /*------------------------------------*    CSS Breakpoints for different devices
 \*------------------------------------*/
 .work-imgTile--multiplex {
-  background-image: url(../ImagesWork/multiplex-tile.jpg);
+  background-image: url(/Content/ImagesWork/multiplex-tile.jpg);
 }
 
 .work-heroImage--multiplex {
-  background-image: url(../ImagesWork/multiplex-heroImage.jpg);
+  background-image: url(/Content/ImagesWork/multiplex-heroImage.jpg);
   padding-top: 20px;
   text-align: center;
 }

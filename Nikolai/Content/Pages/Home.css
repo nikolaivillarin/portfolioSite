@@ -165,19 +165,19 @@
 
 @media (max-width: 400px) {
   .home-heroImage {
-    background-image: url(../ImagesHome/HeroImage_Small.png);
+    background-image: url(/Content/ImagesHome/HeroImage_Small.png);
   }
 }
 
 @media (min-width: 400px) and (max-width: 600px) {
   .home-heroImage {
-    background-image: url(../ImagesHome/HeroImage_Medium.png);
+    background-image: url(/Content/ImagesHome/HeroImage_Medium.png);
   }
 }
 
 @media (min-width: 600px) {
   .home-heroImage {
-    background-image: url(../ImagesHome/HeroImage_Large.png);
+    background-image: url(/Content/ImagesHome/HeroImage_Large.png);
   }
 }
 

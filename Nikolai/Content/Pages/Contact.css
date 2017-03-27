@@ -97,7 +97,7 @@
 /*------------------------------------*    CSS Breakpoints for different devices
 \*------------------------------------*/
 .contact {
-  background: url(../ImagesContact/beachScene.jpg);
+  background: url(/Content/ImagesContact/beachScene.jpg);
   background-position: left top;
   background-size: cover;
   background-repeat: no-repeat;
