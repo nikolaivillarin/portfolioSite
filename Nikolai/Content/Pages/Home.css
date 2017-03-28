@@ -202,7 +202,7 @@ $color-dial--ring3: #2294e5;*/
 }
 
 .home-headerGroup {
-  max-width: 42em;
+  max-width: 44em;
 }
 
 @media (min-height: 800px) and (min-width: 1100px) {
