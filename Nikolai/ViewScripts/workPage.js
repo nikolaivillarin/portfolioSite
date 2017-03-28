@@ -111,6 +111,8 @@ WorkPage.prototype.WindowResize = function () {
     this.$WorkSlider.stop().css('margin-top', '0');
 
     this.IsAnimating = false;
+
+    $('#work').trigger('scroll');
 };
 
 WorkPage.prototype.NextPage = function () {

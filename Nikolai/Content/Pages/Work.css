@@ -183,7 +183,7 @@
 
 @media (min-width: 400px) {
   .work--separator {
-    border-right: 1px solid #FFF;
+    border-right: 1px solid #000;
   }
 }
 

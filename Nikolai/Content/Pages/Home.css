@@ -1,25 +1,19 @@
-﻿.home-instructions {
-  opacity: 0;
-  -moz-transform: translateX(50px);
-  -ms-transform: translateX(50px);
-  -o-transform: translateX(50px);
-  -webkit-transform: translateX(50px);
-  transform: translateX(50px);
-  -moz-transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s linear;
-  -o-transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s linear;
-  -webkit-transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s linear;
-  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s linear;
-}
-
-.home-instructions.in-view {
-  opacity: 1;
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  -o-transform: translateX(0);
-  -webkit-transform: translateX(0);
-  transform: translateX(0);
-}
-
+﻿/*------------------------------------*    Accent Colors
+\*------------------------------------*/
+/*------------------------------------*    Dial Colors
+\*------------------------------------*/
+/*$color-dial--ring1: #d62d20;
+$color-dial--ring2: #de9250;
+$color-dial--ring3: #2294e5;*/
+/*------------------------------------*    Background Colors
+\*------------------------------------*/
+/*------------------------------------*    Font Colors
+\*------------------------------------*/
+/*------------------------------------*    Links Colors
+\*------------------------------------*/
+/*$color-link: #337ab7;*/
+/*------------------------------------*    Button Colors
+\*------------------------------------*/
 .home-header {
   opacity: 0;
   -moz-transform: translateY(-30px);
@@ -62,6 +56,26 @@
   -o-transform: translateY(0);
   -webkit-transform: translateY(0);
   transform: translateY(0);
+}
+
+.home-instructions {
+  -moz-transform: scale(0);
+  -ms-transform: scale(0);
+  -o-transform: scale(0);
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -moz-transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.home-instructions.in-view {
+  -moz-transform: scale(1);
+  -ms-transform: scale(1);
+  -o-transform: scale(1);
+  -webkit-transform: scale(1);
+  transform: scale(1);
 }
 
 /*------------------------------------*    CSS Breakpoints for different devices
@@ -212,58 +226,43 @@
   transition-delay: 0.5s;
 }
 
-.home-instructions .home-arrow--left, .home-instructions .home-arrow--right {
-  background: url(/Content/Images/icon-arrow.svg) no-repeat transparent;
+.home-instructions .home-arrow {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0iQXJyb3dMZWZ0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNSIgaGVpZ2h0PSI5MSIgdmlld0JveD0iMCAwIDM1IDkxIj4KICA8bWV0YWRhdGE+PD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxMzggNzkuMTU5ODI0LCAyMDE2LzA5LzE0LTAxOjA5OjAxICAgICAgICAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIi8+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAKPD94cGFja2V0IGVuZD0idyI/PjwvbWV0YWRhdGE+CjxkZWZzPgogICAgPHN0eWxlPgogICAgICAuY2xzLTEgewogICAgICAgIGZpbGwtcnVsZTogZXZlbm9kZDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPHBhdGggaWQ9IlNoYXBlXzJfY29weV8yIiBkYXRhLW5hbWU9IlNoYXBlIDIgY29weSAyIiBjbGFzcz0iY2xzLTEiIGQ9Ik0zLjAxNyw1MC4xMDZjMCwxNy42NDcsMTEuNDU1LDI4LjI3NCwyNi4yNTQsMjkuOGwtOC4yMzktNy4yOTRWNjkuNjM0TDM0LjQyNiw4MS4xOSwyMS4wMzIsOTEuMjE3Vjg4LjIzOWw3Ljg1LTUuNzExQTI5Ljk5NCwyOS45OTQsMCwwLDEsLjk2LDUyLjYxVjAuMTkzSDMuMDE3VjUwLjEwNlpNMzAuNzIyLDgxLjE5TDMwLjYsODEuMDh2MC4yWiIvPgo8L3N2Zz4K");
+  background-repeat: no-repeat;
   content: "";
   display: block;
-  float: left;
-  height: 34px;
-  width: 50px;
+  height: 91px;
+  width: 35px;
 }
 
 .home-instructions {
-  bottom: 20px;
-  position: absolute;
-  right: 14%;
-  -moz-transform: translateX(250%);
-  -ms-transform: translateX(250%);
-  -o-transform: translateX(250%);
-  -webkit-transform: translateX(250%);
-  transform: translateX(250%);
-  -moz-transition-delay: 0;
-  -o-transition-delay: 0;
-  -webkit-transition-delay: 0;
-  transition-delay: 0;
-  -moz-transition-duration: 3s, 0.5s;
-  -o-transition-duration: 3s, 0.5s;
-  -webkit-transition-duration: 3s, 0.5s;
-  transition-duration: 3s, 0.5s;
+  bottom: 70px;
+  position: fixed;
+  right: 10px;
 }
 
-.home-instructions .home-arrow--left {
-  margin-right: 20px;
-}
-
-.home-instructions .home-arrow--right {
-  margin-left: 20px;
-  -moz-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  -o-transform: rotate(180deg);
-  -webkit-transform: rotate(180deg);
-  transform: rotate(180deg);
+.home-instructions .home-arrow {
+  float: right;
+  margin-right: 50px;
 }
 
 .home-instructions.in-view {
-  -moz-transition-delay: 1s;
-  -o-transition-delay: 1s;
-  -webkit-transition-delay: 1s;
-  transition-delay: 1s;
+  -moz-transition-delay: 1.5s;
+  -o-transition-delay: 1.5s;
+  -webkit-transition-delay: 1.5s;
+  transition-delay: 1.5s;
 }
 
 .home-instructions__content {
+  border: 1px solid #000;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #000;
   display: block;
-  float: left;
+  font-size: 1.2em;
   margin-top: 7px;
+  max-width: 9em;
+  padding: 1em;
+  text-align: center;
 }
 
 /*# sourceMappingURL=Home.css.map */

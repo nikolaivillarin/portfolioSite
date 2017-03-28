@@ -121,7 +121,7 @@
     @include box-sizing(border-box);
 
     @include breakpoint(min-width 400px) {
-        border-right: 1px solid #FFF;
+        border-right: 1px solid #000;
     }
 }
 
