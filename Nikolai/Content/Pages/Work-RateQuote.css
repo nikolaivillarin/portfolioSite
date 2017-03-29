@@ -63,9 +63,26 @@
 }
 
 .work-heroImage--rateQuote {
-  background-image: url(/Content/ImagesWork/rateQuote-heroImage.jpg);
   padding: 20px;
   text-align: center;
+}
+
+@media (max-width: 400px) {
+  .work-heroImage--rateQuote {
+    background-image: url(/Content/ImagesWork/rateQuote-heroImage_small.jpg);
+  }
+}
+
+@media (min-width: 400px) and (max-width: 800px) {
+  .work-heroImage--rateQuote {
+    background-image: url(/Content/ImagesWork/rateQuote-heroImage_medium.jpg);
+  }
+}
+
+@media (min-width: 800px) {
+  .work-heroImage--rateQuote {
+    background-image: url(/Content/ImagesWork/rateQuote-heroImage_large.jpg);
+  }
 }
 
 .rateQuote-header > span {
@@ -114,8 +131,26 @@
 
 .rateQuote__screensContainer--top {
   background-color: #d9d9d9;
-  background: url(/Content/ImagesWork/ratequote-bgImg1.png) no-repeat transparent 20% 50%;
+  background-repeat: no-repeat;
   float: right;
+}
+
+@media (max-width: 400px) {
+  .rateQuote__screensContainer--top {
+    background-image: url(/Content/ImagesWork/ratequote-bgImg1_small.png);
+  }
+}
+
+@media (min-width: 400px) and (max-width: 800px) {
+  .rateQuote__screensContainer--top {
+    background-image: url(/Content/ImagesWork/ratequote-bgImg1_large.png);
+  }
+}
+
+@media (min-width: 800px) {
+  .rateQuote__screensContainer--top {
+    background-image: url(/Content/ImagesWork/ratequote-bgImg1_large.png);
+  }
 }
 
 .rateQuote__screensContainer--top .rateQuote__imgContainer--container1 {

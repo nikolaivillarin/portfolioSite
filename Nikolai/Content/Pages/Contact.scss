@@ -7,13 +7,24 @@
 $breakpoing-minHeight: 400px;
 
 .contact {
-    background: url(/Content/ImagesContact/beachScene.jpg);
     background-position: left top;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100%;
     position: relative;
     width: 100%;
+
+    @include breakpoint(max-width $breakpoint-mobileBig) {
+        background-image: url(/Content/ImagesContact/beachScene_small.jpg);
+    }
+
+    @include breakpoint($breakpoint-mobileBig $breakpoint-tablet) {
+        background-image: url(/Content/ImagesContact/beachScene_medium.jpg);
+    }
+
+    @include breakpoint(min-width $breakpoint-tablet) {
+        background-image: url(/Content/ImagesContact/beachScene_large.jpg);
+    }
 }
 
 .contact__container {

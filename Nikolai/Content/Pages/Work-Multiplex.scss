@@ -9,9 +9,20 @@
 }
 
 .work-heroImage--multiplex {
-    background-image: url(/Content/ImagesWork/multiplex-heroImage.jpg);
     padding-top: 20px;
     text-align: center;
+
+    @include breakpoint(max-width $breakpoint-mobileBig) {
+        background-image: url(/Content/ImagesWork/multiplex-heroImage_small.jpg);
+    }
+
+    @include breakpoint($breakpoint-mobileBig $breakpoint-tablet) {
+        background-image: url(/Content/ImagesWork/multiplex-heroImage_medium.jpg);
+    }
+
+    @include breakpoint(min-width $breakpoint-tablet) {
+        background-image: url(/Content/ImagesWork/multiplex-heroImage_large.jpg);
+    }
 }
 
 .multiplex-header {
@@ -54,8 +65,21 @@
 }
 
 .multiplex__screen {
+    background-image: url(/Content/ImagesWork/multiplex-screens_small.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 104.33%;
+
     @extend %slide-bottom--initialState;
     @include transition-delay(0);
+
+    @include breakpoint(max-width $breakpoint-mobileBig) {
+        background-image: url(/Content/ImagesWork/multiplex-screens_small.png);
+    }
+
+    @include breakpoint(min-width $breakpoint-mobileBig) {
+        background-image: url(/Content/ImagesWork/multiplex-screens_large.png);
+    }
 
     @include breakpoint(max-width $breakpoint-netbook) {
         margin-left: -60%;

@@ -9,19 +9,17 @@
 }
 
 .work-heroImage--boxgrove {
-    background-image: url(/Content/ImagesWork/boxgrove-heroImage.jpg);
-
-    /*@include breakpoint(max-width $breakpoint-mobileBig) {
-        background-image: url(/Content/ImagesWork/boxgrove-heroImageSmall.jpg);
+    @include breakpoint(max-width $breakpoint-mobileBig) {
+        background-image: url(/Content/ImagesWork/boxgrove-heroImage_small.jpg);
     }
 
     @include breakpoint($breakpoint-mobileBig $breakpoint-tablet) {
-        background-image: url(/Content/ImagesWork/boxgrove-heroImageMedium.jpg);
+        background-image: url(/Content/ImagesWork/boxgrove-heroImage_medium.jpg);
     }
 
     @include breakpoint(min-width $breakpoint-tablet) {
-        background-image: url(/Content/ImagesWork/boxgrove-heroImageLarge.jpg);
-    }*/
+        background-image: url(/Content/ImagesWork/boxgrove-heroImage_large.jpg);
+    }
 }
 
 .boxgrove-headings {
@@ -69,27 +67,22 @@
     width: 100%;
 
     @include breakpoint(max-width $breakpoint-mobile) {
-        height: 750px;
+        height: 400px;
     }
 
     @include breakpoint($breakpoint-mobile $breakpoint-mobileBig) {
-        height: 1050px;
+        height: 500px;
     }
 
     @include breakpoint($breakpoint-mobileBig $breakpoint-tablet) {
-        height: 1200px;
+        height: 650px;
     }
 
     @include breakpoint(min-width $breakpoint-tablet) {
-        height: 1400px;
+        height: 750px;
     }
 
     .boxgrove-screensImg--image1 {
-        @extend %slide-bottom--initialState;
-        @include transition-delay(0);
-    }
-
-    .boxgrove-screensImg--image2 {
         @extend %slide-bottom--initialState;
         @include transition-delay(0);
     }
@@ -100,14 +93,10 @@
         @extend %slide-bottom--endState;
         @include transition-delay(1s);
     }
-
-    .boxgrove-screensImg--image2 {
-        @extend %slide-bottom--endState;
-        @include transition-delay(1.3s);
-    }
 }
 
 .boxgrove-screensImg {
+    display: block;
     position: absolute;
 
     &--title {
@@ -122,63 +111,32 @@
     }
 
     &--image1 {
-        left: -10px;
-        max-width: 2500px;
-        width: 300vw;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 100%;
 
         @include breakpoint(max-width $breakpoint-mobile) {
-            top: 120px;
+            background-image: url(/Content/ImagesWork/boxgrove-image_small.png);
+            padding-bottom: 77.91%;
+            top: 100px;
         }
 
         @include breakpoint($breakpoint-mobile $breakpoint-mobileBig) {
-            top: 160px;
+            background-image: url(/Content/ImagesWork/boxgrove-image_small.png);
+            padding-bottom: 77.91%;
+            top: 140px;
         }
 
-        @include breakpoint($breakpoint-mobileBig $breakpoint-phablet) {
-            top: 160px;
+        @include breakpoint($breakpoint-mobileBig $breakpoint-notebook) {
+            background-image: url(/Content/ImagesWork/boxgrove-image_medium.png);
+            padding-bottom: 70.17%;
+            top: 140px;
         }
 
-        @include breakpoint($breakpoint-phablet $breakpoint-phabletBig) {
-            top: 160px;
-        }
-
-        @include breakpoint($breakpoint-phabletBig $breakpoint-tablet) {
-            top: 160px;
-        }
-
-        @include breakpoint(min-width $breakpoint-tablet) {
-            left: -15px;
-            top: 230px;
-        }
-    }
-
-    &--image2 {
-        left: -9px;
-        max-width: 1450px;
-        width: 175vw;
-
-        @include breakpoint(max-width $breakpoint-mobile) {
-            top: 360px;
-        }
-
-        @include breakpoint($breakpoint-mobile $breakpoint-mobileBig) {
-            top: 480px;
-        }
-
-        @include breakpoint($breakpoint-mobileBig $breakpoint-phablet) {
-            top: 530px;
-        }
-
-        @include breakpoint($breakpoint-phablet $breakpoint-phabletBig) {
-            top: 600px;
-        }
-
-        @include breakpoint($breakpoint-phabletBig $breakpoint-tablet) {
-            top: 700px;
-        }
-
-        @include breakpoint(min-width $breakpoint-tablet) {
-            top: 840px;
+        @include breakpoint(min-width $breakpoint-notebook) {
+            background-image: url(/Content/ImagesWork/boxgrove-image_large.png);
+            padding-bottom: 56.60%;
+            top: 0;
         }
     }
 }

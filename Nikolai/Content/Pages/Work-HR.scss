@@ -9,8 +9,19 @@
 }
 
 .work-heroImage--hr {
-    background-image: url(/Content/ImagesWork/hr-heroImage.jpg);
     background-position: top center;
+
+    @include breakpoint(max-width $breakpoint-mobileBig) {
+        background-image: url(/Content/ImagesWork/hr-heroImage_small.jpg);
+    }
+
+    @include breakpoint($breakpoint-mobileBig $breakpoint-tablet) {
+        background-image: url(/Content/ImagesWork/hr-heroImage_medium.jpg);
+    }
+
+    @include breakpoint(min-width $breakpoint-tablet) {
+        background-image: url(/Content/ImagesWork/hr-heroImage_large.jpg);
+    }
 }
 
 .hr-header--main {
@@ -58,37 +69,47 @@
 }
 
 .hr__screens {
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 90%;
+
     @extend %slide-right--initialState;
     @include transition-delay(0);
 
     @include breakpoint(max-width $breakpoint-mobileBig) {
+        background-image: url(/Content/ImagesWork/hr-screens_small.png);
         width: 165%;
         margin-left: -100px;
     }
 
     @include breakpoint($breakpoint-mobileBig $breakpoint-phabletBig) {
+        background-image: url(/Content/ImagesWork/hr-screens_medium.png);
         width: 140%;
         margin-left: -100px;
     }
 
     @include breakpoint($breakpoint-phabletBig $breakpoint-tablet) {
+        background-image: url(/Content/ImagesWork/hr-screens_medium.png);
         width: 160%;
         margin-left: -200px;
     }
 
     @include breakpoint($breakpoint-tablet $breakpoint-netbook) {
+        background-image: url(/Content/ImagesWork/hr-screens_large.png);
         width: 160%;
         margin-left: -200px;
         margin-top: -100px;
     }
 
     @include breakpoint($breakpoint-netbook $breakpoint-notebook) {
+        background-image: url(/Content/ImagesWork/hr-screens_large.png);
         width: 130%;
         margin-left: -200px;
         margin-top: -100px;
     }
 
     @include breakpoint(min-width $breakpoint-notebook) {
+        background-image: url(/Content/ImagesWork/hr-screens_large.png);
         width: 115%;
         margin-left: -200px;
         margin-top: -250px;
