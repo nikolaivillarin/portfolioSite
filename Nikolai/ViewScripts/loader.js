@@ -43,10 +43,16 @@ function LoadImages() {
     window.MainNav.UnsubscribeToOnPageLoaded(LoadImages);
 }
 
-(function () {
-    window.MainNav = new window.MainNavigation();
+(function LoadWebApp() {
+    if (window.$) {
+        $(document).ready(function () {
+            window.MainNav = new window.MainNavigation();
 
-    window.MainNav.SubscribeToOnPageLoaded(LoadImages);
+            window.MainNav.SubscribeToOnPageLoaded(LoadImages);
 
-    window.MainNav.EagerlyLoadPages();
+            window.MainNav.EagerlyLoadPages();
+        });
+    } else {
+        window.setTimeout(LoadWebApp, 50);
+    }
 })();

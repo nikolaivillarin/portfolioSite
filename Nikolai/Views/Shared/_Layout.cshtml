@@ -28,8 +28,6 @@
 
     @Styles.Render("~/Content/Styles")
 
-    @Scripts.Render("~/Content/libraries")
-
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -59,7 +57,9 @@
     @Html.Partial("~/Views/Menu/_menu.cshtml")
     @Html.Partial("_loading")
 
-    @Scripts.Render("~/Content/scripts")
+    @Scripts.RenderFormat("<script src=\"{0}\" async></script>", "~/Content/libraries")
+
+    @Scripts.RenderFormat("<script src=\"{0}\" async></script>", "~/Content/scripts")
 
     @*-- Weiner Remote Debugging -- *@
     @*<script src="http://176.16.128.15:8080/target/target-script-min.js"></script>*@

@@ -10,6 +10,18 @@
 
 .work-heroImage--boxgrove {
     background-image: url(/Content/ImagesWork/boxgrove-heroImage.jpg);
+
+    /*@include breakpoint(max-width $breakpoint-mobileBig) {
+        background-image: url(/Content/ImagesWork/boxgrove-heroImageSmall.jpg);
+    }
+
+    @include breakpoint($breakpoint-mobileBig $breakpoint-tablet) {
+        background-image: url(/Content/ImagesWork/boxgrove-heroImageMedium.jpg);
+    }
+
+    @include breakpoint(min-width $breakpoint-tablet) {
+        background-image: url(/Content/ImagesWork/boxgrove-heroImageLarge.jpg);
+    }*/
 }
 
 .boxgrove-headings {

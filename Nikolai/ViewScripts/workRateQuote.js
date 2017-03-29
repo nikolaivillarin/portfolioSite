@@ -22,6 +22,10 @@ RateQuotePage.prototype.CloseClick = function (selectedPageId) {
 };
 
 // Initializer
-$(function () {
-    new RateQuotePage();
-});
+(function LoadWorkRateQuoteScript() {
+    if (window.MainNav) {
+        new RateQuotePage();
+    } else {
+        window.setTimeout(LoadWorkRateQuoteScript, 50);
+    }
+})();

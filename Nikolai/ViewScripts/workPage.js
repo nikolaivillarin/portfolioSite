@@ -189,8 +189,12 @@ WorkPage.prototype.OnPageChange = function (pageId) {
 };
 
 // Initializer
-$(function () {
-    window.MainNav.SubscribeToOnNavigationLoaded(function () {
-        new WorkPage();
-    });
-});
+(function LoadWorkScript() {
+    if (window.MainNav) {
+        window.MainNav.SubscribeToOnNavigationLoaded(function () {
+            new WorkPage();
+        });
+    } else {
+        window.setTimeout(LoadWorkScript, 50);
+    }
+})();

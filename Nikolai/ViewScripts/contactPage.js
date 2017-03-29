@@ -22,6 +22,10 @@ ContactPage.prototype.OnPageChange = function () {
 };
 
 // Initializer
-$(function () {
-    new ContactPage();
-});
+(function LoadContactScript() {
+    if (window.MainNav) {
+        new ContactPage();
+    } else {
+        window.setTimeout(LoadContactScript, 50);
+    }
+})();

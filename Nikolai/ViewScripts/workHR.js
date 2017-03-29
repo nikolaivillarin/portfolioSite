@@ -22,6 +22,10 @@ HRPage.prototype.CloseClick = function (selectedPageId) {
 };
 
 // Initializer
-$(function () {
-    new HRPage();
-});
+(function LoadWorkHRScript() {
+    if (window.MainNav) {
+        new HRPage();
+    } else {
+        window.setTimeout(LoadWorkHRScript, 50);
+    }
+})();

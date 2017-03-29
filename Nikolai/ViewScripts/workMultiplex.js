@@ -22,6 +22,10 @@ MultiplexPage.prototype.CloseClick = function (selectedPageId) {
 };
 
 // Initializer
-$(function () {
-    new MultiplexPage();
-});
+(function LoadWorkMultiplexScript() {
+    if (window.MainNav) {
+        new MultiplexPage();
+    } else {
+        window.setTimeout(LoadWorkMultiplexScript, 50);
+    }
+})();

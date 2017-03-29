@@ -54,6 +54,10 @@ MenuPage.prototype.OnPageChange = function (selectedPageId) {
 };
 
 // Initializer
-$(function () {
-    new MenuPage();
-});
+(function LoadMenuScript() {
+    if (window.MainNav) {
+        new MenuPage();
+    } else {
+        window.setTimeout(LoadMenuScript, 50);
+    }
+})();
