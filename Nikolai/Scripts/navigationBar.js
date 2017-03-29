@@ -470,10 +470,11 @@ NVNavBar.prototype.CheckDialOnNextLink = function (selectedLinkIndex, x, y) {
 
     // Drop tolerance is dependent on current viewport
     // The page can have 3 links and we want half that size / 3 / 2
-    var dropTolerance = this.$Element.parent().width() / 3 / 2;
+    var horizontalDropTolerance = this.$Element.parent().width() / 3 / 2;
+    var verticalDropTolerance = 150;
 
-    if ((nextLinkPos.x - dropTolerance) < x
-        && (nextLinkPos.y - dropTolerance) < y) {
+    if ((nextLinkPos.x - horizontalDropTolerance) < x
+        && (nextLinkPos.y - verticalDropTolerance) < y) {
         return true;
     } else {
         return false;
@@ -506,10 +507,11 @@ NVNavBar.prototype.CheckDialOnPreviousLink = function (selectedLinkIndex, x, y) 
 
     // Drop tolerance is dependent on current viewport
     // The page can have 3 links and we want half that size / 3 / 2
-    var dropTolerance = this.$Element.parent().width() / 3 / 2;
+    var horizontalDropTolerance = this.$Element.parent().width() / 3 / 2;
+    var verticalDropTolerance = 150;
 
-    if ((previousLinkPos.x + dropTolerance) > x
-        && (previousLinkPos.y + dropTolerance) > y) {
+    if ((previousLinkPos.x + horizontalDropTolerance) > x
+        && (previousLinkPos.y - verticalDropTolerance) < y) {
         return true;
     } else {
         return false;
