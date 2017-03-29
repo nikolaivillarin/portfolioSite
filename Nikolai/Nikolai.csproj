@@ -177,6 +177,7 @@
     <Content Include="Content\ImagesWork\boxgrove-heroImage_large.jpg" />
     <Content Include="Content\ImagesWork\boxgrove-image_large.png" />
     <Content Include="Content\ImagesWork\boxgrove-image_medium.png" />
+    <Content Include="Content\ImagesWork\hr-heroImage_large.jpg" />
     <Content Include="Content\ImagesWork\hr-heroImage_medium.jpg" />
     <Content Include="Content\ImagesWork\hr-heroImage_small.jpg" />
     <Content Include="Content\ImagesWork\hr-screens_medium.png" />
@@ -185,13 +186,13 @@
     <Content Include="Content\ImagesWork\multiplex-heroImage_small.jpg" />
     <Content Include="Content\ImagesWork\multiplex-screens_small.png" />
     <Content Include="Content\ImagesWork\ratequote-bgImg1_small.png" />
+    <Content Include="Content\ImagesWork\rateQuote-heroImage_large.jpg" />
     <Content Include="Content\ImagesWork\rateQuote-heroImage_medium.jpg" />
     <Content Include="Content\ImagesWork\rateQuote-heroImage_small.jpg" />
     <Content Include="Content\Images\icon-arrow-down.svg" />
     <Content Include="Content\ImagesWork\boxgrove-heroImage_medium.jpg" />
     <Content Include="Content\ImagesWork\boxgrove-image_small.png" />
     <Content Include="Content\ImagesWork\boxgrove-tile.jpg" />
-    <Content Include="Content\ImagesWork\hr-heroImage_large.jpg" />
     <Content Include="Content\ImagesWork\hr-screens_large.png" />
     <Content Include="Content\ImagesWork\hr-tile.jpg" />
     <Content Include="Content\ImagesWork\multiplex-screens_large.png" />
@@ -200,7 +201,6 @@
     <Content Include="Content\ImagesWork\multiplex-heroImage_large.jpg" />
     <Content Include="Content\ImagesWork\multiplex-tile.jpg" />
     <Content Include="Content\ImagesWork\ratequote-bgImg1_large.png" />
-    <Content Include="Content\ImagesWork\rateQuote-heroImage_large.jpg" />
     <Content Include="Content\ImagesWork\ratequote-image1_large.png" />
     <Content Include="Content\ImagesWork\ratequote-image2_large.png" />
     <Content Include="Content\ImagesWork\ratequote-image3_large.png" />
