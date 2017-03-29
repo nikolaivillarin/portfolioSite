@@ -43,7 +43,7 @@
 
         @include breakpoint(max-height $breakpoint-phablet) {
             display: block;
-            padding-top: 30%;
+            margin-top: 30%;
         }
     }
 
@@ -93,20 +93,28 @@
     }
 }
 
+%workItem--active {
+     h1, h2, .work-header.in-view, .work-subHeader.in-view {
+        opacity: 0;
+
+        @include transition-delay(0);
+    }
+
+    .work__overlay {
+        opacity: 0.2;
+
+        @include transition-delay(0);
+    }
+}
+
 .no-touch .work--hoverable {
     &:hover {
-        h1, h2, .work-header.in-view, .work-subHeader.in-view {
-            opacity: 0;
-
-            @include transition-delay(0);
-        }
-
-        .work__overlay {
-            opacity: 0.2;
-
-            @include transition-delay(0);
-        }
+       @extend %workItem--active;
     }
+}
+
+.button-container-viewMore--active {
+    @extend %workItem--active;
 }
 
 .work-imgTile--placeholder {
@@ -118,6 +126,8 @@
 }
 
 .work--separator {
+    border-bottom: 1px solid #000;
+
     @include box-sizing(border-box);
 
     @include breakpoint(min-width 400px) {
@@ -169,7 +179,7 @@
     bottom: 0;
     display: block;
     left: 0;
-    position: absolute;
+    position: fixed;
     width: 100%;
 }
 

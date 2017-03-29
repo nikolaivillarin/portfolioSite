@@ -11,6 +11,7 @@ WorkPage.prototype = {
     , IsAnimating: false
     // Slider Container
     , $WorkSlider: null
+    , $selectedItem: null
 };
 
 WorkPage.prototype.Initialize = function () {
@@ -55,41 +56,39 @@ WorkPage.prototype.OnDialDropped = function () {
     if (window.MainNav.NavBar.DialControl.$Element.hasClass('nvDial--pulsing') === true) {
         window.MainNav.NavBar.DialControl.$Element.removeClass('nvDial--pulsing');
 
-        this.NextPage();
+        $('.work', this.$WorkSlider).removeClass('button-container-viewMore--active');
+
+        $('a', this.$selectedItem).click();
     }
 };
 
-WorkPage.prototype.OnDialDragged = function (x, y) {
+WorkPage.prototype.OnDialDragged = function () {
     /// <summary>
     /// Event handler for when the dial control is dragged.
     /// If the dial is dragged vertically it triggers the next page
     /// </summary>
     if (this.IsSelected === true) {
-        var xTolerance = 100;
+        var that = this;
+        var $workItems = $('.work', this.$WorkSlider);
+        var isInBounds = false;
 
-        var centerX = 0;
-        var centerY = 0;
+        this.$selectedItem = null;
 
-        if ($(window).outerHeight() > $(window).outerWidth()) { // Portrait
-            centerX = Math.floor($(window).outerWidth() / 2);
-            centerY = Math.floor($(window).outerHeight() - ($(window).outerHeight() / 4 * 3));
-        } else { // Landscape
-            centerX = Math.floor($(window).outerWidth() / 2);
-            centerY = Math.floor($(window).outerHeight() / 2);
-        }
+        $workItems.each(function () {
+            var targetElmt = $('.work__dropTarget', this).get(0);
 
-        // Have max distance, make sure user does not have to drag too far to trigger navigation
-        var maxDistance = 400;
+            if (targetElmt && window.MainNav.NavBar.DialControl.IsDialWithinElmt(targetElmt)) {
+                that.$selectedItem = $(this);
 
-        if (centerY < ($(window).outerHeight() - maxDistance)) {
-            centerY = $(window).outerHeight() - maxDistance;
-        }
+                $(this).addClass('button-container-viewMore--active');
 
-        if (y <= centerY && x >= centerX - xTolerance && x <= centerX + xTolerance) {
-            var pageNumText = 'Page ' + this.GetCurrentPageNum() + ' of ' + this.GetNumPages();
+                isInBounds = true;
+            } else {
+                $(this).removeClass('button-container-viewMore--active');
+            }
+        });
 
-            window.MainNav.NavBar.DialControl.$Element.attr('data-page-num', pageNumText);
-
+        if (isInBounds === true) {
             if (window.MainNav.NavBar.DialControl.$Element.hasClass('nvDial--pulsing') === false) {
 
                 window.MainNav.NavBar.DialControl.$Element.addClass('nvDial--pulsing');

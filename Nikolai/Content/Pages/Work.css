@@ -111,7 +111,7 @@
 @media (max-height: 600px) {
   .work__content {
     display: block;
-    padding-top: 30%;
+    margin-top: 30%;
   }
 }
 
@@ -151,7 +151,7 @@
   transition-delay: 0.5s;
 }
 
-.no-touch .work--hoverable:hover h1, .no-touch .work--hoverable:hover h2, .no-touch .work--hoverable:hover .work-header.in-view, .no-touch .work--hoverable:hover .work-subHeader.in-view {
+.no-touch .work--hoverable:hover h1, .button-container-viewMore--active h1, .no-touch .work--hoverable:hover h2, .button-container-viewMore--active h2, .no-touch .work--hoverable:hover .work-header.in-view, .button-container-viewMore--active .work-header.in-view, .no-touch .work--hoverable:hover .work-subHeader.in-view, .button-container-viewMore--active .work-subHeader.in-view {
   opacity: 0;
   -moz-transition-delay: 0;
   -o-transition-delay: 0;
@@ -159,7 +159,7 @@
   transition-delay: 0;
 }
 
-.no-touch .work--hoverable:hover .work__overlay {
+.no-touch .work--hoverable:hover .work__overlay, .button-container-viewMore--active .work__overlay {
   opacity: 0.2;
   -moz-transition-delay: 0;
   -o-transition-delay: 0;
@@ -176,6 +176,7 @@
 }
 
 .work--separator {
+  border-bottom: 1px solid #000;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -238,7 +239,7 @@
   bottom: 0;
   display: block;
   left: 0;
-  position: absolute;
+  position: fixed;
   width: 100%;
 }
 

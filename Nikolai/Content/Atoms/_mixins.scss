@@ -87,3 +87,10 @@
     -webkit-box-sizing: $property;
     box-sizing: $property;
 }
+
+@mixin user-select($property) {
+    -moz-user-select: $property;
+    -ms-user-select: $property;
+    -webkit-user-select: $property;
+    user-select: $property;
+}

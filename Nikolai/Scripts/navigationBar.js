@@ -891,10 +891,16 @@ function NVDial(posX, posY) {
 //#region Properties
 NVDial.prototype = {
     $Element: {}
+    // X position to where the dial will revert to
     , AnchorX: 0
+    // Y position to where the dial will revert to
     , AnchorY: 0
     , DefaultX: 0
     , DefaultY: 0
+    // Current X position
+    , X: 0
+    // Current Y position
+    , Y: 0
     , onDropCallback: function () {
         /// <summary>
         /// This function is called when the Dial is dropped
@@ -936,16 +942,16 @@ NVDial.prototype.SetupDial = function () {
             });
         }
         , drag: function (event, ui) {
-            var x = ui.helper.position().left;
-            var y = ui.helper.position().top;
+            that.X = ui.helper.position().left;
+            that.Y = ui.helper.position().top;
 
             $(this).stop().animate({
-                top: y
-                , left: x
+                top: that.Y
+                , left: that.X
             }, 0, 'linear');
 
             that.onDragHandlers.forEach(function (item) {
-                item.call(item, x, y);
+                item.call(item, that.X, that.Y);
             });
         }
         , containment: 'body'
@@ -997,6 +1003,32 @@ NVDial.prototype.PositionDial = function (x, y, animDuration, easing) {
         left: x - offsetX - 2
        , top: y - offsetY - 2
     }, animDuration, easing);
+};
+
+NVDial.prototype.IsDialWithinElmt = function (elmt) {
+    /// <summary>
+    /// Checks to see if the dial is within the specified element
+    /// </summary>
+    /// <param name="elmt" type="object">
+    /// Dom element to check
+    /// <param>
+    /// <returns type="boolean">
+    /// Returns true if the dial is within the element. False otherwise
+    /// </returns>
+    var isWithin = false;
+
+    if (elmt && $(elmt).length !== 0) {
+        var elmtOffset = $(elmt).offset();
+        var middleX = this.X + this.$Element.outerWidth() / 2;
+        var middleY = this.Y + this.$Element.outerHeight() / 2;
+
+        if (middleX >= elmtOffset.left && middleX <= (elmtOffset.left + $(elmt).outerWidth())
+            && middleY >= elmtOffset.top && middleY <= (elmtOffset.top + $(elmt).outerHeight())) {
+            isWithin = true;
+        }
+    }
+
+    return isWithin;
 };
 
 NVDial.prototype.DefaultState = function () {

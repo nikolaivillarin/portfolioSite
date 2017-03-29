@@ -378,6 +378,10 @@ $color-dial--ring3: #2294e5;*/
   height: 90px;
   position: relative;
   width: 90px;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner {
@@ -811,37 +815,33 @@ $color-dial--ring3: #2294e5;*/
 }
 
 .nvDial--pulsing {
-  font-size: 16px;
+  font-size: 18px;
+  /*&::after {
+        display: block;
+        content: attr(data-page-num);
+        color: $color-font--primaryOnDark;
+        left: 35%;
+        opacity: 0;
+        position: absolute;
+        top: 160%;
+        width: 110%;
+        @include animation(dropAnim 3s infinite linear);
+    }*/
 }
 
 .nvDial--pulsing::before {
   display: block;
   content: "Drop Dial";
   color: #FFF;
-  left: 40%;
+  left: 42%;
   opacity: 0;
   position: absolute;
   top: -20%;
   width: 100%;
-  -moz-animation: dropAnim 3s infinite linear;
-  -o-animation: dropAnim 3s infinite linear;
-  -webkit-animation: dropAnim 3s infinite linear;
-  animation: dropAnim 3s infinite linear;
-}
-
-.nvDial--pulsing::after {
-  display: block;
-  content: attr(data-page-num);
-  color: #FFF;
-  left: 35%;
-  opacity: 0;
-  position: absolute;
-  top: 160%;
-  width: 110%;
-  -moz-animation: dropAnim 3s infinite linear;
-  -o-animation: dropAnim 3s infinite linear;
-  -webkit-animation: dropAnim 3s infinite linear;
-  animation: dropAnim 3s infinite linear;
+  -moz-animation: dropAnim 2s infinite linear;
+  -o-animation: dropAnim 2s infinite linear;
+  -webkit-animation: dropAnim 2s infinite linear;
+  animation: dropAnim 2s infinite linear;
 }
 
 @-webkit-keyframes dropAnim {
@@ -851,7 +851,7 @@ $color-dial--ring3: #2294e5;*/
   20% {
     opacity: 1;
   }
-  40% {
+  50% {
     opacity: 0;
   }
   60% {
@@ -872,7 +872,7 @@ $color-dial--ring3: #2294e5;*/
   20% {
     opacity: 1;
   }
-  40% {
+  50% {
     opacity: 0;
   }
   60% {
@@ -893,7 +893,7 @@ $color-dial--ring3: #2294e5;*/
   20% {
     opacity: 1;
   }
-  40% {
+  50% {
     opacity: 0;
   }
   60% {
@@ -914,7 +914,7 @@ $color-dial--ring3: #2294e5;*/
   20% {
     opacity: 1;
   }
-  40% {
+  50% {
     opacity: 0;
   }
   60% {
@@ -930,10 +930,10 @@ $color-dial--ring3: #2294e5;*/
 
 .nvDial--pulsing .nvDial__button {
   box-shadow: 0 0 0 0 rgba(0, 255, 255, 0.4), 0 0 0 0 white;
-  -moz-animation: pulseAnim 3s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
-  -o-animation: pulseAnim 3s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
-  -webkit-animation: pulseAnim 3s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
-  animation: pulseAnim 3s infinite cubic-bezier(0.075, 0.82, 0.165, 1);
+  -moz-animation: pulseAnim 2s infinite cubic-bezier(0.23, 1, 0.32, 1);
+  -o-animation: pulseAnim 2s infinite cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-animation: pulseAnim 2s infinite cubic-bezier(0.23, 1, 0.32, 1);
+  animation: pulseAnim 2s infinite cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 @-webkit-keyframes pulseAnim {
@@ -2976,28 +2976,28 @@ $color-dial--ring3: #2294e5;*/
   transition: 0.1s opacity;
 }
 
-.no-touch .button-container-viewMore:hover .button-viewMore:before {
-  -moz-animation: viewMore-topCircleAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
-  -o-animation: viewMore-topCircleAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
-  -webkit-animation: viewMore-topCircleAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
-  animation: viewMore-topCircleAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+.no-touch .button-container-viewMore:hover .button-viewMore:before, .button-container-viewMore--active .button-viewMore:before {
+  -moz-animation: viewMore-topCircleAnim 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  -o-animation: viewMore-topCircleAnim 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  -webkit-animation: viewMore-topCircleAnim 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  animation: viewMore-topCircleAnim 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 }
 
-.no-touch .button-container-viewMore:hover .button-viewMore:after {
-  -moz-animation: viewMore-bottomCircleAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
-  -o-animation: viewMore-bottomCircleAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
-  -webkit-animation: viewMore-bottomCircleAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
-  animation: viewMore-bottomCircleAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+.no-touch .button-container-viewMore:hover .button-viewMore:after, .button-container-viewMore--active .button-viewMore:after {
+  -moz-animation: viewMore-bottomCircleAnim 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  -o-animation: viewMore-bottomCircleAnim 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  -webkit-animation: viewMore-bottomCircleAnim 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  animation: viewMore-bottomCircleAnim 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 }
 
-.no-touch .button-container-viewMore:hover .button-viewMore__separator {
-  -moz-animation: viewMore-separatorAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
-  -o-animation: viewMore-separatorAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
-  -webkit-animation: viewMore-separatorAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
-  animation: viewMore-separatorAnim 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+.no-touch .button-container-viewMore:hover .button-viewMore__separator, .button-container-viewMore--active .button-viewMore__separator {
+  -moz-animation: viewMore-separatorAnim 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  -o-animation: viewMore-separatorAnim 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  -webkit-animation: viewMore-separatorAnim 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  animation: viewMore-separatorAnim 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 }
 
-.no-touch .button-container-viewMore:hover .button-viewMore__link {
+.no-touch .button-container-viewMore:hover .button-viewMore__link, .button-container-viewMore--active .button-viewMore__link {
   opacity: 1;
   -moz-transition: 0.1s 0.4s opacity;
   -o-transition: 0.1s 0.4s opacity;
@@ -3020,30 +3020,30 @@ $color-dial--ring3: #2294e5;*/
   position: absolute;
   top: 7px;
   width: 90px;
-  -moz-animation: viewMore-separatorAnim--reverse 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
-  -o-animation: viewMore-separatorAnim--reverse 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
-  -webkit-animation: viewMore-separatorAnim--reverse 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
-  animation: viewMore-separatorAnim--reverse 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  -moz-animation: viewMore-separatorAnim--reverse 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  -o-animation: viewMore-separatorAnim--reverse 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  -webkit-animation: viewMore-separatorAnim--reverse 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  animation: viewMore-separatorAnim--reverse 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 }
 
 .button-viewMore:before {
   border-top-left-radius: 14px;
   border-top-right-radius: 14px;
   top: 0;
-  -moz-animation: viewMore-topCircleAnim--reverse 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
-  -o-animation: viewMore-topCircleAnim--reverse 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
-  -webkit-animation: viewMore-topCircleAnim--reverse 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
-  animation: viewMore-topCircleAnim--reverse 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  -moz-animation: viewMore-topCircleAnim--reverse 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  -o-animation: viewMore-topCircleAnim--reverse 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  -webkit-animation: viewMore-topCircleAnim--reverse 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  animation: viewMore-topCircleAnim--reverse 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 }
 
 .button-viewMore:after {
   border-bottom-left-radius: 14px;
   border-bottom-right-radius: 14px;
   top: 8px;
-  -moz-animation: viewMore-bottomCircleAnim--reverse 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
-  -o-animation: viewMore-bottomCircleAnim--reverse 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
-  -webkit-animation: viewMore-bottomCircleAnim--reverse 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
-  animation: viewMore-bottomCircleAnim--reverse 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  -moz-animation: viewMore-bottomCircleAnim--reverse 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  -o-animation: viewMore-bottomCircleAnim--reverse 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  -webkit-animation: viewMore-bottomCircleAnim--reverse 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+  animation: viewMore-bottomCircleAnim--reverse 0.3s cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
 }
 
 .button-viewMore__link {

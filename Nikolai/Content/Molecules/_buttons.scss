@@ -52,7 +52,7 @@
 }
 
 $viewMore-circle--diameter: 14px;
-$viewMore-animation--duration: 0.5s;
+$viewMore-animation--duration: 0.3s;
 $viewMore-animation--easing: cubic-bezier(0.645, 0.045, 0.355, 1);
 
 @include keyframes(viewMore-separatorAnim) {
@@ -131,7 +131,7 @@ $viewMore-animation--easing: cubic-bezier(0.645, 0.045, 0.355, 1);
     }
 }
 
-.no-touch .button-container-viewMore:hover {
+%viewMore--expanded {
     .button-viewMore:before {
         @include animation(viewMore-topCircleAnim $viewMore-animation--duration $viewMore-animation--easing forwards);
     }
@@ -149,6 +149,14 @@ $viewMore-animation--easing: cubic-bezier(0.645, 0.045, 0.355, 1);
 
         @include transition(0.1s 0.4s opacity);
     }
+}
+
+.no-touch .button-container-viewMore:hover {
+    @extend %viewMore--expanded;
+}
+
+.button-container-viewMore--active {
+    @extend %viewMore--expanded;
 }
 
 .button-viewMore {

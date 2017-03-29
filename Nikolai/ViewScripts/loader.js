@@ -44,7 +44,7 @@ function LoadImages() {
 }
 
 (function LoadWebApp() {
-    if (window.$) {
+    if (window.$ && window.MainNavigation) {
         $(document).ready(function () {
             window.MainNav = new window.MainNavigation();
 
