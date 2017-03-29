@@ -112,8 +112,12 @@ HomePage.prototype.DisableDialJiggle = function () {
 
 // Initializer
 (function LoadHomeScript() {
-    if (window.MainNav) {
+    if (window.MainNav && window.MainNav.HasNavigationLoaded === true) {
         new HomePage();
+    } else if (window.MainNav) {
+        window.MainNav.SubscribeToOnNavigationLoaded(function () {
+            new HomePage();
+        });
     } else {
         window.setTimeout(LoadHomeScript, 50);
     }

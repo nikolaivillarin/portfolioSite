@@ -23,8 +23,12 @@ RateQuotePage.prototype.CloseClick = function (selectedPageId) {
 
 // Initializer
 (function LoadWorkRateQuoteScript() {
-    if (window.MainNav) {
+    if (window.MainNav && window.MainNav.HasNavigationLoaded === true) {
         new RateQuotePage();
+    } else if (window.MainNav) {
+        window.MainNav.SubscribeToOnNavigationLoaded(function () {
+            new RateQuotePage();
+        });
     } else {
         window.setTimeout(LoadWorkRateQuoteScript, 50);
     }

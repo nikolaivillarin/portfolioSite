@@ -23,8 +23,12 @@ HRPage.prototype.CloseClick = function (selectedPageId) {
 
 // Initializer
 (function LoadWorkHRScript() {
-    if (window.MainNav) {
+    if (window.MainNav && window.MainNav.HasNavigationLoaded === true) {
         new HRPage();
+    } else if (window.MainNav) {
+        window.MainNav.SubscribeToOnNavigationLoaded(function () {
+            new HRPage();
+        });
     } else {
         window.setTimeout(LoadWorkHRScript, 50);
     }

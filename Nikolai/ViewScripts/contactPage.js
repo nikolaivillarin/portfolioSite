@@ -23,8 +23,12 @@ ContactPage.prototype.OnPageChange = function () {
 
 // Initializer
 (function LoadContactScript() {
-    if (window.MainNav) {
+    if (window.MainNav && window.MainNav.HasNavigationLoaded === true) {
         new ContactPage();
+    } else if (window.MainNav) {
+        window.MainNav.SubscribeToOnNavigationLoaded(function () {
+            new ContactPage();
+        });
     } else {
         window.setTimeout(LoadContactScript, 50);
     }

@@ -55,8 +55,12 @@ MenuPage.prototype.OnPageChange = function (selectedPageId) {
 
 // Initializer
 (function LoadMenuScript() {
-    if (window.MainNav) {
+    if (window.MainNav && window.MainNav.HasNavigationLoaded === true) {
         new MenuPage();
+    } else if (window.MainNav) {
+        window.MainNav.SubscribeToOnNavigationLoaded(function () {
+            new MenuPage();
+        });
     } else {
         window.setTimeout(LoadMenuScript, 50);
     }

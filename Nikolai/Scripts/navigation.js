@@ -58,6 +58,7 @@ MainNavigation.prototype = {
     , OnPageLoadedHandlers: []
     // When the navigation control is loaded
     , OnNavigationLoadedHandlers: []
+    , HasNavigationLoaded: false
     , TotalAsyncPages: 0
     , TotalLoadedAsyncPages: 0
 };
@@ -104,6 +105,8 @@ MainNavigation.prototype.Initialize = function () {
     this.OnNavigationLoadedHandlers.forEach(function (item) {
         item.call(item);
     });
+
+    this.HasNavigationLoaded = true;
 };
 
 MainNavigation.prototype.SetupPageLinks = function () {

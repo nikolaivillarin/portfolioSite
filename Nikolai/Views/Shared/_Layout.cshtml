@@ -57,7 +57,9 @@
     @Html.Partial("~/Views/Menu/_menu.cshtml")
     @Html.Partial("_loading")
 
-    @Scripts.RenderFormat("<script src=\"{0}\" async></script>", "~/Content/libraries")
+    @Scripts.Render("~/Content/libraries")
+
+    @*@Scripts.RenderFormat("<script src=\"{0}\" async></script>", "~/Content/libraries")*@
 
     @Scripts.RenderFormat("<script src=\"{0}\" async></script>", "~/Content/scripts")
 

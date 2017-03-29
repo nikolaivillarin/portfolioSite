@@ -23,8 +23,12 @@ MultiplexPage.prototype.CloseClick = function (selectedPageId) {
 
 // Initializer
 (function LoadWorkMultiplexScript() {
-    if (window.MainNav) {
+    if (window.MainNav && window.MainNav.HasNavigationLoaded === true) {
         new MultiplexPage();
+    } else if (window.MainNav) {
+        window.MainNav.SubscribeToOnNavigationLoaded(function () {
+            new MultiplexPage();
+        });
     } else {
         window.setTimeout(LoadWorkMultiplexScript, 50);
     }

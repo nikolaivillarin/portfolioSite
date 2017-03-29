@@ -23,8 +23,12 @@ BoxgrovePage.prototype.CloseClick = function (selectedPageId) {
 
 // Initializer
 (function LoadWorkBoxGroveScript() {
-    if (window.MainNav) {
+    if (window.MainNav && window.MainNav.HasNavigationLoaded === true) {
         new BoxgrovePage();
+    } else if (window.MainNav) {
+        window.MainNav.SubscribeToOnNavigationLoaded(function () {
+            new BoxgrovePage();
+        });
     } else {
         window.setTimeout(LoadWorkBoxGroveScript, 50);
     }
