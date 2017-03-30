@@ -20,6 +20,10 @@
 
 .work .work-header, .work .work-subHeader {
   opacity: 0;
+  -moz-transition-delay: 0;
+  -o-transition-delay: 0;
+  -webkit-transition-delay: 0;
+  transition-delay: 0;
   -moz-transform: translateY(-30px);
   -ms-transform: translateY(-30px);
   -o-transform: translateY(-30px);
@@ -33,6 +37,10 @@
 
 .work .work-header.in-view, .work .work-subHeader.in-view {
   opacity: 1;
+  -moz-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
   -o-transform: translateY(0);
@@ -41,6 +49,10 @@
 }
 
 .work .work-btnView {
+  -moz-transition-delay: 0;
+  -o-transition-delay: 0;
+  -webkit-transition-delay: 0;
+  transition-delay: 0;
   -moz-transform: scale(0);
   -ms-transform: scale(0);
   -o-transform: scale(0);
@@ -53,6 +65,10 @@
 }
 
 .work .work-btnView.in-view {
+  -moz-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
   -moz-transform: scale(1);
   -ms-transform: scale(1);
   -o-transform: scale(1);

@@ -14,6 +14,10 @@
 
 .hr__screens {
   opacity: 0;
+  -moz-transition-delay: 0;
+  -o-transition-delay: 0;
+  -webkit-transition-delay: 0;
+  transition-delay: 0;
   -moz-transform: translateX(50px);
   -ms-transform: translateX(50px);
   -o-transform: translateX(50px);
@@ -27,6 +31,10 @@
 
 .hr__screens.in-view {
   opacity: 1;
+  -moz-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
   -moz-transform: translateX(0);
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
@@ -36,6 +44,10 @@
 
 .hr-header, .hr__summaryText {
   opacity: 0;
+  -moz-transition-delay: 0;
+  -o-transition-delay: 0;
+  -webkit-transition-delay: 0;
+  transition-delay: 0;
   -moz-transform: translateY(-30px);
   -ms-transform: translateY(-30px);
   -o-transform: translateY(-30px);
@@ -49,6 +61,10 @@
 
 .hr-header.in-view, .hr__summaryText.in-view {
   opacity: 1;
+  -moz-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
   -o-transform: translateY(0);
@@ -58,6 +74,10 @@
 
 .hr-subHeader {
   opacity: 0;
+  -moz-transition-delay: 0;
+  -o-transition-delay: 0;
+  -webkit-transition-delay: 0;
+  transition-delay: 0;
   -moz-transform: translateY(30px);
   -ms-transform: translateY(30px);
   -o-transform: translateY(30px);
@@ -71,6 +91,10 @@
 
 .hr-subHeader.in-view {
   opacity: 1;
+  -moz-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
   -o-transform: translateY(0);

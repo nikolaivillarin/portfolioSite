@@ -14,6 +14,10 @@
 
 .rateQuote-header, .rateQuote__header, .rateQuote__screensContainer--top .rateQuote__imgContainer--container1, .rateQuote__screensContainer--top .rateQuote__imgContainer--container2, .rateQuote__screensContainer--bottom .rateQuote__imgContainer--container1, .rateQuote__screensContainer--bottom .rateQuote__imgContainer--container2 {
   opacity: 0;
+  -moz-transition-delay: 0;
+  -o-transition-delay: 0;
+  -webkit-transition-delay: 0;
+  transition-delay: 0;
   -moz-transform: translateY(-30px);
   -ms-transform: translateY(-30px);
   -o-transform: translateY(-30px);
@@ -27,6 +31,10 @@
 
 .rateQuote-header.in-view, .rateQuote__header.in-view, .rateQuote__screensContainer--top.in-view .rateQuote__imgContainer--container1, .rateQuote__screensContainer--top.in-view .rateQuote__imgContainer--container2, .rateQuote__screensContainer--bottom.in-view .rateQuote__imgContainer--container1, .rateQuote__screensContainer--bottom.in-view .rateQuote__imgContainer--container2 {
   opacity: 1;
+  -moz-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
   -o-transform: translateY(0);
@@ -36,6 +44,10 @@
 
 .rateQuote__overviewContent {
   opacity: 0;
+  -moz-transition-delay: 0;
+  -o-transition-delay: 0;
+  -webkit-transition-delay: 0;
+  transition-delay: 0;
   -moz-transform: translateY(30px);
   -ms-transform: translateY(30px);
   -o-transform: translateY(30px);
@@ -49,6 +61,10 @@
 
 .rateQuote__overviewContent.in-view {
   opacity: 1;
+  -moz-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
   -o-transform: translateY(0);
