@@ -29,3 +29,44 @@
 .expand-contianer__content--spacious {
     @extend %box--spacious;
 }
+
+.page-wrapper {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    content: "";
+    bottom: 10px;
+    left: 50%;
+
+    @extend %__circle;
+    @extend %box-level--back;
+    @include transition(width 600ms, height 600ms, left 600ms, bottom 600ms, border-radius 600ms 300ms);
+
+    &.active {
+        left: 0;
+        bottom: 0;
+        display: block;
+        height: 100%;
+        width: 100%;
+        border-radius: 0;
+
+        @extend %box-level--default;
+    }
+
+    .page-content {
+        min-height: 100vh;
+        min-width: 100vw;
+    }
+}
+
+.page-wrapper--initialState {
+    /* set by JavaScript */
+
+    overflow: hidden;
+}
+
+.page-wrapper--endState {
+    /* set by JavaScript */
+
+    overflow: auto;
+}

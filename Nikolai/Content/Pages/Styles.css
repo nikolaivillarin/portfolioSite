@@ -302,7 +302,7 @@ $color-dial--ring3: #2294e5;*/
 \*------------------------------------*/
 /*------------------------------------*    Partials
 \*------------------------------------*/
-.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .nvDial__button, .nvDial__button-light, .nvDial__button-logo {
+.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .nvDial__button, .nvDial__button-light, .nvDial__button-logo, .page-wrapper {
   border-radius: 50%;
 }
 
@@ -340,8 +340,12 @@ $color-dial--ring3: #2294e5;*/
   padding: 1.3em;
 }
 
-.nav-item__circle, .menu:before {
+.nav-item__circle, .page-wrapper, .menu:before {
   z-index: -1;
+}
+
+.page-wrapper.active {
+  z-index: 0;
 }
 
 .expand-container, .menu, .button-viewMore:before, .button-viewMore:after {
@@ -368,7 +372,7 @@ $color-dial--ring3: #2294e5;*/
 \*------------------------------------*/
 /*------------------------------------*    Styles
 \*------------------------------------*/
-.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .nvDial__button, .nvDial__button-light, .nvDial__button-logo {
+.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .nvDial__button, .nvDial__button-light, .nvDial__button-logo, .page-wrapper {
   position: absolute;
   border-radius: 50%;
 }
@@ -1004,7 +1008,7 @@ $color-dial--ring3: #2294e5;*/
 \*------------------------------------*/
 /*------------------------------------*    Partials
 \*------------------------------------*/
-.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .nvDial__button, .nvDial__button-light, .nvDial__button-logo {
+.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .nvDial__button, .nvDial__button-light, .nvDial__button-logo, .page-wrapper {
   border-radius: 50%;
 }
 
@@ -1042,8 +1046,12 @@ $color-dial--ring3: #2294e5;*/
   padding: 1.3em;
 }
 
-.nav-item__circle, .menu:before {
+.nav-item__circle, .page-wrapper, .menu:before {
   z-index: -1;
+}
+
+.page-wrapper.active {
+  z-index: 0;
 }
 
 .expand-container, .menu, .button-viewMore:before, .button-viewMore:after {
@@ -1794,7 +1802,7 @@ $color-dial--ring3: #2294e5;*/
 \*------------------------------------*/
 /*------------------------------------*    Partials
 \*------------------------------------*/
-.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .nvDial__button, .nvDial__button-light, .nvDial__button-logo {
+.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .nvDial__button, .nvDial__button-light, .nvDial__button-logo, .page-wrapper {
   border-radius: 50%;
 }
 
@@ -1832,8 +1840,12 @@ $color-dial--ring3: #2294e5;*/
   padding: 1.3em;
 }
 
-.nav-item__circle, .menu:before {
+.nav-item__circle, .page-wrapper, .menu:before {
   z-index: -1;
+}
+
+.page-wrapper.active {
+  z-index: 0;
 }
 
 .expand-container, .menu, .button-viewMore:before, .button-viewMore:after {
@@ -1868,11 +1880,48 @@ $color-dial--ring3: #2294e5;*/
   width: 100vw;
 }
 
+.page-wrapper {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  content: "";
+  bottom: 10px;
+  left: 50%;
+  -moz-transition: width 600ms, height 600ms, left 600ms, bottom 600ms, border-radius 600ms 300ms;
+  -o-transition: width 600ms, height 600ms, left 600ms, bottom 600ms, border-radius 600ms 300ms;
+  -webkit-transition: width 600ms, height 600ms, left 600ms, bottom 600ms, border-radius 600ms 300ms;
+  transition: width 600ms, height 600ms, left 600ms, bottom 600ms, border-radius 600ms 300ms;
+}
+
+.page-wrapper.active {
+  left: 0;
+  bottom: 0;
+  display: block;
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+}
+
+.page-wrapper .page-content {
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.page-wrapper--initialState {
+  /* set by JavaScript */
+  overflow: hidden;
+}
+
+.page-wrapper--endState {
+  /* set by JavaScript */
+  overflow: auto;
+}
+
 /*------------------------------------*    CSS Breakpoints for different devices
 \*------------------------------------*/
 /*------------------------------------*    Partials
 \*------------------------------------*/
-.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .nvDial__button, .nvDial__button-light, .nvDial__button-logo {
+.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .nvDial__button, .nvDial__button-light, .nvDial__button-logo, .page-wrapper {
   border-radius: 50%;
 }
 
@@ -1910,8 +1959,12 @@ $color-dial--ring3: #2294e5;*/
   padding: 1.3em;
 }
 
-.nav-item__circle, .menu:before {
+.nav-item__circle, .page-wrapper, .menu:before {
   z-index: -1;
+}
+
+.page-wrapper.active {
+  z-index: 0;
 }
 
 .expand-container, .menu, .button-viewMore:before, .button-viewMore:after {
@@ -2070,7 +2123,7 @@ $color-dial--ring3: #2294e5;*/
 \*------------------------------------*/
 /*------------------------------------*    Partials
 \*------------------------------------*/
-.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .nvDial__button, .nvDial__button-light, .nvDial__button-logo {
+.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .nvDial__button, .nvDial__button-light, .nvDial__button-logo, .page-wrapper {
   border-radius: 50%;
 }
 
@@ -2108,8 +2161,12 @@ $color-dial--ring3: #2294e5;*/
   padding: 1.3em;
 }
 
-.nav-item__circle, .menu:before {
+.nav-item__circle, .page-wrapper, .menu:before {
   z-index: -1;
+}
+
+.page-wrapper.active {
+  z-index: 0;
 }
 
 .expand-container, .menu, .button-viewMore:before, .button-viewMore:after {
@@ -3094,7 +3151,7 @@ $color-dial--ring3: #2294e5;*/
 \*------------------------------------*/
 /*------------------------------------*    Partials
 \*------------------------------------*/
-.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .nvDial__button, .nvDial__button-light, .nvDial__button-logo {
+.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .nvDial__button, .nvDial__button-light, .nvDial__button-logo, .page-wrapper {
   border-radius: 50%;
 }
 
@@ -3132,8 +3189,12 @@ $color-dial--ring3: #2294e5;*/
   padding: 1.3em;
 }
 
-.nav-item__circle, .menu:before {
+.nav-item__circle, .page-wrapper, .menu:before {
   z-index: -1;
+}
+
+.page-wrapper.active {
+  z-index: 0;
 }
 
 .expand-container, .menu, .button-viewMore:before, .button-viewMore:after {
