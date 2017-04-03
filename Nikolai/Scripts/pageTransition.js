@@ -41,8 +41,6 @@ PageTransition.prototype.Initialize = function (initialPageID) {
 
     this.$currentPage = $('#' + initialPageID);
 
-    this.StoreDefaultCSSForPage(this.$currentPage);
-
     if (this.$currentPage.length === 0) {
         throw new Error('Page with ID: ' + initialPageID + ' does not exists');
     }
@@ -51,19 +49,13 @@ PageTransition.prototype.Initialize = function (initialPageID) {
 };
 
 PageTransition.prototype.ResetPage = function ($outpage, $inpage) {
-    $outpage.attr('class', $outpage.data('nv-default-css'));
-    $inpage.attr('class', $inpage.data('nv-default-css') + ' ' + this.CurrentPageClass);
-};
+    $outpage
+        .removeClass(this.OutClassAnimation)
+        .removeClass(this.CurrentPageClass);
 
-PageTransition.prototype.StoreDefaultCSSForPage = function ($page) {
-    if ($page.data('nv-default-css') === undefined) {
-        var defaultClasses = $page.attr('class');
-
-        // Ensure selected classes does not get stored
-        defaultClasses = defaultClasses.replace(this.CurrentPageClass, '');
-
-        $page.data('nv-default-css', defaultClasses);
-    }
+    $inpage
+        .removeClass(this.InClassAnimation)
+        .addClass(this.CurrentPageClass);
 };
 
 PageTransition.prototype.TransitionToPage = function (pageID) {
@@ -78,8 +70,6 @@ PageTransition.prototype.TransitionToPage = function (pageID) {
     }
 
     this.$nextPage = $('#' + pageID);
-
-    this.StoreDefaultCSSForPage(this.$nextPage);
 
     if (this.$nextPage.length === 0) {
         throw new Error('Page with ID: ' + pageID + ' does not exists');
