@@ -1,7 +1,8 @@
 ﻿/*------------------------------------*\
     Summary: 
     Styles for the expand control which sets
-    the transitions when the user goes from page to page
+    the transitions when the user goes from page to page.
+    These styles are used by JavaScript
 \*------------------------------------*/
 @import '../Atoms/_boxes';
 @import '../Atoms/_mixins';
@@ -16,9 +17,17 @@
 }
 
 .expand-container {
+    display: none;
     overflow: hidden;
 
     @extend %box--fullPage;
+    @include transform(translate3d(0, 0, 0));
+    @include transform-style(preserve-3d);
+    @include backface-visibility(hidden);
+}
+
+.expand-container--selected {
+    display: block;
 }
 
 .expand-contianer__content {
@@ -30,43 +39,6 @@
     @extend %box--spacious;
 }
 
-.page-wrapper {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    content: "";
-    bottom: 10px;
-    left: 50%;
-
-    @extend %__circle;
-    @extend %box-level--back;
-    @include transition(width 600ms, height 600ms, left 600ms, bottom 600ms, border-radius 600ms 300ms);
-
-    &.active {
-        left: 0;
-        bottom: 0;
-        display: block;
-        height: 100%;
-        width: 100%;
-        border-radius: 0;
-
-        @extend %box-level--default;
-    }
-
-    .page-content {
-        min-height: 100vh;
-        min-width: 100vw;
-    }
-}
-
-.page-wrapper--initialState {
-    /* set by JavaScript */
-
-    overflow: hidden;
-}
-
-.page-wrapper--endState {
-    /* set by JavaScript */
-
-    overflow: auto;
+.expand-container-ontop {
+	@extend %box-level--modular;
 }

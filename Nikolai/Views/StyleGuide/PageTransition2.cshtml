@@ -1,0 +1,122 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Page Transitions 2</title>
+    @Styles.Render("~/Content/Styles")
+    <meta name="description" content="Style guide for my website's page transitions" />
+</head>
+<body style="background-color: #333">
+    <article id="pnlPages">
+        <section id="page1" data-nv-page="true" class="expand-container" style="background-color: #2294e5">
+            <div class="expand-contianer__content">
+                <h1 class="header-main--onDark header-large">Page 1</h1>
+                <br />
+                <p class="text-primary--OnDark">
+                    @Html.Ipsum().Words(50)
+                </p>
+                <button id="Page1NextBtn" style="display: block; position: absolute; right: 20px; bottom: 10px">
+                    Next Page
+                </button>
+            </div>
+        </section>
+        <section id="page2" data-nv-page="true" class="expand-container" style="background-color: #e59022">
+            <div class="expand-contianer__content">
+                <h1 class="header-main--onDark header-large">Page 2</h1>
+                <br />
+                <p class="text-primary--OnDark">
+                    @Html.Ipsum().Words(50)
+                </p>
+                <button id="Page2Previous" style="display: block; position: absolute; left: 20px; bottom: 10px">
+                    Previous Page
+                </button>
+                <button id="Page2Next" style="display: block; position: absolute; right: 20px; bottom: 10px">
+                    Next Page
+                </button>
+            </div>
+        </section>
+        <section id="page3" data-nv-page="true" class="expand-container" style="background-color: #e52242">
+            <div class="expand-contianer__content">
+                <h1 class="header-main--onDark header-large">Page 3</h1>
+                <br />
+                <p class="text-primary--OnDark">
+                    @Html.Ipsum().Words(50)
+                </p>
+                <button id="Page3Previous" style="display: block; position: absolute; left: 20px; bottom: 10px">
+                    Previous Page
+                </button>
+            </div>
+        </section>
+    </article>
+
+    @Scripts.Render("~/Content/libraries")
+    @Scripts.Render("~/Scripts/pageTransition.js")
+    <script>
+        $(document).ready(function () {
+            var pageTransition = new window.PageTransition('page1');
+
+            $('#Page1NextBtn').on('click', function () {
+                pageTransition.TransitionToPage('page2');
+            });
+
+            $('#Page2Previous').on('click', function () {
+                pageTransition.TransitionToPage('page1');
+            });
+
+            $('#Page2Next').on('click', function () {
+                pageTransition.TransitionToPage('page3');
+            });
+
+            $('#Page3Previous').on('click', function () {
+                pageTransition.TransitionToPage('page2');
+            });
+        });
+
+        //$(document).ready(function () {
+        //    var endCurrPage = false;
+        //    var endNextPage = false;
+
+        //    function resetPage($outpage, $inpage) {
+        //        $outpage.attr('class', 'pt-page');
+        //        $inpage.attr('class', 'pt-page pt-page-current');
+        //    }
+
+        //    function onEndAnimation($outpage, $inpage) {
+        //        endCurrPage = false;
+        //        endNextPage = false;
+        //        resetPage($outpage, $inpage);
+        //    }
+
+        //    $('#Page1NextBtn').on('click', function () {
+        //        $('#page2').addClass('pt-page-current');
+
+        //        $('#page1').addClass('pt-page-rotateSlideOut').on('animationend', function () {
+        //            $('#page1').off('animationend');
+
+        //            endCurrPage = true;
+
+        //            if (endNextPage) {
+        //                onEndAnimation($('#page1'), $('#page2'));
+        //            }
+        //        });
+
+        //        $('#page2').addClass('pt-page-rotateSlideIn').on('animationend', function () {
+        //            $('#page2').off('animationend');
+
+        //            endNextPage = true;
+
+        //            if (endCurrPage) {
+        //                onEndAnimation($('#page1'), $('#page2'));
+        //            }
+        //        });
+        //    });
+        //});
+    </script>
+</body>
+</html>

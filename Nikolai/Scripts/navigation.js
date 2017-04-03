@@ -79,13 +79,14 @@ MainNavigation.prototype.Initialize = function () {
         );
     }
 
-    if (window.NavigationTransition === null || window.NavigationTransition === undefined) {
+    if (window.PageTransition === null || window.PageTransition === undefined) {
         throw new Error('Navigation Transition script is missing');
     } else {
-        this.PageTransitions = new window.NavigationTransition('loading');
-        this.PageTransitions.PageChangedCallback = $.proxy(this.OnPageChanged, this);
-        this.PageTransitions.SelectPage('loading');
-        this.PageTransitions.AnchorElmtID = 'lnkHome';
+        this.PageTransitions = new window.PageTransition('loading');
+
+        this.PageTransitions.SubscribeToPageChangedEvent(
+            $.proxy(this.OnPageChanged, this)
+        );
     }
 
     // Add Url to History Stack
@@ -95,10 +96,10 @@ MainNavigation.prototype.Initialize = function () {
     
     window.onpopstate = history.onpushstate = $.proxy(this.HistoryChanged, this);
 
-    $(window).on('resize', this.TriggerScrollAnimation);
+    //$(window).on('resize', this.TriggerScrollAnimation);
 
     $('[data-nv-page]')
-        .on('scroll', this.TriggerScrollAnimation)
+        //.on('scroll', this.TriggerScrollAnimation)
         .on('touchmove', this.PreventWindowBounce)
         .trigger('scroll');
 
@@ -279,7 +280,7 @@ MainNavigation.prototype.SetMenuBtnTheme = function () {
     /// <summary>
     /// Set's the navigation theme specified on the selected page
     /// </summary>
-    var $page = $('#' + this.PageTransitions.SelectedPageID);
+    var $page = $('#' + this.PageTransitions.$currentPage.attr('id'));
     var selectedTheme = $page.data('nv-theme') ? $page.data('nv-theme') : 'dark';
 
     var $btnHamburger = $('#btnHamburger');
@@ -315,7 +316,7 @@ MainNavigation.prototype.SetMenuBtnState = function () {
     /// <summary>
     /// Set's the Menu buttons state depending on what is set on data-nv-nav-state
     /// </summary>
-    var $page = $('#' + this.PageTransitions.SelectedPageID);
+    var $page = $('#' + this.PageTransitions.$currentPage.attr('id'));
     var state = $page.data('nv-nav-state') ? $page.data('nv-nav-state').toLowerCase() : 'default';
 
     var $btnHamburger = $('#btnHamburger');
@@ -419,7 +420,8 @@ MainNavigation.prototype.OnDialClick = function () {
     var that = this;
 
     this.OnDialClickHandlers.forEach(function (item) {
-        item.call(item, that.PageTransitions.SelectedPageID, that.PageTransitions.PreviousPageID);
+        item.call(item, that.PageTransitions.$currentPage.attr('id')
+            , that.PageTransitions.$previousPage.attr('id'));
     });
 };
 
@@ -431,14 +433,17 @@ MainNavigation.prototype.OnPageChanged = function () {
     var that = this;
 
     // For scroll animation
-    $('[data-nv-page]').trigger('scroll');
+    window.setTimeout(function () {
+        $('[data-nv-page]').trigger('scroll');
+    }, 300);
 
     this.SetMenuBtnTheme();
 
     this.SetMenuBtnState();
 
     this.OnPageChangeHandlers.forEach(function (item) {
-        item.call(item, that.PageTransitions.SelectedPageID, that.PageTransitions.PreviousPageID);
+        item.call(item, that.PageTransitions.$currentPage.attr('id')
+            , that.PageTransitions.$previousPage.attr('id'));
     });
 };
 
@@ -454,8 +459,6 @@ MainNavigation.prototype.HistoryChanged = function (evt) {
     if (evt.state !== undefined && evt.state !== null) {
         // Triggered by Pushstate or when a Link is clicked
         route = evt.state;
-
-        this.PageTransitions.AnchorElmtID = route.TargetID;
     } else {
         // Triggered by Back/Forward buttons and page loading
         route = this.GetCurrentRoute();
@@ -536,8 +539,6 @@ MainNavigation.prototype.PageLoaded = function (url, markup) {
     var that = this;
     var $markup = $('<div />', { html: markup }).contents();
 
-    $markup = this.PageTransitions.HidePage(null, $markup);
-
     $('#pnlPages').append($markup);
 
     var route = this.GetRoute(url);
@@ -562,7 +563,7 @@ MainNavigation.prototype.PageLoaded = function (url, markup) {
     imageLoader.on('fail', renderNewPage);
 };
 
-MainNavigation.prototype.PreventWindowBounce = function (evt) {
+MainNavigation.prototype.PreventWindowBounce = function () {
     // TO DO: Fix issue where on iOS screen can be scrolled past the actual height showing
     // a portion of an empty screen
 

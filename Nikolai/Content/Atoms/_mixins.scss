@@ -94,3 +94,14 @@
     -webkit-user-select: $property;
     user-select: $property;
 }
+
+@mixin transform-style($property) {
+    -webkit-transform-style: $property;
+    transform-style: $property;
+}
+
+@mixin backface-visibility($property) {
+    -moz-backface-visibility: $property;
+    -webkit-backface-visibility: $property;
+    backface-visibility: $property;
+}

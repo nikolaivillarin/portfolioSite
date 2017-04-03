@@ -52,10 +52,10 @@
     @Html.Partial("_nav")
     <main>
         <div id="mainLoadingOverlay" class="loading-overlay"></div>
+        @Html.Partial("~/Views/Menu/_menu.cshtml")
+        @Html.Partial("_loading")
         @RenderBody()
     </main>
-    @Html.Partial("~/Views/Menu/_menu.cshtml")
-    @Html.Partial("_loading")
 
     @Scripts.Render("~/Content/libraries")
 

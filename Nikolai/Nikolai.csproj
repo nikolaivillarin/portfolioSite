@@ -278,6 +278,18 @@
     <Content Include="Content\Pages\Work.min.css">
       <DependentUpon>Work.css</DependentUpon>
     </Content>
+    <Content Include="Content\PageTransitions\animations.css">
+      <DependentUpon>animations.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\PageTransitions\animations.min.css">
+      <DependentUpon>animations.css</DependentUpon>
+    </Content>
+    <Content Include="Content\PageTransitions\component.css">
+      <DependentUpon>component.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\PageTransitions\component.min.css">
+      <DependentUpon>component.css</DependentUpon>
+    </Content>
     <Content Include="favicon.ico" />
     <Content Include="Favicon\android-icon-144x144.png" />
     <Content Include="Favicon\android-icon-192x192.png" />
@@ -408,6 +420,14 @@
     <Content Include="Content\Breakpoint\breakpoint\_settings.scss" />
     <Content Include="Content\Breakpoint\_breakpoint.scss" />
     <Content Include="Content\Atoms\_breakpoints.scss" />
+    <Content Include="Content\PageTransitions\animations.scss" />
+    <Content Include="Content\PageTransitions\animations.css.map">
+      <DependentUpon>animations.css</DependentUpon>
+    </Content>
+    <Content Include="Content\PageTransitions\component.scss" />
+    <Content Include="Content\PageTransitions\component.css.map">
+      <DependentUpon>component.css</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\Local Host.pubxml" />
     <None Include="Properties\PublishProfiles\Winhost Release.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
@@ -421,6 +441,7 @@
     <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery.ui.touch-punch.js" />
+    <Content Include="Scripts\pageTransition.js" />
     <Content Include="ViewScripts\loader.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\navigation.js" />
@@ -492,6 +513,7 @@
     <Content Include="Views\StyleGuide\ResponsiveImage.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Error\Http404.cshtml" />
+    <Content Include="Views\StyleGuide\PageTransition2.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -34,6 +34,11 @@ namespace Nikolai.Controllers
             return View();
         }
 
+        public ActionResult PageTransition2()
+        {
+            return View();
+        }
+
         public ActionResult ResponsiveImage()
         {
             return View();

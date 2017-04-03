@@ -6,6 +6,7 @@
 @import '../Atoms/_breakpoints';
 
 .home {
+    background-color: #FFF;
     height: 100vh;
     
     position: relative;
@@ -89,7 +90,7 @@
     position: absolute;
     top: 0;
 
-    @extend %box-level--back;
+    @extend %box-level--default;
 }
 
 .home-headerGroup {

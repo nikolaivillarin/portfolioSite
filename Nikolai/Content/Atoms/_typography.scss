@@ -8,11 +8,13 @@
     Global
 \*------------------------------------*/
 body {
+    background-color: #000;
     font-family: 'RobotoSlab', 'Times New Roman', Times, serif;
     font-weight: 300;
     font-style: normal;
     font-size: 10px;
     line-height: 1.3em;
+    overflow-x: hidden;
 
     @include breakpoint(400px $breakpoint-phablet) {
         font-size: 13px;

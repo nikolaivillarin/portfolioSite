@@ -14,94 +14,78 @@ $color-dial--ring3: #2294e5;*/
 /*$color-link: #337ab7;*/
 /*------------------------------------*    Button Colors
 \*------------------------------------*/
-.home-header {
-  opacity: 0;
-  -moz-transition-delay: 0;
-  -o-transition-delay: 0;
-  -webkit-transition-delay: 0;
-  transition-delay: 0;
-  -moz-transform: translateY(-30px);
-  -ms-transform: translateY(-30px);
-  -o-transform: translateY(-30px);
-  -webkit-transform: translateY(-30px);
-  transform: translateY(-30px);
-  -moz-transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear;
-  -o-transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear;
-  -webkit-transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear;
-  transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear;
+/*@import '../Atoms/_mixins';
+
+%slide-right--initialState {
+    opacity: 0;
+
+    @include transition-delay(0);
+    @include transform(translateX(50px));
+    @include transition(transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s linear);
 }
 
-.home-header.in-view {
-  opacity: 1;
-  -moz-transition-delay: 0.5s;
-  -o-transition-delay: 0.5s;
-  -webkit-transition-delay: 0.5s;
-  transition-delay: 0.5s;
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
+%slide-right--endState {
+    opacity: 1;
+
+    @include transition-delay(0.5s);
+    @include transform(translateX(0));
 }
 
-.home-subHeader {
-  opacity: 0;
-  -moz-transition-delay: 0;
-  -o-transition-delay: 0;
-  -webkit-transition-delay: 0;
-  transition-delay: 0;
-  -moz-transform: translateY(30px);
-  -ms-transform: translateY(30px);
-  -o-transform: translateY(30px);
-  -webkit-transform: translateY(30px);
-  transform: translateY(30px);
-  -moz-transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear;
-  -o-transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear;
-  -webkit-transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear;
-  transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear;
+%slide-left--initialState {
+    opacity: 0;
+
+    @include transition-delay(0);
+    @include transform(translateX(-50px));
+    @include transition(transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s linear);
 }
 
-.home-subHeader.in-view {
-  opacity: 1;
-  -moz-transition-delay: 0.5s;
-  -o-transition-delay: 0.5s;
-  -webkit-transition-delay: 0.5s;
-  transition-delay: 0.5s;
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
+%slide-left--endState {
+    opacity: 1;
+
+    @include transition-delay(0.5s);
+    @include transform(translateX(0));
 }
 
-.home-instructions {
-  -moz-transition-delay: 0;
-  -o-transition-delay: 0;
-  -webkit-transition-delay: 0;
-  transition-delay: 0;
-  -moz-transform: scale(0);
-  -ms-transform: scale(0);
-  -o-transform: scale(0);
-  -webkit-transform: scale(0);
-  transform: scale(0);
-  -moz-transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  -o-transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  -webkit-transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+%slide-top--initialState {
+    opacity: 0;
+
+    @include transition-delay(0);
+    @include transform(translateY(-30px));
+    @include transition(transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear);
 }
 
-.home-instructions.in-view {
-  -moz-transition-delay: 0.5s;
-  -o-transition-delay: 0.5s;
-  -webkit-transition-delay: 0.5s;
-  transition-delay: 0.5s;
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  -webkit-transform: scale(1);
-  transform: scale(1);
+%slide-top--endState {
+    opacity: 1;
+
+    @include transition-delay(0.5s);
+    @include transform(translateY(0));
 }
 
+%slide-bottom--initialState {
+    opacity: 0;
+
+    @include transition-delay(0);
+    @include transform(translateY(30px));
+    @include transition(transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear);
+}
+
+%slide-bottom--endState {
+    opacity: 1;
+
+    @include transition-delay(0.5s);
+    @include transform(translateY(0));
+}
+
+%pop--initialState {
+    @include transition-delay(0);
+    @include transform(scale(0));
+    @include transition(transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275));
+}
+
+%pop--endState {
+    @include transition-delay(0.5s);
+    @include transform(scale(1));
+}*/
 /*------------------------------------*    CSS Breakpoints for different devices
 \*------------------------------------*/
 /*------------------------------------*    Partials
@@ -117,12 +101,13 @@ $color-dial--ring3: #2294e5;*/
 }
 
 .home-heroImageBG {
-  z-index: -1;
+  z-index: 0;
 }
 
 /*------------------------------------*    CSS Breakpoints for different devices
 \*------------------------------------*/
 .home {
+  background-color: #FFF;
   height: 100vh;
   position: relative;
 }

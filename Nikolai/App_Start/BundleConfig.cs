@@ -21,7 +21,9 @@ namespace Nikolai
                 "~/Content/Pages/Work-Multiplex.css",
                 "~/Content/Pages/Work-Boxgrove.css",
                 "~/Content/Pages/Work-RateQuote.css",
-                "~/Content/Pages/Work-HR.css"
+                "~/Content/Pages/Work-HR.css",
+                "~/Content/PageTransitions/animations.css",
+                "~/Content/PageTransitions/component.css"
             ));
 
             bundles.Add(new ScriptBundle("~/Content/libraries").Include(
@@ -35,7 +37,7 @@ namespace Nikolai
             bundles.Add(new ScriptBundle("~/Content/scripts").Include(
                 "~/Scripts/clientErrorLogger.js"
                 , "~/Scripts/navigationBar.js"
-                , "~/Scripts/navigationTransition.js"
+                , "~/Scripts/pageTransition.js"
                 , "~/Scripts/navigation.js"
                 , "~/Scripts/floatingBall.js"
                 , "~/ViewScripts/loader.js" 

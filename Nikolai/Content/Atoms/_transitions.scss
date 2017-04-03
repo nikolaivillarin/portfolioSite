@@ -1,4 +1,4 @@
-﻿@import '../Atoms/_mixins';
+﻿/*@import '../Atoms/_mixins';
 
 %slide-right--initialState {
     opacity: 0;
@@ -69,4 +69,4 @@
 %pop--endState {
     @include transition-delay(0.5s);
     @include transform(scale(1));
-}
+}*/
