@@ -1180,10 +1180,10 @@ $color-dial--ring3: #2294e5;*/
   position: absolute;
   top: 20px;
   width: 20px;
-  -moz-transition: opacity 0.3s ease-out;
-  -o-transition: opacity 0.3s ease-out;
-  -webkit-transition: opacity 0.3s ease-out;
-  transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out, background-color 1s;
+  -o-transition: opacity 0.3s ease-out, background-color 1s;
+  -webkit-transition: opacity 0.3s ease-out, background-color 1s;
+  transition: opacity 0.3s ease-out, background-color 1s;
 }
 
 .nav__itemContainer::after {
@@ -1192,10 +1192,10 @@ $color-dial--ring3: #2294e5;*/
   right: 0;
   top: 20px;
   width: 20px;
-  -moz-transition: opacity 0.3s ease-out;
-  -o-transition: opacity 0.3s ease-out;
-  -webkit-transition: opacity 0.3s ease-out;
-  transition: opacity 0.3s ease-out;
+  -moz-transition: opacity 0.3s ease-out, background-color 1s;
+  -o-transition: opacity 0.3s ease-out, background-color 1s;
+  -webkit-transition: opacity 0.3s ease-out, background-color 1s;
+  transition: opacity 0.3s ease-out, background-color 1s;
 }
 
 .nav__item {
@@ -1346,12 +1346,20 @@ $color-dial--ring3: #2294e5;*/
   float: left;
   margin-top: 20px;
   width: calc(100%/4/2 - 40px);
+  -moz-transition: background-color 1s;
+  -o-transition: background-color 1s;
+  -webkit-transition: background-color 1s;
+  transition: background-color 1s;
 }
 
 .nav-bar__fillerLine {
   float: left;
   margin-top: 20px;
   width: calc(100%/4/2 - 120px);
+  -moz-transition: background-color 1s;
+  -o-transition: background-color 1s;
+  -webkit-transition: background-color 1s;
+  transition: background-color 1s;
 }
 
 .nav-bar--page1 {

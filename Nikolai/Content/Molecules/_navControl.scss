@@ -93,7 +93,7 @@ $total-pages: 4;
         width: $filler-line--width;
 
         @extend %__centerLine;
-        @include transition(opacity 0.3s ease-out);
+        @include transition(opacity 0.3s ease-out, background-color 1s);
     }
 
     &::after {
@@ -104,7 +104,7 @@ $total-pages: 4;
         width: $filler-line--width;
 
         @extend %__centerLine;
-        @include transition(opacity 0.3s ease-out);
+        @include transition(opacity 0.3s ease-out, background-color 1s);
     }
 }
 
@@ -273,6 +273,7 @@ $total-pages: 4;
         width: calc(100%/#{$total-pages}/2 - #{$nav-itemContainer--width / 2});
 
         @extend %__centerLine;
+        @include transition(background-color 1s);
     }
 
     &__fillerLine {
@@ -281,6 +282,7 @@ $total-pages: 4;
         width: calc(100%/#{$total-pages}/2 - #{($nav-itemContainer--width / 2) + $nav-itemContainer--width});
 
         @extend %__centerLine;
+        @include transition(background-color 1s);
     }
 }
 
