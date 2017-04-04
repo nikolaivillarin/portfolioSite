@@ -166,8 +166,11 @@ PageTransition.prototype.OnEndAnimation = function ($outpage, $inpage) {
 
     this.ResetPage($outpage, $inpage);
 
-    that.PageChangedHandlers.forEach(function (item) {
-        item.call(item, that.$currentPage.attr('id'), that.$nextPage.attr('id'));
-    });
+    // Slight delay to give the browser some time to properly render
+    window.setTimeout(function () {
+        that.PageChangedHandlers.forEach(function (item) {
+            item.call(item, that.$currentPage.attr('id'), that.$nextPage.attr('id'));
+        });
+    }, 100);
 };
 //#endregion

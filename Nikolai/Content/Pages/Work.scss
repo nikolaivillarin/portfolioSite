@@ -1,5 +1,6 @@
 ﻿@import '../Atoms/_mixins.scss';
 @import '../Atoms/_boxes';
+@import '../Atoms/_colors';
 @import '../Atoms/_transitions';
 @import '../Breakpoint/_breakpoint';
 @import '../Atoms/_breakpoints';
@@ -163,6 +164,10 @@
         right: 40px;
         top: 20px;
     }
+}
+
+.work-item {
+    background-color: $color-background--grey;
 }
 
 .work-heroImage {
