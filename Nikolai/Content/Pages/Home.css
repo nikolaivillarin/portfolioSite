@@ -14,78 +14,28 @@ $color-dial--ring3: #2294e5;*/
 /*$color-link: #337ab7;*/
 /*------------------------------------*    Button Colors
 \*------------------------------------*/
-/*@import '../Atoms/_mixins';
-
-%slide-right--initialState {
-    opacity: 0;
-
-    @include transition-delay(0);
-    @include transform(translateX(50px));
-    @include transition(transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s linear);
+.home-header, .home-subHeader {
+  opacity: 0;
+  -moz-transform: translateY(-30px);
+  -ms-transform: translateY(-30px);
+  -o-transform: translateY(-30px);
+  -webkit-transform: translateY(-30px);
+  transform: translateY(-30px);
+  -moz-transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear;
+  -o-transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear;
+  -webkit-transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear;
+  transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear;
 }
 
-%slide-right--endState {
-    opacity: 1;
-
-    @include transition-delay(0.5s);
-    @include transform(translateX(0));
+.home-header.in-view, .home-subHeader.in-view {
+  opacity: 1;
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
 }
 
-%slide-left--initialState {
-    opacity: 0;
-
-    @include transition-delay(0);
-    @include transform(translateX(-50px));
-    @include transition(transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s linear);
-}
-
-%slide-left--endState {
-    opacity: 1;
-
-    @include transition-delay(0.5s);
-    @include transform(translateX(0));
-}
-
-%slide-top--initialState {
-    opacity: 0;
-
-    @include transition-delay(0);
-    @include transform(translateY(-30px));
-    @include transition(transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear);
-}
-
-%slide-top--endState {
-    opacity: 1;
-
-    @include transition-delay(0.5s);
-    @include transform(translateY(0));
-}
-
-%slide-bottom--initialState {
-    opacity: 0;
-
-    @include transition-delay(0);
-    @include transform(translateY(30px));
-    @include transition(transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear);
-}
-
-%slide-bottom--endState {
-    opacity: 1;
-
-    @include transition-delay(0.5s);
-    @include transform(translateY(0));
-}
-
-%pop--initialState {
-    @include transition-delay(0);
-    @include transform(scale(0));
-    @include transition(transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275));
-}
-
-%pop--endState {
-    @include transition-delay(0.5s);
-    @include transform(scale(1));
-}*/
 /*------------------------------------*    CSS Breakpoints for different devices
 \*------------------------------------*/
 /*------------------------------------*    Partials
@@ -211,6 +161,7 @@ $color-dial--ring3: #2294e5;*/
 
 .home-headerGroup {
   max-width: 44em;
+  position: relative;
 }
 
 @media (min-height: 800px) and (min-width: 1100px) {
@@ -232,45 +183,6 @@ $color-dial--ring3: #2294e5;*/
   -o-transition-delay: 0.5s;
   -webkit-transition-delay: 0.5s;
   transition-delay: 0.5s;
-}
-
-.home-instructions .home-arrow {
-  background-image: url("data:image/svg+xml;base64,PHN2ZyBpZD0iQXJyb3dMZWZ0IiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzNSIgaGVpZ2h0PSI5MSIgdmlld0JveD0iMCAwIDM1IDkxIj4KICA8bWV0YWRhdGE+PD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS42LWMxMzggNzkuMTU5ODI0LCAyMDE2LzA5LzE0LTAxOjA5OjAxICAgICAgICAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIi8+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+CiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIAogICAgICAgICAgICAgICAgICAgICAgICAgICAKPD94cGFja2V0IGVuZD0idyI/PjwvbWV0YWRhdGE+CjxkZWZzPgogICAgPHN0eWxlPgogICAgICAuY2xzLTEgewogICAgICAgIGZpbGwtcnVsZTogZXZlbm9kZDsKICAgICAgfQogICAgPC9zdHlsZT4KICA8L2RlZnM+CiAgPHBhdGggaWQ9IlNoYXBlXzJfY29weV8yIiBkYXRhLW5hbWU9IlNoYXBlIDIgY29weSAyIiBjbGFzcz0iY2xzLTEiIGQ9Ik0zLjAxNyw1MC4xMDZjMCwxNy42NDcsMTEuNDU1LDI4LjI3NCwyNi4yNTQsMjkuOGwtOC4yMzktNy4yOTRWNjkuNjM0TDM0LjQyNiw4MS4xOSwyMS4wMzIsOTEuMjE3Vjg4LjIzOWw3Ljg1LTUuNzExQTI5Ljk5NCwyOS45OTQsMCwwLDEsLjk2LDUyLjYxVjAuMTkzSDMuMDE3VjUwLjEwNlpNMzAuNzIyLDgxLjE5TDMwLjYsODEuMDh2MC4yWiIvPgo8L3N2Zz4K");
-  background-repeat: no-repeat;
-  content: "";
-  display: block;
-  height: 91px;
-  width: 35px;
-}
-
-.home-instructions {
-  bottom: 70px;
-  position: fixed;
-  right: 10px;
-}
-
-.home-instructions .home-arrow {
-  float: right;
-  margin-right: 50px;
-}
-
-.home-instructions.in-view {
-  -moz-transition-delay: 1.5s;
-  -o-transition-delay: 1.5s;
-  -webkit-transition-delay: 1.5s;
-  transition-delay: 1.5s;
-}
-
-.home-instructions__content {
-  border: 1px solid #000;
-  background-color: rgba(255, 255, 255, 0.4);
-  color: #000;
-  display: block;
-  font-size: 1.2em;
-  margin-top: 7px;
-  max-width: 9em;
-  padding: 1em;
-  text-align: center;
 }
 
 /*# sourceMappingURL=Home.css.map */

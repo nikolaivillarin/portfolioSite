@@ -32,32 +32,12 @@
     }
 }
 
-.hr-header {
-    @extend %slide-top--initialState;
-    @include transition-delay(0);
-}
-
-.hr-header.in-view {
-    @extend %slide-top--endState;
-    @include transition-delay(0.5s);
-}
-
 .hr-subHeader--main {
     padding: 0 2em;
 
     @include breakpoint(max-width $breakpoint-netbook) {
         display: none;
     }
-}
-
-.hr-subHeader {
-    @extend %slide-bottom--initialState;
-    @include transition-delay(0);
-}
-
-.hr-subHeader.in-view {
-    @extend %slide-bottom--endState;
-    @include transition-delay(0.5s);
 }
 
 .hr__screensContainer {
@@ -72,9 +52,6 @@
     background-repeat: no-repeat;
     background-size: cover;
     padding-bottom: 90%;
-
-    @extend %slide-right--initialState;
-    @include transition-delay(0);
 
     @include breakpoint(max-width $breakpoint-mobileBig) {
         background-image: url(/Content/ImagesWork/hr-screens_small.png);
@@ -116,11 +93,6 @@
     }
 }
 
-.hr__screens.in-view {
-    @extend %slide-right--endState;
-    @include transition-delay(0.5s);
-}
-
 .hr__screensCaption {
     max-width: 20em;
     position: relative;
@@ -150,14 +122,4 @@
     text-align: center;
 
     @extend %box--spacious;
-}
-
-.hr__summaryText {
-    @extend %slide-top--initialState;
-    @include transition-delay(0);
-}
-
-.hr__summaryText.in-view {
-    @extend %slide-top--endState;
-    @include transition-delay(1s);
 }

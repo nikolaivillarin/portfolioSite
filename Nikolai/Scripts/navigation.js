@@ -61,6 +61,8 @@ MainNavigation.prototype = {
     , HasNavigationLoaded: false
     , TotalAsyncPages: 0
     , TotalLoadedAsyncPages: 0
+    // Used for scroll optimization
+    , HasScrollTicked: false
 };
 //#endregion
 
@@ -96,12 +98,11 @@ MainNavigation.prototype.Initialize = function () {
     
     window.onpopstate = history.onpushstate = $.proxy(this.HistoryChanged, this);
 
-    //$(window).on('resize', this.TriggerScrollAnimation);
+    $(window).on('resize', this.TriggerScrollAnimation);
 
-    $('[data-nv-page]')
-        //.on('scroll', this.TriggerScrollAnimation)
-        .on('touchmove', this.PreventWindowBounce)
-        .trigger('scroll');
+    $('[data-nv-page]').on('scroll',
+        $.proxy(this.PageScrolled, this)
+    );
 
     this.OnNavigationLoadedHandlers.forEach(function (item) {
         item.call(item);
@@ -425,13 +426,11 @@ MainNavigation.prototype.OnDialClick = function () {
     });
 };
 
-MainNavigation.prototype.OnPageChanged = function () {
+MainNavigation.prototype.OnPageChanged = function (currentPageID, previousPageID) {
     /// <summary>
     /// Event is triggered when page is changed. Subscribe to this event
     /// using the SubscribeToOnPageChange method
     /// </summary>
-    var that = this;
-
     // For scroll animation
     window.setTimeout(function () {
         $('[data-nv-page]').trigger('scroll');
@@ -442,8 +441,7 @@ MainNavigation.prototype.OnPageChanged = function () {
     this.SetMenuBtnState();
 
     this.OnPageChangeHandlers.forEach(function (item) {
-        item.call(item, that.PageTransitions.$currentPage.attr('id')
-            , that.PageTransitions.$previousPage.attr('id'));
+        item.call(item, currentPageID, previousPageID);
     });
 };
 
@@ -548,7 +546,7 @@ MainNavigation.prototype.PageLoaded = function (url, markup) {
     var renderNewPage = function () {
         $markup
             .on('scroll', that.TriggerScrollAnimation)
-            .on('touchmove', this.PreventWindowBounce)
+            .on('touchmove', that.PreventWindowBounce)
             .trigger('scroll');
 
         $('#mainLoadingOverlay').removeClass('loading-overlay--active');
@@ -575,27 +573,47 @@ MainNavigation.prototype.PreventWindowBounce = function () {
     //}
 };
 
+MainNavigation.prototype.PageScrolled = function () {
+    var that = this;
+
+    if (this.HasScrollTicked === false) {
+        window.requestAnimationFrame(function () {
+            that.TriggerScrollAnimation();
+
+            that.HasScrollTicked = false;
+        });
+    }
+
+    this.HasScrollTicked = true;
+};
+
 MainNavigation.prototype.TriggerScrollAnimation = function () {
     /// <summary>
     /// Determines if elements with the data property data-nv-animate
     /// are in view. If they are an in-view class is added to the element
     /// which is used to trigger CSS animations
     /// </summary>
+    var $page = $('[data-nv-page].expand-container--selected');
+
+    if ($page.length === 0) {
+        throw new Error('No selected page found');
+    } else if ($page.length > 1) {
+        throw new Error('Only one selected page can be specified');
+    }
+
     var windowHeight = $(window).outerHeight();
     var windowTopPosition = $(window).scrollTop();
     var windowBottomPosition = windowTopPosition + windowHeight - 10;
 
-    $('[data-nv-animate]').each(function () {
+    var $animatedElmts = $('[data-nv-animate]', $page);
+
+    $animatedElmts.each(function () {
         var elmtHeight = $(this).outerHeight();
         var elmtTopPosition = $(this).offset().top;
         var elmtBottomPosition = elmtTopPosition + elmtHeight;
 
-        // Page transitions shrink's containing elements to make the not visible
-        var elmtIsVisible = $(this).closest('[data-nv-page]').height() > 0;
-
         if (elmtBottomPosition >= windowTopPosition
-            && elmtTopPosition <= windowBottomPosition
-            && elmtIsVisible === true) {
+            && elmtTopPosition <= windowBottomPosition) {
             $(this).addClass('in-view');
         } else {
             $(this).removeClass('in-view');

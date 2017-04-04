@@ -66,32 +66,6 @@
 
         @include transition(0.3s opacity cubic-bezier(0.55, 0.055, 0.675, 0.19));
     }
-
-    .work-header {
-        @extend %slide-top--initialState;
-    }
-
-    .work-header.in-view {
-        @extend %slide-top--endState;
-    }
-
-    .work-subHeader {
-        @extend %slide-top--initialState;
-    }
-
-    .work-subHeader.in-view {
-        @extend %slide-top--endState;
-    }
-
-    .work-btnView {
-        @extend %pop--initialState;
-        @include transition-delay(0);
-    }
-
-    .work-btnView.in-view {
-        @extend %pop--endState;
-        @include transition-delay(0.5s);
-    }
 }
 
 %workItem--active {

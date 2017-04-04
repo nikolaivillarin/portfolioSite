@@ -67,14 +67,6 @@ $breakpoing-minHeight: 400px;
     }
 }
 
-.contact__header {
-    @extend %slide-top--initialState;
-}
-
-.contact__header.in-view {
-    @extend %slide-top--endState;
-}
-
 .contact__summary {
     width: 100%;
 
@@ -89,30 +81,12 @@ $breakpoing-minHeight: 400px;
     }
 }
 
-.contact__summary-content {
-    @extend %slide-bottom--initialState;
-}
-
-.contact__summary-content.in-view {
-    @extend %slide-bottom--endState;
-}
-
 .contact__form {
     width: 100%;
 
     @include breakpoint(min-width $breakpoint-phablet) {
         width: 60%;
     }
-}
-
-.contact__form-content {
-    @include transition-delay(0);
-    @extend %slide-right--initialState;
-}
-
-.contact__form-content.in-view {
-    @include transition-delay(0.3s);
-    @extend %slide-right--endState;
 }
 
 .contact__placeholder {

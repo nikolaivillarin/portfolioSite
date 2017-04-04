@@ -12,78 +12,6 @@
   }
 }
 
-/*@import '../Atoms/_mixins';
-
-%slide-right--initialState {
-    opacity: 0;
-
-    @include transition-delay(0);
-    @include transform(translateX(50px));
-    @include transition(transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s linear);
-}
-
-%slide-right--endState {
-    opacity: 1;
-
-    @include transition-delay(0.5s);
-    @include transform(translateX(0));
-}
-
-%slide-left--initialState {
-    opacity: 0;
-
-    @include transition-delay(0);
-    @include transform(translateX(-50px));
-    @include transition(transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s linear);
-}
-
-%slide-left--endState {
-    opacity: 1;
-
-    @include transition-delay(0.5s);
-    @include transform(translateX(0));
-}
-
-%slide-top--initialState {
-    opacity: 0;
-
-    @include transition-delay(0);
-    @include transform(translateY(-30px));
-    @include transition(transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear);
-}
-
-%slide-top--endState {
-    opacity: 1;
-
-    @include transition-delay(0.5s);
-    @include transform(translateY(0));
-}
-
-%slide-bottom--initialState {
-    opacity: 0;
-
-    @include transition-delay(0);
-    @include transform(translateY(30px));
-    @include transition(transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear);
-}
-
-%slide-bottom--endState {
-    opacity: 1;
-
-    @include transition-delay(0.5s);
-    @include transform(translateY(0));
-}
-
-%pop--initialState {
-    @include transition-delay(0);
-    @include transform(scale(0));
-    @include transition(transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275));
-}
-
-%pop--endState {
-    @include transition-delay(0.5s);
-    @include transform(scale(1));
-}*/
 /*------------------------------------*    CSS Breakpoints for different devices
 \*------------------------------------*/
 .work-imgTile--hr {
@@ -122,20 +50,6 @@
   }
 }
 
-.hr-header {
-  -moz-transition-delay: 0;
-  -o-transition-delay: 0;
-  -webkit-transition-delay: 0;
-  transition-delay: 0;
-}
-
-.hr-header.in-view {
-  -moz-transition-delay: 0.5s;
-  -o-transition-delay: 0.5s;
-  -webkit-transition-delay: 0.5s;
-  transition-delay: 0.5s;
-}
-
 .hr-subHeader--main {
   padding: 0 2em;
 }
@@ -144,20 +58,6 @@
   .hr-subHeader--main {
     display: none;
   }
-}
-
-.hr-subHeader {
-  -moz-transition-delay: 0;
-  -o-transition-delay: 0;
-  -webkit-transition-delay: 0;
-  transition-delay: 0;
-}
-
-.hr-subHeader.in-view {
-  -moz-transition-delay: 0.5s;
-  -o-transition-delay: 0.5s;
-  -webkit-transition-delay: 0.5s;
-  transition-delay: 0.5s;
 }
 
 .hr__screensContainer {
@@ -172,10 +72,6 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 90%;
-  -moz-transition-delay: 0;
-  -o-transition-delay: 0;
-  -webkit-transition-delay: 0;
-  transition-delay: 0;
 }
 
 @media (max-width: 400px) {
@@ -229,13 +125,6 @@
   }
 }
 
-.hr__screens.in-view {
-  -moz-transition-delay: 0.5s;
-  -o-transition-delay: 0.5s;
-  -webkit-transition-delay: 0.5s;
-  transition-delay: 0.5s;
-}
-
 .hr__screensCaption {
   max-width: 20em;
   position: relative;
@@ -269,20 +158,6 @@
 
 .hr__summaryContainer-content {
   text-align: center;
-}
-
-.hr__summaryText {
-  -moz-transition-delay: 0;
-  -o-transition-delay: 0;
-  -webkit-transition-delay: 0;
-  transition-delay: 0;
-}
-
-.hr__summaryText.in-view {
-  -moz-transition-delay: 1s;
-  -o-transition-delay: 1s;
-  -webkit-transition-delay: 1s;
-  transition-delay: 1s;
 }
 
 /*# sourceMappingURL=Work-HR.css.map */

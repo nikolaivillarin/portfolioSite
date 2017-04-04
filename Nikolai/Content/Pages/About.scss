@@ -30,14 +30,6 @@
     }
 }
 
-.about-header {
-    @extend %slide-top--initialState;
-}
-
-.about-header.in-view {
-    @extend %slide-top--endState;
-}
-
 .about-profile {
     text-align: center;
     padding-top: 40px;
@@ -64,14 +56,6 @@
     }
 }
 
-.about-overview__content {
-    @extend %slide-left--initialState;
-}
-
-.about-overview__content.in-view {
-    @extend %slide-left--endState;
-}
-
 .about-qualifications {
     float: left;
     padding-top: 3em;
@@ -91,9 +75,6 @@
     float: left;
     padding-top: 20px;
     width: 12%;
-
-    @include transition-delay(0);
-    @extend %pop--initialState;
 
     &--windows {
         max-width: 72px;
@@ -115,22 +96,8 @@
     width: 100%;
 }
 
-
-.about-qualifications__icon.in-view {
-    @include transition-delay(0.5s);
-    @extend %pop--endState;
-}
-
 .about-qualifications__content {
     float: left;
     padding-left: 15px;
     width: 88%;
-
-    @include transition-delay(0);
-    @extend %slide-right--initialState;
-}
-
-.about-qualifications__content.in-view {
-    @include transition-delay(1s);
-    @extend %slide-right--endState;
 }

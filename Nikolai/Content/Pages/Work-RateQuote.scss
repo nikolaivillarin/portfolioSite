@@ -10,6 +10,7 @@
 
 .work-heroImage--rateQuote {
     padding: 20px;
+    position: relative;
     text-align: center;
 
     @include breakpoint(max-width $breakpoint-mobileBig) {
@@ -32,25 +33,11 @@
         display: inline-block;
         padding: 0.1em 1em;
     }
-
-    @extend %slide-top--initialState;
-}
-
-.rateQuote-header.in-view {
-    @extend %slide-top--endState;
 }
 
 .rateQuote__content {
     height: 100%;
     position: relative;
-}
-
-.rateQuote__header {
-    @extend %slide-top--initialState;
-}
-
-.rateQuote__header.in-view {
-    @extend %slide-top--endState;
 }
 
 .rateQuote__screensContainer {
@@ -94,56 +81,12 @@
     @include breakpoint(min-width $breakpoint-tablet) {
         background-image: url(/Content/ImagesWork/ratequote-bgImg1_large.png);
     }
-
-    .rateQuote__imgContainer--container1 {
-        @extend %slide-top--initialState;
-        @include transition-delay(0);
-    }
-
-    .rateQuote__imgContainer--container2 {
-        @extend %slide-top--initialState;
-        @include transition-delay(0);
-    }
-}
-
-.rateQuote__screensContainer--top.in-view {
-    .rateQuote__imgContainer--container1 {
-        @extend %slide-top--endState;
-        @include transition-delay(2s);
-    }
-
-    .rateQuote__imgContainer--container2 {
-        @extend %slide-top--endState;
-        @include transition-delay(1s);
-    }
 }
 
 .rateQuote__screensContainer--bottom {
     background-color: #184d82;
     background: linear-gradient(to bottom, #1b5692, #164778);
     float: left;
-
-    .rateQuote__imgContainer--container1 {
-        @extend %slide-top--initialState;
-        @include transition-delay(0);
-    }
-
-    .rateQuote__imgContainer--container2 {
-        @extend %slide-top--initialState;
-        @include transition-delay(0);
-    }
-}
-
-.rateQuote__screensContainer--bottom.in-view {
-    .rateQuote__imgContainer--container1 {
-        @extend %slide-top--endState;
-        @include transition-delay(2s);
-    }
-
-    .rateQuote__imgContainer--container2 {
-        @extend %slide-top--endState;
-        @include transition-delay(1s);
-    }
 }
 
 .rateQuote__screen {
@@ -270,12 +213,4 @@
     @include breakpoint((min-height $breakpoint-netbook) (orientation portrait)) {
         font-size: 1em;
     }
-}
-
-.rateQuote__overviewContent {
-    @extend %slide-bottom--initialState;
-}
-
-.rateQuote__overviewContent.in-view {
-    @extend %slide-bottom--endState;
 }

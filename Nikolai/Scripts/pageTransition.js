@@ -86,7 +86,7 @@ PageTransition.prototype.TransitionToPage = function (pageID) {
     var that = this;
 
     this.PageChangingHandlers.forEach(function (item) {
-        item.call(item, that.$currentPage.attr('id'), that.$nextPage.attr('id'));
+        item.call(item, that.$currentPage.attr('id'), that.$previousPage.attr('id'));
     });
 
     this.$currentPage.addClass(this.OutClassAnimation)
@@ -119,7 +119,7 @@ PageTransition.prototype.SubscribeToPageChangingEvent = function (fn) {
     /// </summary>
     /// <param name="fn" type="function">
     /// Function to be called when page is changing. This function should have
-    /// two parameters: current page ID and next page ID
+    /// two parameters: current page ID and previous page ID
     /// </param>
     this.PageChangingHandlers.push(fn);
 };
@@ -143,7 +143,7 @@ PageTransition.prototype.SubscribeToPageChangedEvent = function (fn) {
     /// </summary>
     /// <param name="fn" type="function">
     /// Function to be called when page is changed. This function should have
-    /// two parameters: current page ID and next page ID
+    /// two parameters: current page ID and previous page ID
     /// </param>
     this.PageChangedHandlers.push(fn);
 };
@@ -177,7 +177,7 @@ PageTransition.prototype.OnEndAnimation = function ($outpage, $inpage) {
     // Slight delay to give the browser some time to properly render
     window.setTimeout(function () {
         that.PageChangedHandlers.forEach(function (item) {
-            item.call(item, that.$currentPage.attr('id'), that.$nextPage.attr('id'));
+            item.call(item, that.$currentPage.attr('id'), that.$previousPage.attr('id'));
         });
     }, 100);
 };

@@ -74,10 +74,14 @@ HomePage.prototype.OnPageChange = function (pageId) {
         this.EnableCanvas();
 
         this.EnableDialJiggle();
+
+        $('#pnlNavOnboarding').addClass('in-view');
     } else {
         this.DisableCanvas();
 
         this.DisableDialJiggle();
+
+        $('#pnlNavOnboarding').removeClass('in-view');
     }
 };
 
