@@ -439,6 +439,33 @@ NVNavBar.prototype.PositionDial = function (pageID, easing) {
         }
 
         this.DialControl.PositionDial(x, y);
+
+        //var that = this;
+        //var waitTime = 0;
+        //var minWaitTime = 700;
+        //var maxWaitTime = 2000;
+
+        //(function PositionNow() {
+        //    var pageTransitionComplete = $('body').data('nv-page-transition-complete');
+
+        //    waitTime += 100;
+
+        //    if (pageTransitionComplete === true && waitTime >= minWaitTime
+        //        || waitTime > maxWaitTime) {
+        //        var targetOffsets = $('#' + targetID).offset();
+        //        var x = targetOffsets.left;
+        //        var y = targetOffsets.top;
+
+        //        if (x < 0) {
+        //            // Element is positioned with the "right" css rule
+        //            x = $(window).width() + targetOffsets.left;
+        //        }
+
+        //        that.DialControl.PositionDial(x, y);
+        //    } else {
+        //        window.setTimeout(PositionNow, 100);
+        //    }
+        //}());
     } else {
         this.DialControl.SetToDefaulPosition(easing);
     }

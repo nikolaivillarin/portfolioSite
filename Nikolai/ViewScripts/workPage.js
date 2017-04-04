@@ -114,68 +114,6 @@ WorkPage.prototype.WindowResize = function () {
     $('#work').trigger('scroll');
 };
 
-WorkPage.prototype.NextPage = function () {
-    var that = this;
-    var numPages = this.GetNumPages();
-
-    if (numPages > 1 && this.IsAnimating === false) {
-        var currentPageNum = this.GetCurrentPageNum();
-
-        this.IsAnimating = true;
-
-        if (currentPageNum === numPages) {
-            this.$WorkSlider.animate({
-                'margin-top': '0'
-            }, 1500, 'easeOutCubic', function () {
-                that.IsAnimating = false;
-
-                $('#work').trigger('scroll');
-            });
-        } else {
-            var itemHeight = $('#workSlider > section').outerHeight();
-
-            this.$WorkSlider.animate({
-                'margin-top': '+=' + (itemHeight * -1)
-            }, 1500, 'easeOutCubic', function () {
-                that.IsAnimating = false;
-
-                $('#work').trigger('scroll');
-            });
-        }
-    }
-};
-
-WorkPage.prototype.GetNumPages = function () {
-    /// <summary>
-    /// Returns the number of work pages available
-    /// </summary>
-    var areaOfWindow = $(window).outerHeight() * $(window).outerWidth();
-
-    var $workItem = $('> section', this.$WorkSlider);
-    var areaOfWorkItem = $workItem.first().height() * $workItem.first().width();
-
-    console.log('Area of window: ' + areaOfWindow);
-    console.log('Area of item: ' + areaOfWorkItem);
-
-    var maxItemsPerPage = Math.floor(areaOfWindow / areaOfWorkItem);
-
-    if (maxItemsPerPage === 0) {
-        maxItemsPerPage = 1;
-    }
-
-    var numPages = Math.ceil($workItem.length / maxItemsPerPage);
-
-    return numPages;
-};
-
-WorkPage.prototype.GetCurrentPageNum = function () {
-    var topMargin = parseInt(this.$WorkSlider.css('margin-top')) * -1;
-    var itemHeight = $('#workSlider > section').outerHeight();
-    var currentPageNum = Math.floor(topMargin / itemHeight) + 1;
-
-    return currentPageNum;
-};
-
 WorkPage.prototype.OnPageChange = function (pageId) {
     /// <summary>
     /// Function which is called when page is changed

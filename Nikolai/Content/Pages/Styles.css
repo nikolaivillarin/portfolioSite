@@ -1861,8 +1861,9 @@ $color-dial--ring3: #2294e5;*/
 }
 
 .expand-container {
-  display: none;
+  /*display: none;*/
   overflow: hidden;
+  visibility: hidden;
   -moz-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
   -o-transform: translate3d(0, 0, 0);
@@ -1876,7 +1877,8 @@ $color-dial--ring3: #2294e5;*/
 }
 
 .expand-container--selected {
-  display: block;
+  visibility: visible;
+  /*display: block;*/
 }
 
 .expand-contianer__content {
