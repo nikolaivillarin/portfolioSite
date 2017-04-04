@@ -278,18 +278,6 @@
     <Content Include="Content\Pages\Work.min.css">
       <DependentUpon>Work.css</DependentUpon>
     </Content>
-    <Content Include="Content\PageTransitions\animations.css">
-      <DependentUpon>animations.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\PageTransitions\animations.min.css">
-      <DependentUpon>animations.css</DependentUpon>
-    </Content>
-    <Content Include="Content\PageTransitions\component.css">
-      <DependentUpon>component.scss</DependentUpon>
-    </Content>
-    <Content Include="Content\PageTransitions\component.min.css">
-      <DependentUpon>component.css</DependentUpon>
-    </Content>
     <Content Include="favicon.ico" />
     <Content Include="Favicon\android-icon-144x144.png" />
     <Content Include="Favicon\android-icon-192x192.png" />
@@ -420,14 +408,6 @@
     <Content Include="Content\Breakpoint\breakpoint\_settings.scss" />
     <Content Include="Content\Breakpoint\_breakpoint.scss" />
     <Content Include="Content\Atoms\_breakpoints.scss" />
-    <Content Include="Content\PageTransitions\animations.scss" />
-    <Content Include="Content\PageTransitions\animations.css.map">
-      <DependentUpon>animations.css</DependentUpon>
-    </Content>
-    <Content Include="Content\PageTransitions\component.scss" />
-    <Content Include="Content\PageTransitions\component.css.map">
-      <DependentUpon>component.css</DependentUpon>
-    </Content>
     <None Include="Properties\PublishProfiles\Local Host.pubxml" />
     <None Include="Properties\PublishProfiles\Winhost Release.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
@@ -446,7 +426,6 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\navigation.js" />
     <Content Include="Scripts\navigationBar.js" />
-    <Content Include="Scripts\navigationTransition.js" />
     <Content Include="ViewScripts\contactPage.js" />
     <Content Include="ViewScripts\homePage.js" />
     <Content Include="ViewScripts\menuPage.js" />
@@ -488,7 +467,6 @@
     <Content Include="Views\StyleGuide\DialControl.cshtml" />
     <Content Include="Views\StyleGuide\NavigationControl.cshtml" />
     <Content Include="Views\StyleGuide\Content.cshtml" />
-    <Content Include="Views\StyleGuide\PageTransition.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\_home.cshtml" />
     <Content Include="Views\Work\_work.cshtml" />
@@ -513,7 +491,7 @@
     <Content Include="Views\StyleGuide\ResponsiveImage.cshtml" />
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Error\Http404.cshtml" />
-    <Content Include="Views\StyleGuide\PageTransition2.cshtml" />
+    <Content Include="Views\StyleGuide\PageTransition.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

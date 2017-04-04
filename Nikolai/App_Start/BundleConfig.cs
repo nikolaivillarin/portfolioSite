@@ -21,9 +21,7 @@ namespace Nikolai
                 "~/Content/Pages/Work-Multiplex.css",
                 "~/Content/Pages/Work-Boxgrove.css",
                 "~/Content/Pages/Work-RateQuote.css",
-                "~/Content/Pages/Work-HR.css",
-                "~/Content/PageTransitions/animations.css",
-                "~/Content/PageTransitions/component.css"
+                "~/Content/Pages/Work-HR.css"
             ));
 
             bundles.Add(new ScriptBundle("~/Content/libraries").Include(

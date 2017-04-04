@@ -14,8 +14,16 @@ function PageTransition(initialPageID) {
 PageTransition.prototype = {
     //OutClassAnimation: 'expand-container-ontop pt-page-rotateFall'
     //, InClassAnimation: 'pt-page-scaleUp'
-    OutClassAnimation: 'expand-container-ontop pt-page-moveToTopEasing'
-    , InClassAnimation: 'pt-page-moveFromBottom'
+
+    //OutClassAnimation: 'expand-container-ontop pt-page-moveToTopEasing'
+    //, InClassAnimation: 'pt-page-moveFromBottom'
+
+    //OutClassAnimation: 'expand-container-ontop pt-page-moveToTop'
+    //, InClassAnimation: 'pt-page-moveFromBottom'
+
+    OutClassAnimation: 'expand-container-ontop expand-moveToTop'
+    , InClassAnimation: 'expand-moveFromBottom'
+
     , CurrentPageClass: 'expand-container--selected'
     , PageChangingHandlers: []
     , PageChangedHandlers: []

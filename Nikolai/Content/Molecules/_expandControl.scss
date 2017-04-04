@@ -44,3 +44,29 @@
 .expand-container-ontop {
 	@extend %box-level--modular;
 }
+
+.expand-moveToTop {
+    @include animation(moveToTop 0.6s ease both);
+}
+
+.expand-moveFromBottom {
+    @include animation(moveFromBottom 0.6s ease both);
+}
+
+@include keyframes(moveToTop) {
+    from {
+        @include transform(translateY(0));
+    }
+    to {
+        @include transform(translateY(-100%));
+    }
+}
+
+@include keyframes(moveFromBottom) {
+    from {
+        @include transform(translateY(100%));
+    }
+    to {
+        @include transform(translateY(0));
+    }
+}
