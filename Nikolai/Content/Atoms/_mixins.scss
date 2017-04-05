@@ -105,3 +105,18 @@
     -webkit-backface-visibility: $property;
     backface-visibility: $property;
 }
+
+@mixin animation-timing-function($property) {
+    -moz-animation-timing-function: $property;
+    -o-animation-timing-function: $property;
+    -webkit-animation-timing-function: $property;
+    animation-timing-function: $property;
+}
+
+@mixin transform-origin($property) {
+    -moz-transform-origin: $property;
+    -ms-transform-origin: $property;
+    -o-transform-origin: $property;
+    -webkit-transform-origin: $property;
+    transform-origin: $property;
+}

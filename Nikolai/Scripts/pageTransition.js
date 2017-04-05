@@ -12,19 +12,7 @@ function PageTransition(initialPageID) {
 
 //#region Properties
 PageTransition.prototype = {
-    //OutClassAnimation: 'expand-container-ontop pt-page-rotateFall'
-    //, InClassAnimation: 'pt-page-scaleUp'
-
-    //OutClassAnimation: 'expand-container-ontop pt-page-moveToTopEasing'
-    //, InClassAnimation: 'pt-page-moveFromBottom'
-
-    //OutClassAnimation: 'expand-container-ontop pt-page-moveToTop'
-    //, InClassAnimation: 'pt-page-moveFromBottom'
-
-    OutClassAnimation: 'expand-container-ontop expand-moveToTop'
-    , InClassAnimation: 'expand-moveFromBottom'
-
-    , CurrentPageClass: 'expand-container--selected'
+    CurrentPageClass: 'expand-container--selected'
     , PageChangingHandlers: []
     , PageChangedHandlers: []
     , $previousPage: null
@@ -32,12 +20,22 @@ PageTransition.prototype = {
     , $nextPage: null
     , EndCurrPage: false
     , EndNextPage: false
-    , AnimEndEventNames: [
-        'webkitAnimationEnd',
-        'oAnimationEnd',
-        'MSAnimationEnd',
-        'animationend'
-    ]
+    , AnimEndEventNames : {
+		'WebkitAnimation' : 'webkitAnimationEnd',
+		'OAnimation' : 'oAnimationEnd',
+		'msAnimation' : 'MSAnimationEnd',
+		'animation' : 'animationend'
+    }
+    , GetAnimEndEventName: function () {
+        /// <summary>
+        /// Returns animation event prefixed by browser
+        /// </summary>
+        return this.AnimEndEventNames[window.Modernizr.prefixed('animation')];
+    }
+    // Last In Animation Class applied to the page
+    , LastInAnimClass: ''
+    // Last Out Animation Class applied to the page
+    , LastOutAnimClass: ''
 };
 //#endregion
 
@@ -58,12 +56,77 @@ PageTransition.prototype.Initialize = function (initialPageID) {
 
 PageTransition.prototype.ResetPage = function ($outpage, $inpage) {
     $outpage
-        .removeClass(this.OutClassAnimation)
+        .removeClass(this.LastOutAnimClass)
         .removeClass(this.CurrentPageClass);
 
     $inpage
-        .removeClass(this.InClassAnimation)
+        .removeClass(this.LastInAnimClass)
         .addClass(this.CurrentPageClass);
+};
+
+PageTransition.prototype.GetTransitionType = function () {
+    /// <summary>
+    /// Uses properties $currentPage and $nextPage to determine
+    /// if the transition type is either next, previous, or default
+    /// </summary>
+    var that = this;
+    var $navBarLinks = $('#pnlNavBar li a');
+
+    var $currentLinkElmt = $navBarLinks.filter(function () {
+        var href = that.$currentPage.attr('id').toLowerCase();
+
+        return $(this).attr('href').toLowerCase().indexOf(href) > -1;
+    });
+
+    var $nextLinkElmt = $navBarLinks.filter(function () {
+        var href = that.$nextPage.attr('id').toLowerCase();
+
+        return $(this).attr('href').toLowerCase().indexOf(href) > -1;
+    });
+
+    var indexOfCurrentPage = $currentLinkElmt.length !== 0 ?
+        $navBarLinks.index($currentLinkElmt.get(0)) : -1;
+    var indexOfNextPage = $nextLinkElmt.length !== 0 ?
+        $navBarLinks.index($nextLinkElmt.get(0)) : -1;
+
+    if (indexOfCurrentPage === -1 || indexOfNextPage === -1) {
+        return 'default';
+    } else if (indexOfCurrentPage > indexOfNextPage) {
+        return 'previous';
+    } else if (indexOfCurrentPage < indexOfNextPage) {
+        return 'next';
+    } else {
+        return 'default';
+    }
+};
+
+PageTransition.prototype.GetTransitionClasses = function () {
+    /// <summary>
+    /// Returns the In/Out class names depending on the transition type
+    /// </summary>
+    /// <returns type="Object">
+    /// Returns an object with two properties InClass and OutClass
+    /// </returns>
+    var transitionClasses = {
+        InClass: 'expand-moveFromBottom'
+        , OutClass: 'expand-container-ontop expand-moveToTop'
+    };
+
+    switch (this.GetTransitionType()) {
+        case 'next':
+            transitionClasses.InClass = 'expand-container-ontop expand-moveFromRight';
+            transitionClasses.OutClass = 'expand-scaleDown';
+            break;
+        case 'previous':
+            transitionClasses.InClass = 'expand-container-ontop expand-moveFromLeft';
+            transitionClasses.OutClass = 'expand-scaleDown';
+            break;
+    }
+
+    this.LastInAnimClass = transitionClasses.InClass;
+    this.LastOutAnimClass = transitionClasses.OutClass;
+
+    return transitionClasses;
 };
 
 PageTransition.prototype.TransitionToPage = function (pageID) {
@@ -89,9 +152,12 @@ PageTransition.prototype.TransitionToPage = function (pageID) {
         item.call(item, that.$currentPage.attr('id'), that.$previousPage.attr('id'));
     });
 
-    this.$currentPage.addClass(this.OutClassAnimation)
-        .on('animationend', function () {
-            that.$currentPage.off('animationend');
+    var transitionClasses = this.GetTransitionClasses();
+
+    this.$currentPage
+        .addClass(transitionClasses.OutClass)
+        .on(this.GetAnimEndEventName(), function () {
+            that.$currentPage.off(that.GetAnimEndEventName());
 
             that.EndCurrPage = true;
 
@@ -100,10 +166,12 @@ PageTransition.prototype.TransitionToPage = function (pageID) {
             }
         });
 
-    this.$nextPage.addClass(this.CurrentPageClass)
-        .addClass(this.InClassAnimation)
-        .on('animationend', function () {
-            that.$nextPage.off('animationend');
+    this.$nextPage
+        .scrollTop(0)
+        .addClass(this.CurrentPageClass)
+        .addClass(transitionClasses.InClass)
+        .on(this.GetAnimEndEventName(), function () {
+            that.$nextPage.off(that.GetAnimEndEventName());
 
             that.EndNextPage = true;
 

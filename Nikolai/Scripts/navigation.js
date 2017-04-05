@@ -598,7 +598,7 @@ MainNavigation.prototype.TriggerScrollAnimation = function () {
     if ($page.length === 0) {
         throw new Error('No selected page found');
     } else if ($page.length > 1) {
-        throw new Error('Only one selected page can be specified');
+        return; // In the middle of transition, two pages are partially visible
     }
 
     var windowHeight = $(window).outerHeight();

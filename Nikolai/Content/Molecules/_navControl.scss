@@ -129,7 +129,7 @@ $total-pages: 4;
     right: 0;
 
     @extend %box-level--back;
-    @include transition(transform 0.5s ease-out);
+    @include transition(transform 0.5s ease-out, border-color 1s);
 }
 
 .nav-item__icon {
@@ -138,7 +138,7 @@ $total-pages: 4;
     position: absolute;
     top: $nav-item--diameter/2 -  $nav-icon--diameter/2;
 
-    @include transition(opacity 0.3s ease-out);
+    @include transition(opacity 0.3s ease-out, background-color 1s);
 }
 
 .nav-item__dummyLink {

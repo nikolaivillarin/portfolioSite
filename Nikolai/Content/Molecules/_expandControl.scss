@@ -53,6 +53,23 @@
     @include animation(moveFromBottom 0.6s ease both);
 }
 
+.expand-moveFromLeft {
+    @include animation(moveFromLeft 0.6s ease both);
+}
+
+.expand-moveFromRight {
+    @include animation(moveFromRight 0.6s ease both);
+}
+
+.expand-scaleDown {
+    @include animation(scaleDown 0.7s ease both);
+}
+
+.expand-rotateFall {
+    @include transform-origin(0% 0%);
+    @include animation(rotateFall 1s both ease-in);
+}
+
 @include keyframes(moveToTop) {
     from {
         @include transform(translateY(0));
@@ -68,5 +85,68 @@
     }
     to {
         @include transform(translateY(0));
+    }
+}
+
+@include keyframes(moveFromLeft) {
+    from {
+        @include transform(translateX(-100%));
+    }
+    to {
+        @include transform(translateX(0));
+    }
+}
+
+@include keyframes(moveFromRight) {
+    from {
+        @include transform(translateX(100%));
+    }
+    to {
+        @include transform(translateX(0));
+    }
+}
+
+@include keyframes(scaleDown) {
+    from {
+        opacity: 1;
+
+        @include transform(scale(1));
+    }
+    to {
+        opacity: 0;
+
+        @include transform(scale(0.8));
+    }
+}
+
+@include keyframes(scaleUp) {
+    from {
+        opacity: 0;
+
+        @include transform(scale(0.8));
+    }
+    to {
+        opacity: 1;
+
+        @include transform(scale(1));
+    }
+}
+
+@include keyframes(rotateFall) {
+    0% {
+        @include transform(rotateZ(0deg));
+    }
+    20% {
+        @include transform(rotateZ(10deg));
+        @include animation-timing-function(ease-out);
+    }
+    40% {
+        @include transform(rotateZ(17deg));
+    }
+    60% {
+        @include transform(rotateZ(16deg));
+    }
+    100% {
+        @include transform(rotateZ(17deg) translateY(100%));
     }
 }
