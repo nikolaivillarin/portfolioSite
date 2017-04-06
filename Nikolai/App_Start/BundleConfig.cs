@@ -33,7 +33,8 @@ namespace Nikolai
             ));
 
             bundles.Add(new ScriptBundle("~/Content/scripts").Include(
-                "~/Scripts/clientErrorLogger.js"
+                "~/Scripts/canvasUtilities.js"
+                , "~/Scripts/clientErrorLogger.js"
                 , "~/Scripts/navigationBar.js"
                 , "~/Scripts/pageTransition.js"
                 , "~/Scripts/navigation.js"

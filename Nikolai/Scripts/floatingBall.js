@@ -1,36 +1,4 @@
 ﻿/*------------------------------------*\
-    Canvas Utilities
-\*------------------------------------*/
-var utils = {};
-
-utils.colorToRGB = function (color, alpha) {
-    /// <summary>
-    /// Converts a Hex color to an RGB or RGBA color.
-    /// </summary>
-    /// <param name="color" type="Hex">Color to be converted</param>
-    /// <param name="alpha" type="Double">[Optional] Alpha Channel</param>
-    /// <returns>RGB/RBGA string</returns>
-    // If string format, convert to a Hex
-    if (typeof color === 'string' && color[0] === '#') {
-        color = window.parseInt(color.slice(1), 16);
-    }
-    alpha = (alpha === undefined) ? 1 : alpha;
-
-    // Extract component values
-    var r = color >> 16 & 0xff;
-    var g = color >> 8 & 0xff;
-    var b = color & 0xff;
-    var a = (alpha < 0) ? 0 : ((alpha > 1) ? 1 : alpha); // Check Range
-
-    // Use 'rgba' if needed
-    if (a === 1) {
-        return 'rgb(' + r + ',' + g + ',' + b + ')';
-    } else {
-        return 'rgba(' + r + ',' + g + ',' + b + ',' + a + ')';
-    }
-};
-
-/*------------------------------------*\
     Bubble Canvas Functionality
 \*------------------------------------*/
 function BubbleCanvas(canvasID) {
@@ -58,7 +26,7 @@ function BubbleCanvas(canvasID) {
 
     // Events
     $(window).resize(
-        $.proxy(this.SetSize, this)
+        $.proxy(this.WindowResize, this)
     );
 }
 
@@ -84,31 +52,50 @@ BubbleCanvas.prototype.Initialize = function () {
             this.Bubbles.push(new FloatingBall(this.CanvasID));
         }
     }
+
+    this.Render();
 };
 
 BubbleCanvas.prototype.StartAnimation = function () {
-    var that = this;
-    var canvas = document.getElementById(this.CanvasID);
-    
-    this.AnimationPaused = false;
+    if (this.AnimationPaused === true) {
+        var that = this;
 
-    (function drawFrame() {
-        if (that.AnimationPaused === false) {
-            window.requestAnimationFrame(drawFrame);
+        this.AnimationPaused = false;
 
-            that.CanvasContext.clearRect(0, 0, canvas.width, canvas.height);
+        console.log('Animation Started');
 
-            $.proxy(that.DrawCanvasBG(), that);
+        (function drawFrame() {
+            if (that.AnimationPaused === false) {
+                window.requestAnimationFrame(drawFrame);
 
-            for (var i = 0; i < that.Bubbles.length; i++) {
-                that.Bubbles[i].Draw();
+                that.Render();
             }
-        }
-    }());
+        }());
+    }
+};
+
+BubbleCanvas.prototype.Render = function () {
+    var canvas = document.getElementById(this.CanvasID);
+
+    this.CanvasContext.clearRect(0, 0, canvas.width, canvas.height);
+
+    this.DrawCanvasBG();
+
+    for (var i = 0; i < this.Bubbles.length; i++) {
+        this.Bubbles[i].Draw();
+    }
 };
 
 BubbleCanvas.prototype.PauseAnimation = function () {
     this.AnimationPaused = true;
+
+    console.log('Animation Stopped');
+};
+
+BubbleCanvas.prototype.WindowResize = function () {
+    this.SetSize();
+
+    this.Render();
 };
 
 BubbleCanvas.prototype.SetSize = function () {
@@ -338,8 +325,8 @@ FloatingBall.prototype.DrawBall = function () {
     context.rotate(this.Options.Rotation);
     context.scale(this.Options.ScaleX, this.Options.ScaleY);
     context.lineWidth = this.Options.BorderWidth;
-    context.strokeStyle = utils.colorToRGB(color, this.Options.BorderOpacity);
-    context.fillStyle = utils.colorToRGB(color, this.Options.Opacity);
+    context.strokeStyle = window.utils.colorToRGB(color, this.Options.BorderOpacity);
+    context.fillStyle = window.utils.colorToRGB(color, this.Options.Opacity);
     context.beginPath();
     context.arc(this.Options.X, this.Options.Y, radius, 0, (Math.PI * 2), true);
     context.closePath();
@@ -366,12 +353,12 @@ FloatingBall.prototype.DrawBlurredBall = function () {
     var radgrad = context.createRadialGradient(
         radius, radius, 0, radius, radius, radius);
 
-    radgrad.addColorStop(0, utils.colorToRGB(color, this.Options.Opacity));
+    radgrad.addColorStop(0, window.utils.colorToRGB(color, this.Options.Opacity));
 
     var opacityVal2 = (this.Options.Opacity * 10 - 0.1 * 10) / 10; // Floating Point number fix
 
-    radgrad.addColorStop(0.9, utils.colorToRGB(color, opacityVal2));
-    radgrad.addColorStop(1, utils.colorToRGB(color, 0));
+    radgrad.addColorStop(0.9, window.utils.colorToRGB(color, opacityVal2));
+    radgrad.addColorStop(1, window.utils.colorToRGB(color, 0));
 
     context.fillStyle = radgrad;
 

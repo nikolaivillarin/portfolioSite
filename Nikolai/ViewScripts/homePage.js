@@ -37,8 +37,6 @@ HomePage.prototype.SetupCanvas = function () {
         throw new Error('Script BubbleCanvas is missing');
     } else {
         this.BubbleCanvas = new window.BubbleCanvas('heroImageCanvas');
-
-        this.BubbleCanvas.StartAnimation();
     }
 };
 
