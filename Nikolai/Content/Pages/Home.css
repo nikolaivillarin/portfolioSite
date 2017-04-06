@@ -80,10 +80,6 @@ $color-dial--ring3: #2294e5;*/
   }
 }
 
-.home-effect--disabled .home {
-  background: linear-gradient(225deg, #a4f0f7, #cc9dc0 50%, #e8be9a);
-}
-
 .home-heroImageContainer {
   height: 0;
   padding-bottom: 110.54%;

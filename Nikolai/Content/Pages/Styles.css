@@ -348,11 +348,11 @@ $color-dial--ring3: #2294e5;*/
   z-index: 1;
 }
 
-.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .nav-container--footer, .button-hamburger--right, .button-viewMore__link {
+.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .expand-container-ontop, .button-viewMore__link {
   z-index: 3;
 }
 
-.expand-container-ontop, .menu {
+.nav-container--footer, .menu, .button-hamburger--right {
   z-index: 4;
 }
 
@@ -1050,11 +1050,11 @@ $color-dial--ring3: #2294e5;*/
   z-index: 1;
 }
 
-.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .nav-container--footer, .button-hamburger--right, .button-viewMore__link {
+.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .expand-container-ontop, .button-viewMore__link {
   z-index: 3;
 }
 
-.expand-container-ontop, .menu {
+.nav-container--footer, .menu, .button-hamburger--right {
   z-index: 4;
 }
 
@@ -1930,11 +1930,11 @@ $color-dial--ring3: #2294e5;*/
   z-index: 1;
 }
 
-.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .nav-container--footer, .button-hamburger--right, .button-viewMore__link {
+.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .expand-container-ontop, .button-viewMore__link {
   z-index: 3;
 }
 
-.expand-container-ontop, .menu {
+.nav-container--footer, .menu, .button-hamburger--right {
   z-index: 4;
 }
 
@@ -2664,11 +2664,11 @@ $color-dial--ring3: #2294e5;*/
   z-index: 1;
 }
 
-.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .nav-container--footer, .button-hamburger--right, .button-viewMore__link {
+.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .expand-container-ontop, .button-viewMore__link {
   z-index: 3;
 }
 
-.expand-container-ontop, .menu {
+.nav-container--footer, .menu, .button-hamburger--right {
   z-index: 4;
 }
 
@@ -2874,11 +2874,11 @@ $color-dial--ring3: #2294e5;*/
   z-index: 1;
 }
 
-.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .nav-container--footer, .button-hamburger--right, .button-viewMore__link {
+.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .expand-container-ontop, .button-viewMore__link {
   z-index: 3;
 }
 
-.expand-container-ontop, .menu {
+.nav-container--footer, .menu, .button-hamburger--right {
   z-index: 4;
 }
 
@@ -3900,11 +3900,11 @@ $color-dial--ring3: #2294e5;*/
   z-index: 1;
 }
 
-.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .nav-container--footer, .button-hamburger--right, .button-viewMore__link {
+.nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner, .expand-container-ontop, .button-viewMore__link {
   z-index: 3;
 }
 
-.expand-container-ontop, .menu {
+.nav-container--footer, .menu, .button-hamburger--right {
   z-index: 4;
 }
 

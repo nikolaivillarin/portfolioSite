@@ -37,6 +37,8 @@ HomePage.prototype.SetupCanvas = function () {
         throw new Error('Script BubbleCanvas is missing');
     } else {
         this.BubbleCanvas = new window.BubbleCanvas('heroImageCanvas');
+
+        this.BubbleCanvas.StartAnimation();
     }
 };
 
@@ -44,26 +46,14 @@ HomePage.prototype.DisableCanvas = function () {
     /// <summary>
     /// Disables the Bokeh background
     /// </summary>
-    if (this.$Element.hasClass('home-effect--disabled') === false) {
-        this.$Element.addClass('home-effect--disabled');
-
-        this.$Canvas.hide();
-
-        this.BubbleCanvas.PauseAnimation();
-    }
+    this.BubbleCanvas.PauseAnimation();
 };
 
 HomePage.prototype.EnableCanvas = function () {
     /// <summary>
     /// Enables the Bokeh background
     /// </summary>
-    if (this.$Element.hasClass('home-effect--disabled') === true) {
-        this.$Element.removeClass('home-effect--disabled');
-
-        this.$Canvas.show();
-
-        this.BubbleCanvas.StartAnimation();
-    }
+    this.BubbleCanvas.StartAnimation();
 };
 
 HomePage.prototype.OnPageChange = function (pageId) {

@@ -252,7 +252,7 @@ $total-pages: 4;
     bottom: 0;
     position: absolute;
 
-    @extend %box-level--top;
+    @extend %box-level--modular;
 }
 
 .nav-bar {

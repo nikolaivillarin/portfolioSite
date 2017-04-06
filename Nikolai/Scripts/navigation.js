@@ -432,9 +432,11 @@ MainNavigation.prototype.OnPageChanged = function (currentPageID, previousPageID
     /// using the SubscribeToOnPageChange method
     /// </summary>
     // For scroll animation
-    window.setTimeout(function () {
-        $('[data-nv-page]').trigger('scroll');
-    }, 300);
+    //window.setTimeout(function () {
+    //    $('[data-nv-page]').trigger('scroll');
+    //}, 300);
+
+    $('[data-nv-page]').trigger('scroll');
 
     this.SetMenuBtnTheme();
 
