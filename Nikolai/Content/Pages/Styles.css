@@ -243,12 +243,8 @@ $color-dial--ring3: #2294e5;*/
 }
 
 .socialIcon {
-  background-position: 0 0;
-  background-size: 14px 14px;
   background-repeat: no-repeat;
   display: inline-block;
-  height: 14px;
-  width: 14px;
 }
 
 .socialIcon:before {
@@ -263,7 +259,19 @@ $color-dial--ring3: #2294e5;*/
 }
 
 .socialIcon--linkedin {
+  background-position: 0 0;
+  background-size: 14px 14px;
   background-image: url(/Content/Images/icon-linkedin.svg);
+  height: 14px;
+  width: 14px;
+}
+
+.socialIcon--github {
+  background-position: -4px 0px;
+  background-size: 18px 23px;
+  background-image: url(/Content/Images/icon-github.svg);
+  height: 22px;
+  width: 25px;
 }
 
 /*------------------------------------*    Accent Colors
@@ -3296,22 +3304,24 @@ $color-dial--ring3: #2294e5;*/
 .button-hamburger__line, .button-hamburger__separator, .button-hamburger__lineOnDark {
   display: block;
   float: left;
-  height: 0.3em;
-  max-height: 5px;
   max-width: 40px;
   width: 2.5em;
 }
 
 .button-hamburger__line {
+  height: 3px;
   background-color: #000;
   box-shadow: rgba(255, 255, 255, 0.4) 0 1px 1px;
 }
 
 .button-hamburger__separator {
+  height: 0.5em;
+  max-height: 6px;
   background-color: transparent;
 }
 
 .button-hamburger__lineOnDark {
+  height: 3px;
   background-color: #FFF;
 }
 

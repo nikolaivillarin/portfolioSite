@@ -217,6 +217,27 @@ NVNavBar.prototype.SetTheme = function (theme) {
         $('.icon--contact', this.$Element)
             .addClass('icon--contactOnDark')
             .removeClass('icon--contact');
+    } else if (theme === 'dark_light') {
+        this.$Element.addClass('nav-bar--onDark');
+
+        $('[data-js-hook="linkBtn"]', this.$Element)
+            .addClass('nav__itemContainer--onDark');
+
+        $('.icon--home', this.$Element)
+            .addClass('icon--homeOnDark')
+            .removeClass('icon--home');
+
+        $('.icon--work', this.$Element)
+            .addClass('icon--workOnDark')
+            .removeClass('icon--work');
+
+        $('.icon--about', this.$Element)
+            .addClass('icon--aboutOnDark')
+            .removeClass('icon--about');
+
+        $('.icon--contact', this.$Element)
+            .addClass('icon--contactOnDark')
+            .removeClass('icon--contact');
     } else {
         this.$Element.removeClass('nav-bar--onDark');
 
@@ -429,19 +450,46 @@ NVNavBar.prototype.PositionDial = function (pageID, easing) {
     }
 
     if (targetID) {
-        var targetOffsets = $('#' + targetID).offset();
-        var x = targetOffsets.left;
-        var y = targetOffsets.top;
+        var targetPosition = this.GetTargetPosition(targetID);
 
-        if (x < 0) {
-            // Element is positioned with the "right" css rule
-            x = $(window).width() + targetOffsets.left;
-        }
-
-        this.DialControl.PositionDial(x, y);
+        this.DialControl.PositionDial(targetPosition.x, targetPosition.y);
     } else {
         this.DialControl.SetToDefaulPosition(easing);
     }
+};
+
+NVNavBar.prototype.GetTargetPosition = function (targetID) {
+    /// <summary>
+    /// Retrieves the target's X and Y coordinates. If the target
+    /// is out of the viewport this will return a position within the
+    /// viewport closest to the target
+    /// </summary>
+    /// <returns type="Object">
+    /// Returns an object with x and y properties
+    /// </returns>
+    var viewportWidth = $(window).width();
+    var viewportHeight = $(window).height();
+
+    var $target = $('#' + targetID);
+
+    var position = {
+        x: $target.offset().left
+        ,y: $target.offset().top
+    };
+
+    if (position.x < 0) {
+        position.x = 0;
+    } else if (position.x > viewportWidth) {
+        position.x = viewportWidth - $target.outerWidth();
+    }
+
+    if (position.y < 0) {
+        position.y = 0;
+    } else if (position.y > viewportHeight) {
+        position.y = viewportHeight - $target.outerHeight();
+    }
+
+    return position;
 };
 
 NVNavBar.prototype.CheckDialOnNextLink = function (selectedLinkIndex, x, y) {

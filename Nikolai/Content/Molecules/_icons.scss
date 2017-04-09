@@ -123,12 +123,8 @@ $navIcon-retina--width: 50px;
 }
 
 .socialIcon {
-    background-position: 0 0;
-    background-size: 14px 14px;
     background-repeat: no-repeat;
     display: inline-block;
-    height: 14px;
-    width: 14px;
 
     &:before {
         border: 1px solid $color-font--primaryOnDark;
@@ -142,6 +138,18 @@ $navIcon-retina--width: 50px;
     }
 
     &--linkedin {
+        background-position: 0 0;
+        background-size: 14px 14px;
         background-image: url(/Content/Images/icon-linkedin.svg);
+        height: 14px;
+        width: 14px;
+    }
+
+    &--github {
+        background-position: -4px 0px;
+        background-size: 18px 23px;
+        background-image: url(/Content/Images/icon-github.svg);
+        height: 22px;
+        width: 25px;
     }
 }

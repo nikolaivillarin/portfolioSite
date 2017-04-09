@@ -4,7 +4,23 @@
 @import '../Breakpoint/_breakpoint';
 @import '../Atoms/_breakpoints';
 
-$breakpoing-minHeight: 400px;
+$breakpoint-minHeight: 400px;
+
+%accordionTransition--expand {
+    @include transition(max-height 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.1s);
+}
+
+%accordionTransition--collapse {
+    @include transition(max-height 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955));
+}
+
+%placeholderTransition--expand {
+    @include transition(margin-top 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.1s);
+}
+
+%placeholderTransition--collapse {
+    @include transition(margin-top 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955));
+}
 
 .contact {
     background-position: left top;
@@ -28,17 +44,35 @@ $breakpoing-minHeight: 400px;
 }
 
 .contact__container {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 2px solid #FFF;
-    max-width: 700px;
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 6px;
+    bottom: 150px;
+    max-width: 640px;
     overflow: hidden;
-    top: 10vw;
-    width: 100%;
+    width: 90%;
 
-    @extend %box--centerTop;
+    @extend %box--centerBottom;
 
-    @include breakpoint(max-height 460px) {
-        top: 0;
+    @include breakpoint(max-height $breakpoint-minHeight) {
+        bottom: auto;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 50px;
+    }
+
+    @include breakpoint($breakpoint-mobileBig $breakpoint-phablet) {
+        font-size: 12px;
+    }
+
+    @include breakpoint(min-width $breakpoint-phablet) {
+        bottom: auto;
+        left: 0;
+        margin: auto;
+        position: absolute;
+        right: 0;
+        top: 15%;
     }
 }
 
@@ -48,89 +82,143 @@ $breakpoing-minHeight: 400px;
     @extend %box--squished;
     @include box-sizing(border-box);
 
-    @include breakpoint((max-width $breakpoint-phablet) (max-height $breakpoing-minHeight)) {
+    @include breakpoint((max-width $breakpoint-phablet) (max-height $breakpoint-minHeight)) {
         padding-bottom: 0;
         padding-top: 0;
     }
 }
 
-.contact__separator {
-    border-top: 2px solid #FFF;
+.contact__text {
+    overflow: hidden;
+    max-height: 500px; // Needs a value to transitions height
 
-    @include breakpoint(min-width $breakpoint-phablet) {
-        border-top: none;
-        border-left: 1px solid #000;
-    }
+    @extend %accordionTransition--expand;
 
-    @include breakpoint((max-width $breakpoint-phablet) (max-height $breakpoing-minHeight)) {
-        border-top: none;
+    p {
+        color: #cccccc;
     }
+}
+
+.contact__header--clickable {
+    cursor: pointer;
 }
 
 .contact__summary {
+    background-color: #1A1A1A;
     width: 100%;
 
+    @include breakpoint(max-width $breakpoint-phablet) {
+        padding: 2em 2em 0.5em 2em;
+    }
+
     @include breakpoint(min-width $breakpoint-phablet) {
-        width: 40%;
+        min-height: 395px;
+        width: 45%;
     }
 }
 
-.contact__text {
-    @include breakpoint((max-width $breakpoint-phablet) (max-height $breakpoing-minHeight)) {
-        display: none;
+.contact__summary--collapsed {
+    .contact__text {
+        max-height: 0;
+
+        @extend %accordionTransition--collapse;
     }
 }
 
 .contact__form {
     width: 100%;
 
-    @include breakpoint(min-width $breakpoint-phablet) {
-        width: 60%;
+    @include breakpoint(max-width $breakpoint-phablet) {
+        padding: 2em 2em 0 2em;
     }
+
+    @include breakpoint(min-width $breakpoint-phablet) {
+        width: 55%;
+    }
+}
+
+.contact__formFields {
+    overflow: hidden;
+    padding-top: 1em;
+    max-height: 500px; // Needs a value to transition max-height
+
+    @extend %accordionTransition--expand;
 }
 
 .contact__placeholder {
-    float: right;
+    background-color: transparent;
+    float: right; 
 
     @extend %box--dialPlaceholder;
-}
 
-.contact__name {
-    margin-bottom: 1em;
+    @extend %placeholderTransition--expand;
 
-    @include breakpoint((max-width $breakpoint-phablet) (max-height $breakpoing-minHeight)) {
-        float: left;
-        margin-bottom: 0;
-        margin-right: 70px;
-        width: 100px;
-
-        input {
-            min-width: 100px;
-        }
+    @include breakpoint(max-width $breakpoint-phablet) {
+        @include transform(scale(0.6));
     }
 }
 
-.contact__email {
-    margin-bottom: 1em;
+.contact__form--collapsed {
+    .contact__placeholder {
+        margin-top: -75px;
 
-    @include breakpoint((max-width $breakpoint-phablet) (max-height $breakpoing-minHeight)) {
-        float: left;
-        margin-bottom: 0;
-        width: 100px;
+        @extend %placeholderTransition--collapse;
+    }
 
-        input {
-            min-width: 100px;
-        }
+    .contact__formFields {
+        max-height: 0;
+
+        @extend %accordionTransition--collapse;
     }
 }
 
-.contact__message {
-    margin-bottom: 1em;
+.contact__inputGroup {
+    margin-bottom: 3em;
+    position: relative;
+}
 
-    @include breakpoint((max-width $breakpoint-phablet) (max-height $breakpoing-minHeight)) {
-        clear: both;
-        margin-bottom: 0;
-        margin-top: 1em;
-        width: 100%;
+.contact__label {
+    cursor: text;
+    left: 0;
+    position: absolute;
+    top: 1em;
+
+    @include transition(top 0.3s cubic-bezier(0.64, 0.09, 0.08, 1), font-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1));
+}
+
+.contact__label--focus {
+    font-size: 0.7em;
+    top: -1em;
+}
+
+.contact__textbox {
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #00b2ff 4%);
+    background-position: -600px 0;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border-bottom: 1px solid #00b2ff;
+    border-radius: 0;
+    color: #FFF;
+    left: 0;
+    padding: 10px 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    @include transition(background-position 0.3s cubic-bezier(0.64, 0.09, 0.08, 1));
+
+    &:focus {
+        background-position: 0 0;
+    }
+}
+
+.contact__socialIcons {
+    padding: 1em 8px;
+    position: relative;
+
+    .socialIcon {
+        display: block;
+        float: left;
+        margin-right: 2em;
     }
 }

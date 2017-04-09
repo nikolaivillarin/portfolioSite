@@ -303,6 +303,13 @@ MainNavigation.prototype.SetMenuBtnTheme = function () {
 
             this.$Element.addClass('nav__itemContainer--onDark');
             break;
+        case 'dark_light':
+            $('span:even', $btnHamburger)
+                .removeClass('button-hamburger__lineOnDark')
+                .addClass('button-hamburger__line');
+
+            this.$Element.addClass('nav__itemContainer--onDark');
+            break;
         default:
             $('span:even', $btnHamburger)
                .removeClass('button-hamburger__lineOnDark')

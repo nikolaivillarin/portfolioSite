@@ -212,6 +212,7 @@
     <Content Include="Content\Images\icon-arrow.svg" />
     <Content Include="Content\Images\icon-contact--onDark.svg" />
     <Content Include="Content\Images\icon-contact.svg" />
+    <Content Include="Content\Images\icon-github.svg" />
     <Content Include="Content\Images\icon-home--onDark.svg" />
     <Content Include="Content\Images\icon-home.svg" />
     <Content Include="Content\Images\icon-linkedin.svg" />

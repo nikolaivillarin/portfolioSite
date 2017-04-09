@@ -42,6 +42,13 @@
     @extend %box--absoluteCenter;
 }
 
+%box--centerBottom {
+    bottom: 15%;
+    top: auto;
+
+    @extend %box--absoluteCenter;
+}
+
 %box--rounded {
     border-radius: 6px;
 }
