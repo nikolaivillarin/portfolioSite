@@ -3304,7 +3304,7 @@ $color-dial--ring3: #2294e5;*/
 .button-hamburger__line, .button-hamburger__separator, .button-hamburger__lineOnDark {
   display: block;
   float: left;
-  max-width: 40px;
+  max-width: 30px;
   width: 2.5em;
 }
 

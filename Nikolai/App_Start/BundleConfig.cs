@@ -29,6 +29,7 @@ namespace Nikolai
                 "~/Scripts/jquery-{version}.js",
                 "~/Scripts/jquery-ui-{version}.js",
                 "~/Scripts/jquery.ui.touch-punch.js",
+                "~/Scripts/jquery.scrollTo.js",
                 "~/Scripts/imagesloaded.pkgd.js"
             ));
 

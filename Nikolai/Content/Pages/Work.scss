@@ -41,11 +41,6 @@
         vertical-align: middle;
 
         @extend %box-level--middle;
-
-        @include breakpoint(max-height $breakpoint-phablet) {
-            display: block;
-            margin-top: 30%;
-        }
     }
 
     &__overlay {
@@ -185,4 +180,47 @@
     bottom: 125px;
 
     @extend %box-level--middle;
+}
+
+.work-PageIndicatorContainer {
+    display: none;
+    position: absolute;
+    right: 2.5em;
+    top: 3.8em;
+    width: 1em;
+
+    @extend %box-level--modular;
+
+    @include breakpoint(max-width $breakpoint-phablet) {
+        right: 1.8em;
+    }
+}
+
+.work-PageIndicatorContainer--active {
+    display: block;
+}
+
+.work-PageIndicator {
+    background-color: transparent;
+    border: 2px solid #FFF;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    height: 1em;
+    margin-top: 0.5em;
+    width: 1em;
+
+    @include transition(background-color 0.4s);
+
+    &:hover {
+        background-color: rgba(255, 255, 255, 0.6);
+    }
+}
+
+.work-PageIndicator--selected {
+    background-color: #FFF;
+
+    &:hover {
+        background-color: #FFF;
+    }
 }

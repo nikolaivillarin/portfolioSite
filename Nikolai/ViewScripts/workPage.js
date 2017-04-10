@@ -1,10 +1,13 @@
-﻿function WorkPage() {
+﻿//#region Constructors
+function WorkPage() {
     /// <summary>
     /// Default Constructor
     /// </summary>
     this.Initialize();
 }
+//#endregion
 
+//#region Properties
 WorkPage.prototype = {
     IsSelected: false
     // Specifies if the slider is animating
@@ -12,8 +15,12 @@ WorkPage.prototype = {
     // Slider Container
     , $WorkSlider: null
     , $selectedItem: null
+    // Used for scroll optimization
+    , HasScrollTicked: false
 };
+//#endregion
 
+//#region Methods
 WorkPage.prototype.Initialize = function () {
     this.$WorkSlider = $('#workSlider');
 
@@ -34,6 +41,10 @@ WorkPage.prototype.Initialize = function () {
     // Global Event Handlers
     $(window).resize(
         $.proxy(this.WindowResize, this)
+    );
+
+    $('#work').on('scroll',
+        $.proxy(this.PageScrolled, this)
     );
 };
 
@@ -107,11 +118,11 @@ WorkPage.prototype.WindowResize = function () {
     /// When window is resized the position for the work tiles are off.
     /// Reposition work items
     /// </summary>
-    this.$WorkSlider.stop().css('margin-top', '0');
-
     this.IsAnimating = false;
 
-    $('#work').trigger('scroll');
+    this.RenderPageIndicator();
+
+    $('#work').scrollTop(0).trigger('scroll');
 };
 
 WorkPage.prototype.OnPageChange = function (pageId) {
@@ -120,12 +131,115 @@ WorkPage.prototype.OnPageChange = function (pageId) {
     /// </summary>
     if (pageId && pageId === 'work') {
         this.IsSelected = true;
+
+        this.EnablePageIndicator();
     } else {
         this.IsSelected = false;
+
+        this.DisablePageIndicator();
     }
 };
 
-// Initializer
+WorkPage.prototype.EnablePageIndicator = function () {
+    $('#pnlWorkPageIndicator').addClass('work-PageIndicatorContainer--active');
+
+    this.RenderPageIndicator();
+};
+
+WorkPage.prototype.DisablePageIndicator = function () {
+    $('#pnlWorkPageIndicator').removeClass('work-PageIndicatorContainer--active');
+};
+
+WorkPage.prototype.RenderPageIndicator = function () {
+    /// <summary>
+    /// Renders the page indicators depending on how many pages
+    /// there are
+    /// </summary>
+    if ($('#pnlWorkPageIndicator').hasClass('work-PageIndicatorContainer--active') === false) {
+        return;
+    }
+
+    var totalPages = Math.ceil(this.$WorkSlider.outerHeight() / $(window).outerHeight());
+
+    var $pnlIndicator = $('#pnlWorkPageIndicator');
+
+    $pnlIndicator.empty();
+
+    for (var i = 0; i < totalPages; i++) {
+        var indicatorClass = 'work-PageIndicator';
+
+        if (i === 0) {
+            indicatorClass = 'work-PageIndicator work-PageIndicator--selected';
+        }
+
+        var $indicator = $('<span></span>', {
+            'class': indicatorClass
+            , 'data-nv-pagenum': i
+            , 'click': this.PageIndicatorClicked
+        });
+
+        $pnlIndicator.append($indicator);
+    }
+};
+
+WorkPage.prototype.PageIndicatorClicked = function (evt) {
+    var $indicator = $(evt.target);
+
+    var pageNum = $indicator.data('nv-pagenum');
+
+    var scrollPX = $(window).outerHeight() * pageNum;
+
+    $('#work').scrollTo(scrollPX, {
+        duration: 500
+        , easing: 'swing'
+    });
+
+    $('#pnlWorkPageIndicator > span').removeClass('work-PageIndicator--selected');
+
+    $indicator.addClass('work-PageIndicator--selected');
+};
+
+WorkPage.prototype.UpdatePageIndicator = function () {
+    /// <summary>
+    /// Updates which page indicator should be selected
+    /// </summary>
+    var scrollPosition = $('#work').scrollTop();
+    var windowHeight = $(window).outerHeight();
+
+    var selectedPage = Math.ceil(scrollPosition / windowHeight);
+
+    var $indicators = $('#pnlWorkPageIndicator > span');
+
+    var $selectPage = $indicators.eq(selectedPage);
+
+    if ($selectPage.length !== 0) {
+        $indicators.removeClass('work-PageIndicator--selected');
+
+        $selectPage.addClass('work-PageIndicator--selected');
+    }
+
+};
+
+WorkPage.prototype.PageScrolled = function () {
+    var that = this;
+
+    var $pnlWorkPageIndicator = $('#pnlWorkPageIndicator');
+
+    if ($pnlWorkPageIndicator.hasClass('work-PageIndicatorContainer--active') === true) {
+        if (this.HasScrollTicked === false) {
+            window.requestAnimationFrame(function () {
+                that.UpdatePageIndicator();
+
+                that.HasScrollTicked = false;
+            });
+        }
+
+        this.HasScrollTicked = true;
+    }
+};
+//#endregion
+
+//#region Initializer
 (function LoadWorkScript() {
     if (window.MainNav) {
         window.MainNav.SubscribeToOnNavigationLoaded(function () {
@@ -135,3 +249,4 @@ WorkPage.prototype.OnPageChange = function (pageId) {
         window.setTimeout(LoadWorkScript, 50);
     }
 })();
+//#endregion

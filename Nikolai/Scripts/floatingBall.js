@@ -62,8 +62,6 @@ BubbleCanvas.prototype.StartAnimation = function () {
 
         this.AnimationPaused = false;
 
-        console.log('Animation Started');
-
         (function drawFrame() {
             if (that.AnimationPaused === false) {
                 window.requestAnimationFrame(drawFrame);
@@ -88,8 +86,6 @@ BubbleCanvas.prototype.Render = function () {
 
 BubbleCanvas.prototype.PauseAnimation = function () {
     this.AnimationPaused = true;
-
-    console.log('Animation Stopped');
 };
 
 BubbleCanvas.prototype.WindowResize = function () {
