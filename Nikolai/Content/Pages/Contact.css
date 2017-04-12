@@ -30,34 +30,6 @@
 
 /*------------------------------------*    CSS Breakpoints for different devices
 \*------------------------------------*/
-.contact__text, .contact__formFields {
-  -moz-transition: max-height 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.1s;
-  -o-transition: max-height 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.1s;
-  -webkit-transition: max-height 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.1s;
-  transition: max-height 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.1s;
-}
-
-.contact__summary--collapsed .contact__text, .contact__form--collapsed .contact__formFields {
-  -moz-transition: max-height 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  -o-transition: max-height 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  -webkit-transition: max-height 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  transition: max-height 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-}
-
-.contact__placeholder {
-  -moz-transition: margin-top 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.1s;
-  -o-transition: margin-top 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.1s;
-  -webkit-transition: margin-top 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.1s;
-  transition: margin-top 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.1s;
-}
-
-.contact__form--collapsed .contact__placeholder {
-  -moz-transition: margin-top 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  -o-transition: margin-top 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  -webkit-transition: margin-top 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  transition: margin-top 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-}
-
 .contact {
   background-position: left top;
   background-size: cover;
@@ -138,7 +110,8 @@
 
 .contact__text {
   overflow: hidden;
-  max-height: 500px;
+  /*max-height: 500px; // Needs a value to transitions height*/
+  /*@extend %accordionTransition--expand;*/
 }
 
 .contact__text p {
@@ -167,10 +140,13 @@
   }
 }
 
-.contact__summary--collapsed .contact__text {
-  max-height: 0;
-}
+/*.contact__summary--collapsed {
+    .contact__text {
+        max-height: 0;
 
+        @extend %accordionTransition--collapse;
+    }
+}*/
 .contact__form {
   width: 100%;
 }
@@ -190,12 +166,15 @@
 .contact__formFields {
   overflow: hidden;
   padding-top: 1em;
-  max-height: 500px;
+  /*max-height: 500px; // Needs a value to transition max-height*/
+  /*@extend %accordionTransition--expand;*/
 }
 
 .contact__placeholder {
   background-color: transparent;
   float: right;
+  /*margin-bottom: 1em;*/
+  /*@extend %placeholderTransition--expand;*/
 }
 
 @media (max-width: 600px) {
@@ -208,14 +187,19 @@
   }
 }
 
-.contact__form--collapsed .contact__placeholder {
-  margin-top: -75px;
-}
+/*.contact__form--collapsed {
+    .contact__placeholder {
+        margin-top: -75px;
 
-.contact__form--collapsed .contact__formFields {
-  max-height: 0;
-}
+        @extend %placeholderTransition--collapse;
+    }
 
+    .contact__formFields {
+        max-height: 0;
+
+        @extend %accordionTransition--collapse;
+    }
+}*/
 .contact__inputGroup {
   margin-bottom: 3em;
   position: relative;

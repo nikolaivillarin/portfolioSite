@@ -7,19 +7,19 @@
 $breakpoint-minHeight: 400px;
 
 %accordionTransition--expand {
-    @include transition(max-height 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.1s);
+    @include transition(max-height 0.8s linear 1s);
 }
 
 %accordionTransition--collapse {
-    @include transition(max-height 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955));
+    @include transition(max-height 0.8s linear);
 }
 
 %placeholderTransition--expand {
-    @include transition(margin-top 1s cubic-bezier(0.455, 0.03, 0.515, 0.955) 0.1s);
+    @include transition(margin-top 0.2s linear 1s);
 }
 
 %placeholderTransition--collapse {
-    @include transition(margin-top 0.5s cubic-bezier(0.455, 0.03, 0.515, 0.955));
+    @include transition(margin-top 0.2s linear);
 }
 
 .contact {
@@ -90,9 +90,9 @@ $breakpoint-minHeight: 400px;
 
 .contact__text {
     overflow: hidden;
-    max-height: 500px; // Needs a value to transitions height
+    /*max-height: 500px; // Needs a value to transitions height*/
 
-    @extend %accordionTransition--expand;
+    /*@extend %accordionTransition--expand;*/
 
     p {
         color: #cccccc;
@@ -117,13 +117,13 @@ $breakpoint-minHeight: 400px;
     }
 }
 
-.contact__summary--collapsed {
+/*.contact__summary--collapsed {
     .contact__text {
         max-height: 0;
 
         @extend %accordionTransition--collapse;
     }
-}
+}*/
 
 .contact__form {
     width: 100%;
@@ -140,25 +140,26 @@ $breakpoint-minHeight: 400px;
 .contact__formFields {
     overflow: hidden;
     padding-top: 1em;
-    max-height: 500px; // Needs a value to transition max-height
+    /*max-height: 500px; // Needs a value to transition max-height*/
 
-    @extend %accordionTransition--expand;
+    /*@extend %accordionTransition--expand;*/
 }
 
 .contact__placeholder {
     background-color: transparent;
     float: right; 
+    /*margin-bottom: 1em;*/
 
     @extend %box--dialPlaceholder;
 
-    @extend %placeholderTransition--expand;
+    /*@extend %placeholderTransition--expand;*/
 
     @include breakpoint(max-width $breakpoint-phablet) {
         @include transform(scale(0.6));
     }
 }
 
-.contact__form--collapsed {
+/*.contact__form--collapsed {
     .contact__placeholder {
         margin-top: -75px;
 
@@ -170,7 +171,7 @@ $breakpoint-minHeight: 400px;
 
         @extend %accordionTransition--collapse;
     }
-}
+}*/
 
 .contact__inputGroup {
     margin-bottom: 3em;

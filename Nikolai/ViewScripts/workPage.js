@@ -159,7 +159,7 @@ WorkPage.prototype.RenderPageIndicator = function () {
         return;
     }
 
-    var totalPages = Math.ceil(this.$WorkSlider.outerHeight() / $(window).outerHeight());
+    var totalPages = Math.round(this.$WorkSlider.outerHeight() / $('#work [data-nv-bgimage]').outerHeight());
 
     var $pnlIndicator = $('#pnlWorkPageIndicator');
 
@@ -174,6 +174,7 @@ WorkPage.prototype.RenderPageIndicator = function () {
 
         var $indicator = $('<span></span>', {
             'class': indicatorClass
+            , 'title': 'Page ' + (i + 1)
             , 'data-nv-pagenum': i
             , 'click': this.PageIndicatorClicked
         });
@@ -187,7 +188,7 @@ WorkPage.prototype.PageIndicatorClicked = function (evt) {
 
     var pageNum = $indicator.data('nv-pagenum');
 
-    var scrollPX = $(window).outerHeight() * pageNum;
+    var scrollPX = $('#work [data-nv-bgimage]').outerHeight() * pageNum;
 
     $('#work').scrollTo(scrollPX, {
         duration: 500
@@ -204,9 +205,9 @@ WorkPage.prototype.UpdatePageIndicator = function () {
     /// Updates which page indicator should be selected
     /// </summary>
     var scrollPosition = $('#work').scrollTop();
-    var windowHeight = $(window).outerHeight();
+    var windowHeight = $('#work [data-nv-bgimage]').outerHeight();
 
-    var selectedPage = Math.ceil(scrollPosition / windowHeight);
+    var selectedPage = Math.round(scrollPosition / windowHeight);
 
     var $indicators = $('#pnlWorkPageIndicator > span');
 
