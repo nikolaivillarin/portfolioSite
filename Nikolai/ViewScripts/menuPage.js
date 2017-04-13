@@ -9,6 +9,7 @@
 
 MenuPage.prototype = {
     $Element: null
+    , ScrollAnimation: null
 };
 
 MenuPage.prototype.Initialize = function () {
@@ -19,6 +20,8 @@ MenuPage.prototype.Initialize = function () {
     window.MainNav.SubscribeToDialClick(
         $.proxy(this.CloseMenuClick, this)
     );
+
+    this.ScrollAnimation = new window.ScrollAnimation('menu');
 };
 
 MenuPage.prototype.CloseMenuClick = function (selectedPageId, previousPageId) {
@@ -50,6 +53,12 @@ MenuPage.prototype.OnPageChange = function (selectedPageId) {
         });
 
         $selectedLink.parent().addClass('menu-links--selected');
+    }
+
+    if (selectedPageId && selectedPageId === 'menu') {
+        this.ScrollAnimation.Enable();
+    } else {
+        this.ScrollAnimation.Disable();
     }
 };
 

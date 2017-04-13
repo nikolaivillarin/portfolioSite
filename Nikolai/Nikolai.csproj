@@ -426,6 +426,7 @@
     <Content Include="Scripts\jquery.scrollTo.js" />
     <Content Include="Scripts\jquery.ui.touch-punch.js" />
     <Content Include="Scripts\pageTransition.js" />
+    <Content Include="Scripts\scrollAnimations.js" />
     <Content Include="ViewScripts\loader.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\navigation.js" />
@@ -496,6 +497,7 @@
     <Content Include="Views\Error\Index.cshtml" />
     <Content Include="Views\Error\Http404.cshtml" />
     <Content Include="Views\StyleGuide\PageTransition.cshtml" />
+    <Content Include="Views\StyleGuide\InternalScroll.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

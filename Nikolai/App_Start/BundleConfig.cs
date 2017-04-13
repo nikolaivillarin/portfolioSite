@@ -40,6 +40,7 @@ namespace Nikolai
                 , "~/Scripts/pageTransition.js"
                 , "~/Scripts/navigation.js"
                 , "~/Scripts/floatingBall.js"
+                , "~/Scripts/scrollAnimations.js"
                 , "~/ViewScripts/loader.js" 
             ));
 

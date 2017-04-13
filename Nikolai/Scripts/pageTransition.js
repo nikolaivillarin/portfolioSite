@@ -242,7 +242,7 @@ PageTransition.prototype.OnEndAnimation = function ($outpage, $inpage) {
 
     this.ResetPage($outpage, $inpage);
 
-    // Slight delay to give the browser some time to properly render
+    //// Slight delay to give the browser some time to properly render
     window.setTimeout(function () {
         that.PageChangedHandlers.forEach(function (item) {
             item.call(item, that.$currentPage.attr('id'), that.$previousPage.attr('id'));

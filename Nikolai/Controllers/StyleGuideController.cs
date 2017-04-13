@@ -38,5 +38,10 @@ namespace Nikolai.Controllers
         {
             return View();
         }
+
+        public ActionResult InternalScroll()
+        { 
+            return View(); 
+        }
     }
 }

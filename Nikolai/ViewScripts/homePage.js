@@ -13,20 +13,19 @@ HomePage.prototype = {
     , $Canvas: null
     , BubbleCanvas: null
     , DialJiggleIntervalID: 0
+    , ScrollAnimation: null
 };
 
 HomePage.prototype.Initialize = function () {
-    var selectedPage = window.MainNav.GetCurrentRoute().PageID;
-
     window.MainNav.SubscribeToOnPageChange(
         $.proxy(this.OnPageChange, this)
     );
 
+    this.ScrollAnimation = new window.ScrollAnimation('home');
+
     this.SetupCanvas();
 
     this.DisableCanvas();
-
-    this.OnPageChange(selectedPage);
 };
 
 HomePage.prototype.SetupCanvas = function () {
@@ -63,11 +62,15 @@ HomePage.prototype.OnPageChange = function (pageId) {
 
         this.EnableDialJiggle();
 
+        this.ScrollAnimation.Enable();
+
         $('#pnlNavOnboarding').addClass('in-view');
     } else {
         this.DisableCanvas();
 
         this.DisableDialJiggle();
+
+        this.ScrollAnimation.Disable();
 
         $('#pnlNavOnboarding').removeClass('in-view');
     }

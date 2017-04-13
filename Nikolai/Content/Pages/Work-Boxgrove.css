@@ -116,6 +116,7 @@
 @media (max-width: 300px) {
   .boxgrove-screensImg--image1 {
     background-image: url(/Content/ImagesWork/boxgrove-image_small.png);
+    bottom: 0;
     padding-bottom: 77.91%;
     top: 100px;
   }
@@ -124,6 +125,7 @@
 @media (min-width: 300px) and (max-width: 400px) {
   .boxgrove-screensImg--image1 {
     background-image: url(/Content/ImagesWork/boxgrove-image_small.png);
+    bottom: 0;
     padding-bottom: 77.91%;
     top: 140px;
   }
@@ -141,7 +143,7 @@
   .boxgrove-screensImg--image1 {
     background-image: url(/Content/ImagesWork/boxgrove-image_large.png);
     padding-bottom: 56.60%;
-    top: 0;
+    top: 50px;
   }
 }
 

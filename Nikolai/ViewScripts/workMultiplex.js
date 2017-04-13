@@ -6,10 +6,31 @@
     this.Initialize();
 }
 
+MultiplexPage.prototype = {
+    ScrollAnimation: null
+};
+
 MultiplexPage.prototype.Initialize = function () {
+    window.MainNav.SubscribeToOnPageChange(
+        $.proxy(this.OnPageChange, this)
+    );
+
     window.MainNav.SubscribeToDialClick(
         $.proxy(this.CloseClick, this)
     );
+
+    this.ScrollAnimation = new window.ScrollAnimation('work-multiplex', { EnableParallax: true });
+};
+
+MultiplexPage.prototype.OnPageChange = function (pageId) {
+    /// <summary>
+    /// Function which is called when page is changed
+    /// </summary>
+    if (pageId && pageId === 'work-multiplex') {
+        this.ScrollAnimation.Enable();
+    } else {
+        this.ScrollAnimation.Disable();
+    }
 };
 
 MultiplexPage.prototype.CloseClick = function (selectedPageId) {

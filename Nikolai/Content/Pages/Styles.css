@@ -1070,7 +1070,7 @@ $color-dial--ring3: #2294e5;*/
   z-index: 5;
 }
 
-.menu-header, .menu-links--1, .menu-links--2, .menu-links--3, .menu-links--4 {
+.menu-links--1, .menu-links--2, .menu-links--3, .menu-links--4 {
   opacity: 0;
   -moz-transform: translateY(-30px);
   -ms-transform: translateY(-30px);
@@ -1083,7 +1083,7 @@ $color-dial--ring3: #2294e5;*/
   transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear;
 }
 
-.menu-header.in-view, .menu-links--1.in-view, .menu-links--2.in-view, .menu-links--3.in-view, .menu-links--4.in-view {
+.menu-links--1.in-view, .menu-links--2.in-view, .menu-links--3.in-view, .menu-links--4.in-view {
   opacity: 1;
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
@@ -2700,7 +2700,7 @@ $color-dial--ring3: #2294e5;*/
 /*$color-link: #337ab7;*/
 /*------------------------------------*    Button Colors
 \*------------------------------------*/
-.menu-header, .menu-links--1, .menu-links--2, .menu-links--3, .menu-links--4 {
+.menu-links--1, .menu-links--2, .menu-links--3, .menu-links--4 {
   opacity: 0;
   -moz-transform: translateY(-30px);
   -ms-transform: translateY(-30px);
@@ -2713,7 +2713,7 @@ $color-dial--ring3: #2294e5;*/
   transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear;
 }
 
-.menu-header.in-view, .menu-links--1.in-view, .menu-links--2.in-view, .menu-links--3.in-view, .menu-links--4.in-view {
+.menu-links--1.in-view, .menu-links--2.in-view, .menu-links--3.in-view, .menu-links--4.in-view {
   opacity: 1;
   -moz-transform: translateY(0);
   -ms-transform: translateY(0);
@@ -2758,20 +2758,6 @@ $color-dial--ring3: #2294e5;*/
   width: 2px;
 }
 
-.menu-links--1 {
-  -moz-transition-delay: 0;
-  -o-transition-delay: 0;
-  -webkit-transition-delay: 0;
-  transition-delay: 0;
-}
-
-.menu-links--1.in-view {
-  -moz-transition-delay: 0.5s;
-  -o-transition-delay: 0.5s;
-  -webkit-transition-delay: 0.5s;
-  transition-delay: 0.5s;
-}
-
 .menu-links--2 {
   -moz-transition-delay: 0;
   -o-transition-delay: 0;
@@ -2780,10 +2766,10 @@ $color-dial--ring3: #2294e5;*/
 }
 
 .menu-links--2.in-view {
-  -moz-transition-delay: 0.7s;
-  -o-transition-delay: 0.7s;
-  -webkit-transition-delay: 0.7s;
-  transition-delay: 0.7s;
+  -moz-transition-delay: 0.5s;
+  -o-transition-delay: 0.5s;
+  -webkit-transition-delay: 0.5s;
+  transition-delay: 0.5s;
 }
 
 .menu-links--3 {
@@ -2794,10 +2780,10 @@ $color-dial--ring3: #2294e5;*/
 }
 
 .menu-links--3.in-view {
-  -moz-transition-delay: 0.9s;
-  -o-transition-delay: 0.9s;
-  -webkit-transition-delay: 0.9s;
-  transition-delay: 0.9s;
+  -moz-transition-delay: 0.7s;
+  -o-transition-delay: 0.7s;
+  -webkit-transition-delay: 0.7s;
+  transition-delay: 0.7s;
 }
 
 .menu-links--4 {
@@ -2808,10 +2794,10 @@ $color-dial--ring3: #2294e5;*/
 }
 
 .menu-links--4.in-view {
-  -moz-transition-delay: 1s;
-  -o-transition-delay: 1s;
-  -webkit-transition-delay: 1s;
-  transition-delay: 1s;
+  -moz-transition-delay: 0.9s;
+  -o-transition-delay: 0.9s;
+  -webkit-transition-delay: 0.9s;
+  transition-delay: 0.9s;
 }
 
 .menu-links--selected:before, .menu-links--selected:after {

@@ -85,12 +85,14 @@
 
         @include breakpoint(max-width $breakpoint-mobile) {
             background-image: url(/Content/ImagesWork/boxgrove-image_small.png);
+            bottom: 0;
             padding-bottom: 77.91%;
             top: 100px;
         }
 
         @include breakpoint($breakpoint-mobile $breakpoint-mobileBig) {
             background-image: url(/Content/ImagesWork/boxgrove-image_small.png);
+            bottom: 0;
             padding-bottom: 77.91%;
             top: 140px;
         }
@@ -104,7 +106,7 @@
         @include breakpoint(min-width $breakpoint-notebook) {
             background-image: url(/Content/ImagesWork/boxgrove-image_large.png);
             padding-bottom: 56.60%;
-            top: 0;
+            top: 50px;
         }
     }
 }

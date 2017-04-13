@@ -24,25 +24,15 @@
     }
 }
 
-.menu-header {
-    @extend %slide-top--initialState;
-}
-
-.menu-header.in-view {
-    @extend %slide-top--endState;
-}
-
 .menu-links {
     @extend %box--squished;
 }
 
 .menu-links--1 {
-    @include transition-delay(0);
     @extend %slide-top--initialState;
 }
 
 .menu-links--1.in-view {
-    @include transition-delay(0.5s);
     @extend %slide-top--endState;
 }
 
@@ -52,7 +42,7 @@
 }
 
 .menu-links--2.in-view {
-    @include transition-delay(0.7s);
+    @include transition-delay(0.5s);
     @extend %slide-top--endState;
 }
 
@@ -62,7 +52,7 @@
 }
 
 .menu-links--3.in-view {
-    @include transition-delay(0.9s);
+    @include transition-delay(0.7s);
     @extend %slide-top--endState;
 }
 
@@ -72,7 +62,7 @@
 }
 
 .menu-links--4.in-view {
-    @include transition-delay(1s);
+    @include transition-delay(0.9s);
     @extend %slide-top--endState;
 }
 
