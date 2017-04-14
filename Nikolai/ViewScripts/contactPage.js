@@ -222,9 +222,9 @@ ContactPage.prototype.ExpandedState = function () {
 
     this.$AccordionItem2_SendBtn.css('margin-top', '0');
 
-    window.setTimeout(function () {
-        window.MainNav.NavBar.PositionDial('contact');
-    }, 600);
+    //window.setTimeout(function () {
+    //    window.MainNav.NavBar.PositionDial('contact');
+    //}, 600);
 };
 
 ContactPage.prototype.ShowSummary = function () {
