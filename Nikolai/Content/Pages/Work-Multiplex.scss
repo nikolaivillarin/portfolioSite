@@ -27,8 +27,8 @@
 
 .multiplex-header {
     > span {
-        border: 1px solid #FFF;
-        background-color: rgba(255, 255, 255, 0.5);
+        border: 1px solid #000;
+        background-color: rgba(0, 0, 0, 0.4);
         display: inline-block;
         padding: 0.1em 1em;
     }
@@ -63,6 +63,9 @@
     background-size: cover;
     padding-bottom: 104.33%;
 
+    @extend %slide-left--initialState;
+    @include transition-duration(1.5s);
+
     @include breakpoint(max-width $breakpoint-mobileBig) {
         background-image: url(/Content/ImagesWork/multiplex-screens_small.png);
     }
@@ -80,6 +83,10 @@
         margin-left: -20%;
         width: 120%;
     }
+}
+
+.multiplex__screen.in-view {
+    @extend %slide-left--endState;
 }
 
 .multiplex__overviewContainer {

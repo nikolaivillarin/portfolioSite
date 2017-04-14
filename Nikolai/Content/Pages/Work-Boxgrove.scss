@@ -67,6 +67,9 @@
     display: block;
     position: absolute;
 
+    @extend %slide-left--initialState;
+    @include transition-duration(2s);
+
     &--title {
         float: right;
         margin-right: 15%;
@@ -109,6 +112,10 @@
             top: 50px;
         }
     }
+}
+
+.boxgrove-screensImg.in-view {
+    @extend %slide-left--endState;
 }
 
 .boxgrove-summary {

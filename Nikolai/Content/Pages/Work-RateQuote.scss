@@ -91,6 +91,13 @@
 
 .rateQuote__screen {
     width: 100%;
+
+    @extend %slide-left--initialState;
+    @include transition-duration(1.5s);
+}
+
+.rateQuote__screen.in-view {
+    @extend %slide-left--endState;
 }
 
 .rateQuote__imgContainer  {

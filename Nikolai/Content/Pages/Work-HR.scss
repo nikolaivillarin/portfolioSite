@@ -53,6 +53,9 @@
     background-size: cover;
     padding-bottom: 90%;
 
+    @extend %slide-left--initialState;
+    @include transition-duration(2s);
+
     @include breakpoint(max-width $breakpoint-mobileBig) {
         background-image: url(/Content/ImagesWork/hr-screens_small.png);
         width: 165%;
@@ -91,6 +94,10 @@
         margin-left: -200px;
         margin-top: -250px;
     }
+}
+
+.hr__screens.in-view {
+    @extend %slide-left--endState;
 }
 
 .hr__screensCaption {

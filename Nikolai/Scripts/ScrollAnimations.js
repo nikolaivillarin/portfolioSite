@@ -143,20 +143,20 @@ ScrollAnimation.prototype.TriggerScrollAnimation = function () {
     var that = this;
     var windowHeight = this.$pageElmt.outerHeight();
     var windowTopPosition = this.$pageElmt.scrollTop();
-    var windowBottomPosition = windowTopPosition + windowHeight - 10;
+    var windowBottomPosition = windowTopPosition + windowHeight;
 
     var $animatedElmts = $('[data-nv-animate]', this.$pageElmt);
 
     $animatedElmts.each(function () {
-        var elmtHeight = $(this).outerHeight();
         var elmtTopPosition = $(this).offset().top;
-        var elmtBottomPosition = elmtTopPosition + elmtHeight;
+
+        // Don't display the element until it is actually on screen
+        var scrollThreshold = windowBottomPosition - $(this).outerHeight();
 
         if (that.IsEnabled === true
-            && elmtBottomPosition >= windowTopPosition
-            && elmtTopPosition <= windowBottomPosition) {
+            && elmtTopPosition <= scrollThreshold) {
             $(this).addClass('in-view');
-        } else {
+        } else if (that.IsEnabled === false) {
             $(this).removeClass('in-view');
         }
     });
