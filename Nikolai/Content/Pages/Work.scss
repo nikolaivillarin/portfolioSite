@@ -87,6 +87,16 @@
     @extend %workItem--active;
 }
 
+.button-container-viewMore--onBoarding {
+    .work__overlay {
+        opacity: 0.7;
+
+        @include transition-delay(0);
+    }
+
+    @extend %workItem--active;
+}
+
 .work-imgTile--placeholder {
     background-image: url(/Content/ImagesWork/placeholder-tile.jpg);
 }

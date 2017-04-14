@@ -46,6 +46,9 @@ WorkPage.prototype.Initialize = function () {
     $('#work').on('scroll',
         $.proxy(this.PageScrolled, this)
     );
+
+    // Initializers
+    this.ShowViewMoreInstructions();
 };
 
 WorkPage.prototype.ItemClick = function (evt) {
@@ -129,15 +132,50 @@ WorkPage.prototype.OnPageChange = function (pageId) {
     /// <summary>
     /// Function which is called when page is changed
     /// </summary>
+    var that = this;
+
     if (pageId && pageId === 'work') {
         this.IsSelected = true;
 
         this.EnablePageIndicator();
+
+        window.setTimeout(function () {
+            that.HideViewMoreInstructions();
+        }, 1000);
     } else {
         this.IsSelected = false;
 
         this.DisablePageIndicator();
+
+        this.ShowViewMoreInstructions();
     }
+};
+
+WorkPage.prototype.ShowViewMoreInstructions = function () {
+    /// <summary>
+    /// Triggers the animation that instructs the user how to view more
+    /// </summary>
+    var totalElmtsPerPage = this.GetNumberOfItemsPerPage();
+
+    var $workItems = $('.button-container-viewMore', this.$WorkSlider);
+
+    for (var i = 0; i < totalElmtsPerPage; i++) {
+        $workItems.eq(i).addClass('button-container-viewMore--onBoarding');
+    }
+};
+
+WorkPage.prototype.HideViewMoreInstructions = function () {
+    var that = this;
+
+    (function RemoveInstruction() {
+        var $activeWorkItem = $('.button-container-viewMore--onBoarding', that.$WorkSlider);
+
+        $activeWorkItem.first().removeClass('button-container-viewMore--onBoarding');
+
+        if ($activeWorkItem.length > 1) {
+            window.setTimeout(RemoveInstruction, 200);
+        }
+    }());
 };
 
 WorkPage.prototype.EnablePageIndicator = function () {
@@ -159,7 +197,7 @@ WorkPage.prototype.RenderPageIndicator = function () {
         return;
     }
 
-    var totalPages = Math.round(this.$WorkSlider.outerHeight() / $('#work [data-nv-bgimage]').outerHeight());
+    var totalPages = this.GetNumberOfPages();
 
     var $pnlIndicator = $('#pnlWorkPageIndicator');
 
@@ -181,6 +219,14 @@ WorkPage.prototype.RenderPageIndicator = function () {
 
         $pnlIndicator.append($indicator);
     }
+};
+
+WorkPage.prototype.GetNumberOfItemsPerPage = function () {
+    return Math.round(this.$WorkSlider.outerWidth() / $('#work [data-nv-bgimage]').outerWidth());
+};
+
+WorkPage.prototype.GetNumberOfPages = function () {
+    return Math.round(this.$WorkSlider.outerHeight() / $('#work [data-nv-bgimage]').outerHeight());
 };
 
 WorkPage.prototype.PageIndicatorClicked = function (evt) {

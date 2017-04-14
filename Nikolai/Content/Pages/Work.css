@@ -108,7 +108,7 @@ $color-dial--ring3: #2294e5;*/
   transition: 0.3s opacity cubic-bezier(0.55, 0.055, 0.675, 0.19);
 }
 
-.no-touch .work--hoverable:hover h1, .button-container-viewMore--active h1, .no-touch .work--hoverable:hover h2, .button-container-viewMore--active h2, .no-touch .work--hoverable:hover .work-header.in-view, .button-container-viewMore--active .work-header.in-view, .no-touch .work--hoverable:hover .work-subHeader.in-view, .button-container-viewMore--active .work-subHeader.in-view {
+.no-touch .work--hoverable:hover h1, .button-container-viewMore--active h1, .button-container-viewMore--onBoarding h1, .no-touch .work--hoverable:hover h2, .button-container-viewMore--active h2, .button-container-viewMore--onBoarding h2, .no-touch .work--hoverable:hover .work-header.in-view, .button-container-viewMore--active .work-header.in-view, .button-container-viewMore--onBoarding .work-header.in-view, .no-touch .work--hoverable:hover .work-subHeader.in-view, .button-container-viewMore--active .work-subHeader.in-view, .button-container-viewMore--onBoarding .work-subHeader.in-view {
   opacity: 0;
   -moz-transition-delay: 0;
   -o-transition-delay: 0;
@@ -116,8 +116,16 @@ $color-dial--ring3: #2294e5;*/
   transition-delay: 0;
 }
 
-.no-touch .work--hoverable:hover .work__overlay, .button-container-viewMore--active .work__overlay {
+.no-touch .work--hoverable:hover .work__overlay, .button-container-viewMore--active .work__overlay, .button-container-viewMore--onBoarding .work__overlay {
   opacity: 0.2;
+  -moz-transition-delay: 0;
+  -o-transition-delay: 0;
+  -webkit-transition-delay: 0;
+  transition-delay: 0;
+}
+
+.button-container-viewMore--onBoarding .work__overlay {
+  opacity: 0.7;
   -moz-transition-delay: 0;
   -o-transition-delay: 0;
   -webkit-transition-delay: 0;
