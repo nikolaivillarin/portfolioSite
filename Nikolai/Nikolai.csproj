@@ -416,6 +416,7 @@
     <Content Include="Scripts\canvasUtilities.js" />
     <Content Include="Scripts\clientErrorLogger.js" />
     <Content Include="Scripts\faillingLeaves.js" />
+    <Content Include="Scripts\fastclick.js" />
     <Content Include="Scripts\floatingBall.js" />
     <Content Include="Scripts\imagesloaded.pkgd.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />

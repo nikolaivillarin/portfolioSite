@@ -82,15 +82,25 @@ NVNavBar.prototype.SetState = function (url) {
     this.SetPageState(pageID);
 };
 
-NVNavBar.prototype.SetNavItemsState = function (pageID) {
+NVNavBar.prototype.SetNavItemsState = function (pageID, state) {
     /// <summary>
     /// Set's the NavBar state by specifying which navigation items
     /// are active. Example: Back, Current, and Forward buttons.
     /// By default all buttons are active.
     /// Options: previousOnly, hidden, and default
     /// </summary>
+    /// <param name="pageID" type="string">
+    /// The ID of the page that will have the data-nv-nav-state attribute
+    /// </param>
+    /// <param name="state" type="string">
+    /// [optional] the state to set the nav bar
+    /// </param>
     var $page = $('#' + pageID);
     var navItemsState = $page.data('nv-nav-state') ? $page.data('nv-nav-state').toLowerCase() : 'default';
+
+    if (state) {
+        navItemsState = state;
+    }
 
     switch (navItemsState) {
         case 'default':
@@ -123,7 +133,7 @@ NVNavBar.prototype.SetNavItemsState = function (pageID) {
     }
 };
 
-NVNavBar.prototype.SetDialState = function (pageID) {
+NVNavBar.prototype.SetDialState = function (pageID, state) {
     /// <summary>
     /// Set's the NavBar Dial state depending on the data attributes set
     /// on the specified page
@@ -131,11 +141,20 @@ NVNavBar.prototype.SetDialState = function (pageID) {
     /// <param name="pageID" type="string">
     /// The ID of the page that contains the data-nv-state attribute
     /// </param>
+    /// <param name="state" type="string">
+    /// [Optional] Specifies the state of the dial. This overrides what is
+    /// specified on the page data attributes. Possible options are:
+    /// default, loading, close, send
+    /// </param>
     var $page = $('#' + pageID);
     var dialState = $page.data('nv-state') ? $page.data('nv-state').toLowerCase() : 'default';
     var isDialResponsive = $page.data('nv-dial-responsive') ? $page.data('nv-dial-responsive') : false;
 
     this.DialControl.IsResponsive(isDialResponsive);
+
+    if (state) {
+        dialState = state;
+    }
 
     switch (dialState) {
         case 'default':
@@ -160,6 +179,12 @@ NVNavBar.prototype.SetDialState = function (pageID) {
             this.Disabled = true;
 
             this.DialControl.LoadingState();
+
+            break;
+        default:
+            this.Disabled = false;
+
+            this.DialControl.DefaultState();
 
             break;
     }
@@ -419,7 +444,7 @@ NVNavBar.prototype.SelectLinkByUrl = function (url) {
     this.SetState(url);
 };
 
-NVNavBar.prototype.PositionDial = function (pageID, easing) {
+NVNavBar.prototype.PositionDial = function (pageID, easing, targetID) {
     /// <summary>
     /// Positions the dial depending on the settings specified. The dial will
     /// either be positioned on the selected link or on the target specified
@@ -431,9 +456,10 @@ NVNavBar.prototype.PositionDial = function (pageID, easing) {
     /// <param name="easing" type="string">
     /// [Optional] Specifies the jQuery easing function to use
     /// </param>
-    var targetID = null;
-
-    if (pageID) {
+    /// <param name="targetID" type="string">
+    /// [Optional] Specifies the dial target
+    /// </param>
+    if (pageID && targetID === undefined) {
         targetID = $('#' + pageID).data('nv-dial-target')
             ? $('#' + pageID).data('nv-dial-target') : null;
     }
@@ -833,9 +859,9 @@ NVNavLink.prototype.Hide = function () {
     /// </summary>
     this.IsHidden = true;
 
-    this.$Element.fadeOut(300);
+    this.$Element.stop().fadeOut(300);
 
-    this.$Element.prev('li').fadeOut(300);
+    this.$Element.prev('li').stop().fadeOut(300);
     
     // Removes the last link's trailing line
     this.$Element.prev().prev('[data-js-hook="linkBtn"]')
@@ -848,9 +874,9 @@ NVNavLink.prototype.Show = function () {
     /// </summary>
     this.IsHidden = false;
 
-    this.$Element.fadeIn(300);
+    this.$Element.stop().fadeIn(300);
 
-    this.$Element.prev('li').fadeIn(300);
+    this.$Element.prev('li').stop().fadeIn(300);
 
     // Adds back the last link's trailing line
     this.$Element.prev().prev('[data-js-hook="linkBtn"]')
@@ -1265,8 +1291,6 @@ NVDial.prototype.Click = function () {
     /// Event handler for when the dial is clicked on
     /// </summary>
     if (this.isClickable === true) {
-        this.DefaultState(); // Revert back to default state
-
         this.onClickHandlers.forEach(function (item) {
             item.call(item);
         });

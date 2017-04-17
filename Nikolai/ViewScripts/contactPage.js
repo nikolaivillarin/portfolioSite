@@ -15,6 +15,7 @@ ContactPage.prototype = {
     , $AccordionItem2_SendBtn: null
     , AccordionAnimDuration: 600
     , AccordionEasing: 'easeOutCirc'
+    , ScreenThreshold: 600
     // Used for window resized optimization
     , HasWindowResizedTicked: false
 };
@@ -54,10 +55,26 @@ ContactPage.prototype.Initialize = function () {
     this.InitializeAccordion();
 };
 
-ContactPage.prototype.OnPageChange = function () {
+ContactPage.prototype.OnPageChange = function (pageId) {
     /// <summary>
     /// Function which is called when page is changed
     /// </summary>
+    if (pageId && pageId === 'contact') {
+        this.PositionDial();
+    }
+};
+
+ContactPage.prototype.PositionDial = function () {
+    /// <summary>
+    /// Position's dial depending on the screen size
+    /// </summary>
+    if ($(window).width() > this.ScreenThreshold) {
+        window.MainNav.NavBar.PositionDial('contact', null, 'sendBtnPlaceholder');
+
+        window.MainNav.NavBar.SetDialState('contact', 'send');
+
+        window.MainNav.NavBar.SetNavItemsState('contact', 'previousonly');
+    }
 };
 
 ContactPage.prototype.PageResized = function () {
@@ -65,7 +82,7 @@ ContactPage.prototype.PageResized = function () {
 
     if (this.HasWindowResizedTicked === false) {
         window.requestAnimationFrame(function () {
-            if ($(window).width() <= 600) {
+            if ($(window).width() <= that.ScreenThreshold) {
                 that.CompactStateNoAnimation();
                 that.EnableClickableHeaders();
             } else {
@@ -84,7 +101,7 @@ ContactPage.prototype.InitializeAccordion = function () {
     /// <summary>
     /// If the screen is too small the form becomes collapse-able
     /// </summary>
-    if ($(window).width() <= 600) {
+    if ($(window).width() <= this.ScreenThreshold) {
         this.CompactState();
         this.EnableClickableHeaders();
     } else {
@@ -221,10 +238,6 @@ ContactPage.prototype.ExpandedState = function () {
     );
 
     this.$AccordionItem2_SendBtn.css('margin-top', '0');
-
-    //window.setTimeout(function () {
-    //    window.MainNav.NavBar.PositionDial('contact');
-    //}, 600);
 };
 
 ContactPage.prototype.ShowSummary = function () {

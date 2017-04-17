@@ -151,7 +151,7 @@ ScrollAnimation.prototype.TriggerScrollAnimation = function () {
         var elmtTopPosition = $(this).offset().top;
 
         // Don't display the element until it is actually on screen
-        var scrollThreshold = windowBottomPosition - $(this).outerHeight();
+        var scrollThreshold = windowBottomPosition - ($(this).outerHeight());
 
         if (that.IsEnabled === true
             && elmtTopPosition <= scrollThreshold) {

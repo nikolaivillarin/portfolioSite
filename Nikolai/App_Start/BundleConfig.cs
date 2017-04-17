@@ -30,7 +30,8 @@ namespace Nikolai
                 "~/Scripts/jquery-ui-{version}.js",
                 "~/Scripts/jquery.ui.touch-punch.js",
                 "~/Scripts/jquery.scrollTo.js",
-                "~/Scripts/imagesloaded.pkgd.js"
+                "~/Scripts/imagesloaded.pkgd.js",
+                "~/Scripts/fastclick.js"
             ));
 
             bundles.Add(new ScriptBundle("~/Content/scripts").Include(

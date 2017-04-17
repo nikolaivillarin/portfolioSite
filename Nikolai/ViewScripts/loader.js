@@ -51,6 +51,8 @@ function LoadImages() {
             window.MainNav.SubscribeToOnPageLoaded(LoadImages);
 
             window.MainNav.EagerlyLoadPages();
+
+            window.FastClick.attach(document.body);
         });
     } else {
         window.setTimeout(LoadWebApp, 50);
