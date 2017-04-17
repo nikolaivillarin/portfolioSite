@@ -36,7 +36,7 @@ WorkPage.prototype.Initialize = function () {
         $.proxy(this.OnDialDropped, this)
     );
 
-    $('#work [data-nv-bgimage]').click(this.ItemClick);
+    //$('#work [data-nv-bgimage]').click(this.ItemClick);
 
     // Global Event Handlers
     $(window).resize(
