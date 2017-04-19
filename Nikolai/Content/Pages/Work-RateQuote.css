@@ -293,7 +293,7 @@
   }
 }
 
-@media (min-height: 1000px) and (orientation: portrait) {
+@media (min-height: 1000px) {
   .rateQuote__overviewContainer {
     font-size: 1em;
   }

@@ -145,6 +145,7 @@
 @media (min-width: 1200px) {
   .hr__screens {
     background-image: url(/Content/ImagesWork/hr-screens_large.png);
+    padding-bottom: 65%;
     width: 115%;
     margin-left: -200px;
     margin-top: -250px;

@@ -3198,16 +3198,36 @@ ul, ol {
   color: #333333;
 }
 
+.text-primary--blurred {
+  color: transparent;
+  text-shadow: 0 0 5px rgba(51, 51, 51, 0.5);
+}
+
 .text-primary--OnDark {
   color: #FFF;
+}
+
+.text-primary--OnDarkBlurred {
+  color: transparent;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 .text-secondary {
   color: #333333;
 }
 
+.text-secondary--blurred {
+  color: transparent;
+  text-shadow: 0 0 5px rgba(51, 51, 51, 0.5);
+}
+
 .text-secondary--OnDark {
   color: #FFF;
+}
+
+.text-secondary--OnDarkBlurred {
+  color: transparent;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
 }
 
 /*------------------------------------*    Alignment

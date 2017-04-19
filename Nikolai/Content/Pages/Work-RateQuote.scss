@@ -217,7 +217,7 @@
         width: 35%;
     }
 
-    @include breakpoint((min-height $breakpoint-netbook) (orientation portrait)) {
+    @include breakpoint((min-height $breakpoint-netbook)) {
         font-size: 1em;
     }
 }
