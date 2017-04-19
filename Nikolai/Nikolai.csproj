@@ -426,6 +426,12 @@
     <Content Include="Scripts\jquery-ui-1.12.1.js" />
     <Content Include="Scripts\jquery.scrollTo.js" />
     <Content Include="Scripts\jquery.ui.touch-punch.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.extension.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\pageTransition.js" />
     <Content Include="Scripts\scrollAnimations.js" />
     <Content Include="ViewScripts\loader.js" />
@@ -461,6 +467,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ContactFormModel.cs" />
     <Compile Include="Models\EmailHelper.cs" />
     <Compile Include="Models\EmailTemplateEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

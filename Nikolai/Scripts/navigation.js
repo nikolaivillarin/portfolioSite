@@ -51,7 +51,8 @@ MainNavigation.prototype = {
     // Page Transitions Helper
     , PageTransitions: {} 
     // Page Change Observers
-    , OnPageChangeHandlers: [] 
+    , OnPageChangeHandlers: []
+    , OnPageChangingHandlers: []
     // Dial Click Handlers
     , OnDialClickHandlers: [] 
     // When an Async page is loaded
@@ -86,6 +87,10 @@ MainNavigation.prototype.Initialize = function () {
 
         this.PageTransitions.SubscribeToPageChangedEvent(
             $.proxy(this.OnPageChanged, this)
+        );
+
+        this.PageTransitions.SubscribeToPageChangingEvent(
+            $.proxy(this.OnPageChanging, this)
         );
     }
 
@@ -232,6 +237,34 @@ MainNavigation.prototype.UnsubscribeToOnPageChange = function (fn) {
     /// Function that was used when calling the subscribe function
     /// </param>
     this.OnPageChangeHandlers = this.OnPageChangeHandlers.filter(
+        function (item) {
+            if (item !== fn) {
+                return item;
+            }
+        }
+    );
+};
+
+MainNavigation.prototype.SubscribeToOnPageChanging = function (fn) {
+    /// <summary>
+    /// Subscribe to the onPageChanging event which is called when the page is about to change
+    /// </summary>
+    /// <param name="fn" type="function">
+    /// Function to be called when event is fired. This function should have two parameters:
+    /// selectedPageID - ID of the new page being displayed
+    /// previousPageID - The ID of the previous page selected
+    /// </param>
+    this.OnPageChangingHandlers.push(fn);
+};
+
+MainNavigation.prototype.UnsubscribeToOnPageChanging = function (fn) {
+    /// <summary>
+    /// Unsubscribe to the onPageChanging event
+    /// </summary>
+    /// <param name="fn" type="function">
+    /// Function that was used when calling the subscribe function
+    /// </param>
+    this.OnPageChangingHandlers = this.OnPageChangingHandlers.filter(
         function (item) {
             if (item !== fn) {
                 return item;
@@ -435,6 +468,12 @@ MainNavigation.prototype.OnPageChanged = function (currentPageID, previousPageID
     this.SetMenuBtnState();
 
     this.OnPageChangeHandlers.forEach(function (item) {
+        item.call(item, currentPageID, previousPageID);
+    });
+};
+
+MainNavigation.prototype.OnPageChanging = function (currentPageID, previousPageID) {
+    this.OnPageChangingHandlers.forEach(function (item) {
         item.call(item, currentPageID, previousPageID);
     });
 };

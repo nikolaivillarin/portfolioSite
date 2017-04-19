@@ -93,13 +93,50 @@ $breakpoint-minHeight: 400px;
     }
 
     @include breakpoint(min-width $breakpoint-phablet) {
-        min-height: 395px;
+        min-height: 390px;
         width: 45%;
     }
 }
 
+$contact-easing: cubic-bezier(0.215, 0.61, 0.355, 1);
+
 .contact__form {
+    position: relative;
+    overflow: hidden;
     width: 100%;
+
+    &::after {
+        background-color: #00b2ff;
+        border-radius: 50%;
+        bottom: 10px;
+        content: "";
+        display: block;
+        height: 5px;
+        left: 82%;
+        opacity: 0;
+        position: absolute;
+        top: 85%;
+        width: 5px;
+
+        @include transform(scale(1));
+    }
+
+    .contact__form-content {
+        opacity: 1;
+
+        @include transition(opacity 2s $contact-easing);
+    }
+
+    .contact__form-sentMsg {
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        text-align: center;
+        top: 4em;
+        width: 100%;
+
+        @include transition(opacity 2s $contact-easing 0.8s);
+    }
 
     @include breakpoint(max-width $breakpoint-phablet) {
         padding: 2em 2em 0 2em;
@@ -107,6 +144,38 @@ $breakpoint-minHeight: 400px;
 
     @include breakpoint(min-width $breakpoint-phablet) {
         width: 55%;
+    }
+}
+
+@include keyframes(sendingBGAnim) {
+    0% {
+        opacity: 0;
+
+        @include transform(scale(1));
+    }
+    60% {
+        opacity: 1;
+
+        @include transform(scale(200));
+    }
+    100% {
+        opacity: 0;
+
+        @include transform(scale(1));
+    }
+}
+
+.contact__form--sending {
+    &::after {
+        @include animation(sendingBGAnim 2s $contact-easing forwards);
+    }
+
+    .contact__form-content {
+        opacity: 0;
+    }
+
+    .contact__form-sentMsg {
+        opacity: 1;
     }
 }
 
@@ -120,29 +189,26 @@ $breakpoint-minHeight: 400px;
     float: right; 
 
     @extend %box--dialPlaceholder;
-
-    /*@include breakpoint(max-width $breakpoint-phablet) {
-        @include transform(scale(0.6));
-    }*/
 }
 
 .contact__inputGroup {
-    margin-bottom: 3em;
+    margin-bottom: 45px;
     position: relative;
 }
 
 .contact__label {
     cursor: text;
+    font-size: 14px;
     left: 0;
     position: absolute;
-    top: 1em;
+    top: 26px;
 
     @include transition(top 0.3s cubic-bezier(0.64, 0.09, 0.08, 1), font-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1));
 }
 
 .contact__label--focus {
-    font-size: 0.7em;
-    top: -1em;
+    font-size: 8px;
+    top: -8px;
 }
 
 .contact__textbox {
@@ -154,7 +220,9 @@ $breakpoint-minHeight: 400px;
     border-radius: 0;
     color: #FFF;
     left: 0;
-    padding: 10px 0;
+    font-family: 'Slabo27px-Regular', 'Times New Roman', Times, serif;
+    font-size: 16px;
+    padding: 16px 0 8px 0;
     position: absolute;
     top: 0;
     width: 100%;
@@ -163,6 +231,18 @@ $breakpoint-minHeight: 400px;
 
     &:focus {
         background-position: 0 0;
+    }
+
+    &.input-validation-error {
+        background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #FF0000 4%);
+        background-position: -600px 0;
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+        border-bottom: 1px solid #FF0000;
+
+        &:focus {
+            background-position: 0 0;
+        }
     }
 }
 

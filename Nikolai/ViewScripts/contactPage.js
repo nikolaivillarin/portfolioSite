@@ -9,7 +9,8 @@ function ContactPage() {
 
 //#region Properties
 ContactPage.prototype = {
-    $AccordionItem1: null
+    $form: null
+    , $AccordionItem1: null
     , $AccordionItem2: null
     , AccordionItem2_SendBtnPositionAdjust: -75
     , $AccordionItem2_SendBtn: null
@@ -18,15 +19,29 @@ ContactPage.prototype = {
     , ScreenThreshold: 600
     // Used for window resized optimization
     , HasWindowResizedTicked: false
+    , TransitionEndEventNames: {
+        'WebkitTransition': 'webkitTransitionEnd',
+        'OTransition': 'oTransitionEnd',
+        'msTransition': 'MSTransitionEnd',
+        'transition': 'transitionend'
+    }
+    , GetTransitionEndEventName: function () {
+        /// <summary>
+        /// Returns animation event prefixed by browser
+        /// </summary>
+        return this.TransitionEndEventNames[window.Modernizr.prefixed('transition')];
+    }
 };
 //#endregion
 
 //#region Methods
 ContactPage.prototype.Initialize = function () {
     // Properties
+    this.$form = $('#frmContact');
+
     this.$AccordionItem1 = $('#contact .contact__container .contact__text');
 
-    this.$AccordionItem2 = $('#frmContact .contact__formFields');
+    this.$AccordionItem2 = $('.contact__formFields', this.$form);
 
     this.$AccordionItem2_SendBtn = $('#sendBtnPlaceholder');
 
@@ -35,7 +50,11 @@ ContactPage.prototype.Initialize = function () {
         $.proxy(this.OnPageChange, this)
     );
 
-    $('#frmContact input')
+    window.MainNav.SubscribeToDialClick(
+        $.proxy(this.SendMessage, this)
+    );
+
+    $('input', this.$form)
         .on('focusin', this.InputFocusIn)
         .on('focusout', this.InputFocusOut);
 
@@ -43,8 +62,10 @@ ContactPage.prototype.Initialize = function () {
         $.proxy(this.ContactSummaryClicked, this)
     );
 
-    $('#frmContact').on('click',
+    this.$form.on('click',
         $.proxy(this.ContactFormClicked, this)
+    ).on('keydown', 
+        $.proxy(this.FormKeyDown, this)
     );
 
     $(window).resize(
@@ -53,14 +74,26 @@ ContactPage.prototype.Initialize = function () {
 
     // Initializers
     this.InitializeAccordion();
+
+    $.validator.unobtrusive.parseDynamicContent('#frmContact');
 };
 
-ContactPage.prototype.OnPageChange = function (pageId) {
+ContactPage.prototype.OnPageChange = function (pageId, previousPageId) {
     /// <summary>
     /// Function which is called when page is changed
     /// </summary>
     if (pageId && pageId === 'contact') {
+        this.ClearForm();
+
         this.PositionDial();
+    } else if (previousPageId && previousPageId === 'contact') {
+        if ($(window).width() <= this.ScreenThreshold) {
+            this.CompactStateNoAnimation();
+            this.EnableClickableHeaders();
+        } else {
+            this.ExpandedState();
+            this.DisableClickableHeaders();
+        }
     }
 };
 
@@ -68,12 +101,26 @@ ContactPage.prototype.PositionDial = function () {
     /// <summary>
     /// Position's dial depending on the screen size
     /// </summary>
-    if ($(window).width() > this.ScreenThreshold) {
-        window.MainNav.NavBar.PositionDial('contact', null, 'sendBtnPlaceholder');
+    var currentPage = window.MainNav.GetCurrentRoute();
 
-        window.MainNav.NavBar.SetDialState('contact', 'send');
+    if (currentPage.PageID === 'contact') {
+        if ($(window).width() > this.ScreenThreshold) {
+            $('#contact').data('nv-dial-target', 'sendBtnPlaceholder');
 
-        window.MainNav.NavBar.SetNavItemsState('contact', 'previousonly');
+            window.MainNav.NavBar.PositionDial('contact');
+
+            window.MainNav.NavBar.SetDialState('contact', 'send');
+
+            window.MainNav.NavBar.SetNavItemsState('contact', 'previousonly');
+        } else {
+            $('#contact').removeData('nv-dial-target');
+
+            window.MainNav.NavBar.PositionDial('contact');
+
+            window.MainNav.NavBar.SetDialState('contact', 'default');
+
+            window.MainNav.NavBar.SetNavItemsState('contact', 'default');
+        }
     }
 };
 
@@ -97,6 +144,65 @@ ContactPage.prototype.PageResized = function () {
     this.HasWindowResizedTicked = true;
 };
 
+ContactPage.prototype.FormKeyDown = function (evt) {
+    if (evt.keyCode === 13) {
+        this.SendMessage();
+    }
+};
+
+ContactPage.prototype.SendMessage = function () {
+    var that = this;
+
+    if (this.$form.valid() === true) {
+        $.post('/Contact/Message', {
+            Name: $('#Name').val()
+            , Email: $('#Email').val()
+            , Message: $('#Message').val()
+        }).done(this.SendSuccess).fail(this.SendFailed);
+
+        this.$form.addClass('contact__form--sending');
+
+        $('.contact__form-content', this.$form)
+            .on(this.GetTransitionEndEventName(), function () {
+                $('.contact__form-content', that.$form).off(that.GetTransitionEndEventName());
+
+                that.MessageSent();
+            });
+
+        $('#contact .contact__container').addClass('contact__container--sending');
+    }
+};
+
+ContactPage.prototype.MessageSent = function () {
+    if ($('#contact').data('nv-dial-target') !== undefined) {
+        $('#contact').removeData('nv-dial-target');
+
+        window.MainNav.NavBar.PositionDial('contact');
+
+        window.MainNav.NavBar.SetNavItemsState('contact', 'default');
+    }
+
+    window.MainNav.NavBar.SetDialState('contact', 'default');
+};
+
+ContactPage.prototype.ClearForm = function () {
+    $('#Name').val('').trigger('focusout');
+    $('#Email').val('').trigger('focusout');
+    $('#Message').val('').trigger('focusout');
+
+    this.$form.removeClass('contact__form--sending');
+
+    $('.input-validation-error', this.$form).removeClass('input-validation-error');
+};
+
+ContactPage.prototype.SendSuccess = function () {
+    // To Do
+};
+
+ContactPage.prototype.SendFailed = function () {
+    // To Do
+};
+
 ContactPage.prototype.InitializeAccordion = function () {
     /// <summary>
     /// If the screen is too small the form becomes collapse-able
@@ -112,12 +218,12 @@ ContactPage.prototype.InitializeAccordion = function () {
 
 ContactPage.prototype.EnableClickableHeaders = function () {
     $('#contactSummary h1').addClass('contact__header--clickable');
-    $('#frmContact h1').addClass('contact__header--clickable');
+    $('h1', this.$form).addClass('contact__header--clickable');
 };
 
 ContactPage.prototype.DisableClickableHeaders = function () {
     $('#contactSummary h1').removeClass('contact__header--clickable');
-    $('#frmContact h1').removeClass('contact__header--clickable');
+    $('h1', this.$form).removeClass('contact__header--clickable');
 };
 
 ContactPage.prototype.GetAccordionItem1ContentHeight = function () {
@@ -144,10 +250,11 @@ ContactPage.prototype.GetAccordionItem2ContentHeight = function () {
     }
 };
 
-
 ContactPage.prototype.ContactSummaryClicked = function () {
     if (this.$AccordionItem1.height() === 0) {
         var that = this;
+
+        this.ClearForm();
 
         var accordionItem1_contentHeight = this.GetAccordionItem1ContentHeight();
         var accordionItem2_contentHeight = this.GetAccordionItem2ContentHeight();
@@ -169,6 +276,9 @@ ContactPage.prototype.ContactSummaryClicked = function () {
                 var sendBtnMargin = percentageOfExpand * that.AccordionItem2_SendBtnPositionAdjust;
 
                 that.$AccordionItem2_SendBtn.css('margin-top', sendBtnMargin + 'px');
+            }
+            , complete: function () {
+                window.MainNav.NavBar.SetDialState('contact', 'default');
             }
         });
     }
@@ -200,6 +310,9 @@ ContactPage.prototype.ContactFormClicked = function () {
 
                 that.$AccordionItem2_SendBtn.css('margin-top', sendBtnMargin + 'px');
             }
+            , complete: function () {
+                window.MainNav.NavBar.SetDialState('contact', 'send');
+            }
         });
     }
 };
@@ -215,6 +328,8 @@ ContactPage.prototype.CompactState = function () {
 
     this.$AccordionItem2_SendBtn.css('margin-top'
         , this.AccordionItem2_SendBtnPositionAdjust + 'px');
+
+    this.PositionDial();
 };
 
 ContactPage.prototype.CompactStateNoAnimation = function () {
@@ -226,6 +341,8 @@ ContactPage.prototype.CompactStateNoAnimation = function () {
 
     this.$AccordionItem2_SendBtn.css('margin-top'
         , this.AccordionItem2_SendBtnPositionAdjust + 'px');
+
+    this.PositionDial();
 };
 
 ContactPage.prototype.ExpandedState = function () {
@@ -238,6 +355,8 @@ ContactPage.prototype.ExpandedState = function () {
     );
 
     this.$AccordionItem2_SendBtn.css('margin-top', '0');
+
+    this.PositionDial();
 };
 
 ContactPage.prototype.ShowSummary = function () {

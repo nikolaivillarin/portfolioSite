@@ -444,7 +444,7 @@ NVNavBar.prototype.SelectLinkByUrl = function (url) {
     this.SetState(url);
 };
 
-NVNavBar.prototype.PositionDial = function (pageID, easing, targetID) {
+NVNavBar.prototype.PositionDial = function (pageID, easing) {
     /// <summary>
     /// Positions the dial depending on the settings specified. The dial will
     /// either be positioned on the selected link or on the target specified
@@ -456,10 +456,9 @@ NVNavBar.prototype.PositionDial = function (pageID, easing, targetID) {
     /// <param name="easing" type="string">
     /// [Optional] Specifies the jQuery easing function to use
     /// </param>
-    /// <param name="targetID" type="string">
-    /// [Optional] Specifies the dial target
-    /// </param>
-    if (pageID && targetID === undefined) {
+    var targetID = null;
+
+    if (pageID) {
         targetID = $('#' + pageID).data('nv-dial-target')
             ? $('#' + pageID).data('nv-dial-target') : null;
     }

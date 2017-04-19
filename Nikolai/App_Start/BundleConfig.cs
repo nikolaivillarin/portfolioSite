@@ -30,6 +30,9 @@ namespace Nikolai
                 "~/Scripts/jquery-ui-{version}.js",
                 "~/Scripts/jquery.ui.touch-punch.js",
                 "~/Scripts/jquery.scrollTo.js",
+                "~/Scripts/jquery.validate.js",
+                "~/Scripts/jquery.validate.unobtrusive.js",
+                "~/Scripts/jquery.validate.unobtrusive.extension.js",
                 "~/Scripts/imagesloaded.pkgd.js",
                 "~/Scripts/fastclick.js"
             ));

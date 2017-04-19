@@ -1,4 +1,6 @@
-﻿<section id="contact" data-nv-page="true" data-nv-state="default" data-nv-page-state="scrollable"
+﻿@model Nikolai.Models.ContactFormModel
+
+<section id="contact" data-nv-page="true" data-nv-state="default" data-nv-page-state="scrollable"
          data-nv-theme="dark_light" class="expand-container">
     <div class="expand-contianer__content cf">
         <div data-nv-bgimage="true" class="contact">
@@ -22,28 +24,38 @@
                         </div>
                     </div>
                 </div>
-                <form id="frmContact" action="/Contact/Message" method="post" class="contact__content contact__form">
+                @using (Html.BeginForm("Message", "Contact", FormMethod.Post, new { id = "frmContact", @class = "contact__content contact__form" }))
+                {
                     <div class="contact__form-content">
                         <h1 class="contact__header header-main--onDark header-medium">Leave a Message</h1>
                     </div>
+                    <div class="contact__form-sentMsg">
+                        <h1 class="contact__header header-main--onDark header-medium">
+                            I Got Your Message. Thanks!
+                        </h1>
+                    </div>
                     <div class="contact__form-content contact__formFields cf">
                         <div class="contact__inputGroup">
-                            <label for="Name" class="text-primary--OnDark contact__label">Your Name</label><br />
-                            <input id="Name" name="Name" type="text" class="contact__textbox" />
+                            @Html.LabelFor(x => x.Name, new { @class = "text-primary--OnDark contact__label" })
+                            <br />
+                            @Html.TextBoxFor(x => x.Name, new { @class = "contact__textbox" })
                         </div>
                         <div class="contact__inputGroup">
-                            <label for="Email" class="text-primary--OnDark contact__label">Your Email Address</label><br />
-                            <input id="Email" name="Email" type="text" class="contact__textbox" />
+                            @Html.LabelFor(x => x.Email, new { @class = "text-primary--OnDark contact__label" })
+                            <br />
+                            @Html.TextBoxFor(x => x.Email, new { @class = "contact__textbox" })
                         </div>
                         <div class="contact__inputGroup">
-                            <label for="Message" class="text-primary--OnDark contact__label">Your Message to Me</label><br />
-                            <input id="Message" name="Message" type="text" class="contact__textbox" />
+                            @Html.LabelFor(x => x.Message, new { @class = "text-primary--OnDark contact__label" })
+                            <br />
+                            @Html.TextBoxFor(x => x.Message, new { @class = "contact__textbox" })
                         </div>
                     </div>
                     <div id="sendBtnPlaceholder" class="contact__placeholder"></div>
-                </form>
+                }
             </section>
         </div>
+
     </div>
 </section>
 

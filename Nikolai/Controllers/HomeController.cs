@@ -12,16 +12,6 @@ namespace Nikolai.Controllers
         [HttpGet]
         public ActionResult Index()
         {
-            //var emailHelper = new EmailHelper("mail.nikolaivillarin.com", 587, "donotreply@nikolaivillarin.com", "donotreply@nikolaivillarin.com", "winhostsino1987!");
-            //emailHelper.AddEmailTo("nikolai@lakesidebesmart.com");
-            
-            //emailHelper.Subject = "test email";
-            //emailHelper.CustomizedPlainEmailBody = "Test email";
-
-            //emailHelper.Send();
-
-            //throw new Exception("Test Error Handler: " + DateTime.Now.ToString());
-
             return View();
         }
 
