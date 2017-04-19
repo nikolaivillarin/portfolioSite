@@ -19,12 +19,8 @@
     
     @include box-sizing(border-box);
 
-    @include breakpoint(400px $breakpoint-phablet) {
-        width: 50%;
-    }
-
     @include breakpoint($breakpoint-phablet $breakpoint-netbook) {
-        width: 33.33%;
+        width: 50%;
     }
 
     @include breakpoint(min-width $breakpoint-netbook) {
