@@ -1316,6 +1316,7 @@ $color-dial--ring3: #2294e5;*/
 
 .nav__itemContainer--selected .nav__link {
   display: inline-block;
+  font-weight: 400;
   margin-top: 25px;
   opacity: 1;
 }

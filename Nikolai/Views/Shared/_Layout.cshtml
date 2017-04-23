@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,6 +11,9 @@
     <title>@ViewBag.Title</title>
 
     @RenderSection("MetaDescription")
+
+    <meta name="author" content="Nikolai Villarin" />
+    <meta name="designer" content="Nikolai Villarin" />
 
     <link rel="apple-touch-icon" sizes="57x57" href="/Favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/Favicon/apple-icon-60x60.png">
@@ -58,8 +61,6 @@
     </main>
 
     @Scripts.Render("~/Content/libraries")
-
-    @*@Scripts.RenderFormat("<script src=\"{0}\" async></script>", "~/Content/libraries")*@
 
     @Scripts.RenderFormat("<script src=\"{0}\" async></script>", "~/Content/scripts")
 
