@@ -2,9 +2,11 @@
 @import '../Atoms/_colors';
 @import '../Atoms/_transitions';
 @import '../Atoms/_mixins';
+@import '../Atoms/_breakpoints';
 
 .menu {
     background-color: $color-background--blue;
+    font-size: 1.5em;
     text-align: center;
 
     @extend %box--fullPage;

@@ -2743,8 +2743,11 @@ $color-dial--ring3: #2294e5;*/
   transform: scale(1);
 }
 
+/*------------------------------------*    CSS Breakpoints for different devices
+\*------------------------------------*/
 .menu {
   background-color: #2294e5;
+  font-size: 1.5em;
   text-align: center;
 }
 
@@ -3015,6 +3018,11 @@ body {
 .header-small {
   font-size: 1.333em;
   line-height: 1.2em;
+}
+
+.header-tiny {
+  font-size: 1em;
+  line-height: 1em;
 }
 
 .header-main {

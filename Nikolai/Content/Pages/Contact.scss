@@ -201,7 +201,7 @@ $contact-easing: cubic-bezier(0.215, 0.61, 0.355, 1);
     font-size: 14px;
     left: 0;
     position: absolute;
-    top: 26px;
+    top: 1.2em;
 
     @include transition(top 0.3s cubic-bezier(0.64, 0.09, 0.08, 1), font-size 0.3s cubic-bezier(0.64, 0.09, 0.08, 1));
 }
