@@ -435,6 +435,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\pageTransition.js" />
     <Content Include="Scripts\scrollAnimations.js" />
+    <Content Include="ViewScripts\aboutPage.js" />
     <Content Include="ViewScripts\loader.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\navigation.js" />

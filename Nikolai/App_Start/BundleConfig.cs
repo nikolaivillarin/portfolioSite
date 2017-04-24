@@ -56,6 +56,10 @@ namespace Nikolai
                 "~/ViewScripts/contactPage.js"
             ));
 
+            bundles.Add(new ScriptBundle("~/Content/aboutPage").Include(
+                "~/ViewScripts/aboutPage.js"
+            ));
+
             bundles.Add(new ScriptBundle("~/Content/menuPage").Include(
                 "~/ViewScripts/menuPage.js"
             ));

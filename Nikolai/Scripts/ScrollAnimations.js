@@ -32,6 +32,12 @@ ScrollAnimation.prototype = {
 ScrollAnimation.prototype.Options = {
     EnableParallax: false
     , EnableScrollAnimation: true
+    // Set to a value to increase the amount of scroll before
+    // animation get's triggered
+    , ScrollThresholdAdjustment: 0
+    // Specifies that when element is out of view
+    // the element will lose the in-view class
+    , RevertWhenOutOfView: false
 };
 
 ScrollAnimation.prototype.Enable = function () {
@@ -41,6 +47,10 @@ ScrollAnimation.prototype.Enable = function () {
     if (this.IsEnabled === false) {
         this.$pageElmt.on('scroll',
             $.proxy(this.PageScrolled, this)
+        );
+
+        $(window).on('resize',
+            $.proxy(this.WindowResize, this)
         );
 
         this.IsEnabled = true;
@@ -58,10 +68,18 @@ ScrollAnimation.prototype.Disable = function () {
             $.proxy(this.PageScrolled, this)
         );
 
+        $(window).off('resize',
+            $.proxy(this.WindowResize, this)
+        );
+
         this.IsEnabled = false;
 
         this.PageScrolled();
     }
+};
+
+ScrollAnimation.prototype.WindowResize = function () {
+    this.$pageElmt.trigger('scroll');
 };
 
 ScrollAnimation.prototype.PageScrolled = function () {
@@ -148,15 +166,19 @@ ScrollAnimation.prototype.TriggerScrollAnimation = function () {
     var $animatedElmts = $('[data-nv-animate]', this.$pageElmt);
 
     $animatedElmts.each(function () {
-        var elmtTopPosition = $(this).offset().top;
+        var elmtTopPosition = $(this).position().top;
 
         // Don't display the element until it is actually on screen
-        var scrollThreshold = windowBottomPosition - ($(this).outerHeight());
+        var scrollThreshold = windowBottomPosition - ($(this).outerHeight())
+            - that.Options.ScrollThresholdAdjustment;
+
+        //console.log('Element Top Pos: ' + elmtTopPosition);
+        //console.log('Window Bottom Pos: ' + windowBottomPosition);
 
         if (that.IsEnabled === true
             && elmtTopPosition <= scrollThreshold) {
             $(this).addClass('in-view');
-        } else if (that.IsEnabled === false) {
+        } else if (that.IsEnabled === false || that.Options.RevertWhenOutOfView === true) {
             $(this).removeClass('in-view');
         }
     });

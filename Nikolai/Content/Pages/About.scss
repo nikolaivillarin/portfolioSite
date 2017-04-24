@@ -56,6 +56,14 @@
     }
 }
 
+.about-overview__content {
+    @extend %slide-bottom--initialState;
+}
+
+.about-overview__content.in-view {
+    @extend %slide-bottom--endState;
+}
+
 .about-qualifications {
     float: left;
     padding-top: 3em;
@@ -76,6 +84,8 @@
     padding-top: 20px;
     width: 12%;
 
+    @extend %pop--initialState;
+
     &--windows {
         max-width: 72px;
     }
@@ -92,6 +102,11 @@
         max-width: 72px;
     }
 }
+
+.about-qualifications__icon.in-view {
+    @extend %pop--endState;
+}
+
 .about-qualifications__img {
     width: 100%;
 }
@@ -100,4 +115,10 @@
     float: left;
     padding-left: 15px;
     width: 88%;
+
+    @extend %slide-bottom--initialState;
+}
+
+.about-qualifications__content.in-view {
+    @extend %slide-bottom--endState;
 }
