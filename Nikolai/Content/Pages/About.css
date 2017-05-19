@@ -32,48 +32,6 @@ $color-dial--ring3: #2294e5;*/
   z-index: -1;
 }
 
-.about-overview__content, .about-qualifications__content {
-  opacity: 0;
-  -moz-transform: translateY(30px);
-  -ms-transform: translateY(30px);
-  -o-transform: translateY(30px);
-  -webkit-transform: translateY(30px);
-  transform: translateY(30px);
-  -moz-transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear;
-  -o-transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear;
-  -webkit-transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear;
-  transition: transform 0.5s cubic-bezier(0.645, 0.045, 0.355, 1), opacity 1s linear;
-}
-
-.about-overview__content.in-view, .about-qualifications__content.in-view {
-  opacity: 1;
-  -moz-transform: translateY(0);
-  -ms-transform: translateY(0);
-  -o-transform: translateY(0);
-  -webkit-transform: translateY(0);
-  transform: translateY(0);
-}
-
-.about-qualifications__icon {
-  -moz-transform: scale(0);
-  -ms-transform: scale(0);
-  -o-transform: scale(0);
-  -webkit-transform: scale(0);
-  transform: scale(0);
-  -moz-transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  -o-transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  -webkit-transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-.about-qualifications__icon.in-view {
-  -moz-transform: scale(1);
-  -ms-transform: scale(1);
-  -o-transform: scale(1);
-  -webkit-transform: scale(1);
-  transform: scale(1);
-}
-
 /*------------------------------------*    CSS Breakpoints for different devices
 \*------------------------------------*/
 .about-bg {
@@ -127,6 +85,13 @@ $color-dial--ring3: #2294e5;*/
   }
 }
 
+.about-overview__content {
+  /*@extend %slide-bottom--initialState;*/
+}
+
+/*.about-overview__content.in-view {
+    @extend %slide-bottom--endState;
+}*/
 .about-qualifications {
   float: left;
   padding-top: 3em;
@@ -147,6 +112,7 @@ $color-dial--ring3: #2294e5;*/
   float: left;
   padding-top: 20px;
   width: 12%;
+  /*@extend %pop--initialState;*/
 }
 
 .about-qualifications__icon--windows {
@@ -165,6 +131,9 @@ $color-dial--ring3: #2294e5;*/
   max-width: 72px;
 }
 
+/*.about-qualifications__icon.in-view {
+    @extend %pop--endState;
+}*/
 .about-qualifications__img {
   width: 100%;
 }
@@ -173,6 +142,11 @@ $color-dial--ring3: #2294e5;*/
   float: left;
   padding-left: 15px;
   width: 88%;
+  /*@extend %slide-bottom--initialState;*/
 }
+
+/*.about-qualifications__content.in-view {
+    @extend %slide-bottom--endState;
+}*/
 
 /*# sourceMappingURL=About.css.map */

@@ -1,10 +1,10 @@
-﻿/*------------------------------------*\
-    Summary: Holds the functionality that depends on scroll event
-\*------------------------------------*/
-function ScrollAnimation(pageID, options) {
+﻿function ScrollAnimation(pageID, options) {
     /// <summary>
-    /// By default scroll effect are disabled. You must call
-    /// Enable to enable the effects
+    /// ScrollAnimation contains the different types of effect
+    /// that depend on the scroll event. For instance, elements with 
+    /// the [data-nv-animate] attribute will have an in-view class added
+    /// when the element is in view. This class can be used to trigger CSS
+    /// animations or transitions
     /// </summary>
     /// <param name="pageID" type="string">
     /// ID of page that the scrolling effect will be applied to
@@ -171,9 +171,6 @@ ScrollAnimation.prototype.TriggerScrollAnimation = function () {
         // Don't display the element until it is actually on screen
         var scrollThreshold = windowBottomPosition - ($(this).outerHeight())
             - that.Options.ScrollThresholdAdjustment;
-
-        //console.log('Element Top Pos: ' + elmtTopPosition);
-        //console.log('Window Bottom Pos: ' + windowBottomPosition);
 
         if (that.IsEnabled === true
             && elmtTopPosition <= scrollThreshold) {

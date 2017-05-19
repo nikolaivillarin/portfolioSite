@@ -1,7 +1,9 @@
 ﻿//#region Constructors
 function PageTransition(initialPageID) {
     /// <summary>
-    /// Default Constructor
+    /// Page Transitions class handles the page transition effect for the website.
+    /// The actual animation is done through CSS animation but this class handles
+    /// the triggers and the state of the pages. Such as the current page selected.
     /// </summary>
     /// <param name="initialPageID" type="string">
     /// The ID of the initial page to show
