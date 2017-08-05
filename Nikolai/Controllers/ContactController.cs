@@ -8,7 +8,7 @@ using System.Net;
 
 namespace Nikolai.Controllers
 {
-    public class ContactController : Controller
+    public class ContactController : BaseController
     {
         [HttpGet]
         public ActionResult Index()

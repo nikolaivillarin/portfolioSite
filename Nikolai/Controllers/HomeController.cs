@@ -7,7 +7,7 @@ using Nikolai.Models;
 
 namespace Nikolai.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         [HttpGet]
         public ActionResult Index()

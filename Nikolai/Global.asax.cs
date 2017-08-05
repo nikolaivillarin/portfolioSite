@@ -21,7 +21,7 @@ namespace Nikolai
 
         protected void Application_Error(object sender, EventArgs e)
         {
-            //#if RELEASE
+            #if RELEASE
             var exception = Server.GetLastError();
             var httpException = exception as HttpException;
             Response.Clear();
@@ -47,7 +47,7 @@ namespace Nikolai
             IController errorsController = new Nikolai.Controllers.ErrorController();
             var rc = new RequestContext(new HttpContextWrapper(Context), routeData);
             errorsController.Execute(rc);
-            //#endif
+            #endif
         }
     }
 }

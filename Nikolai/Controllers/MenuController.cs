@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Nikolai.Controllers
 {
-    public class MenuController : Controller
+    public class MenuController : BaseController
     {
         // GET: Menu
         public ActionResult Index()

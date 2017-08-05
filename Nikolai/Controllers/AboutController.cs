@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Nikolai.Controllers
 {
-    public class AboutController : Controller
+    public class AboutController : BaseController
     {
         [HttpGet]
         public ActionResult Index()

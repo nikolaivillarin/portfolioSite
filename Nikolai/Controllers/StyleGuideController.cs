@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace Nikolai.Controllers
 {
-    public class StyleGuideController : Controller
+    public class StyleGuideController : BaseController
     {
         // GET: Styles
         public ActionResult Index()
