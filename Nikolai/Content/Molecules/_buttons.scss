@@ -184,8 +184,8 @@ $viewMore-animation--easing: cubic-bezier(0.645, 0.045, 0.355, 1);
     }
 
     &:before {
-        border-top-left-radius: $viewMore-circle--diameter;
-        border-top-right-radius: $viewMore-circle--diameter;
+        border-top-left-radius: 100px;
+        border-top-right-radius: 100px;
         top: 0;
 
         @extend %viewMore__indicator;
@@ -193,8 +193,8 @@ $viewMore-animation--easing: cubic-bezier(0.645, 0.045, 0.355, 1);
     }
 
     &:after {
-        border-bottom-left-radius: $viewMore-circle--diameter;
-        border-bottom-right-radius: $viewMore-circle--diameter;
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
         top: $viewMore-circle--diameter / 2 + 1px;
         
         @extend %viewMore__indicator;

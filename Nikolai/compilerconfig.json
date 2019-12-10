@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "Content/Molecules/_navControl.css",
+    "inputFile": "Content/Molecules/_navControl.scss"
+  },
+  {
+    "outputFile": "Content/Pages/Styles.css",
+    "inputFile": "Content/Pages/Styles.scss"
+  }
+]
