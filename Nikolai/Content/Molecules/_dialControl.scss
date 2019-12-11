@@ -16,12 +16,12 @@ $button__logo-border-size: 1px;
 $button__light-diameter: $button-diameter - $button-border-size;
 $button__logo-diameter: $button__light-diameter - $button__logo-border-size - $button-light-size;
 
-$spinner-width: 2px;
+$spinner-width: 1px;
 $spinner-diameter--inner: 110px;
 $spinner-diameter--middle: 130px;
 $spinner-diameter--outer: 150px;
 
-$pointer-diameter: 8px;
+$pointer-diameter: 4px;
 
 
 /*------------------------------------*\

@@ -291,34 +291,34 @@ $color-dial--ring3: #2294e5;*/
   -webkit-user-select: none;
   user-select: none; }
   .nvDial .nvDial__spinner--outer, .nvDial .nvDial__spinner--middle, .nvDial .nvDial__spinner--inner {
-    border-width: 2px;
+    border-width: 1px;
     border-style: solid;
     border-top-color: transparent; }
   .nvDial .nvDial__pointer--outer, .nvDial .nvDial__pointer--middle, .nvDial .nvDial__pointer--inner {
-    height: 8px;
-    width: 8px;
+    height: 4px;
+    width: 4px;
     border-radius: 50%; }
   .nvDial__pointer--outer {
     background-color: #e4c236;
-    -moz-transform: translate(21.79557px, 14.39678px);
-    -ms-transform: translate(21.79557px, 14.39678px);
-    -o-transform: translate(21.79557px, 14.39678px);
-    -webkit-transform: translate(21.79557px, 14.39678px);
-    transform: translate(21.79557px, 14.39678px); }
+    -moz-transform: translate(23.79557px, 16.39678px);
+    -ms-transform: translate(23.79557px, 16.39678px);
+    -o-transform: translate(23.79557px, 16.39678px);
+    -webkit-transform: translate(23.79557px, 16.39678px);
+    transform: translate(23.79557px, 16.39678px); }
   .nvDial__pointer--middle {
     background-color: #3090e3;
-    -moz-transform: translate(103.64384px, 11.94388px);
-    -ms-transform: translate(103.64384px, 11.94388px);
-    -o-transform: translate(103.64384px, 11.94388px);
-    -webkit-transform: translate(103.64384px, 11.94388px);
-    transform: translate(103.64384px, 11.94388px); }
+    -moz-transform: translate(105.64384px, 13.94388px);
+    -ms-transform: translate(105.64384px, 13.94388px);
+    -o-transform: translate(105.64384px, 13.94388px);
+    -webkit-transform: translate(105.64384px, 13.94388px);
+    transform: translate(105.64384px, 13.94388px); }
   .nvDial__pointer--inner {
     background-color: #e48634;
-    -moz-transform: translate(14.91675px, 9.49097px);
-    -ms-transform: translate(14.91675px, 9.49097px);
-    -o-transform: translate(14.91675px, 9.49097px);
-    -webkit-transform: translate(14.91675px, 9.49097px);
-    transform: translate(14.91675px, 9.49097px); }
+    -moz-transform: translate(16.91675px, 11.49097px);
+    -ms-transform: translate(16.91675px, 11.49097px);
+    -o-transform: translate(16.91675px, 11.49097px);
+    -webkit-transform: translate(16.91675px, 11.49097px);
+    transform: translate(16.91675px, 11.49097px); }
 
 @-webkit-keyframes spinnerAnim--outer {
   0% {
