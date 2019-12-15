@@ -192,6 +192,14 @@
     <Content Include="Content\ImagesWork\rateQuote-heroImage_large.jpg" />
     <Content Include="Content\ImagesWork\rateQuote-heroImage_medium.jpg" />
     <Content Include="Content\ImagesWork\rateQuote-heroImage_small.jpg" />
+    <Content Include="Content\ImagesWork\topnav-benefits.png" />
+    <Content Include="Content\Vidoes\topnav-demo.mp4" />
+    <Content Include="Content\ImagesWork\topnav-design-benefits.png" />
+    <Content Include="Content\ImagesWork\topnav-dropdown-canvas.png" />
+    <Content Include="Content\ImagesWork\topnav-heroImage.jpg" />
+    <Content Include="Content\ImagesWork\topnav-main-canvas.png" />
+    <Content Include="Content\ImagesWork\topnav-searchbar-canvas.png" />
+    <Content Include="Content\ImagesWork\topnav-tile.jpg" />
     <Content Include="Content\Images\icon-arrow-down.svg" />
     <Content Include="Content\ImagesWork\boxgrove-heroImage_medium.jpg" />
     <Content Include="Content\ImagesWork\boxgrove-image_small.png" />
