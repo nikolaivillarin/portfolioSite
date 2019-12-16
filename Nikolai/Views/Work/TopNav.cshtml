@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Nikolai Villarin | Grand and Toy Top Navigation";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section MetaDescription {
+    <meta name="description" content="Enhance Grand & Toy's top navigation by adopting minimalistic styling so that it better aligns with Grand & Toy's brand vision." />
+    <meta name="keywords" content="Nikolai Villarin Web Portfolio, Work, Grand and Toy, Top Navigation" />
+}
+
+<div id="pnlPages" class="pages-container"
+     data-nv-eagerlyload="\Home\HomePartial, \Work\WorkPartial, \About\AboutPartial, \Contact\ContactPartial">
+    @Html.Partial("_topnav")
+</div>

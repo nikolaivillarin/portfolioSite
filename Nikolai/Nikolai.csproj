@@ -193,10 +193,18 @@
     <Content Include="Content\ImagesWork\rateQuote-heroImage_medium.jpg" />
     <Content Include="Content\ImagesWork\rateQuote-heroImage_small.jpg" />
     <Content Include="Content\ImagesWork\topnav-benefits.png" />
+    <Content Include="Content\ImagesWork\topnav-heroImage_medium.jpg" />
+    <Content Include="Content\ImagesWork\topnav-heroImage_small.jpg" />
+    <Content Include="Content\Pages\Work-TopNav.css">
+      <DependentUpon>Work-TopNav.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Work-TopNav.min.css">
+      <DependentUpon>Work-TopNav.css</DependentUpon>
+    </Content>
     <Content Include="Content\Vidoes\topnav-demo.mp4" />
     <Content Include="Content\ImagesWork\topnav-design-benefits.png" />
     <Content Include="Content\ImagesWork\topnav-dropdown-canvas.png" />
-    <Content Include="Content\ImagesWork\topnav-heroImage.jpg" />
+    <Content Include="Content\ImagesWork\topnav-heroImage_large.jpg" />
     <Content Include="Content\ImagesWork\topnav-main-canvas.png" />
     <Content Include="Content\ImagesWork\topnav-searchbar-canvas.png" />
     <Content Include="Content\ImagesWork\topnav-tile.jpg" />
@@ -424,6 +432,21 @@
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
+    <Content Include="Content\Pages\Work-TopNav.scss" />
+    <Content Include="Fonts\AlegreyaSans-Black.ttf" />
+    <Content Include="Fonts\AlegreyaSans-BlackItalic.ttf" />
+    <Content Include="Fonts\AlegreyaSans-Bold.ttf" />
+    <Content Include="Fonts\AlegreyaSans-BoldItalic.ttf" />
+    <Content Include="Fonts\AlegreyaSans-ExtraBold.ttf" />
+    <Content Include="Fonts\AlegreyaSans-ExtraBoldItalic.ttf" />
+    <Content Include="Fonts\AlegreyaSans-Italic.ttf" />
+    <Content Include="Fonts\AlegreyaSans-Light.ttf" />
+    <Content Include="Fonts\AlegreyaSans-LightItalic.ttf" />
+    <Content Include="Fonts\AlegreyaSans-Medium.ttf" />
+    <Content Include="Fonts\AlegreyaSans-MediumItalic.ttf" />
+    <Content Include="Fonts\AlegreyaSans-Regular.ttf" />
+    <Content Include="Fonts\AlegreyaSans-Thin.ttf" />
+    <Content Include="Fonts\AlegreyaSans-ThinItalic.ttf" />
     <None Include="Properties\PublishProfiles\Local Host.pubxml" />
     <None Include="Properties\PublishProfiles\Winhost Release.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
@@ -458,6 +481,7 @@
     <Content Include="ViewScripts\homePage.js" />
     <Content Include="ViewScripts\menuPage.js" />
     <Content Include="ViewScripts\workBoxgrove.js" />
+    <Content Include="ViewScripts\workTopNav.js" />
     <Content Include="ViewScripts\workHR.js" />
     <Content Include="ViewScripts\workMultiplex.js" />
     <Content Include="ViewScripts\workPage.js" />
@@ -523,6 +547,8 @@
     <Content Include="Views\Error\Http404.cshtml" />
     <Content Include="Views\StyleGuide\PageTransition.cshtml" />
     <Content Include="Views\StyleGuide\InternalScroll.cshtml" />
+    <Content Include="Views\Work\TopNav.cshtml" />
+    <Content Include="Views\Work\_topnav.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

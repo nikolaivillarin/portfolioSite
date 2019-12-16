@@ -1,0 +1,38 @@
+﻿@import '../Atoms/_boxes';
+@import '../Atoms/_mixins';
+@import '../Atoms/_transitions';
+@import '../Breakpoint/_breakpoint';
+@import '../Atoms/_breakpoints';
+
+.work-imgTile--topnav {
+    background-image: url(/Content/ImagesWork/topnav-tile.jpg);
+}
+
+.work-heroImage--topnav {
+    background-position: top center;
+    background-image: url(/Content/ImagesWork/topnav-heroImage_small.jpg);
+
+    @include breakpoint($breakpoint-mobileBig $breakpoint-tablet) {
+        background-image: url(/Content/ImagesWork/topnav-heroImage_medium.jpg);
+    }
+
+    @include breakpoint(min-width $breakpoint-tablet) {
+        background-image: url(/Content/ImagesWork/topnav-heroImage_large.jpg);
+    }
+}
+
+.topnav-header {
+    padding: 0.4em 0.5em 0.1em 0.5em;
+
+    @include breakpoint(max-width $breakpoint-netbook) {
+        max-width: 6em;
+    }
+}
+
+.topnav-subHeader {
+    padding: 0 2em;
+
+    @include breakpoint(max-width $breakpoint-netbook) {
+        display: none;
+    }
+}

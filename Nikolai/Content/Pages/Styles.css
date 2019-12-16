@@ -2391,6 +2391,30 @@ $color-dial--ring3: #2294e5;*/
   font-weight: 700;
   font-style: normal; }
 
+@font-face {
+  font-family: 'AlegreyaSans';
+  src: url("/Fonts/AlegreyaSans-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AlegreyaSans';
+  src: url("/Fonts/AlegreyaSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AlegreyaSans';
+  src: url("/Fonts/AlegreyaSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AlegreyaSans';
+  src: url("/Fonts/AlegreyaSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal; }
+
 /*------------------------------------*    Accent Colors
 \*------------------------------------*/
 /*------------------------------------*    Dial Colors
@@ -2413,7 +2437,7 @@ $color-dial--ring3: #2294e5;*/
 \*------------------------------------*/
 body {
   background-color: #000;
-  font-family: 'RobotoSlab', 'Times New Roman', Times, serif;
+  font-family: 'AlegreyaSans', 'Times New Roman', Times, serif;
   font-weight: 300;
   font-style: normal;
   font-size: 10px;
@@ -2476,14 +2500,14 @@ body {
 
 .header-secondary {
   color: #333333;
-  font-family: 'RobotoSlab', 'Times New Roman', Times, serif;
+  font-family: 'AlegreyaSans', 'Times New Roman', Times, serif;
   font-weight: 300;
   font-style: normal;
   margin-bottom: 0.2em; }
 
 .header-secondary--onDark {
   color: #FFF;
-  font-family: 'RobotoSlab', 'Times New Roman', Times, serif;
+  font-family: 'AlegreyaSans', 'Times New Roman', Times, serif;
   font-weight: 300;
   font-style: normal;
   margin-bottom: 0.2em; }
@@ -3232,6 +3256,30 @@ $color-dial--ring3: #2294e5;*/
 @font-face {
   font-family: 'RobotoSlab';
   src: url("/Fonts/RobotoSlab-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AlegreyaSans';
+  src: url("/Fonts/AlegreyaSans-Thin.ttf") format("truetype");
+  font-weight: 100;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AlegreyaSans';
+  src: url("/Fonts/AlegreyaSans-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AlegreyaSans';
+  src: url("/Fonts/AlegreyaSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'AlegreyaSans';
+  src: url("/Fonts/AlegreyaSans-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal; }
 
