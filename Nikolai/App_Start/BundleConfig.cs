@@ -84,6 +84,10 @@ namespace Nikolai
             bundles.Add(new ScriptBundle("~/Content/workRateQuote").Include(
                 "~/ViewScripts/workRateQuote.js"
             ));
+
+            bundles.Add(new ScriptBundle("~/Content/workTopNav").Include(
+                "~/ViewScripts/workTopNav.js"
+            ));
         }
     }
 }

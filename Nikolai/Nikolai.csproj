@@ -192,21 +192,18 @@
     <Content Include="Content\ImagesWork\rateQuote-heroImage_large.jpg" />
     <Content Include="Content\ImagesWork\rateQuote-heroImage_medium.jpg" />
     <Content Include="Content\ImagesWork\rateQuote-heroImage_small.jpg" />
-    <Content Include="Content\ImagesWork\topnav-benefits.png" />
     <Content Include="Content\ImagesWork\topnav-heroImage_medium.jpg" />
     <Content Include="Content\ImagesWork\topnav-heroImage_small.jpg" />
+    <Content Include="Content\ImagesWork\topnav-screens-large.png" />
+    <Content Include="Content\ImagesWork\topnav-screens-small.png" />
     <Content Include="Content\Pages\Work-TopNav.css">
       <DependentUpon>Work-TopNav.scss</DependentUpon>
     </Content>
     <Content Include="Content\Pages\Work-TopNav.min.css">
       <DependentUpon>Work-TopNav.css</DependentUpon>
     </Content>
-    <Content Include="Content\Vidoes\topnav-demo.mp4" />
-    <Content Include="Content\ImagesWork\topnav-design-benefits.png" />
-    <Content Include="Content\ImagesWork\topnav-dropdown-canvas.png" />
+    <Content Include="Content\Videos\topnav-demo.mp4" />
     <Content Include="Content\ImagesWork\topnav-heroImage_large.jpg" />
-    <Content Include="Content\ImagesWork\topnav-main-canvas.png" />
-    <Content Include="Content\ImagesWork\topnav-searchbar-canvas.png" />
     <Content Include="Content\ImagesWork\topnav-tile.jpg" />
     <Content Include="Content\Images\icon-arrow-down.svg" />
     <Content Include="Content\ImagesWork\boxgrove-heroImage_medium.jpg" />

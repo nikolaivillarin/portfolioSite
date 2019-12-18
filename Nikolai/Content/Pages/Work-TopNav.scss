@@ -11,6 +11,8 @@
 .work-heroImage--topnav {
     background-position: top center;
     background-image: url(/Content/ImagesWork/topnav-heroImage_small.jpg);
+    padding-top: 50px;
+    text-align: center;
 
     @include breakpoint($breakpoint-mobileBig $breakpoint-tablet) {
         background-image: url(/Content/ImagesWork/topnav-heroImage_medium.jpg);
@@ -31,8 +33,92 @@
 
 .topnav-subHeader {
     padding: 0 2em;
+    margin: 0 auto;
+    max-width: 500px;
 
     @include breakpoint(max-width $breakpoint-netbook) {
         display: none;
     }
+}
+
+.topnav__screensContainer {
+    background-color: #02abe8;
+    background: linear-gradient(to bottom right,#02abe8, #02a7e3);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.topnav__screens {
+    background-repeat: no-repeat;
+    background-size: contain;
+    padding-bottom: 90%;
+
+    @extend %slide-left--initialState;
+    @include transition-duration(2s);
+
+    @include breakpoint(max-width $breakpoint-mobileBig) {
+        background-image: url(/Content/ImagesWork/topnav-screens-large.png);
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+
+    @include breakpoint($breakpoint-mobileBig $breakpoint-phabletBig) {
+        background-image: url(/Content/ImagesWork/topnav-screens-large.png);
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+
+    @include breakpoint($breakpoint-phabletBig $breakpoint-tablet) {
+        background-image: url(/Content/ImagesWork/topnav-screens-large.png);
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+
+    @include breakpoint($breakpoint-tablet $breakpoint-netbook) {
+        background-image: url(/Content/ImagesWork/topnav-screens-large.png);
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+
+    @include breakpoint($breakpoint-netbook $breakpoint-notebook) {
+        background-image: url(/Content/ImagesWork/topnav-screens-large.png);
+        width: 100%;
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+
+    @include breakpoint(min-width $breakpoint-notebook) {
+        background-image: url(/Content/ImagesWork/topnav-screens-large.png);
+        padding-bottom: 60%;
+        width: 100%;
+        margin-left: -120px;
+        margin-top: -130px;
+    }
+}
+
+.topnav__screens.in-view {
+    @extend %slide-left--endState;
+}
+
+.topnav__finalScreensContainer {
+    background-color: #171717;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.topnav__finalScreens {
+    padding-bottom: 90%;
+
+    @extend %slide-left--initialState;
+    @include transition-duration(2s);
+}
+
+.topnav__finalScreensContainer.in-view {
+    @extend %slide-left--endState;
 }

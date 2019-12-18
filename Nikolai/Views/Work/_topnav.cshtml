@@ -8,58 +8,35 @@
                 Top Navigation Redesign
             </h1>
             <h2 class="topnav-subHeader header-secondary">
-                Enhance Grand & Toy's top navigation by adopting minimalistic styling so that it better aligns with Grand & Toy's brand vision.
+                Enhance Grand & Toy's top navigation by adopting minimalistic styling
+                so that it better aligns with Grand & Toy's brand vision.
             </h2>
             <div class="work-IndicatorContainer">
-                <div class="scroll-indicator scroll-indicator--light">
+                <div class="scroll-indicator scroll-indicator--dark">
                     <span>Scroll</span>
                     <span class="scroll-indicator__line"></span>
                     <span class="scroll-indicator__circle"></span>
                 </div>
             </div>
         </section>
-        @*<section class="hr__screensContainer cf">
-            <div class="hr__screensCaption">
-                <h1 class="hr-header header-main header-large">Overview</h1>
-                <br />
-                <p class="hr-subHeader">
-                    This web application is multi-purpose. It provides a centralized
-                    repository for employee documents. And, also renders the
-                    organizational chart read from Microsoft
-                    Visio document.
-                </p>
+        <section class="topnav__screensContainer cf">
+            <div data-nv-bgimage="true" data-nv-animate="true" class="topnav__screens"></div>
+            <div class="work-IndicatorContainer">
+                <div class="scroll-indicator scroll-indicator--dark">
+                    <span>Scroll</span>
+                    <span class="scroll-indicator__line"></span>
+                    <span class="scroll-indicator__circle"></span>
+                </div>
             </div>
-            <div data-nv-bgimage="true" data-nv-animate="true" class="hr__screens"></div>
         </section>
-        <div class="hr__summaryContainer cf">
-            <section class="hr__summaryContainer-content">
-                <h1 class="hr-header header-main header-large">Company</h1>
-                <br />
-                <p class="hr__summaryText">
-                    Lakeside Logistics (
-                    <a href="http://www.lakesidebesmart.com" alt="Lakeside Logistics Home Page" class="link--blue" target="_blank">www.lakesidebesmart.com</a>
-                    )
-                </p>
-            </section>
-            <section class="hr__summaryContainer-content">
-                <h1 class="hr-header header-main header-large">Project Highlights</h1>
-                <br />
-                <ul class="hr__summaryText list-spacious list-unstyled">
-                    <li>Built with Orchard CMS so that HR employees are able to update the site</li>
-                    <li>Contains a photo wall in a masonry layout with lazy loading</li>
-                    <li>Integrates with Excel and Visio documents</li>
-                    <li>Responsive design and is optimized from being view in a mobile device or desktop</li>
-                </ul>
-            </section>
-            <section class="hr__summaryContainer-content">
-                <h1 class="hr-header header-main header-large">My Role in the Project</h1>
-                <br />
-                <p class="hr__summaryText">
-                    Full Stack Web Developer
-                </p>
-            </section>
-        </div>*@
+        <section class="topnav__finalScreensContainer cf">
+            @*<div data-nv-bgimage="true" data-nv-animate="true" class="topnav__finalScreens"></div>*@
+            <video width="320" height="240" controls>
+                <source src="/Content/Videos/topnav-demo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </section>
     </div>
 </section>
 
-@Scripts.RenderFormat("<script src=\"{0}\" async></script>", "~/Content/topnav")
+@Scripts.RenderFormat("<script src=\"{0}\" async></script>", "~/Content/workTopNav")
