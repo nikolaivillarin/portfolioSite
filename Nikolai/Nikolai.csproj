@@ -521,7 +521,7 @@
     <Content Include="Views\StyleGuide\Content.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\_home.cshtml" />
-    <Content Include="Views\Work\_work.cshtml" />
+    <Content Include="Views\Work\_workTiles.cshtml" />
     <Content Include="Views\Shared\_dial.cshtml" />
     <Content Include="Views\Shared\_nav.cshtml" />
     <Content Include="Views\Menu\_menu.cshtml" />

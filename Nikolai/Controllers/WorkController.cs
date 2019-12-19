@@ -17,7 +17,7 @@ namespace Nikolai.Controllers
         [HttpGet]
         public ActionResult WorkPartial()
         {
-            return PartialView("_work");
+            return PartialView("_workTiles");
         }
 
         [HttpGet]
