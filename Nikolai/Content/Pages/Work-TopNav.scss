@@ -14,30 +14,33 @@
     padding-top: 50px;
     text-align: center;
 
-    @include breakpoint($breakpoint-mobileBig $breakpoint-tablet) {
+    @include breakpoint($breakpoint-tablet $breakpoint-notebook) {
         background-image: url(/Content/ImagesWork/topnav-heroImage_medium.jpg);
     }
 
-    @include breakpoint(min-width $breakpoint-tablet) {
+    @include breakpoint(min-width $breakpoint-notebook) {
         background-image: url(/Content/ImagesWork/topnav-heroImage_large.jpg);
     }
-}
 
-.topnav-header {
-    padding: 0.4em 0.5em 0.1em 0.5em;
+    .topnav-header {
+        padding: 0.5em 1em;
+        background-color: rgba(255, 255, 255, 0.9);
 
-    @include breakpoint(max-width $breakpoint-netbook) {
-        max-width: 6em;
+        @include breakpoint(min-width $breakpoint-tablet) {
+            padding: 0.4em 0.5em 0.1em 0.5em;
+            background-color: transparent;
+        }
     }
 }
 
 .topnav-subHeader {
-    padding: 0 2em;
-    margin: 0 auto;
-    max-width: 500px;
+    display: none;
 
-    @include breakpoint(max-width $breakpoint-netbook) {
-        display: none;
+    @include breakpoint(min-width $breakpoint-tablet) {
+        display: block;
+        padding: 0 2em;
+        margin: 0 auto;
+        max-width: 500px;
     }
 }
 
@@ -50,50 +53,23 @@
 }
 
 .topnav__screens {
+    background-image: url(/Content/ImagesWork/topnav-screens-small.png);
     background-repeat: no-repeat;
-    background-size: contain;
-    padding-bottom: 90%;
+    background-size: cover;
+    padding-bottom: 120%;
 
     @extend %slide-left--initialState;
     @include transition-duration(2s);
 
-    @include breakpoint(max-width $breakpoint-mobileBig) {
-        background-image: url(/Content/ImagesWork/topnav-screens-large.png);
-        width: 100%;
-        margin-left: 0px;
-        margin-top: 0px;
-    }
-
-    @include breakpoint($breakpoint-mobileBig $breakpoint-phabletBig) {
-        background-image: url(/Content/ImagesWork/topnav-screens-large.png);
-        width: 100%;
-        margin-left: 0px;
-        margin-top: 0px;
-    }
-
-    @include breakpoint($breakpoint-phabletBig $breakpoint-tablet) {
-        background-image: url(/Content/ImagesWork/topnav-screens-large.png);
-        width: 100%;
-        margin-left: 0px;
-        margin-top: 0px;
-    }
-
-    @include breakpoint($breakpoint-tablet $breakpoint-netbook) {
-        background-image: url(/Content/ImagesWork/topnav-screens-large.png);
-        width: 100%;
-        margin-left: 0px;
-        margin-top: 0px;
-    }
-
-    @include breakpoint($breakpoint-netbook $breakpoint-notebook) {
-        background-image: url(/Content/ImagesWork/topnav-screens-large.png);
-        width: 100%;
-        margin-left: 0px;
-        margin-top: 0px;
+    @include breakpoint($breakpoint-tablet $breakpoint-notebook) {
+        background-image: url(/Content/ImagesWork/topnav-screens-medium.png);
+        background-size: contain;
+        padding-bottom: 80%;
     }
 
     @include breakpoint(min-width $breakpoint-notebook) {
         background-image: url(/Content/ImagesWork/topnav-screens-large.png);
+        background-size: contain;
         padding-bottom: 60%;
         width: 100%;
         margin-left: -120px;
@@ -107,9 +83,27 @@
 
 .topnav__finalScreensContainer {
     background-color: #171717;
-    position: relative;
     overflow: hidden;
+    padding: 3em;
+    position: relative;
+    text-align: center;
     width: 100%;
+}
+
+.topnav__videoContainer {
+    background-color: #000;
+    border-radius: 20px;
+    margin: 0 auto;
+    max-width: 1350px;
+    padding: 20px;
+
+    @include breakpoint($breakpoint-tablet $breakpoint-notebook) {
+        padding: 30px;
+    }
+
+    @include breakpoint(min-width $breakpoint-notebook) {
+        padding: 50px;
+    }
 }
 
 .topnav__finalScreens {
@@ -121,4 +115,16 @@
 
 .topnav__finalScreensContainer.in-view {
     @extend %slide-left--endState;
+}
+
+.topnav__summaryContainer {
+    height: 100%;
+}
+
+.topnav__summaryContainer-content {
+    text-align: center;
+    max-width: 830px;
+    margin: 0 auto;
+
+    @extend %box--spacious;
 }

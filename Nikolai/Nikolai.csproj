@@ -195,6 +195,7 @@
     <Content Include="Content\ImagesWork\topnav-heroImage_medium.jpg" />
     <Content Include="Content\ImagesWork\topnav-heroImage_small.jpg" />
     <Content Include="Content\ImagesWork\topnav-screens-large.png" />
+    <Content Include="Content\ImagesWork\topnav-screens-medium.png" />
     <Content Include="Content\ImagesWork\topnav-screens-small.png" />
     <Content Include="Content\Pages\Work-TopNav.css">
       <DependentUpon>Work-TopNav.scss</DependentUpon>
