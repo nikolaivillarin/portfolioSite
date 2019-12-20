@@ -70,6 +70,7 @@
     background-size: cover;
     float: right;
     overflow: visible;
+    z-index: 1;
 
     .rateQuote__imgContainer--container1, .rateQuote__imgContainer--container2 {
         img {

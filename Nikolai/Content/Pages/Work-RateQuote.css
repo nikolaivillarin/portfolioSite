@@ -81,7 +81,8 @@
   background-repeat: no-repeat;
   background-size: cover;
   float: right;
-  overflow: visible; }
+  overflow: visible;
+  z-index: 1; }
   .rateQuote__screensContainer--top .rateQuote__imgContainer--container1 img, .rateQuote__screensContainer--top .rateQuote__imgContainer--container2 img {
     z-index: 1; }
 
