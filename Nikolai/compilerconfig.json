@@ -10,5 +10,9 @@
   {
     "outputFile": "Content/Pages/Work-TopNav.css",
     "inputFile": "Content/Pages/Work-TopNav.scss"
+  },
+  {
+    "outputFile": "Content/Pages/Work-RateQuote.css",
+    "inputFile": "Content/Pages/Work-RateQuote.scss"
   }
 ]

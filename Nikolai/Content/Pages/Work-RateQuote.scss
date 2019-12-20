@@ -65,27 +65,21 @@
 }
 
 .rateQuote__screensContainer--top {
-    background-color: #d9d9d9;
+    background-color: #184d82;
     background-repeat: no-repeat;
     background-size: cover;
     float: right;
+    overflow: visible;
 
-    @include breakpoint(max-width $breakpoint-mobileBig) {
-        background-image: url(/Content/ImagesWork/ratequote-bgImg1_small.png);
-    }
-
-    @include breakpoint($breakpoint-mobileBig $breakpoint-tablet) {
-        background-image: url(/Content/ImagesWork/ratequote-bgImg1_large.png);
-    }
-
-    @include breakpoint(min-width $breakpoint-tablet) {
-        background-image: url(/Content/ImagesWork/ratequote-bgImg1_large.png);
+    .rateQuote__imgContainer--container1, .rateQuote__imgContainer--container2 {
+        img {
+            z-index: 1;
+        }
     }
 }
 
 .rateQuote__screensContainer--bottom {
     background-color: #184d82;
-    background: linear-gradient(to bottom, #1b5692, #164778);
     float: left;
 }
 
@@ -211,13 +205,8 @@
     @extend %box--spacious;
 
     @include breakpoint(min-width $breakpoint-tablet) {
-        font-size: 0.8em;
         height: 100%;
         min-height: 800px;
         width: 35%;
-    }
-
-    @include breakpoint((min-height $breakpoint-netbook)) {
-        font-size: 1em;
     }
 }

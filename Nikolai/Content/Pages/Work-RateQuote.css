@@ -3,14 +3,10 @@
 /*------------------------------------*    Partials
 \*------------------------------------*/
 .rateQuote__overviewContainer {
-  padding: 3em 2em;
-}
-
-@media (min-width: 600px) {
-  .rateQuote__overviewContainer {
-    padding: 2em 3em;
-  }
-}
+  padding: 3em 2em; }
+  @media (min-width: 600px) {
+    .rateQuote__overviewContainer {
+      padding: 2em 3em; } }
 
 .rateQuote__screen {
   opacity: 0;
@@ -22,8 +18,7 @@
   -moz-transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s linear;
   -o-transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s linear;
   -webkit-transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s linear;
-  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s linear;
-}
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s linear; }
 
 .rateQuote__screen.in-view {
   opacity: 1;
@@ -31,272 +26,164 @@
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   -webkit-transform: translateX(0);
-  transform: translateX(0);
-}
+  transform: translateX(0); }
 
 /*------------------------------------*    CSS Breakpoints for different devices
 \*------------------------------------*/
 .work-imgTile--rateQuote {
-  background-image: url(/Content/ImagesWork/rateQuote-tile.jpg);
-}
+  background-image: url(/Content/ImagesWork/rateQuote-tile.jpg); }
 
 .work-heroImage--rateQuote {
   padding: 20px;
   position: relative;
-  text-align: center;
-}
-
-@media (max-width: 400px) {
-  .work-heroImage--rateQuote {
-    background-image: url(/Content/ImagesWork/rateQuote-heroImage_small.jpg);
-  }
-}
-
-@media (min-width: 400px) and (max-width: 800px) {
-  .work-heroImage--rateQuote {
-    background-image: url(/Content/ImagesWork/rateQuote-heroImage_medium.jpg);
-  }
-}
-
-@media (min-width: 800px) {
-  .work-heroImage--rateQuote {
-    background-image: url(/Content/ImagesWork/rateQuote-heroImage_large.jpg);
-  }
-}
+  text-align: center; }
+  @media (max-width: 400px) {
+    .work-heroImage--rateQuote {
+      background-image: url(/Content/ImagesWork/rateQuote-heroImage_small.jpg); } }
+  @media (min-width: 400px) and (max-width: 800px) {
+    .work-heroImage--rateQuote {
+      background-image: url(/Content/ImagesWork/rateQuote-heroImage_medium.jpg); } }
+  @media (min-width: 800px) {
+    .work-heroImage--rateQuote {
+      background-image: url(/Content/ImagesWork/rateQuote-heroImage_large.jpg); } }
 
 .rateQuote-header > span {
   border: 1px solid #FFF;
   background-color: rgba(255, 255, 255, 0.5);
   display: inline-block;
-  padding: 0.1em 1em;
-}
+  padding: 0.1em 1em; }
 
 .rateQuote__content {
   height: 100%;
-  position: relative;
-}
+  position: relative; }
 
 .rateQuote__screensContainer {
   position: relative;
   overflow: hidden;
-  width: 100%;
-}
-
-@media (max-width: 400px) {
-  .rateQuote__screensContainer {
-    height: 500px;
-  }
-}
-
-@media (min-width: 400px) and (max-width: 600px) {
-  .rateQuote__screensContainer {
-    height: 700px;
-  }
-}
-
-@media (min-width: 600px) and (max-width: 800px) {
-  .rateQuote__screensContainer {
-    height: 900px;
-  }
-}
-
-@media (min-width: 800px) {
-  .rateQuote__screensContainer {
-    height: 100%;
-    min-height: 800px;
-    width: 65%;
-  }
-}
+  width: 100%; }
+  @media (max-width: 400px) {
+    .rateQuote__screensContainer {
+      height: 500px; } }
+  @media (min-width: 400px) and (max-width: 600px) {
+    .rateQuote__screensContainer {
+      height: 700px; } }
+  @media (min-width: 600px) and (max-width: 800px) {
+    .rateQuote__screensContainer {
+      height: 900px; } }
+  @media (min-width: 800px) {
+    .rateQuote__screensContainer {
+      height: 100%;
+      min-height: 800px;
+      width: 65%; } }
 
 .rateQuote__screensContainer--top {
-  background-color: #d9d9d9;
+  background-color: #184d82;
   background-repeat: no-repeat;
   background-size: cover;
   float: right;
-}
-
-@media (max-width: 400px) {
-  .rateQuote__screensContainer--top {
-    background-image: url(/Content/ImagesWork/ratequote-bgImg1_small.png);
-  }
-}
-
-@media (min-width: 400px) and (max-width: 800px) {
-  .rateQuote__screensContainer--top {
-    background-image: url(/Content/ImagesWork/ratequote-bgImg1_large.png);
-  }
-}
-
-@media (min-width: 800px) {
-  .rateQuote__screensContainer--top {
-    background-image: url(/Content/ImagesWork/ratequote-bgImg1_large.png);
-  }
-}
+  overflow: visible; }
+  .rateQuote__screensContainer--top .rateQuote__imgContainer--container1 img, .rateQuote__screensContainer--top .rateQuote__imgContainer--container2 img {
+    z-index: 1; }
 
 .rateQuote__screensContainer--bottom {
   background-color: #184d82;
-  background: linear-gradient(to bottom, #1b5692, #164778);
-  float: left;
-}
+  float: left; }
 
 .rateQuote__screen {
   width: 100%;
   -moz-transition-duration: 1.5s;
   -o-transition-duration: 1.5s;
   -webkit-transition-duration: 1.5s;
-  transition-duration: 1.5s;
-}
+  transition-duration: 1.5s; }
 
 .rateQuote__imgContainer {
-  position: absolute;
-}
-
-@media (max-width: 300px) {
-  .rateQuote__imgContainer--container1 {
-    left: 18px;
-    top: 150px;
-    width: 135vw;
-  }
-}
-
-@media (min-width: 300px) and (max-width: 400px) {
-  .rateQuote__imgContainer--container1 {
-    left: 18px;
-    top: 150px;
-    width: 135vw;
-  }
-}
-
-@media (min-width: 400px) and (max-width: 600px) {
-  .rateQuote__imgContainer--container1 {
-    left: 18px;
-    top: 200px;
-    width: 135vw;
-  }
-}
-
-@media (min-width: 600px) and (max-width: 700px) {
-  .rateQuote__imgContainer--container1 {
-    left: 18px;
-    top: 230px;
-    width: 135vw;
-  }
-}
-
-@media (min-width: 700px) and (max-width: 800px) {
-  .rateQuote__imgContainer--container1 {
-    left: 18px;
-    top: 230px;
-    width: 135vw;
-  }
-}
-
-@media (min-width: 800px) and (max-width: 1000px) {
-  .rateQuote__imgContainer--container1 {
-    left: 18px;
-    top: 230px;
-    width: 95vw;
-  }
-}
-
-@media (min-width: 1000px) {
-  .rateQuote__imgContainer--container1 {
-    left: 18px;
-    top: 230px;
-    width: 57vw;
-  }
-}
-
-@media (min-height: 1000px) and (orientation: portrait) {
-  .rateQuote__imgContainer--container1 {
-    left: 68px;
-    top: 480px;
-    width: 97vw;
-  }
-}
-
-@media (max-width: 300px) {
-  .rateQuote__imgContainer--container2 {
-    left: 8px;
-    top: 0;
-    width: 140vw;
-  }
-}
-
-@media (min-width: 300px) and (max-width: 400px) {
-  .rateQuote__imgContainer--container2 {
-    left: 8px;
-    top: 0;
-    width: 140vw;
-  }
-}
-
-@media (min-width: 400px) and (max-width: 600px) {
-  .rateQuote__imgContainer--container2 {
-    left: 8px;
-    top: 0;
-    width: 140vw;
-  }
-}
-
-@media (min-width: 600px) and (max-width: 700px) {
-  .rateQuote__imgContainer--container2 {
-    left: 8px;
-    top: 0;
-    width: 140vw;
-  }
-}
-
-@media (min-width: 700px) and (max-width: 800px) {
-  .rateQuote__imgContainer--container2 {
-    left: 8px;
-    top: 0;
-    width: 140vw;
-  }
-}
-
-@media (min-width: 800px) and (max-width: 1000px) {
-  .rateQuote__imgContainer--container2 {
-    left: 8px;
-    top: 0;
-    width: 100vw;
-  }
-}
-
-@media (min-width: 1000px) {
-  .rateQuote__imgContainer--container2 {
-    left: 8px;
-    top: 0;
-    width: 60vw;
-  }
-}
-
-@media (min-height: 1000px) and (orientation: portrait) {
-  .rateQuote__imgContainer--container2 {
-    left: 8px;
-    top: 70px;
-    width: 100vw;
-  }
-}
+  position: absolute; }
+  @media (max-width: 300px) {
+    .rateQuote__imgContainer--container1 {
+      left: 18px;
+      top: 150px;
+      width: 135vw; } }
+  @media (min-width: 300px) and (max-width: 400px) {
+    .rateQuote__imgContainer--container1 {
+      left: 18px;
+      top: 150px;
+      width: 135vw; } }
+  @media (min-width: 400px) and (max-width: 600px) {
+    .rateQuote__imgContainer--container1 {
+      left: 18px;
+      top: 200px;
+      width: 135vw; } }
+  @media (min-width: 600px) and (max-width: 700px) {
+    .rateQuote__imgContainer--container1 {
+      left: 18px;
+      top: 230px;
+      width: 135vw; } }
+  @media (min-width: 700px) and (max-width: 800px) {
+    .rateQuote__imgContainer--container1 {
+      left: 18px;
+      top: 230px;
+      width: 135vw; } }
+  @media (min-width: 800px) and (max-width: 1000px) {
+    .rateQuote__imgContainer--container1 {
+      left: 18px;
+      top: 230px;
+      width: 95vw; } }
+  @media (min-width: 1000px) {
+    .rateQuote__imgContainer--container1 {
+      left: 18px;
+      top: 230px;
+      width: 57vw; } }
+  @media (min-height: 1000px) and (orientation: portrait) {
+    .rateQuote__imgContainer--container1 {
+      left: 68px;
+      top: 480px;
+      width: 97vw; } }
+  @media (max-width: 300px) {
+    .rateQuote__imgContainer--container2 {
+      left: 8px;
+      top: 0;
+      width: 140vw; } }
+  @media (min-width: 300px) and (max-width: 400px) {
+    .rateQuote__imgContainer--container2 {
+      left: 8px;
+      top: 0;
+      width: 140vw; } }
+  @media (min-width: 400px) and (max-width: 600px) {
+    .rateQuote__imgContainer--container2 {
+      left: 8px;
+      top: 0;
+      width: 140vw; } }
+  @media (min-width: 600px) and (max-width: 700px) {
+    .rateQuote__imgContainer--container2 {
+      left: 8px;
+      top: 0;
+      width: 140vw; } }
+  @media (min-width: 700px) and (max-width: 800px) {
+    .rateQuote__imgContainer--container2 {
+      left: 8px;
+      top: 0;
+      width: 140vw; } }
+  @media (min-width: 800px) and (max-width: 1000px) {
+    .rateQuote__imgContainer--container2 {
+      left: 8px;
+      top: 0;
+      width: 100vw; } }
+  @media (min-width: 1000px) {
+    .rateQuote__imgContainer--container2 {
+      left: 8px;
+      top: 0;
+      width: 60vw; } }
+  @media (min-height: 1000px) and (orientation: portrait) {
+    .rateQuote__imgContainer--container2 {
+      left: 8px;
+      top: 70px;
+      width: 100vw; } }
 
 .rateQuote__overviewContainer {
   float: right;
-  width: 100%;
-}
-
-@media (min-width: 800px) {
-  .rateQuote__overviewContainer {
-    font-size: 0.8em;
-    height: 100%;
-    min-height: 800px;
-    width: 35%;
-  }
-}
-
-@media (min-height: 1000px) {
-  .rateQuote__overviewContainer {
-    font-size: 1em;
-  }
-}
-
-/*# sourceMappingURL=Work-RateQuote.css.map */
+  width: 100%; }
+  @media (min-width: 800px) {
+    .rateQuote__overviewContainer {
+      height: 100%;
+      min-height: 800px;
+      width: 35%; } }
