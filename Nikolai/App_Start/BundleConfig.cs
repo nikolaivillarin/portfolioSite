@@ -22,7 +22,8 @@ namespace Nikolai
                 "~/Content/Pages/Work-Boxgrove.css",
                 "~/Content/Pages/Work-RateQuote.css",
                 "~/Content/Pages/Work-HR.css",
-                "~/Content/Pages/Work-TopNav.css"
+                "~/Content/Pages/Work-TopNav.css",
+                "~/Content/Pages/Work-Dashboard.css"
             ));
 
             bundles.Add(new ScriptBundle("~/Content/libraries").Include(
@@ -87,6 +88,10 @@ namespace Nikolai
 
             bundles.Add(new ScriptBundle("~/Content/workTopNav").Include(
                 "~/ViewScripts/workTopNav.js"
+            ));
+
+            bundles.Add(new ScriptBundle("~/Content/workDashboard").Include(
+                "~/ViewScripts/workDashboard.js"
             ));
         }
     }

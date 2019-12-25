@@ -211,6 +211,7 @@
     <Content Include="Content\ImagesWork\dashboard\Dashboard_Team_Large.png" />
     <Content Include="Content\ImagesWork\dashboard\Dashboard_Team_Medium.png" />
     <Content Include="Content\ImagesWork\dashboard\Dashboard_Team_Small.png" />
+    <Content Include="Content\ImagesWork\dashboard\Dashboard_Tile.jpg" />
     <Content Include="Content\ImagesWork\hr\hr-heroImage_large.jpg" />
     <Content Include="Content\ImagesWork\hr\hr-heroImage_medium.jpg" />
     <Content Include="Content\ImagesWork\hr\hr-heroImage_small.jpg" />
@@ -232,7 +233,6 @@
     <Content Include="Content\ImagesWork\ratequote\ratequote-image3_large.png" />
     <Content Include="Content\ImagesWork\ratequote\ratequote-image4_large.png" />
     <Content Include="Content\ImagesWork\ratequote\rateQuote-tile.jpg" />
-    <Content Include="Content\ImagesWork\dashboard\Dashboard-Tile.jpg" />
     <Content Include="Content\ImagesWork\topnav\topnav-heroImage_large.jpg" />
     <Content Include="Content\ImagesWork\topnav\topnav-heroImage_medium.jpg" />
     <Content Include="Content\ImagesWork\topnav\topnav-heroImage_small.jpg" />
@@ -240,6 +240,12 @@
     <Content Include="Content\ImagesWork\topnav\topnav-screens-medium.png" />
     <Content Include="Content\ImagesWork\topnav\topnav-screens-small.png" />
     <Content Include="Content\ImagesWork\topnav\topnav-tile.jpg" />
+    <Content Include="Content\Pages\Work-Dashboard.css">
+      <DependentUpon>Work-Dashboard.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Pages\Work-Dashboard.min.css">
+      <DependentUpon>Work-Dashboard.css</DependentUpon>
+    </Content>
     <Content Include="Content\Pages\Work-TopNav.css">
       <DependentUpon>Work-TopNav.scss</DependentUpon>
     </Content>
@@ -472,6 +478,7 @@
     <Content Include="Fonts\AlegreyaSans-Regular.ttf" />
     <Content Include="Fonts\AlegreyaSans-Thin.ttf" />
     <Content Include="Fonts\AlegreyaSans-ThinItalic.ttf" />
+    <Content Include="Content\Pages\Work-Dashboard.scss" />
     <None Include="Properties\PublishProfiles\Local Host.pubxml" />
     <None Include="Properties\PublishProfiles\Winhost Release.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
@@ -506,6 +513,7 @@
     <Content Include="ViewScripts\homePage.js" />
     <Content Include="ViewScripts\menuPage.js" />
     <Content Include="ViewScripts\workBoxgrove.js" />
+    <Content Include="ViewScripts\workDashboard.js" />
     <Content Include="ViewScripts\workTopNav.js" />
     <Content Include="ViewScripts\workHR.js" />
     <Content Include="ViewScripts\workMultiplex.js" />
@@ -574,6 +582,8 @@
     <Content Include="Views\StyleGuide\InternalScroll.cshtml" />
     <Content Include="Views\Work\TopNav.cshtml" />
     <Content Include="Views\Work\_topnav.cshtml" />
+    <Content Include="Views\Work\_dashboard.cshtml" />
+    <Content Include="Views\Work\Dashboard.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

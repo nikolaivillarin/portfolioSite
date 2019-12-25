@@ -1,0 +1,9 @@
+﻿@import '../Atoms/_boxes';
+@import '../Atoms/_mixins';
+@import '../Atoms/_transitions';
+@import '../Breakpoint/_breakpoint';
+@import '../Atoms/_breakpoints';
+
+.work-imgTile--dashboard {
+    background-image: url(/Content/ImagesWork/dashboard/Dashboard_Tile.jpg);
+}

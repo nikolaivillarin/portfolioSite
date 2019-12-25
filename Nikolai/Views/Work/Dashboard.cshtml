@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Nikolai Villarin | Grand and Toy Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section MetaDescription {
+    <meta name="description" content="Provide the customer with a customized experience on the second most important page in an e-commerce site, which is the homepage after login." />
+    <meta name="keywords" content="Nikolai Villarin Web Portfolio, Work, Grand and Toy, Dashboard" />
+}
+
+<div id="pnlPages" class="pages-container"
+     data-nv-eagerlyload="\Home\HomePartial, \Work\WorkPartial, \About\AboutPartial, \Contact\ContactPartial">
+    @Html.Partial("_dashboard")
+</div>

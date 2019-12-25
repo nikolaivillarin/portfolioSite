@@ -79,5 +79,17 @@ namespace Nikolai.Controllers
         {
             return PartialView("_topnav");
         }
+
+        [HttpGet]
+        public ActionResult Dashboard()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public ActionResult DashboardPartial()
+        {
+            return PartialView("_dashboard");
+        }
     }
 }

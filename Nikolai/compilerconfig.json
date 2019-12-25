@@ -26,5 +26,9 @@
   {
     "outputFile": "Content/Pages/Work-Multiplex.css",
     "inputFile": "Content/Pages/Work-Multiplex.scss"
+  },
+  {
+    "outputFile": "Content/Pages/Work-Dashboard.css",
+    "inputFile": "Content/Pages/Work-Dashboard.scss"
   }
 ]
