@@ -31,19 +31,19 @@
 /*------------------------------------*    CSS Breakpoints for different devices
 \*------------------------------------*/
 .work-imgTile--topnav {
-  background-image: url(/Content/ImagesWork/topnav-tile.jpg); }
+  background-image: url(/Content/ImagesWork/topnav/topnav-tile.jpg); }
 
 .work-heroImage--topnav {
   background-position: top center;
-  background-image: url(/Content/ImagesWork/topnav-heroImage_small.jpg);
+  background-image: url(/Content/ImagesWork/topnav/topnav-heroImage_small.jpg);
   padding-top: 50px;
   text-align: center; }
   @media (min-width: 800px) and (max-width: 1200px) {
     .work-heroImage--topnav {
-      background-image: url(/Content/ImagesWork/topnav-heroImage_medium.jpg); } }
+      background-image: url(/Content/ImagesWork/topnav/topnav-heroImage_medium.jpg); } }
   @media (min-width: 1200px) {
     .work-heroImage--topnav {
-      background-image: url(/Content/ImagesWork/topnav-heroImage_large.jpg); } }
+      background-image: url(/Content/ImagesWork/topnav/topnav-heroImage_large.jpg); } }
   .work-heroImage--topnav .topnav-header {
     padding: 0.5em 1em;
     background-color: rgba(255, 255, 255, 0.9); }
@@ -69,7 +69,7 @@
   width: 100%; }
 
 .topnav__screens {
-  background-image: url(/Content/ImagesWork/topnav-screens-small.png);
+  background-image: url(/Content/ImagesWork/topnav/topnav-screens-small.png);
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 120%;
@@ -79,12 +79,12 @@
   transition-duration: 2s; }
   @media (min-width: 800px) and (max-width: 1200px) {
     .topnav__screens {
-      background-image: url(/Content/ImagesWork/topnav-screens-medium.png);
+      background-image: url(/Content/ImagesWork/topnav/topnav-screens-medium.png);
       background-size: contain;
       padding-bottom: 80%; } }
   @media (min-width: 1200px) {
     .topnav__screens {
-      background-image: url(/Content/ImagesWork/topnav-screens-large.png);
+      background-image: url(/Content/ImagesWork/topnav/topnav-screens-large.png);
       background-size: contain;
       padding-bottom: 60%;
       width: 100%;

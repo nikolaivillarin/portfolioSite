@@ -5,20 +5,20 @@
 @import '../Atoms/_breakpoints';
 
 .work-imgTile--boxgrove {
-    background-image: url(/Content/ImagesWork/boxgrove-tile.jpg);
+    background-image: url(/Content/ImagesWork/boxgrove/boxgrove-tile.jpg);
 }
 
 .work-heroImage--boxgrove {
     @include breakpoint(max-width $breakpoint-mobileBig) {
-        background-image: url(/Content/ImagesWork/boxgrove-heroImage_small.jpg);
+        background-image: url(/Content/ImagesWork/boxgrove/boxgrove-heroImage_small.jpg);
     }
 
     @include breakpoint($breakpoint-mobileBig $breakpoint-tablet) {
-        background-image: url(/Content/ImagesWork/boxgrove-heroImage_medium.jpg);
+        background-image: url(/Content/ImagesWork/boxgrove/boxgrove-heroImage_medium.jpg);
     }
 
     @include breakpoint(min-width $breakpoint-tablet) {
-        background-image: url(/Content/ImagesWork/boxgrove-heroImage_large.jpg);
+        background-image: url(/Content/ImagesWork/boxgrove/boxgrove-heroImage_large.jpg);
     }
 }
 
@@ -87,27 +87,27 @@
         width: 100%;
 
         @include breakpoint(max-width $breakpoint-mobile) {
-            background-image: url(/Content/ImagesWork/boxgrove-image_small.png);
+            background-image: url(/Content/ImagesWork/boxgrove/boxgrove-image_small.png);
             bottom: 0;
             padding-bottom: 77.91%;
             top: 100px;
         }
 
         @include breakpoint($breakpoint-mobile $breakpoint-mobileBig) {
-            background-image: url(/Content/ImagesWork/boxgrove-image_small.png);
+            background-image: url(/Content/ImagesWork/boxgrove/boxgrove-image_small.png);
             bottom: 0;
             padding-bottom: 77.91%;
             top: 140px;
         }
 
         @include breakpoint($breakpoint-mobileBig $breakpoint-notebook) {
-            background-image: url(/Content/ImagesWork/boxgrove-image_medium.png);
+            background-image: url(/Content/ImagesWork/boxgrove/boxgrove-image_medium.png);
             padding-bottom: 70.17%;
             top: 140px;
         }
 
         @include breakpoint(min-width $breakpoint-notebook) {
-            background-image: url(/Content/ImagesWork/boxgrove-image_large.png);
+            background-image: url(/Content/ImagesWork/boxgrove/boxgrove-image_large.png);
             padding-bottom: 56.60%;
             top: 50px;
         }

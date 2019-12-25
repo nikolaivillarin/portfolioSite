@@ -5,21 +5,21 @@
 @import '../Atoms/_breakpoints';
 
 .work-imgTile--topnav {
-    background-image: url(/Content/ImagesWork/topnav-tile.jpg);
+    background-image: url(/Content/ImagesWork/topnav/topnav-tile.jpg);
 }
 
 .work-heroImage--topnav {
     background-position: top center;
-    background-image: url(/Content/ImagesWork/topnav-heroImage_small.jpg);
+    background-image: url(/Content/ImagesWork/topnav/topnav-heroImage_small.jpg);
     padding-top: 50px;
     text-align: center;
 
     @include breakpoint($breakpoint-tablet $breakpoint-notebook) {
-        background-image: url(/Content/ImagesWork/topnav-heroImage_medium.jpg);
+        background-image: url(/Content/ImagesWork/topnav/topnav-heroImage_medium.jpg);
     }
 
     @include breakpoint(min-width $breakpoint-notebook) {
-        background-image: url(/Content/ImagesWork/topnav-heroImage_large.jpg);
+        background-image: url(/Content/ImagesWork/topnav/topnav-heroImage_large.jpg);
     }
 
     .topnav-header {
@@ -53,7 +53,7 @@
 }
 
 .topnav__screens {
-    background-image: url(/Content/ImagesWork/topnav-screens-small.png);
+    background-image: url(/Content/ImagesWork/topnav/topnav-screens-small.png);
     background-repeat: no-repeat;
     background-size: cover;
     padding-bottom: 120%;
@@ -62,13 +62,13 @@
     @include transition-duration(2s);
 
     @include breakpoint($breakpoint-tablet $breakpoint-notebook) {
-        background-image: url(/Content/ImagesWork/topnav-screens-medium.png);
+        background-image: url(/Content/ImagesWork/topnav/topnav-screens-medium.png);
         background-size: contain;
         padding-bottom: 80%;
     }
 
     @include breakpoint(min-width $breakpoint-notebook) {
-        background-image: url(/Content/ImagesWork/topnav-screens-large.png);
+        background-image: url(/Content/ImagesWork/topnav/topnav-screens-large.png);
         background-size: contain;
         padding-bottom: 60%;
         width: 100%;

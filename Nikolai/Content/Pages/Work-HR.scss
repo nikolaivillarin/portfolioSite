@@ -5,22 +5,22 @@
 @import '../Atoms/_breakpoints';
 
 .work-imgTile--hr {
-    background-image: url(/Content/ImagesWork/hr-tile.jpg);
+    background-image: url(/Content/ImagesWork/hr/hr-tile.jpg);
 }
 
 .work-heroImage--hr {
     background-position: top center;
 
     @include breakpoint(max-width $breakpoint-mobileBig) {
-        background-image: url(/Content/ImagesWork/hr-heroImage_small.jpg);
+        background-image: url(/Content/ImagesWork/hr/hr-heroImage_small.jpg);
     }
 
     @include breakpoint($breakpoint-mobileBig $breakpoint-tablet) {
-        background-image: url(/Content/ImagesWork/hr-heroImage_medium.jpg);
+        background-image: url(/Content/ImagesWork/hr/hr-heroImage_medium.jpg);
     }
 
     @include breakpoint(min-width $breakpoint-tablet) {
-        background-image: url(/Content/ImagesWork/hr-heroImage_large.jpg);
+        background-image: url(/Content/ImagesWork/hr/hr-heroImage_large.jpg);
     }
 }
 
@@ -57,39 +57,39 @@
     @include transition-duration(2s);
 
     @include breakpoint(max-width $breakpoint-mobileBig) {
-        background-image: url(/Content/ImagesWork/hr-screens_small.png);
+        background-image: url(/Content/ImagesWork/hr/hr-screens_small.png);
         width: 165%;
         margin-left: -100px;
     }
 
     @include breakpoint($breakpoint-mobileBig $breakpoint-phabletBig) {
-        background-image: url(/Content/ImagesWork/hr-screens_medium.png);
+        background-image: url(/Content/ImagesWork/hr/hr-screens_medium.png);
         width: 140%;
         margin-left: -100px;
     }
 
     @include breakpoint($breakpoint-phabletBig $breakpoint-tablet) {
-        background-image: url(/Content/ImagesWork/hr-screens_medium.png);
+        background-image: url(/Content/ImagesWork/hr/hr-screens_medium.png);
         width: 160%;
         margin-left: -200px;
     }
 
     @include breakpoint($breakpoint-tablet $breakpoint-netbook) {
-        background-image: url(/Content/ImagesWork/hr-screens_large.png);
+        background-image: url(/Content/ImagesWork/hr/hr-screens_large.png);
         width: 160%;
         margin-left: -200px;
         margin-top: -100px;
     }
 
     @include breakpoint($breakpoint-netbook $breakpoint-notebook) {
-        background-image: url(/Content/ImagesWork/hr-screens_large.png);
+        background-image: url(/Content/ImagesWork/hr/hr-screens_large.png);
         width: 130%;
         margin-left: -200px;
         margin-top: -100px;
     }
 
     @include breakpoint(min-width $breakpoint-notebook) {
-        background-image: url(/Content/ImagesWork/hr-screens_large.png);
+        background-image: url(/Content/ImagesWork/hr/hr-screens_large.png);
         padding-bottom: 65%;
         width: 115%;
         margin-left: -200px;

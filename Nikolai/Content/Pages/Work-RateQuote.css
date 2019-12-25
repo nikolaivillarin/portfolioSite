@@ -31,7 +31,7 @@
 /*------------------------------------*    CSS Breakpoints for different devices
 \*------------------------------------*/
 .work-imgTile--rateQuote {
-  background-image: url(/Content/ImagesWork/rateQuote-tile.jpg); }
+  background-image: url(/Content/ImagesWork/ratequote/rateQuote-tile.jpg); }
 
 .work-heroImage--rateQuote {
   padding: 20px;
@@ -39,13 +39,13 @@
   text-align: center; }
   @media (max-width: 400px) {
     .work-heroImage--rateQuote {
-      background-image: url(/Content/ImagesWork/rateQuote-heroImage_small.jpg); } }
+      background-image: url(/Content/ImagesWork/ratequote/rateQuote-heroImage_small.jpg); } }
   @media (min-width: 400px) and (max-width: 800px) {
     .work-heroImage--rateQuote {
-      background-image: url(/Content/ImagesWork/rateQuote-heroImage_medium.jpg); } }
+      background-image: url(/Content/ImagesWork/ratequote/rateQuote-heroImage_medium.jpg); } }
   @media (min-width: 800px) {
     .work-heroImage--rateQuote {
-      background-image: url(/Content/ImagesWork/rateQuote-heroImage_large.jpg); } }
+      background-image: url(/Content/ImagesWork/ratequote/rateQuote-heroImage_large.jpg); } }
 
 .rateQuote-header > span {
   border: 1px solid #FFF;

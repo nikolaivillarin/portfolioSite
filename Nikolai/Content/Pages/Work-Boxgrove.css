@@ -3,14 +3,10 @@
 /*------------------------------------*    Partials
 \*------------------------------------*/
 .boxgrove-summary__content {
-  padding: 3em 2em;
-}
-
-@media (min-width: 600px) {
-  .boxgrove-summary__content {
-    padding: 2em 3em;
-  }
-}
+  padding: 3em 2em; }
+  @media (min-width: 600px) {
+    .boxgrove-summary__content {
+      padding: 2em 3em; } }
 
 .boxgrove-screensImg {
   opacity: 0;
@@ -22,8 +18,7 @@
   -moz-transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s linear;
   -o-transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s linear;
   -webkit-transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s linear;
-  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s linear;
-}
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s linear; }
 
 .boxgrove-screensImg.in-view {
   opacity: 1;
@@ -31,85 +26,58 @@
   -ms-transform: translateX(0);
   -o-transform: translateX(0);
   -webkit-transform: translateX(0);
-  transform: translateX(0);
-}
+  transform: translateX(0); }
 
 /*------------------------------------*    CSS Breakpoints for different devices
 \*------------------------------------*/
 .work-imgTile--boxgrove {
-  background-image: url(/Content/ImagesWork/boxgrove-tile.jpg);
-}
+  background-image: url(/Content/ImagesWork/boxgrove/boxgrove-tile.jpg); }
 
 @media (max-width: 400px) {
   .work-heroImage--boxgrove {
-    background-image: url(/Content/ImagesWork/boxgrove-heroImage_small.jpg);
-  }
-}
+    background-image: url(/Content/ImagesWork/boxgrove/boxgrove-heroImage_small.jpg); } }
 
 @media (min-width: 400px) and (max-width: 800px) {
   .work-heroImage--boxgrove {
-    background-image: url(/Content/ImagesWork/boxgrove-heroImage_medium.jpg);
-  }
-}
+    background-image: url(/Content/ImagesWork/boxgrove/boxgrove-heroImage_medium.jpg); } }
 
 @media (min-width: 800px) {
   .work-heroImage--boxgrove {
-    background-image: url(/Content/ImagesWork/boxgrove-heroImage_large.jpg);
-  }
-}
+    background-image: url(/Content/ImagesWork/boxgrove/boxgrove-heroImage_large.jpg); } }
 
 @media (max-width: 600px) {
   .boxgrove-headings {
     margin-left: 2em;
     max-width: 23em;
-    padding-top: 10px;
-  }
-}
+    padding-top: 10px; } }
 
 @media (min-width: 600px) {
   .boxgrove-headings {
     text-align: center;
-    padding-top: 20px;
-  }
-}
+    padding-top: 20px; } }
 
 @media (max-height: 600px) {
   .boxgrove-headings {
-    padding-top: 5px;
-  }
-}
+    padding-top: 5px; } }
 
 .boxgrove-screens {
   background-color: #CCC;
   background: linear-gradient(to bottom right, #F2F2F2, #CCC);
   position: relative;
   overflow: hidden;
-  width: 100%;
-}
-
-@media (max-width: 300px) {
-  .boxgrove-screens {
-    height: 400px;
-  }
-}
-
-@media (min-width: 300px) and (max-width: 400px) {
-  .boxgrove-screens {
-    height: 500px;
-  }
-}
-
-@media (min-width: 400px) and (max-width: 800px) {
-  .boxgrove-screens {
-    height: 650px;
-  }
-}
-
-@media (min-width: 800px) {
-  .boxgrove-screens {
-    height: 750px;
-  }
-}
+  width: 100%; }
+  @media (max-width: 300px) {
+    .boxgrove-screens {
+      height: 400px; } }
+  @media (min-width: 300px) and (max-width: 400px) {
+    .boxgrove-screens {
+      height: 500px; } }
+  @media (min-width: 400px) and (max-width: 800px) {
+    .boxgrove-screens {
+      height: 650px; } }
+  @media (min-width: 800px) {
+    .boxgrove-screens {
+      height: 750px; } }
 
 .boxgrove-screensImg {
   display: block;
@@ -117,69 +85,44 @@
   -moz-transition-duration: 2s;
   -o-transition-duration: 2s;
   -webkit-transition-duration: 2s;
-  transition-duration: 2s;
-}
-
-.boxgrove-screensImg--title {
-  float: right;
-  margin-right: 15%;
-  margin-top: 2%;
-  max-width: 370px;
-}
-
-@media (max-width: 600px) {
+  transition-duration: 2s; }
   .boxgrove-screensImg--title {
-    margin-left: 2%;
-  }
-}
-
-.boxgrove-screensImg--image1 {
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-}
-
-@media (max-width: 300px) {
+    float: right;
+    margin-right: 15%;
+    margin-top: 2%;
+    max-width: 370px; }
+    @media (max-width: 600px) {
+      .boxgrove-screensImg--title {
+        margin-left: 2%; } }
   .boxgrove-screensImg--image1 {
-    background-image: url(/Content/ImagesWork/boxgrove-image_small.png);
-    bottom: 0;
-    padding-bottom: 77.91%;
-    top: 100px;
-  }
-}
-
-@media (min-width: 300px) and (max-width: 400px) {
-  .boxgrove-screensImg--image1 {
-    background-image: url(/Content/ImagesWork/boxgrove-image_small.png);
-    bottom: 0;
-    padding-bottom: 77.91%;
-    top: 140px;
-  }
-}
-
-@media (min-width: 400px) and (max-width: 1200px) {
-  .boxgrove-screensImg--image1 {
-    background-image: url(/Content/ImagesWork/boxgrove-image_medium.png);
-    padding-bottom: 70.17%;
-    top: 140px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .boxgrove-screensImg--image1 {
-    background-image: url(/Content/ImagesWork/boxgrove-image_large.png);
-    padding-bottom: 56.60%;
-    top: 50px;
-  }
-}
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%; }
+    @media (max-width: 300px) {
+      .boxgrove-screensImg--image1 {
+        background-image: url(/Content/ImagesWork/boxgrove/boxgrove-image_small.png);
+        bottom: 0;
+        padding-bottom: 77.91%;
+        top: 100px; } }
+    @media (min-width: 300px) and (max-width: 400px) {
+      .boxgrove-screensImg--image1 {
+        background-image: url(/Content/ImagesWork/boxgrove/boxgrove-image_small.png);
+        bottom: 0;
+        padding-bottom: 77.91%;
+        top: 140px; } }
+    @media (min-width: 400px) and (max-width: 1200px) {
+      .boxgrove-screensImg--image1 {
+        background-image: url(/Content/ImagesWork/boxgrove/boxgrove-image_medium.png);
+        padding-bottom: 70.17%;
+        top: 140px; } }
+    @media (min-width: 1200px) {
+      .boxgrove-screensImg--image1 {
+        background-image: url(/Content/ImagesWork/boxgrove/boxgrove-image_large.png);
+        padding-bottom: 56.60%;
+        top: 50px; } }
 
 .boxgrove-summary {
   height: 100%;
-  width: 100%;
-}
-
-.boxgrove-summary__content {
-  text-align: center;
-}
-
-/*# sourceMappingURL=Work-Boxgrove.css.map */
+  width: 100%; }
+  .boxgrove-summary__content {
+    text-align: center; }

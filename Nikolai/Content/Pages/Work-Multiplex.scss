@@ -5,7 +5,7 @@
 @import '../Atoms/_breakpoints';
 
 .work-imgTile--multiplex {
-    background-image: url(/Content/ImagesWork/multiplex-tile.jpg);
+    background-image: url(/Content/ImagesWork/multiplex/multiplex-tile.jpg);
 }
 
 .work-heroImage--multiplex {
@@ -13,15 +13,15 @@
     text-align: center;
 
     @include breakpoint(max-width $breakpoint-mobileBig) {
-        background-image: url(/Content/ImagesWork/multiplex-heroImage_small.jpg);
+        background-image: url(/Content/ImagesWork/multiplex/multiplex-heroImage_small.jpg);
     }
 
     @include breakpoint($breakpoint-mobileBig $breakpoint-tablet) {
-        background-image: url(/Content/ImagesWork/multiplex-heroImage_medium.jpg);
+        background-image: url(/Content/ImagesWork/multiplex/multiplex-heroImage_medium.jpg);
     }
 
     @include breakpoint(min-width $breakpoint-tablet) {
-        background-image: url(/Content/ImagesWork/multiplex-heroImage_large.jpg);
+        background-image: url(/Content/ImagesWork/multiplex/multiplex-heroImage_large.jpg);
     }
 }
 
@@ -58,7 +58,7 @@
 }
 
 .multiplex__screen {
-    background-image: url(/Content/ImagesWork/multiplex-screens_small.png);
+    background-image: url(/Content/ImagesWork/multiplex/multiplex-screens_small.png);
     background-repeat: no-repeat;
     background-size: cover;
     padding-bottom: 104.33%;
@@ -67,11 +67,11 @@
     @include transition-duration(1.5s);
 
     @include breakpoint(max-width $breakpoint-mobileBig) {
-        background-image: url(/Content/ImagesWork/multiplex-screens_small.png);
+        background-image: url(/Content/ImagesWork/multiplex/multiplex-screens_small.png);
     }
 
     @include breakpoint(min-width $breakpoint-mobileBig) {
-        background-image: url(/Content/ImagesWork/multiplex-screens_large.png);
+        background-image: url(/Content/ImagesWork/multiplex/multiplex-screens_large.png);
     }
 
     @include breakpoint(max-width $breakpoint-netbook) {

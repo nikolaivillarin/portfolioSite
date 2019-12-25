@@ -5,7 +5,7 @@
 @import '../Atoms/_breakpoints';
 
 .work-imgTile--rateQuote {
-    background-image: url(/Content/ImagesWork/rateQuote-tile.jpg);
+    background-image: url(/Content/ImagesWork/ratequote/rateQuote-tile.jpg);
 }
 
 .work-heroImage--rateQuote {
@@ -14,15 +14,15 @@
     text-align: center;
 
     @include breakpoint(max-width $breakpoint-mobileBig) {
-        background-image: url(/Content/ImagesWork/rateQuote-heroImage_small.jpg);
+        background-image: url(/Content/ImagesWork/ratequote/rateQuote-heroImage_small.jpg);
     }
 
     @include breakpoint($breakpoint-mobileBig $breakpoint-tablet) {
-        background-image: url(/Content/ImagesWork/rateQuote-heroImage_medium.jpg);
+        background-image: url(/Content/ImagesWork/ratequote/rateQuote-heroImage_medium.jpg);
     }
 
     @include breakpoint(min-width $breakpoint-tablet) {
-        background-image: url(/Content/ImagesWork/rateQuote-heroImage_large.jpg);
+        background-image: url(/Content/ImagesWork/ratequote/rateQuote-heroImage_large.jpg);
     }
 }
 

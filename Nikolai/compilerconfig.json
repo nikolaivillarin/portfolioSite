@@ -14,5 +14,17 @@
   {
     "outputFile": "Content/Pages/Work-RateQuote.css",
     "inputFile": "Content/Pages/Work-RateQuote.scss"
+  },
+  {
+    "outputFile": "Content/Pages/Work-Boxgrove.css",
+    "inputFile": "Content/Pages/Work-Boxgrove.scss"
+  },
+  {
+    "outputFile": "Content/Pages/Work-HR.css",
+    "inputFile": "Content/Pages/Work-HR.scss"
+  },
+  {
+    "outputFile": "Content/Pages/Work-Multiplex.css",
+    "inputFile": "Content/Pages/Work-Multiplex.scss"
   }
 ]
