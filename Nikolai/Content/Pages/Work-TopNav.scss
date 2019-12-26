@@ -70,10 +70,10 @@
     @include breakpoint(min-width $breakpoint-notebook) {
         background-image: url(/Content/ImagesWork/topnav/topnav-screens-large.png);
         background-size: contain;
-        padding-bottom: 60%;
-        width: 100%;
-        margin-left: -120px;
-        margin-top: -130px;
+        padding-bottom: 55%;
+        width: 90%;
+        margin-left: 40px;
+        margin-top: 40px;
     }
 }
 

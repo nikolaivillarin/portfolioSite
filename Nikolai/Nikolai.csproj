@@ -183,6 +183,7 @@
     <Content Include="Content\ImagesWork\boxgrove\boxgrove-image_medium.png" />
     <Content Include="Content\ImagesWork\boxgrove\boxgrove-image_small.png" />
     <Content Include="Content\ImagesWork\boxgrove\boxgrove-tile.jpg" />
+    <Content Include="Content\ImagesWork\dashboard\Dashboard_BG_Pattern.jpg" />
     <Content Include="Content\ImagesWork\dashboard\Dashboard_HeroBanner_large.png" />
     <Content Include="Content\ImagesWork\dashboard\Dashboard_HeroBanner_small.png" />
     <Content Include="Content\ImagesWork\dashboard\Dashboard_Onboarding_Assets_1.gif" />
