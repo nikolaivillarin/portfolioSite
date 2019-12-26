@@ -306,18 +306,21 @@ ol {
 
 .text-secondary--blurred {
     color: transparent;
+    font-weight: 200;
 
     text-shadow: 0 0 5px $color-fontBlur--secondary;
 }
 
 .text-secondary--OnDark {
     color: $color-font--secondaryOnDark;
+    font-weight: 200;
 
     @extend %font-smoothing--onDark;
 }
 
 .text-secondary--OnDarkBlurred {
     color: transparent;
+    font-weight: 200;
 
     text-shadow: 0 0 5px $color-fontBlur--secondaryOnDark;
 }

@@ -6,3 +6,37 @@
 \*------------------------------------*/
 .work-imgTile--dashboard {
   background-image: url(/Content/ImagesWork/dashboard/Dashboard_Tile.jpg); }
+
+.work-heroImage--dashboard {
+  background-position: top center;
+  background-size: 500px 287px;
+  background-image: url(/Content/ImagesWork/dashboard/Dashboard_HeroBanner_small.png);
+  text-align: center; }
+  @media (min-width: 1200px) {
+    .work-heroImage--dashboard {
+      background-image: url(/Content/ImagesWork/dashboard/Dashboard_HeroBanner_large.png);
+      background-position: 130% 35%;
+      background-size: 1134px 651px; } }
+  .work-heroImage--dashboard::before {
+    background-color: #000;
+    border-radius: 1000px 0 0 0;
+    bottom: 0;
+    content: "";
+    height: 69%;
+    position: absolute;
+    right: 0;
+    width: 100%;
+    z-index: -1; }
+  .work-heroImage--dashboard .dashboard-content-1 {
+    text-align: left;
+    max-width: 570px;
+    padding: 5.5em 1em 1em 4em; }
+  .work-heroImage--dashboard .dashboard-content-2 {
+    bottom: 0;
+    max-width: 810px;
+    padding: 1em;
+    position: absolute;
+    right: 0;
+    text-align: left; }
+    .work-heroImage--dashboard .dashboard-content-2 .header-large {
+      margin-bottom: 0.5em; }

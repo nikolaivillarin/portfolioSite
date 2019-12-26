@@ -2628,13 +2628,16 @@ ul, ol {
 
 .text-secondary--blurred {
   color: transparent;
+  font-weight: 200;
   text-shadow: 0 0 5px rgba(51, 51, 51, 0.5); }
 
 .text-secondary--OnDark {
-  color: #FFF; }
+  color: #FFF;
+  font-weight: 200; }
 
 .text-secondary--OnDarkBlurred {
   color: transparent;
+  font-weight: 200;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
 
 /*------------------------------------*    Alignment
