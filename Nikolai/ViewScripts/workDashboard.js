@@ -21,9 +21,13 @@ DashboardPage.prototype.Initialize = function () {
 
     this.ScrollAnimation = new window.ScrollAnimation('work-dashboard', { EnableParallax: true });
 
-    var rellax = new Rellax('.jsRellax', {
-        wrapper: '.jsRellaxContainer'
-    });
+    // Delay to ensure images load before Rellax positions them
+    window.setTimeout(function () {
+        var rellax = new Rellax('.jsRellax', {
+            wrapper: '.jsRellaxContainer',
+            center: true
+        });
+    }, 3000);
 };
 
 DashboardPage.prototype.OnPageChange = function (pageId) {
