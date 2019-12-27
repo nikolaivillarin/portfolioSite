@@ -88,21 +88,9 @@ $content-max-width: 570px;
             @include transition(transform 0.3s);
         }
 
-        img:nth-child(2) {
-            left: -20%;
-            top: 580px;
-            width: 150px;
-
-            @include transition(transform 0.3s);
-        }
-
         @include breakpoint(min-width $breakpoint-phablet) {
             img:nth-child(1) {
                 right: 20%;
-            }
-
-            img:nth-child(2) {
-                left: 10%;
             }
         }
 
@@ -110,13 +98,6 @@ $content-max-width: 570px;
             img:nth-child(1) {
                 right: 720px;
                 top: 180px;
-                width: auto;
-            }
-
-            img:nth-child(2) {
-                left: auto;
-                right: -60px;
-                top: 670px;
                 width: auto;
             }
         }
