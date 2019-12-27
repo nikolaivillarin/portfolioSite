@@ -20,6 +20,8 @@ DashboardPage.prototype.Initialize = function () {
     );
 
     this.ScrollAnimation = new window.ScrollAnimation('work-dashboard', { EnableParallax: true });
+
+    var rellax = new Rellax('.jsRellax');
 };
 
 DashboardPage.prototype.OnPageChange = function (pageId) {

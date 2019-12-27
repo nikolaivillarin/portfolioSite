@@ -487,7 +487,6 @@
     <Content Include="robots.txt" />
     <Content Include="Scripts\canvasUtilities.js" />
     <Content Include="Scripts\clientErrorLogger.js" />
-    <Content Include="Scripts\faillingLeaves.js" />
     <Content Include="Scripts\fastclick.js" />
     <Content Include="Scripts\floatingBall.js" />
     <Content Include="Scripts\imagesloaded.pkgd.js" />
@@ -505,6 +504,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\pageTransition.js" />
+    <Content Include="Scripts\parallax.js" />
+    <Content Include="Scripts\rellax.js" />
     <Content Include="Scripts\scrollAnimations.js" />
     <Content Include="ViewScripts\aboutPage.js" />
     <Content Include="ViewScripts\loader.js" />
