@@ -47,7 +47,7 @@ $content-max-width: 570px;
 
     .dashboard-content-1 {
         text-align: left;
-        padding: 5.5em 4em 1em;
+        padding: 3em 4em 1em;
         width: 100%;
 
         @include breakpoint(min-width $breakpoint-notebook) {
@@ -71,7 +71,7 @@ $content-max-width: 570px;
 
         @include breakpoint(min-width $breakpoint-notebook) {
             bottom: 0;
-            padding: 1em;
+            padding: 1em 3em;
         }
     }
 

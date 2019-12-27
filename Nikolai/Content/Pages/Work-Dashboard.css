@@ -63,7 +63,7 @@
         position: fixed; } }
   .work-heroImage--dashboard .dashboard-content-1 {
     text-align: left;
-    padding: 5.5em 4em 1em;
+    padding: 3em 4em 1em;
     width: 100%; }
     @media (min-width: 1200px) {
       .work-heroImage--dashboard .dashboard-content-1 {
@@ -82,7 +82,7 @@
     @media (min-width: 1200px) {
       .work-heroImage--dashboard .dashboard-content-2 {
         bottom: 0;
-        padding: 1em; } }
+        padding: 1em 3em; } }
   .work-heroImage--dashboard .dashboard-page1-props img {
     position: absolute; }
   .work-heroImage--dashboard .dashboard-page1-props img:nth-child(1) {
