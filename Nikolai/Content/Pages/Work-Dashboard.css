@@ -163,21 +163,21 @@
     top: 50px; }
   .dashboard-page4 .dashboard-page4-screens img:nth-child(2) {
     right: 142px;
-    top: 240px; }
+    top: -123px; }
   .dashboard-page4 .dashboard-page4-screens img:nth-child(3) {
     right: 313px;
-    top: 560px; }
+    top: 388px; }
   .dashboard-page4 .dashboard-page4-screens img:nth-child(4) {
     right: -38px;
     top: 950px;
     z-index: 1; }
   .dashboard-page4 .dashboard-page4-screens img:nth-child(5) {
     right: 54px;
-    top: 1120px;
+    top: 450px;
     z-index: 0; }
   .dashboard-page4 .dashboard-page4-screens img:nth-child(6) {
     right: 272px;
-    top: 1380px;
+    top: 1017px;
     z-index: 0; }
   .dashboard-page4 .dashboard-page4-screens img:nth-child(7) {
     right: 701px;
@@ -189,31 +189,31 @@
     z-index: 0; }
   .dashboard-page4 .dashboard-page4-props img:nth-child(1) {
     right: 990px;
-    top: 30px;
+    top: 1160px;
     z-index: 1; }
   .dashboard-page4 .dashboard-page4-props img:nth-child(2) {
     right: 470px;
-    top: 230px;
+    top: 464px;
     z-index: 1; }
   .dashboard-page4 .dashboard-page4-props img:nth-child(3) {
     right: 200px;
-    top: 720px;
+    top: 954px;
     z-index: 0; }
   .dashboard-page4 .dashboard-page4-props img:nth-child(4) {
     right: 550px;
-    top: 1050px;
+    top: 1744px;
     z-index: 1; }
   .dashboard-page4 .dashboard-page4-props img:nth-child(5) {
     right: 50px;
-    top: 1350px;
+    top: 2480px;
     z-index: 1; }
   .dashboard-page4 .dashboard-page4-props img:nth-child(6) {
     right: 860px;
-    top: 1510px;
+    top: 1873px;
     z-index: 0; }
   .dashboard-page4 .dashboard-page4-props img:nth-child(7) {
     right: 640px;
-    top: 1860px;
+    top: 2554px;
     z-index: 1; }
 
 .dashboard-page5 {

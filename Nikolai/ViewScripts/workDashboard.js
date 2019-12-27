@@ -21,7 +21,9 @@ DashboardPage.prototype.Initialize = function () {
 
     this.ScrollAnimation = new window.ScrollAnimation('work-dashboard', { EnableParallax: true });
 
-    var rellax = new Rellax('.jsRellax');
+    var rellax = new Rellax('.jsRellax', {
+        wrapper: '.jsRellaxContainer'
+    });
 };
 
 DashboardPage.prototype.OnPageChange = function (pageId) {
