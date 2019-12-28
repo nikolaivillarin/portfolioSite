@@ -6,6 +6,10 @@
 
 $content-max-width: 570px;
 
+.work-dashboard {
+    background: url(/Content/ImagesWork/dashboard/Dashboard_BG_Pattern.jpg) repeat transparent;
+}
+
 .work-imgTile--dashboard {
     background-image: url(/Content/ImagesWork/dashboard/Dashboard_Tile.jpg);
 }
@@ -14,14 +18,21 @@ $content-max-width: 570px;
     background-position: center center;
     background-size: 500px 287px;
     background-image: url(/Content/ImagesWork/dashboard/Dashboard_HeroBanner_small.png);
-    padding-bottom: 1000px;
+    min-height: 1000px;
     position: relative;
     text-align: center;
 
+    @include breakpoint(min-width $breakpoint-phabletBig) {
+        background-image: url(/Content/ImagesWork/dashboard/Dashboard_HeroBanner_medium.png);
+        background-size: 800px 459px;
+        min-height: 1100px;
+    }
+
     @include breakpoint(min-width $breakpoint-notebook) {
         background-image: url(/Content/ImagesWork/dashboard/Dashboard_HeroBanner_large.png);
-        background-position: right 35%;
         background-size: 915px 651px;
+        background-position: right 35%;
+        min-height: 1000px;
     }
 
     &::before {
@@ -39,7 +50,7 @@ $content-max-width: 570px;
     .work-IndicatorContainer {
         display: none;
 
-        @include breakpoint(min-width $breakpoint-notebook) {
+        @include breakpoint(min-width 1600px) {
             display: block;
             position: fixed;
         }
@@ -84,8 +95,6 @@ $content-max-width: 570px;
             right: -10%;
             top: 370px;
             width: 100px;
-
-            @include transition(transform 0.3s);
         }
 
         @include breakpoint(min-width $breakpoint-phablet) {
@@ -104,83 +113,34 @@ $content-max-width: 570px;
     }
 }
 
-.dashboard-page2 {
-    display: none;
-    background: url(/Content/ImagesWork/dashboard/Dashboard_BG_Pattern.jpg) repeat transparent;
-    padding: 6em 4em 0;
-    position: relative;
-
-    @include breakpoint(min-width $breakpoint-phabletBig) {
-        display: block;
-    }
-
-    .header-large {
-        margin-bottom: 0.3em;
-    }
-
-    .dashboard-page2-second-bg {
-        background-color: #000;
-        content: "";
-        height: 205px;
-        position: absolute;
-        right: 0;
-        top: 0;
-        width: 100%;
-        z-index: 0;
-
-        @include breakpoint(min-width $breakpoint-notebook) {
-            height: 440px;
-        }
-    }
-
-    .dashboard-page2-content {
-        position: relative;
-        z-index: 1;
-    }
-
-    .dashboard-team-image {
-        background-image: url(/Content/ImagesWork/dashboard/Dashboard_Team_Large.png);
-        background-repeat: no-repeat;
-        background-size: contain;
-        margin: 0 auto;
-        max-width: 1442px;
-        padding-bottom: 300px;
-
-        @extend %slide-left--initialState;
-        @include transition-duration(3s);
-
-        @include breakpoint(min-width $breakpoint-tablet) {
-            padding-bottom: 400px;
-        }
-
-        @include breakpoint(min-width $breakpoint-notebook) {
-            padding-bottom: 700px;
-        }
-    }
-
-    .dashboard-team-image.in-view {
-        @extend %slide-left--endState;
-    }
-}
-
 .dashboard-page3 {
+    background-color: #000;
+    border-bottom-left-radius: 700px;
+    margin-top: -1px;
+    overflow: hidden;
     position: relative;
+
+    @include breakpoint(min-width $breakpoint-notebook) {
+        padding-top: 8em;
+        padding-bottom: 15em;
+    }
 
     .header-large {
         margin-bottom: 0.3em;
     }
 
     .dashboard-page3-content1 {
-        background: url(/Content/ImagesWork/dashboard/Dashboard_BG_Pattern.jpg) repeat transparent;
         padding: 1em 4em 2em;
+        width: 100%;
 
         @include breakpoint(min-width $breakpoint-notebook) {
-            padding: 1em 4em 4em;
+            float: left;
+            padding: 1em 0 4em 4em;
+            width: 27%;
         }
     }
 
     .dashboard-page3-content2 {
-        background-color: #000;
         padding: 2em 4em;
 
         @include breakpoint(min-width $breakpoint-notebook) {
@@ -188,26 +148,14 @@ $content-max-width: 570px;
         }
     }
 
-    .dashboard-page3-content-container {
-        width: 100%;
-
-        @include breakpoint(min-width $breakpoint-notebook) {
-            width: 27%;
-        }
-    }
-
     .dashboard-page3-screens {
-        background-color: #000;
         overflow: hidden;
         padding: 1.4em 5em;
         width: 100%;
 
         @include breakpoint(min-width $breakpoint-notebook) {
-            background-color: transparent;
-            position: absolute;
+            float: left;
             margin-right: -13%;
-            right: 0;
-            top: 0;
             width: 86%;
         }
 
@@ -226,35 +174,51 @@ $content-max-width: 570px;
         .dashboard-page3-screen1 {
             width: 100%;
 
-            @include breakpoint(min-width $breakpoint-phabletBig) {
+            @include breakpoint(min-width $breakpoint-notebook) {
                 width: 50%;
             }
         }
 
         .dashboard-page3-screen2 {
-            width: 50%;
+            width: 100%;
+
+            @include breakpoint(min-width $breakpoint-phablet) {
+                width: 50%;
+            }
         }
 
         .dashboard-page3-screen3 {
-            width: 50%;
+            width: 100%;
 
-            @include breakpoint(min-width $breakpoint-phabletBig) {
+            @include breakpoint(min-width $breakpoint-phablet) {
+                width: 50%;
+            }
+
+            @include breakpoint(min-width $breakpoint-notebook) {
                 width: 33.3333%;
             }
         }
 
         .dashboard-page3-screen4 {
-            width: 50%;
+            width: 100%;
 
-            @include breakpoint(min-width $breakpoint-phabletBig) {
+            @include breakpoint(min-width $breakpoint-phablet) {
+                width: 50%;
+            }
+
+            @include breakpoint(min-width $breakpoint-notebook) {
                 width: 33.3333%;
             }
         }
 
         .dashboard-page3-screen5 {
-            width: 50%;
+            width: 100%;
 
-            @include breakpoint(min-width $breakpoint-phabletBig) {
+            @include breakpoint(min-width $breakpoint-phablet) {
+                width: 50%;
+            }
+
+            @include breakpoint(min-width $breakpoint-notebook) {
                 width: 33.3333%;
             }
         }
@@ -262,7 +226,6 @@ $content-max-width: 570px;
 }
 
 .dashboard-page4 {
-    background: url(/Content/ImagesWork/dashboard/Dashboard_BG_Pattern.jpg) repeat transparent;
     padding: 4em;
     padding-bottom: 1580px;
     position: relative;
@@ -280,6 +243,7 @@ $content-max-width: 570px;
     }
 
     .dashboard-page4-content-container {
+        max-width: $content-max-width;
         padding: 4em;
         position: absolute;
         top: 0;
@@ -287,14 +251,15 @@ $content-max-width: 570px;
 
         @include breakpoint(min-width $breakpoint-notebook) {
             left: 4em;
-            max-width: $content-max-width;
             padding: 0;
             top: 760px;
         }
     }
 
+    $screen-y-adjustment: 200px;
+
     .dashboard-page4-screens {
-        margin-top: 150px;
+        margin-top: $screen-y-adjustment;
         position: relative;
 
         @include transform(scale(0.5) translateX(173px));
@@ -358,6 +323,15 @@ $content-max-width: 570px;
             top: 1870px;
             z-index: 1;
 
+            @include breakpoint(min-width $breakpoint-tablet) {
+                right: -79px;
+                top: 2030px;
+            }
+
+            @include breakpoint(min-width 950px) {
+                right: -99px;
+            }
+
             @include breakpoint(min-width $breakpoint-notebook) {
                 right: 701px;
                 top: 1520px;
@@ -377,7 +351,7 @@ $content-max-width: 570px;
     }
 
     .dashboard-page4-props {
-        margin-top: 150px;
+        margin-top: $screen-y-adjustment;
         position: relative;
 
         @include transform(scale(0.5) translateX(173px));
@@ -429,9 +403,13 @@ $content-max-width: 570px;
         }
 
         img:nth-child(6) {
-            right: 880px;
+            right: -230px;
             top: 1280px;
             z-index: -1;
+
+            @include breakpoint(min-width $breakpoint-notebook) {
+                right: 880px;
+            }
         }
 
         img:nth-child(7) {
