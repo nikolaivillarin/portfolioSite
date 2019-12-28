@@ -39,8 +39,7 @@ namespace Nikolai
                 switch (Response.StatusCode)
                 {
                     case 404:
-                        routeData.Values["action"] = "Http404";
-                        break;
+                        return; // Ignore 404 Errors
                 }
             }
 
