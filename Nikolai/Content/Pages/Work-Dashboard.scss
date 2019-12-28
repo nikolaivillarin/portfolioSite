@@ -72,7 +72,7 @@ $content-max-width: 570px;
     .dashboard-content-2 {
         bottom: 3em;
         max-width: 810px;
-        padding: 5em;
+        padding: 4em;
         position: absolute;
         right: 0;
         text-align: left;
@@ -320,22 +320,13 @@ $content-max-width: 570px;
         }
 
         img:nth-child(7) {
-            right: -249px;
-            top: 1870px;
+            left: 400px;
+            top: 2090px;
             z-index: 1;
 
-            @include breakpoint(min-width $breakpoint-tablet) {
-                right: -79px;
-                top: 2030px;
-            }
-
-            @include breakpoint(min-width 950px) {
-                right: -99px;
-            }
-
             @include breakpoint(min-width $breakpoint-notebook) {
-                right: 701px;
-                top: 1520px;
+                left: 640px;
+                top: 1510px;
             }
         }
 

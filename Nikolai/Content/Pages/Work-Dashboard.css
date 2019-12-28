@@ -63,7 +63,7 @@
   .work-heroImage--dashboard .dashboard-content-2 {
     bottom: 3em;
     max-width: 810px;
-    padding: 5em;
+    padding: 4em;
     position: absolute;
     right: 0;
     text-align: left; }
@@ -238,20 +238,13 @@
           right: 272px;
           top: 1380px; } }
     .dashboard-page4 .dashboard-page4-screens img:nth-child(7) {
-      right: -249px;
-      top: 1870px;
+      left: 400px;
+      top: 2090px;
       z-index: 1; }
-      @media (min-width: 800px) {
-        .dashboard-page4 .dashboard-page4-screens img:nth-child(7) {
-          right: -79px;
-          top: 2030px; } }
-      @media (min-width: 950px) {
-        .dashboard-page4 .dashboard-page4-screens img:nth-child(7) {
-          right: -99px; } }
       @media (min-width: 1200px) {
         .dashboard-page4 .dashboard-page4-screens img:nth-child(7) {
-          right: 701px;
-          top: 1520px; } }
+          left: 640px;
+          top: 1510px; } }
     .dashboard-page4 .dashboard-page4-screens img:nth-child(8) {
       left: -630px;
       top: 2120px;
