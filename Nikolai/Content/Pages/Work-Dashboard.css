@@ -106,8 +106,8 @@
     @media (min-width: 1200px) {
       .dashboard-page3 .dashboard-page3-content1 {
         float: left;
-        padding: 1em 0 4em 4em;
-        width: 27%; } }
+        padding: 1em 0 4em 9em;
+        width: 30%; } }
   .dashboard-page3 .dashboard-page3-content2 {
     padding: 2em 4em; }
     @media (min-width: 1200px) {
@@ -121,7 +121,7 @@
       .dashboard-page3 .dashboard-page3-screens {
         float: left;
         margin-right: -13%;
-        width: 86%; } }
+        width: 80%; } }
     .dashboard-page3 .dashboard-page3-screens > div {
       float: left;
       padding-bottom: 20px;

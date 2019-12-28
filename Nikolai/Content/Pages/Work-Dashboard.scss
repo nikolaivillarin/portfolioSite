@@ -136,8 +136,8 @@ $content-max-width: 570px;
 
         @include breakpoint(min-width $breakpoint-notebook) {
             float: left;
-            padding: 1em 0 4em 4em;
-            width: 27%;
+            padding: 1em 0 4em 9em;
+            width: 30%;
         }
     }
 
@@ -157,7 +157,7 @@ $content-max-width: 570px;
         @include breakpoint(min-width $breakpoint-notebook) {
             float: left;
             margin-right: -13%;
-            width: 86%;
+            width: 80%;
         }
 
         > div {
