@@ -2227,7 +2227,8 @@ $color-dial--ring3: #2294e5;*/
 .menu {
   background-color: #2294e5;
   font-size: 1.2em;
-  text-align: center; }
+  text-align: center;
+  -webkit-overflow-scrolling: auto !important; }
   .menu:before {
     background-color: #399fe8;
     display: block;
@@ -2628,16 +2629,16 @@ ul, ol {
 
 .text-secondary--blurred {
   color: transparent;
-  font-weight: 200;
+  font-weight: 300;
   text-shadow: 0 0 5px rgba(51, 51, 51, 0.5); }
 
 .text-secondary--OnDark {
   color: #FFF;
-  font-weight: 200; }
+  font-weight: 300; }
 
 .text-secondary--OnDarkBlurred {
   color: transparent;
-  font-weight: 200;
+  font-weight: 300;
   text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); }
 
 /*------------------------------------*    Alignment

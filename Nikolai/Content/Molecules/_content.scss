@@ -8,6 +8,7 @@
     background-color: $color-background--blue;
     font-size: 1.2em;
     text-align: center;
+    -webkit-overflow-scrolling: auto !important; // To fix bug on iPhone. Without this images disappear
 
     @extend %box--fullPage;
     @extend %box-level--modular;
