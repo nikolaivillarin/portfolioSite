@@ -202,14 +202,14 @@ NVNavBar.prototype.SetPageState = function (pageID) {
     switch (pageState) {
         case 'default':
             $('body').css('overflow', 'hidden');
-            $('#pnlPages > section').css({
+            $('[data-nv-page]').css({
                 'overflow-y': 'hidden'
                 , '-webkit-overflow-scrolling': 'unset'
             });
             break;
         case 'scrollable':
             $('body').css('overflow', 'hidden');
-            $('#pnlPages > section').css({
+            $('[data-nv-page]').css({
                 'overflow-y': 'auto'
                 , '-webkit-overflow-scrolling': 'touch'
             });

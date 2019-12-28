@@ -11,7 +11,8 @@
 /*------------------------------------*    CSS Breakpoints for different devices
 \*------------------------------------*/
 .work-dashboard {
-  background: url(/Content/ImagesWork/dashboard/Dashboard_BG_Pattern.jpg) repeat transparent; }
+  background: url(/Content/ImagesWork/dashboard/Dashboard_BG_Pattern.jpg) repeat transparent;
+  -webkit-overflow-scrolling: auto !important; }
 
 .work-imgTile--dashboard {
   background-image: url(/Content/ImagesWork/dashboard/Dashboard_Tile.jpg); }
@@ -36,7 +37,7 @@
       min-height: 1000px; } }
   .work-heroImage--dashboard::before {
     background-color: #000;
-    border-radius: 1000px 0 0 0;
+    border-top-left-radius: 1000px;
     bottom: 0;
     content: "";
     height: 69%;

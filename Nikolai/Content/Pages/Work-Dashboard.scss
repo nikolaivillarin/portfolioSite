@@ -8,6 +8,7 @@ $content-max-width: 570px;
 
 .work-dashboard {
     background: url(/Content/ImagesWork/dashboard/Dashboard_BG_Pattern.jpg) repeat transparent;
+    -webkit-overflow-scrolling: auto !important; // To fix bug on iPhone. Without this images disappear
 }
 
 .work-imgTile--dashboard {
@@ -37,7 +38,7 @@ $content-max-width: 570px;
 
     &::before {
         background-color: #000;
-        border-radius: 1000px 0 0 0;
+        border-top-left-radius: 1000px;
         bottom: 0;
         content: "";
         height: 69%;
