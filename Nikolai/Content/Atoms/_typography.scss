@@ -42,6 +42,7 @@ body {
 \*------------------------------------*/
 .header-large {
     font-size: 3em;
+    font-weight: 100;
     line-height: 1em;
 }
 
@@ -68,6 +69,10 @@ body {
     margin-bottom: 0.1em;
 
     @extend %font-smoothing;
+
+    &.header-large {
+        font-weight: 100;
+    }
 }
 
 .header-main--onDark {
@@ -78,6 +83,10 @@ body {
     margin-bottom: 0.1em;
 
     @extend %font-smoothing--onDark;
+
+    &.header-large {
+        font-weight: 100;
+    }
 }
 
 .header-main--faded {
@@ -86,6 +95,10 @@ body {
     font-weight: 200;
     font-style: normal;
     margin-bottom: 0.1em;
+
+    &.header-large {
+        font-weight: 100;
+    }
 }
 
 .header-secondary {

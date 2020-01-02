@@ -868,6 +868,7 @@ $color-dial--ring3: #2294e5;*/
 \*------------------------------------*/
 .nav__itemContainer::before, .nav__itemContainer::after, .nav-bar__startLine, .nav-bar__fillerLine {
   background-color: #000;
+  background-color: rgba(0, 0, 0, 0.3);
   box-shadow: rgba(255, 255, 255, 0.4) 0 1px;
   content: "";
   display: inline-block;
@@ -875,6 +876,7 @@ $color-dial--ring3: #2294e5;*/
 
 .nav__itemContainer--onDark .nav__itemContainer::before, .nav__itemContainer--onDark .nav__itemContainer::after, .nav-bar--onDark .nav-bar::before, .nav-bar--onDark .nav-bar__startLine, .nav-bar--onDark .nav-bar__fillerLine {
   background-color: #FFF;
+  background-color: rgba(255, 255, 255, 0.3);
   box-shadow: none;
   content: "";
   display: inline-block;
@@ -954,6 +956,7 @@ $color-dial--ring3: #2294e5;*/
 .nav-item__circle {
   border-radius: 50%;
   border: 1px solid #000;
+  border-color: rgba(0, 0, 0, 0.3);
   box-shadow: rgba(255, 255, 255, 0.4) 0 1px, rgba(255, 255, 255, 0.4) 0 1px inset;
   content: '';
   position: absolute;
@@ -1004,6 +1007,7 @@ $color-dial--ring3: #2294e5;*/
 
 .nav__itemContainer--onDark .nav__item .nav-item__circle {
   border: 1px solid #FFF;
+  border-color: rgba(255, 255, 255, 0.3);
   box-shadow: none; }
 
 .nav__itemContainer--onDark .nav__link {
@@ -2464,6 +2468,7 @@ body {
 \*------------------------------------*/
 .header-large {
   font-size: 3em;
+  font-weight: 100;
   line-height: 1em; }
 
 .header-medium {
@@ -2484,6 +2489,8 @@ body {
   font-weight: 200;
   font-style: normal;
   margin-bottom: 0.1em; }
+  .header-main.header-large {
+    font-weight: 100; }
 
 .header-main--onDark {
   color: #FFF;
@@ -2491,6 +2498,8 @@ body {
   font-weight: 200;
   font-style: normal;
   margin-bottom: 0.1em; }
+  .header-main--onDark.header-large {
+    font-weight: 100; }
 
 .header-main--faded {
   color: #999;
@@ -2498,6 +2507,8 @@ body {
   font-weight: 200;
   font-style: normal;
   margin-bottom: 0.1em; }
+  .header-main--faded.header-large {
+    font-weight: 100; }
 
 .header-secondary {
   color: #333333;

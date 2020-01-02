@@ -30,6 +30,9 @@
 
 /*------------------------------------*    CSS Breakpoints for different devices
 \*------------------------------------*/
+.work-ratequote {
+  background-color: #FFF; }
+
 .work-imgTile--rateQuote {
   background-image: url(/Content/ImagesWork/ratequote/rateQuote-tile.jpg); }
 

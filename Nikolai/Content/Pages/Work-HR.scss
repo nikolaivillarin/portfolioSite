@@ -127,6 +127,8 @@
 }
 
 .hr__summaryContainer-content {
+    max-width: 900px;
+    margin: 0 auto;
     text-align: center;
 
     @extend %box--spacious;

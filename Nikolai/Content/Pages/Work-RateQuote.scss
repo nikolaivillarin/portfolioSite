@@ -4,6 +4,10 @@
 @import '../Breakpoint/_breakpoint';
 @import '../Atoms/_breakpoints';
 
+.work-ratequote {
+    background-color: #FFF;
+}
+
 .work-imgTile--rateQuote {
     background-image: url(/Content/ImagesWork/ratequote/rateQuote-tile.jpg);
 }
