@@ -34,5 +34,9 @@
   {
     "outputFile": "Content/Pages/Loading.css",
     "inputFile": "Content/Pages/Loading.scss"
+  },
+  {
+    "outputFile": "Content/Pages/Home.css",
+    "inputFile": "Content/Pages/Home.scss"
   }
 ]
