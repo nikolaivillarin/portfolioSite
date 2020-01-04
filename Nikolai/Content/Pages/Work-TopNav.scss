@@ -45,40 +45,77 @@
 }
 
 .topnav__screensContainer {
-    background-color: #02abe8;
-    background: linear-gradient(to bottom right,#02abe8, #02a7e3);
+    background: url(/Content/ImagesWork/topnav/topnav-blueprint-pattern.jpg) repeat;
+    padding: 3em 2em;
     position: relative;
     overflow: hidden;
     width: 100%;
-}
 
-.topnav__screens {
-    background-image: url(/Content/ImagesWork/topnav/topnav-screens-small.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    padding-bottom: 120%;
-
-    @extend %slide-left--initialState;
-    @include transition-duration(2s);
-
-    @include breakpoint($breakpoint-tablet $breakpoint-notebook) {
-        background-image: url(/Content/ImagesWork/topnav/topnav-screens-medium.png);
-        background-size: contain;
-        padding-bottom: 80%;
+    .header-main {
+        width: 100%
     }
 
-    @include breakpoint(min-width $breakpoint-notebook) {
-        background-image: url(/Content/ImagesWork/topnav/topnav-screens-large.png);
-        background-size: contain;
-        padding-bottom: 55%;
-        width: 90%;
-        margin-left: 40px;
-        margin-top: 40px;
+    .topnav_screens_col {
+        float: left;
+
+        img {
+            float: left;
+            width: 100%;
+        }
+    }
+
+    .topnav_screens_col1 {
+        width: 100%;
+
+        @include breakpoint(min-width $breakpoint-netbook) {
+            margin-top: -1.5em;
+            width: 60%;
+        }
+
+        img {
+            max-width: 1028px;
+        }
+    }
+
+    .topnav_screens_col2 {
+        padding-top: 4em;
+        width: 80%;
+
+        @include breakpoint(min-width $breakpoint-netbook) {
+            width: 30%;
+        }
+    }
+
+    .topnav_screens_col3 {
+        width: 20%;
+
+        @include breakpoint(min-width $breakpoint-netbook) {
+            width: 10%;
+        }
+
+        img {
+            max-width: 98px;
+
+            @include transform(translate3d(0px, 290px, 0px));
+        }
     }
 }
 
-.topnav__screens.in-view {
-    @extend %slide-left--endState;
+.topnav__deviceShots {
+    background-color: #1f2229;
+
+    .header-main--onDark {
+        padding: 48px 32px 32px;
+    }
+
+    img {
+        float: left;
+        width: 100%;
+
+        @include breakpoint(min-width $breakpoint-phabletBig) {
+            width: 50%;
+        }
+    }
 }
 
 .topnav__finalScreensContainer {

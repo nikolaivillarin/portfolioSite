@@ -36,7 +36,8 @@ namespace Nikolai
                 "~/Scripts/jquery.validate.unobtrusive.js",
                 "~/Scripts/jquery.validate.unobtrusive.extension.js",
                 "~/Scripts/imagesloaded.pkgd.js",
-                "~/Scripts/fastclick.js"
+                "~/Scripts/fastclick.js",
+                "~/Scripts/rellax.js"
             ));
 
             bundles.Add(new ScriptBundle("~/Content/scripts").Include(

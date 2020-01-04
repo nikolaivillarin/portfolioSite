@@ -20,6 +20,14 @@ TopNavPage.prototype.Initialize = function () {
     );
 
     this.ScrollAnimation = new window.ScrollAnimation('work-topnav', { EnableParallax: true });
+
+    // Delay to ensure images load before Rellax positions them
+    window.setTimeout(function () {
+        var rellax = new Rellax('.jsTopNavRellax', {
+            wrapper: '.jsTopNavRellaxContainer',
+            center: true
+        });
+    }, 3000);
 };
 
 TopNavPage.prototype.OnPageChange = function (pageId) {
