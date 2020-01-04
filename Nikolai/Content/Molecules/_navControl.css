@@ -211,11 +211,11 @@ $color-dial--ring3: #2294e5;*/
 
 .nav__itemContainer--expanded .nav__item .nav-item__circle, .nav__itemContainer--selected .nav__item .nav-item__circle {
   box-shadow: none;
-  -moz-transform: scale(2);
-  -ms-transform: scale(2);
-  -o-transform: scale(2);
-  -webkit-transform: scale(2);
-  transform: scale(2); }
+  -moz-transform: scale(1.8);
+  -ms-transform: scale(1.8);
+  -o-transform: scale(1.8);
+  -webkit-transform: scale(1.8);
+  transform: scale(1.8); }
 
 .nav__itemContainer--expanded .nav__link, .nav__itemContainer--selected .nav__link {
   opacity: 0; }
@@ -226,14 +226,14 @@ $color-dial--ring3: #2294e5;*/
 .nav__itemContainer--selected .nav__link {
   display: inline-block;
   font-weight: 400;
-  margin-top: 20px;
+  margin-top: 12px;
   opacity: 1; }
 
 .nav__itemContainer--lastItem::after {
   opacity: 0; }
 
 .nav-container {
-  height: 130px;
+  height: 120px;
   overflow: hidden;
   width: 100%; }
 

@@ -108,19 +108,11 @@
 }
 
 .home-subHeader {
-    span {
-        display: inline-block;
-
-        @extend %slide-top--initialState;
-        @include transition-delay(0);
-    }
+    @extend %slide-top--initialState;
+    @include transition-delay(0);
 }
 
 .home-subHeader.in-view {
-    span {
-        display: inline-block;
-
-        @include transition-delay(0.5s);
-        @extend %slide-top--endState;
-    }
+    @include transition-delay(0.5s);
+    @extend %slide-top--endState;
 }

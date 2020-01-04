@@ -8,7 +8,7 @@
 \*------------------------------------*/
 $nav-item--diameter: 40px;
 $nav-icon--diameter: 20px; // This value must match was is specified in the icons
-$nav-label--spacing: 20px; // Spacing for the selected nav label
+$nav-label--spacing: 12px; // Spacing for the selected nav label
 $nav-itemContainer--width: $nav-item--diameter * 2;
 $nav-itemContainer--height: $nav-item--diameter * 2;
 $filler-line--width: $nav-item--diameter / 2;
@@ -216,7 +216,7 @@ $total-pages: 4;
         .nav-item__circle {
             box-shadow: none;
 
-            @include transform(scale(2));
+            @include transform(scale(1.8));
         }
     }
 
@@ -249,7 +249,7 @@ $total-pages: 4;
 }
 
 .nav-container {
-    height: 130px; // Used for positioning when nav control is hidden
+    height: 120px; // Used for positioning when nav control is hidden
     overflow: hidden;
     width: 100%;
 }

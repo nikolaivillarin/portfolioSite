@@ -181,6 +181,12 @@ NVNavBar.prototype.SetDialState = function (pageID, state) {
             this.DialControl.LoadingState();
 
             break;
+        case 'initialLoad':
+            this.Disabled = true;
+
+            this.DialControl.InitialLoadingState();
+
+            break;
         default:
             this.Disabled = false;
 
@@ -1114,6 +1120,7 @@ NVDial.prototype.DefaultState = function () {
     this.$Element
         .addClass('nvDial--draggable')
         .removeClass('nvDial--loading')
+        .removeClass('nvDial--initialLoading')
         .draggable('enable');
 
     this.isClickable = false;
@@ -1121,7 +1128,7 @@ NVDial.prototype.DefaultState = function () {
     var $dialLight = $('[data-nv-dial="light"]', this.$Element);
     var $dialLogo = $('[data-nv-dial="logo"]', this.$Element);
 
-    $dialLight.removeClass('nvDial__button-light--red');
+    $dialLight.removeClass('nvDial__button-light--black');
     $dialLight.removeClass('nvDial__button-light--blue');
 
     if ($dialLogo.hasClass('logo--close') === true) {
@@ -1138,6 +1145,7 @@ NVDial.prototype.LoadingState = function () {
     this.$Element
         .removeClass('nvDial--draggable')
         .addClass('nvDial--loading')
+        .removeClass('nvDial--initialLoading')
         .draggable('disable');
 
     this.isClickable = false;
@@ -1145,7 +1153,32 @@ NVDial.prototype.LoadingState = function () {
     var $dialLight = $('[data-nv-dial="light"]', this.$Element);
     var $dialLogo = $('[data-nv-dial="logo"]', this.$Element);
 
-    $dialLight.removeClass('nvDial__button-light--red');
+    $dialLight.removeClass('nvDial__button-light--black');
+    $dialLight.removeClass('nvDial__button-light--blue');
+
+    if ($dialLogo.hasClass('logo--close') === true) {
+        $dialLogo.addClass('logo--closeReverse').removeClass('logo--close');
+    } else if ($dialLogo.hasClass('logo--send') === true) {
+        $dialLogo.addClass('logo--sendReverse').removeClass('logo--send');
+    }
+};
+
+NVDial.prototype.InitialLoadingState = function () {
+    /// <summary>
+    /// Used for initial loading screen
+    /// </summary>
+    this.$Element
+        .removeClass('nvDial--draggable')
+        .removeClass('nvDial--loading')
+        .addClass('nvDial--initialLoading')
+        .draggable('disable');
+
+    this.isClickable = false;
+
+    var $dialLight = $('[data-nv-dial="light"]', this.$Element);
+    var $dialLogo = $('[data-nv-dial="logo"]', this.$Element);
+
+    $dialLight.removeClass('nvDial__button-light--black');
     $dialLight.removeClass('nvDial__button-light--blue');
 
     if ($dialLogo.hasClass('logo--close') === true) {
@@ -1162,6 +1195,7 @@ NVDial.prototype.CloseState = function () {
     this.$Element
         .removeClass('nvDial--draggable')
         .removeClass('nvDial--loading')
+        .removeClass('nvDial--initialLoading')
         .draggable('disable');
 
     this.isClickable = true;
@@ -1171,7 +1205,7 @@ NVDial.prototype.CloseState = function () {
     
     $dialLight
         .removeClass('nvDial__button-light--blue')
-        .addClass('nvDial__button-light--red');
+        .addClass('nvDial__button-light--black');
 
     $dialLogo.removeClass('logo--closeReverse')
         .removeClass('logo--send')
@@ -1186,6 +1220,7 @@ NVDial.prototype.SendState = function () {
     this.$Element
         .removeClass('nvDial--draggable')
         .removeClass('nvDial--loading')
+        .removeClass('nvDial--initialLoading')
         .draggable('enable');
 
     this.isClickable = true;
@@ -1194,7 +1229,7 @@ NVDial.prototype.SendState = function () {
     var $dialLogo = $('[data-nv-dial="logo"]', this.$Element);
 
     $dialLight
-        .removeClass('nvDial__button-light--red')
+        .removeClass('nvDial__button-light--black')
         .addClass('nvDial__button-light--blue');
 
     $dialLogo.removeClass('logo--sendReverse')

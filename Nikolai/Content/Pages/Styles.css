@@ -18,13 +18,13 @@ $color-dial--ring3: #2294e5;*/
 \*------------------------------------*/
 .logo {
   background-position: 0 0;
-  background-size: 680px 78px;
+  background-size: 450px 50px;
   background-image: url(/Content/Images/LogoSprite.png);
   background-repeat: no-repeat;
   display: inline-block;
-  height: 39px;
+  height: 25px;
   margin-top: 15px;
-  width: 42.5px; }
+  width: 28.125px; }
   .logo--send {
     -moz-animation: logo-animate--send 0.8s steps(15) forwards;
     -o-animation: logo-animate--send 0.8s steps(15) forwards;
@@ -50,97 +50,97 @@ $color-dial--ring3: #2294e5;*/
   0% {
     background-position: 0 0; }
   100% {
-    background-position: -637.5px 0; } }
+    background-position: -421.875px 0; } }
 
 @-moz-keyframes logo-animate--send {
   0% {
     background-position: 0 0; }
   100% {
-    background-position: -637.5px 0; } }
+    background-position: -421.875px 0; } }
 
 @-o-keyframes logo-animate--send {
   0% {
     background-position: 0 0; }
   100% {
-    background-position: -637.5px 0; } }
+    background-position: -421.875px 0; } }
 
 @keyframes logo-animate--send {
   0% {
     background-position: 0 0; }
   100% {
-    background-position: -637.5px 0; } }
+    background-position: -421.875px 0; } }
 
 @-webkit-keyframes logo-animate--sendReverse {
   0% {
-    background-position: -637.5px 0; }
+    background-position: -421.875px 0; }
   100% {
     background-position: 0 0; } }
 
 @-moz-keyframes logo-animate--sendReverse {
   0% {
-    background-position: -637.5px 0; }
+    background-position: -421.875px 0; }
   100% {
     background-position: 0 0; } }
 
 @-o-keyframes logo-animate--sendReverse {
   0% {
-    background-position: -637.5px 0; }
+    background-position: -421.875px 0; }
   100% {
     background-position: 0 0; } }
 
 @keyframes logo-animate--sendReverse {
   0% {
-    background-position: -637.5px 0; }
+    background-position: -421.875px 0; }
   100% {
     background-position: 0 0; } }
 
 @-webkit-keyframes logo-animate--close {
   0% {
-    background-position: 0 -39px; }
+    background-position: 0 -25px; }
   100% {
-    background-position: -637.5px -39px; } }
+    background-position: -421.875px -25px; } }
 
 @-moz-keyframes logo-animate--close {
   0% {
-    background-position: 0 -39px; }
+    background-position: 0 -25px; }
   100% {
-    background-position: -637.5px -39px; } }
+    background-position: -421.875px -25px; } }
 
 @-o-keyframes logo-animate--close {
   0% {
-    background-position: 0 -39px; }
+    background-position: 0 -25px; }
   100% {
-    background-position: -637.5px -39px; } }
+    background-position: -421.875px -25px; } }
 
 @keyframes logo-animate--close {
   0% {
-    background-position: 0 -39px; }
+    background-position: 0 -25px; }
   100% {
-    background-position: -637.5px -39px; } }
+    background-position: -421.875px -25px; } }
 
 @-webkit-keyframes logo-animate--closeReverse {
   0% {
-    background-position: -637.5px -39px; }
+    background-position: -421.875px -25px; }
   100% {
-    background-position: 0 -39px; } }
+    background-position: 0 -25px; } }
 
 @-moz-keyframes logo-animate--closeReverse {
   0% {
-    background-position: -637.5px -39px; }
+    background-position: -421.875px -25px; }
   100% {
-    background-position: 0 -39px; } }
+    background-position: 0 -25px; } }
 
 @-o-keyframes logo-animate--closeReverse {
   0% {
-    background-position: -637.5px -39px; }
+    background-position: -421.875px -25px; }
   100% {
-    background-position: 0 -39px; } }
+    background-position: 0 -25px; } }
 
 @keyframes logo-animate--closeReverse {
   0% {
-    background-position: -637.5px -39px; }
+    background-position: -421.875px -25px; }
   100% {
-    background-position: 0 -39px; } }
+    background-position: 0 -25px; } }
 
 /*------------------------------------*    Icons
 \*------------------------------------*/
@@ -283,9 +283,9 @@ $color-dial--ring3: #2294e5;*/
 
 .nvDial {
   cursor: pointer;
-  height: 90px;
+  height: 76px;
   position: relative;
-  width: 90px;
+  width: 76px;
   -moz-user-select: none;
   -ms-user-select: none;
   -webkit-user-select: none;
@@ -553,41 +553,66 @@ $color-dial--ring3: #2294e5;*/
     transition: transform 0.5s ease-out, opacity 0.3s ease-out; }
   .nvDial__button {
     background-color: #f3f3f3;
-    height: 90px;
+    height: 76px;
     top: 0;
-    width: 90px;
-    -moz-transform: translate(30px, 30px);
-    -ms-transform: translate(30px, 30px);
-    -o-transform: translate(30px, 30px);
-    -webkit-transform: translate(30px, 30px);
-    transform: translate(30px, 30px); }
+    width: 76px;
+    -moz-transform: translate(37px, 37px);
+    -ms-transform: translate(37px, 37px);
+    -o-transform: translate(37px, 37px);
+    -webkit-transform: translate(37px, 37px);
+    transform: translate(37px, 37px); }
   .nvDial__button-light {
-    background-color: #007ae4;
-    background: linear-gradient(135deg, #007ae4 0, #cccc66 50%, #de9250 100%);
-    height: 86px;
-    width: 86px;
-    box-shadow: inset 1px 1px rgba(0, 0, 0, 0.85);
+    background: #999;
+    height: 72px;
+    width: 72px;
+    box-shadow: inset 1px 1px rgba(0, 0, 0, 0.5);
     -moz-transform: translate(2px, 2px);
     -ms-transform: translate(2px, 2px);
     -o-transform: translate(2px, 2px);
     -webkit-transform: translate(2px, 2px);
     transform: translate(2px, 2px);
-    -moz-transition: background-color 1s linear;
-    -o-transition: background-color 1s linear;
-    -webkit-transition: background-color 1s linear;
-    transition: background-color 1s linear; }
+    -moz-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    -webkit-transition: all 1s linear;
+    transition: all 1s linear; }
+    .nvDial__button-light::after {
+      border-radius: 50%;
+      box-shadow: inset 1px 1px rgba(0, 0, 0, 0.5);
+      content: "";
+      display: block;
+      background-color: #007ae4;
+      background: linear-gradient(135deg, #007ae4 0, #cccc66 50%, #de9250 100%);
+      height: 100%;
+      opacity: 0;
+      width: 100%;
+      -moz-transition: opacity 0.3s linear;
+      -o-transition: opacity 0.3s linear;
+      -webkit-transition: opacity 0.3s linear;
+      transition: opacity 0.3s linear; }
+    .nvDial__button-light:hover::after, .nvDial__button-light:focus::after, .nvDial__button-light:active::after {
+      opacity: 1; }
+    .nvDial__button-light .nvDial__button-logo {
+      background-color: #F3F3F3;
+      background-color: rgba(243, 243, 243, 0.65);
+      z-index: 1; }
     .nvDial__button-light--blue {
       background: #3a93e1; }
+      .nvDial__button-light--blue .nvDial__button-logo {
+        background-color: rgba(243, 243, 243, 0.7); }
     .nvDial__button-light--red {
       background: #d43636; }
+      .nvDial__button-light--red .nvDial__button-logo {
+        background-color: rgba(243, 243, 243, 0.7); }
+    .nvDial__button-light--black {
+      background: #4d4d4d; }
+      .nvDial__button-light--black .nvDial__button-logo {
+        background-color: rgba(243, 243, 243, 0.7); }
   .nvDial__button-logo {
-    background-color: #f3f3f3;
     border: 1px solid #FFF;
-    height: 71px;
-    opacity: 0.8;
+    height: 57px;
     text-align: center;
-    width: 71px;
-    box-shadow: 1px 1px rgba(0, 0, 0, 0.85);
+    width: 57px;
+    box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
     -moz-transform: translate(7px, 7px);
     -ms-transform: translate(7px, 7px);
     -o-transform: translate(7px, 7px);
@@ -611,33 +636,43 @@ $color-dial--ring3: #2294e5;*/
     -webkit-transform: scale(0.6);
     transform: scale(0.6); } }
 
-.nvDial--loading {
+.nvDial--loading, .nvDial--initialLoading {
   left: calc(50% - 75px);
   position: absolute;
   top: calc(40% - 75px); }
-  .nvDial--loading .nvDial__spinner-container--outer {
-    opacity: 1;
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    -webkit-transform: scale(1);
-    transform: scale(1); }
-  .nvDial--loading .nvDial__spinner-container--middle {
-    opacity: 1;
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    -webkit-transform: scale(1);
-    transform: scale(1); }
-  .nvDial--loading .nvDial__spinner-container--inner {
-    opacity: 1;
-    -moz-transform: scale(1);
-    -ms-transform: scale(1);
-    -o-transform: scale(1);
-    -webkit-transform: scale(1);
-    transform: scale(1); }
-  .nvDial--loading .nvDial__button-logo {
+  .nvDial--loading .nvDial__button-light::after, .nvDial--initialLoading .nvDial__button-light::after {
     opacity: 1; }
+  .nvDial--loading .nvDial__spinner-container--outer, .nvDial--initialLoading .nvDial__spinner-container--outer {
+    opacity: 1;
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  .nvDial--loading .nvDial__spinner-container--middle, .nvDial--initialLoading .nvDial__spinner-container--middle {
+    opacity: 1;
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  .nvDial--loading .nvDial__spinner-container--inner, .nvDial--initialLoading .nvDial__spinner-container--inner {
+    opacity: 1;
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    -webkit-transform: scale(1);
+    transform: scale(1); }
+  .nvDial--loading .nvDial__button-logo, .nvDial--initialLoading .nvDial__button-logo {
+    opacity: 1; }
+
+@media (min-width: 600px) {
+  .nvDial--initialLoading {
+    -moz-transform: scale(1.5) translate(-17%, -50%);
+    -ms-transform: scale(1.5) translate(-17%, -50%);
+    -o-transform: scale(1.5) translate(-17%, -50%);
+    -webkit-transform: scale(1.5) translate(-17%, -50%);
+    transform: scale(1.5) translate(-17%, -50%); } }
 
 .nvDial--pulsing {
   font-size: 18px;
@@ -1028,11 +1063,11 @@ $color-dial--ring3: #2294e5;*/
 
 .nav__itemContainer--expanded .nav__item .nav-item__circle, .nav__itemContainer--selected .nav__item .nav-item__circle {
   box-shadow: none;
-  -moz-transform: scale(2);
-  -ms-transform: scale(2);
-  -o-transform: scale(2);
-  -webkit-transform: scale(2);
-  transform: scale(2); }
+  -moz-transform: scale(1.8);
+  -ms-transform: scale(1.8);
+  -o-transform: scale(1.8);
+  -webkit-transform: scale(1.8);
+  transform: scale(1.8); }
 
 .nav__itemContainer--expanded .nav__link, .nav__itemContainer--selected .nav__link {
   opacity: 0; }
@@ -1043,14 +1078,14 @@ $color-dial--ring3: #2294e5;*/
 .nav__itemContainer--selected .nav__link {
   display: inline-block;
   font-weight: 400;
-  margin-top: 20px;
+  margin-top: 12px;
   opacity: 1; }
 
 .nav__itemContainer--lastItem::after {
   opacity: 0; }
 
 .nav-container {
-  height: 130px;
+  height: 120px;
   overflow: hidden;
   width: 100%; }
 
@@ -2445,15 +2480,9 @@ body {
   font-family: 'AlegreyaSans', 'Times New Roman', Times, serif;
   font-weight: 300;
   font-style: normal;
-  font-size: 10px;
+  font-size: 14px;
   line-height: 1.3em;
   overflow-x: hidden; }
-  @media (min-width: 400px) and (max-width: 600px) {
-    body {
-      font-size: 13px; } }
-  @media (min-width: 600px) and (max-width: 800px) {
-    body {
-      font-size: 14px; } }
   @media (min-width: 800px) {
     body {
       font-size: 16px; } }

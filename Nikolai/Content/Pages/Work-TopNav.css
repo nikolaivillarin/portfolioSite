@@ -75,6 +75,7 @@
       float: left;
       width: 100%; }
   .topnav__screensContainer .topnav_screens_col1 {
+    margin-bottom: 8em;
     width: 100%; }
     @media (min-width: 1000px) {
       .topnav__screensContainer .topnav_screens_col1 {
@@ -83,10 +84,10 @@
     .topnav__screensContainer .topnav_screens_col1 img {
       max-width: 1028px; }
   .topnav__screensContainer .topnav_screens_col2 {
-    padding-top: 4em;
     width: 80%; }
     @media (min-width: 1000px) {
       .topnav__screensContainer .topnav_screens_col2 {
+        padding-top: 4em;
         width: 30%; } }
   .topnav__screensContainer .topnav_screens_col3 {
     width: 20%; }

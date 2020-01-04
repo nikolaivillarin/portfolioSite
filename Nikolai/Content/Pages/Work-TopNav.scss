@@ -65,6 +65,7 @@
     }
 
     .topnav_screens_col1 {
+        margin-bottom: 8em;
         width: 100%;
 
         @include breakpoint(min-width $breakpoint-netbook) {
@@ -78,10 +79,10 @@
     }
 
     .topnav_screens_col2 {
-        padding-top: 4em;
         width: 80%;
 
         @include breakpoint(min-width $breakpoint-netbook) {
+            padding-top: 4em;
             width: 30%;
         }
     }

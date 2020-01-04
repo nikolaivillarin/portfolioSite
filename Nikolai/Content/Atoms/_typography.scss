@@ -12,17 +12,9 @@ body {
     font-family: 'AlegreyaSans', 'Times New Roman', Times, serif;
     font-weight: 300;
     font-style: normal;
-    font-size: 10px;
+    font-size: 14px;
     line-height: 1.3em;
     overflow-x: hidden;
-
-    @include breakpoint(400px $breakpoint-phablet) {
-        font-size: 13px;
-    }
-
-    @include breakpoint($breakpoint-phablet $breakpoint-tablet) {
-        font-size: 14px;
-    }
 
     @include breakpoint(min-width $breakpoint-tablet) {
         font-size: 16px;

@@ -4,12 +4,12 @@
 /*------------------------------------*\
     Logo
 \*------------------------------------*/
-$logo-retina--width: 1360px;
-$logo-retina--height: 156px;
+$logo-retina--width: 900px;
+$logo-retina--height: 100px;
 $logo-retina--totalFrames: 16;
 $logo-retina--totalAnimations: 2;
 $logo-retina--totalFramesToPlay: $logo-retina--totalFrames - 1; // 0 based index
-$logo-container--height: $logo-retina--height/2/$logo-retina--totalAnimations;
+$logo-container--height: $logo-retina--height/2/$logo-retina--totalAnimations; // - 1 is a manual adjuster
 $logo-container--width: $logo-retina--width/$logo-retina--totalFrames/2;
 
 .logo {
