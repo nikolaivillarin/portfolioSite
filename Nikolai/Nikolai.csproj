@@ -235,13 +235,27 @@
     <Content Include="Content\ImagesWork\ratequote\ratequote-image3_large.png" />
     <Content Include="Content\ImagesWork\ratequote\ratequote-image4_large.png" />
     <Content Include="Content\ImagesWork\ratequote\rateQuote-tile.jpg" />
+    <Content Include="Content\ImagesWork\topnav\topnav-blueprint-pattern.jpg" />
+    <Content Include="Content\ImagesWork\topnav\topnav-deviceShot-1.jpg" />
+    <Content Include="Content\ImagesWork\topnav\topnav-deviceShot-2.jpg" />
     <Content Include="Content\ImagesWork\topnav\topnav-heroImage_large.jpg" />
     <Content Include="Content\ImagesWork\topnav\topnav-heroImage_medium.jpg" />
     <Content Include="Content\ImagesWork\topnav\topnav-heroImage_small.jpg" />
+    <Content Include="Content\ImagesWork\topnav\topnav-oldnav-1.png" />
+    <Content Include="Content\ImagesWork\topnav\topnav-oldnav-2.png" />
+    <Content Include="Content\ImagesWork\topnav\topnav-oldnav-3.png" />
+    <Content Include="Content\ImagesWork\topnav\topnav-oldnav-4.png" />
+    <Content Include="Content\ImagesWork\topnav\topnav-oldnav-5.png" />
     <Content Include="Content\ImagesWork\topnav\topnav-screens-large.png" />
     <Content Include="Content\ImagesWork\topnav\topnav-screens-medium.png" />
     <Content Include="Content\ImagesWork\topnav\topnav-screens-small.png" />
     <Content Include="Content\ImagesWork\topnav\topnav-tile.jpg" />
+    <Content Include="Content\Molecules\_navControl.css">
+      <DependentUpon>_navControl.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\Molecules\_navControl.min.css">
+      <DependentUpon>_navControl.css</DependentUpon>
+    </Content>
     <Content Include="Content\Pages\Work-Dashboard.css">
       <DependentUpon>Work-Dashboard.scss</DependentUpon>
     </Content>

@@ -52,8 +52,8 @@
     }
 
     @include breakpoint((min-height 800px) (min-width 1100px)) {
-        left: calc(50% - 550px);
-        max-width: 1100px;
+        left: calc(50% - 500px);
+        max-width: 1000px;
     }
 }
 
