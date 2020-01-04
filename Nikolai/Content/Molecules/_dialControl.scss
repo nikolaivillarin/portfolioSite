@@ -325,7 +325,7 @@ $button-position: (($spinner-diameter--outer - $button-diameter) / 2);
 
 .nvDial--initialLoading {
     @include breakpoint(min-width $breakpoint-phablet) {
-        @include transform(scale(1.5) translate(-17%, -50%));
+        @include transform(scale(1.2) translate(-13%, -30%));
     }
 
     @extend .nvDial--loading;

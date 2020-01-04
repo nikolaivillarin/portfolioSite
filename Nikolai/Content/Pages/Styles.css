@@ -668,11 +668,11 @@ $color-dial--ring3: #2294e5;*/
 
 @media (min-width: 600px) {
   .nvDial--initialLoading {
-    -moz-transform: scale(1.5) translate(-17%, -50%);
-    -ms-transform: scale(1.5) translate(-17%, -50%);
-    -o-transform: scale(1.5) translate(-17%, -50%);
-    -webkit-transform: scale(1.5) translate(-17%, -50%);
-    transform: scale(1.5) translate(-17%, -50%); } }
+    -moz-transform: scale(1.2) translate(-13%, -30%);
+    -ms-transform: scale(1.2) translate(-13%, -30%);
+    -o-transform: scale(1.2) translate(-13%, -30%);
+    -webkit-transform: scale(1.2) translate(-13%, -30%);
+    transform: scale(1.2) translate(-13%, -30%); } }
 
 .nvDial--pulsing {
   font-size: 18px;
