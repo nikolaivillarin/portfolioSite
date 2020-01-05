@@ -23,7 +23,7 @@ $color-dial--ring3: #2294e5;*/
   background-repeat: no-repeat;
   display: inline-block;
   height: 25px;
-  margin-top: 15px;
+  margin-top: 17px;
   width: 28.125px; }
   .logo--send {
     -moz-animation: logo-animate--send 0.8s steps(15) forwards;
@@ -609,15 +609,15 @@ $color-dial--ring3: #2294e5;*/
         background-color: rgba(243, 243, 243, 0.7); }
   .nvDial__button-logo {
     border: 1px solid #FFF;
-    height: 57px;
+    height: 60px;
     text-align: center;
-    width: 57px;
+    width: 60px;
     box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
-    -moz-transform: translate(7px, 7px);
-    -ms-transform: translate(7px, 7px);
-    -o-transform: translate(7px, 7px);
-    -webkit-transform: translate(7px, 7px);
-    transform: translate(7px, 7px);
+    -moz-transform: translate(6px, 6px);
+    -ms-transform: translate(6px, 6px);
+    -o-transform: translate(6px, 6px);
+    -webkit-transform: translate(6px, 6px);
+    transform: translate(6px, 6px);
     -moz-transition: opacity 0.5s ease-in;
     -o-transition: opacity 0.5s ease-in;
     -webkit-transition: opacity 0.5s ease-in;

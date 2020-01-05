@@ -402,7 +402,11 @@ MainNavigation.prototype.LoadPage = function (pageUrl) {
     /// </param>
     $('#mainLoadingOverlay').addClass('loading-overlay--active');
 
-    this.NavBar.SetState('loading');
+    // First parameter is page ID, second parameter is state.
+    // This function requires a page ID be set otherwise it throws are error.
+    // So we use the loading page ID just as a filler since it will not be used
+    // since state is specified
+    this.NavBar.SetState('loading', 'loading');
 
     $.get(pageUrl + 'Partial',
         $.proxy(this.PageLoaded, this, pageUrl)

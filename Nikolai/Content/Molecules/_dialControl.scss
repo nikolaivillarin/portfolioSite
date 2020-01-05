@@ -11,7 +11,7 @@
 \*------------------------------------*/
 $button-diameter: 76px;
 $button-border-size: 4px;
-$button-light-size: 14px;
+$button-light-size: 11px;
 $button__logo-border-size: 1px;
 $button__light-diameter: $button-diameter - $button-border-size;
 $button__logo-diameter: $button__light-diameter - $button__logo-border-size - $button-light-size;
@@ -272,7 +272,7 @@ $button-position: (($spinner-diameter--outer - $button-diameter) / 2);
         box-shadow: 1px 1px rgba(0, 0, 0, 0.5);
 
         @extend %__circle;
-        @include transform(translate($button-light-size/2, $button-light-size/2));
+        @include transform(translate(round($button-light-size/2), round($button-light-size/2)));
         @include transition(opacity 0.5s ease-in);
     }
 }

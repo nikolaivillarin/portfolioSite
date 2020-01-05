@@ -61,7 +61,7 @@ NVNavBar.prototype.Initialize = function () {
     );
 };
 
-NVNavBar.prototype.SetState = function (url) {
+NVNavBar.prototype.SetState = function (url, state) {
     /// <summary>
     /// Set's the navigation bar's state based on URL.
     /// The URL is used to located that data- attributes
@@ -73,7 +73,11 @@ NVNavBar.prototype.SetState = function (url) {
     /// </param>
     var pageID = this.GetPageIDByUrl(url);
 
-    this.SetDialState(pageID);
+    if (state) {
+        this.SetDialState(pageID, state);
+    } else {
+        this.SetDialState(pageID);
+    }
 
     this.SetNavItemsState(pageID);
 
@@ -181,7 +185,7 @@ NVNavBar.prototype.SetDialState = function (pageID, state) {
             this.DialControl.LoadingState();
 
             break;
-        case 'initialLoad':
+        case 'initialload':
             this.Disabled = true;
 
             this.DialControl.InitialLoadingState();
