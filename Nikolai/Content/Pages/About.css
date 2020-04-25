@@ -18,135 +18,25 @@ $color-dial--ring3: #2294e5;*/
 \*------------------------------------*/
 /*------------------------------------*    Partials
 \*------------------------------------*/
-.about-overview, .about-qualifications {
-  padding: 3em 2em;
-}
-
-@media (min-width: 600px) {
-  .about-overview, .about-qualifications {
-    padding: 2em 3em;
-  }
-}
-
-.about:before {
-  z-index: -1;
-}
-
 /*------------------------------------*    CSS Breakpoints for different devices
 \*------------------------------------*/
 .about-bg {
-  background-color: #262626;
-}
+  background-color: #ebebeb; }
 
-.about {
-  padding-bottom: 150px;
-  position: relative;
-}
-
-@media (min-width: 800px) {
-  .about:before {
-    background-color: #4d4d4d;
-    display: block;
-    content: "";
-    height: 100%;
-    left: 50%;
-    min-height: 100vh;
-    position: absolute;
-    top: 0;
-    width: 2px;
-  }
-}
-
-.about-profile {
-  text-align: center;
-  padding-top: 40px;
-}
-
-.about-profilePic {
-  max-width: 175px;
-  width: 40%;
-}
-
-.about-overview {
-  border-bottom: 1px solid #4d4d4d;
-  float: left;
-  padding-bottom: 5em;
-  padding-top: 3em;
-  width: 100%;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-@media (min-width: 800px) {
-  .about-overview {
-    border-bottom: none;
-    width: 50%;
-  }
-}
-
-.about-overview__content {
-  /*@extend %slide-bottom--initialState;*/
-}
-
-/*.about-overview__content.in-view {
-    @extend %slide-bottom--endState;
-}*/
-.about-qualifications {
-  float: left;
-  padding-top: 3em;
-  width: 100%;
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-}
-
-@media (min-width: 800px) {
-  .about-qualifications {
-    padding-bottom: 0;
-    width: 50%;
-  }
-}
-
-.about-qualifications__icon {
-  float: left;
-  padding-top: 20px;
-  width: 12%;
-  /*@extend %pop--initialState;*/
-}
-
-.about-qualifications__icon--windows {
-  max-width: 72px;
-}
-
-.about-qualifications__icon--agile {
-  max-width: 72px;
-}
-
-.about-qualifications__icon--code {
-  max-width: 72px;
-}
-
-.about-qualifications__icon--brush {
-  max-width: 72px;
-}
-
-/*.about-qualifications__icon.in-view {
-    @extend %pop--endState;
-}*/
-.about-qualifications__img {
-  width: 100%;
-}
-
-.about-qualifications__content {
-  float: left;
-  padding-left: 15px;
-  width: 88%;
-  /*@extend %slide-bottom--initialState;*/
-}
-
-/*.about-qualifications__content.in-view {
-    @extend %slide-bottom--endState;
-}*/
-
-/*# sourceMappingURL=About.css.map */
+.about-me {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 3em; }
+  .about-me .header-main {
+    flex: 0 0 2em; }
+  .about-me__content {
+    flex: 1;
+    text-align: left; }
+  .about-me .about-me__content {
+    padding-right: 15em;
+    position: relative; }
+    .about-me .about-me__content .about-me__text {
+      max-width: 400px;
+      position: absolute; }

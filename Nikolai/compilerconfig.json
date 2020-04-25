@@ -38,5 +38,9 @@
   {
     "outputFile": "Content/Pages/Home.css",
     "inputFile": "Content/Pages/Home.scss"
+  },
+  {
+    "outputFile": "Content/Pages/About.css",
+    "inputFile": "Content/Pages/About.scss"
   }
 ]
