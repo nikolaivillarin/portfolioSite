@@ -14,6 +14,13 @@ AboutPage.prototype = {
     scroll: {
         isThrottled: false,
         throttleDuration: 1000
+    },
+    debug: {
+        // Debugging for poly positioning
+        polyContainerSelector: '.about-screen__img',
+        enableDebugMode: true,
+        nodeCount: 0,
+        nodeScss: ''
     }
 };
 //#endregion
@@ -37,7 +44,7 @@ AboutPage.prototype.OnPageMouseWheel = function (evt) {
     evt.preventDefault();
 
     if (this.scroll.isThrottled) {
-        return;
+        return false;
     } else {
         this.scroll.isThrottled = true;
     }
@@ -46,15 +53,16 @@ AboutPage.prototype.OnPageMouseWheel = function (evt) {
         that.scroll.isThrottled = false;
     }, this.scroll.throttleDuration);
 
-    if (evt.originalEvent.wheelDelta > 0) {
+    //if (evt.originalEvent.wheelDelta > 0) {
+    if (evt.wheelDelta > 0) {
         if (this.selectedPageIndex === 0) {
-            return;
+            return false;
         } else {
             this.UpSection();
         }
     } else {
         if (this.selectedPageIndex >= this.totalPages - 1) {
-            return;
+            return false;
         } else {
             this.DownSection();
         }
@@ -77,10 +85,51 @@ AboutPage.prototype.Initialize = function () {
     window.MainNav.SubscribeToOnPageChange(
         $.proxy(this.OnPageChange, this)
     );
-    
+
+    this.ToggleClipPathPositionHelper();
     this.SetupPositioning();
     this.RenderNavDots();
     this.SetupScrollEvents();
+};
+
+AboutPage.prototype.ToggleClipPathPositionHelper = function () {
+    if (this.debug.enableDebugMode) {
+        var that = this;
+
+        $('body').on('click', function (e) {
+            var mouseX = e.pageX;
+            var mouseY = e.pageY;
+
+            var shapesoffsetX = $(that.debug.polyContainerSelector).offset().left;
+            var shapesoffsetY = $(that.debug.polyContainerSelector).offset().top;
+
+            var polygonswidth = $(that.debug.polyContainerSelector).width();
+            var polygonsheight = $(that.debug.polyContainerSelector).height();
+
+            var shapesmouseX = mouseX - shapesoffsetX;
+            var shapesmouseY = mouseY - shapesoffsetY;
+
+            var mousepercentX = shapesmouseX / polygonswidth;
+            var mousepercentY = shapesmouseY / polygonsheight;
+
+            var finalmouseX = (mousepercentX) * 100;
+            var finalmouseY = (mousepercentY) * 100;
+            var normalisedX = parseFloat(finalmouseX).toFixed(3);
+            var normalisedY = parseFloat(finalmouseY).toFixed(3);
+
+            that.debug.nodeCount = that.debug.nodeCount + 1;
+
+            if (that.debug.nodeCount < 3) {
+                that.debug.nodeScss = that.debug.nodeScss + normalisedX + '% ' + normalisedY + '% ,';
+            } else
+                if (that.debug.nodeCount == 3) {
+                    that.debug.nodeScss = that.debug.nodeScss + normalisedX + '% ' + normalisedY + '% );';
+                    alert(that.debug.nodeScss);
+                    that.debug.nodeScss = '-webkit-clip-path: polygon( ';
+                    that.debug.nodeCount = 0;
+                }
+        });
+    }
 };
 
 AboutPage.prototype.RenderNavDots = function () {
@@ -98,7 +147,8 @@ AboutPage.prototype.RenderNavDots = function () {
 };
 
 AboutPage.prototype.SetupScrollEvents = function () {
-    $(window).on('mousewheel', this.OnPageMouseWheel);
+    //$(window).on('mousewheel', this.OnPageMouseWheel);
+    window.addEventListener("mousewheel", this.OnPageMouseWheel, { passive: false });
 };
 
 AboutPage.prototype.SetupPositioning = function () {
