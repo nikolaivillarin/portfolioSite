@@ -5,15 +5,34 @@
 @import '../Breakpoint/_breakpoint';
 @import '../Atoms/_breakpoints';
 
-.about-bg {
+.about {
     background-color: $color-background--grey;
+
+    @include transition(background-color 1s);
+
+    .work-IndicatorContainer {
+        bottom: 100px;
+    }
+}
+
+.about--darkTheme {
+    background-color: $color-background--black;
+
+    h1, p {
+        color: #FFF;
+    }
+
+    h1 {
+        margin-bottom: 0.3em;
+    }
+}
+
+.about-text {
+    font-size: 22px;
+    line-height: 29px;
 }
 
 .about-me {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
     padding: 3em;
 
     .header-main {
@@ -25,13 +44,85 @@
         text-align: left;
     }
 
-    .about-me__content {
-        padding-right: 15em;
-        position: relative;
+    .about-text {
+        max-width: 460px;
+        position: absolute;
+        right: -20px;
+        top: 25%;
+    }
 
-        .about-me__text {
-            max-width: 400px;
-            position: absolute;
+    .about-me__content {
+        padding-right: 10em;
+        position: relative;
+    }
+}
+
+.about-screen {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+
+    &__img {
+        padding-right: 6em;
+
+        .vs-logo {
+            max-height: 250px;
         }
+    }
+
+    &__content {
+        display: flex;
+        max-width: 900px;
+    }
+}
+
+.about-PageIndicatorContainer {
+    display: none;
+    position: absolute;
+    right: 2.5em;
+    top: 3.8em;
+    width: 1em;
+
+    @extend %box-level--modular;
+
+    @include breakpoint(max-width $breakpoint-phablet) {
+        right: 1.8em;
+    }
+}
+
+.about-PageIndicatorContainer--active {
+    display: block;
+}
+
+.about-PageIndicatorContainer--light {
+    .about-PageIndicator {
+        border-color: #FFF;
+    }
+}
+
+.about-PageIndicator {
+    background-color: transparent;
+    border: 2px solid #333;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    height: 1em;
+    margin-top: 0.5em;
+    width: 1em;
+
+    @include transition(background-color 0.4s);
+
+    &:hover {
+        background-color: #6FB6E7;
+    }
+}
+
+.about-PageIndicator--selected {
+    background-color: #2294E5;
+
+    &:hover {
+        background-color: #2294E5;
     }
 }

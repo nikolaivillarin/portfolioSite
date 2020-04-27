@@ -302,12 +302,15 @@ MainNavigation.prototype.UnsubscribeToDialCick = function (fn) {
     );
 };
 
-MainNavigation.prototype.SetMenuBtnTheme = function () {
+MainNavigation.prototype.SetMenuBtnTheme = function (selectedTheme) {
     /// <summary>
     /// Set's the navigation theme specified on the selected page
     /// </summary>
     var $page = $('#' + this.PageTransitions.$currentPage.attr('id'));
-    var selectedTheme = $page.data('nv-theme') ? $page.data('nv-theme') : 'dark';
+
+    if (!selectedTheme) {
+        selectedTheme = $page.data('nv-theme') ? $page.data('nv-theme') : 'dark';
+    }
 
     var $btnHamburger = $('#btnHamburger');
 

@@ -166,11 +166,16 @@
     <Content Include="Content\Atoms\reset.min.css">
       <DependentUpon>reset.css</DependentUpon>
     </Content>
+    <Content Include="Content\ImagesAbout\babyYoda.png" />
     <Content Include="Content\ImagesAbout\icon_agile.svg" />
     <Content Include="Content\ImagesAbout\icon_brush.svg" />
     <Content Include="Content\ImagesAbout\icon_code.svg" />
     <Content Include="Content\ImagesAbout\icon_windows.svg" />
+    <Content Include="Content\ImagesAbout\kakashi.png" />
+    <Content Include="Content\ImagesAbout\polyDog.png" />
     <Content Include="Content\ImagesAbout\profilePic.png" />
+    <Content Include="Content\ImagesAbout\nikolaivillarin.png" />
+    <Content Include="Content\ImagesAbout\vsLogo.png" />
     <Content Include="Content\ImagesContact\beachScene_large.jpg" />
     <Content Include="Content\ImagesContact\beachScene_medium.jpg" />
     <Content Include="Content\ImagesContact\beachScene_small.jpg" />

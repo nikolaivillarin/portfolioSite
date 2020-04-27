@@ -10,7 +10,9 @@ window.onerror = function (msg, url, line, col, error) {
     // Handle errors only coming from the domain, or
     // errors with no URL.
     // Also handle errors from Localhost for debugging purposes.
-    if (url.indexOf('nikolaivillarin.com') !== -1 || url === '' || url.indexOf('localhost') !== -1) {
+    if (url &&
+        url.indexOf('nikolaivillarin.com') !== -1 &&
+        url.indexOf('localhost') !== -1) {
         var errorData = {
             errorMsg: msg
             , errorUrl: url
