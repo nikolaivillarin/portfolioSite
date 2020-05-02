@@ -176,6 +176,7 @@
     <Content Include="Content\ImagesAbout\profilePic.png" />
     <Content Include="Content\ImagesAbout\nikolaivillarin.png" />
     <Content Include="Content\ImagesAbout\vsLogo.png" />
+    <Content Include="Content\ImagesAbout\vsLogo.svg" />
     <Content Include="Content\ImagesContact\beachScene_large.jpg" />
     <Content Include="Content\ImagesContact\beachScene_medium.jpg" />
     <Content Include="Content\ImagesContact\beachScene_small.jpg" />
@@ -518,6 +519,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\pageTransition.js" />
+    <Content Include="Scripts\polyEffect.js" />
     <Content Include="Scripts\rellax.js" />
     <Content Include="Scripts\scrollAnimations.js" />
     <Content Include="ViewScripts\aboutPage.js" />

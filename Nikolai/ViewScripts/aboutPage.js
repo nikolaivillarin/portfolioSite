@@ -1,6 +1,8 @@
 ﻿//#region Constructors
 function AboutPage() {
     this.Initialize();
+
+    new window.PolyEffect(document.getElementById('msLogoSvg'));
 }
 //#endregion
 
@@ -18,7 +20,7 @@ AboutPage.prototype = {
     debug: {
         // Debugging for poly positioning
         polyContainerSelector: '.about-screen__img',
-        enableDebugMode: true,
+        enableDebugMode: false,
         nodeCount: 0,
         nodeScss: ''
     }

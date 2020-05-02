@@ -66,75 +66,48 @@ $color-dial--ring3: #2294e5;*/
   justify-content: center;
   height: 100vh; }
   .about-screen__img {
-    position: relative; }
-    .about-screen__img .vs-logo {
-      max-height: 250px; }
-    .about-screen__img .shard {
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%; }
-    .about-screen__img .shard:nth-child(1) {
-      background-color: #b995e6;
-      clip-path: polygon(74.066% -0.245%, 94.521% 16.064%, 98.933% 11.923%); }
-    .about-screen__img .shard:nth-child(2) {
-      background-color: #c19af0;
-      clip-path: polygon(98.933% 11.923%, 93.922% 15.671%, 97.73% 17.026%); }
-    .about-screen__img .shard:nth-child(3) {
-      background-color: #b283ec;
-      clip-path: polygon(74.066% -0.245%, 74.066% 30.195%, 95.521% 15.671%); }
-    .about-screen__img .shard:nth-child(4) {
-      background-color: #b888f2;
-      clip-path: polygon(74.066% 28.195%, 82.285% 73.945%, 74.467% 69.627%); }
-    .about-screen__img .shard:nth-child(5) {
-      background-color: #b888f2;
-      clip-path: polygon(74.066% 29.195%, 81.285% 73.853%, 94.521% 15.064%); }
-    .about-screen__img .shard:nth-child(6) {
-      background-color: #b888f2;
-      clip-path: polygon(94.321% 14.964%, 81.285% 73.553%, 97.73% 17.026%); }
-    .about-screen__img .shard:nth-child(7) {
-      background-color: #ad7ce6;
-      clip-path: polygon(98.933% 11.923%, 81.285% 73.553%, 100.136% 85.721%); }
-    .about-screen__img .shard:nth-child(8) {
-      background-color: #a676dd;
-      clip-path: polygon(81.285% 73.553%, 74.467% 97.89%, 100.735% 85.721%); }
-    .about-screen__img .shard:nth-child(9) {
-      background-color: #b483ee;
-      clip-path: polygon(74.466% 69.175%, 74.466% 98.233%, 81.285% 73.102%); }
-    .about-screen__img .shard:nth-child(10) {
-      background-color: #9466c7;
-      clip-path: polygon(69.252% 65.641%, 74.065% 98.233%, 74.466% 69.961%); }
-    .about-screen__img .shard:nth-child(11) {
-      background-color: #a171d9;
-      clip-path: polygon(69.252% 65.641%, 35.561% 59.359%, 74.466% 97.84%); }
-    .about-screen__img .shard:nth-child(12) {
-      background-color: #a171d9;
-      clip-path: polygon(35.561% 59.359%, 69.252% 65.641%, 48.396% 48.757%); }
-    .about-screen__img .shard:nth-child(13) {
-      background-color: #a978e2;
-      clip-path: polygon(24.732% 49.149%, 35.561% 59.751%, 48.797% 49.149%); }
-    .about-screen__img .shard:nth-child(14) {
-      background-color: #a978e2;
-      clip-path: polygon(35.16% 38.154%, 24.732% 49.149%, 48.797% 49.149%); }
-    .about-screen__img .shard:nth-child(14) {
-      background-color: #a171d9;
-      clip-path: polygon(35.16% 38.154%, 11.496% 36.191%, 24.33% 48.757%); }
-    .about-screen__img .shard:nth-child(15) {
-      background-color: #a171d9;
-      clip-path: polygon(35.16% 38.154%, 11.897% 36.191%, 14.704% 21.27%); }
-    .about-screen__img .shard:nth-child(16) {
-      background-color: #a171d9;
-      clip-path: polygon(14.704% 21.662%, 11.897% 36.191%, 11.897% 22.448%); }
-    .about-screen__img .shard:nth-child(17) {
-      background-color: #9768cd;
-      clip-path: polygon(11.897% 22.055%, 11.897% 36.191%, -0.136% 24.411%); }
-    .about-screen__img .shard:nth-child(18) {
-      background-color: #b282ea;
-      clip-path: polygon(-0.136% 24.411%, 11.897% 22.055%, 12.298% 19.699%); }
-    .about-screen__img .shard:nth-child(19) {
-      background-color: #b785f2;
-      clip-path: polygon(11.897% 19.306%, 11.897% 22.055%, 14.704% 21.27%); }
+    display: block;
+    overflow: visible; }
+    .about-screen__img .cls-1 {
+      fill: #b283ec; }
+    .about-screen__img .cls-1, .about-screen__img .cls-10, .about-screen__img .cls-11, .about-screen__img .cls-12, .about-screen__img .cls-13, .about-screen__img .cls-14, .about-screen__img .cls-15, .about-screen__img .cls-16, .about-screen__img .cls-17, .about-screen__img .cls-18, .about-screen__img .cls-19, .about-screen__img .cls-2, .about-screen__img .cls-3, .about-screen__img .cls-4, .about-screen__img .cls-5, .about-screen__img .cls-6, .about-screen__img .cls-7, .about-screen__img .cls-8, .about-screen__img .cls-9 {
+      fill-rule: evenodd; }
+    .about-screen__img .cls-2 {
+      fill: #ba96e7; }
+    .about-screen__img .cls-3 {
+      fill: #c19af0; }
+    .about-screen__img .cls-4 {
+      fill: #b988f3; }
+    .about-screen__img .cls-5 {
+      fill: #ad7ce6; }
+    .about-screen__img .cls-6 {
+      fill: #a676de; }
+    .about-screen__img .cls-7 {
+      fill: #b483ef; }
+    .about-screen__img .cls-8 {
+      fill: #9467c7; }
+    .about-screen__img .cls-9 {
+      fill: #a171d9; }
+    .about-screen__img .cls-10 {
+      fill: #a978e2; }
+    .about-screen__img .cls-11 {
+      fill: #9869ce; }
+    .about-screen__img .cls-12 {
+      fill: #b282ea; }
+    .about-screen__img .cls-13 {
+      fill: #b885f2; }
+    .about-screen__img .cls-14 {
+      fill: #45206b; }
+    .about-screen__img .cls-15 {
+      fill: #4c2676; }
+    .about-screen__img .cls-16 {
+      fill: #794ab0; }
+    .about-screen__img .cls-17 {
+      fill: #804fb9; }
+    .about-screen__img .cls-18 {
+      fill: #6a419a; }
+    .about-screen__img .cls-19 {
+      fill: #6f43a1; }
   .about-screen__text {
     padding-left: 6em; }
   .about-screen__content {

@@ -48,7 +48,8 @@ namespace Nikolai
                 , "~/Scripts/navigation.js"
                 , "~/Scripts/floatingBall.js"
                 , "~/Scripts/scrollAnimations.js"
-                , "~/ViewScripts/loader.js" 
+                , "~/Scripts/polyEffect.js"
+                , "~/ViewScripts/loader.js"
             ));
 
             bundles.Add(new ScriptBundle("~/Content/homePage").Include(
