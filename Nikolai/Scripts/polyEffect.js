@@ -1,6 +1,15 @@
 ﻿/*------------------------------------*\
     Poly Effect on About Page
 \*------------------------------------*/
+//#region Global Helpers
+const GetRandomArbitrary = function (min, max) {
+    /// <summary>
+    /// The returned value is no lower than (and may possibly equal) min, and is less than (and not equal) max
+    /// </summary>
+    return Math.random() * (max - min) + min;
+};
+//#endregion
+
 //#region PolyEffect
 function PolyEffect(svgElmt) {
     this.svgElmt = svgElmt;
@@ -30,13 +39,6 @@ PolyEffect.prototype.Initialize = function () {
     this.ScatterShards();
 };
 
-PolyEffect.prototype.GetRandomArbitrary = function (min, max) {
-    /// <summary>
-    /// The returned value is no lower than (and may possibly equal) min, and is less than (and not equal) max
-    /// </summary>
-    return Math.random() * (max - min) + min;
-};
-
 PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard, scalarX, scalarY) {
     /// <summary>
     /// Splits the canvas to 4 quadrants: top left, top right, bottom left, and bottom right.
@@ -61,12 +63,12 @@ PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard, scalar
         // Top Left
         quadrant = 'one';
 
-        xModifier = this.GetRandomArbitrary(
+        xModifier = GetRandomArbitrary(
             quadrants.minX,
             quadrants.verticalSeparator
         ) - shard.startPosition.x;
 
-        yModifier = this.GetRandomArbitrary(
+        yModifier = GetRandomArbitrary(
             quadrants.minY,
             quadrants.horizontalSeparator
         ) - shard.startPosition.y;
@@ -76,12 +78,12 @@ PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard, scalar
         // Top Right
         quadrant = 'two';
 
-        xModifier = this.GetRandomArbitrary(
+        xModifier = GetRandomArbitrary(
             quadrants.verticalSeparator,
             quadrants.maxX
         ) - shard.startPosition.x;
 
-        yModifier = this.GetRandomArbitrary(
+        yModifier = GetRandomArbitrary(
             quadrants.minY,
             quadrants.horizontalSeparator
         ) - shard.startPosition.y;
@@ -90,12 +92,12 @@ PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard, scalar
         // Bottom Left
         quadrant = 'three';
 
-        xModifier = this.GetRandomArbitrary(
+        xModifier = GetRandomArbitrary(
             quadrants.minX,
             quadrants.verticalSeparator
         ) - shard.startPosition.x;
 
-        yModifier = this.GetRandomArbitrary(
+        yModifier = GetRandomArbitrary(
             quadrants.horizontalSeparator,
             quadrants.maxY
         ) - shard.startPosition.y;
@@ -103,12 +105,12 @@ PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard, scalar
         // Bottom Right
         quadrant = 'four';
 
-        xModifier = this.GetRandomArbitrary(
+        xModifier = GetRandomArbitrary(
             quadrants.verticalSeparator,
             quadrants.maxX
         ) - shard.startPosition.x;
 
-        yModifier = this.GetRandomArbitrary(
+        yModifier = GetRandomArbitrary(
             quadrants.horizontalSeparator,
             quadrants.maxY
         ) - shard.startPosition.y;
@@ -186,24 +188,44 @@ PolyShard.prototype = {
     currentPosition: { x: 0, y: 0 },
     originalData: [],
     currentData: [],
-    normalizedTrianlges: [
-        'l-8,230-209,50Z',
-        'l20,216-220,39Z',
-        'l220,216-409,39Z',
-        'l-262.9,58.9,74,166Z',
-        'l-262.9,58.9,74,266Z',
-        'l-254.26,166.82l164,215.94Z',
-        'l202.81,97l-4-191Z',
-        'l220,216-209,39Z',
-        'l250,125-309,39Z',
-        'l420,150-130,-239Z',
-        'l200,116-209,239Z'
-    ]
+    sizeTolerance: {
+        x: 300,
+        y: 300
+    }
 }
 
 PolyShard.prototype.Initialize = function () {
     this.SetStartPosition();
     this.SetData();
+};
+
+PolyShard.prototype.GetRandomPointBasedOnMoveAndTolerance = function (isPositive, isXAxis, tolerance) {
+    let moveData = this.shardElmt.getAttribute('d').split(/(?=[MLlZ])/);
+    let moveValue = 0;
+
+    moveData = moveData[0].replace('M', '');
+
+    if (isXAxis) {
+        moveValue = Number(moveData.split(',')[0]);
+
+        sizeTolerance = this.sizeTolerance.x;
+    } else {
+        moveValue = Number(moveData.split(',')[1]);
+
+        sizeTolerance = this.sizeTolerance.y;
+    }
+
+    if (isPositive) {
+        return Math.round(GetRandomArbitrary(
+            moveValue + tolerance / 2,
+            moveValue + tolerance
+        ));
+    } else {
+        return Math.round(GetRandomArbitrary(
+            moveValue - tolerance / 2,
+            moveValue - tolerance
+        ));
+    }
 };
 
 PolyShard.prototype.SetData = function () {
@@ -252,13 +274,61 @@ PolyShard.prototype.NormalizeTriangle = function () {
     /// Uses a set of defined triangles and assigns the dimensions to this
     /// instance
     /// </summary>
-    const randomIndex = Math.floor(Math.random() * this.normalizedTrianlges.length);
-    const dataAttr = this.shardElmt.getAttribute('d');
+    const data = this.shardElmt.getAttribute('d').split(/(?=[MLlZ])/);
 
-    this.currentData = [
-        dataAttr.split(/(?=[MLlZ])/)[0],
-        this.normalizedTrianlges[randomIndex]
-    ];
+    let updatedData = data.map((value, dataIndex) => {
+        if (value.indexOf('L') !== -1) {
+            let keyValPairs = value.substring(1).split(/(?=[,-])/).filter((val) => {
+                return val !== ',';
+            });
+            let newValues = [];
+
+            for (let i = 0; i < keyValPairs.length; i++) {
+                let isPositive = Number(keyValPairs[i].replace(',', '')) >= 0;
+
+                if ((i + 1) % 2 === 0) {
+                    // Even
+                    newValues.push(
+                        this.GetRandomPointBasedOnMoveAndTolerance(isPositive, false, this.sizeTolerance.x)
+                    );
+                } else {
+                    // Odd
+                    newValues.push(
+                        this.GetRandomPointBasedOnMoveAndTolerance(isPositive, true, this.sizeTolerance.y)
+                    );
+                }
+            }
+
+            return 'L' + newValues.join(',');
+        } else if (value.indexOf('l') !== -1) {
+            let keyValPairs = value.substring(1).split(/(?=[,-])/);
+            let newValues = [];
+
+            for (let i = 0; i < keyValPairs.length; i++) {
+                let val = Number(keyValPairs[i].replace(',', ''));
+
+                if (Math.abs(val) > this.sizeTolerance.x) {
+                    do {
+                        val = val / 2;
+                    } while (Math.abs(val) > this.sizeTolerance.x);
+                }
+
+                newValues.push(val);
+            }
+
+            return 'l' + newValues.reduce((previous, current) => {
+                if (current < 0) {
+                    return String(previous) + String(current);
+                } else {
+                    return String(previous) + ',' + String(current);
+                }
+            });
+        } else {
+            return value;
+        }
+    });
+
+    this.currentData = updatedData;
 
     this.UpdateDataAttr();
 
