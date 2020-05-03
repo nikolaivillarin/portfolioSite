@@ -37,6 +37,9 @@ PolyEffect.prototype.Initialize = function () {
     });
 
     this.ScatterShards();
+
+    // Temp
+    window.setTimeout(() => { this.StepToOriginalPosition() }, 5000);
 };
 
 PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard, scalarX, scalarY) {
@@ -165,6 +168,12 @@ PolyEffect.prototype.ScatterShards = function () {
             .NormalizeTriangle();
     }
 };
+
+PolyEffect.prototype.StepToOriginalPosition = function (animationDuration) {
+    for (let i = 0; i < this.shardElmts.length; i++) {
+        this.shardElmts[i].AnimateToOriginalPosition();
+    }
+};
 //#endregion
 
 //#region PolyShard
@@ -197,6 +206,100 @@ PolyShard.prototype = {
 PolyShard.prototype.Initialize = function () {
     this.SetStartPosition();
     this.SetData();
+};
+
+PolyShard.prototype.GetSvgModifierFromData = function (data) {
+    return data.substring(0, 1);
+};
+
+PolyShard.prototype.GetKeyValPairsFromData = function (data, skipIndex = 0) {
+    return data
+        .substring(skipIndex)
+        .split(/(?=[,-])/)
+        .filter((val) => {
+            return val !== ',';
+        }).map((val) => {
+            return Number(val.replace(',', ''));
+        });
+};
+
+PolyShard.prototype.GetStepDataLinear = function (totalSteps) {
+    let stepData = []; // Amount to increment per animation frame
+
+    for (let i = 0; i < this.originalData.length; i++) {
+        const originalDataKeyVal = this.GetKeyValPairsFromData(this.originalData[i], 1);
+        const curDataKeyVal = this.GetKeyValPairsFromData(this.currentData[i], 1);
+        let newValues = [];
+
+        for (let x = 0; x < originalDataKeyVal.length; x++) {
+            const diff = originalDataKeyVal[x] - curDataKeyVal[x];
+            const stepAmount = diff / totalSteps;
+
+            if (diff !== 0) {
+                newValues.push(
+                    stepAmount.toFixed(2)
+                );
+            } else {
+                newValues.push(0);
+            }
+
+        }
+
+        stepData.push(newValues.join(','));
+    }
+
+    return stepData;
+};
+
+PolyShard.prototype.AnimateToOriginalPosition = function () {
+    const animationDuration = 1000; // Milliseconds
+    const stepDuration = 20; // Milliseconds
+    const totalSteps = animationDuration / stepDuration;
+    const stepData = this.GetStepDataLinear(totalSteps);
+
+    let stepCount = 0;
+
+    let animIntervalID = window.setInterval(() => {
+        if (stepCount <= totalSteps) {
+            this.StepToOriginalPosition(stepData);
+
+            stepCount++;
+        } else {
+            window.clearInterval(animIntervalID);
+
+            this.currentData = this.originalData;
+            this.UpdateDataAttr();
+        }
+    }, stepDuration);
+};
+
+PolyShard.prototype.StepToOriginalPosition = function (stepData) {
+    let updatedDataAttr = [];
+
+    for (let i = 0; i < this.currentData.length; i++) {
+        const svgModifier = this.currentData[i].substring(0, 1);
+        const curDataKeyVal = this.GetKeyValPairsFromData(this.currentData[i], 1);
+        const stepDataKeyVal = this.GetKeyValPairsFromData(stepData[i]);
+        let newValues = [];
+
+        for (let x = 0; x < curDataKeyVal.length; x++) {
+            if (curDataKeyVal[x] !== 0 &&
+                stepDataKeyVal[x] !== 0) {
+                newValues.push((curDataKeyVal[x] + stepDataKeyVal[x]).toFixed(4));
+            } else {
+                newValues.push(curDataKeyVal[x]);
+            }
+        }
+
+        if (svgModifier === 'Z') {
+            updatedDataAttr.push(svgModifier);
+        } else {
+            updatedDataAttr.push(svgModifier + newValues.join(','));
+        }
+    }
+
+    this.currentData = updatedDataAttr;
+    this.UpdateDataAttr();
 };
 
 PolyShard.prototype.GetRandomPointBasedOnMoveAndTolerance = function (isPositive, isXAxis, tolerance) {
