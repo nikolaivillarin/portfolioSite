@@ -251,26 +251,72 @@ PolyShard.prototype.GetStepDataLinear = function (totalSteps) {
     return stepData;
 };
 
-PolyShard.prototype.AnimateToOriginalPosition = function () {
-    const animationDuration = 1000; // Milliseconds
-    const stepDuration = 20; // Milliseconds
-    const totalSteps = animationDuration / stepDuration;
-    const stepData = this.GetStepDataLinear(totalSteps);
+PolyShard.prototype.GetDiffFromCurrAndOrginalData = function () {
+    let diffData = [];
 
+    for (let i = 0; i < this.originalData.length; i++) {
+        const originalDataKeyVal = this.GetKeyValPairsFromData(this.originalData[i], 1);
+        const curDataKeyVal = this.GetKeyValPairsFromData(this.currentData[i], 1);
+        let diffValues = [];
+
+        for (let x = 0; x < originalDataKeyVal.length; x++) {
+            diffValues.push(originalDataKeyVal[x] - curDataKeyVal[x]);
+        }
+
+        diffData.push(diffValues.join(','));
+    }
+
+    return diffData;
+};
+
+PolyShard.prototype.AnimateToOriginalPosition = function () {
+    const that = this;
+    const animationDuration = 1000; // Milliseconds
+    const stepDuration = 10; // Milliseconds
+    const totalSteps = animationDuration / stepDuration;
+    const stepper = 1 / totalSteps;
+    const diffData = this.GetDiffFromCurrAndOrginalData();
+    const currentData = this.currentData;
     let stepCount = 0;
 
-    let animIntervalID = window.setInterval(() => {
-        if (stepCount <= totalSteps) {
-            this.StepToOriginalPosition(stepData);
+    let animIntervalID = window.setInterval(function () {
+        if (stepCount < 1) {
+            that.EaseInCubeToNextPosition(diffData, currentData, stepCount);
 
-            stepCount++;
+            stepCount = stepCount + stepper;
         } else {
             window.clearInterval(animIntervalID);
 
-            this.currentData = this.originalData;
-            this.UpdateDataAttr();
+            that.currentData = that.originalData;
+            that.UpdateDataAttr();
         }
     }, stepDuration);
+};
+
+PolyShard.prototype.EaseInCubeToNextPosition = function (diffData, currentData, x) {
+    let updatedDataAttr = [];
+    
+    for (let i = 0; i < currentData.length; i++) {
+        const svgModifier = currentData[i].substring(0, 1);
+        const curDataKeyVal = this.GetKeyValPairsFromData(currentData[i], 1);
+        const diffDataKeyVal = this.GetKeyValPairsFromData(diffData[i]);
+        let newValues = [];
+
+        for (let z = 0; z < diffDataKeyVal.length; z++) {
+            const y = x * x * x * diffDataKeyVal[z];
+
+            newValues.push(curDataKeyVal[z] + y);
+        }
+
+        if (svgModifier === 'Z') {
+            updatedDataAttr.push(svgModifier);
+        } else {
+            updatedDataAttr.push(svgModifier + newValues.join(','));
+        }
+    }
+
+    this.currentData = updatedDataAttr;
+    this.UpdateDataAttr();
 };
 
 PolyShard.prototype.StepToOriginalPosition = function (stepData) {
