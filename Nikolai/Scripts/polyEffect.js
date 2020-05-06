@@ -28,7 +28,8 @@ PolyEffect.prototype = {
     // Tolerance for how close shards
     // can come within each other
     xCollisionTolerance: 200,
-    yCollisionTolerance: 200
+    yCollisionTolerance: 200,
+    selectedEasing: 'easeOutBack'
 };
 
 PolyEffect.prototype.Initialize = function () {
@@ -38,8 +39,8 @@ PolyEffect.prototype.Initialize = function () {
 
     this.ScatterShards();
 
-    // Temp
-    window.setTimeout(() => { this.StepToOriginalPosition() }, 5000);
+    // Temp - replace with trigger
+    //window.setTimeout(() => { this.StepToOriginalPosition() }, 5000);
 };
 
 PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard, scalarX, scalarY) {
@@ -64,7 +65,7 @@ PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard, scalar
     if (shard.startPosition.x <= quadrants.verticalSeparator &&
         shard.startPosition.y <= quadrants.verticalSeparator) {
         // Top Left
-        quadrant = 'one';
+        quadrant = 1;
 
         xModifier = GetRandomArbitrary(
             quadrants.minX,
@@ -79,7 +80,7 @@ PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard, scalar
         shard.startPosition.y <= quadrants.verticalSeparator) {
 
         // Top Right
-        quadrant = 'two';
+        quadrant = 2;
 
         xModifier = GetRandomArbitrary(
             quadrants.verticalSeparator,
@@ -93,7 +94,7 @@ PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard, scalar
     } else if (shard.startPosition.x <= quadrants.verticalSeparator &&
         shard.startPosition.y > quadrants.verticalSeparator) {
         // Bottom Left
-        quadrant = 'three';
+        quadrant = 3;
 
         xModifier = GetRandomArbitrary(
             quadrants.minX,
@@ -106,7 +107,7 @@ PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard, scalar
         ) - shard.startPosition.y;
     } else {
         // Bottom Right
-        quadrant = 'four';
+        quadrant = 4;
 
         xModifier = GetRandomArbitrary(
             quadrants.verticalSeparator,
@@ -141,7 +142,7 @@ PolyEffect.prototype.HasCollision = function (maxIndex, xPos, yPos) {
 };
 
 PolyEffect.prototype.ScatterShards = function () {
-    const maxIteration = 100;
+    const maxIteration = 500;
     let curIterationCount = 0; // To prevent infinite loops
 
     for (let i = 0; i < this.shardElmts.length; i++) {
@@ -164,14 +165,22 @@ PolyEffect.prototype.ScatterShards = function () {
         );
 
         this.shardElmts[i]
+            .SetQuadrant(posModifiers.quadrant)
             .Translate(posModifiers.xModifier, posModifiers.yModifier)
             .NormalizeTriangle();
     }
 };
 
 PolyEffect.prototype.StepToOriginalPosition = function (animationDuration) {
-    for (let i = 0; i < this.shardElmts.length; i++) {
-        this.shardElmts[i].AnimateToOriginalPosition();
+    const that = this;
+    const sortedShardElmts = this.shardElmts.sort((a, b) => a.quadrant - b.quadrant);
+
+    for (let i = 0; i < sortedShardElmts.length; i++) {
+        window.setTimeout(function () {
+            const currentShardElmt = that.shardElmts[i];
+
+            currentShardElmt.AnimateToOriginalPosition(this.selectedEasing);
+        }, 50 * i);
     }
 };
 //#endregion
@@ -197,9 +206,20 @@ PolyShard.prototype = {
     currentPosition: { x: 0, y: 0 },
     originalData: [],
     currentData: [],
+    quadrant: 0, // Used by the container to designate the location of this shard
     sizeTolerance: {
-        x: 300,
-        y: 300
+        x: 400,
+        y: 400
+    },
+    easingFunctions: {
+        easeInCubic: (x, diff) => (x * x * x * diff),
+        easeOutCubic: (x, diff) => ((1 - Math.pow(1 - x, 3)) * diff),
+        easeOutBack: (x, diff) => {
+            const c1 = 1.70158;
+            const c3 = c1 + 1;
+
+            return (1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2)) * diff;
+        }
     }
 }
 
@@ -223,34 +243,6 @@ PolyShard.prototype.GetKeyValPairsFromData = function (data, skipIndex = 0) {
         });
 };
 
-PolyShard.prototype.GetStepDataLinear = function (totalSteps) {
-    let stepData = []; // Amount to increment per animation frame
-
-    for (let i = 0; i < this.originalData.length; i++) {
-        const originalDataKeyVal = this.GetKeyValPairsFromData(this.originalData[i], 1);
-        const curDataKeyVal = this.GetKeyValPairsFromData(this.currentData[i], 1);
-        let newValues = [];
-
-        for (let x = 0; x < originalDataKeyVal.length; x++) {
-            const diff = originalDataKeyVal[x] - curDataKeyVal[x];
-            const stepAmount = diff / totalSteps;
-
-            if (diff !== 0) {
-                newValues.push(
-                    stepAmount.toFixed(2)
-                );
-            } else {
-                newValues.push(0);
-            }
-
-        }
-
-        stepData.push(newValues.join(','));
-    }
-
-    return stepData;
-};
-
 PolyShard.prototype.GetDiffFromCurrAndOrginalData = function () {
     let diffData = [];
 
@@ -269,7 +261,7 @@ PolyShard.prototype.GetDiffFromCurrAndOrginalData = function () {
     return diffData;
 };
 
-PolyShard.prototype.AnimateToOriginalPosition = function () {
+PolyShard.prototype.AnimateToOriginalPosition = function (easing) {
     const that = this;
     const animationDuration = 1000; // Milliseconds
     const stepDuration = 10; // Milliseconds
@@ -281,7 +273,7 @@ PolyShard.prototype.AnimateToOriginalPosition = function () {
 
     let animIntervalID = window.setInterval(function () {
         if (stepCount < 1) {
-            that.EaseInCubeToNextPosition(diffData, currentData, stepCount);
+            that.EaseAnimation(diffData, currentData, stepCount, easing);
 
             stepCount = stepCount + stepper;
         } else {
@@ -293,7 +285,7 @@ PolyShard.prototype.AnimateToOriginalPosition = function () {
     }, stepDuration);
 };
 
-PolyShard.prototype.EaseInCubeToNextPosition = function (diffData, currentData, x) {
+PolyShard.prototype.EaseAnimation = function (diffData, currentData, x, easing = 'easeInCubic') {
     let updatedDataAttr = [];
     
     for (let i = 0; i < currentData.length; i++) {
@@ -303,7 +295,7 @@ PolyShard.prototype.EaseInCubeToNextPosition = function (diffData, currentData, 
         let newValues = [];
 
         for (let z = 0; z < diffDataKeyVal.length; z++) {
-            const y = x * x * x * diffDataKeyVal[z];
+            const y = this.easingFunctions[easing](x, diffDataKeyVal[z]);
 
             newValues.push(curDataKeyVal[z] + y);
         }
@@ -375,6 +367,12 @@ PolyShard.prototype.GetRandomPointBasedOnMoveAndTolerance = function (isPositive
             moveValue - tolerance
         ));
     }
+};
+
+PolyShard.prototype.SetQuadrant = function (quadrant) {
+    this.quadrant = quadrant;
+
+    return this;
 };
 
 PolyShard.prototype.SetData = function () {
