@@ -23,8 +23,8 @@ PolyEffect.prototype = {
     shardElmts: [],
     // Scalar to allow elements to go outside of
     // canvas
-    canvasScalarX: 3000,
-    canvasScalarY: 500,
+    canvasScalarX: 2000,
+    canvasScalarY: 1000,
     // Tolerance for how close shards
     // can come within each other
     xCollisionTolerance: 200,
@@ -369,6 +369,65 @@ PolyShard.prototype.GetRandomPointBasedOnMoveAndTolerance = function (isPositive
     }
 };
 
+PolyShard.prototype.GetLengthOfSideOfTriangle = function (point1, point2) {
+    return Math.pow((Math.pow(point2[0] - point1[0], 2) + Math.pow(point2[1] - point1[1], 2)), 0.5);
+};
+
+PolyShard.prototype.GetPointsOfTriangle = function (pathData) {
+    let points = [];
+
+    for (let i = 0; i < pathData.length; i++) {
+        const keyValPairs = pathData[i]
+            .substring(1)
+            .split(/(?=[,-])/)
+            .filter(val => {
+                return val !== ',';
+            })
+            .map(val => {
+                return Number(val.replace(',', ''));
+            });
+
+        if (pathData[i].indexOf('M') !== -1) {
+            // There is only one instance of M (Move to position)
+            // in SVG
+            points.push(keyValPairs);
+        } else if (pathData[i].indexOf('L') !== -1) {
+            // There can be multiple points for L (Line to)
+            for (let x = 0; x < keyValPairs.length; x += 2) {
+                points.push([keyValPairs[x], keyValPairs[x + 1]]);
+            }
+        } else if (pathData[i].indexOf('l') !== -1) {
+            const relativePoint = points[points.length - 1];
+
+            // There can be multiple points for l (Relative Line to)
+            for (let x = 0; x < keyValPairs.length; x += 2) {
+                points.push([
+                    relativePoint[0] + keyValPairs[x],
+                    relativePoint[1] + keyValPairs[x + 1]
+                ]);
+            }
+        }
+    }
+
+    return points;
+};
+
+PolyShard.prototype.GetAreaOfTriangle = function (pathData) {
+    const points = this.GetPointsOfTriangle(pathData);
+    const lengthA = this.GetLengthOfSideOfTriangle(points[0], points[1]);
+    const lengthB = this.GetLengthOfSideOfTriangle(points[1], points[2]);
+    const lengthC = this.GetLengthOfSideOfTriangle(points[2], points[0]);
+
+    const halfPerimeter = (lengthA + lengthB + lengthC) / 2;
+
+    return Math.pow(
+        halfPerimeter *
+        (halfPerimeter - lengthA) * 
+        (halfPerimeter - lengthB) *
+        (halfPerimeter - lengthC),
+    0.5).toFixed(4);
+};
+
 PolyShard.prototype.SetQuadrant = function (quadrant) {
     this.quadrant = quadrant;
 
@@ -416,14 +475,8 @@ PolyShard.prototype.UpdatePosition = function () {
     return this;
 };
 
-PolyShard.prototype.NormalizeTriangle = function () {
-    /// <summary>
-    /// Uses a set of defined triangles and assigns the dimensions to this
-    /// instance
-    /// </summary>
-    const data = this.shardElmt.getAttribute('d').split(/(?=[MLlZ])/);
-
-    let updatedData = data.map((value, dataIndex) => {
+PolyShard.prototype.GetRandomPathsForTriangleBasedOnShape = function (data) {
+    return data.map((value) => {
         if (value.indexOf('L') !== -1) {
             let keyValPairs = value.substring(1).split(/(?=[,-])/).filter((val) => {
                 return val !== ',';
@@ -434,12 +487,12 @@ PolyShard.prototype.NormalizeTriangle = function () {
                 let isPositive = Number(keyValPairs[i].replace(',', '')) >= 0;
 
                 if ((i + 1) % 2 === 0) {
-                    // Even
+                    // Even - represents x
                     newValues.push(
                         this.GetRandomPointBasedOnMoveAndTolerance(isPositive, false, this.sizeTolerance.x)
                     );
                 } else {
-                    // Odd
+                    // Odd - represents y
                     newValues.push(
                         this.GetRandomPointBasedOnMoveAndTolerance(isPositive, true, this.sizeTolerance.y)
                     );
@@ -474,8 +527,34 @@ PolyShard.prototype.NormalizeTriangle = function () {
             return value;
         }
     });
+};
 
-    this.currentData = updatedData;
+PolyShard.prototype.NormalizeTriangle = function () {
+    /// <summary>
+    /// Normalizes the shape of the triangles to make them more constant
+    /// </summary>
+    const data = this.shardElmt.getAttribute('d').split(/(?=[MLlZ])/);
+    const maxIterations = 50;
+    const minAreaOfTriangle = 20000;
+
+    let currentIterations = 0;
+    let areaOfTriangle = 0;
+    let updatedPath = [];
+
+    do {
+        updatedPath = this.GetRandomPathsForTriangleBasedOnShape(data);
+
+        areaOfTriangle= this.GetAreaOfTriangle(updatedPath);
+
+        currentIterations++;
+
+        console.log('Iterations');
+    } while (
+        areaOfTriangle < minAreaOfTriangle &&
+        currentIterations < maxIterations
+    );
+
+    this.currentData = updatedPath;
 
     this.UpdateDataAttr();
 

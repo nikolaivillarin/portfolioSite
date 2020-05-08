@@ -69,18 +69,525 @@ $color-dial--ring3: #2294e5;*/
     display: block;
     overflow: visible; }
     .about-screen__img [class^="cls-"] {
-      -moz-transition: fill 1s;
-      -o-transition: fill 1s;
-      -webkit-transition: fill 1s;
-      transition: fill 1s; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"] {
-    -moz-animation: rotate 30s linear infinite alternate;
-    -o-animation: rotate 30s linear infinite alternate;
-    -webkit-animation: rotate 30s linear infinite alternate;
-    animation: rotate 30s linear infinite alternate; }
+      position: relative;
+      -moz-transition: fill 1s linear;
+      -o-transition: fill 1s linear;
+      -webkit-transition: fill 1s linear;
+      transition: fill 1s linear; }
+      .about-screen__img [class^="cls-"]::before {
+        background-color: #FFF;
+        content: "";
+        display: block;
+        left: 0;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        width: 100%; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(1) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 1s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 1s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 1s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 1s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(2) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 2s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 2s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 2s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 2s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(3) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 3s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 3s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 3s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 3s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(4) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 4s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 4s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 4s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 4s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(5) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 5s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 5s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 5s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 5s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(6) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 6s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 6s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 6s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 6s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(7) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 7s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 7s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 7s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 7s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(8) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 8s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 8s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 8s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 8s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(9) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 9s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 9s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 9s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 9s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(10) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 10s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 10s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 10s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 10s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(11) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 11s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 11s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 11s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 11s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(12) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 12s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 12s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 12s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 12s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(13) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 13s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 13s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 13s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 13s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(14) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 14s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 14s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 14s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 14s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(15) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 15s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 15s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 15s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 15s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(16) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 16s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 16s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 16s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 16s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(17) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 17s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 17s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 17s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 17s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(18) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 18s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 18s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 18s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 18s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(19) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 19s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 19s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 19s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 19s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(20) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 20s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 20s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 20s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 20s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(21) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 21s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 21s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 21s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 21s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(22) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 22s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 22s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 22s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 22s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(23) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 23s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 23s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 23s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 23s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(24) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 24s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 24s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 24s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 24s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(25) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 25s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 25s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 25s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 25s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(26) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 26s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 26s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 26s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 26s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(27) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 27s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 27s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 27s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 27s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(28) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 28s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 28s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 28s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 28s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(29) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 29s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 29s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 29s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 29s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(30) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 30s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 30s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 30s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 30s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(31) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 31s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 31s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 31s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 31s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(32) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 32s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 32s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 32s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 32s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(33) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 33s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 33s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 33s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 33s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(34) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 34s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 34s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 34s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 34s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(35) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 35s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 35s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 35s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 35s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(36) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 36s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 36s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 36s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 36s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(37) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 37s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 37s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 37s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 37s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(38) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 38s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 38s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 38s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 38s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(39) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 39s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 39s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 39s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 39s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(40) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 40s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 40s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 40s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 40s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(41) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 41s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 41s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 41s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 41s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(42) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 42s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 42s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 42s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 42s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(43) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 43s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 43s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 43s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 43s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(44) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 44s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 44s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 44s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 44s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(45) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 45s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 45s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 45s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 45s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(46) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 46s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 46s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 46s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 46s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(47) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 47s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 47s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 47s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 47s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(48) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 48s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 48s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 48s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 48s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(49) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 49s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 49s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 49s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 49s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(50) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 50s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 50s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 50s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 50s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(51) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 51s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 51s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 51s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 51s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(52) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 52s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 52s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 52s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 52s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(53) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 53s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 53s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 53s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 53s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(54) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 54s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 54s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 54s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 54s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(55) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 55s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 55s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 55s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 55s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(56) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 56s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 56s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 56s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 56s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(57) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 57s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 57s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 57s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 57s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(58) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 58s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 58s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 58s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 58s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(59) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 59s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 59s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 59s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 59s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(60) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 60s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 60s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 60s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 60s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(61) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 61s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 61s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 61s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 61s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(62) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 62s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 62s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 62s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 62s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(63) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 63s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 63s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 63s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 63s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(64) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 64s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 64s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 64s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 64s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(65) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 65s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 65s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 65s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 65s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(66) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 66s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 66s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 66s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 66s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(67) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 67s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 67s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 67s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 67s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(68) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 68s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 68s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 68s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 68s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(69) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 69s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 69s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 69s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 69s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(70) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 70s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 70s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 70s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 70s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(71) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 71s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 71s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 71s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 71s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(72) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 72s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 72s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 72s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 72s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(73) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 73s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 73s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 73s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 73s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(74) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 74s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 74s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 74s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 74s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(75) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 75s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 75s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 75s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 75s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(76) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 76s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 76s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 76s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 76s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(77) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 77s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 77s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 77s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 77s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(78) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 78s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 78s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 78s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 78s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(79) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 79s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 79s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 79s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 79s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(80) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 80s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 80s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 80s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 80s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(81) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 81s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 81s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 81s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 81s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(82) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 82s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 82s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 82s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 82s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(83) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 83s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 83s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 83s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 83s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(84) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 84s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 84s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 84s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 84s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(85) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 85s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 85s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 85s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 85s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(86) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 86s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 86s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 86s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 86s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(87) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 87s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 87s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 87s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 87s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(88) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 88s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 88s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 88s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 88s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(89) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 89s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 89s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 89s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 89s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(90) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 90s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 90s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 90s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 90s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(91) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 91s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 91s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 91s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 91s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(92) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 92s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 92s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 92s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 92s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(93) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 93s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 93s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 93s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 93s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(94) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 94s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 94s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 94s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 94s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(95) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 95s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 95s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 95s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 95s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(96) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 96s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 96s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 96s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 96s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(97) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 97s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 97s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 97s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 97s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(98) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 98s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 98s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 98s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 98s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(99) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 99s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 99s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 99s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerOdd 0.8s 99s forwards; }
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(100) {
+    -moz-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 100s forwards;
+    -o-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 100s forwards;
+    -webkit-animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 100s forwards;
+    animation: rotate 30s linear infinite alternate, shimmerEven 0.8s 100s forwards; }
   .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(odd) {
+    fill: #111113;
     fill: #111113; }
   .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(even) {
+    fill: #18181a;
     fill: #18181a; }
   .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(2n+0) {
     animation-delay: 1s; }
@@ -89,32 +596,36 @@ $color-dial--ring3: #2294e5;*/
   .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(5n+0) {
     animation-delay: 12s; }
 
+@keyframes shimmerOdd {
+  0% {
+    fill: #111113; }
+  35% {
+    fill: rgba(255, 255, 255, 0.1); }
+  100% {
+    fill: #111113; } }
+
+@keyframes shimmerEven {
+  0% {
+    fill: #18181a; }
+  35% {
+    fill: rgba(255, 255, 255, 0.1); }
+  100% {
+    fill: #18181a; } }
+
 @keyframes rotate {
   0% {
-    opacity: 0.8;
+    /*opacity: 0.8;*/
     transform: rotate(0deg) translate(0px, 0px); }
   100% {
-    opacity: 0.1;
+    /*opacity: 0.1;*/
     transform: rotate(10deg) translate(100px, -100px); } }
   .about-screen__img-certification {
     display: block;
     overflow: visible;
-    -moz-animation: flicker 5s cubic-bezier(0.64, 0, 0.78, 0) infinite alternate;
-    -o-animation: flicker 5s cubic-bezier(0.64, 0, 0.78, 0) infinite alternate;
-    -webkit-animation: flicker 5s cubic-bezier(0.64, 0, 0.78, 0) infinite alternate;
-    animation: flicker 5s cubic-bezier(0.64, 0, 0.78, 0) infinite alternate; }
-
-@keyframes flicker {
-  0% {
-    opacity: 1; }
-  100% {
-    opacity: 0.5; } }
-    .about-screen__img-certification [class^="cls-"]:nth-child(2n+0) {
-      animation-delay: 1s; }
-    .about-screen__img-certification [class^="cls-"]:nth-child(3n+0) {
-      animation-delay: 6s; }
-    .about-screen__img-certification [class^="cls-"]:nth-child(5n+0) {
-      animation-delay: 12s; }
+    -moz-animation: none;
+    -o-animation: none;
+    -webkit-animation: none;
+    animation: none; }
     .about-screen__img-certification .cls-1 {
       fill: #b283ec; }
     .about-screen__img-certification .cls-1, .about-screen__img-certification .cls-10, .about-screen__img-certification .cls-11, .about-screen__img-certification .cls-12, .about-screen__img-certification .cls-13, .about-screen__img-certification .cls-14, .about-screen__img-certification .cls-15, .about-screen__img-certification .cls-16, .about-screen__img-certification .cls-17, .about-screen__img-certification .cls-18, .about-screen__img-certification .cls-19, .about-screen__img-certification .cls-2, .about-screen__img-certification .cls-3, .about-screen__img-certification .cls-4, .about-screen__img-certification .cls-5, .about-screen__img-certification .cls-6, .about-screen__img-certification .cls-7, .about-screen__img-certification .cls-8, .about-screen__img-certification .cls-9 {
