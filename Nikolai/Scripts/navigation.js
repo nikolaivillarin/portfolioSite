@@ -182,7 +182,9 @@ MainNavigation.prototype.SubscribeToOnNavigationLoaded = function (fn) {
 MainNavigation.prototype.UnsubscribeToOnNavigationLoaded = function (fn) {
     this.OnNavigationLoadedHandlers = this.OnNavigationLoadedHandlers.filter(
         function (item) {
-            if (item !== fn) {
+            if (fn.guid && item.guid !== fn.guid) {
+                return item;
+            } else if (fn.guid === undefined && item !== fn) {
                 return item;
             }
         }
@@ -210,7 +212,9 @@ MainNavigation.prototype.UnsubscribeToOnPageLoaded = function (fn) {
     /// </param>
     this.OnPageLoadedHandlers = this.OnPageLoadedHandlers.filter(
         function (item) {
-            if (item !== fn) {
+            if (fn.guid && item.guid !== fn.guid) {
+                return item;
+            } else if (fn.guid === undefined && item !== fn) {
                 return item;
             }
         }
@@ -238,7 +242,9 @@ MainNavigation.prototype.UnsubscribeToOnPageChange = function (fn) {
     /// </param>
     this.OnPageChangeHandlers = this.OnPageChangeHandlers.filter(
         function (item) {
-            if (item !== fn) {
+            if (fn.guid && item.guid !== fn.guid) {
+                return item;
+            } else if (fn.guid === undefined && item !== fn) {
                 return item;
             }
         }
@@ -266,7 +272,9 @@ MainNavigation.prototype.UnsubscribeToOnPageChanging = function (fn) {
     /// </param>
     this.OnPageChangingHandlers = this.OnPageChangingHandlers.filter(
         function (item) {
-            if (item !== fn) {
+            if (fn.guid && item.guid !== fn.guid) {
+                return item;
+            } else if (fn.guid === undefined && item !== fn) {
                 return item;
             }
         }
@@ -295,7 +303,9 @@ MainNavigation.prototype.UnsubscribeToDialCick = function (fn) {
     /// </param>
     this.OnDialClickHandlers = this.OnDialClickHandlers.filter(
         function (item) {
-            if (item !== fn) {
+            if (fn.guid && item.guid !== fn.guid) {
+                return item;
+            } else if (fn.guid === undefined && item !== fn) {
                 return item;
             }
         }

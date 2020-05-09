@@ -28,23 +28,11 @@ WorkPage.prototype.Initialize = function () {
         $.proxy(this.OnPageChange, this)
     );
 
-    window.MainNav.NavBar.DialControl.SubscribeToDragEvent(
-        $.proxy(this.OnDialDragged, this)
-    );
-
-    window.MainNav.NavBar.DialControl.SubscribeToDropEvent(
-        $.proxy(this.OnDialDropped, this)
-    );
-
     $('#work [data-nv-bgimage]').click(this.ItemClick);
 
     // Global Event Handlers
     $(window).resize(
         $.proxy(this.WindowResize, this)
-    );
-
-    $('#work').on('scroll',
-        $.proxy(this.PageScrolled, this)
     );
 
     // Initializers
@@ -128,6 +116,34 @@ WorkPage.prototype.WindowResize = function () {
     $('#work').scrollTop(0).trigger('scroll');
 };
 
+WorkPage.prototype.SubscribeToEvents = function () {
+    window.MainNav.NavBar.DialControl.SubscribeToDragEvent(
+        $.proxy(this.OnDialDragged, this)
+    );
+
+    window.MainNav.NavBar.DialControl.SubscribeToDropEvent(
+        $.proxy(this.OnDialDropped, this)
+    );
+
+    $('#work').on('scroll',
+        $.proxy(this.PageScrolled, this)
+    );
+};
+
+WorkPage.prototype.UnsubscribeToEvents = function () {
+    window.MainNav.NavBar.DialControl.UnsubscribeToDragEvent(
+        $.proxy(this.OnDialDragged, this)
+    );
+
+    window.MainNav.NavBar.DialControl.UnsubscribeToDropEvent(
+        $.proxy(this.OnDialDropped, this)
+    );
+
+    $('#work').off('scroll',
+        $.proxy(this.PageScrolled, this)
+    );
+};
+
 WorkPage.prototype.OnPageChange = function (pageId) {
     /// <summary>
     /// Function which is called when page is changed
@@ -139,6 +155,8 @@ WorkPage.prototype.OnPageChange = function (pageId) {
 
         this.EnablePageIndicator();
 
+        this.SubscribeToEvents();
+
         window.setTimeout(function () {
             that.HideViewMoreInstructions();
         }, 1000);
@@ -146,6 +164,8 @@ WorkPage.prototype.OnPageChange = function (pageId) {
         this.IsSelected = false;
 
         this.DisablePageIndicator();
+
+        this.UnsubscribeToEvents();
 
         this.ShowViewMoreInstructions();
     }
@@ -276,7 +296,7 @@ WorkPage.prototype.PageScrolled = function () {
         if (this.HasScrollTicked === false) {
             window.requestAnimationFrame(function () {
                 that.UpdatePageIndicator();
-
+                
                 that.HasScrollTicked = false;
             });
         }

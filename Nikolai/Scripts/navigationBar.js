@@ -1278,7 +1278,9 @@ NVDial.prototype.UnsubscribeToClickEvent = function (fn) {
     /// </param>
     this.onClickHandlers = this.onClickHandlers.filter(
         function (item) {
-            if (item !== fn) {
+            if (fn.guid && item.guid !== fn.guid) {
+                return item;
+            } else if (fn.guid === undefined && item !== fn) {
                 return item;
             }
         }
@@ -1295,7 +1297,9 @@ NVDial.prototype.SubscribeToDragEvent = function (fn) {
 NVDial.prototype.UnsubscribeToDragEvent = function (fn) {
     this.onDragHandlers = this.onDragHandlers.filter(
         function (item) {
-            if (item !== fn) {
+            if (fn.guid && item.guid !== fn.guid) {
+                return item;
+            } else if (fn.guid === undefined && item !== fn) {
                 return item;
             }
         }
@@ -1315,7 +1319,9 @@ NVDial.prototype.SubscribeToDropEvent = function (fn) {
 NVDial.prototype.UnsubscribeToDropEvent = function (fn) {
     this.onDropHandlers = this.onDropHandlers.filter(
         function (item) {
-            if (item !== fn) {
+            if (fn.guid && item.guid !== fn.guid) {
+                return item;
+            } else if (fn.guid === undefined && item !== fn) {
                 return item;
             }
         }

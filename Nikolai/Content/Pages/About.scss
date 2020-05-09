@@ -64,6 +64,46 @@
     justify-content: center;
     height: 100vh;
 
+    &__splash {
+        left: 50%;
+        position: absolute;
+        text-align: center;
+        top: 50%;
+
+        @include transform(translate(-50%, -50%));
+
+        .header-main {
+            span {
+                color: $color-link--blue;
+            }
+        }
+
+        .drop-target {
+            color: $color-font--primaryOnDark;
+            line-height: 1.5em;
+            padding: 3em;
+            position: relative;
+
+            &::before {
+                border: 1px solid #FFF;
+                border-radius: 50%;
+                content: "";
+                display: block;
+                left: 50%;
+                height: 150px;
+                position: absolute;
+                top: 50%;
+                width: 150px;
+
+                @include transform(translate(-50%, -50%));
+            }
+
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+
     &__img {
         display: block;
         overflow: visible;
@@ -94,17 +134,11 @@
 
                     @if $i % 2 == 0 {
                         // Even
-                        @include animation(
-                            rotate 30s linear infinite alternate,
-                            shimmerEven 0.8s $delay forwards
-                        );
+                        @include animation( rotateClockwise 50s linear infinite alternate, shimmerEven 0.8s $delay forwards );
                     }
                     @else {
                         // Odd
-                        @include animation(
-                            rotate 30s linear infinite alternate,
-                            shimmerOdd 0.8s $delay forwards
-                        );
+                        @include animation( rotateCounterClockwise 50s linear infinite alternate, shimmerOdd 0.8s $delay forwards );
                     }
                 }
             }
@@ -138,7 +172,7 @@
             }
 
             35% {
-                fill: rgba(255, 255, 255, 0.1);
+                fill: rgba(27, 27, 30, 1);
             }
 
             100% {
@@ -152,7 +186,7 @@
             }
 
             35% {
-                fill: rgba(255, 255, 255, 0.1);
+                fill: rgba(31, 31, 34, 1);
             }
 
             100% {
@@ -160,7 +194,7 @@
             }
         }
 
-        @keyframes rotate {
+        @keyframes rotateClockwise {
             0% {
                 /*opacity: 0.8;*/
                 transform: rotate(0deg) translate(0px, 0px);
@@ -169,6 +203,18 @@
             100% {
                 /*opacity: 0.1;*/
                 transform: rotate(10deg) translate(100px, -100px);
+            }
+        }
+
+        @keyframes rotateCounterClockwise {
+            0% {
+                /*opacity: 0.8;*/
+                transform: rotate(0deg) translate(0px, 0px);
+            }
+
+            100% {
+                /*opacity: 0.1;*/
+                transform: rotate(-10deg) translate(-100px, 100px);
             }
         }
     }

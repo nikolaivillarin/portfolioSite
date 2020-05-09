@@ -203,7 +203,9 @@ PageTransition.prototype.UnsubscribeToPageChangingEvent = function (fn) {
     /// </summary>
     this.PageChangingHandlers = this.PageChangingHandlers.filter(
         function (item) {
-            if (item !== fn) {
+            if (fn.guid && item.guid !== fn.guid) {
+                return item;
+            } else if (fn.guid === undefined && item !== fn) {
                 return item;
             }
         }
@@ -227,7 +229,9 @@ PageTransition.prototype.UnsubscribeToPageChangedEvent = function (fn) {
     /// </summary>
     this.PageChangedHandlers = this.PageChangedHandlers.filter(
         function (item) {
-            if (item !== fn) {
+            if (fn.guid && item.guid !== fn.guid) {
+                return item;
+            } else if (fn.guid === undefined && item !== fn) {
                 return item;
             }
         }

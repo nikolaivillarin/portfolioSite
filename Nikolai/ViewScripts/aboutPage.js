@@ -40,6 +40,27 @@ AboutPage.prototype.OnPageChange = function (pageId) {
     }
 };
 
+AboutPage.prototype.OnDialDragged = function () {
+    let isInBounds = false;
+    const targetElmt = document.querySelectorAll('[data-nv-drop-target]');
+
+    if (window.MainNav.NavBar.DialControl.IsDialWithinElmt(targetElmt[0])) {
+        isInBounds = true;
+    }
+
+    if (isInBounds) {
+        if (window.MainNav.NavBar.DialControl.$Element.hasClass('nvDial--pulsing') === false) {
+
+            window.MainNav.NavBar.DialControl.$Element.addClass('nvDial--pulsing');
+        }
+    } else {
+        if (window.MainNav.NavBar.DialControl.$Element.hasClass('nvDial--pulsing') === true) {
+
+            window.MainNav.NavBar.DialControl.$Element.removeClass('nvDial--pulsing');
+        }
+    }
+};
+
 AboutPage.prototype.OnPageMouseWheel = function (evt) {
     var that = this;
 
@@ -83,11 +104,16 @@ AboutPage.prototype.Initialize = function () {
     // Bind Scope
     this.OnPageMouseWheel = $.proxy(this.OnPageMouseWheel, this);
 
-    // Initialize functionality
+    // Event Handlers
     window.MainNav.SubscribeToOnPageChange(
         $.proxy(this.OnPageChange, this)
     );
 
+    window.MainNav.NavBar.DialControl.SubscribeToDragEvent(
+        $.proxy(this.OnDialDragged, this)
+    );
+
+    // Initialize functionality
     this.ToggleClipPathPositionHelper();
     this.SetupPositioning();
     this.RenderNavDots();
