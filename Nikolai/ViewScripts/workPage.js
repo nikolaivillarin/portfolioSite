@@ -51,10 +51,6 @@ WorkPage.prototype.ItemClick = function (evt) {
 };
 
 WorkPage.prototype.OnDialDropped = function () {
-    /// <summary>
-    /// Event handler for when the dial control is dropped.
-    /// If the dial is positioned vertically the next page will be triggered
-    /// </summary>
     if (window.MainNav.NavBar.DialControl.$Element.hasClass('nvDial--pulsing') === true) {
         window.MainNav.NavBar.DialControl.$Element.removeClass('nvDial--pulsing');
 
@@ -116,7 +112,7 @@ WorkPage.prototype.WindowResize = function () {
     $('#work').scrollTop(0).trigger('scroll');
 };
 
-WorkPage.prototype.SubscribeToEvents = function () {
+WorkPage.prototype.SubscribeToPageSpecificEvents = function () {
     window.MainNav.NavBar.DialControl.SubscribeToDragEvent(
         $.proxy(this.OnDialDragged, this)
     );
@@ -130,7 +126,7 @@ WorkPage.prototype.SubscribeToEvents = function () {
     );
 };
 
-WorkPage.prototype.UnsubscribeToEvents = function () {
+WorkPage.prototype.UnsubscribeToPageSpecificEvents = function () {
     window.MainNav.NavBar.DialControl.UnsubscribeToDragEvent(
         $.proxy(this.OnDialDragged, this)
     );
@@ -155,7 +151,7 @@ WorkPage.prototype.OnPageChange = function (pageId) {
 
         this.EnablePageIndicator();
 
-        this.SubscribeToEvents();
+        this.SubscribeToPageSpecificEvents();
 
         window.setTimeout(function () {
             that.HideViewMoreInstructions();
@@ -165,7 +161,7 @@ WorkPage.prototype.OnPageChange = function (pageId) {
 
         this.DisablePageIndicator();
 
-        this.UnsubscribeToEvents();
+        this.UnsubscribeToPageSpecificEvents();
 
         this.ShowViewMoreInstructions();
     }

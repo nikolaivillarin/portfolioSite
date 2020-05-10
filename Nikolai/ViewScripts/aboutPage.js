@@ -2,7 +2,7 @@
 function AboutPage() {
     this.Initialize();
 
-    new window.PolyEffect(document.getElementById('msLogoSvg'));
+    this.msLogo = new window.PolyEffect(document.getElementById('msLogoSvg'));
 }
 //#endregion
 
@@ -35,8 +35,35 @@ AboutPage.prototype.OnPageChange = function (pageId) {
     if (pageId && pageId === 'about') {
         this.EnablePageIndicator();
         this.UpdateStyling();
+        this.SubscribeToPageSpecificEvents();
     } else {
         this.DisablePageIndicator();
+        this.UnsubscribeToPageSpecificEvents();
+    }
+};
+
+AboutPage.prototype.OnDialDropped = function () {
+    if (window.MainNav.NavBar.DialControl.$Element.hasClass('nvDial--pulsing') === true) {
+        window.MainNav.NavBar.DialControl.$Element.removeClass('nvDial--pulsing');
+
+        // Animation Frames
+        this.pageElmts.eq(this.selectedPageIndex).addClass('about-screen--animState2');
+
+        window.setTimeout(() => {
+            this.pageElmts.eq(this.selectedPageIndex).addClass('about-screen--animState3');
+
+            window.setTimeout(() => {
+                this.msLogo.StepToOriginalPosition(2000);
+
+                this.pageElmts.eq(this.selectedPageIndex).addClass('about-screen--animState4');
+
+                $(this.msLogo.svgElmt).addClass('about-screen__img-certification');
+
+                window.setTimeout(() => {
+                    this.pageElmts.eq(this.selectedPageIndex).addClass('about-screen--animState5');
+                }, 3000);
+            }, 800);
+        }, 800);
     }
 };
 
@@ -109,15 +136,34 @@ AboutPage.prototype.Initialize = function () {
         $.proxy(this.OnPageChange, this)
     );
 
-    window.MainNav.NavBar.DialControl.SubscribeToDragEvent(
-        $.proxy(this.OnDialDragged, this)
-    );
-
     // Initialize functionality
     this.ToggleClipPathPositionHelper();
     this.SetupPositioning();
     this.RenderNavDots();
-    this.SetupScrollEvents();
+};
+
+AboutPage.prototype.SubscribeToPageSpecificEvents = function () {
+    window.MainNav.NavBar.DialControl.SubscribeToDragEvent(
+        $.proxy(this.OnDialDragged, this)
+    );
+
+    window.MainNav.NavBar.DialControl.SubscribeToDropEvent(
+        $.proxy(this.OnDialDropped, this)
+    );
+
+    window.addEventListener("mousewheel", this.OnPageMouseWheel, { passive: false });
+};
+
+AboutPage.prototype.UnsubscribeToPageSpecificEvents = function () {
+    window.MainNav.NavBar.DialControl.UnsubscribeToDragEvent(
+        $.proxy(this.OnDialDragged, this)
+    );
+
+    window.MainNav.NavBar.DialControl.UnsubscribeToDropEvent(
+        $.proxy(this.OnDialDropped, this)
+    );
+
+    window.removeEventListener("mousewheel", this.OnPageMouseWheel, { passive: false });
 };
 
 AboutPage.prototype.ToggleClipPathPositionHelper = function () {
@@ -172,11 +218,6 @@ AboutPage.prototype.RenderNavDots = function () {
 
         this.$NavDotsElmt.append($navDot);
     }
-};
-
-AboutPage.prototype.SetupScrollEvents = function () {
-    //$(window).on('mousewheel', this.OnPageMouseWheel);
-    window.addEventListener("mousewheel", this.OnPageMouseWheel, { passive: false });
 };
 
 AboutPage.prototype.SetupPositioning = function () {

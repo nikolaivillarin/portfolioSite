@@ -23,8 +23,10 @@ PolyEffect.prototype = {
     shardElmts: [],
     // Scalar to allow elements to go outside of
     // canvas
-    canvasScalarX: 2000,
-    canvasScalarY: 1000,
+    canvasScalarTop: 2000,
+    canvasScalarRight: 9000,
+    canvasScalarBottom: 2000,
+    canvasScalarLeft: 1000,
     // Tolerance for how close shards
     // can come within each other
     xCollisionTolerance: 200,
@@ -38,12 +40,9 @@ PolyEffect.prototype.Initialize = function () {
     });
 
     this.ScatterShards();
-
-    // Temp - replace with trigger
-    //window.setTimeout(() => { this.StepToOriginalPosition() }, 5000);
 };
 
-PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard, scalarX, scalarY) {
+PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard) {
     /// <summary>
     /// Splits the canvas to 4 quadrants: top left, top right, bottom left, and bottom right.
     /// And based on which quadrant the shard falls into returns a random location within that
@@ -52,10 +51,10 @@ PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard, scalar
     const quadrants = {
         verticalSeparator: this.svgElmt.viewBox.baseVal.width / 2,
         horizontalSeparator: this.svgElmt.viewBox.baseVal.height / 2,
-        minX: -scalarX,
-        maxX: this.svgElmt.viewBox.baseVal.width + scalarX,
-        minY: -scalarY,
-        maxY: this.svgElmt.viewBox.baseVal.height + scalarY
+        minX: -this.canvasScalarLeft,
+        maxX: this.svgElmt.viewBox.baseVal.width + this.canvasScalarRight,
+        minY: -this.canvasScalarTop,
+        maxY: this.svgElmt.viewBox.baseVal.height + this.canvasScalarBottom
     };
 
     let xModifier = 0;
@@ -80,7 +79,7 @@ PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard, scalar
         shard.startPosition.y <= quadrants.verticalSeparator) {
 
         // Top Right
-        quadrant = 2;
+        quadrant = 4;
 
         xModifier = GetRandomArbitrary(
             quadrants.verticalSeparator,
@@ -94,7 +93,7 @@ PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard, scalar
     } else if (shard.startPosition.x <= quadrants.verticalSeparator &&
         shard.startPosition.y > quadrants.verticalSeparator) {
         // Bottom Left
-        quadrant = 3;
+        quadrant = 2;
 
         xModifier = GetRandomArbitrary(
             quadrants.minX,
@@ -107,7 +106,7 @@ PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard, scalar
         ) - shard.startPosition.y;
     } else {
         // Bottom Right
-        quadrant = 4;
+        quadrant = 3;
 
         xModifier = GetRandomArbitrary(
             quadrants.verticalSeparator,
@@ -153,8 +152,6 @@ PolyEffect.prototype.ScatterShards = function () {
         do {
             posModifiers = this.GetRandomPositionBasedOnQuadrants(
                 this.shardElmts[i],
-                this.canvasScalarX,
-                this.canvasScalarY
             );
 
             curIterationCount++;
@@ -179,8 +176,8 @@ PolyEffect.prototype.StepToOriginalPosition = function (animationDuration) {
         window.setTimeout(function () {
             const currentShardElmt = that.shardElmts[i];
 
-            currentShardElmt.AnimateToOriginalPosition(this.selectedEasing);
-        }, 50 * i);
+            currentShardElmt.AnimateToOriginalPosition(this.selectedEasing, animationDuration);
+        }, 100 * i);
     }
 };
 //#endregion
@@ -261,9 +258,8 @@ PolyShard.prototype.GetDiffFromCurrAndOrginalData = function () {
     return diffData;
 };
 
-PolyShard.prototype.AnimateToOriginalPosition = function (easing) {
+PolyShard.prototype.AnimateToOriginalPosition = function (easing, animationDuration = 1000) {
     const that = this;
-    const animationDuration = 1000; // Milliseconds
     const stepDuration = 10; // Milliseconds
     const totalSteps = animationDuration / stepDuration;
     const stepper = 1 / totalSteps;
@@ -281,6 +277,7 @@ PolyShard.prototype.AnimateToOriginalPosition = function (easing) {
 
             that.currentData = that.originalData;
             that.UpdateDataAttr();
+            that.shardElmt.classList.add('AnimateToOriginalComplete');
         }
     }, stepDuration);
 };
