@@ -53,7 +53,7 @@ AboutPage.prototype.OnDialDropped = function () {
             this.pageElmts.eq(this.selectedPageIndex).addClass('about-screen--animState3');
 
             window.setTimeout(() => {
-                this.msLogo.StepToOriginalPosition(2000);
+                this.msLogo.StepToOriginalPosition(1000);
 
                 this.pageElmts.eq(this.selectedPageIndex).addClass('about-screen--animState4');
 
@@ -61,9 +61,9 @@ AboutPage.prototype.OnDialDropped = function () {
 
                 window.setTimeout(() => {
                     this.pageElmts.eq(this.selectedPageIndex).addClass('about-screen--animState5');
-                }, 3000);
-            }, 800);
-        }, 800);
+                }, 4000);
+            }, 500);
+        }, 500);
     }
 };
 

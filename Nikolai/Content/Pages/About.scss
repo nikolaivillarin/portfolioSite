@@ -91,7 +91,7 @@ $frameDuration: 0.8s;
                 display: block;
                 float: left;
 
-                @include transition(transform $frameDuration cubic-bezier(0.25, 1, 0.5, 1));
+                @include transition(transform $frameDuration cubic-bezier(0, 0.55, 0.45, 1));
                 @include transform(translateX(-50%));
             }
 
@@ -463,10 +463,6 @@ $frameDuration: 0.8s;
 }
 
 .about-screen--animState4 {
-    /*.about-screen__svg {
-        @include transform(translateX(0%) scale(1));
-    }*/
-
     .about-screen__img {
         [class^="cls-"] {
             &:nth-child(odd) {

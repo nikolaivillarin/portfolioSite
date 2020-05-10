@@ -31,7 +31,7 @@ PolyEffect.prototype = {
     // can come within each other
     xCollisionTolerance: 200,
     yCollisionTolerance: 200,
-    selectedEasing: 'easeOutBack'
+    selectedEasing: 'easeOutCirc'
 };
 
 PolyEffect.prototype.Initialize = function () {
@@ -175,8 +175,8 @@ PolyEffect.prototype.StepToOriginalPosition = function (animationDuration) {
     for (let i = 0; i < sortedShardElmts.length; i++) {
         window.setTimeout(function () {
             const currentShardElmt = that.shardElmts[i];
-
-            currentShardElmt.AnimateToOriginalPosition(this.selectedEasing, animationDuration);
+            
+            currentShardElmt.AnimateToOriginalPosition(that.selectedEasing, animationDuration);
         }, 100 * i);
     }
 };
@@ -208,6 +208,7 @@ PolyShard.prototype = {
         x: 400,
         y: 400
     },
+    // Easing formulas based off: https://easings.net/
     easingFunctions: {
         easeInCubic: (x, diff) => (x * x * x * diff),
         easeOutCubic: (x, diff) => ((1 - Math.pow(1 - x, 3)) * diff),
@@ -216,6 +217,21 @@ PolyShard.prototype = {
             const c3 = c1 + 1;
 
             return (1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2)) * diff;
+        },
+        easeOutCirc: (x, diff) => ((Math.pow(1 - Math.pow(x - 1, 2), 0.5)) * diff),
+        easeOutBounce: (x, diff) => {
+            const n1 = 7.5625;
+            const d1 = 2.75;
+
+            if (x < 1 / d1) {
+                return (n1 * x * x) * diff;
+            } else if (x < 2 / d1) {
+                return (n1 * (x -= 1.5 / d1) * x + 0.75) * diff;
+            } else if (x < 2.5 / d1) {
+                return (n1 * (x -= 2.25 / d1) * x + 0.9375) * diff;
+            } else {
+                return (n1 * (x -= 2.625 / d1) * x + 0.984375) * diff;
+            }
         }
     }
 }
@@ -544,8 +560,6 @@ PolyShard.prototype.NormalizeTriangle = function () {
         areaOfTriangle= this.GetAreaOfTriangle(updatedPath);
 
         currentIterations++;
-
-        console.log('Iterations');
     } while (
         areaOfTriangle < minAreaOfTriangle &&
         currentIterations < maxIterations
