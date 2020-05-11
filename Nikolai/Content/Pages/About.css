@@ -23,21 +23,8 @@ $color-dial--ring3: #2294e5;*/
 
 /*------------------------------------*    CSS Breakpoints for different devices
 \*------------------------------------*/
-.about {
-  background-color: #ebebeb;
-  -moz-transition: background-color 1s;
-  -o-transition: background-color 1s;
-  -webkit-transition: background-color 1s;
-  transition: background-color 1s; }
-  .about .work-IndicatorContainer {
-    bottom: 100px; }
-
-.about--darkTheme {
-  background-color: #262626; }
-  .about--darkTheme h1, .about--darkTheme p {
-    color: #FFF; }
-  .about--darkTheme h1 {
-    margin-bottom: 0.3em; }
+.about .work-IndicatorContainer {
+  bottom: 100px; }
 
 .about-text {
   font-size: 22px;
@@ -61,14 +48,16 @@ $color-dial--ring3: #2294e5;*/
 
 .about-screen {
   align-items: center;
+  background-color: #ebebeb;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh; }
+  height: 100vh;
+  width: 100%; }
+  .about-screen h1 {
+    margin-bottom: 0.3em; }
   .about-screen .about-screen__svg {
-    width: 50%;
-    /*@include transition(transform $frameDuration linear);
-        @include transform(translateX(160%) scale(2));*/ }
+    width: 50%; }
   .about-screen .about-screen__splash {
     padding-left: 5em;
     text-align: center;
@@ -121,6 +110,7 @@ $color-dial--ring3: #2294e5;*/
       transform: translateY(4em) rotate(5deg); }
     .about-screen .about-screen__splash .about-screen__target {
       color: #FFF;
+      cursor: pointer;
       line-height: 1.5em;
       padding: 3em;
       position: relative;
@@ -166,10 +156,10 @@ $color-dial--ring3: #2294e5;*/
     overflow: visible; }
     .about-screen__img [class^="cls-"] {
       position: relative;
-      -moz-transition: fill 0.8s cubic-bezier(0, 0.55, 0.45, 1);
-      -o-transition: fill 0.8s cubic-bezier(0, 0.55, 0.45, 1);
-      -webkit-transition: fill 0.8s cubic-bezier(0, 0.55, 0.45, 1);
-      transition: fill 0.8s cubic-bezier(0, 0.55, 0.45, 1); }
+      -moz-transition: fill 0.8s cubic-bezier(0, 0.55, 0.45, 1), transform 0.8s linear;
+      -o-transition: fill 0.8s cubic-bezier(0, 0.55, 0.45, 1), transform 0.8s linear;
+      -webkit-transition: fill 0.8s cubic-bezier(0, 0.55, 0.45, 1), transform 0.8s linear;
+      transition: fill 0.8s cubic-bezier(0, 0.55, 0.45, 1), transform 0.8s linear; }
     .about-screen__img [class^="cls-"]:nth-child(odd) {
       fill: #111113;
       fill: #111113; }
@@ -692,502 +682,12 @@ $color-dial--ring3: #2294e5;*/
     fill: #1f1f22; }
   100% {
     fill: #18181a; } }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(1) {
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(odd) {
     -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
     -o-animation: rotateCounterClockwise 50s linear infinite alternate;
     -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
     animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(2) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(3) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(4) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(5) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(6) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(7) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(8) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(9) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(10) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(11) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(12) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(13) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(14) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(15) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(16) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(17) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(18) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(19) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(20) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(21) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(22) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(23) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(24) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(25) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(26) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(27) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(28) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(29) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(30) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(31) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(32) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(33) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(34) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(35) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(36) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(37) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(38) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(39) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(40) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(41) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(42) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(43) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(44) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(45) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(46) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(47) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(48) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(49) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(50) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(51) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(52) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(53) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(54) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(55) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(56) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(57) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(58) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(59) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(60) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(61) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(62) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(63) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(64) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(65) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(66) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(67) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(68) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(69) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(70) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(71) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(72) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(73) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(74) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(75) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(76) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(77) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(78) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(79) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(80) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(81) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(82) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(83) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(84) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(85) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(86) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(87) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(88) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(89) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(90) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(91) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(92) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(93) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(94) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(95) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(96) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(97) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(98) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(99) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(100) {
+  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(even) {
     -moz-animation: rotateClockwise 50s linear infinite alternate;
     -o-animation: rotateClockwise 50s linear infinite alternate;
     -webkit-animation: rotateClockwise 50s linear infinite alternate;
@@ -1198,22 +698,6 @@ $color-dial--ring3: #2294e5;*/
     animation-delay: 6s; }
   .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(5n+0) {
     animation-delay: 12s; }
-
-@keyframes rotateClockwise {
-  0% {
-    /*opacity: 0.8;*/
-    transform: rotate(0deg) translate(0px, 0px); }
-  100% {
-    /*opacity: 0.1;*/
-    transform: rotate(10deg) translate(100px, -100px); } }
-
-@keyframes rotateCounterClockwise {
-  0% {
-    /*opacity: 0.8;*/
-    transform: rotate(0deg) translate(0px, 0px); }
-  100% {
-    /*opacity: 0.1;*/
-    transform: rotate(-10deg) translate(-100px, 100px); } }
   .about-screen__img-certification {
     display: block;
     overflow: visible; }
@@ -1260,6 +744,23 @@ $color-dial--ring3: #2294e5;*/
   .about-screen__content {
     display: flex;
     max-width: 1050px; }
+
+@keyframes rotateClockwise {
+  0% {
+    transform: rotate(0deg) translate(0px, 0px); }
+  100% {
+    transform: rotate(10deg) translate(100px, -100px); } }
+
+@keyframes rotateCounterClockwise {
+  0% {
+    transform: rotate(0deg) translate(0px, 0px); }
+  100% {
+    transform: rotate(-10deg) translate(-100px, 100px); } }
+
+.about-screen--darkTheme {
+  background-color: #262626; }
+  .about-screen--darkTheme h1, .about-screen--darkTheme p {
+    color: #FFF; }
 
 .about-screen--animState2 .about-screen__splash {
   -moz-transform: translate(0%, 0%);
@@ -1334,13 +835,13 @@ $color-dial--ring3: #2294e5;*/
   100% {
     transform: translate(4px, -6px); } }
 
-.about-screen--animState4 .about-screen__img [class^="cls-"]:nth-child(odd) {
+.about-screen--animState4 .about-screen__img .AnimateToOriginalComplete[class^="cls-"]:nth-child(odd) {
   -moz-animation: none;
   -o-animation: none;
   -webkit-animation: none;
   animation: none; }
 
-.about-screen--animState4 .about-screen__img [class^="cls-"]:nth-child(even) {
+.about-screen--animState4 .about-screen__img .AnimateToOriginalComplete[class^="cls-"]:nth-child(even) {
   -moz-animation: none;
   -o-animation: none;
   -webkit-animation: none;

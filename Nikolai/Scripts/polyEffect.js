@@ -205,8 +205,8 @@ PolyShard.prototype = {
     currentData: [],
     quadrant: 0, // Used by the container to designate the location of this shard
     sizeTolerance: {
-        x: 400,
-        y: 400
+        x: 600,
+        y: 600
     },
     // Easing formulas based off: https://easings.net/
     easingFunctions: {

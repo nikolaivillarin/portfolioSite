@@ -6,24 +6,8 @@
 @import '../Atoms/_breakpoints';
 
 .about {
-    background-color: $color-background--grey;
-
-    @include transition(background-color 1s);
-
     .work-IndicatorContainer {
         bottom: 100px;
-    }
-}
-
-.about--darkTheme {
-    background-color: $color-background--black;
-
-    h1, p {
-        color: #FFF;
-    }
-
-    h1 {
-        margin-bottom: 0.3em;
     }
 }
 
@@ -61,15 +45,19 @@ $frameDuration: 0.8s;
 
 .about-screen {
     align-items: center;
+    background-color: $color-background--lightGrey;
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 100vh;
+    width: 100%;
+
+    h1 {
+        margin-bottom: 0.3em;
+    }
 
     .about-screen__svg {
         width: 50%;
-        /*@include transition(transform $frameDuration linear);
-        @include transform(translateX(160%) scale(2));*/
     }
 
     .about-screen__splash {
@@ -103,15 +91,13 @@ $frameDuration: 0.8s;
         .about-screen__desc {
             opacity: 0;
 
-            @include transition(
-                opacity $frameDuration linear,
-                transform $frameDuration cubic-bezier(0, 0.55, 0.45, 1)
-            );
+            @include transition( opacity $frameDuration linear, transform $frameDuration cubic-bezier(0, 0.55, 0.45, 1) );
             @include transform(translateY(4em) rotate(5deg));
         }
 
         .about-screen__target {
             color: $color-font--primaryOnDark;
+            cursor: pointer;
             line-height: 1.5em;
             padding: 3em;
             position: relative;
@@ -154,7 +140,7 @@ $frameDuration: 0.8s;
         [class^="cls-"] {
             position: relative;
 
-            @include transition(fill $frameDuration cubic-bezier(0, 0.55, 0.45, 1));
+            @include transition(fill $frameDuration cubic-bezier(0, 0.55, 0.45, 1), transform $frameDuration linear);
         }
 
         [class^="cls-"]:nth-child(odd) {
@@ -217,19 +203,12 @@ $frameDuration: 0.8s;
 
     &__img:not(.about-screen__img-certification) {
         [class^="cls-"] {
-            @for $i from 1 through 100 {
-                &:nth-child(#{$i}) {
-                    $delay: ($i * 1s);
+            &:nth-child(odd) {
+                @include animation( rotateCounterClockwise 50s linear infinite alternate );
+            }
 
-                    @if $i % 2 == 0 {
-                        // Even
-                        @include animation( rotateClockwise 50s linear infinite alternate );
-                    }
-                    @else {
-                        // Odd
-                        @include animation( rotateCounterClockwise 50s linear infinite alternate );
-                    }
-                }
+            &:nth-child(even) {
+                @include animation( rotateClockwise 50s linear infinite alternate );
             }
         }
 
@@ -243,30 +222,6 @@ $frameDuration: 0.8s;
 
         [class^="cls-"]:nth-child(5n+0) {
             animation-delay: 12s;
-        }
-
-        @keyframes rotateClockwise {
-            0% {
-                /*opacity: 0.8;*/
-                transform: rotate(0deg) translate(0px, 0px);
-            }
-
-            100% {
-                /*opacity: 0.1;*/
-                transform: rotate(10deg) translate(100px, -100px);
-            }
-        }
-
-        @keyframes rotateCounterClockwise {
-            0% {
-                /*opacity: 0.8;*/
-                transform: rotate(0deg) translate(0px, 0px);
-            }
-
-            100% {
-                /*opacity: 0.1;*/
-                transform: rotate(-10deg) translate(-100px, 100px);
-            }
         }
     }
 
@@ -359,6 +314,34 @@ $frameDuration: 0.8s;
         display: flex;
         max-width: 1050px;
     }
+
+    @keyframes rotateClockwise {
+        0% {
+            transform: rotate(0deg) translate(0px, 0px);
+        }
+
+        100% {
+            transform: rotate(10deg) translate(100px, -100px);
+        }
+    }
+
+    @keyframes rotateCounterClockwise {
+        0% {
+            transform: rotate(0deg) translate(0px, 0px);
+        }
+
+        100% {
+            transform: rotate(-10deg) translate(-100px, 100px);
+        }
+    }
+}
+
+.about-screen--darkTheme {
+    background-color: $color-background--black;
+
+    h1, p {
+        color: #FFF;
+    }
 }
 
 .about-screen--animState2 {
@@ -383,7 +366,7 @@ $frameDuration: 0.8s;
     .about-screen__img {
         [class^="cls-"] {
             &:nth-child(odd) {
-                @include animation(shake 0.5s linear infinite);
+                @include animation(shake 0.5s linear infinite );
             }
 
             &:nth-child(even) {
@@ -464,7 +447,7 @@ $frameDuration: 0.8s;
 
 .about-screen--animState4 {
     .about-screen__img {
-        [class^="cls-"] {
+        .AnimateToOriginalComplete[class^="cls-"] {
             &:nth-child(odd) {
                 @include animation(none);
             }

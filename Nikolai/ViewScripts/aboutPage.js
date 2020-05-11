@@ -12,6 +12,7 @@ AboutPage.prototype = {
     $ContainerElmt: null,
     $NavDotsElmt: null,
     selectedPageIndex: 0,
+    previousPageIndex: 0,
     totalPages: 0,
     scroll: {
         isThrottled: false,
@@ -23,6 +24,18 @@ AboutPage.prototype = {
         enableDebugMode: false,
         nodeCount: 0,
         nodeScss: ''
+    },
+    AnimEndEventNames: {
+        'WebkitAnimation': 'webkitAnimationEnd',
+        'OAnimation': 'oAnimationEnd',
+        'msAnimation': 'MSAnimationEnd',
+        'animation': 'animationend'
+    },
+    GetAnimEndEventName: function () {
+        /// <summary>
+        /// Returns animation event prefixed by browser
+        /// </summary>
+        return this.AnimEndEventNames[window.Modernizr.prefixed('animation')];
     }
 };
 //#endregion
@@ -88,6 +101,15 @@ AboutPage.prototype.OnDialDragged = function () {
     }
 };
 
+AboutPage.prototype.OnTargetClick = function () {
+    window.MainNav.NavBar.DialControl.$Element.effect({
+        effect: 'bounce'
+        , direction: 'up'
+        , distance: 40
+        , times: 3
+    });
+};
+
 AboutPage.prototype.OnPageMouseWheel = function (evt) {
     var that = this;
 
@@ -138,7 +160,6 @@ AboutPage.prototype.Initialize = function () {
 
     // Initialize functionality
     this.ToggleClipPathPositionHelper();
-    this.SetupPositioning();
     this.RenderNavDots();
 };
 
@@ -152,6 +173,10 @@ AboutPage.prototype.SubscribeToPageSpecificEvents = function () {
     );
 
     window.addEventListener("mousewheel", this.OnPageMouseWheel, { passive: false });
+
+    this.pageElmts.on(this.GetAnimEndEventName(), $.proxy(this.ResetPageTransitionStyling, this));
+
+    $('[data-nv-drop-target]').on('click', this.OnTargetClick);
 };
 
 AboutPage.prototype.UnsubscribeToPageSpecificEvents = function () {
@@ -164,6 +189,8 @@ AboutPage.prototype.UnsubscribeToPageSpecificEvents = function () {
     );
 
     window.removeEventListener("mousewheel", this.OnPageMouseWheel, { passive: false });
+
+    $('[data-nv-drop-target]').off('click', this.OnTargetClick);
 };
 
 AboutPage.prototype.ToggleClipPathPositionHelper = function () {
@@ -220,21 +247,6 @@ AboutPage.prototype.RenderNavDots = function () {
     }
 };
 
-AboutPage.prototype.SetupPositioning = function () {
-    this.pageElmts.css({
-        display: 'none',
-        position: 'absolute',
-        width: '100%'
-    }).eq(0).css({
-        display: 'flex'
-    });
-
-    this.$ContainerElmt.css({
-        height: '100%',
-        position: 'relative'
-    });
-};
-
 AboutPage.prototype.UpdateNavStyling = function () {
     var selectedTheme = this.pageElmts.eq(this.selectedPageIndex).data('nv-about-page');
 
@@ -250,16 +262,6 @@ AboutPage.prototype.UpdateNavStyling = function () {
     }
 };
 
-AboutPage.prototype.UpdatePageStyling = function () {
-    var selectedTheme = this.pageElmts.eq(this.selectedPageIndex).data('nv-about-page');
-
-    if (selectedTheme === 'darkTheme') {
-        this.$ContainerElmt.addClass('about--darkTheme');
-    } else {
-        this.$ContainerElmt.removeClass('about--darkTheme');
-    }
-};
-
 AboutPage.prototype.UpdateStyling = function () {
     /// <summary>
     /// Updates the styling based on what is set for
@@ -267,7 +269,6 @@ AboutPage.prototype.UpdateStyling = function () {
     /// </summary>
 
     this.UpdateSelectedNavDot();
-    this.UpdatePageStyling();
     this.UpdateNavStyling();
 };
 
@@ -291,21 +292,41 @@ AboutPage.prototype.DisablePageIndicator = function () {
 };
 
 AboutPage.prototype.UpSection = function () {
+    this.pageElmts.eq(this.selectedPageIndex)
+        .addClass('expand-container-ontop expand-moveToBottom');
+
+    this.previousPageIndex = this.selectedPageIndex;
     this.selectedPageIndex--;
-    this.pageElmts
-        .css({ display: 'none' })
-        .eq(this.selectedPageIndex)
-        .css({ display: 'flex' });
+
+    this.pageElmts.eq(this.selectedPageIndex)
+        .addClass('expand-moveFromTop expand-container--selected');
+
     this.UpdateStyling();
 };
 
 AboutPage.prototype.DownSection = function () {
+    this.pageElmts.eq(this.selectedPageIndex)
+        .addClass('expand-container-ontop expand-moveToTop');
+
+    this.previousPageIndex = this.selectedPageIndex;
     this.selectedPageIndex++;
-    this.pageElmts
-        .css({ display: 'none' })
-        .eq(this.selectedPageIndex)
-        .css({ display: 'flex' });
+
+    this.pageElmts.eq(this.selectedPageIndex)
+        .addClass('expand-moveFromBottom expand-container--selected');
+
     this.UpdateStyling();
+};
+
+AboutPage.prototype.ResetPageTransitionStyling = function () {
+    this.pageElmts
+        .removeClass('expand-container-ontop')
+        .removeClass('expand-moveToTop')
+        .removeClass('expand-moveFromBottom')
+        .removeClass('expand-moveToBottom')
+        .removeClass('expand-moveFromTop');
+
+    this.pageElmts.eq(this.previousPageIndex)
+        .removeClass('expand-container--selected');
 };
 //#endregion
 

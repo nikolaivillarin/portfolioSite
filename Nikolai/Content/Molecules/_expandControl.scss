@@ -49,6 +49,14 @@
     @include animation(moveToTop 0.6s ease both);
 }
 
+.expand-moveToBottom {
+    @include animation(moveToBottom 0.6s ease both);
+}
+
+.expand-moveFromTop {
+    @include animation(moveFromTop 0.6s ease both);
+}
+
 .expand-moveFromBottom {
     @include animation(moveFromBottom 0.6s ease both);
 }
@@ -76,6 +84,26 @@
     }
     to {
         @include transform(translateY(-100%));
+    }
+}
+
+@include keyframes(moveToBottom) {
+    from {
+        @include transform(translateY(0));
+    }
+
+    to {
+        @include transform(translateY(100%));
+    }
+}
+
+@include keyframes(moveFromTop) {
+    from {
+        @include transform(translateY(-100%));
+    }
+
+    to {
+        @include transform(translateY(0));
     }
 }
 
