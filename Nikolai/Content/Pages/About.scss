@@ -12,8 +12,6 @@
 }
 
 .about-text {
-    /*font-size: 22px;
-    line-height: 29px;*/
     text-align: left;
 }
 
@@ -21,28 +19,6 @@
     display: inline-block;
 
     @include transform(translateY(-3em));
-}
-
-.about-text-anim-up {
-    .anim-up {
-        @for $i from 1 through 1000 {
-            &:nth-child(#{$i}) {
-                $delay: ($i * 0.3s);
-
-                @include animation( translateUp 0.3s $delay forwards );
-            }
-        }
-    }
-
-    @keyframes translateUp {
-        0% {
-            transform: translateY(-3em);
-        }
-
-        100% {
-            transform: translateY(0em);
-        }
-    }
 }
 
 .about-me {
@@ -74,6 +50,58 @@ $frameDuration: 0.8s;
 
 .expand-container--selected .about-screen--selected {
     visibility: visible;
+}
+
+.text-transition-text--start {
+    span, p {
+        display: inline-block;
+        opacity: 0;
+        animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
+    }
+}
+
+.text-transition-up--end {
+    @for $i from 1 through 100 {
+        span:nth-child(#{$i}), p:nth-child(#{$i}) {
+            $delay: ($i * 0.1s);
+
+            @include animation( textTransitionUp 1s $delay forwards );
+        }
+    }
+
+    @keyframes textTransitionUp {
+        0% {
+            opacity: 0;
+            @include transform(rotate(3deg) translateY(30px));
+        }
+
+        100% {
+            opacity: 1;
+            @include transform(rotate(0deg) translateY(0px));
+        }
+    }
+}
+
+.text-transition-down--end {
+    @for $i from 1 through 100 {
+        span:nth-child(#{$i}), p:nth-child(#{$i}) {
+            $delay: ($i * 0.1s);
+
+            @include animation( textTransitionDown 1s $delay forwards );
+        }
+    }
+
+    @keyframes textTransitionDown {
+        0% {
+            opacity: 0;
+            @include transform(rotate(-3deg) translateY(-30px));
+        }
+
+        100% {
+            opacity: 1;
+            @include transform(rotate(0deg) translateY(0px));
+        }
+    }
 }
 
 .about-screen {
@@ -108,7 +136,7 @@ $frameDuration: 0.8s;
             @include transition(transform 0.3s linear);
             @include transform(translateX(50%));
 
-            span {
+            .about-screen_header, .about-screen_subHeader {
                 display: block;
                 float: left;
 

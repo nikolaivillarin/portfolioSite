@@ -49,6 +49,7 @@ AboutPage.prototype.OnPageChange = function (pageId) {
         this.EnablePageIndicator();
         this.UpdateStyling();
         this.SubscribeToPageSpecificEvents();
+        this.TriggerTextAnimation('up');
     } else {
         this.DisablePageIndicator();
         this.UnsubscribeToPageSpecificEvents();
@@ -161,6 +162,32 @@ AboutPage.prototype.Initialize = function () {
     // Initialize functionality
     this.ToggleClipPathPositionHelper();
     this.RenderNavDots();
+    this.SetupTextAnimation();
+};
+
+/**
+ * Wraps a string around each word
+ *
+ * @param {string} str The string to transform
+ * @param {string} tmpl Template that gets interpolated
+ * @returns {string} The given input splitted by words
+ */
+AboutPage.prototype.WrapWords = function (str, tmpl) {
+    return str.replace(/\w+/g, tmpl || "<span>$&</span>");
+};
+
+AboutPage.prototype.SetupTextAnimation = function () {
+    const $animateElmt = $('#about [data-nv-animate]');
+
+    $animateElmt.each((i, elmt) => {
+        const override = $(elmt).attr('data-nv-animate');
+
+        if (override !== 'noWrap') {
+            const text = this.WrapWords($(elmt).text());
+
+            $(elmt).empty().append(text);
+        }
+    }).addClass('text-transition-text--start');
 };
 
 AboutPage.prototype.SubscribeToPageSpecificEvents = function () {
@@ -271,6 +298,50 @@ AboutPage.prototype.UpdateStyling = function () {
     this.UpdateNavStyling();
 };
 
+AboutPage.prototype.ResetTextAnimation = function () {
+    $(this.pageElmts).each((i, elmt) => {
+        if (i !== this.selectedPageIndex) {
+            window.setTimeout(() => {
+                $('[data-nv-animate]', elmt)
+                    .removeClass('text-transition-up--end')
+                    .removeClass('text-transition-down--end');
+            }, 300);
+        }
+    });
+};
+
+AboutPage.prototype.TriggerTextAnimation = function (direction) {
+    const $elmts = $('[data-nv-animate]', this.pageElmts.eq(this.selectedPageIndex));
+    const triggerAnimation = (elmt, delay, animationClass) => {
+        window.setTimeout(() => {
+            $(elmt).addClass(animationClass);
+        }, delay);
+    };
+
+    this.ResetTextAnimation();
+
+    switch (direction) {
+        case 'up':
+            $elmts.each((x, elmt) => {
+                triggerAnimation(
+                    elmt,
+                    Number($(elmt).attr('data-nv-animate-delay')),
+                    'text-transition-down--end'
+                );
+            });
+            break;
+        case 'down':
+            $elmts.each((x, elmt) => {
+                triggerAnimation(
+                    elmt,
+                    Number($(elmt).attr('data-nv-animate-delay')),
+                    'text-transition-up--end'
+                );
+            });
+            break;
+    }
+};
+
 AboutPage.prototype.UpdateSelectedNavDot = function () {
     /// <summary>
     /// Changes the selected dot based on what is specified for the 
@@ -301,6 +372,8 @@ AboutPage.prototype.UpSection = function () {
         .addClass('expand-moveFromTop about-screen--selected');
 
     this.UpdateStyling();
+
+    this.TriggerTextAnimation('up');
 };
 
 AboutPage.prototype.DownSection = function () {
@@ -314,18 +387,22 @@ AboutPage.prototype.DownSection = function () {
         .addClass('expand-moveFromBottom about-screen--selected');
 
     this.UpdateStyling();
+
+    this.TriggerTextAnimation('down');
 };
 
-AboutPage.prototype.ResetPageTransitionStyling = function () {
-    this.pageElmts
-        .removeClass('expand-container-ontop')
-        .removeClass('expand-moveToTop')
-        .removeClass('expand-moveFromBottom')
-        .removeClass('expand-moveToBottom')
-        .removeClass('expand-moveFromTop');
+AboutPage.prototype.ResetPageTransitionStyling = function (evt) {
+    if (evt.target.hasAttribute('data-nv-about-page')) {
+        this.pageElmts
+            .removeClass('expand-container-ontop')
+            .removeClass('expand-moveToTop')
+            .removeClass('expand-moveFromBottom')
+            .removeClass('expand-moveToBottom')
+            .removeClass('expand-moveFromTop');
 
-    this.pageElmts.eq(this.previousPageIndex)
-        .removeClass('about-screen--selected');
+        this.pageElmts.eq(this.previousPageIndex)
+            .removeClass('about-screen--selected');
+    }
 };
 //#endregion
 

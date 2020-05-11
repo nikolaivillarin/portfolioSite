@@ -14,7 +14,8 @@ function PageTransition(initialPageID) {
 
 //#region Properties
 PageTransition.prototype = {
-    CurrentPageClass: 'expand-container--selected'
+    ID: ''
+    , CurrentPageClass: 'expand-container--selected'
     , PageChangingHandlers: []
     , PageChangedHandlers: []
     , $previousPage: null
@@ -47,6 +48,7 @@ PageTransition.prototype.Initialize = function (initialPageID) {
         throw new Error('Initial Page ID must be specified');
     }
 
+    this.ID = initialPageID;
     this.$currentPage = $('#' + initialPageID);
 
     if (this.$currentPage.length === 0) {
@@ -161,13 +163,15 @@ PageTransition.prototype.TransitionToPage = function (pageID) {
 
     this.$currentPage
         .addClass(transitionClasses.OutClass)
-        .on(this.GetAnimEndEventName(), function () {
-            that.$currentPage.off(that.GetAnimEndEventName());
+        .on(this.GetAnimEndEventName(), function (evt) {
+            if (evt.target.getAttribute('id') === this.id) {
+                that.$currentPage.off(that.GetAnimEndEventName());
 
-            that.EndCurrPage = true;
+                that.EndCurrPage = true;
 
-            if (that.EndNextPage) {
-                that.OnEndAnimation(that.$currentPage, that.$nextPage);
+                if (that.EndNextPage) {
+                    that.OnEndAnimation(that.$currentPage, that.$nextPage);
+                }
             }
         });
 
@@ -175,13 +179,15 @@ PageTransition.prototype.TransitionToPage = function (pageID) {
         .scrollTop(0)
         .addClass(this.CurrentPageClass)
         .addClass(transitionClasses.InClass)
-        .on(this.GetAnimEndEventName(), function () {
-            that.$nextPage.off(that.GetAnimEndEventName());
+        .on(this.GetAnimEndEventName(), function (evt) {
+            if (evt.target.getAttribute('id') === this.id) {
+                that.$nextPage.off(that.GetAnimEndEventName());
 
-            that.EndNextPage = true;
+                that.EndNextPage = true;
 
-            if (that.EndCurrPage) {
-                that.OnEndAnimation(that.$currentPage, that.$nextPage);
+                if (that.EndCurrPage) {
+                    that.OnEndAnimation(that.$currentPage, that.$nextPage);
+                }
             }
         });
 };
