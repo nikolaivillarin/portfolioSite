@@ -45,7 +45,11 @@ body {
 
 .header-small {
     font-size: 1.333em;
-    line-height: 1.2em;
+    line-height: 1.4em;
+
+    &--onDark {
+        font-weight: 100;
+    }
 }
 
 .header-tiny {

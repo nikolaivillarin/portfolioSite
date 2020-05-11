@@ -12,8 +12,37 @@
 }
 
 .about-text {
-    font-size: 22px;
-    line-height: 29px;
+    /*font-size: 22px;
+    line-height: 29px;*/
+    text-align: left;
+}
+
+.anim-up {
+    display: inline-block;
+
+    @include transform(translateY(-3em));
+}
+
+.about-text-anim-up {
+    .anim-up {
+        @for $i from 1 through 1000 {
+            &:nth-child(#{$i}) {
+                $delay: ($i * 0.3s);
+
+                @include animation( translateUp 0.3s $delay forwards );
+            }
+        }
+    }
+
+    @keyframes translateUp {
+        0% {
+            transform: translateY(-3em);
+        }
+
+        100% {
+            transform: translateY(0em);
+        }
+    }
 }
 
 .about-me {
@@ -43,6 +72,10 @@
 
 $frameDuration: 0.8s;
 
+.expand-container--selected .about-screen--selected {
+    visibility: visible;
+}
+
 .about-screen {
     align-items: center;
     background-color: $color-background--lightGrey;
@@ -57,7 +90,7 @@ $frameDuration: 0.8s;
     }
 
     .about-screen__svg {
-        width: 50%;
+        min-width: 30%;
     }
 
     .about-screen__splash {
@@ -65,21 +98,21 @@ $frameDuration: 0.8s;
         text-align: center;
 
         @include transition(transform $frameDuration linear);
-        @include transform(translateX(-32%));
+        @include transform(translateX(-27%));
 
         .header-main {
             margin-bottom: 2.2em;
             padding-left: 0px;
             width: 100%;
 
-            @include transition(transform $frameDuration linear);
+            @include transition(transform 0.3s linear);
             @include transform(translateX(50%));
 
             span {
                 display: block;
                 float: left;
 
-                @include transition(transform $frameDuration cubic-bezier(0, 0.55, 0.45, 1));
+                @include transition(transform 0.3s linear);
                 @include transform(translateX(-50%));
             }
 
@@ -89,10 +122,20 @@ $frameDuration: 0.8s;
         }
 
         .about-screen__desc {
-            opacity: 0;
+            span {
+                display: inline-block;
+                opacity: 0;
 
-            @include transition( opacity $frameDuration linear, transform $frameDuration cubic-bezier(0, 0.55, 0.45, 1) );
-            @include transform(translateY(4em) rotate(5deg));
+                @include transform(rotate(5deg) translateY(1em));
+
+                @for $i from 1 through 100 {
+                    &:nth-child(#{$i}) {
+                        $delay: ($i * 0.1s);
+
+                        @include transition(opacity $frameDuration linear $delay, transform $frameDuration cubic-bezier(0, 0.55, 0.45, 1) $delay);
+                    }
+                }
+            }
         }
 
         .about-screen__target {
@@ -468,9 +511,11 @@ $frameDuration: 0.8s;
 .about-screen--animState5 {
     .about-screen__splash {
         .about-screen__desc {
-            opacity: 1;
+            span {
+                opacity: 1;
 
-            @include transform(translateY(0em) rotate(0deg));
+                @include transform(rotate(0deg) translateY(0em));
+            }
         }
     }
 }

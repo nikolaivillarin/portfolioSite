@@ -17,7 +17,6 @@
 }
 
 .expand-container {
-    /*display: none;*/
     overflow: hidden;
     visibility: hidden;
 
@@ -29,7 +28,6 @@
 
 .expand-container--selected {
     visibility: visible;
-    /*display: block;*/
 }
 
 .expand-contianer__content {

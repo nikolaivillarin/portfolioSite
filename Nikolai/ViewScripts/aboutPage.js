@@ -66,7 +66,7 @@ AboutPage.prototype.OnDialDropped = function () {
             this.pageElmts.eq(this.selectedPageIndex).addClass('about-screen--animState3');
 
             window.setTimeout(() => {
-                this.msLogo.StepToOriginalPosition(1000);
+                this.msLogo.StepToOriginalPosition(600);
 
                 this.pageElmts.eq(this.selectedPageIndex).addClass('about-screen--animState4');
 
@@ -74,7 +74,7 @@ AboutPage.prototype.OnDialDropped = function () {
 
                 window.setTimeout(() => {
                     this.pageElmts.eq(this.selectedPageIndex).addClass('about-screen--animState5');
-                }, 4000);
+                }, 3000);
             }, 500);
         }, 500);
     }
@@ -267,7 +267,6 @@ AboutPage.prototype.UpdateStyling = function () {
     /// Updates the styling based on what is set for
     /// data-nv-about-page attribute
     /// </summary>
-
     this.UpdateSelectedNavDot();
     this.UpdateNavStyling();
 };
@@ -299,7 +298,7 @@ AboutPage.prototype.UpSection = function () {
     this.selectedPageIndex--;
 
     this.pageElmts.eq(this.selectedPageIndex)
-        .addClass('expand-moveFromTop expand-container--selected');
+        .addClass('expand-moveFromTop about-screen--selected');
 
     this.UpdateStyling();
 };
@@ -312,7 +311,7 @@ AboutPage.prototype.DownSection = function () {
     this.selectedPageIndex++;
 
     this.pageElmts.eq(this.selectedPageIndex)
-        .addClass('expand-moveFromBottom expand-container--selected');
+        .addClass('expand-moveFromBottom about-screen--selected');
 
     this.UpdateStyling();
 };
@@ -326,7 +325,7 @@ AboutPage.prototype.ResetPageTransitionStyling = function () {
         .removeClass('expand-moveFromTop');
 
     this.pageElmts.eq(this.previousPageIndex)
-        .removeClass('expand-container--selected');
+        .removeClass('about-screen--selected');
 };
 //#endregion
 

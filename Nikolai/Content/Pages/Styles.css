@@ -1600,7 +1600,6 @@ $color-dial--ring3: #2294e5;*/
   width: 100vw; }
 
 .expand-container {
-  /*display: none;*/
   overflow: hidden;
   visibility: hidden;
   -moz-transform: translate3d(0, 0, 0);
@@ -1615,8 +1614,7 @@ $color-dial--ring3: #2294e5;*/
   backface-visibility: hidden; }
 
 .expand-container--selected {
-  visibility: visible;
-  /*display: block;*/ }
+  visibility: visible; }
 
 .expand-contianer__content {
   height: 100vh;
@@ -2630,7 +2628,9 @@ body {
 
 .header-small {
   font-size: 1.333em;
-  line-height: 1.2em; }
+  line-height: 1.4em; }
+  .header-small--onDark {
+    font-weight: 100; }
 
 .header-tiny {
   font-size: 1em;
