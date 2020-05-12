@@ -56,7 +56,7 @@ $color-dial--ring3: #2294e5;*/
 .expand-container--selected .about-screen--selected {
   visibility: visible; }
 
-.text-transition-text--start span, .text-transition-text--start p {
+.text-transition-text--initial span, .text-transition-text--initial p {
   display: inline-block;
   opacity: 0;
   animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1); }
