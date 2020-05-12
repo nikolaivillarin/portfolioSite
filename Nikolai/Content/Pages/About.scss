@@ -422,7 +422,7 @@ $frameDuration: 0.8s;
         .header-main {
             @include transform(translateX(0%));
 
-            span {
+            .about-screen_header, .about-screen_subHeader {
                 @include transform(translateX(0%));
             }
         }

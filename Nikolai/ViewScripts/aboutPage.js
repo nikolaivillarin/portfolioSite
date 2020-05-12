@@ -312,6 +312,7 @@ AboutPage.prototype.ResetTextAnimation = function () {
 
 AboutPage.prototype.TriggerTextAnimation = function (direction) {
     const $elmts = $('[data-nv-animate]', this.pageElmts.eq(this.selectedPageIndex));
+
     const triggerAnimation = (elmt, delay, animationClass) => {
         window.setTimeout(() => {
             $(elmt).addClass(animationClass);

@@ -2518,7 +2518,7 @@ $color-dial--ring3: #2294e5;*/
     -o-transform: translateX(0%);
     -webkit-transform: translateX(0%);
     transform: translateX(0%); }
-    .about-screen--animState2 .about-screen__splash .header-main span {
+    .about-screen--animState2 .about-screen__splash .header-main .about-screen_header, .about-screen--animState2 .about-screen__splash .header-main .about-screen_subHeader {
       -moz-transform: translateX(0%);
       -ms-transform: translateX(0%);
       -o-transform: translateX(0%);
