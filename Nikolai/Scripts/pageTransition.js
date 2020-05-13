@@ -223,7 +223,7 @@ PageTransition.prototype.SubscribeToPageChangedEvent = function (fn) {
     /// Subscribe to page changed event
     /// </summary>
     /// <param name="fn" type="function">
-    /// Function to be called when page is changed. This function should have
+    /// Function to be called when page is changed. This function will be passed
     /// two parameters: current page ID and previous page ID
     /// </param>
     this.PageChangedHandlers.push(fn);

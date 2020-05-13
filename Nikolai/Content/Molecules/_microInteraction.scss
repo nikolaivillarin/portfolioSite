@@ -1,0 +1,168 @@
+﻿.block-transition--initial {
+    display: block;
+    opacity: 0;
+    animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
+}
+
+.block-transition-up--end {
+    @include animation( transitionUp 2s forwards );
+
+    @keyframes transitionUp {
+        0% {
+            opacity: 0;
+            @include transform(translateY(100px));
+        }
+
+        100% {
+            opacity: 1;
+            @include transform(translateY(0px));
+        }
+    }
+}
+
+.block-transition-down--end {
+    @include animation( transitionDown 2s forwards );
+
+    @keyframes transitionDown {
+        0% {
+            opacity: 0;
+            @include transform(translateY(-100px));
+        }
+
+        100% {
+            opacity: 1;
+            @include transform(translateY(0px));
+        }
+    }
+}
+
+.block-transition-left--end {
+    @include animation( transitionLeft 2s forwards );
+
+    @keyframes transitionLeft {
+        0% {
+            opacity: 0;
+            @include transform(translateX(100px));
+        }
+
+        100% {
+            opacity: 1;
+            @include transform(translateX(0px));
+        }
+    }
+}
+
+.block-transition-right--end {
+    @include animation( transitionRight 2s forwards );
+
+    @keyframes transitionRight {
+        0% {
+            opacity: 0;
+            @include transform(translateX(-100px));
+        }
+
+        100% {
+            opacity: 1;
+            @include transform(translateX(0px));
+        }
+    }
+}
+
+.text-transition--initial {
+    span, p {
+        display: inline-block;
+        opacity: 0;
+        animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
+    }
+}
+
+$text-transition-delay-scalar: 0.1s;
+$text-transition-anim-time: 1s;
+
+.text-transition-up--end {
+    @for $i from 1 through 100 {
+        span:nth-child(#{$i}), p:nth-child(#{$i}) {
+            $delay: ($i * $text-transition-delay-scalar);
+
+            @include animation( textTransitionUp $text-transition-anim-time $delay forwards );
+        }
+    }
+
+    @keyframes textTransitionUp {
+        0% {
+            opacity: 0;
+            @include transform(rotate(3deg) translateY(30px));
+        }
+
+        100% {
+            opacity: 1;
+            @include transform(rotate(0deg) translateY(0px));
+        }
+    }
+}
+
+.text-transition-down--end {
+    @for $i from 1 through 100 {
+        span:nth-child(#{$i}), p:nth-child(#{$i}) {
+            $delay: ($i * $text-transition-delay-scalar);
+
+            @include animation( textTransitionDown $text-transition-anim-time $delay forwards );
+        }
+    }
+
+    @keyframes textTransitionDown {
+        0% {
+            opacity: 0;
+            @include transform(rotate(-3deg) translateY(-30px));
+        }
+
+        100% {
+            opacity: 1;
+            @include transform(rotate(0deg) translateY(0px));
+        }
+    }
+}
+
+.text-transition-left--end {
+    @for $i from 1 through 100 {
+        span:nth-child(#{$i}), p:nth-child(#{$i}) {
+            $delay: ($i * $text-transition-delay-scalar);
+
+            @include animation( textTransitionLeft $text-transition-anim-time $delay forwards );
+        }
+    }
+
+    @keyframes textTransitionLeft {
+        0% {
+            opacity: 0;
+            @include transform(rotate(3deg) translateX(30px));
+        }
+
+        100% {
+            opacity: 1;
+            @include transform(rotate(0deg) translateX(0px));
+        }
+    }
+}
+
+.text-transition-right--end {
+    @for $i from 1 through 100 {
+        span:nth-child(#{$i}), p:nth-child(#{$i}) {
+            $delay: ($i * $text-transition-delay-scalar);
+
+            @include animation( textTransitionRight $text-transition-anim-time $delay forwards );
+        }
+    }
+
+    @keyframes textTransitionRight {
+        0% {
+            opacity: 0;
+            @include transform(rotate(-3deg) translateX(-30px));
+        }
+
+        100% {
+            opacity: 1;
+            @include transform(rotate(0deg) translateX(0px));
+        }
+    }
+}

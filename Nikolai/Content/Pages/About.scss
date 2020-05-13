@@ -21,6 +21,28 @@
     @include transform(translateY(-3em));
 }
 
+.about-profile-pic {
+    height: 360px;
+    overflow: hidden;
+}
+
+.about-profile-pic--motionAnim {
+    img {
+        @include transform(scale(1));
+        @include animation( imgMotion 10s ease-in-out forwards );
+    }
+
+    @keyframes imgMotion {
+        0% {
+            @include transform(scale(1) translateY(0px));
+        }
+
+        100% {
+            @include transform(scale(1.05) translateY(20px));
+        }
+    }
+}
+
 .about-me {
     padding: 3em;
 
@@ -50,58 +72,6 @@ $frameDuration: 0.8s;
 
 .expand-container--selected .about-screen--selected {
     visibility: visible;
-}
-
-.text-transition-text--initial {
-    span, p {
-        display: inline-block;
-        opacity: 0;
-        animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
-    }
-}
-
-.text-transition-up--end {
-    @for $i from 1 through 100 {
-        span:nth-child(#{$i}), p:nth-child(#{$i}) {
-            $delay: ($i * 0.1s);
-
-            @include animation( textTransitionUp 1s $delay forwards );
-        }
-    }
-
-    @keyframes textTransitionUp {
-        0% {
-            opacity: 0;
-            @include transform(rotate(3deg) translateY(30px));
-        }
-
-        100% {
-            opacity: 1;
-            @include transform(rotate(0deg) translateY(0px));
-        }
-    }
-}
-
-.text-transition-down--end {
-    @for $i from 1 through 100 {
-        span:nth-child(#{$i}), p:nth-child(#{$i}) {
-            $delay: ($i * 0.1s);
-
-            @include animation( textTransitionDown 1s $delay forwards );
-        }
-    }
-
-    @keyframes textTransitionDown {
-        0% {
-            opacity: 0;
-            @include transform(rotate(-3deg) translateY(-30px));
-        }
-
-        100% {
-            opacity: 1;
-            @include transform(rotate(0deg) translateY(0px));
-        }
-    }
 }
 
 .about-screen {

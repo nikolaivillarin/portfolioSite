@@ -49,7 +49,7 @@ namespace Nikolai
                 , "~/Scripts/floatingBall.js"
                 , "~/Scripts/scrollAnimations.js"
                 , "~/Scripts/polyEffect.js"
-                , "~/Scripts/textTransition.js"
+                , "~/Scripts/microInteractions.js"
                 , "~/ViewScripts/loader.js"
             ));
 

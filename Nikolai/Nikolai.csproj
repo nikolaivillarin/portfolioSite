@@ -496,6 +496,7 @@
     <Content Include="Fonts\AlegreyaSans-Thin.ttf" />
     <Content Include="Fonts\AlegreyaSans-ThinItalic.ttf" />
     <Content Include="Content\Pages\Work-Dashboard.scss" />
+    <Content Include="Content\Molecules\_microInteraction.scss" />
     <None Include="Properties\PublishProfiles\Local Host.pubxml" />
     <None Include="Properties\PublishProfiles\Winhost Release.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
@@ -522,7 +523,7 @@
     <Content Include="Scripts\polyEffect.js" />
     <Content Include="Scripts\rellax.js" />
     <Content Include="Scripts\scrollAnimations.js" />
-    <Content Include="Scripts\textTransition.js" />
+    <Content Include="Scripts\microInteractions.js" />
     <Content Include="ViewScripts\aboutPage.js" />
     <Content Include="ViewScripts\loader.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />

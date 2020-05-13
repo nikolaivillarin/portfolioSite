@@ -37,12 +37,12 @@ AboutPage.prototype = {
         /// </summary>
         return this.AnimEndEventNames[window.Modernizr.prefixed('animation')];
     },
-    TextTransition: null
+    MicroInteraction: null
 };
 //#endregion
 
 //#region Event Handlers
-AboutPage.prototype.OnPageChange = function (pageId) {
+AboutPage.prototype.OnPageChange = function (pageId, previousPageId) {
     /// <summary>
     /// Function which is called when page is changed
     /// </summary>
@@ -50,13 +50,26 @@ AboutPage.prototype.OnPageChange = function (pageId) {
         this.EnablePageIndicator();
         this.UpdateStyling();
         this.SubscribeToPageSpecificEvents();
-        this.TextTransition.TriggerTextAnimation(
-            'up',
-            $('[data-nv-animate]', this.pageElmts.eq(this.selectedPageIndex)).get()
+
+        let transitionDirection = 'down';
+
+        if (previousPageId === 'work') {
+            transitionDirection = 'left';
+        } else if (previousPageId === 'contact') {
+            transitionDirection = 'right';
+        }
+        
+        this.MicroInteraction.TriggerAnimation(
+            transitionDirection,
+            this.pageElmts.eq(this.selectedPageIndex)
         );
+
+        this.ToggleProfilePicAnimation(true);
     } else {
         this.DisablePageIndicator();
         this.UnsubscribeToPageSpecificEvents();
+        this.MicroInteraction.ResetAnimation();
+        this.ToggleProfilePicAnimation(false);
     }
 };
 
@@ -78,10 +91,28 @@ AboutPage.prototype.OnDialDropped = function () {
                 $(this.msLogo.svgElmt).addClass('about-screen__img-certification');
 
                 window.setTimeout(() => {
-                    this.pageElmts.eq(this.selectedPageIndex).addClass('about-screen--animState5');
-                }, 3000);
+                    this.pageElmts.eq(this.selectedPageIndex).attr('data-nv-about-expanded', true);
+                    this.TogglePageDescription();
+                }, 2000);
             }, 500);
         }, 500);
+    }
+};
+
+AboutPage.prototype.TogglePageDescription = function (direction = 'up') {
+    const $currentPage = this.pageElmts.eq(this.selectedPageIndex);
+
+    if ($currentPage.attr('data-nv-about-expanded') === 'true') {
+        const $elmtsToAnimate = $('[data-nv-animate-auto-play="false"]', $currentPage.get());
+        const $elmtsToReset = $('#about [data-nv-animate-auto-play="false"]').not($elmtsToAnimate);
+
+        $elmtsToAnimate.each((i, elmt) => {
+            this.MicroInteraction.StartAnimation(elmt, direction);
+        });
+
+        if ($elmtsToReset.length !== 0) {
+            this.MicroInteraction.ResetAnimation(null, $elmtsToReset);
+        }
     }
 };
 
@@ -154,7 +185,7 @@ AboutPage.prototype.Initialize = function () {
     this.$ContainerElmt = this.pageElmts.parent();
     this.totalPages = this.pageElmts.length;
     this.$NavDotsElmt = $('#pnlAboutPageIndicator');
-    this.TextTransition = new window.TextTransition('about');
+    this.MicroInteraction = new window.MicroInteraction('about');
 
     // Bind Scope
     this.OnPageMouseWheel = $.proxy(this.OnPageMouseWheel, this);
@@ -167,6 +198,22 @@ AboutPage.prototype.Initialize = function () {
     // Initialize functionality
     this.ToggleClipPathPositionHelper();
     this.RenderNavDots();
+};
+
+AboutPage.prototype.ToggleProfilePicAnimation = function (toggle) {
+    if (toggle === true) {
+        $('[data-nv-profile-pic-anim]')
+            .addClass('about-profile-pic--motionAnim');
+    } else if (toggle === false) {
+        $('[data-nv-profile-pic-anim]')
+            .removeClass('about-profile-pic--motionAnim');
+    } else if (this.selectedPageIndex === 0) {
+        $('[data-nv-profile-pic-anim]')
+            .addClass('about-profile-pic--motionAnim');
+    } else {
+        $('[data-nv-profile-pic-anim]')
+            .removeClass('about-profile-pic--motionAnim');
+    }
 };
 
 AboutPage.prototype.SubscribeToPageSpecificEvents = function () {
@@ -309,10 +356,14 @@ AboutPage.prototype.UpSection = function () {
 
     this.UpdateStyling();
 
-    this.TextTransition.TriggerTextAnimation(
+    this.MicroInteraction.TriggerAnimation(
         'up',
-        $('[data-nv-animate]', this.pageElmts.eq(this.selectedPageIndex)).get()
+        this.pageElmts.eq(this.selectedPageIndex)
     );
+
+    this.ToggleProfilePicAnimation();
+
+    this.TogglePageDescription('up');
 };
 
 AboutPage.prototype.DownSection = function () {
@@ -327,10 +378,14 @@ AboutPage.prototype.DownSection = function () {
 
     this.UpdateStyling();
 
-    this.TextTransition.TriggerTextAnimation(
+    this.MicroInteraction.TriggerAnimation(
         'down',
-        $('[data-nv-animate]', this.pageElmts.eq(this.selectedPageIndex)).get()
+        this.pageElmts.eq(this.selectedPageIndex)
     );
+
+    this.ToggleProfilePicAnimation();
+
+    this.TogglePageDescription('down');
 };
 
 AboutPage.prototype.ResetPageTransitionStyling = function (evt) {

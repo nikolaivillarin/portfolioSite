@@ -6,12 +6,24 @@
     <div class="expand-contianer__content cf">
         <div class="about cf">
             <section class="about-screen about-me expand-container about-screen--selected" data-nv-about-page="lightTheme">
-                <h1 class="header-main header-large" data-nv-animate data-nv-animate-delay="300">
+                <h1 class="header-main header-large" 
+                    data-nv-animate 
+                    data-nv-animate-delay="300"
+                    data-nv-animate-type="text">
                     About Me
                 </h1>
                 <div class="about-me__content">
-                    <img src="~/Content/ImagesAbout/nikolaivillarin.png" alt="Nikolai Villarin Profile Picture" />
-                    <div class="about-text header-small" data-nv-animate="noWrap" data-nv-animate-delay="600">
+                    <div class="about-profile-pic"
+                         data-nv-profile-pic-anim
+                         data-nv-animate="noWrap"
+                         data-nv-animate-delay="0"
+                         data-nv-animate-type="block">
+                        <img src="~/Content/ImagesAbout/nikolaivillarin.png" alt="Nikolai Villarin Profile Picture" />
+                    </div>
+                    <div class="about-text header-small"
+                         data-nv-animate="noWrap"
+                         data-nv-animate-delay="600"
+                         data-nv-animate-type="text">
                         <p>
                             My day job consists of building user-centric web experiences that
                             satisfy a specific business need. And I have extensive experience
@@ -19,7 +31,7 @@
                             this means that I am comfortable working with both back-end and
                             front-end technologies. I currently live and work in Toronto, Canada.
                         </p>
-                        <br />
+                        <br /><br />
                         <p>
                             Let's get in touch if you like my work then don't hesitate to reach out.
                             Or even say hello,
@@ -77,38 +89,41 @@
                     </div>
                     <div class="about-screen__splash">
                         <h1 class="header-main header-large">
-                            <span class="about-screen_header" data-nv-animate data-nv-animate-delay="300">
+                            <span class="about-screen_header" 
+                                  data-nv-animate 
+                                  data-nv-animate-delay="300"
+                                  data-nv-animate-type="text">
                                 I Believe in
                             </span>
-                            <span class="about-screen_subHeader" data-nv-animate data-nv-animate-delay="600">
+                            <span class="about-screen_subHeader" 
+                                  data-nv-animate 
+                                  data-nv-animate-delay="600"
+                                  data-nv-animate-type="text">
                                 Challenging yourself
                             </span>
                         </h1>
                         <br />
-                        <p class="about-screen__desc about-text header-small header-small--onDark">
-                            <span>I</span>
-                            <span>am</span>
-                            <span>a</span>
-                            <span>Microsoft</span>
-                            <span>Certified</span>
-                            <span>Professional.</span>
-                            <span>And</span>
-                            <span>I</span>
-                            <span>am</span>
-                            <span>continually</span>
-                            <span>upgrading</span>
-                            <span>myself</span>
-                            <span>in</span>
-                            <span>terms</span>
-                            <span>of</span>
-                            <span>knowledge</span>
-                        </p>
-                        <button class="about-screen__target" data-nv-drop-target>
-                            <span class="target-text">
-                                Drop dial here <br />
-                                to learn more
-                            </span>
-                        </button>
+                        <div data-nv-animate="noWrap"
+                             data-nv-animate-delay="900"
+                             data-nv-animate-auto-play="false"
+                             data-nv-animate-type="text">
+                            <p class="about-screen__desc about-text header-small header-small--onDark">
+                                I am a Microsoft Certified Professional. And I am continually
+                                upgrading myself in terms of knowledge.
+                            </p>
+                        </div>
+                        <div data-nv-animate="noWrap"
+                             data-nv-animate-delay="600"
+                             data-nv-animate-type="block">
+                            <button class="about-screen__target"
+                                    data-nv-drop-target
+                            >
+                                <span class="target-text">
+                                    Drop dial here <br />
+                                    to learn more
+                                </span>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </section>
