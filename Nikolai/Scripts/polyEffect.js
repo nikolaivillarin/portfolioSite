@@ -8,6 +8,10 @@ const GetRandomArbitrary = function (min, max) {
     /// </summary>
     return Math.random() * (max - min) + min;
 };
+
+const GetRandomFromRange = function (min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
+};
 //#endregion
 
 //#region PolyEffect
@@ -180,6 +184,30 @@ PolyEffect.prototype.StepToOriginalPosition = function (animationDuration) {
         }, 100 * i);
     }
 };
+
+PolyEffect.prototype.StartFloatAnimation = function () {
+    for (let i = 0; i < this.shardElmts.length; i++) {
+        this.shardElmts[i].StartFloatAnimation();
+    }
+};
+
+PolyEffect.prototype.PauseFloatAnimation = function () {
+    for (let i = 0; i < this.shardElmts.length; i++) {
+        this.shardElmts[i].PauseFloatAnimation();
+    }
+};
+
+PolyEffect.prototype.StartShakeAnimation = function () {
+    for (let i = 0; i < this.shardElmts.length; i++) {
+        this.shardElmts[i].StartShakeAnimation();
+    }
+};
+
+PolyEffect.prototype.PauseShakeAnimation = function () {
+    for (let i = 0; i < this.shardElmts.length; i++) {
+        this.shardElmts[i].PauseShakeAnimation();
+    }
+};
 //#endregion
 
 //#region PolyShard
@@ -204,6 +232,8 @@ PolyShard.prototype = {
     originalData: [],
     currentData: [],
     quadrant: 0, // Used by the container to designate the location of this shard
+    floatAnimationPaused: true,
+    shakeAnimationPaused: true,
     sizeTolerance: {
         x: 600,
         y: 600
@@ -283,6 +313,8 @@ PolyShard.prototype.AnimateToOriginalPosition = function (easing, animationDurat
     const currentData = this.currentData;
     let stepCount = 0;
 
+    this.PauseFloatAnimation();
+
     let animIntervalID = window.setInterval(function () {
         if (stepCount < 1) {
             that.EaseAnimation(diffData, currentData, stepCount, easing);
@@ -291,11 +323,12 @@ PolyShard.prototype.AnimateToOriginalPosition = function (easing, animationDurat
         } else {
             window.clearInterval(animIntervalID);
 
+            that.PauseShakeAnimation();
             that.currentData = that.originalData;
             that.UpdateDataAttr();
             that.shardElmt.classList.add('AnimateToOriginalComplete');
         }
-    }, stepDuration);
+    });
 };
 
 PolyShard.prototype.EaseAnimation = function (diffData, currentData, x, easing = 'easeInCubic') {
@@ -572,13 +605,96 @@ PolyShard.prototype.NormalizeTriangle = function () {
     return this;
 };
 
+PolyShard.prototype.StartShakeAnimation = function () {
+    if (this.shakeAnimationPaused === true) {
+        const that = this;
+        const shakeVals = [-4, 4];
+
+        let maxDistance = 4;
+        let yDistance = 0, xDistance = 0;
+        let x = shakeVals[GetRandomFromRange(0, 1)];
+        let y = shakeVals[GetRandomFromRange(0, 1)];
+
+        this.shakeAnimationPaused = false;
+
+        (function drawFrame() {
+            if (that.shakeAnimationPaused === false) {
+                yDistance += 1;
+                xDistance += 1;
+
+                if (yDistance > maxDistance || xDistance > maxDistance) {
+                    x = x * -1;
+                    y = y * -1;
+
+                    yDistance = 0;
+                    xDistance = 0;
+                }
+
+                window.requestAnimationFrame(drawFrame);
+
+                that.Translate(x, y);
+            }
+        }());
+    }
+
+    return this;
+};
+
+PolyShard.prototype.PauseShakeAnimation = function () {
+    this.shakeAnimationPaused = true;
+
+    return this;
+};
+
+PolyShard.prototype.StartFloatAnimation = function () {
+    if (this.floatAnimationPaused === true) {
+        const that = this;
+        const maxDistance = 200;
+
+        let x = Number(GetRandomArbitrary(-0.5, 0.5).toFixed(4));
+        let y = Number(GetRandomArbitrary(-0.5, 0.5).toFixed(4));
+        let yDistance = 0, xDistance = 0;
+
+        this.floatAnimationPaused = false;
+
+        (function drawFrame() {
+            if (that.floatAnimationPaused === false) {
+                yDistance += Math.pow(Math.pow(y, 2), 0.5);
+                xDistance += Math.pow(Math.pow(x, 2), 0.5);
+
+                if (yDistance > maxDistance || xDistance > maxDistance) {
+                    x = x * -1;
+                    y = y * -1;
+
+                    yDistance = 0;
+                    xDistance = 0;
+                }
+
+                window.requestAnimationFrame(drawFrame);
+
+                that.Translate(x, y);
+            }
+        }());
+    }
+
+    return this;
+};
+
+PolyShard.prototype.PauseFloatAnimation = function () {
+    this.floatAnimationPaused = true;
+
+    return this;
+};
+
 PolyShard.prototype.Translate = function (xModifier, yModifer) {
     let updatedData = this.currentData.map(value => {
         if (value.indexOf('M') !== -1 ||
             value.indexOf('L') !== -1) {
 
             let svgModifier = value.substring(0, 1); 
-            let keyValPairs = value.substring(1).split(/(?=[,-])/);
+            let keyValPairs = value.substring(1).split(/(?=[,-])/).filter((val) => {
+                return val !== ',';
+            });
             let newValues = [];
 
             for (let i = 0; i < keyValPairs.length; i++) {

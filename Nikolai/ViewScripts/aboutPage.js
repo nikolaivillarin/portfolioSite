@@ -2,7 +2,8 @@
 function AboutPage() {
     this.Initialize();
 
-    this.msLogo = new window.PolyEffect(document.getElementById('msLogoSvg'));
+    window.msLogo = this.msLogo = new window.PolyEffect(document.getElementById('msLogoSvg'));
+    window.msLogo.StartFloatAnimation();
 }
 //#endregion
 
@@ -78,6 +79,7 @@ AboutPage.prototype.OnDialDropped = function () {
         window.MainNav.NavBar.DialControl.$Element.removeClass('nvDial--pulsing');
 
         // Animation Frames
+        this.msLogo.StartShakeAnimation();
         this.pageElmts.eq(this.selectedPageIndex).addClass('about-screen--animState2');
 
         window.setTimeout(() => {

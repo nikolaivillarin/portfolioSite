@@ -691,10 +691,10 @@ $color-dial--ring3: #2294e5;*/
     display: block;
     content: "Drop Dial";
     color: #FFF;
-    left: 42%;
+    left: 54%;
     opacity: 0;
     position: absolute;
-    top: -20%;
+    top: -10%;
     width: 100%;
     -moz-animation: dropAnim 2s infinite linear;
     -o-animation: dropAnim 2s infinite linear;

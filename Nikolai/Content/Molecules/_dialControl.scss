@@ -344,10 +344,10 @@ $pulse-duration: 2s;
         display: block;
         content: "Drop Dial";
         color: $color-font--primaryOnDark;
-        left: 42%;
+        left: 54%;
         opacity: 0;
         position: absolute;
-        top: -20%;
+        top: -10%;
         width: 100%;
         @include animation(dropAnim $pulse-duration infinite linear);
     }

@@ -1218,16 +1218,6 @@ $color-dial--ring3: #2294e5;*/
     fill: #1f1f22; }
   100% {
     fill: #18181a; } }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(odd) {
-    -moz-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -o-animation: rotateCounterClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateCounterClockwise 50s linear infinite alternate;
-    animation: rotateCounterClockwise 50s linear infinite alternate; }
-  .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(even) {
-    -moz-animation: rotateClockwise 50s linear infinite alternate;
-    -o-animation: rotateClockwise 50s linear infinite alternate;
-    -webkit-animation: rotateClockwise 50s linear infinite alternate;
-    animation: rotateClockwise 50s linear infinite alternate; }
   .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(2n+0) {
     animation-delay: 1s; }
   .about-screen__img:not(.about-screen__img-certification) [class^="cls-"]:nth-child(3n+0) {
@@ -1281,18 +1271,6 @@ $color-dial--ring3: #2294e5;*/
     display: flex;
     max-width: 1050px; }
 
-@keyframes rotateClockwise {
-  0% {
-    transform: rotate(0deg) translate(0px, 0px); }
-  100% {
-    transform: rotate(10deg) translate(100px, -100px); } }
-
-@keyframes rotateCounterClockwise {
-  0% {
-    transform: rotate(0deg) translate(0px, 0px); }
-  100% {
-    transform: rotate(-10deg) translate(-100px, 100px); } }
-
 .about-screen--darkTheme {
   background-color: #262626; }
   .about-screen--darkTheme h1, .about-screen--darkTheme p {
@@ -1323,18 +1301,6 @@ $color-dial--ring3: #2294e5;*/
     -webkit-transform: translate(-325%, -65%);
     transform: translate(-325%, -65%); }
 
-.about-screen--animState3 .about-screen__img [class^="cls-"]:nth-child(odd) {
-  -moz-animation: shake 0.5s linear infinite;
-  -o-animation: shake 0.5s linear infinite;
-  -webkit-animation: shake 0.5s linear infinite;
-  animation: shake 0.5s linear infinite; }
-
-.about-screen--animState3 .about-screen__img [class^="cls-"]:nth-child(even) {
-  -moz-animation: shake 0.5s linear infinite reverse;
-  -o-animation: shake 0.5s linear infinite reverse;
-  -webkit-animation: shake 0.5s linear infinite reverse;
-  animation: shake 0.5s linear infinite reverse; }
-
 .about-screen--animState3 .about-screen__splash .about-screen__target {
   -moz-transform: translate(-325%, -65%) scale(0.3);
   -ms-transform: translate(-325%, -65%) scale(0.3);
@@ -1346,30 +1312,6 @@ $color-dial--ring3: #2294e5;*/
   .about-screen--animState3 .about-screen__splash .about-screen__target::before {
     background-color: #000;
     border-width: 5px; }
-
-@keyframes shake {
-  0% {
-    transform: translate(4px, 4px); }
-  10% {
-    transform: translate(-4px, -6px); }
-  20% {
-    transform: translate(-8px, 0px); }
-  30% {
-    transform: translate(8px, 6px); }
-  40% {
-    transform: translate(4px, -4px); }
-  50% {
-    transform: translate(-4px, 6px); }
-  60% {
-    transform: translate(-8px, 4px); }
-  70% {
-    transform: translate(8px, 4px); }
-  80% {
-    transform: translate(-4px, -4px); }
-  90% {
-    transform: translate(4px, 6px); }
-  100% {
-    transform: translate(4px, -6px); } }
 
 .about-screen--animState4 .about-screen__img .AnimateToOriginalComplete[class^="cls-"]:nth-child(odd) {
   -moz-animation: none;

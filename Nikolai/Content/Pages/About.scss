@@ -243,16 +243,6 @@ $frameDuration: 0.8s;
     }
 
     &__img:not(.about-screen__img-certification) {
-        [class^="cls-"] {
-            &:nth-child(odd) {
-                @include animation( rotateCounterClockwise 50s linear infinite alternate );
-            }
-
-            &:nth-child(even) {
-                @include animation( rotateClockwise 50s linear infinite alternate );
-            }
-        }
-
         [class^="cls-"]:nth-child(2n+0) {
             animation-delay: 1s;
         }
@@ -355,26 +345,6 @@ $frameDuration: 0.8s;
         display: flex;
         max-width: 1050px;
     }
-
-    @keyframes rotateClockwise {
-        0% {
-            transform: rotate(0deg) translate(0px, 0px);
-        }
-
-        100% {
-            transform: rotate(10deg) translate(100px, -100px);
-        }
-    }
-
-    @keyframes rotateCounterClockwise {
-        0% {
-            transform: rotate(0deg) translate(0px, 0px);
-        }
-
-        100% {
-            transform: rotate(-10deg) translate(-100px, 100px);
-        }
-    }
 }
 
 .about-screen--darkTheme {
@@ -404,18 +374,6 @@ $frameDuration: 0.8s;
 }
 
 .about-screen--animState3 {
-    .about-screen__img {
-        [class^="cls-"] {
-            &:nth-child(odd) {
-                @include animation(shake 0.5s linear infinite );
-            }
-
-            &:nth-child(even) {
-                @include animation(shake 0.5s linear infinite reverse);
-            }
-        }
-    }
-
     .about-screen__splash {
         .about-screen__target {
             @include transform(translate(-325%, -65%) scale(0.3));
@@ -428,60 +386,6 @@ $frameDuration: 0.8s;
                 background-color: #000;
                 border-width: 5px;
             }
-        }
-    }
-
-    $shakePx1: -8px;
-    $shakePx2: -6px;
-    $shakePx3: -4px;
-    $shakePx4: 0px;
-    $shakePx5: 4px;
-    $shakePx6: 6px;
-    $shakePx7: 8px;
-
-    @keyframes shake {
-        0% {
-            transform: translate($shakePx5, $shakePx5);
-        }
-
-        10% {
-            transform: translate($shakePx3, $shakePx2);
-        }
-
-        20% {
-            transform: translate($shakePx1, $shakePx4);
-        }
-
-        30% {
-            transform: translate($shakePx7, $shakePx6);
-        }
-
-        40% {
-            transform: translate($shakePx5, $shakePx3);
-        }
-
-        50% {
-            transform: translate($shakePx3, $shakePx6);
-        }
-
-        60% {
-            transform: translate($shakePx1, $shakePx5);
-        }
-
-        70% {
-            transform: translate($shakePx7, $shakePx5);
-        }
-
-        80% {
-            transform: translate($shakePx3, $shakePx3);
-        }
-
-        90% {
-            transform: translate($shakePx5, $shakePx6);
-        }
-
-        100% {
-            transform: translate($shakePx5, $shakePx2);
         }
     }
 }
