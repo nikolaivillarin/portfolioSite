@@ -130,6 +130,34 @@ PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard) {
     };
 };
 
+PolyEffect.prototype.GetShardsSortedAsc = function () {
+    /// <summary>
+    /// Shard elements at the top will be in the top of the list
+    /// </summary>
+    return this.shardElmts.sort((a, b) => a.GetCurrentStartPos().y - b.GetCurrentStartPos().y);
+};
+
+PolyEffect.prototype.GetShardsSortedDesc = function () {
+    /// <summary>
+    /// Shard elements at the bottom will be in the top of the list
+    /// </summary>
+    return this.shardElmts.sort((a, b) => b.GetCurrentStartPos().y - a.GetCurrentStartPos().y);
+};
+
+PolyEffect.prototype.GetShardsSortedLeftToRight = function () {
+    /// <summary>
+    /// Shard elements at the left will be in the top of the list
+    /// </summary>
+    return this.shardElmts.sort((a, b) => a.GetCurrentStartPos().x - b.GetCurrentStartPos().x);
+};
+
+PolyEffect.prototype.GetShardsSortedRightToLeft = function () {
+    /// <summary>
+    /// Shard elements at the right will be in the top of the list
+    /// </summary>
+    return this.shardElmts.sort((a, b) => b.GetCurrentStartPos().x - a.GetCurrentStartPos().x);
+};
+
 PolyEffect.prototype.HasCollision = function (maxIndex, xPos, yPos) {
     for (let i = 0; i <= maxIndex; i++) {
         const curXPosDiff = Math.abs(this.shardElmts[i].currentPosition.x - xPos);
@@ -207,6 +235,34 @@ PolyEffect.prototype.PauseShakeAnimation = function () {
     for (let i = 0; i < this.shardElmts.length; i++) {
         this.shardElmts[i].PauseShakeAnimation();
     }
+};
+
+PolyEffect.prototype.TransitionBottomToTop = function () {
+    const that = this;
+    const incrementer = 500; // How many pixels per row
+    let timingModifier = 1; // Modifier for delay for each row
+    let lastCheckpoint = -2000; // Lowest min value dividable by incrementer
+
+    // Animation Steps
+    // 1) Move every shard down the screen
+    // 2) Row by row move shards up
+    $(this.GetShardsSortedAsc()).each((index, shard) => {
+        if (shard.GetCurrentStartPos().y > lastCheckpoint) {
+            lastCheckpoint += incrementer;
+            timingModifier++;
+        }
+
+        const originalPosition = [...shard.currentData];
+        const newPosition = shard.GetNewPositionData(shard.currentData, 0, 1500);
+
+        shard.Translate(0, 1500);
+
+        window.setTimeout(function () {
+            const thisShard = shard;
+
+            thisShard.AnimateToPosition(newPosition, originalPosition, that.selectedEasing, { animationDuration: 800 });
+        }, 50 * timingModifier);
+    });
 };
 //#endregion
 
@@ -286,12 +342,12 @@ PolyShard.prototype.GetKeyValPairsFromData = function (data, skipIndex = 0) {
         });
 };
 
-PolyShard.prototype.GetDiffFromCurrAndOrginalData = function () {
+PolyShard.prototype.GetDataDifference = function (dataA, DataB) {
     let diffData = [];
 
-    for (let i = 0; i < this.originalData.length; i++) {
-        const originalDataKeyVal = this.GetKeyValPairsFromData(this.originalData[i], 1);
-        const curDataKeyVal = this.GetKeyValPairsFromData(this.currentData[i], 1);
+    for (let i = 0; i < dataA.length; i++) {
+        const originalDataKeyVal = this.GetKeyValPairsFromData(dataA[i], 1);
+        const curDataKeyVal = this.GetKeyValPairsFromData(DataB[i], 1);
         let diffValues = [];
 
         for (let x = 0; x < originalDataKeyVal.length; x++) {
@@ -305,30 +361,46 @@ PolyShard.prototype.GetDiffFromCurrAndOrginalData = function () {
 };
 
 PolyShard.prototype.AnimateToOriginalPosition = function (easing, animationDuration = 1000) {
-    const that = this;
-    const stepDuration = 10; // Milliseconds
-    const totalSteps = animationDuration / stepDuration;
-    const stepper = 1 / totalSteps;
-    const diffData = this.GetDiffFromCurrAndOrginalData();
-    const currentData = this.currentData;
-    let stepCount = 0;
-
     this.PauseFloatAnimation();
 
+    this.AnimateToPosition(this.currentData, this.originalData, easing, {
+        animationDuration,
+        completeCallback: $.proxy(this.PauseShakeAnimation, this),
+        animationCompleteClass: 'AnimateToOriginalComplete'
+    });
+};
+
+PolyShard.prototype.AnimateToPosition = function (startDataPoint, endDataPoint, easing, {
+    animationDuration = 1000, stepDuration = 10, completeCallback = null, animationCompleteClass = '' }
+) {
+    const that = this;
+    const totalSteps = animationDuration / stepDuration;
+    const stepper = 1 / totalSteps;
+    const diffData = this.GetDataDifference(endDataPoint, startDataPoint);
+
+    let stepCount = 0;
+
+    // Function for closure
     let animIntervalID = window.setInterval(function () {
         if (stepCount < 1) {
-            that.EaseAnimation(diffData, currentData, stepCount, easing);
+            that.EaseAnimation(diffData, startDataPoint, stepCount, easing);
 
             stepCount = stepCount + stepper;
         } else {
             window.clearInterval(animIntervalID);
 
-            that.PauseShakeAnimation();
-            that.currentData = that.originalData;
+            that.currentData = endDataPoint;
             that.UpdateDataAttr();
-            that.shardElmt.classList.add('AnimateToOriginalComplete');
+
+            if (animationCompleteClass) {
+                that.shardElmt.classList.add(animationCompleteClass);
+            }
+
+            if (completeCallback) {
+                completeCallback();
+            }
         }
-    });
+    }, stepDuration);
 };
 
 PolyShard.prototype.EaseAnimation = function (diffData, currentData, x, easing = 'easeInCubic') {
@@ -472,6 +544,15 @@ PolyShard.prototype.GetAreaOfTriangle = function (pathData) {
         (halfPerimeter - lengthB) *
         (halfPerimeter - lengthC),
     0.5).toFixed(4);
+};
+
+PolyShard.prototype.GetCurrentStartPos = function () {
+    const data = this.GetKeyValPairsFromData(this.currentData[0], 1);
+
+    return {
+        x: data[0],
+        y: data[1]
+    };
 };
 
 PolyShard.prototype.SetQuadrant = function (quadrant) {
@@ -686,23 +767,23 @@ PolyShard.prototype.PauseFloatAnimation = function () {
     return this;
 };
 
-PolyShard.prototype.Translate = function (xModifier, yModifer) {
-    let updatedData = this.currentData.map(value => {
+PolyShard.prototype.GetNewPositionData = function (startPositionData, xModifier, yModifier) {
+    return startPositionData.map(value => {
         if (value.indexOf('M') !== -1 ||
             value.indexOf('L') !== -1) {
 
-            let svgModifier = value.substring(0, 1); 
+            let svgModifier = value.substring(0, 1);
             let keyValPairs = value.substring(1).split(/(?=[,-])/).filter((val) => {
                 return val !== ',';
             });
             let newValues = [];
 
             for (let i = 0; i < keyValPairs.length; i++) {
-                const val = Number(keyValPairs[i].replace(',',''));
+                const val = Number(keyValPairs[i].replace(',', ''));
 
                 if ((i + 1) % 2 === 0) {
                     // Even
-                    newValues.push(val + yModifer);
+                    newValues.push(val + yModifier);
                 } else {
                     // Odd
                     newValues.push(val + xModifier);
@@ -714,8 +795,10 @@ PolyShard.prototype.Translate = function (xModifier, yModifer) {
             return value;
         }
     });
+}
 
-    this.currentData = updatedData;
+PolyShard.prototype.Translate = function (xModifier, yModifer) {
+    this.currentData = this.GetNewPositionData(this.currentData, xModifier, yModifer);
 
     this.UpdateDataAttr();
     this.UpdatePosition();

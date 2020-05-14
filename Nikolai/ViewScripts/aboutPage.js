@@ -388,6 +388,8 @@ AboutPage.prototype.DownSection = function () {
     this.ToggleProfilePicAnimation();
 
     this.TogglePageDescription('down');
+
+    this.msLogo.TransitionBottomToTop();
 };
 
 AboutPage.prototype.ResetPageTransitionStyling = function (evt) {
