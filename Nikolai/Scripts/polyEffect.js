@@ -240,19 +240,8 @@ PolyEffect.prototype.PauseShakeAnimation = function () {
 PolyEffect.prototype.TransitionBottomToTop = function () {
     const that = this;
     const startYPos = 1500;
-    const incrementer = 100; // How many pixels per row
-    let timingModifier = 1; // Modifier for delay for each row
-    let lastCheckpoint = -3000; // Lowest min value divisible by incrementer
 
-    // Animation Steps
-    // 1) Move every shard down the screen
-    // 2) Row by row move shards up
     $(this.GetShardsSortedAsc()).each((index, shard) => {
-        if (shard.GetCurrentStartPos().y > lastCheckpoint) {
-            lastCheckpoint += incrementer;
-            timingModifier++;
-        }
-
         const originalPosition = [...shard.currentData];
         const newPosition = shard.GetNewPositionData(shard.currentData, 0, startYPos);
 
@@ -262,21 +251,15 @@ PolyEffect.prototype.TransitionBottomToTop = function () {
             const thisShard = shard;
 
             thisShard.AnimateToPosition(newPosition, originalPosition, that.selectedEasing, { animationDuration: 800 });
-        }, 50 * timingModifier);
+        }, 50 * index);
     });
 };
 
 PolyEffect.prototype.TransitionTopToBottom = function () {
     const that = this;
     const startYPos = -1500;
-    let timingModifier = 1; // Modifier for delay for each row
 
-    // Animation Steps
-    // 1) Move every shard up the screen
-    // 2) Row by row move shards down
     $(this.GetShardsSortedDesc()).each((index, shard) => {
-        timingModifier++;
-
         const originalPosition = [...shard.currentData];
         const newPosition = shard.GetNewPositionData(shard.currentData, 0, startYPos);
 
@@ -286,18 +269,15 @@ PolyEffect.prototype.TransitionTopToBottom = function () {
             const thisShard = shard;
 
             thisShard.AnimateToPosition(newPosition, originalPosition, that.selectedEasing, { animationDuration: 800 });
-        }, 50 * timingModifier);
+        }, 50 * index);
     });
 };
 
 PolyEffect.prototype.TransitionLeftToRight = function () {
     const that = this;
     const startXPos = -1500;
-    let timingModifier = 1;
 
     $(this.GetShardsSortedRightToLeft()).each((index, shard) => {
-        timingModifier++;
-
         const originalPosition = [...shard.currentData];
         const newPosition = shard.GetNewPositionData(shard.currentData, startXPos, 0);
 
@@ -307,18 +287,15 @@ PolyEffect.prototype.TransitionLeftToRight = function () {
             const thisShard = shard;
 
             thisShard.AnimateToPosition(newPosition, originalPosition, that.selectedEasing, { animationDuration: 800 });
-        }, 50 * timingModifier);
+        }, 50 * index);
     });
 };
 
 PolyEffect.prototype.TransitionRightToLeft = function () {
     const that = this;
     const startXPos = 1500;
-    let timingModifier = 1;
 
     $(this.GetShardsSortedLeftToRight()).each((index, shard) => {
-        timingModifier++;
-
         const originalPosition = [...shard.currentData];
         const newPosition = shard.GetNewPositionData(shard.currentData, startXPos, 0);
 
@@ -328,7 +305,7 @@ PolyEffect.prototype.TransitionRightToLeft = function () {
             const thisShard = shard;
 
             thisShard.AnimateToPosition(newPosition, originalPosition, that.selectedEasing, { animationDuration: 800 });
-        }, 50 * timingModifier);
+        }, 50 * index);
     });
 };
 //#endregion
