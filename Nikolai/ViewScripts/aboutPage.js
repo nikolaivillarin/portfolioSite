@@ -3,7 +3,7 @@ function AboutPage() {
     this.Initialize();
 
     window.msLogo = this.msLogo = new window.PolyEffect(document.getElementById('msLogoSvg'));
-    window.msLogo.StartFloatAnimation();
+    //window.msLogo.StartFloatAnimation();
 }
 //#endregion
 
@@ -389,7 +389,7 @@ AboutPage.prototype.DownSection = function () {
 
     this.TogglePageDescription('down');
 
-    this.msLogo.TransitionBottomToTop();
+    this.msLogo.TransitionTopToBottom();
 };
 
 AboutPage.prototype.ResetPageTransitionStyling = function (evt) {

@@ -35,7 +35,23 @@ PolyEffect.prototype = {
     // can come within each other
     xCollisionTolerance: 200,
     yCollisionTolerance: 200,
-    selectedEasing: 'easeOutCirc'
+    selectedEasing: 'easeOutCirc',
+    pageTransition: {
+        distance: 1000,
+        duration: 600
+    },
+    AnimEndEventNames: {
+        'WebkitAnimation': 'webkitAnimationEnd',
+        'OAnimation': 'oAnimationEnd',
+        'msAnimation': 'MSAnimationEnd',
+        'animation': 'animationend'
+    },
+    GetAnimEndEventName: function () {
+        /// <summary>
+        /// Returns animation event prefixed by browser
+        /// </summary>
+        return this.AnimEndEventNames[window.Modernizr.prefixed('animation')];
+    },
 };
 
 PolyEffect.prototype.Initialize = function () {
@@ -239,7 +255,7 @@ PolyEffect.prototype.PauseShakeAnimation = function () {
 
 PolyEffect.prototype.TransitionBottomToTop = function () {
     const that = this;
-    const startYPos = 1500;
+    const startYPos = this.pageTransition.distance;
 
     $(this.GetShardsSortedAsc()).each((index, shard) => {
         const originalPosition = [...shard.currentData];
@@ -250,14 +266,16 @@ PolyEffect.prototype.TransitionBottomToTop = function () {
         window.setTimeout(function () {
             const thisShard = shard;
 
-            thisShard.AnimateToPosition(newPosition, originalPosition, that.selectedEasing, { animationDuration: 800 });
+            thisShard.AnimateToPosition(newPosition, originalPosition, that.selectedEasing, {
+                animationDuration: that.pageTransition.duration
+            });
         }, 50 * index);
     });
 };
 
 PolyEffect.prototype.TransitionTopToBottom = function () {
     const that = this;
-    const startYPos = -1500;
+    const startYPos = this.pageTransition.distance * -1;
 
     $(this.GetShardsSortedDesc()).each((index, shard) => {
         const originalPosition = [...shard.currentData];
@@ -268,14 +286,16 @@ PolyEffect.prototype.TransitionTopToBottom = function () {
         window.setTimeout(function () {
             const thisShard = shard;
 
-            thisShard.AnimateToPosition(newPosition, originalPosition, that.selectedEasing, { animationDuration: 800 });
+            thisShard.AnimateToPosition(newPosition, originalPosition, that.selectedEasing, {
+                animationDuration: that.pageTransition.duration
+            });
         }, 50 * index);
     });
 };
 
 PolyEffect.prototype.TransitionLeftToRight = function () {
     const that = this;
-    const startXPos = -1500;
+    const startXPos = this.pageTransition.distance * -1;
 
     $(this.GetShardsSortedRightToLeft()).each((index, shard) => {
         const originalPosition = [...shard.currentData];
@@ -286,14 +306,16 @@ PolyEffect.prototype.TransitionLeftToRight = function () {
         window.setTimeout(function () {
             const thisShard = shard;
 
-            thisShard.AnimateToPosition(newPosition, originalPosition, that.selectedEasing, { animationDuration: 800 });
+            thisShard.AnimateToPosition(newPosition, originalPosition, that.selectedEasing, {
+                animationDuration: that.pageTransition.duration
+            });
         }, 50 * index);
     });
 };
 
 PolyEffect.prototype.TransitionRightToLeft = function () {
     const that = this;
-    const startXPos = 1500;
+    const startXPos = this.pageTransition.distance;
 
     $(this.GetShardsSortedLeftToRight()).each((index, shard) => {
         const originalPosition = [...shard.currentData];
@@ -304,9 +326,50 @@ PolyEffect.prototype.TransitionRightToLeft = function () {
         window.setTimeout(function () {
             const thisShard = shard;
 
-            thisShard.AnimateToPosition(newPosition, originalPosition, that.selectedEasing, { animationDuration: 800 });
+            thisShard.AnimateToPosition(newPosition, originalPosition, that.selectedEasing, {
+                animationDuration: that.pageTransition.duration
+            });
         }, 50 * index);
     });
+};
+
+PolyEffect.prototype.ShimmerTopToBottom = function () {
+    const interationY = 800;
+
+    let shards = this.GetShardsSortedAsc();
+    let currentY = -2000;
+
+    const resetShards = function (previousShards) {
+        if (previousShards) {
+            window.setTimeout(() => {
+                for (let i = 0; i < previousShards.length; i++) {
+                    $(previousShards[i].shardElmt).removeClass('shard--shimmer');
+                }
+            }, 500);
+        }
+    };
+
+    (function animationFrame() {
+        let shardsInRow = shards.filter(shard => (
+            shard.GetCurrentStartPos().y <= currentY
+        ));
+
+        for (let i = 0; i < shardsInRow.length; i++) {
+            $(shardsInRow[i].shardElmt).addClass('shard--shimmer');
+        }
+
+        resetShards(shards.slice(0, shardsInRow.length));
+        shards = shards.slice(shardsInRow.length);
+
+        if (shards.length > 0) {
+            console.log('iteration');
+            currentY += interationY;
+
+            window.setTimeout(() => {
+                animationFrame();
+            }, 300);
+        }
+    }());
 };
 //#endregion
 

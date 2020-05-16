@@ -183,7 +183,7 @@ $frameDuration: 0.8s;
         [class^="cls-"] {
             position: relative;
 
-            @include transition(fill $frameDuration cubic-bezier(0, 0.55, 0.45, 1), transform $frameDuration linear);
+            @include transition(fill 0.3s cubic-bezier(0, 0.55, 0.45, 1), transform $frameDuration linear);
         }
 
         [class^="cls-"]:nth-child(odd) {
@@ -194,6 +194,11 @@ $frameDuration: 0.8s;
         [class^="cls-"]:nth-child(even) {
             fill: #18181a;
             fill: rgba(24, 24, 26, 1);
+        }
+
+        [class^="cls-"]:nth-child(odd).shard--shimmer, 
+        [class^="cls-"]:nth-child(even).shard--shimmer {
+            fill: rgba(53, 53, 58, 1);
         }
     }
 

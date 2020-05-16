@@ -694,16 +694,19 @@ $color-dial--ring3: #2294e5;*/
     overflow: visible; }
     .about-screen__img [class^="cls-"] {
       position: relative;
-      -moz-transition: fill 0.8s cubic-bezier(0, 0.55, 0.45, 1), transform 0.8s linear;
-      -o-transition: fill 0.8s cubic-bezier(0, 0.55, 0.45, 1), transform 0.8s linear;
-      -webkit-transition: fill 0.8s cubic-bezier(0, 0.55, 0.45, 1), transform 0.8s linear;
-      transition: fill 0.8s cubic-bezier(0, 0.55, 0.45, 1), transform 0.8s linear; }
+      -moz-transition: fill 0.3s cubic-bezier(0, 0.55, 0.45, 1), transform 0.8s linear;
+      -o-transition: fill 0.3s cubic-bezier(0, 0.55, 0.45, 1), transform 0.8s linear;
+      -webkit-transition: fill 0.3s cubic-bezier(0, 0.55, 0.45, 1), transform 0.8s linear;
+      transition: fill 0.3s cubic-bezier(0, 0.55, 0.45, 1), transform 0.8s linear; }
     .about-screen__img [class^="cls-"]:nth-child(odd) {
       fill: #111113;
       fill: #111113; }
     .about-screen__img [class^="cls-"]:nth-child(even) {
       fill: #18181a;
       fill: #18181a; }
+    .about-screen__img [class^="cls-"]:nth-child(odd).shard--shimmer,
+    .about-screen__img [class^="cls-"]:nth-child(even).shard--shimmer {
+      fill: #35353a; }
   .about-screen__img--shimmer [class^="cls-"]:nth-child(1) {
     -moz-animation: shimmerOdd 0.8s 1s forwards;
     -o-animation: shimmerOdd 0.8s 1s forwards;
