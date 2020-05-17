@@ -288,17 +288,26 @@ AboutPage.prototype.ToggleClipPathPositionHelper = function () {
 };
 
 AboutPage.prototype.RenderNavDots = function () {
-    for (var i = 0; i < this.totalPages; i++) {
-        var $navDot = $('<span></span>', {
+    $('[data-nv-about-page]').each((index, elmt) => {
+        const tooltipText = $(elmt).attr('data-nv-about-page-tooltip');
+
+        let $navTooltip = $('<span></span>', {
+            "class": "about-PageIndicator-tooltip",
+            "text": tooltipText
+        });
+
+        let $navDot = $('<span></span>', {
             "class": "about-PageIndicator"
         });
 
-        if (i === 0) {
+        $navDot.append($navTooltip);
+
+        if (index === 0) {
             $navDot.addClass('about-PageIndicator--selected');
         }
 
         this.$NavDotsElmt.append($navDot);
-    }
+    });
 };
 
 AboutPage.prototype.UpdateNavStyling = function () {

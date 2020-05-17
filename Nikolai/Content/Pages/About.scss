@@ -256,7 +256,7 @@ $frameDuration: 0.8s;
     background-color: $color-background--black;
 
     h1, p {
-        color: #FFF;
+        color: $color-font--primaryOnDark;
     }
 }
 
@@ -337,6 +337,10 @@ $frameDuration: 0.8s;
     .about-PageIndicator {
         border-color: #FFF;
     }
+
+    .about-PageIndicator-tooltip {
+        color: $color-font--primaryOnDark;
+    }
 }
 
 .about-PageIndicator {
@@ -347,13 +351,36 @@ $frameDuration: 0.8s;
     display: block;
     height: 1em;
     margin-top: 0.5em;
+    overflow: hidden;
+    position: relative;
     width: 1em;
 
     @include transition(background-color 0.4s);
 
     &:hover {
         background-color: #6FB6E7;
+        overflow: visible;
+
+        .about-PageIndicator-tooltip {
+            opacity: 1;
+
+            @include transform(rotate(0deg) translateY(0px));
+        }
     }
+}
+
+.about-PageIndicator-tooltip {
+    color: $color-font--primary;
+    display: block;
+    left: -265px;
+    opacity: 0;
+    position: absolute;
+    text-align: right;
+    top: -3px;
+    width: 250px;
+
+    @include transition(transform 0.3s cubic-bezier(0.33, 1, 0.68, 1), opacity 0.3s linear);
+    @include transform(rotate(-20deg) translateY(46px));
 }
 
 .about-PageIndicator--selected {
