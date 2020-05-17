@@ -216,6 +216,58 @@ PolyEffect.prototype.ScatterShards = function () {
     }
 };
 
+PolyEffect.prototype.ExplodeShards = function () {
+    const that = this;
+    const maxIteration = 500;
+    const shards = this.GetShardsSortedRightToLeft();
+    let curIterationCount = 0; // To prevent infinite loops
+
+    for (let i = 0; i < shards.length; i++) {
+        const shard = shards[i];
+        let posModifiers = null;
+
+        curIterationCount = 0;
+
+        do {
+            posModifiers = this.GetRandomPositionBasedOnQuadrants(
+                shard,
+            );
+
+            curIterationCount++;
+        } while (
+            curIterationCount <= maxIteration &&
+            posModifiers &&
+            this.HasCollision(i - 1, posModifiers.xModifier, posModifiers.yModifier)
+        );
+
+        let newPosition = shard.GetNormalizedTriangleData(
+            shard.currentData
+        );
+
+        newPosition = shard.GetNewPositionData(
+            newPosition,
+            posModifiers.xModifier,
+            posModifiers.yModifier
+        );
+
+        window.setTimeout(function () {
+            const thisShard = shard;
+
+            thisShard.AnimateToPosition(
+                shard.currentData,
+                newPosition,
+                that.selectedEasing, {
+                    animationDuration: that.pageTransition.duration,
+                    completeCallback: () => {
+                        thisShard
+                            .SetQuadrant(posModifiers.quadrant)
+                            .ResetAnimationState();
+                }
+            });
+        }, 10 * i);
+    }
+};
+
 PolyEffect.prototype.StepToOriginalPosition = function (animationDuration) {
     const that = this;
     const sortedShardElmts = this.shardElmts.sort((a, b) => a.quadrant - b.quadrant);
@@ -472,6 +524,10 @@ PolyShard.prototype.AnimateToOriginalPosition = function (easing, animationDurat
         completeCallback: $.proxy(this.PauseShakeAnimation, this),
         animationCompleteClass: 'AnimateToOriginalComplete'
     });
+};
+
+PolyShard.prototype.ResetAnimationState = function () {
+    $(this.shardElmt).removeClass('AnimateToOriginalComplete');
 };
 
 PolyShard.prototype.AnimateToPosition = function (startDataPoint, endDataPoint, easing, {
@@ -760,11 +816,7 @@ PolyShard.prototype.GetRandomPathsForTriangleBasedOnShape = function (data) {
     });
 };
 
-PolyShard.prototype.NormalizeTriangle = function () {
-    /// <summary>
-    /// Normalizes the shape of the triangles to make them more constant
-    /// </summary>
-    const data = this.shardElmt.getAttribute('d').split(/(?=[MLlZ])/);
+PolyShard.prototype.GetNormalizedTriangleData = function (currentData) {
     const maxIterations = 50;
     const minAreaOfTriangle = 20000;
 
@@ -773,9 +825,9 @@ PolyShard.prototype.NormalizeTriangle = function () {
     let updatedPath = [];
 
     do {
-        updatedPath = this.GetRandomPathsForTriangleBasedOnShape(data);
+        updatedPath = this.GetRandomPathsForTriangleBasedOnShape(currentData);
 
-        areaOfTriangle= this.GetAreaOfTriangle(updatedPath);
+        areaOfTriangle = this.GetAreaOfTriangle(updatedPath);
 
         currentIterations++;
     } while (
@@ -783,7 +835,16 @@ PolyShard.prototype.NormalizeTriangle = function () {
         currentIterations < maxIterations
     );
 
-    this.currentData = updatedPath;
+    return updatedPath;
+};
+
+PolyShard.prototype.NormalizeTriangle = function () {
+    /// <summary>
+    /// Normalizes the shape of the triangles to make them more constant
+    /// </summary>
+    const data = this.shardElmt.getAttribute('d').split(/(?=[MLlZ])/);
+
+    this.currentData = this.GetNormalizedTriangleData(data);
 
     this.UpdateDataAttr();
 
