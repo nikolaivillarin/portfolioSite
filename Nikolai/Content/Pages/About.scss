@@ -183,7 +183,7 @@ $frameDuration: 0.8s;
         [class^="cls-"] {
             position: relative;
 
-            @include transition(fill 0.3s cubic-bezier(0, 0.55, 0.45, 1), transform $frameDuration linear);
+            @include transition(fill $frameDuration cubic-bezier(0, 0.55, 0.45, 1), transform $frameDuration linear);
         }
 
         [class^="cls-"]:nth-child(odd) {
@@ -196,70 +196,48 @@ $frameDuration: 0.8s;
             fill: rgba(24, 24, 26, 1);
         }
 
-        [class^="cls-"]:nth-child(odd).shard--shimmer, 
-        [class^="cls-"]:nth-child(even).shard--shimmer {
-            fill: rgba(53, 53, 58, 1);
-        }
-    }
+        [class^="cls-"]:nth-child(odd).shard--shimmer {
+            stroke: white;
+            stroke-width: 1;
+            stroke-opacity: 0.3;
 
-    &__img--shimmer {
-        [class^="cls-"] {
-            @for $i from 1 through 100 {
-                &:nth-child(#{$i}) {
-                    $delay: ($i * 1s);
+            @include animation( shimmerOdd 2s linear forwards );
 
-                    @if $i % 2 == 0 {
-                        // Even
-                        @include animation( shimmerEven 0.8s $delay forwards );
-                    }
-                    @else {
-                        // Odd
-                        @include animation( shimmerOdd 0.8s $delay forwards );
-                    }
+            @keyframes shimmerOdd {
+                0% {
+                    fill: rgba(17, 17, 19, 1);
+                }
+
+                35% {
+                    fill: rgba(29, 29, 32, 1);
+                }
+
+                100% {
+                    fill: rgba(17, 17, 19, 1);
                 }
             }
         }
 
-        @keyframes shimmerOdd {
-            0% {
-                fill: rgba(17, 17, 19, 1);
+        [class^="cls-"]:nth-child(even).shard--shimmer {
+            stroke: white;
+            stroke-width: 1;
+            stroke-opacity: 0.3;
+
+            @include animation( shimmerEven 2s linear forwards );
+
+            @keyframes shimmerEven {
+                0% {
+                    fill: rgba(24, 24, 26, 1);
+                }
+
+                35% {
+                    fill: rgba(38, 38, 41, 1);
+                }
+
+                100% {
+                    fill: rgba(24, 24, 26, 1);
+                }
             }
-
-            35% {
-                fill: rgba(27, 27, 30, 1);
-            }
-
-            100% {
-                fill: rgba(17, 17, 19, 1);
-            }
-        }
-
-        @keyframes shimmerEven {
-            0% {
-                fill: rgba(24, 24, 26, 1);
-            }
-
-            35% {
-                fill: rgba(31, 31, 34, 1);
-            }
-
-            100% {
-                fill: rgba(24, 24, 26, 1);
-            }
-        }
-    }
-
-    &__img:not(.about-screen__img-certification) {
-        [class^="cls-"]:nth-child(2n+0) {
-            animation-delay: 1s;
-        }
-
-        [class^="cls-"]:nth-child(3n+0) {
-            animation-delay: 6s;
-        }
-
-        [class^="cls-"]:nth-child(5n+0) {
-            animation-delay: 12s;
         }
     }
 
@@ -269,78 +247,420 @@ $frameDuration: 0.8s;
 
         .AnimateToOriginalComplete.cls-1 {
             fill: #b283ec;
+
+            &.shard--shimmer {
+                @include animation( shimmer-cls-1 2s linear forwards );
+
+                @keyframes shimmer-cls-1 {
+                    0% {
+                        fill: #b283ec;
+                    }
+
+                    35% {
+                        fill: #bd93ef;
+                    }
+
+                    100% {
+                        fill: #b283ec;
+                    }
+                }
+            }
         }
 
         .AnimateToOriginalComplete.cls-2 {
             fill: #ba96e7;
+
+            &.shard--shimmer {
+                @include animation( shimmer-cls-2 2s linear forwards );
+
+                @keyframes shimmer-cls-2 {
+                    0% {
+                        fill: #ba96e7;
+                    }
+
+                    35% {
+                        fill: #c4a4eb;
+                    }
+
+                    100% {
+                        fill: #ba96e7;
+                    }
+                }
+            }
         }
 
         .AnimateToOriginalComplete.cls-3 {
             fill: #c19af0;
+
+            &.shard--shimmer {
+                @include animation( shimmer-cls-3 2s linear forwards );
+
+                @keyframes shimmer-cls-3 {
+                    0% {
+                        fill: #c19af0;
+                    }
+
+                    35% {
+                        fill: #caa7f2;
+                    }
+
+                    100% {
+                        fill: #c19af0;
+                    }
+                }
+            }
         }
 
         .AnimateToOriginalComplete.cls-4 {
             fill: #b988f3;
+
+            &.shard--shimmer {
+                @include animation( shimmer-cls-4 2s linear forwards );
+
+                @keyframes shimmer-cls-4 {
+                    0% {
+                        fill: #b988f3;
+                    }
+
+                    35% {
+                        fill: #c397f5;
+                    }
+
+                    100% {
+                        fill: #b988f3;
+                    }
+                }
+            }
         }
 
         .AnimateToOriginalComplete.cls-5 {
             fill: #ad7ce6;
+
+            &.shard--shimmer {
+                @include animation( shimmer-cls-5 2s linear forwards );
+
+                @keyframes shimmer-cls-5 {
+                    0% {
+                        fill: #ad7ce6;
+                    }
+
+                    35% {
+                        fill: #b88cea;
+                    }
+
+                    100% {
+                        fill: #ad7ce6;
+                    }
+                }
+            }
         }
 
         .AnimateToOriginalComplete.cls-6 {
             fill: #a676de;
+
+            &.shard--shimmer {
+                @include animation( shimmer-cls-6 2s linear forwards );
+
+                @keyframes shimmer-cls-6 {
+                    0% {
+                        fill: #a676de;
+                    }
+
+                    35% {
+                        fill: #b287e3;
+                    }
+
+                    100% {
+                        fill: #a676de;
+                    }
+                }
+            }
         }
 
         .AnimateToOriginalComplete.cls-7 {
             fill: #b483ef;
+
+            &.shard--shimmer {
+                @include animation( shimmer-cls-7 2s linear forwards );
+
+                @keyframes shimmer-cls-7 {
+                    0% {
+                        fill: #b483ef;
+                    }
+
+                    35% {
+                        fill: #be93f1;
+                    }
+
+                    100% {
+                        fill: #b483ef;
+                    }
+                }
+            }
         }
 
         .AnimateToOriginalComplete.cls-8 {
             fill: #9467c7;
+
+            &.shard--shimmer {
+                @include animation( shimmer-cls-8 2s linear forwards );
+
+                @keyframes shimmer-cls-8 {
+                    0% {
+                        fill: #9467c7;
+                    }
+
+                    35% {
+                        fill: #a279cf;
+                    }
+
+                    100% {
+                        fill: #9467c7;
+                    }
+                }
+            }
         }
 
         .AnimateToOriginalComplete.cls-9 {
             fill: #a171d9;
+
+            &.shard--shimmer {
+                @include animation( shimmer-cls-9 2s linear forwards );
+
+                @keyframes shimmer-cls-9 {
+                    0% {
+                        fill: #a171d9;
+                    }
+
+                    35% {
+                        fill: #ae82de;
+                    }
+
+                    100% {
+                        fill: #a171d9;
+                    }
+                }
+            }
         }
 
         .AnimateToOriginalComplete.cls-10 {
             fill: #a978e2;
+
+            &.shard--shimmer {
+                @include animation( shimmer-cls-10 2s linear forwards );
+
+                @keyframes shimmer-cls-10 {
+                    0% {
+                        fill: #a978e2;
+                    }
+
+                    35% {
+                        fill: #b589e6;
+                    }
+
+                    100% {
+                        fill: #a978e2;
+                    }
+                }
+            }
         }
 
         .AnimateToOriginalComplete.cls-11 {
             fill: #9869ce;
+
+            &.shard--shimmer {
+                @include animation( shimmer-cls-11 2s linear forwards );
+
+                @keyframes shimmer-cls-11 {
+                    0% {
+                        fill: #9869ce;
+                    }
+
+                    35% {
+                        fill: #a67bd5;
+                    }
+
+                    100% {
+                        fill: #9869ce;
+                    }
+                }
+            }
         }
 
         .AnimateToOriginalComplete.cls-12 {
             fill: #b282ea;
+
+            &.shard--shimmer {
+                @include animation( shimmer-cls-12 2s linear forwards );
+
+                @keyframes shimmer-cls-12 {
+                    0% {
+                        fill: #b282ea;
+                    }
+
+                    35% {
+                        fill: #bd92ed;
+                    }
+
+                    100% {
+                        fill: #b282ea;
+                    }
+                }
+            }
         }
 
         .AnimateToOriginalComplete.cls-13 {
             fill: #b885f2;
+
+            &.shard--shimmer {
+                @include animation( shimmer-cls-13 2s linear forwards );
+
+                @keyframes shimmer-cls-13 {
+                    0% {
+                        fill: #b885f2;
+                    }
+
+                    35% {
+                        fill: #c294f4;
+                    }
+
+                    100% {
+                        fill: #b885f2;
+                    }
+                }
+            }
         }
 
         .AnimateToOriginalComplete.cls-14 {
             fill: #45206b;
+
+            &.shard--shimmer {
+                @include animation( shimmer-cls-14 2s linear forwards );
+
+                @keyframes shimmer-cls-14 {
+                    0% {
+                        fill: #45206b;
+                    }
+
+                    35% {
+                        fill: #58317d;
+                    }
+
+                    100% {
+                        fill: #45206b;
+                    }
+                }
+            }
         }
 
         .AnimateToOriginalComplete.cls-15 {
             fill: #4c2676;
+
+            &.shard--shimmer {
+                @include animation( shimmer-cls-15 2s linear forwards );
+
+                @keyframes shimmer-cls-15 {
+                    0% {
+                        fill: #4c2676;
+                    }
+
+                    35% {
+                        fill: #5f3887;
+                    }
+
+                    100% {
+                        fill: #4c2676;
+                    }
+                }
+            }
         }
 
         .AnimateToOriginalComplete.cls-16 {
             fill: #794ab0;
+
+            &.shard--shimmer {
+                @include animation( shimmer-cls-16 2s linear forwards );
+
+                @keyframes shimmer-cls-16 {
+                    0% {
+                        fill: #794ab0;
+                    }
+
+                    35% {
+                        fill: #8a5dbb;
+                    }
+
+                    100% {
+                        fill: #794ab0;
+                    }
+                }
+            }
         }
 
         .AnimateToOriginalComplete.cls-17 {
             fill: #804fb9;
+
+            &.shard--shimmer {
+                @include animation( shimmer-cls-17 2s linear forwards );
+
+                @keyframes shimmer-cls-17 {
+                    0% {
+                        fill: #804fb9;
+                    }
+
+                    35% {
+                        fill: #9062c3;
+                    }
+
+                    100% {
+                        fill: #804fb9;
+                    }
+                }
+            }
         }
 
         .AnimateToOriginalComplete.cls-18 {
             fill: #6a419a;
+
+            &.shard--shimmer {
+                @include animation( shimmer-cls-18 2s linear forwards );
+
+                @keyframes shimmer-cls-18 {
+                    0% {
+                        fill: #6a419a;
+                    }
+
+                    35% {
+                        fill: #7c54a7;
+                    }
+
+                    100% {
+                        fill: #6a419a;
+                    }
+                }
+            }
         }
 
         .AnimateToOriginalComplete.cls-19 {
             fill: #6f43a1;
+
+            &.shard--shimmer {
+                @include animation( shimmer-cls-19 2s linear forwards );
+
+                @keyframes shimmer-cls-19 {
+                    0% {
+                        fill: #6f43a1
+                    }
+
+                    35% {
+                        fill: #7c54a7;
+                    }
+
+                    100% {
+                        fill: #6f43a1;
+                    }
+                }
+            }
         }
     }
 
@@ -398,18 +718,6 @@ $frameDuration: 0.8s;
 }
 
 .about-screen--animState4 {
-    .about-screen__img {
-        .AnimateToOriginalComplete[class^="cls-"] {
-            &:nth-child(odd) {
-                @include animation(none);
-            }
-
-            &:nth-child(even) {
-                @include animation(none);
-            }
-        }
-    }
-
     .about-screen__splash {
         .about-screen__target {
             opacity: 0;

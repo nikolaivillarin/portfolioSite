@@ -333,9 +333,7 @@ PolyEffect.prototype.TransitionRightToLeft = function () {
     });
 };
 
-PolyEffect.prototype.ShimmerTopToBottom = function () {
-    const interationY = 800;
-
+PolyEffect.prototype.ShimmerTopToBottom = function (animationDuration = 2100, yTolerance = 800) {
     let shards = this.GetShardsSortedAsc();
     let currentY = -2000;
 
@@ -345,7 +343,7 @@ PolyEffect.prototype.ShimmerTopToBottom = function () {
                 for (let i = 0; i < previousShards.length; i++) {
                     $(previousShards[i].shardElmt).removeClass('shard--shimmer');
                 }
-            }, 500);
+            }, animationDuration); // This delay should coincide with the animation duration set in css + 100ms
         }
     };
 
@@ -362,12 +360,11 @@ PolyEffect.prototype.ShimmerTopToBottom = function () {
         shards = shards.slice(shardsInRow.length);
 
         if (shards.length > 0) {
-            console.log('iteration');
-            currentY += interationY;
+            currentY += yTolerance;
 
             window.setTimeout(() => {
                 animationFrame();
-            }, 300);
+            }, 100); // This delay is for how long it takes to go down the screen
         }
     }());
 };
@@ -796,9 +793,9 @@ PolyShard.prototype.NormalizeTriangle = function () {
 PolyShard.prototype.StartShakeAnimation = function () {
     if (this.shakeAnimationPaused === true) {
         const that = this;
-        const shakeVals = [-4, 4];
+        const shakeVals = [-3, 3];
 
-        let maxDistance = 4;
+        let maxDistance = 3;
         let yDistance = 0, xDistance = 0;
         let x = shakeVals[GetRandomFromRange(0, 1)];
         let y = shakeVals[GetRandomFromRange(0, 1)];

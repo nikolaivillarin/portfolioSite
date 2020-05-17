@@ -3,7 +3,7 @@ function AboutPage() {
     this.Initialize();
 
     window.msLogo = this.msLogo = new window.PolyEffect(document.getElementById('msLogoSvg'));
-    //window.msLogo.StartFloatAnimation();
+    window.msLogo.StartFloatAnimation();
 }
 //#endregion
 
@@ -163,8 +163,7 @@ AboutPage.prototype.OnPageMouseWheel = function (evt) {
         that.scroll.isThrottled = false;
     }, this.scroll.throttleDuration);
 
-    //if (evt.originalEvent.wheelDelta > 0) {
-    if (evt.wheelDelta > 0) {
+    if (evt.deltaY < 0) {
         if (this.selectedPageIndex === 0) {
             return false;
         } else {
@@ -227,7 +226,7 @@ AboutPage.prototype.SubscribeToPageSpecificEvents = function () {
         $.proxy(this.OnDialDropped, this)
     );
 
-    window.addEventListener("mousewheel", this.OnPageMouseWheel, { passive: false });
+    window.addEventListener("wheel", this.OnPageMouseWheel, { passive: false });
 
     this.pageElmts.on(this.GetAnimEndEventName(), $.proxy(this.ResetPageTransitionStyling, this));
 
@@ -243,7 +242,7 @@ AboutPage.prototype.UnsubscribeToPageSpecificEvents = function () {
         $.proxy(this.OnDialDropped, this)
     );
 
-    window.removeEventListener("mousewheel", this.OnPageMouseWheel, { passive: false });
+    window.removeEventListener("wheel", this.OnPageMouseWheel, { passive: false });
 
     $('[data-nv-drop-target]').off('click', this.OnTargetClick);
 };
@@ -347,6 +346,7 @@ AboutPage.prototype.DisablePageIndicator = function () {
 };
 
 AboutPage.prototype.UpSection = function () {
+
     this.pageElmts.eq(this.selectedPageIndex)
         .addClass('expand-container-ontop expand-moveToBottom');
 
@@ -363,12 +363,18 @@ AboutPage.prototype.UpSection = function () {
         this.pageElmts.eq(this.selectedPageIndex)
     );
 
+    window.setTimeout(() => {
+        this.msLogo.ShimmerTopToBottom();
+    }, 2000);
+
     this.ToggleProfilePicAnimation();
 
     this.TogglePageDescription('up');
 };
 
 AboutPage.prototype.DownSection = function () {
+    const that = this;
+
     this.pageElmts.eq(this.selectedPageIndex)
         .addClass('expand-container-ontop expand-moveToTop');
 
@@ -384,6 +390,10 @@ AboutPage.prototype.DownSection = function () {
         'down',
         this.pageElmts.eq(this.selectedPageIndex)
     );
+
+    window.setTimeout(() => {
+        this.msLogo.ShimmerTopToBottom();
+    }, 2000);
 
     this.ToggleProfilePicAnimation();
 
