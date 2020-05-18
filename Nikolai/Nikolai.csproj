@@ -167,6 +167,7 @@
       <DependentUpon>reset.css</DependentUpon>
     </Content>
     <Content Include="Content\ImagesAbout\babyYoda.png" />
+    <Content Include="Content\ImagesAbout\bombIcon.svg" />
     <Content Include="Content\ImagesAbout\icon_agile.svg" />
     <Content Include="Content\ImagesAbout\icon_brush.svg" />
     <Content Include="Content\ImagesAbout\icon_code.svg" />
@@ -497,6 +498,7 @@
     <Content Include="Fonts\AlegreyaSans-ThinItalic.ttf" />
     <Content Include="Content\Pages\Work-Dashboard.scss" />
     <Content Include="Content\Molecules\_microInteraction.scss" />
+    <Content Include="Content\Molecules\_msLogo.scss" />
     <None Include="Properties\PublishProfiles\Local Host.pubxml" />
     <None Include="Properties\PublishProfiles\Winhost Release.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />

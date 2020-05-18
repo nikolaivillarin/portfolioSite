@@ -92,6 +92,7 @@ $frameDuration: 0.8s;
 
     .about-screen__svg {
         min-width: 30%;
+        position: relative;
     }
 
     .about-screen__splash {
@@ -250,6 +251,16 @@ $frameDuration: 0.8s;
         display: flex;
         max-width: 1050px;
     }
+
+    .about_bombIcon {
+        cursor: pointer;
+        opacity: 0;
+        position: absolute;
+        z-index: 1;
+
+        @include transition(transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 4s, opacity 0.3s linear 4s);
+        @include transform(rotate(45deg) scale(0.3));
+    }
 }
 
 .about-screen--darkTheme {
@@ -301,17 +312,11 @@ $frameDuration: 0.8s;
             opacity: 0;
         }
     }
-}
 
-.about-screen--animState5 {
-    .about-screen__splash {
-        .about-screen__desc {
-            span {
-                opacity: 1;
+    .about_bombIcon {
+        opacity: 1;
 
-                @include transform(rotate(0deg) translateY(0em));
-            }
-        }
+        @include transform(rotate(45deg) scale(1));
     }
 }
 
