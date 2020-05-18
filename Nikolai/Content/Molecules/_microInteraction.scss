@@ -10,7 +10,7 @@
     @keyframes transitionUp {
         0% {
             opacity: 0;
-            @include transform(translateY(100px));
+            @include transform(translateY(50px));
         }
 
         100% {
@@ -26,7 +26,7 @@
     @keyframes transitionDown {
         0% {
             opacity: 0;
-            @include transform(translateY(-100px));
+            @include transform(translateY(-50px));
         }
 
         100% {
