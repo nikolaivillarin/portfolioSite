@@ -189,12 +189,101 @@ $frameDuration: 0.8s;
         }
 
         [class^="cls-"]:nth-child(odd) {
-            fill: #111113;
+            fill: rgba(217, 217, 217, 1);
+        }
+
+        [class^="cls-"]:nth-child(even) {
+            fill: rgba(204, 204, 204, 1);
+        }
+
+        [class^="cls-"]:nth-child(odd).shard--shimmer {
+            stroke: #595959;
+            stroke-width: 1;
+            stroke-opacity: 0.3;
+
+            @include animation( shimmerLightOdd 2s linear forwards );
+
+            @keyframes shimmerLightOdd {
+                0% {
+                    fill: rgba(217, 217, 217, 1);
+                }
+
+                35% {
+                    fill: rgba(153, 153, 153, 1);
+                }
+
+                100% {
+                    fill: rgba(217, 217, 217, 1);
+                }
+            }
+        }
+
+        [class^="cls-"]:nth-child(even).shard--shimmer {
+            stroke: #595959;
+            stroke-width: 1;
+            stroke-opacity: 0.3;
+
+            @include animation( shimmerLightEven 2s linear forwards );
+
+            @keyframes shimmerLightEven {
+                0% {
+                    fill: rgba(204, 204, 204, 1);
+                }
+
+                35% {
+                    fill: rgba(140, 140, 140, 1);
+                }
+
+                100% {
+                    fill: rgba(204, 204, 204, 1);
+                }
+            }
+        }
+    }
+
+    &__text {
+        padding-left: 6em;
+    }
+
+    &__content {
+        display: flex;
+        max-width: 1050px;
+    }
+
+    .about_bombIcon {
+        cursor: pointer;
+        opacity: 0;
+        position: absolute;
+        z-index: 1;
+
+        @include transition(transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 4s, opacity 0.3s linear 4s);
+        @include transform(rotate(45deg) scale(0.3));
+    }
+}
+
+.about-screen--darkTheme {
+    background-color: $color-background--black;
+
+    h1, p {
+        color: $color-font--primaryOnDark;
+    }
+
+    .about-screen__splash {
+        .about-screen__target {
+            color: $color-font--primaryOnDark;
+
+            &::before {
+                border: 1px solid #FFF;
+            }
+        }
+    }
+
+    .about-screen__img {
+        [class^="cls-"]:nth-child(odd) {
             fill: rgba(17, 17, 19, 1);
         }
 
         [class^="cls-"]:nth-child(even) {
-            fill: #18181a;
             fill: rgba(24, 24, 26, 1);
         }
 
@@ -239,43 +328,6 @@ $frameDuration: 0.8s;
                 100% {
                     fill: rgba(24, 24, 26, 1);
                 }
-            }
-        }
-    }
-
-    &__text {
-        padding-left: 6em;
-    }
-
-    &__content {
-        display: flex;
-        max-width: 1050px;
-    }
-
-    .about_bombIcon {
-        cursor: pointer;
-        opacity: 0;
-        position: absolute;
-        z-index: 1;
-
-        @include transition(transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 4s, opacity 0.3s linear 4s);
-        @include transform(rotate(45deg) scale(0.3));
-    }
-}
-
-.about-screen--darkTheme {
-    background-color: $color-background--black;
-
-    h1, p {
-        color: $color-font--primaryOnDark;
-    }
-
-    .about-screen__splash {
-        .about-screen__target {
-            color: $color-font--primaryOnDark;
-
-            &::before {
-                border: 1px solid #FFF;
             }
         }
     }

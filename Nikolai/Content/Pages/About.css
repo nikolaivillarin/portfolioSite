@@ -995,43 +995,41 @@ $color-dial--ring3: #2294e5;*/
       -webkit-transition: fill 0.8s cubic-bezier(0, 0.55, 0.45, 1), transform 0.8s linear;
       transition: fill 0.8s cubic-bezier(0, 0.55, 0.45, 1), transform 0.8s linear; }
     .about-screen__img [class^="cls-"]:nth-child(odd) {
-      fill: #111113;
-      fill: #111113; }
+      fill: #d9d9d9; }
     .about-screen__img [class^="cls-"]:nth-child(even) {
-      fill: #18181a;
-      fill: #18181a; }
+      fill: #cccccc; }
     .about-screen__img [class^="cls-"]:nth-child(odd).shard--shimmer {
-      stroke: white;
+      stroke: #595959;
       stroke-width: 1;
       stroke-opacity: 0.3;
-      -moz-animation: shimmerOdd 2s linear forwards;
-      -o-animation: shimmerOdd 2s linear forwards;
-      -webkit-animation: shimmerOdd 2s linear forwards;
-      animation: shimmerOdd 2s linear forwards; }
+      -moz-animation: shimmerLightOdd 2s linear forwards;
+      -o-animation: shimmerLightOdd 2s linear forwards;
+      -webkit-animation: shimmerLightOdd 2s linear forwards;
+      animation: shimmerLightOdd 2s linear forwards; }
 
-@keyframes shimmerOdd {
+@keyframes shimmerLightOdd {
   0% {
-    fill: #111113; }
+    fill: #d9d9d9; }
   35% {
-    fill: #1d1d20; }
+    fill: #999999; }
   100% {
-    fill: #111113; } }
+    fill: #d9d9d9; } }
     .about-screen__img [class^="cls-"]:nth-child(even).shard--shimmer {
-      stroke: white;
+      stroke: #595959;
       stroke-width: 1;
       stroke-opacity: 0.3;
-      -moz-animation: shimmerEven 2s linear forwards;
-      -o-animation: shimmerEven 2s linear forwards;
-      -webkit-animation: shimmerEven 2s linear forwards;
-      animation: shimmerEven 2s linear forwards; }
+      -moz-animation: shimmerLightEven 2s linear forwards;
+      -o-animation: shimmerLightEven 2s linear forwards;
+      -webkit-animation: shimmerLightEven 2s linear forwards;
+      animation: shimmerLightEven 2s linear forwards; }
 
-@keyframes shimmerEven {
+@keyframes shimmerLightEven {
   0% {
-    fill: #18181a; }
+    fill: #cccccc; }
   35% {
-    fill: #262629; }
+    fill: #8c8c8c; }
   100% {
-    fill: #18181a; } }
+    fill: #cccccc; } }
   .about-screen__text {
     padding-left: 6em; }
   .about-screen__content {
@@ -1060,6 +1058,42 @@ $color-dial--ring3: #2294e5;*/
     color: #FFF; }
     .about-screen--darkTheme .about-screen__splash .about-screen__target::before {
       border: 1px solid #FFF; }
+  .about-screen--darkTheme .about-screen__img [class^="cls-"]:nth-child(odd) {
+    fill: #111113; }
+  .about-screen--darkTheme .about-screen__img [class^="cls-"]:nth-child(even) {
+    fill: #18181a; }
+  .about-screen--darkTheme .about-screen__img [class^="cls-"]:nth-child(odd).shard--shimmer {
+    stroke: white;
+    stroke-width: 1;
+    stroke-opacity: 0.3;
+    -moz-animation: shimmerOdd 2s linear forwards;
+    -o-animation: shimmerOdd 2s linear forwards;
+    -webkit-animation: shimmerOdd 2s linear forwards;
+    animation: shimmerOdd 2s linear forwards; }
+
+@keyframes shimmerOdd {
+  0% {
+    fill: #111113; }
+  35% {
+    fill: #1d1d20; }
+  100% {
+    fill: #111113; } }
+  .about-screen--darkTheme .about-screen__img [class^="cls-"]:nth-child(even).shard--shimmer {
+    stroke: white;
+    stroke-width: 1;
+    stroke-opacity: 0.3;
+    -moz-animation: shimmerEven 2s linear forwards;
+    -o-animation: shimmerEven 2s linear forwards;
+    -webkit-animation: shimmerEven 2s linear forwards;
+    animation: shimmerEven 2s linear forwards; }
+
+@keyframes shimmerEven {
+  0% {
+    fill: #18181a; }
+  35% {
+    fill: #262629; }
+  100% {
+    fill: #18181a; } }
 
 .about-screen--animState2 .about-screen__splash {
   -moz-transform: translate(0%, 0%);
