@@ -943,7 +943,7 @@ $color-dial--ring3: #2294e5;*/
         -webkit-transition: opacity 0.8s linear 10s, transform 0.8s cubic-bezier(0, 0.55, 0.45, 1) 10s;
         transition: opacity 0.8s linear 10s, transform 0.8s cubic-bezier(0, 0.55, 0.45, 1) 10s; }
     .about-screen .about-screen__splash .about-screen__target {
-      color: #FFF;
+      color: #000;
       cursor: pointer;
       line-height: 1.5em;
       padding: 3em;
@@ -959,7 +959,7 @@ $color-dial--ring3: #2294e5;*/
       transform: translate(0%, 0%); }
       .about-screen .about-screen__splash .about-screen__target::before {
         background-color: transparent;
-        border: 1px solid #FFF;
+        border: 1px solid #4d4d4d;
         border-radius: 50%;
         content: "";
         display: block;
@@ -1056,6 +1056,10 @@ $color-dial--ring3: #2294e5;*/
   background-color: #262626; }
   .about-screen--darkTheme h1, .about-screen--darkTheme p {
     color: #FFF; }
+  .about-screen--darkTheme .about-screen__splash .about-screen__target {
+    color: #FFF; }
+    .about-screen--darkTheme .about-screen__splash .about-screen__target::before {
+      border: 1px solid #FFF; }
 
 .about-screen--animState2 .about-screen__splash {
   -moz-transform: translate(0%, 0%);

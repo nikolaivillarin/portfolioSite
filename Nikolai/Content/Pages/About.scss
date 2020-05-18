@@ -141,7 +141,7 @@ $frameDuration: 0.8s;
         }
 
         .about-screen__target {
-            color: $color-font--primaryOnDark;
+            color: $color-font--primary;
             cursor: pointer;
             line-height: 1.5em;
             padding: 3em;
@@ -152,7 +152,7 @@ $frameDuration: 0.8s;
 
             &::before {
                 background-color: transparent;
-                border: 1px solid #FFF;
+                border: 1px solid $color-lineAccent--dark;
                 border-radius: 50%;
                 content: "";
                 display: block;
@@ -268,6 +268,16 @@ $frameDuration: 0.8s;
 
     h1, p {
         color: $color-font--primaryOnDark;
+    }
+
+    .about-screen__splash {
+        .about-screen__target {
+            color: $color-font--primaryOnDark;
+
+            &::before {
+                border: 1px solid #FFF;
+            }
+        }
     }
 }
 

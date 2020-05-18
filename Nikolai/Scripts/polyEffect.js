@@ -6,12 +6,30 @@ const GetRandomArbitrary = function (min, max) {
     /// <summary>
     /// The returned value is no lower than (and may possibly equal) min, and is less than (and not equal) max
     /// </summary>
-    return Math.random() * (max - min) + min;
+    return RoundTo((Math.random() * (max - min) + min), 4);
 };
 
 const GetRandomFromRange = function (min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 };
+
+function RoundTo(n, digits) {
+    var negative = false;
+    if (digits === undefined) {
+        digits = 0;
+    }
+    if (n < 0) {
+        negative = true;
+        n = n * -1;
+    }
+    var multiplicator = Math.pow(10, digits);
+    n = parseFloat((n * multiplicator).toFixed(11));
+    n = (Math.round(n) / multiplicator).toFixed(2);
+    if (negative) {
+        n = (n * -1).toFixed(2);
+    }
+    return Number(n);
+}
 //#endregion
 
 //#region PolyEffect
@@ -52,6 +70,7 @@ PolyEffect.prototype = {
         /// </summary>
         return this.AnimEndEventNames[window.Modernizr.prefixed('animation')];
     },
+    IsScattered: false
 };
 
 PolyEffect.prototype.Initialize = function () {
@@ -141,8 +160,8 @@ PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard) {
 
     return {
         quadrant: quadrant,
-        xModifier: Math.round(xModifier),
-        yModifier: Math.round(yModifier)
+        xModifier: RoundTo(xModifier, 0),
+        yModifier: RoundTo(yModifier, 0)
     };
 };
 
@@ -192,6 +211,8 @@ PolyEffect.prototype.ScatterShards = function () {
     const maxIteration = 500;
     let curIterationCount = 0; // To prevent infinite loops
 
+    this.IsScattered = true;
+
     for (let i = 0; i < this.shardElmts.length; i++) {
         let posModifiers = null;
 
@@ -221,6 +242,8 @@ PolyEffect.prototype.ExplodeShards = function () {
     const maxIteration = 500;
     const shards = this.GetShardsSortedRightToLeft();
     let curIterationCount = 0; // To prevent infinite loops
+
+    this.IsScattered = true;
 
     for (let i = 0; i < shards.length; i++) {
         const shard = shards[i];
@@ -268,7 +291,7 @@ PolyEffect.prototype.ExplodeShards = function () {
     }
 };
 
-PolyEffect.prototype.StepToOriginalPosition = function (animationDuration) {
+PolyEffect.prototype.TransitionToOriginalPosition = function (animationDuration) {
     const that = this;
     const sortedShardElmts = this.shardElmts.sort((a, b) => a.quadrant - b.quadrant);
 
@@ -279,6 +302,8 @@ PolyEffect.prototype.StepToOriginalPosition = function (animationDuration) {
             currentShardElmt.AnimateToOriginalPosition(that.selectedEasing, animationDuration);
         }, 100 * i);
     }
+
+    this.IsScattered = false;
 };
 
 PolyEffect.prototype.StartFloatAnimation = function () {
@@ -452,27 +477,27 @@ PolyShard.prototype = {
     },
     // Easing formulas based off: https://easings.net/
     easingFunctions: {
-        easeInCubic: (x, diff) => (x * x * x * diff),
-        easeOutCubic: (x, diff) => ((1 - Math.pow(1 - x, 3)) * diff),
+        easeInCubic: (x, diff) => (RoundTo((x * x * x * diff), 4)),
+        easeOutCubic: (x, diff) => (RoundTo(((1 - Math.pow(1 - x, 3)) * diff), 4)),
         easeOutBack: (x, diff) => {
             const c1 = 1.70158;
             const c3 = c1 + 1;
 
-            return (1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2)) * diff;
+            return RoundTo(((1 + c3 * Math.pow(x - 1, 3) + c1 * Math.pow(x - 1, 2)) * diff), 4);
         },
-        easeOutCirc: (x, diff) => ((Math.pow(1 - Math.pow(x - 1, 2), 0.5)) * diff),
+        easeOutCirc: (x, diff) => (RoundTo(((Math.pow(1 - Math.pow(x - 1, 2), 0.5)) * diff), 4)),
         easeOutBounce: (x, diff) => {
             const n1 = 7.5625;
             const d1 = 2.75;
 
             if (x < 1 / d1) {
-                return (n1 * x * x) * diff;
+                return RoundTo(((n1 * x * x) * diff), 4);
             } else if (x < 2 / d1) {
-                return (n1 * (x -= 1.5 / d1) * x + 0.75) * diff;
+                return RoundTo(((n1 * (x -= 1.5 / d1) * x + 0.75) * diff) , 4);
             } else if (x < 2.5 / d1) {
-                return (n1 * (x -= 2.25 / d1) * x + 0.9375) * diff;
+                return RoundTo(((n1 * (x -= 2.25 / d1) * x + 0.9375) * diff), 4);
             } else {
-                return (n1 * (x -= 2.625 / d1) * x + 0.984375) * diff;
+                return RoundTo(((n1 * (x -= 2.625 / d1) * x + 0.984375) * diff), 4);
             }
         }
     }
@@ -589,35 +614,6 @@ PolyShard.prototype.EaseAnimation = function (diffData, currentData, x, easing =
     this.UpdateDataAttr();
 };
 
-PolyShard.prototype.StepToOriginalPosition = function (stepData) {
-    let updatedDataAttr = [];
-
-    for (let i = 0; i < this.currentData.length; i++) {
-        const svgModifier = this.currentData[i].substring(0, 1);
-        const curDataKeyVal = this.GetKeyValPairsFromData(this.currentData[i], 1);
-        const stepDataKeyVal = this.GetKeyValPairsFromData(stepData[i]);
-        let newValues = [];
-
-        for (let x = 0; x < curDataKeyVal.length; x++) {
-            if (curDataKeyVal[x] !== 0 &&
-                stepDataKeyVal[x] !== 0) {
-                newValues.push((curDataKeyVal[x] + stepDataKeyVal[x]).toFixed(4));
-            } else {
-                newValues.push(curDataKeyVal[x]);
-            }
-        }
-
-        if (svgModifier === 'Z') {
-            updatedDataAttr.push(svgModifier);
-        } else {
-            updatedDataAttr.push(svgModifier + newValues.join(','));
-        }
-    }
-
-    this.currentData = updatedDataAttr;
-    this.UpdateDataAttr();
-};
-
 PolyShard.prototype.GetRandomPointBasedOnMoveAndTolerance = function (isPositive, isXAxis, tolerance) {
     let moveData = this.shardElmt.getAttribute('d').split(/(?=[MLlZ])/);
     let moveValue = 0;
@@ -698,12 +694,12 @@ PolyShard.prototype.GetAreaOfTriangle = function (pathData) {
 
     const halfPerimeter = (lengthA + lengthB + lengthC) / 2;
 
-    return Math.pow(
+    return RoundTo(Math.pow(
         halfPerimeter *
         (halfPerimeter - lengthA) * 
         (halfPerimeter - lengthB) *
         (halfPerimeter - lengthC),
-    0.5).toFixed(4);
+    0.5), 4);
 };
 
 PolyShard.prototype.GetCurrentStartPos = function () {
@@ -897,8 +893,8 @@ PolyShard.prototype.StartFloatAnimation = function () {
         const that = this;
         const maxDistance = 200;
 
-        let x = Number(GetRandomArbitrary(-0.5, 0.5).toFixed(4));
-        let y = Number(GetRandomArbitrary(-0.5, 0.5).toFixed(4));
+        let x = Number(GetRandomArbitrary(-0.5, 0.5));
+        let y = Number(GetRandomArbitrary(-0.5, 0.5));
         let yDistance = 0, xDistance = 0;
 
         this.floatAnimationPaused = false;
@@ -948,10 +944,10 @@ PolyShard.prototype.GetNewPositionData = function (startPositionData, xModifier,
 
                 if ((i + 1) % 2 === 0) {
                     // Even
-                    newValues.push(val + yModifier);
+                    newValues.push(RoundTo(val + yModifier, 4));
                 } else {
                     // Odd
-                    newValues.push(val + xModifier);
+                    newValues.push(RoundTo(val + xModifier, 4));
                 }
             }
 
