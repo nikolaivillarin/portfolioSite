@@ -10,6 +10,7 @@ AboutPage.prototype = {
     //pages: [{
     //    $elmt: null,
     //    pageGraphic: null
+    //    graphicCss: ''
     //}],
     pages: [],
     $ContainerElmt: null,
@@ -82,6 +83,7 @@ AboutPage.prototype.OnDialDropped = function () {
 
         const $page = this.pages[this.selectedPageIndex].$elmt;
         const pageGraphic = this.pages[this.selectedPageIndex].pageGraphic;
+        const graphicCss = this.pages[this.selectedPageIndex].graphicCss;
 
         // Animation Frames
         if (pageGraphic) {
@@ -96,7 +98,7 @@ AboutPage.prototype.OnDialDropped = function () {
 
                     $page.addClass('about-screen--animState4');
 
-                    $(pageGraphic.svgElmt).addClass('about-screen__img-certification');
+                    $(pageGraphic.svgElmt).addClass(graphicCss);
 
                     window.setTimeout(() => {
                         $page.attr('data-nv-about-expanded', true);
@@ -213,14 +215,29 @@ AboutPage.prototype.Initialize = function () {
 AboutPage.prototype.InitializePages = function () {
     $('[data-nv-about-page]').each((index, elmt) => {
         const $pageElmt = $(elmt);
-
         const $svgElmt = $('[data-nv-about-page-svg]', elmt);
+
+        let pageGraphic = null;
+        
+        if ($svgElmt.length === 1) {
+            const scalarTop = Number($svgElmt.attr('data-nv-about-page-graphic-scalar-top'));
+            const scalarBottom = Number($svgElmt.attr('data-nv-about-page-graphic-scalar-bottom'));
+            const scalarRight = Number($svgElmt.attr('data-nv-about-page-graphic-scalar-right'));
+            const scalarLeft = Number($svgElmt.attr('data-nv-about-page-graphic-scalar-left'));
+
+            pageGraphic = new window.PolyEffect(
+                $svgElmt.get(0),
+                scalarTop,
+                scalarRight,
+                scalarBottom,
+                scalarLeft
+            );
+        }
         
         this.pages.push({
             $elmt: $pageElmt,
-            pageGraphic: $svgElmt.length === 1 ?
-                new window.PolyEffect($svgElmt.get(0)) :
-                null
+            pageGraphic: pageGraphic,
+            graphicCss: $svgElmt.attr('data-nv-about-page-graphic-css')
         });
 
         // Page Transitions
@@ -420,7 +437,9 @@ AboutPage.prototype.UpSection = function () {
     }
 
     if (selectedPage.pageGraphic) {
-        selectedPage.pageGraphic.TransitionBottomToTop();
+        window.setTimeout(() => {
+            selectedPage.pageGraphic.TransitionBottomToTop();
+        }, 300);
 
         if (selectedPage.pageGraphic.IsScattered) {
             selectedPage.pageGraphic.StartFloatAnimation();
@@ -461,7 +480,9 @@ AboutPage.prototype.DownSection = function () {
     }
 
     if (selectedPage.pageGraphic) {
-        selectedPage.pageGraphic.TransitionTopToBottom();
+        window.setTimeout(() => {
+            selectedPage.pageGraphic.TransitionTopToBottom();
+        }, 300);
 
         if (selectedPage.pageGraphic.IsScattered) {
             selectedPage.pageGraphic.StartFloatAnimation();

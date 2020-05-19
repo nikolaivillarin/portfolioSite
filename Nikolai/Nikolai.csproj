@@ -499,7 +499,8 @@
     <Content Include="Fonts\AlegreyaSans-ThinItalic.ttf" />
     <Content Include="Content\Pages\Work-Dashboard.scss" />
     <Content Include="Content\Molecules\_microInteraction.scss" />
-    <Content Include="Content\Molecules\_msLogo.scss" />
+    <Content Include="Content\Molecules\_msLogoPoly.scss" />
+    <Content Include="Content\Molecules\_babyYodaPoly.scss" />
     <None Include="Properties\PublishProfiles\Local Host.pubxml" />
     <None Include="Properties\PublishProfiles\Winhost Release.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />

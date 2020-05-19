@@ -4,7 +4,8 @@
 @import '../Atoms/_transitions';
 @import '../Breakpoint/_breakpoint';
 @import '../Atoms/_breakpoints';
-@import '../Molecules/_msLogo';
+@import '../Molecules/_msLogoPoly';
+@import '../Molecules/_babyYodaPoly';
 
 .about {
     .work-IndicatorContainer {
@@ -335,7 +336,7 @@ $frameDuration: 0.8s;
 
 .about-screen--animState2 {
     .about-screen__splash {
-        @include transform(translate(0%, 0%));
+        @include transform(translate(0%, 0%) !important);
 
         .header-main {
             @include transform(translateX(0%));
@@ -363,6 +364,12 @@ $frameDuration: 0.8s;
             &::before {
                 background-color: #000;
                 border-width: 5px;
+            }
+
+            .about-screen--darkTheme & {
+                &::before {
+                    border-color: #FFF;
+                }
             }
         }
     }

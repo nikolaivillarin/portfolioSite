@@ -33,8 +33,18 @@ function RoundTo(n, digits) {
 //#endregion
 
 //#region PolyEffect
-function PolyEffect(svgElmt) {
+function PolyEffect(
+    svgElmt,
+    canvasScalarTop = 0,
+    canvasScalarRight = 0,
+    canvasScalarBottom = 0,
+    canvasScalarLeft = 0
+) {
     this.svgElmt = svgElmt;
+    this.canvasScalarTop = canvasScalarTop;
+    this.canvasScalarRight = canvasScalarRight;
+    this.canvasScalarBottom = canvasScalarBottom;
+    this.canvasScalarLeft = canvasScalarLeft;
     this.shardElmts = [];
 
     this.Initialize();
@@ -45,10 +55,10 @@ PolyEffect.prototype = {
     shardElmts: [],
     // Scalar to allow elements to go outside of
     // canvas
-    canvasScalarTop: 2000,
-    canvasScalarRight: 9000,
-    canvasScalarBottom: 2000,
-    canvasScalarLeft: 1000,
+    canvasScalarTop: 0,
+    canvasScalarRight: 0,
+    canvasScalarBottom: 0,
+    canvasScalarLeft: 0,
     // Tolerance for how close shards
     // can come within each other
     xCollisionTolerance: 200,
@@ -346,7 +356,7 @@ PolyEffect.prototype.TransitionBottomToTop = function () {
             thisShard.AnimateToPosition(newPosition, originalPosition, that.selectedEasing, {
                 animationDuration: that.pageTransition.duration
             });
-        }, 50 * index);
+        }, 10 * index);
     });
 };
 
@@ -366,7 +376,7 @@ PolyEffect.prototype.TransitionTopToBottom = function () {
             thisShard.AnimateToPosition(newPosition, originalPosition, that.selectedEasing, {
                 animationDuration: that.pageTransition.duration
             });
-        }, 50 * index);
+        }, 10 * index);
     });
 };
 

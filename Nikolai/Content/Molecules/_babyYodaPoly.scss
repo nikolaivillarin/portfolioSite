@@ -1,0 +1,183 @@
+﻿$frameDuration: 0.8s;
+
+.about-screen {
+    &.about-screen--babyYoda {
+        .about-screen__svg {
+            min-width: 45%;
+        }
+
+        .about-screen__splash {
+            @include transform(translateX(-47%));
+        }
+    }
+}
+
+.about-screen__img {
+    &.about-screen__img-babyYoda {
+        display: block;
+        overflow: visible;
+
+        .AnimateToOriginalComplete.cls-1 {
+            fill: #b55243;
+
+            &.shard--shimmer {
+                @include animation( shimmer-cls-1 2s linear forwards );
+
+                @keyframes shimmer-cls-1 {
+                    0% {
+                        fill: #b55243;
+                    }
+
+                    35% {
+                        fill: #c35c4c;
+                    }
+
+                    100% {
+                        fill: #b55243;
+                    }
+                }
+            }
+        }
+
+        .AnimateToOriginalComplete.cls-2 {
+            fill: #b7413f;
+        }
+
+        .AnimateToOriginalComplete.cls-3 {
+            fill: #dc6a57;
+        }
+
+        .AnimateToOriginalComplete.cls-4 {
+            fill: #e28b5e;
+        }
+
+        .AnimateToOriginalComplete.cls-5 {
+            fill: #e2c396;
+        }
+
+        .AnimateToOriginalComplete.cls-6 {
+            fill: #ca9a79;
+        }
+
+        .AnimateToOriginalComplete.cls-7 {
+            fill: #aca88f;
+        }
+
+        .AnimateToOriginalComplete.cls-8 {
+            fill: #b7b39c;
+        }
+
+        .AnimateToOriginalComplete.cls-9 {
+            fill: #afab96;
+        }
+
+        .AnimateToOriginalComplete.cls-10 {
+            fill: #a69f8e;
+        }
+
+        .AnimateToOriginalComplete.cls-11 {
+            fill: #9a9682;
+        }
+
+        .AnimateToOriginalComplete.cls-12 {
+            fill: #858174;
+        }
+
+        .AnimateToOriginalComplete.cls-13 {
+            fill: #70685d;
+        }
+
+        .AnimateToOriginalComplete.cls-14 {
+            fill: #6d5d54;
+        }
+
+        .AnimateToOriginalComplete.cls-15 {
+            fill: #71514e;
+        }
+
+        .AnimateToOriginalComplete.cls-16 {
+            fill: #904b4c;
+        }
+
+        .AnimateToOriginalComplete.cls-17 {
+            fill: #994b49;
+        }
+
+        .AnimateToOriginalComplete.cls-18 {
+            fill: #5f2e37;
+        }
+
+        .AnimateToOriginalComplete.cls-19 {
+            fill: #663939;
+        }
+
+        .AnimateToOriginalComplete.cls-20 {
+            fill: #6f4b47;
+        }
+
+        .AnimateToOriginalComplete.cls-21 {
+            fill: #5a403a;
+        }
+
+        .AnimateToOriginalComplete.cls-22 {
+            fill: #5a3f3a;
+        }
+
+        .AnimateToOriginalComplete.cls-23 {
+            fill: #846850;
+        }
+
+        .AnimateToOriginalComplete.cls-24 {
+            fill: #a48365;
+        }
+
+        .AnimateToOriginalComplete.cls-25 {
+            fill: #7d5648;
+        }
+
+        .AnimateToOriginalComplete.cls-26 {
+            fill: #865d4b;
+        }
+
+        .AnimateToOriginalComplete.cls-27 {
+            fill: #563d38;
+        }
+
+        .AnimateToOriginalComplete.cls-28 {
+            fill: #523839;
+        }
+
+        .AnimateToOriginalComplete.cls-29 {
+            fill: #4e3334;
+        }
+
+        .AnimateToOriginalComplete.cls-30 {
+            fill: #523632;
+        }
+
+        .AnimateToOriginalComplete.cls-31 {
+            fill: #976957;
+        }
+
+        .AnimateToOriginalComplete.cls-32 {
+            fill: #553935;
+        }
+
+        .AnimateToOriginalComplete.cls-33 {
+            fill: #7c5950;
+        }
+
+        .AnimateToOriginalComplete.cls-34 {
+            fill: #a87d6e;
+        }
+
+        .AnimateToOriginalComplete.cls-35 {
+            fill: #936c5f;
+        }
+    }
+}
+
+.about_bombIcon--babyYoda {
+    bottom: 70px;
+    left: 60px;
+}
