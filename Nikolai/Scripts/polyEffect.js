@@ -98,7 +98,9 @@ PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard) {
     /// Quadrant
     /// </summary>
     const quadrants = {
+        // Line separating vertically 
         verticalSeparator: this.svgElmt.viewBox.baseVal.width / 2,
+        // Line separating horizontally
         horizontalSeparator: this.svgElmt.viewBox.baseVal.height / 2,
         minX: -this.canvasScalarLeft,
         maxX: this.svgElmt.viewBox.baseVal.width + this.canvasScalarRight,
@@ -111,7 +113,7 @@ PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard) {
     let quadrant = '';
 
     if (shard.startPosition.x <= quadrants.verticalSeparator &&
-        shard.startPosition.y <= quadrants.verticalSeparator) {
+        shard.startPosition.y <= quadrants.horizontalSeparator) {
         // Top Left
         quadrant = 1;
 
@@ -125,8 +127,7 @@ PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard) {
             quadrants.horizontalSeparator
         ) - shard.startPosition.y;
     } else if (shard.startPosition.x > quadrants.verticalSeparator &&
-        shard.startPosition.y <= quadrants.verticalSeparator) {
-
+        shard.startPosition.y <= quadrants.horizontalSeparator) {
         // Top Right
         quadrant = 4;
 
@@ -140,7 +141,7 @@ PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard) {
             quadrants.horizontalSeparator
         ) - shard.startPosition.y;
     } else if (shard.startPosition.x <= quadrants.verticalSeparator &&
-        shard.startPosition.y > quadrants.verticalSeparator) {
+        shard.startPosition.y > quadrants.horizontalSeparator) {
         // Bottom Left
         quadrant = 2;
 
