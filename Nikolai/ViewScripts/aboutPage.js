@@ -94,7 +94,7 @@ AboutPage.prototype.OnDialDropped = function () {
                 $page.addClass('about-screen--animState3');
 
                 window.setTimeout(() => {
-                    pageGraphic.TransitionToOriginalPosition(600);
+                    pageGraphic.TransitionToOriginalPosition(300);
 
                     $page.addClass('about-screen--animState4');
 
@@ -102,7 +102,12 @@ AboutPage.prototype.OnDialDropped = function () {
 
                     window.setTimeout(() => {
                         $page.attr('data-nv-about-expanded', true);
+
                         this.TogglePageDescription();
+
+                        window.setTimeout(() => {
+                            pageGraphic.ShimmerTopToBottom(2100, 100);
+                        }, 2000);
                     }, 2000);
                 }, 500);
             }, 500);
@@ -129,9 +134,10 @@ AboutPage.prototype.TogglePageDescription = function (direction = 'up') {
 
 AboutPage.prototype.OnDialDragged = function () {
     let isInBounds = false;
-    const targetElmt = document.querySelectorAll('[data-nv-drop-target]');
+    const $page = this.pages[this.selectedPageIndex].$elmt;
+    const targetElmt = $('[data-nv-drop-target]', $page).get(0);
 
-    if (window.MainNav.NavBar.DialControl.IsDialWithinElmt(targetElmt[0])) {
+    if (window.MainNav.NavBar.DialControl.IsDialWithinElmt(targetElmt)) {
         isInBounds = true;
     }
 
@@ -185,6 +191,13 @@ AboutPage.prototype.OnPageMouseWheel = function (evt) {
             this.DownSection();
         }
     }
+};
+
+AboutPage.prototype.NavDotOnClick = function (evt) {
+    const selectedIndex = Number($(evt.target).attr('data-nv-about-nav-dot-value'));
+    const direction = selectedIndex > this.selectedPageIndex ? 'down' : 'up';
+
+    this.NavigateToSection(this.selectedPageIndex, selectedIndex, direction);
 };
 //#endregion
 
@@ -351,7 +364,8 @@ AboutPage.prototype.RenderNavDots = function () {
         });
 
         let $navDot = $('<span></span>', {
-            "class": "about-PageIndicator"
+            "class": "about-PageIndicator",
+            "data-nv-about-nav-dot-value": index
         });
 
         $navDot.append($navTooltip);
@@ -361,6 +375,8 @@ AboutPage.prototype.RenderNavDots = function () {
         }
 
         this.$NavDotsElmt.append($navDot);
+
+        $navDot.on('click', $.proxy(this.NavDotOnClick, this));
     });
 };
 
@@ -388,7 +404,6 @@ AboutPage.prototype.UpdateStyling = function () {
     this.UpdateNavStyling();
 };
 
-
 AboutPage.prototype.UpdateSelectedNavDot = function () {
     /// <summary>
     /// Changes the selected dot based on what is specified for the 
@@ -408,29 +423,37 @@ AboutPage.prototype.DisablePageIndicator = function () {
     this.$NavDotsElmt.removeClass('about-PageIndicatorContainer--active');
 };
 
-AboutPage.prototype.UpSection = function () {
-    this.previousPageIndex = this.selectedPageIndex;
-    this.selectedPageIndex--;
+AboutPage.prototype.NavigateToSection = function (previousPageIndex, selectedPageIndex, direction) {
+    this.previousPageIndex = previousPageIndex;
+    this.selectedPageIndex = selectedPageIndex;
 
     const previousPage = this.pages[this.previousPageIndex];
     const selectedPage = this.pages[this.selectedPageIndex];
+    const transitionClasses = {
+        'up': {
+            previous: 'expand-container-ontop expand-moveToBottom',
+            selected: 'expand-moveFromTop about-screen--selected'
+        },
+        'down': {
+            previous: 'expand-container-ontop expand-moveToTop',
+            selected: 'expand-moveFromBottom about-screen--selected'
+        }
+    };
 
-    previousPage.$elmt
-        .addClass('expand-container-ontop expand-moveToBottom');
+    previousPage.$elmt.addClass(transitionClasses[direction].previous);
 
-    selectedPage.$elmt
-        .addClass('expand-moveFromTop about-screen--selected');
+    selectedPage.$elmt.addClass(transitionClasses[direction].selected);
 
     this.UpdateStyling();
 
     this.MicroInteraction.TriggerAnimation(
-        'up',
+        direction,
         selectedPage.$elmt
     );
 
     this.ToggleProfilePicAnimation();
 
-    this.TogglePageDescription('up');
+    this.TogglePageDescription(direction);
 
     if (previousPage.pageGraphic) {
         previousPage.pageGraphic.PauseFloatAnimation();
@@ -438,60 +461,35 @@ AboutPage.prototype.UpSection = function () {
 
     if (selectedPage.pageGraphic) {
         window.setTimeout(() => {
-            selectedPage.pageGraphic.TransitionBottomToTop();
+            if (direction === 'up') {
+                selectedPage.pageGraphic.TransitionBottomToTop();
+            } else {
+                selectedPage.pageGraphic.TransitionTopToBottom();
+            }
         }, 300);
 
         if (selectedPage.pageGraphic.IsScattered) {
             selectedPage.pageGraphic.StartFloatAnimation();
         }
 
-        window.setTimeout(() => {
-            selectedPage.pageGraphic.ShimmerTopToBottom();
-        }, 2000);
+        if (selectedPage.pageGraphic.IsScattered) {
+            window.setTimeout(() => {
+                selectedPage.pageGraphic.ShimmerTopToBottom(2100, 800);
+            }, 2000);
+        } else {
+            window.setTimeout(() => {
+                selectedPage.pageGraphic.ShimmerTopToBottom(2100, 100);
+            }, 1000);
+        }
     }
 };
 
+AboutPage.prototype.UpSection = function () {
+    this.NavigateToSection(this.selectedPageIndex, this.selectedPageIndex - 1, 'up');
+};
+
 AboutPage.prototype.DownSection = function () {
-    this.previousPageIndex = this.selectedPageIndex;
-    this.selectedPageIndex++;
-
-    const previousPage = this.pages[this.previousPageIndex];
-    const selectedPage = this.pages[this.selectedPageIndex];
-
-    previousPage.$elmt
-        .addClass('expand-container-ontop expand-moveToTop');
-
-    selectedPage.$elmt
-        .addClass('expand-moveFromBottom about-screen--selected');
-
-    this.UpdateStyling();
-
-    this.MicroInteraction.TriggerAnimation(
-        'down',
-        selectedPage.$elmt
-    );
-
-    this.ToggleProfilePicAnimation();
-
-    this.TogglePageDescription('down');
-
-    if (previousPage.pageGraphic) {
-        previousPage.pageGraphic.PauseFloatAnimation();
-    }
-
-    if (selectedPage.pageGraphic) {
-        window.setTimeout(() => {
-            selectedPage.pageGraphic.TransitionTopToBottom();
-        }, 300);
-
-        if (selectedPage.pageGraphic.IsScattered) {
-            selectedPage.pageGraphic.StartFloatAnimation();
-        }
-
-        window.setTimeout(() => {
-            selectedPage.pageGraphic.ShimmerTopToBottom();
-        }, 2000);
-    }
+    this.NavigateToSection(this.selectedPageIndex, this.selectedPageIndex + 1, 'down');
 };
 //#endregion
 
