@@ -23,6 +23,9 @@ $color-dial--ring3: #2294e5;*/
 
 /*------------------------------------*    CSS Breakpoints for different devices
 \*------------------------------------*/
+.about-screen.about-screen--msLogo .about-screen__splash .about-screen__target {
+  bottom: -6em; }
+
 .about-screen--darkTheme .about-screen__img.about-screen__img-certification {
   display: block;
   overflow: visible; }
@@ -55,7 +58,7 @@ $color-dial--ring3: #2294e5;*/
   0% {
     fill: #ba96e7; }
   35% {
-    fill: #d3bbef; }
+    fill: #e1cff6; }
   100% {
     fill: #ba96e7; } }
   .about-screen--darkTheme .about-screen__img.about-screen__img-certification .AnimateToOriginalComplete.cls-3 {
@@ -160,7 +163,7 @@ $color-dial--ring3: #2294e5;*/
   0% {
     fill: #a171d9; }
   35% {
-    fill: #b289e2; }
+    fill: #c6a5eb; }
   100% {
     fill: #a171d9; } }
   .about-screen--darkTheme .about-screen__img.about-screen__img-certification .AnimateToOriginalComplete.cls-10 {
@@ -205,7 +208,7 @@ $color-dial--ring3: #2294e5;*/
   0% {
     fill: #b282ea; }
   35% {
-    fill: #c097ef; }
+    fill: #e1cdf7; }
   100% {
     fill: #b282ea; } }
   .about-screen--darkTheme .about-screen__img.about-screen__img-certification .AnimateToOriginalComplete.cls-13 {
@@ -265,7 +268,7 @@ $color-dial--ring3: #2294e5;*/
   0% {
     fill: #794ab0; }
   35% {
-    fill: #8453bd; }
+    fill: #6b419c; }
   100% {
     fill: #794ab0; } }
   .about-screen--darkTheme .about-screen__img.about-screen__img-certification .AnimateToOriginalComplete.cls-17 {
@@ -314,26 +317,27 @@ $color-dial--ring3: #2294e5;*/
   100% {
     fill: #6f43a1; } }
 
-.about_bombIcon--msLogo {
-  bottom: 0;
-  right: -40px; }
+.about_bomb-btn--msLogo {
+  left: -180px; }
 
 .about-screen.about-screen--babyYoda .about-screen__svg {
   min-width: 45%; }
 
 .about-screen.about-screen--babyYoda .about-screen__splash {
-  -moz-transform: translateX(-47%);
-  -ms-transform: translateX(-47%);
-  -o-transform: translateX(-47%);
-  -webkit-transform: translateX(-47%);
-  transform: translateX(-47%); }
+  -moz-transform: translate(-47%, -4.5em);
+  -ms-transform: translate(-47%, -4.5em);
+  -o-transform: translate(-47%, -4.5em);
+  -webkit-transform: translate(-47%, -4.5em);
+  transform: translate(-47%, -4.5em); }
+  .about-screen.about-screen--babyYoda .about-screen__splash .about-screen__target {
+    bottom: -2em; }
 
-.about-screen__img.about-screen__img-babyYoda {
+.about-screen .about-screen__img.about-screen__img-babyYoda {
   display: block;
   overflow: visible; }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-1 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-1 {
     fill: #b55243; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-1.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-1.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-1 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-1 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-1 2s linear forwards;
@@ -346,9 +350,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #cf6959; }
   100% {
     fill: #b55243; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-2 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-2 {
     fill: #b7413f; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-2.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-2.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-2 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-2 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-2 2s linear forwards;
@@ -361,9 +365,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #d45956; }
   100% {
     fill: #b7413f; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-3 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-3 {
     fill: #dc6a57; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-3.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-3.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-3 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-3 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-3 2s linear forwards;
@@ -376,9 +380,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #ee8a79; }
   100% {
     fill: #dc6a57; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-4 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-4 {
     fill: #e28b5e; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-4.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-4.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-4 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-4 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-4 2s linear forwards;
@@ -391,9 +395,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #f29869; }
   100% {
     fill: #e28b5e; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-5 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-5 {
     fill: #e2c396; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-5.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-5.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-5 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-5 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-5 2s linear forwards;
@@ -406,9 +410,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #f1d6b0; }
   100% {
     fill: #e2c396; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-6 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-6 {
     fill: #ca9a79; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-6.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-6.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-6 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-6 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-6 2s linear forwards;
@@ -421,9 +425,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #ddb193; }
   100% {
     fill: #ca9a79; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-7 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-7 {
     fill: #aca88f; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-7.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-7.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-7 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-7 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-7 2s linear forwards;
@@ -436,9 +440,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #bebaa4; }
   100% {
     fill: #aca88f; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-8 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-8 {
     fill: #b7b39c; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-8.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-8.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-8 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-8 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-8 2s linear forwards;
@@ -451,9 +455,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #c8c5b2; }
   100% {
     fill: #b7b39c; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-9 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-9 {
     fill: #afab96; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-9.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-9.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-9 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-9 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-9 2s linear forwards;
@@ -466,9 +470,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #c2bea9; }
   100% {
     fill: #afab96; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-10 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-10 {
     fill: #a69f8e; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-10.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-10.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-10 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-10 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-10 2s linear forwards;
@@ -481,9 +485,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #bbb6a7; }
   100% {
     fill: #a69f8e; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-11 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-11 {
     fill: #9a9682; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-11.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-11.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-11 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-11 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-11 2s linear forwards;
@@ -496,9 +500,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #adaa9a; }
   100% {
     fill: #9a9682; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-12 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-12 {
     fill: #858174; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-12.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-12.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-12 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-12 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-12 2s linear forwards;
@@ -511,9 +515,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #9d9a8e; }
   100% {
     fill: #858174; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-13 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-13 {
     fill: #70685d; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-13.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-13.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-13 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-13 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-13 2s linear forwards;
@@ -526,9 +530,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #8b8377; }
   100% {
     fill: #70685d; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-14 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-14 {
     fill: #6d5d54; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-14.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-14.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-14 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-14 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-14 2s linear forwards;
@@ -541,9 +545,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #8f7c71; }
   100% {
     fill: #6d5d54; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-15 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-15 {
     fill: #71514e; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-15.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-15.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-15 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-15 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-15 2s linear forwards;
@@ -556,9 +560,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #8e6864; }
   100% {
     fill: #71514e; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-16 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-16 {
     fill: #904b4c; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-16.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-16.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-16 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-16 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-16 2s linear forwards;
@@ -571,9 +575,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #aa5d5e; }
   100% {
     fill: #904b4c; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-17 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-17 {
     fill: #994b49; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-17.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-17.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-17 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-17 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-17 2s linear forwards;
@@ -586,9 +590,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #b65f5d; }
   100% {
     fill: #994b49; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-18 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-18 {
     fill: #5f2e37; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-18.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-18.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-18 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-18 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-18 2s linear forwards;
@@ -601,9 +605,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #79404a; }
   100% {
     fill: #5f2e37; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-19 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-19 {
     fill: #663939; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-19.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-19.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-19 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-19 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-19 2s linear forwards;
@@ -616,9 +620,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #804d4d; }
   100% {
     fill: #663939; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-20 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-20 {
     fill: #6f4b47; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-20.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-20.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-20 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-20 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-20 2s linear forwards;
@@ -631,9 +635,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #89625e; }
   100% {
     fill: #6f4b47; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-21 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-21 {
     fill: #5a403a; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-21.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-21.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-21 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-21 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-21 2s linear forwards;
@@ -646,9 +650,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #74544d; }
   100% {
     fill: #5a403a; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-22 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-22 {
     fill: #5a3f3a; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-22.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-22.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-22 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-22 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-22 2s linear forwards;
@@ -661,9 +665,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #72514b; }
   100% {
     fill: #5a3f3a; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-23 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-23 {
     fill: #846850; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-23.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-23.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-23 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-23 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-23 2s linear forwards;
@@ -676,9 +680,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #a18267; }
   100% {
     fill: #846850; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-24 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-24 {
     fill: #a48365; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-24.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-24.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-24 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-24 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-24 2s linear forwards;
@@ -691,9 +695,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #b79577; }
   100% {
     fill: #a48365; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-25 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-25 {
     fill: #7d5648; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-25.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-25.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-25 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-25 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-25 2s linear forwards;
@@ -706,9 +710,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #9a6b5b; }
   100% {
     fill: #7d5648; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-26 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-26 {
     fill: #865d4b; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-26.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-26.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-26 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-26 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-26 2s linear forwards;
@@ -721,9 +725,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #9d705c; }
   100% {
     fill: #865d4b; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-27 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-27 {
     fill: #563d38; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-27.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-27.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-27 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-27 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-27 2s linear forwards;
@@ -736,9 +740,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #72534d; }
   100% {
     fill: #563d38; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-28 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-28 {
     fill: #523839; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-28.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-28.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-28 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-28 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-28 2s linear forwards;
@@ -751,9 +755,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #5f4243; }
   100% {
     fill: #523839; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-29 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-29 {
     fill: #4e3334; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-29.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-29.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-29 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-29 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-29 2s linear forwards;
@@ -766,9 +770,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #634345; }
   100% {
     fill: #4e3334; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-30 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-30 {
     fill: #523632; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-30.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-30.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-30 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-30 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-30 2s linear forwards;
@@ -781,9 +785,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #724f4a; }
   100% {
     fill: #523632; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-31 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-31 {
     fill: #976957; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-31.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-31.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-31 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-31 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-31 2s linear forwards;
@@ -796,9 +800,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #b4826f; }
   100% {
     fill: #976957; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-32 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-32 {
     fill: #553935; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-32.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-32.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-32 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-32 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-32 2s linear forwards;
@@ -811,9 +815,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #71504b; }
   100% {
     fill: #553935; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-33 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-33 {
     fill: #7c5950; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-33.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-33.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-33 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-33 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-33 2s linear forwards;
@@ -826,9 +830,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #9a746a; }
   100% {
     fill: #7c5950; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-34 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-34 {
     fill: #a87d6e; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-34.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-34.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-34 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-34 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-34 2s linear forwards;
@@ -841,9 +845,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #c69989; }
   100% {
     fill: #a87d6e; } }
-  .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-35 {
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-35 {
     fill: #936c5f; }
-    .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-35.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-35.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-35 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-35 2s linear forwards;
       -webkit-animation: babyYoda-shimmer-cls-35 2s linear forwards;
@@ -857,9 +861,8 @@ $color-dial--ring3: #2294e5;*/
   100% {
     fill: #936c5f; } }
 
-.about_bombIcon--babyYoda {
-  bottom: 70px;
-  left: 60px; }
+.about_bomb-btn--babyYoda {
+  left: -170px; }
 
 .about .work-IndicatorContainer {
   bottom: 100px; }
@@ -941,23 +944,23 @@ $color-dial--ring3: #2294e5;*/
   .about-screen .about-screen__splash {
     padding-left: 5em;
     text-align: center;
-    -moz-transition: transform 0.8s linear;
-    -o-transition: transform 0.8s linear;
-    -webkit-transition: transform 0.8s linear;
-    transition: transform 0.8s linear;
-    -moz-transform: translateX(-27%);
-    -ms-transform: translateX(-27%);
-    -o-transform: translateX(-27%);
-    -webkit-transform: translateX(-27%);
-    transform: translateX(-27%); }
+    -moz-transition: transform 0.2s linear;
+    -o-transition: transform 0.2s linear;
+    -webkit-transition: transform 0.2s linear;
+    transition: transform 0.2s linear;
+    -moz-transform: translate(-27%, -4.5em);
+    -ms-transform: translate(-27%, -4.5em);
+    -o-transform: translate(-27%, -4.5em);
+    -webkit-transform: translate(-27%, -4.5em);
+    transform: translate(-27%, -4.5em); }
     .about-screen .about-screen__splash .header-main {
       margin-bottom: 2.2em;
       padding-left: 0px;
       width: 100%;
-      -moz-transition: transform 0.3s linear;
-      -o-transition: transform 0.3s linear;
-      -webkit-transition: transform 0.3s linear;
-      transition: transform 0.3s linear;
+      -moz-transition: transform 0.2s linear;
+      -o-transition: transform 0.2s linear;
+      -webkit-transition: transform 0.2s linear;
+      transition: transform 0.2s linear;
       -moz-transform: translateX(50%);
       -ms-transform: translateX(50%);
       -o-transform: translateX(50%);
@@ -966,10 +969,10 @@ $color-dial--ring3: #2294e5;*/
       .about-screen .about-screen__splash .header-main .about-screen_header, .about-screen .about-screen__splash .header-main .about-screen_subHeader {
         display: block;
         float: left;
-        -moz-transition: transform 0.3s linear;
-        -o-transition: transform 0.3s linear;
-        -webkit-transition: transform 0.3s linear;
-        transition: transform 0.3s linear;
+        -moz-transition: transform 0.2s linear;
+        -o-transition: transform 0.2s linear;
+        -webkit-transition: transform 0.2s linear;
+        transition: transform 0.2s linear;
         -moz-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
         -o-transform: translateX(-50%);
@@ -1488,18 +1491,19 @@ $color-dial--ring3: #2294e5;*/
     .about-screen .about-screen__splash .about-screen__target {
       color: #000;
       cursor: pointer;
+      left: 50%;
       line-height: 1.5em;
       padding: 3em;
-      position: relative;
+      position: absolute;
       -moz-transition: transform 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6), scale 0.8s cubic-bezier(0.36, 0, 0.66, -0.56), opacity 0.8s linear;
       -o-transition: transform 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6), scale 0.8s cubic-bezier(0.36, 0, 0.66, -0.56), opacity 0.8s linear;
       -webkit-transition: transform 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6), scale 0.8s cubic-bezier(0.36, 0, 0.66, -0.56), opacity 0.8s linear;
       transition: transform 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6), scale 0.8s cubic-bezier(0.36, 0, 0.66, -0.56), opacity 0.8s linear;
-      -moz-transform: translate(0%, 0%);
-      -ms-transform: translate(0%, 0%);
-      -o-transform: translate(0%, 0%);
-      -webkit-transform: translate(0%, 0%);
-      transform: translate(0%, 0%); }
+      -moz-transform: translate(-50%, 0%);
+      -ms-transform: translate(-50%, 0%);
+      -o-transform: translate(-50%, 0%);
+      -webkit-transform: translate(-50%, 0%);
+      transform: translate(-50%, 0%); }
       .about-screen .about-screen__splash .about-screen__target::before {
         background-color: transparent;
         border: 1px solid #4d4d4d;
@@ -1576,22 +1580,106 @@ $color-dial--ring3: #2294e5;*/
   .about-screen__text {
     padding-left: 6em; }
   .about-screen__content {
+    align-items: center;
     display: flex;
-    max-width: 1050px; }
-  .about-screen .about_bombIcon {
+    max-width: 1050px;
+    position: relative; }
+  .about-screen .about-bomb-btn {
     cursor: pointer;
-    opacity: 0;
     position: absolute;
-    z-index: 1;
-    -moz-transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 4s, opacity 0.3s linear 4s;
-    -o-transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 4s, opacity 0.3s linear 4s;
-    -webkit-transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 4s, opacity 0.3s linear 4s;
-    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 4s, opacity 0.3s linear 4s;
-    -moz-transform: rotate(45deg) scale(0.3);
-    -ms-transform: rotate(45deg) scale(0.3);
-    -o-transform: rotate(45deg) scale(0.3);
-    -webkit-transform: rotate(45deg) scale(0.3);
-    transform: rotate(45deg) scale(0.3); }
+    top: 50%;
+    -moz-transform: translateY(-60%);
+    -ms-transform: translateY(-60%);
+    -o-transform: translateY(-60%);
+    -webkit-transform: translateY(-60%);
+    transform: translateY(-60%); }
+    .about-screen .about-bomb-btn .about_bombIcon {
+      display: flex;
+      flex-direction: column;
+      min-width: 200px;
+      opacity: 0;
+      z-index: 1;
+      -moz-transition: opacity 0.5s linear;
+      -o-transition: opacity 0.5s linear;
+      -webkit-transition: opacity 0.5s linear;
+      transition: opacity 0.5s linear;
+      -moz-transform: scale(1);
+      -ms-transform: scale(1);
+      -o-transform: scale(1);
+      -webkit-transform: scale(1);
+      transform: scale(1); }
+      .about-screen .about-bomb-btn .about_bombIcon img {
+        cursor: pointer;
+        -moz-transform: rotate(45deg) scale(0.65) translate(-11px, -31px);
+        -ms-transform: rotate(45deg) scale(0.65) translate(-11px, -31px);
+        -o-transform: rotate(45deg) scale(0.65) translate(-11px, -31px);
+        -webkit-transform: rotate(45deg) scale(0.65) translate(-11px, -31px);
+        transform: rotate(45deg) scale(0.65) translate(-11px, -31px);
+        -moz-transition: transform 0.3s cubic-bezier(0, 0.55, 0.45, 1);
+        -o-transition: transform 0.3s cubic-bezier(0, 0.55, 0.45, 1);
+        -webkit-transition: transform 0.3s cubic-bezier(0, 0.55, 0.45, 1);
+        transition: transform 0.3s cubic-bezier(0, 0.55, 0.45, 1); }
+      .about-screen .about-bomb-btn .about_bombIcon p {
+        margin-top: 75px;
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        -webkit-transform: rotate(90deg);
+        transform: rotate(90deg);
+        -moz-transition: opacity 0.3s linear;
+        -o-transition: opacity 0.3s linear;
+        -webkit-transition: opacity 0.3s linear;
+        transition: opacity 0.3s linear; }
+    .about-screen .about-bomb-btn .about_bombIcon--expanded {
+      opacity: 0;
+      position: relative;
+      text-align: center;
+      -moz-transform: scale(0.4) translateY(-375px);
+      -ms-transform: scale(0.4) translateY(-375px);
+      -o-transform: scale(0.4) translateY(-375px);
+      -webkit-transform: scale(0.4) translateY(-375px);
+      transform: scale(0.4) translateY(-375px);
+      -moz-transition: transform 0.3s ease-out, opacity 0.8s linear;
+      -o-transition: transform 0.3s ease-out, opacity 0.8s linear;
+      -webkit-transition: transform 0.3s ease-out, opacity 0.8s linear;
+      transition: transform 0.3s ease-out, opacity 0.8s linear; }
+      .about-screen .about-bomb-btn .about_bombIcon--expanded::before {
+        background-color: transparent;
+        border: 1px solid #4d4d4d;
+        border-radius: 50%;
+        content: "";
+        display: block;
+        left: 50%;
+        height: 150px;
+        position: absolute;
+        top: 50%;
+        width: 150px;
+        -moz-transition: background-color 0.8s linear;
+        -o-transition: background-color 0.8s linear;
+        -webkit-transition: background-color 0.8s linear;
+        transition: background-color 0.8s linear;
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%); }
+  .about-screen .about-bomb-btn--expanded .about_bombIcon {
+    opacity: 0 !important; }
+    .about-screen .about-bomb-btn--expanded .about_bombIcon img {
+      -moz-transform: rotate(45deg) scale(0.1) translate(-11px, -31px);
+      -ms-transform: rotate(45deg) scale(0.1) translate(-11px, -31px);
+      -o-transform: rotate(45deg) scale(0.1) translate(-11px, -31px);
+      -webkit-transform: rotate(45deg) scale(0.1) translate(-11px, -31px);
+      transform: rotate(45deg) scale(0.1) translate(-11px, -31px); }
+    .about-screen .about-bomb-btn--expanded .about_bombIcon p {
+      opacity: 0 !important; }
+  .about-screen .about-bomb-btn--expanded .about_bombIcon--expanded {
+    opacity: 1;
+    -moz-transform: scale(1) translateY(-65px);
+    -ms-transform: scale(1) translateY(-65px);
+    -o-transform: scale(1) translateY(-65px);
+    -webkit-transform: scale(1) translateY(-65px);
+    transform: scale(1) translateY(-65px); }
 
 .about-screen--darkTheme {
   background-color: #262626; }
@@ -1664,11 +1752,11 @@ $color-dial--ring3: #2294e5;*/
     transform: translate(-325%, -65%); }
 
 .about-screen--animState3 .about-screen__splash .about-screen__target {
-  -moz-transform: translate(-325%, -65%) scale(0.3);
-  -ms-transform: translate(-325%, -65%) scale(0.3);
-  -o-transform: translate(-325%, -65%) scale(0.3);
-  -webkit-transform: translate(-325%, -65%) scale(0.3);
-  transform: translate(-325%, -65%) scale(0.3); }
+  -moz-transform: translate(-325%, -65%) scale(0.2);
+  -ms-transform: translate(-325%, -65%) scale(0.2);
+  -o-transform: translate(-325%, -65%) scale(0.2);
+  -webkit-transform: translate(-325%, -65%) scale(0.2);
+  transform: translate(-325%, -65%) scale(0.2); }
   .about-screen--animState3 .about-screen__splash .about-screen__target .target-text {
     opacity: 0; }
   .about-screen--animState3 .about-screen__splash .about-screen__target::before {
@@ -1680,20 +1768,20 @@ $color-dial--ring3: #2294e5;*/
 .about-screen--animState4 .about-screen__splash .about-screen__target {
   opacity: 0; }
 
-.about-screen--animState4 .about_bombIcon {
-  opacity: 1;
-  -moz-transform: rotate(45deg) scale(1);
-  -ms-transform: rotate(45deg) scale(1);
-  -o-transform: rotate(45deg) scale(1);
-  -webkit-transform: rotate(45deg) scale(1);
-  transform: rotate(45deg) scale(1); }
+.about-screen--animState5 .about-bomb-btn .about_bombIcon {
+  opacity: 1; }
 
 .about-PageIndicatorContainer {
   display: none;
   position: absolute;
   right: 2.5em;
-  top: 3.8em;
-  width: 1em; }
+  top: 50%;
+  width: 1em;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%); }
   @media (max-width: 600px) {
     .about-PageIndicatorContainer {
       right: 1.8em; } }

@@ -1,5 +1,15 @@
 ﻿$frameDuration: 0.8s;
 
+.about-screen {
+    &.about-screen--msLogo {
+        .about-screen__splash {
+            .about-screen__target {
+                bottom: -6em;
+            }
+        }
+    }
+}
+
 .about-screen--darkTheme {
     .about-screen__img {
         &.about-screen__img-certification {
@@ -44,7 +54,7 @@
                         }
 
                         35% {
-                            fill: #d3bbef;
+                            fill: #e1cff6;
                         }
 
                         100% {
@@ -198,7 +208,7 @@
                         }
 
                         35% {
-                            fill: #b289e2;
+                            fill: #c6a5eb;
                         }
 
                         100% {
@@ -264,7 +274,7 @@
                         }
 
                         35% {
-                            fill: #c097ef;
+                            fill: #e1cdf7;
                         }
 
                         100% {
@@ -352,7 +362,7 @@
                         }
 
                         35% {
-                            fill: #8453bd;
+                            fill: #6b419c;
                         }
 
                         100% {
@@ -431,7 +441,6 @@
     }
 }
 
-.about_bombIcon--msLogo {
-    bottom: 0;
-    right: -40px;
+.about_bomb-btn--msLogo {
+    left: -180px;
 }

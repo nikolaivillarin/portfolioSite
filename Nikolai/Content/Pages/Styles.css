@@ -2633,8 +2633,10 @@ body {
     font-weight: 100; }
 
 .header-tiny {
-  font-size: 1em;
+  font-size: 0.9em;
   line-height: 1em; }
+  .header-tiny--onDark {
+    font-weight: 100; }
 
 .header-main {
   color: #000;

@@ -100,22 +100,22 @@ $frameDuration: 0.8s;
         padding-left: 5em;
         text-align: center;
 
-        @include transition(transform $frameDuration linear);
-        @include transform(translateX(-27%));
+        @include transition(transform 0.2s linear);
+        @include transform(translate(-27%, -4.5em));
 
         .header-main {
             margin-bottom: 2.2em;
             padding-left: 0px;
             width: 100%;
 
-            @include transition(transform 0.3s linear);
+            @include transition(transform 0.2s linear);
             @include transform(translateX(50%));
 
             .about-screen_header, .about-screen_subHeader {
                 display: block;
                 float: left;
 
-                @include transition(transform 0.3s linear);
+                @include transition(transform 0.2s linear);
                 @include transform(translateX(-50%));
             }
 
@@ -144,12 +144,13 @@ $frameDuration: 0.8s;
         .about-screen__target {
             color: $color-font--primary;
             cursor: pointer;
+            left: 50%;
             line-height: 1.5em;
             padding: 3em;
-            position: relative;
+            position: absolute;
 
-            @include transition( transform $frameDuration cubic-bezier(0.68, -0.6, 0.32, 1.6), scale $frameDuration cubic-bezier(0.36, 0, 0.66, -0.56), opacity $frameDuration linear );
-            @include transform(translate(0%, 0%));
+            @include transition(transform $frameDuration cubic-bezier(0.68, -0.6, 0.32, 1.6), scale $frameDuration cubic-bezier(0.36, 0, 0.66, -0.56), opacity $frameDuration linear );
+            @include transform(translate(-50%, 0%));
 
             &::before {
                 background-color: transparent;
@@ -247,18 +248,89 @@ $frameDuration: 0.8s;
     }
 
     &__content {
+        align-items: center;
         display: flex;
         max-width: 1050px;
+        position: relative;
     }
 
-    .about_bombIcon {
+    .about-bomb-btn {
         cursor: pointer;
-        opacity: 0;
         position: absolute;
-        z-index: 1;
+        top: 50%;
 
-        @include transition(transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) 4s, opacity 0.3s linear 4s);
-        @include transform(rotate(45deg) scale(0.3));
+        @include transform(translateY(-60%));
+
+        .about_bombIcon {
+            display: flex;
+            flex-direction: column;
+            min-width: 200px;
+            opacity: 0;
+            z-index: 1;
+
+            img {
+                cursor: pointer;
+
+                @include transform(rotate(45deg) scale(0.65) translate(-11px, -31px));
+
+                @include transition(transform 0.3s cubic-bezier(0, 0.55, 0.45, 1));
+            }
+
+            p {
+                margin-top: 75px;
+
+                @include transform(rotate(90deg));
+                @include transition(opacity 0.3s linear);
+            }
+
+            @include transition(opacity 0.5s linear);
+            @include transform(scale(1));
+        }
+
+        .about_bombIcon--expanded {
+            opacity: 0;
+            position: relative;
+            text-align: center;
+
+            @include transform(scale(0.4) translateY(-375px));
+            @include transition(transform 0.3s ease-out, opacity $frameDuration linear );
+
+            &::before {
+                background-color: transparent;
+                border: 1px solid $color-lineAccent--dark;
+                border-radius: 50%;
+                content: "";
+                display: block;
+                left: 50%;
+                height: 150px;
+                position: absolute;
+                top: 50%;
+                width: 150px;
+
+                @include transition(background-color $frameDuration linear);
+                @include transform(translate(-50%, -50%));
+            }
+        }
+    }
+
+    .about-bomb-btn--expanded {
+        .about_bombIcon {
+            opacity: 0 !important;
+
+            img {
+                @include transform(rotate(45deg) scale(0.1) translate(-11px, -31px));
+            }
+
+            p {
+                opacity: 0 !important;
+            }
+        }
+
+        .about_bombIcon--expanded {
+            opacity: 1;
+
+            @include transform(scale(1) translateY(-65px));
+        }
     }
 }
 
@@ -355,7 +427,7 @@ $frameDuration: 0.8s;
 .about-screen--animState3 {
     .about-screen__splash {
         .about-screen__target {
-            @include transform(translate(-325%, -65%) scale(0.3));
+            @include transform(translate(-325%, -65%) scale(0.2));
 
             .target-text {
                 opacity: 0;
@@ -381,11 +453,13 @@ $frameDuration: 0.8s;
             opacity: 0;
         }
     }
+}
 
-    .about_bombIcon {
-        opacity: 1;
-
-        @include transform(rotate(45deg) scale(1));
+.about-screen--animState5 {
+    .about-bomb-btn {
+        .about_bombIcon {
+            opacity: 1;
+        }
     }
 }
 
@@ -393,8 +467,10 @@ $frameDuration: 0.8s;
     display: none;
     position: absolute;
     right: 2.5em;
-    top: 3.8em;
+    top: 50%;
     width: 1em;
+
+    @include transform(translateY(-50%));
 
     @extend %box-level--modular;
 

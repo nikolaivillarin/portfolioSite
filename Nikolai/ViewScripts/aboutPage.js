@@ -86,7 +86,7 @@ AboutPage.prototype.OnDialDropped = function () {
         const graphicCss = this.pages[this.selectedPageIndex].graphicCss;
 
         // Animation Frames
-        if (pageGraphic) {
+        if (pageGraphic && pageGraphic.IsScattered) {
             pageGraphic.StartShakeAnimation();
             $page.addClass('about-screen--animState2');
 
@@ -94,7 +94,7 @@ AboutPage.prototype.OnDialDropped = function () {
                 $page.addClass('about-screen--animState3');
 
                 window.setTimeout(() => {
-                    pageGraphic.TransitionToOriginalPosition(300);
+                    pageGraphic.TransitionToOriginalPosition(800, 'easeOutCubic');
 
                     $page.addClass('about-screen--animState4');
 
@@ -107,10 +107,35 @@ AboutPage.prototype.OnDialDropped = function () {
 
                         window.setTimeout(() => {
                             pageGraphic.ShimmerTopToBottom(2100, 100);
+
+                            window.setTimeout(() => {
+                                $page.addClass('about-screen--animState5');
+                            }, 200);
                         }, 2000);
                     }, 2000);
                 }, 500);
             }, 500);
+        } else {
+            pageGraphic
+                .ExplodeShards()
+                .StartFloatAnimation();
+
+            $(pageGraphic.svgElmt).removeClass(graphicCss);
+
+            $page
+                .removeAttr('data-nv-about-expanded')
+                .removeClass('about-screen--animState2')
+                .removeClass('about-screen--animState3')
+                .removeClass('about-screen--animState4')
+                .removeClass('about-screen--animState5');
+
+            $('[data-nv-drop-target="explode"]', $page)
+                .removeClass('about-bomb-btn--expanded');
+
+            this.MicroInteraction.ResetAnimation(
+                null,
+                $('[data-nv-animate-auto-play="false"]', $page)
+            );
         }
     }
 };
@@ -133,20 +158,35 @@ AboutPage.prototype.TogglePageDescription = function (direction = 'up') {
 };
 
 AboutPage.prototype.OnDialDragged = function () {
-    let isInBounds = false;
     const $page = this.pages[this.selectedPageIndex].$elmt;
-    const targetElmt = $('[data-nv-drop-target]', $page).get(0);
 
-    if (window.MainNav.NavBar.DialControl.IsDialWithinElmt(targetElmt)) {
+    let isInBounds = false;
+    let $targetElmt = null;
+    
+    if (this.pages[this.selectedPageIndex].pageGraphic.IsScattered) {
+        $targetElmt = $('[data-nv-drop-target="moreDetails"]', $page);
+    } else {
+        $targetElmt = $('[data-nv-drop-target="explode"]', $page);
+    }
+
+    const targetType = $targetElmt.data('nv-drop-target');
+
+    if (window.MainNav.NavBar.DialControl.IsDialWithinElmt($targetElmt.get(0))) {
         isInBounds = true;
     }
 
     if (isInBounds) {
+        if (targetType === 'explode') {
+            $targetElmt.addClass('about-bomb-btn--expanded');
+        }
+
         if (window.MainNav.NavBar.DialControl.$Element.hasClass('nvDial--pulsing') === false) {
 
             window.MainNav.NavBar.DialControl.$Element.addClass('nvDial--pulsing');
         }
     } else {
+        $targetElmt.removeClass('about-bomb-btn--expanded');
+
         if (window.MainNav.NavBar.DialControl.$Element.hasClass('nvDial--pulsing') === true) {
 
             window.MainNav.NavBar.DialControl.$Element.removeClass('nvDial--pulsing');

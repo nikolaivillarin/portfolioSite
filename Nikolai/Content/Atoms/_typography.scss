@@ -53,8 +53,12 @@ body {
 }
 
 .header-tiny {
-    font-size: 1em;
+    font-size: 0.9em;
     line-height: 1em;
+
+    &--onDark {
+        font-weight: 100;
+    }
 }
 
 .header-main {

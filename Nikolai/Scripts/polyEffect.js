@@ -63,7 +63,7 @@ PolyEffect.prototype = {
     // can come within each other
     xCollisionTolerance: 200,
     yCollisionTolerance: 200,
-    selectedEasing: 'easeOutCirc',
+    selectedEasing: 'easeOutCubic',
     pageTransition: {
         distance: 1000,
         duration: 600
@@ -300,9 +300,11 @@ PolyEffect.prototype.ExplodeShards = function () {
             });
         }, 10 * i);
     }
+
+    return this;
 };
 
-PolyEffect.prototype.TransitionToOriginalPosition = function (animationDuration) {
+PolyEffect.prototype.TransitionToOriginalPosition = function (animationDuration, easing = this.selectedEasing) {
     const that = this;
     const sortedShardElmts = this.shardElmts.sort((a, b) => a.quadrant - b.quadrant);
 
@@ -310,7 +312,7 @@ PolyEffect.prototype.TransitionToOriginalPosition = function (animationDuration)
         window.setTimeout(function () {
             const currentShardElmt = that.shardElmts[i];
             
-            currentShardElmt.AnimateToOriginalPosition(that.selectedEasing, animationDuration);
+            currentShardElmt.AnimateToOriginalPosition(easing, animationDuration);
         }, 100 * i);
     }
 
@@ -321,24 +323,32 @@ PolyEffect.prototype.StartFloatAnimation = function () {
     for (let i = 0; i < this.shardElmts.length; i++) {
         this.shardElmts[i].StartFloatAnimation();
     }
+
+    return this;
 };
 
 PolyEffect.prototype.PauseFloatAnimation = function () {
     for (let i = 0; i < this.shardElmts.length; i++) {
         this.shardElmts[i].PauseFloatAnimation();
     }
+
+    return this;
 };
 
 PolyEffect.prototype.StartShakeAnimation = function () {
     for (let i = 0; i < this.shardElmts.length; i++) {
         this.shardElmts[i].StartShakeAnimation();
     }
+
+    return this;
 };
 
 PolyEffect.prototype.PauseShakeAnimation = function () {
     for (let i = 0; i < this.shardElmts.length; i++) {
         this.shardElmts[i].PauseShakeAnimation();
     }
+
+    return this;
 };
 
 PolyEffect.prototype.TransitionBottomToTop = function () {
@@ -359,6 +369,8 @@ PolyEffect.prototype.TransitionBottomToTop = function () {
             });
         }, 10 * index);
     });
+
+    return this;
 };
 
 PolyEffect.prototype.TransitionTopToBottom = function () {
@@ -379,6 +391,8 @@ PolyEffect.prototype.TransitionTopToBottom = function () {
             });
         }, 10 * index);
     });
+
+    return this;
 };
 
 PolyEffect.prototype.TransitionLeftToRight = function () {
@@ -399,6 +413,8 @@ PolyEffect.prototype.TransitionLeftToRight = function () {
             });
         }, 50 * index);
     });
+
+    return this;
 };
 
 PolyEffect.prototype.TransitionRightToLeft = function () {
@@ -419,6 +435,8 @@ PolyEffect.prototype.TransitionRightToLeft = function () {
             });
         }, 50 * index);
     });
+
+    return this;
 };
 
 PolyEffect.prototype.ShimmerTopToBottom = function (animationDuration = 2100, yTolerance = 800) {
@@ -455,6 +473,8 @@ PolyEffect.prototype.ShimmerTopToBottom = function (animationDuration = 2100, yT
             }, 100); // This delay is for how long it takes to go down the screen
         }
     }());
+
+    return this;
 };
 //#endregion
 
