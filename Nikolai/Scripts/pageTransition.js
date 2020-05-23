@@ -153,8 +153,8 @@ PageTransition.prototype.TransitionToPage = function (pageID) {
     var that = this;
 
     this.PageChangingHandlers.forEach(function (item) {
-        var currentPageID = that.$currentPage ? that.$currentPage.attr('id') : '';
-        var previousPageID = that.$previousPage ? that.$previousPage.attr('id') : '';
+        var currentPageID = that.$nextPage ? that.$nextPage.attr('id') : '';
+        var previousPageID = that.$currentPage ? that.$currentPage.attr('id') : '';
 
         item.call(item, currentPageID, previousPageID);
     });
