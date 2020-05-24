@@ -88,8 +88,6 @@ PolyEffect.prototype.Initialize = function () {
     this.svgElmt.querySelectorAll('path').forEach(shard => {
         this.shardElmts.push(new PolyShard(shard));
     });
-
-    this.ScatterShards();
 };
 
 PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard) {
@@ -314,20 +312,17 @@ PolyEffect.prototype.TransitionToOriginalPosition = function (animationDuration,
     let animationCompleteCount = 0;
 
     for (let i = 0; i < sortedShards.length; i++) {
-        window.setTimeout(function () {
-            const currentShardElmt = that.shardElmts[i];
-            
-            currentShardElmt
-                .AnimateToOriginalPosition(easing, animationDuration, {
-                    completeCallback: () => {
-                        animationCompleteCount++;
+        const currentShardElmt = that.shardElmts[i];
 
-                        if (animationCompleteCount === sortedShards.length) {
-                            that.TranslateAnimationComplete = true;
-                        }
-                    }
-                });
-        }, 100 * i);
+        currentShardElmt.AnimateToOriginalPosition(easing, animationDuration, {
+            completeCallback: () => {
+                animationCompleteCount++;
+
+                if (animationCompleteCount === sortedShards.length) {
+                    that.TranslateAnimationComplete = true;
+                }
+            }
+        });
     }
 
     this.IsScattered = false;

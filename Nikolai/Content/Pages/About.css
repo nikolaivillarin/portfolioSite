@@ -864,6 +864,138 @@ $color-dial--ring3: #2294e5;*/
 .about_bomb-btn--babyYoda {
   left: -170px; }
 
+.about-screen.about-screen--polyDog .about-screen__svg {
+  min-width: 45%; }
+
+.about-screen.about-screen--polyDog .about-screen__splash {
+  -moz-transform: translate(-47%, -4.5em);
+  -ms-transform: translate(-47%, -4.5em);
+  -o-transform: translate(-47%, -4.5em);
+  -webkit-transform: translate(-47%, -4.5em);
+  transform: translate(-47%, -4.5em); }
+  .about-screen.about-screen--polyDog .about-screen__splash .about-screen__target {
+    bottom: -2em; }
+
+.about-screen .about-screen__img.about-screen__img-polyDog {
+  display: block;
+  overflow: visible; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-1 {
+    fill: #ffd2a5; }
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-1.shard--shimmer {
+      -moz-animation: polyDog-shimmer-cls-1 2s linear forwards;
+      -o-animation: polyDog-shimmer-cls-1 2s linear forwards;
+      -webkit-animation: polyDog-shimmer-cls-1 2s linear forwards;
+      animation: polyDog-shimmer-cls-1 2s linear forwards; }
+
+@keyframes polyDog-shimmer-cls-1 {
+  0% {
+    fill: #ffd2a5; }
+  35% {
+    fill: #ffd2a5; }
+  100% {
+    fill: #ffd2a5; } }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-2 {
+    fill: #ffc993; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-3 {
+    fill: #ffcf9f; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-4 {
+    fill: #ffc290; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-5 {
+    fill: #ffdeb1; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-6 {
+    fill: #ffd8a6; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-7 {
+    fill: #ffbd87; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-8 {
+    fill: #ffc38b; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-9 {
+    fill: #ffb77b; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-10 {
+    fill: #f5a061; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-11 {
+    fill: #ff273a; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-12 {
+    fill: #ff335f; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-13 {
+    fill: #ff707f; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-14 {
+    fill: #ffd5a0; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-15 {
+    fill: #ffaf6f; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-16 {
+    fill: #ffa664; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-17 {
+    fill: #ffd49f; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-18 {
+    fill: #ffb47d; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-19 {
+    fill: #ffc28b; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-20 {
+    fill: #ffd39f; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-21 {
+    fill: #f6a566; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-22 {
+    fill: #ffb47c; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-23 {
+    fill: #ffca92; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-24 {
+    fill: #ffbc81; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-25 {
+    fill: #fdaf73; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-26 {
+    fill: #ffc48b; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-27 {
+    fill: #f8ac78; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-28 {
+    fill: #f2975b; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-29 {
+    fill: #e99358; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-30 {
+    fill: #259be9; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-31 {
+    fill: #68d1ff; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-32 {
+    fill: #4ecafa; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-33 {
+    fill: #2aa4eb; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-34 {
+    fill: #86c9fc; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-35 {
+    fill: #faa769; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-36 {
+    fill: #ffe1b2; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-37 {
+    fill: #f9d7a2; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-38 {
+    fill: #f5a161; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-39 {
+    fill: #ffe0b2; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-40 {
+    fill: #969595; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-41 {
+    fill: #9b9a99; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-42 {
+    fill: #8b8b8b; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-43 {
+    fill: #a2a2a2; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-44 {
+    fill: #b2b2b2; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-45 {
+    fill: #a3a3a3; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-46 {
+    fill: #c3c3c3; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-47 {
+    fill: #b9b7b7; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-48 {
+    fill: #ababab; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-49 {
+    fill: #a1a1a1; }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-50 {
+    fill: #b9b9b9; }
+
+.about_bomb-btn--polyDog {
+  left: -170px; }
+
 .about .work-IndicatorContainer {
   bottom: 100px; }
 

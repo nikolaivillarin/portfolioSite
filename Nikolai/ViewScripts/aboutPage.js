@@ -122,7 +122,7 @@ AboutPage.prototype.OnDialDropped = function () {
                 $page.addClass('about-screen--animState3');
 
                 window.setTimeout(() => {
-                    pageGraphic.TransitionToOriginalPosition(800, 'easeOutCubic');
+                    pageGraphic.TransitionToOriginalPosition(1000, 'easeOutCubic');
 
                     $page.addClass('about-screen--animState4');
 
@@ -138,9 +138,9 @@ AboutPage.prototype.OnDialDropped = function () {
 
                             window.setTimeout(() => {
                                 $page.addClass('about-screen--animState5');
-                            }, 200);
-                        }, 2000);
-                    }, 2000);
+                            }, 1500);
+                        }, 500);
+                    }, 300);
                 }, 500);
             }, 500);
         } else {
@@ -322,6 +322,8 @@ AboutPage.prototype.InitializePages = function () {
                 scalarBottom,
                 scalarLeft
             );
+
+            pageGraphic.ScatterShards();
         }
         
         this.pages.push({

@@ -1,0 +1,250 @@
+﻿$frameDuration: 0.8s;
+
+.about-screen {
+    &.about-screen--polyDog {
+        .about-screen__svg {
+            min-width: 45%;
+        }
+
+        .about-screen__splash {
+            @include transform(translate(-47%, -4.5em));
+
+            .about-screen__target {
+                bottom: -2em;
+            }
+        }
+    }
+}
+
+.about-screen {
+    .about-screen__img {
+        &.about-screen__img-polyDog {
+            display: block;
+            overflow: visible;
+
+            .AnimateToOriginalComplete {
+                &.cls-1 {
+                    fill: #ffd2a5;
+
+                    &.shard--shimmer {
+                        @include animation( polyDog-shimmer-cls-1 2s linear forwards );
+
+                        @keyframes polyDog-shimmer-cls-1 {
+                            0% {
+                                fill: #ffd2a5;
+                            }
+
+                            35% {
+                                fill: #ffd2a5;
+                            }
+
+                            100% {
+                                fill: #ffd2a5;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-2 {
+                    fill: #ffc993;
+                }
+
+                &.cls-3 {
+                    fill: #ffcf9f;
+                }
+
+                &.cls-4 {
+                    fill: #ffc290;
+                }
+
+                &.cls-5 {
+                    fill: #ffdeb1;
+                }
+
+                &.cls-6 {
+                    fill: #ffd8a6;
+                }
+
+                &.cls-7 {
+                    fill: #ffbd87;
+                }
+
+                &.cls-8 {
+                    fill: #ffc38b;
+                }
+
+                &.cls-9 {
+                    fill: #ffb77b;
+                }
+
+                &.cls-10 {
+                    fill: #f5a061;
+                }
+
+                &.cls-11 {
+                    fill: #ff273a;
+                }
+
+                &.cls-12 {
+                    fill: #ff335f;
+                }
+
+                &.cls-13 {
+                    fill: #ff707f;
+                }
+
+                &.cls-14 {
+                    fill: #ffd5a0;
+                }
+
+                &.cls-15 {
+                    fill: #ffaf6f;
+                }
+
+                &.cls-16 {
+                    fill: #ffa664;
+                }
+
+                &.cls-17 {
+                    fill: #ffd49f;
+                }
+
+                &.cls-18 {
+                    fill: #ffb47d;
+                }
+
+                &.cls-19 {
+                    fill: #ffc28b;
+                }
+
+                &.cls-20 {
+                    fill: #ffd39f;
+                }
+
+                &.cls-21 {
+                    fill: #f6a566;
+                }
+
+                &.cls-22 {
+                    fill: #ffb47c;
+                }
+
+                &.cls-23 {
+                    fill: #ffca92;
+                }
+
+                &.cls-24 {
+                    fill: #ffbc81;
+                }
+
+                &.cls-25 {
+                    fill: #fdaf73;
+                }
+
+                &.cls-26 {
+                    fill: #ffc48b;
+                }
+
+                &.cls-27 {
+                    fill: #f8ac78;
+                }
+
+                &.cls-28 {
+                    fill: #f2975b;
+                }
+
+                &.cls-29 {
+                    fill: #e99358;
+                }
+
+                &.cls-30 {
+                    fill: #259be9;
+                }
+
+                &.cls-31 {
+                    fill: #68d1ff;
+                }
+
+                &.cls-32 {
+                    fill: #4ecafa;
+                }
+
+                &.cls-33 {
+                    fill: #2aa4eb;
+                }
+
+                &.cls-34 {
+                    fill: #86c9fc;
+                }
+
+                &.cls-35 {
+                    fill: #faa769;
+                }
+
+                &.cls-36 {
+                    fill: #ffe1b2;
+                }
+
+                &.cls-37 {
+                    fill: #f9d7a2;
+                }
+
+                &.cls-38 {
+                    fill: #f5a161;
+                }
+
+                &.cls-39 {
+                    fill: #ffe0b2;
+                }
+
+                &.cls-40 {
+                    fill: #969595;
+                }
+
+                &.cls-41 {
+                    fill: #9b9a99;
+                }
+
+                &.cls-42 {
+                    fill: #8b8b8b;
+                }
+
+                &.cls-43 {
+                    fill: #a2a2a2;
+                }
+
+                &.cls-44 {
+                    fill: #b2b2b2;
+                }
+
+                &.cls-45 {
+                    fill: #a3a3a3;
+                }
+
+                &.cls-46 {
+                    fill: #c3c3c3;
+                }
+
+                &.cls-47 {
+                    fill: #b9b7b7;
+                }
+
+                &.cls-48 {
+                    fill: #ababab;
+                }
+
+                &.cls-49 {
+                    fill: #a1a1a1;
+                }
+
+                &.cls-50 {
+                    fill: #b9b9b9;
+                }
+            }
+        }
+    }
+}
+
+.about_bomb-btn--polyDog {
+    left: -170px;
+}

@@ -176,6 +176,7 @@
     <Content Include="Content\ImagesAbout\icon_windows.svg" />
     <Content Include="Content\ImagesAbout\kakashi.png" />
     <Content Include="Content\ImagesAbout\polyDog.png" />
+    <Content Include="Content\ImagesAbout\polyDog.svg" />
     <Content Include="Content\ImagesAbout\profilePic.png" />
     <Content Include="Content\ImagesAbout\nikolaivillarin.png" />
     <Content Include="Content\ImagesAbout\vsLogo.png" />
@@ -502,6 +503,7 @@
     <Content Include="Content\Molecules\_microInteraction.scss" />
     <Content Include="Content\Molecules\_msLogoPoly.scss" />
     <Content Include="Content\Molecules\_babyYodaPoly.scss" />
+    <Content Include="Content\Molecules\_dogPoly.scss" />
     <None Include="Properties\PublishProfiles\Local Host.pubxml" />
     <None Include="Properties\PublishProfiles\Winhost Release.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
