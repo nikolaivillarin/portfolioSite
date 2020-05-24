@@ -520,17 +520,13 @@ AboutPage.prototype.TooglePageGraphicAnimation = function (direction) {
     if (selectedPage.pageGraphic &&
         selectedPage.pageGraphic.TranslateAnimationComplete) {
         // Ensure no pending animations are occuring before animating further
-        let animationDuration = 1000;
+        let animationDuration = 1500;
         let groupAnimScalar = 10;
 
         if (selectedPage.pageGraphic.IsScattered === false) {
-            animationDuration = 800;
+            animationDuration = 1500;
             groupAnimScalar = 10;
         }
-
-        // NIKO YOU ARE HERE. 
-        // There is a bug if you don't let the animation complete and you animate to original position
-        // it lags and breaks
 
         switch (direction) {
             case 'up':
