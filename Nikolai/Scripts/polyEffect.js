@@ -665,7 +665,7 @@ PolyEffect.prototype.TransitionLeftToRight = function (
 ) {
     const that = this;
     const startXPos = this.pageTransition.distance * -1;
-    const totalShards = this.GetShardsSortedRightToLeft.length;
+    const totalShards = this.GetShardsSortedRightToLeft().length;
     const shardGroups = this.GetShardsGroupedRightToLeft(20);
 
     this.TranslateAnimationComplete = false;

@@ -102,6 +102,10 @@ AboutPage.prototype.OnDialDropped = function () {
     const pageGraphic = this.pages[this.selectedPageIndex].pageGraphic;
 
     if (pageGraphic.TranslateAnimationComplete === false) {
+        if (window.MainNav.NavBar.DialControl.$Element.hasClass('nvDial--pulsing') === true) {
+            window.MainNav.NavBar.DialControl.$Element.removeClass('nvDial--pulsing');
+        }
+
         // Prevent multiple animations from occuring at once
         // which might mess up calculations
         return;
@@ -110,6 +114,8 @@ AboutPage.prototype.OnDialDropped = function () {
     if (window.MainNav.NavBar.DialControl.$Element.hasClass('nvDial--pulsing') === true) {
         const $page = this.pages[this.selectedPageIndex].$elmt;
         const graphicCss = this.pages[this.selectedPageIndex].graphicCss;
+
+        window.MainNav.NavBar.DialControl.$Element.removeClass('nvDial--pulsing');
 
         // Animation Frames
         if (pageGraphic && pageGraphic.IsScattered) {
@@ -163,10 +169,6 @@ AboutPage.prototype.OnDialDropped = function () {
                 $('[data-nv-animate-auto-play="false"]', $page)
             );
         }
-    }
-
-    if (window.MainNav.NavBar.DialControl.$Element.hasClass('nvDial--pulsing') === true) {
-        window.MainNav.NavBar.DialControl.$Element.removeClass('nvDial--pulsing');
     }
 };
 
