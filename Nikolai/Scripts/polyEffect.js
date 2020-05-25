@@ -40,6 +40,7 @@ function PolyEffect(
     canvasScalarBottom = 0,
     canvasScalarLeft = 0
 ) {
+    this.id = svgElmt.getAttribute('id');
     this.svgElmt = svgElmt;
     this.canvasScalarTop = canvasScalarTop;
     this.canvasScalarRight = canvasScalarRight;
@@ -51,6 +52,7 @@ function PolyEffect(
 }
 
 PolyEffect.prototype = {
+    id: '',
     svgElmt: null,
     shardElmts: [],
     // Scalar to allow elements to go outside of
@@ -227,6 +229,58 @@ PolyEffect.prototype.GetShardsSortedRightToLeft = function () {
     return this.shardElmts.sort((a, b) => b.GetCurrentStartPos().x - a.GetCurrentStartPos().x);
 };
 
+PolyEffect.prototype.GetShardsGroupedAsc = function (totalGroups) {
+    /// <returns>
+    /// Returns an array that contains groups of shards.
+    /// </returns>
+    const shards = this.GetShardsSortedAsc();
+    const groupSize = Math.ceil(this.shardElmts.length / totalGroups);
+
+    return this.GroupShards(shards, groupSize);
+};
+
+PolyEffect.prototype.GetShardsGroupedDesc = function (totalGroups) {
+    /// <returns>
+    /// Returns an array that contains groups of shards.
+    /// </returns>
+    const shards = this.GetShardsSortedDesc();
+    const groupSize = Math.ceil(this.shardElmts.length / totalGroups);
+
+    return this.GroupShards(shards, groupSize);
+};
+
+PolyEffect.prototype.GetShardsGroupedLeftToRight = function (totalGroups) {
+    /// <returns>
+    /// Returns an array that contains groups of shards.
+    /// </returns>
+    const shards = this.GetShardsSortedLeftToRight();
+    const groupSize = Math.ceil(this.shardElmts.length / totalGroups);
+
+    return this.GroupShards(shards, groupSize);
+};
+
+PolyEffect.prototype.GetShardsGroupedRightToLeft = function (totalGroups) {
+    /// <returns>
+    /// Returns an array that contains groups of shards.
+    /// </returns>
+    const shards = this.GetShardsSortedRightToLeft();
+    const groupSize = Math.ceil(this.shardElmts.length / totalGroups);
+
+    return this.GroupShards(shards, groupSize);
+};
+
+PolyEffect.prototype.GroupShards = function (shards, groupSize) {
+    let shardGroups = [];
+
+    for (let i = 0; i < shards.length; i += groupSize) {
+        shardGroups.push(
+            shards.slice(i, i + groupSize)
+        );
+    }
+
+    return shardGroups;
+};
+
 PolyEffect.prototype.HasCollision = function (maxIndex, xPos, yPos) {
     for (let i = 0; i <= maxIndex; i++) {
         const curXPosDiff = Math.abs(this.shardElmts[i].currentPosition.x - xPos);
@@ -381,7 +435,7 @@ PolyEffect.prototype.PauseShakeAnimation = function () {
     return this;
 };
 
-PolyEffect.prototype.TransitionBottomToTop = function (
+PolyEffect.prototype.TransitionIndividualShardsBottomToTop = function (
     animationDuration = this.pageTransition.duration,
     groupAnimScalar = 10
 ) {
@@ -418,7 +472,7 @@ PolyEffect.prototype.TransitionBottomToTop = function (
     return this;
 };
 
-PolyEffect.prototype.TransitionTopToBottom = function (
+PolyEffect.prototype.TransitionIndividualShardsTopToBottom = function (
     animationDuration = this.pageTransition.duration,
     groupAnimScalar = 10
 ) {
@@ -455,7 +509,7 @@ PolyEffect.prototype.TransitionTopToBottom = function (
     return this;
 };
 
-PolyEffect.prototype.TransitionLeftToRight = function (
+PolyEffect.prototype.TransitionIndividualShardsLeftToRight = function (
     animationDuration = this.pageTransition.duration,
     groupAnimScalar = 10
 ) {
@@ -492,7 +546,7 @@ PolyEffect.prototype.TransitionLeftToRight = function (
     return this;
 };
 
-PolyEffect.prototype.TransitionRightToLeft = function (
+PolyEffect.prototype.TransitionIndividualShardsRightToLeft = function (
     animationDuration = this.pageTransition.duration,
     groupAnimScalar = 10
 ) {
@@ -524,6 +578,162 @@ PolyEffect.prototype.TransitionRightToLeft = function (
                 }
             });
         }, groupAnimScalar * index);
+    });
+
+    return this;
+};
+
+PolyEffect.prototype.TransitionBottomToTop = function (
+    animationDuration = this.pageTransition.duration,
+    groupAnimScalar = 50
+) {
+    const that = this;
+    const startYPos = this.pageTransition.distance;
+    const totalShards = this.GetShardsSortedDesc().length;
+    const shardGroups = this.GetShardsGroupedDesc(10);
+
+    this.TranslateAnimationComplete = false;
+
+    let animationCompleteCount = 0;
+
+    $(shardGroups).each((groupIndex, group) => {
+        $(group).each((index, shard) => {
+            const originalPosition = [...shard.currentData];
+            const newPosition = shard.GetNewPositionData(shard.currentData, 0, startYPos);
+
+            shard.Translate(0, startYPos);
+
+            window.setTimeout(function () {
+                shard.AnimateToPosition(newPosition, originalPosition, that.selectedEasing, {
+                    animationDuration: animationDuration,
+                    completeCallback: () => {
+                        animationCompleteCount++;
+
+                        if (animationCompleteCount === totalShards) {
+                            that.TranslateAnimationComplete = true;
+                        }
+                    }
+                });
+            }, groupAnimScalar * groupIndex);
+        });
+    });
+
+    return this;
+};
+
+PolyEffect.prototype.TransitionTopToBottom = function (
+    animationDuration = this.pageTransition.duration,
+    groupAnimScalar = 50
+) {
+    const that = this;
+    const startYPos = this.pageTransition.distance * -1;
+    const totalShards = this.GetShardsSortedAsc().length;
+    const shardGroups = this.GetShardsGroupedAsc(10);
+
+    this.TranslateAnimationComplete = false;
+
+    let animationCompleteCount = 0;
+
+    $(shardGroups).each((groupIndex, group) => {
+        $(group).each((index, shard) => {
+            const originalPosition = [...shard.currentData];
+            const newPosition = shard.GetNewPositionData(shard.currentData, 0, startYPos);
+
+            shard.Translate(0, startYPos);
+
+            window.setTimeout(function () {
+                shard.AnimateToPosition(newPosition, originalPosition, that.selectedEasing, {
+                    animationDuration: animationDuration,
+                    completeCallback: () => {
+                        animationCompleteCount++;
+
+                        if (animationCompleteCount === totalShards) {
+                            that.TranslateAnimationComplete = true;
+                        }
+                    }
+                });
+            }, groupAnimScalar * groupIndex);
+        });
+    });
+
+    return this;
+};
+
+PolyEffect.prototype.TransitionLeftToRight = function (
+    animationDuration = this.pageTransition.duration,
+    groupAnimScalar = 50
+) {
+    const that = this;
+    const startXPos = this.pageTransition.distance * -1;
+    const totalShards = this.GetShardsSortedRightToLeft.length;
+    const shardGroups = this.GetShardsGroupedRightToLeft(20);
+
+    this.TranslateAnimationComplete = false;
+
+    let animationCompleteCount = 0;
+
+    $(shardGroups).each((groupIndex, group) => {
+        $(group).each((index, shard) => {
+            const originalPosition = [...shard.currentData];
+            const newPosition = shard.GetNewPositionData(shard.currentData, startXPos, 0);
+
+            shard.Translate(startXPos, 0);
+
+            window.setTimeout(function () {
+                const thisShard = shard;
+
+                thisShard.AnimateToPosition(newPosition, originalPosition, that.selectedEasing, {
+                    animationDuration: animationDuration,
+                    completeCallback: () => {
+                        animationCompleteCount++;
+
+                        if (animationCompleteCount === totalShards) {
+                            that.TranslateAnimationComplete = true;
+                        }
+                    }
+                });
+            }, groupAnimScalar * groupIndex);
+        });
+    });
+
+    return this;
+};
+
+PolyEffect.prototype.TransitionRightToLeft = function (
+    animationDuration = this.pageTransition.duration,
+    groupAnimScalar = 50
+) {
+    const that = this;
+    const startXPos = this.pageTransition.distance;
+    const totalShards = this.GetShardsSortedLeftToRight().length;
+    const shardGroups = this.GetShardsGroupedLeftToRight(20);
+
+    this.TranslateAnimationComplete = false;
+
+    let animationCompleteCount = 0;
+
+    $(shardGroups).each((groupIndex, group) => {
+        $(group).each((index, shard) => {
+            const originalPosition = [...shard.currentData];
+            const newPosition = shard.GetNewPositionData(shard.currentData, startXPos, 0);
+
+            shard.Translate(startXPos, 0);
+
+            window.setTimeout(function () {
+                const thisShard = shard;
+
+                thisShard.AnimateToPosition(newPosition, originalPosition, that.selectedEasing, {
+                    animationDuration: animationDuration,
+                    completeCallback: () => {
+                        animationCompleteCount++;
+
+                        if (animationCompleteCount === totalShards) {
+                            that.TranslateAnimationComplete = true;
+                        }
+                    }
+                });
+            }, groupAnimScalar * groupIndex);
+        });
     });
 
     return this;
@@ -695,16 +905,15 @@ PolyShard.prototype.AnimateToPosition = function (startDataPoint, endDataPoint, 
     this.translateAnimationPause = false;
 
     // Function for closure
-    let animIntervalID = window.setInterval(function () {
-        if (stepCount < 1) {
+    (function drawFrame() {
+        if (that.translateAnimationPause === false
+            && stepCount < 1) {
+            window.requestAnimationFrame(drawFrame);
+
             that.EaseAnimation(diffData, startDataPoint, stepCount, easing);
 
             stepCount = stepCount + stepper;
-        } else if (that.translateAnimationPause) {
-            window.clearInterval(animIntervalID);
         } else {
-            window.clearInterval(animIntervalID);
-
             that.currentData = endDataPoint;
             that.UpdateDataAttr();
 
@@ -718,7 +927,7 @@ PolyShard.prototype.AnimateToPosition = function (startDataPoint, endDataPoint, 
 
             that.translateAnimationPause = true;
         }
-    }, stepDuration);
+    }());
 };
 
 PolyShard.prototype.ResetAnimationState = function () {

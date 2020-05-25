@@ -108,8 +108,6 @@ AboutPage.prototype.OnDialDropped = function () {
     }
 
     if (window.MainNav.NavBar.DialControl.$Element.hasClass('nvDial--pulsing') === true) {
-        window.MainNav.NavBar.DialControl.$Element.removeClass('nvDial--pulsing');
-
         const $page = this.pages[this.selectedPageIndex].$elmt;
         const graphicCss = this.pages[this.selectedPageIndex].graphicCss;
 
@@ -165,6 +163,10 @@ AboutPage.prototype.OnDialDropped = function () {
                 $('[data-nv-animate-auto-play="false"]', $page)
             );
         }
+    }
+
+    if (window.MainNav.NavBar.DialControl.$Element.hasClass('nvDial--pulsing') === true) {
+        window.MainNav.NavBar.DialControl.$Element.removeClass('nvDial--pulsing');
     }
 };
 
@@ -522,30 +524,38 @@ AboutPage.prototype.TooglePageGraphicAnimation = function (direction) {
     if (selectedPage.pageGraphic &&
         selectedPage.pageGraphic.TranslateAnimationComplete) {
         // Ensure no pending animations are occuring before animating further
-        let animationDuration = 1500;
-        let groupAnimScalar = 10;
+        let animationDuration = 800;
+        let groupAnimScalar = 50;
 
         if (selectedPage.pageGraphic.IsScattered === false) {
-            animationDuration = 1500;
+            animationDuration = 800;
             groupAnimScalar = 10;
         }
 
         switch (direction) {
             case 'up':
                 window.setTimeout(() => {
-                    selectedPage.pageGraphic.TransitionBottomToTop(animationDuration, groupAnimScalar);
+                    selectedPage.pageGraphic.IsScattered ?
+                        selectedPage.pageGraphic.TransitionBottomToTop(animationDuration, groupAnimScalar) :
+                        selectedPage.pageGraphic.TransitionIndividualShardsBottomToTop(animationDuration, groupAnimScalar);
                 }, 300);
                 break;
             case 'down':
                 window.setTimeout(() => {
-                    selectedPage.pageGraphic.TransitionTopToBottom(animationDuration, groupAnimScalar);
+                    selectedPage.pageGraphic.IsScattered ?
+                        selectedPage.pageGraphic.TransitionTopToBottom(animationDuration, groupAnimScalar) :
+                        selectedPage.pageGraphic.TransitionIndividualShardsTopToBottom(animationDuration, groupAnimScalar);
                 }, 300);
                 break;
             case 'left':
-                selectedPage.pageGraphic.TransitionRightToLeft(animationDuration, groupAnimScalar);
+                selectedPage.pageGraphic.IsScattered ?
+                    selectedPage.pageGraphic.TransitionRightToLeft(animationDuration, groupAnimScalar) :
+                    selectedPage.pageGraphic.TransitionIndividualShardsRightToLeft(animationDuration, groupAnimScalar);
                 break;
             case 'right':
-                selectedPage.pageGraphic.TransitionLeftToRight(animationDuration, groupAnimScalar);
+                selectedPage.pageGraphic.IsScattered ?
+                    selectedPage.pageGraphic.TransitionLeftToRight(animationDuration, groupAnimScalar) :
+                    selectedPage.pageGraphic.TransitionIndividualShardsLeftToRight(animationDuration, groupAnimScalar);
                 break;
         }
 
