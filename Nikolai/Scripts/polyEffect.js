@@ -175,6 +175,30 @@ PolyEffect.prototype.GetRandomPositionBasedOnQuadrants = function (shard) {
     };
 };
 
+PolyEffect.prototype.GetRandomPositionInSvg = function (shard) {
+    const dimensions = {
+        minX: -this.canvasScalarLeft,
+        maxX: this.svgElmt.viewBox.baseVal.width + this.canvasScalarRight,
+        minY: -this.canvasScalarTop,
+        maxY: this.svgElmt.viewBox.baseVal.height + this.canvasScalarBottom
+    };
+
+    const xModifier = GetRandomArbitrary(
+        dimensions.minX,
+        dimensions.maxX
+    ) - shard.startPosition.x;
+
+    const yModifier = GetRandomArbitrary(
+        dimensions.minY,
+        dimensions.maxY
+    ) - shard.startPosition.y;
+
+    return {
+        xModifier: RoundTo(xModifier, 0),
+        yModifier: RoundTo(yModifier, 0)
+    };
+};
+
 PolyEffect.prototype.GetShardsSortedAsc = function () {
     /// <summary>
     /// Shard elements at the top will be in the top of the list
@@ -218,7 +242,7 @@ PolyEffect.prototype.HasCollision = function (maxIndex, xPos, yPos) {
 };
 
 PolyEffect.prototype.ScatterShards = function () {
-    const maxIteration = 500;
+    const maxIteration = 1000;
     let curIterationCount = 0; // To prevent infinite loops
 
     this.IsScattered = true;
@@ -229,7 +253,7 @@ PolyEffect.prototype.ScatterShards = function () {
         curIterationCount = 0;
 
         do {
-            posModifiers = this.GetRandomPositionBasedOnQuadrants(
+            posModifiers = this.GetRandomPositionInSvg(
                 this.shardElmts[i],
             );
 
@@ -241,7 +265,6 @@ PolyEffect.prototype.ScatterShards = function () {
         );
 
         this.shardElmts[i]
-            .SetQuadrant(posModifiers.quadrant)
             .Translate(posModifiers.xModifier, posModifiers.yModifier)
             .NormalizeTriangle();
     }
@@ -262,7 +285,7 @@ PolyEffect.prototype.ExplodeShards = function () {
         curIterationCount = 0;
 
         do {
-            posModifiers = this.GetRandomPositionBasedOnQuadrants(
+            posModifiers = this.GetRandomPositionInSvg(
                 shard,
             );
 
@@ -292,9 +315,7 @@ PolyEffect.prototype.ExplodeShards = function () {
                 that.selectedEasing, {
                     animationDuration: that.pageTransition.duration,
                     completeCallback: () => {
-                        thisShard
-                            .SetQuadrant(posModifiers.quadrant)
-                            .ResetAnimationState();
+                        thisShard.ResetAnimationState();
                 }
             });
         }, 10 * i);
@@ -305,7 +326,7 @@ PolyEffect.prototype.ExplodeShards = function () {
 
 PolyEffect.prototype.TransitionToOriginalPosition = function (animationDuration, easing = this.selectedEasing) {
     const that = this;
-    const sortedShards = this.shardElmts.sort((a, b) => a.quadrant - b.quadrant);
+    const sortedShards = this.GetShardsSortedLeftToRight();
 
     this.TranslateAnimationComplete = false;
 
@@ -568,7 +589,6 @@ PolyShard.prototype = {
     currentPosition: { x: 0, y: 0 },
     originalData: [],
     currentData: [],
-    quadrant: 0, // Used by the container to designate the location of this shard
     floatAnimationPaused: true,
     shakeAnimationPaused: true,
     translateAnimationPause: true,
@@ -826,12 +846,6 @@ PolyShard.prototype.GetCurrentStartPos = function () {
         x: data[0],
         y: data[1]
     };
-};
-
-PolyShard.prototype.SetQuadrant = function (quadrant) {
-    this.quadrant = quadrant;
-
-    return this;
 };
 
 PolyShard.prototype.SetData = function () {

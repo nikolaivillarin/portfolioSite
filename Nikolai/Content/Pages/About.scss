@@ -354,11 +354,11 @@ $frameDuration: 0.8s;
 
     .about-screen__img {
         [class^="cls-"]:nth-child(odd) {
-            fill: rgba(17, 17, 19, 1);
+            fill: rgba(29, 29, 31, 1);
         }
 
         [class^="cls-"]:nth-child(even) {
-            fill: rgba(24, 24, 26, 1);
+            fill: rgba(33, 33, 33, 1);
         }
 
         [class^="cls-"]:nth-child(odd).shard--shimmer {
@@ -370,15 +370,15 @@ $frameDuration: 0.8s;
 
             @keyframes shimmerOdd {
                 0% {
-                    fill: rgba(17, 17, 19, 1);
+                    fill: rgba(29, 29, 31, 1);
                 }
 
                 35% {
-                    fill: rgba(29, 29, 32, 1);
+                    fill: rgba(43, 43, 46, 1);
                 }
 
                 100% {
-                    fill: rgba(17, 17, 19, 1);
+                    fill: rgba(29, 29, 31, 1);
                 }
             }
         }
@@ -392,15 +392,15 @@ $frameDuration: 0.8s;
 
             @keyframes shimmerEven {
                 0% {
-                    fill: rgba(24, 24, 26, 1);
+                    fill: rgba(33, 33, 33, 1);
                 }
 
                 35% {
-                    fill: rgba(38, 38, 41, 1);
+                    fill: rgba(47, 46, 46, 1);
                 }
 
                 100% {
-                    fill: rgba(24, 24, 26, 1);
+                    fill: rgba(33, 33, 33, 1);
                 }
             }
         }
