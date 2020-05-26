@@ -68,6 +68,40 @@
     }
 }
 
+#babyYodaEyes {
+    &.block-transition-up--end {
+        @include animation( babyYodaEyesTransitionUp 2s forwards );
+
+        @keyframes babyYodaEyesTransitionUp {
+            0% {
+                opacity: 0;
+                @include transform(translateY(80px));
+            }
+
+            100% {
+                opacity: 1;
+                @include transform(translateY(0px));
+            }
+        }
+    }
+
+    &.block-transition-down--end {
+        @include animation( babyYodaEyesTransitionDown 2s forwards );
+
+        @keyframes babyYodaEyesTransitionDown {
+            0% {
+                opacity: 0;
+                @include transform(translateY(-150px));
+            }
+
+            100% {
+                opacity: 1;
+                @include transform(translateY(0px));
+            }
+        }
+    }
+}
+
 #profilePic {
     &.block-transition--initial {
         display: block;
