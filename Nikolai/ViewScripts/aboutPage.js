@@ -100,8 +100,8 @@ AboutPage.prototype.OnPageChanging = function (pageId, previousPageId) {
 
 AboutPage.prototype.OnDialDropped = function () {
     const pageGraphic = this.pages[this.selectedPageIndex].pageGraphic;
-
-    if (pageGraphic.TranslateAnimationComplete === false) {
+    
+    if (pageGraphic && pageGraphic.TranslateAnimationComplete === false) {
         if (window.MainNav.NavBar.DialControl.$Element.hasClass('nvDial--pulsing') === true) {
             window.MainNav.NavBar.DialControl.$Element.removeClass('nvDial--pulsing');
         }
@@ -531,7 +531,7 @@ AboutPage.prototype.TooglePageGraphicAnimation = function (direction) {
 
         if (selectedPage.pageGraphic.IsScattered === false) {
             animationDuration = 800;
-            groupAnimScalar = 10;
+            groupAnimScalar = 15;
         }
 
         switch (direction) {

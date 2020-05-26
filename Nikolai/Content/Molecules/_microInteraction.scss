@@ -68,6 +68,78 @@
     }
 }
 
+#profilePic {
+    &.block-transition--initial {
+        display: block;
+        opacity: 0.3;
+        animation-timing-function: cubic-bezier(0, 0.55, 0.45, 1);
+    }
+
+    &.block-transition-up--end {
+        @include animation( profilePicTransitionUp 2s forwards );
+
+        @keyframes profilePicTransitionUp {
+            0% {
+                opacity: 0.3;
+                @include transform(translateY(50px));
+            }
+
+            100% {
+                opacity: 1;
+                @include transform(translateY(0px));
+            }
+        }
+    }
+
+    &.block-transition-down--end {
+        @include animation( profilePicTransitionDown 2s forwards );
+
+        @keyframes profilePicTransitionDown {
+            0% {
+                opacity: 0.3;
+                @include transform(translateY(-50px));
+            }
+
+            100% {
+                opacity: 1;
+                @include transform(translateY(0px));
+            }
+        }
+    }
+
+    &.block-transition-left--end {
+        @include animation( profilePicTransitionLeft 2s forwards );
+
+        @keyframes profilePicTransitionLeft {
+            0% {
+                opacity: 0.3;
+                @include transform(translateX(100px));
+            }
+
+            100% {
+                opacity: 1;
+                @include transform(translateX(0px));
+            }
+        }
+    }
+
+    &.block-transition-right--end {
+        @include animation( profilePicTransitionRight 2s forwards );
+
+        @keyframes profilePicTransitionRight {
+            0% {
+                opacity: 0.3;
+                @include transform(translateX(-100px));
+            }
+
+            100% {
+                opacity: 1;
+                @include transform(translateX(0px));
+            }
+        }
+    }
+}
+
 .text-transition--initial {
     span, p {
         display: inline-block;
