@@ -319,7 +319,7 @@ AboutPage.prototype.InitializePages = function () {
             const scalarRight = Number($svgElmt.attr('data-nv-about-page-graphic-scalar-right'));
             const scalarLeft = Number($svgElmt.attr('data-nv-about-page-graphic-scalar-left'));
 
-            pageGraphic = new window.PolyEffect(
+            window.test = pageGraphic = new window.PolyEffect(
                 $svgElmt.get(0),
                 scalarTop,
                 scalarRight,
@@ -327,7 +327,7 @@ AboutPage.prototype.InitializePages = function () {
                 scalarLeft
             );
 
-            pageGraphic.ScatterShards();
+            //pageGraphic.ScatterShards();
         }
         
         this.pages.push({

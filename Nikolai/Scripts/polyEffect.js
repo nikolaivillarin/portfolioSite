@@ -589,8 +589,8 @@ PolyEffect.prototype.TransitionBottomToTop = function (
 ) {
     const that = this;
     const startYPos = this.pageTransition.distance;
-    const totalShards = this.GetShardsSortedDesc().length;
-    const shardGroups = this.GetShardsGroupedDesc(10);
+    const totalShards = this.GetShardsSortedAsc().length;
+    const shardGroups = this.GetShardsGroupedAsc(10);
 
     this.TranslateAnimationComplete = false;
 
@@ -627,8 +627,8 @@ PolyEffect.prototype.TransitionTopToBottom = function (
 ) {
     const that = this;
     const startYPos = this.pageTransition.distance * -1;
-    const totalShards = this.GetShardsSortedAsc().length;
-    const shardGroups = this.GetShardsGroupedAsc(10);
+    const totalShards = this.GetShardsSortedDesc().length;
+    const shardGroups = this.GetShardsGroupedDesc(10);
 
     this.TranslateAnimationComplete = false;
 
@@ -831,7 +831,8 @@ PolyShard.prototype = {
                 return RoundTo(((n1 * (x -= 2.625 / d1) * x + 0.984375) * diff), 4);
             }
         }
-    }
+    },
+    dataRegex: /(?=[MLlZ])/
 }
 
 PolyShard.prototype.Initialize = function () {
@@ -961,7 +962,7 @@ PolyShard.prototype.EaseAnimation = function (diffData, currentData, x, easing =
 };
 
 PolyShard.prototype.GetRandomPointBasedOnMoveAndTolerance = function (isPositive, isXAxis, tolerance) {
-    let moveData = this.shardElmt.getAttribute('d').split(/(?=[MLlZ])/);
+    let moveData = this.shardElmt.getAttribute('d').split(this.dataRegex);
     let moveValue = 0;
 
     moveData = moveData[0].replace('M', '');
@@ -1061,8 +1062,8 @@ PolyShard.prototype.SetData = function () {
     const dataAttr = this.shardElmt.getAttribute('d');
 
     if (dataAttr) {
-        this.originalData = dataAttr.split(/(?=[MLlZ])/);
-        this.currentData = dataAttr.split(/(?=[MLlZ])/);
+        this.originalData = dataAttr.split(this.dataRegex);
+        this.currentData = dataAttr.split(this.dataRegex);
     }
 
     return this;
@@ -1178,7 +1179,7 @@ PolyShard.prototype.NormalizeTriangle = function () {
     /// <summary>
     /// Normalizes the shape of the triangles to make them more constant
     /// </summary>
-    const data = this.shardElmt.getAttribute('d').split(/(?=[MLlZ])/);
+    const data = this.shardElmt.getAttribute('d').split(this.dataRegex);
 
     this.currentData = this.GetNormalizedTriangleData(data);
 
@@ -1306,6 +1307,145 @@ PolyShard.prototype.GetNewPositionData = function (startPositionData, xModifier,
         }
     });
 }
+
+PolyShard.prototype.ConvertDataToSameFormat = function (data) {
+    const dataKeyValPairs = data.split(this.dataRegex);
+    let absoluteDataValues = [];
+
+    for (let i = 0; i < dataKeyValPairs.length; i++) {
+        const modifier = dataKeyValPairs[i].substring(0, 1);
+
+        switch (modifier) {
+            case 'M':
+                absoluteDataValues.push(dataKeyValPairs[i]);
+                break;
+            case 'L':
+                const absDataKeyValPairs = this.GetKeyValPairsFromData(dataKeyValPairs[i], 1);
+
+                for (let i = 0; i < absDataKeyValPairs.length; i += 2) {
+                    absoluteDataValues.push([absDataKeyValPairs[i], absDataKeyValPairs[i + 1]].join(','));
+                }
+                break;
+            case 'l':
+                // Convert relative values to absolute
+                const prevAbsoluteVal = this.GetKeyValPairsFromData(absoluteDataValues[i - 1], 1);
+
+                let lastXVal = prevAbsoluteVal[prevAbsoluteVal.length - 2];
+                let lastYVal = prevAbsoluteVal[prevAbsoluteVal.length - 1];
+
+                $(this.GetKeyValPairsFromData(dataKeyValPairs[i], 1)).each((index, value) => {
+                    if (index % 2 === 0) {
+                        // Even
+                        let newXVal = RoundTo(lastXVal + value, 4);
+
+                        lastXVal = newXVal;
+                    } else {
+                        // Odd
+                        let newYVal = RoundTo(lastYVal + value, 4);
+
+                        lastYVal = newYVal;
+
+                        absoluteDataValues.push([lastXVal, lastYVal].join(','));
+                    }
+                });
+                break;
+        }
+    }
+
+    let relativeDataValues = [];
+
+    for (let i = 0; i < dataKeyValPairs.length; i++) {
+        const modifier = dataKeyValPairs[i].substring(0, 1);
+
+        switch (modifier) {
+            case 'M':
+                relativeDataValues.push(dataKeyValPairs[i]);
+                break;
+            case 'L':
+                // Convert absolute values to relative
+                const prevAbsoluteVal = this.GetKeyValPairsFromData(absoluteDataValues[i - 1], 1);
+
+                let lastXVal = prevAbsoluteVal[prevAbsoluteVal.length - 2];
+                let lastYVal = prevAbsoluteVal[prevAbsoluteVal.length - 1];
+
+                $(this.GetKeyValPairsFromData(dataKeyValPairs[i], 1)).each((index, value) => {
+                    if (index % 2 === 0) {
+                        // Even
+                        let newXVal = RoundTo(lastXVal - value, 4);
+
+                        lastXVal = newXVal;
+                    } else {
+                        // Odd
+                        let newYVal = RoundTo(lastYVal - value, 4);
+
+                        lastYVal = newYVal;
+
+                        relativeDataValues.push([lastXVal, lastYVal].join(','));
+                    }
+                });
+                break;
+            case 'l':
+                const relDataKeyValPairs = this.GetKeyValPairsFromData(dataKeyValPairs[i], 1);
+
+                for (let i = 0; i < relDataKeyValPairs.length; i += 2) {
+                    relativeDataValues.push([relDataKeyValPairs[i], relDataKeyValPairs[i + 1]].join(','));
+                }
+                
+                break;
+        }
+    }
+
+    let updatedData = [];
+
+    for (let i = 0; i < this.originalData.length; i++) {
+        const modifier = this.originalData[i].substring(0, 1);
+        const originalDataKeyValPairs = this.GetKeyValPairsFromData(this.originalData[i], 1);
+        
+        for (let x = 0; x < originalDataKeyValPairs.length; x += 2) {
+            switch (modifier) {
+                case 'M':
+                    updatedData.push(absoluteDataValues[i]);
+                    break;
+                case 'L':
+                    updatedData.push('L' + absoluteDataValues[i]);
+                    break;
+                case 'l':
+                    updatedData.push('l' + relativeDataValues[i]);
+                    break;
+            }
+        }
+    }
+
+    console.log('Absolute Values: ');
+    console.log(absoluteDataValues);
+    console.log('Relative Values: ');
+    console.log(relativeDataValues);
+    console.log('Updated Values: ');
+    console.log(this.FormatDataInAdobeFormat(updatedData.join('') + 'Z'));
+};
+
+PolyShard.prototype.FormatDataInAdobeFormat = function (data) {
+    const dataKeyValPairs = data.split(this.dataRegex);
+
+    let lastModifier = ''
+    let updatedData = [];
+
+    for (let i = 0; i < dataKeyValPairs.length; i++) {
+        const currentModifier = dataKeyValPairs[i].substring(0, 1);
+
+        if (lastModifier === currentModifier) {
+            // The modifiers are the same so the next value is the same
+            // modifier hence it's redudant to repeat
+            updatedData.push(',' + dataKeyValPairs[i].substring(1));
+        } else {
+            updatedData.push(dataKeyValPairs[i]);
+        }
+
+        lastModifier = currentModifier;
+    }
+    
+    return updatedData.join('').replace(',-', '-');
+};
 
 PolyShard.prototype.Translate = function (xModifier, yModifer) {
     this.currentData = this.GetNewPositionData(this.currentData, xModifier, yModifer);

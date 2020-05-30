@@ -168,6 +168,8 @@
     </Content>
     <Content Include="Content\ImagesAbout\babyYoda.png" />
     <Content Include="Content\ImagesAbout\babyYoda.svg" />
+    <Content Include="Content\ImagesAbout\babyYodaEyes.png" />
+    <Content Include="Content\ImagesAbout\babyYodaFrame2.svg" />
     <Content Include="Content\ImagesAbout\bombIconLight.svg" />
     <Content Include="Content\ImagesAbout\bombIconDark.svg" />
     <Content Include="Content\ImagesAbout\icon_agile.svg" />
