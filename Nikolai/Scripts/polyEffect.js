@@ -1353,7 +1353,7 @@ PolyShard.prototype.ConvertDataToSameFormat = function (data) {
 
         switch (modifier) {
             case 'M':
-                absoluteDataValues.push(dataKeyValPairs[i]);
+                absoluteDataValues.push(dataKeyValPairs[i].substring(1));
                 break;
             case 'L':
                 const absDataKeyValPairs = this.GetKeyValPairsFromData(dataKeyValPairs[i], 1);
@@ -1364,7 +1364,7 @@ PolyShard.prototype.ConvertDataToSameFormat = function (data) {
                 break;
             case 'l':
                 // Convert relative values to absolute
-                const prevAbsoluteVal = this.GetKeyValPairsFromData(absoluteDataValues[i - 1], 1);
+                const prevAbsoluteVal = this.GetKeyValPairsFromData(absoluteDataValues[i - 1], 0);
 
                 let lastXVal = prevAbsoluteVal[prevAbsoluteVal.length - 2];
                 let lastYVal = prevAbsoluteVal[prevAbsoluteVal.length - 1];
@@ -1399,24 +1399,26 @@ PolyShard.prototype.ConvertDataToSameFormat = function (data) {
                 break;
             case 'L':
                 // Convert absolute values to relative
-                const prevAbsoluteVal = this.GetKeyValPairsFromData(absoluteDataValues[i - 1], 1);
-
-                let lastXVal = prevAbsoluteVal[prevAbsoluteVal.length - 2];
-                let lastYVal = prevAbsoluteVal[prevAbsoluteVal.length - 1];
+                let relXVal = 0;
+                let relYVal = 0;
 
                 $(this.GetKeyValPairsFromData(dataKeyValPairs[i], 1)).each((index, value) => {
+                    const prevAbsoluteVal = this.GetKeyValPairsFromData(
+                        absoluteDataValues[relativeDataValues.length - 1],
+                        0
+                    );
+
+                    let prevAbsXVal = prevAbsoluteVal[prevAbsoluteVal.length - 2];
+                    let prevAbsYVal = prevAbsoluteVal[prevAbsoluteVal.length - 1];
+
                     if (index % 2 === 0) {
                         // Even
-                        let newXVal = RoundTo(value - lastXVal, 4);
-
-                        lastXVal = newXVal;
+                        relXVal = RoundTo(value - prevAbsXVal, 4);
                     } else {
                         // Odd
-                        let newYVal = RoundTo(value - lastYVal, 4);
+                        relYVal = RoundTo(value - prevAbsYVal, 4);
 
-                        lastYVal = newYVal;
-
-                        relativeDataValues.push([lastXVal, lastYVal].join(','));
+                        relativeDataValues.push([relXVal, relYVal].join(','));
                     }
                 });
                 break;
@@ -1432,6 +1434,7 @@ PolyShard.prototype.ConvertDataToSameFormat = function (data) {
     }
 
     let updatedData = [];
+    let dataIndex = 0;
 
     for (let i = 0; i < this.originalData.length; i++) {
         const modifier = this.originalData[i].substring(0, 1);
@@ -1440,19 +1443,22 @@ PolyShard.prototype.ConvertDataToSameFormat = function (data) {
         for (let x = 0; x < originalDataKeyValPairs.length; x += 2) {
             switch (modifier) {
                 case 'M':
-                    updatedData.push(absoluteDataValues[i]);
+                    updatedData.push(absoluteDataValues[dataIndex]);
+                    dataIndex++;
                     break;
                 case 'L':
-                    updatedData.push('L' + absoluteDataValues[i]);
+                    updatedData.push('L' + absoluteDataValues[dataIndex]);
+                    dataIndex++;
                     break;
                 case 'l':
-                    updatedData.push('l' + relativeDataValues[i]);
+                    updatedData.push('l' + relativeDataValues[dataIndex]);
+                    dataIndex++;
                     break;
             }
         }
     }
 
-    return this.FormatDataInAdobeFormat(updatedData.join('') + 'Z');
+    return this.FormatDataInAdobeFormat('M' + updatedData.join('') + 'Z');
 };
 
 PolyShard.prototype.FormatDataInAdobeFormat = function (data) {
