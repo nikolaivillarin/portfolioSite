@@ -435,6 +435,14 @@ PolyEffect.prototype.PauseShakeAnimation = function () {
     return this;
 };
 
+PolyEffect.prototype.StartFrameAnimation = function () {
+    for (let i = 0; i < this.shardElmts.length; i++) {
+        this.shardElmts[i].StartFrameAnimation(this.selectedEasing);
+    }
+
+    return this;
+};
+
 PolyEffect.prototype.TransitionIndividualShardsBottomToTop = function (
     animationDuration = this.pageTransition.duration,
     groupAnimScalar = 10
@@ -864,7 +872,7 @@ PolyShard.prototype.GetDataDifference = function (dataA, DataB) {
         let diffValues = [];
 
         for (let x = 0; x < originalDataKeyVal.length; x++) {
-            diffValues.push(originalDataKeyVal[x] - curDataKeyVal[x]);
+            diffValues.push(RoundTo(originalDataKeyVal[x] - curDataKeyVal[x], 4));
         }
 
         diffData.push(diffValues.join(','));
@@ -1175,6 +1183,10 @@ PolyShard.prototype.GetNormalizedTriangleData = function (currentData) {
     return updatedPath;
 };
 
+PolyShard.prototype.GetFrameData = function (frameNum) {
+    return $(this.shardElmt).data('nv-about-svg-frame-' + frameNum);
+};
+
 PolyShard.prototype.NormalizeTriangle = function () {
     /// <summary>
     /// Normalizes the shape of the triangles to make them more constant
@@ -1267,6 +1279,30 @@ PolyShard.prototype.PauseFloatAnimation = function () {
     this.floatAnimationPaused = true;
 
     return this;
+};
+
+PolyShard.prototype.StartFrameAnimation = function (easing) {
+    const that = this;
+    let currentFrameNum = 2;
+
+    (function drawFrame() {
+        let frameData = that.GetFrameData(currentFrameNum);
+        
+        if (frameData) {
+            frameData = that.ConvertDataToSameFormat(frameData);
+            frameData = frameData.split(that.dataRegex);
+
+            that.AnimateToPosition(
+                that.currentData,
+                frameData,
+                easing, {
+                    completeCallback: drawFrame
+                }
+            );
+
+            currentFrameNum++;
+        }
+    }());
 };
 
 PolyShard.prototype.PauseAnimations = function () {
@@ -1371,12 +1407,12 @@ PolyShard.prototype.ConvertDataToSameFormat = function (data) {
                 $(this.GetKeyValPairsFromData(dataKeyValPairs[i], 1)).each((index, value) => {
                     if (index % 2 === 0) {
                         // Even
-                        let newXVal = RoundTo(lastXVal - value, 4);
+                        let newXVal = RoundTo(value - lastXVal, 4);
 
                         lastXVal = newXVal;
                     } else {
                         // Odd
-                        let newYVal = RoundTo(lastYVal - value, 4);
+                        let newYVal = RoundTo(value - lastYVal, 4);
 
                         lastYVal = newYVal;
 
@@ -1416,12 +1452,7 @@ PolyShard.prototype.ConvertDataToSameFormat = function (data) {
         }
     }
 
-    console.log('Absolute Values: ');
-    console.log(absoluteDataValues);
-    console.log('Relative Values: ');
-    console.log(relativeDataValues);
-    console.log('Updated Values: ');
-    console.log(this.FormatDataInAdobeFormat(updatedData.join('') + 'Z'));
+    return this.FormatDataInAdobeFormat(updatedData.join('') + 'Z');
 };
 
 PolyShard.prototype.FormatDataInAdobeFormat = function (data) {

@@ -523,6 +523,14 @@ AboutPage.prototype.TooglePageGraphicAnimation = function (direction) {
         previousPage.pageGraphic.PauseFloatAnimation();
     }
 
+    // Temp Start
+    if (selectedPage.pageGraphic) {
+        selectedPage.pageGraphic.StartFrameAnimation();
+    }
+
+    return;
+    // Temp End
+
     if (selectedPage.pageGraphic &&
         selectedPage.pageGraphic.TranslateAnimationComplete) {
         // Ensure no pending animations are occuring before animating further
