@@ -142,6 +142,8 @@ AboutPage.prototype.OnDialDropped = function () {
 
                             window.setTimeout(() => {
                                 $page.addClass('about-screen--animState5');
+
+                                pageGraphic.StartFrameAnimation();
                             }, 1500);
                         }, 500);
                     }, 300);
@@ -327,7 +329,7 @@ AboutPage.prototype.InitializePages = function () {
                 scalarLeft
             );
 
-            //pageGraphic.ScatterShards();
+            pageGraphic.ScatterShards();
         }
         
         this.pages.push({
@@ -522,14 +524,6 @@ AboutPage.prototype.TooglePageGraphicAnimation = function (direction) {
     if (previousPage.pageGraphic) {
         previousPage.pageGraphic.PauseFloatAnimation();
     }
-
-    // Temp Start
-    if (selectedPage.pageGraphic) {
-        selectedPage.pageGraphic.StartFrameAnimation();
-    }
-
-    return;
-    // Temp End
 
     if (selectedPage.pageGraphic &&
         selectedPage.pageGraphic.TranslateAnimationComplete) {
