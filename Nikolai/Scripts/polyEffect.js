@@ -435,23 +435,31 @@ PolyEffect.prototype.PauseShakeAnimation = function () {
     return this;
 };
 
-//PolyEffect.prototype.StartFrameAnimation = function (direction) {
-//    for (let i = 0; i < this.shardElmts.length; i++) {
-//        this.shardElmts[i].StartFrameAnimation(this.selectedEasing, direction);
-//    }
+PolyEffect.prototype.GetLastFrameNum = function () {
+    let lastFrameNum = 0;
+    let frameNum = 1;
+    let frameElmts;
 
-//    return this;
-//};
+    do {
+        frameNum++;
+        frameElmts = $(`[data-nv-about-svg-frame-${frameNum}]`, this.svgElmt);
+
+        if (frameElmts.length !== 0) {
+            lastFrameNum = frameNum;
+        }
+    } while (frameElmts.length !== 0);
+
+    return lastFrameNum;
+};
 
 PolyEffect.prototype.StartFrameAnimation = function () {
     const that = this;
     const startFrameNum = 2;
-    const endFrameNum = 4;
-    const animationDuration = 300;
-    const easing = 'easeInOutBounce';
+    const endFrameNum = this.GetLastFrameNum();
     
     let currentFrameNum = startFrameNum;
     let completedAnimationCount = 0;
+    let incrementer = 1;
 
     (function drawFrame() {
         let shardsWithFrameCount = 0;
@@ -460,7 +468,7 @@ PolyEffect.prototype.StartFrameAnimation = function () {
             if (that.shardElmts[i].GetFrameData(currentFrameNum)) {
                 shardsWithFrameCount++;
 
-                that.shardElmts[i].NextFrame(easing, currentFrameNum, animationDuration, function () {
+                that.shardElmts[i].NextFrame(currentFrameNum, function () {
                     // Callback function
                     completedAnimationCount++;
 
@@ -474,12 +482,19 @@ PolyEffect.prototype.StartFrameAnimation = function () {
                     }
                 });
             }
-            
         }
 
-        currentFrameNum++;
+        if (currentFrameNum === endFrameNum) {
+            // Go in reverse
+            incrementer = incrementer * -1;
+
+            currentFrameNum += incrementer;
+
+            drawFrame();
+        } else {
+            currentFrameNum += incrementer;
+        }
     }());
-    
 
     return this;
 };
@@ -1261,6 +1276,30 @@ PolyShard.prototype.GetFrameData = function (frameNum) {
     }
 };
 
+PolyShard.prototype.GetFrameDuration = function (frameNum) {
+    let frameDuration = $(this.shardElmt).data(`nv-about-svg-frame-${frameNum}-duration`);
+
+    if (!frameDuration) {
+        frameDuration = $(this.shardElmt).data(`nv-about-svg-frame-duration`);
+    }
+
+    return frameDuration ? Number(frameDuration): 300;
+};
+
+PolyShard.prototype.GetFrameEasing = function (frameNum) {
+    // Get specific frame easing for the frame, if that does not exist get the generic one.
+    // If that does not exist then default to something
+    let frameEasing = $(this.shardElmt).data(`nv-about-svg-frame-${frameNum}-easing`);
+
+    if (frameEasing && this.easingFunctions[frameEasing] === undefined) {
+        throw new Error('Easing specified does not exist on shard: ' + this.shardElmt);
+    } else if (!frameEasing) {
+        frameEasing = $(this.shardElmt).data('nv-about-svg-frame-easing');
+    }
+
+    return frameEasing ? frameEasing : 'easeOutCirc';
+};
+
 PolyShard.prototype.NormalizeTriangle = function () {
     /// <summary>
     /// Normalizes the shape of the triangles to make them more constant
@@ -1355,7 +1394,7 @@ PolyShard.prototype.PauseFloatAnimation = function () {
     return this;
 };
 
-PolyShard.prototype.NextFrame = function (easing, frameNum, animationDuration, frameCompleteCallback) {
+PolyShard.prototype.NextFrame = function (frameNum, frameCompleteCallback) {
     const that = this;
 
     let frameData = that.GetFrameData(frameNum);
@@ -1367,60 +1406,13 @@ PolyShard.prototype.NextFrame = function (easing, frameNum, animationDuration, f
         that.AnimateToPosition(
             that.currentData,
             frameData,
-            easing, {
-                animationDuration: animationDuration,
+            that.GetFrameEasing(frameNum),
+            {
+                animationDuration: that.GetFrameDuration(frameNum),
                 completeCallback: frameCompleteCallback
             }
         );
     }
-};
-
-PolyShard.prototype.StartFrameAnimation = function (easing, direction = 'forwards') {
-    if (this.frameAnimationPaused === true) {
-        const that = this;
-        const startFrameNum = 2;
-
-        if (!this.currentFrameNum) {
-            this.currentFrameNum = startFrameNum;
-        } else if (direction === 'reverse') {
-            this.currentFrameNum = this.currentFrameNum - 2;
-        }
-
-        this.frameAnimationPaused = false;
-
-        (function drawFrame() {
-            if (that.frameAnimationPaused === false) {
-                let frameData = that.GetFrameData(that.currentFrameNum);
-
-                if (frameData) {
-                    frameData = that.ConvertDataToSameFormat(frameData);
-                    frameData = frameData.split(that.dataRegex);
-
-                    if (direction === 'forwards') {
-                        that.currentFrameNum++;
-                    } else {
-                        that.currentFrameNum--;
-                    }
-
-                    if (JSON.stringify(that.currentData) !== JSON.stringify(frameData)) {
-                        that.AnimateToPosition(
-                            that.currentData,
-                            frameData,
-                            easing, {
-                            completeCallback: drawFrame
-                        });
-                    } else {
-                        drawFrame();
-                    }
-                } else {
-                    // No more frames
-                    that.frameAnimationPaused = true;
-                }
-            }
-        }());
-    }
-
-    return this;
 };
 
 PolyShard.prototype.PauseFrameAnimation = function () {

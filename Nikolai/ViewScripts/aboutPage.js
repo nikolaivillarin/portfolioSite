@@ -86,7 +86,7 @@ AboutPage.prototype.OnPageChange = function (pageId, previousPageId) {
 
 AboutPage.prototype.OnPageChanging = function (pageId, previousPageId) {
     if (pageId && pageId === 'about') {
-        let transitionDirection = 'down';
+        let transitionDirection = 'up';
 
         if (previousPageId === 'work') {
             transitionDirection = 'left';
