@@ -487,13 +487,9 @@ PolyEffect.prototype.StartFrameAnimation = function () {
         if (currentFrameNum === endFrameNum) {
             // Go in reverse
             incrementer = incrementer * -1;
-
-            currentFrameNum += incrementer;
-
-            drawFrame();
-        } else {
-            currentFrameNum += incrementer;
         }
+
+        currentFrameNum += incrementer;
     }());
 
     return this;
@@ -895,6 +891,24 @@ PolyShard.prototype = {
             } else {
                 return RoundTo((((1 + easeOutBounce(2 * x - 1)) / 2) * diff), 4);
             }
+        },
+        easeInBounce: (x, diff) => {
+            function easeOutBounce(x) {
+                const n1 = 7.5625;
+                const d1 = 2.75;
+
+                if (x < 1 / d1) {
+                    return RoundTo((n1 * x * x), 4);
+                } else if (x < 2 / d1) {
+                    return RoundTo(((n1 * (x -= 1.5 / d1) * x + 0.75)), 4);
+                } else if (x < 2.5 / d1) {
+                    return RoundTo(((n1 * (x -= 2.25 / d1) * x + 0.9375)), 4);
+                } else {
+                    return RoundTo(((n1 * (x -= 2.625 / d1) * x + 0.984375)), 4);
+                }
+            }
+
+            return RoundTo(((1 - easeOutBounce(1 - x)) * diff), 4);
         },
         easeOutCubic: (x, diff) => (RoundTo(((1 - Math.pow(1 - x, 3)) * diff), 4)),
         easeOutBack: (x, diff) => {
@@ -1300,6 +1314,16 @@ PolyShard.prototype.GetFrameEasing = function (frameNum) {
     return frameEasing ? frameEasing : 'easeOutCirc';
 };
 
+PolyShard.prototype.GetNextFrameDelay = function (frameNum) {
+    let nextFrameDelay = $(this.shardElmt).data(`nv-about-svg-frame-${frameNum}-next-delay`);
+
+    if (!nextFrameDelay) {
+        nextFrameDelay = $(this.shardElmt).data(`nv-about-svg-frame-next-delay`);
+    }
+
+    return nextFrameDelay ? Number(nextFrameDelay) : 0;
+};
+
 PolyShard.prototype.NormalizeTriangle = function () {
     /// <summary>
     /// Normalizes the shape of the triangles to make them more constant
@@ -1409,7 +1433,17 @@ PolyShard.prototype.NextFrame = function (frameNum, frameCompleteCallback) {
             that.GetFrameEasing(frameNum),
             {
                 animationDuration: that.GetFrameDuration(frameNum),
-                completeCallback: frameCompleteCallback
+                completeCallback: function () {
+                    const nextFrameDelay = that.GetNextFrameDelay(frameNum);
+
+                    if (nextFrameDelay !== 0) {
+                        window.setTimeout(() => {
+                            frameCompleteCallback();
+                        }, nextFrameDelay);
+                    } else {
+                        frameCompleteCallback();
+                    }
+                } 
             }
         );
     }

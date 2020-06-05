@@ -321,24 +321,24 @@ $color-dial--ring3: #2294e5;*/
   left: -180px; }
 
 .about-screen.about-screen--babyYoda .about-screen__svg {
-  min-width: 45%; }
+  min-width: 50%; }
   .about-screen.about-screen--babyYoda .about-screen__svg .babyYodaEyes {
-    left: 149px;
+    left: 154px;
     max-width: 142px;
     opacity: 0;
     position: absolute;
-    top: 29px;
+    top: 173px;
     -moz-transition: opacity 1s linear;
     -o-transition: opacity 1s linear;
     -webkit-transition: opacity 1s linear;
     transition: opacity 1s linear; }
 
 .about-screen.about-screen--babyYoda .about-screen__splash {
-  -moz-transform: translate(-47%, -4.5em);
-  -ms-transform: translate(-47%, -4.5em);
-  -o-transform: translate(-47%, -4.5em);
-  -webkit-transform: translate(-47%, -4.5em);
-  transform: translate(-47%, -4.5em); }
+  -moz-transform: translate(-58%, -4.5em);
+  -ms-transform: translate(-58%, -4.5em);
+  -o-transform: translate(-58%, -4.5em);
+  -webkit-transform: translate(-58%, -4.5em);
+  transform: translate(-58%, -4.5em); }
   .about-screen.about-screen--babyYoda .about-screen__splash .about-screen__target {
     bottom: -2em; }
 
@@ -814,7 +814,7 @@ $color-dial--ring3: #2294e5;*/
   100% {
     fill: #976957; } }
   .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-32 {
-    fill: #553935; }
+    fill: #7c5950; }
     .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-32.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-32 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-32 2s linear forwards;
@@ -823,13 +823,13 @@ $color-dial--ring3: #2294e5;*/
 
 @keyframes babyYoda-shimmer-cls-32 {
   0% {
-    fill: #553935; }
-  35% {
-    fill: #71504b; }
-  100% {
-    fill: #553935; } }
-  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-33 {
     fill: #7c5950; }
+  35% {
+    fill: #a1776c; }
+  100% {
+    fill: #7c5950; } }
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-33 {
+    fill: #a87d6e; }
     .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-33.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-33 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-33 2s linear forwards;
@@ -838,13 +838,13 @@ $color-dial--ring3: #2294e5;*/
 
 @keyframes babyYoda-shimmer-cls-33 {
   0% {
-    fill: #7c5950; }
-  35% {
-    fill: #9a746a; }
-  100% {
-    fill: #7c5950; } }
-  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-34 {
     fill: #a87d6e; }
+  35% {
+    fill: #bb9587; }
+  100% {
+    fill: #a87d6e; } }
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-34 {
+    fill: #936c5f; }
     .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-34.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-34 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-34 2s linear forwards;
@@ -853,13 +853,13 @@ $color-dial--ring3: #2294e5;*/
 
 @keyframes babyYoda-shimmer-cls-34 {
   0% {
-    fill: #a87d6e; }
-  35% {
-    fill: #c69989; }
-  100% {
-    fill: #a87d6e; } }
-  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-35 {
     fill: #936c5f; }
+  35% {
+    fill: #aa8275; }
+  100% {
+    fill: #936c5f; } }
+  .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-35 {
+    fill: #553935; }
     .about-screen .about-screen__img.about-screen__img-babyYoda .AnimateToOriginalComplete.cls-35.shard--shimmer {
       -moz-animation: babyYoda-shimmer-cls-35 2s linear forwards;
       -o-animation: babyYoda-shimmer-cls-35 2s linear forwards;
@@ -868,11 +868,11 @@ $color-dial--ring3: #2294e5;*/
 
 @keyframes babyYoda-shimmer-cls-35 {
   0% {
-    fill: #936c5f; }
+    fill: #553935; }
   35% {
-    fill: #b0877a; }
+    fill: #6c4c47; }
   100% {
-    fill: #936c5f; } }
+    fill: #553935; } }
 
 .about_bomb-btn--babyYoda {
   left: -170px; }

@@ -169,6 +169,7 @@
     <Content Include="Content\ImagesAbout\babyYoda.png" />
     <Content Include="Content\ImagesAbout\babyYoda.svg" />
     <Content Include="Content\ImagesAbout\babyYodaEyes.png" />
+    <Content Include="Content\ImagesAbout\babyYodaFrame1.svg" />
     <Content Include="Content\ImagesAbout\babyYodaFrame2.svg" />
     <Content Include="Content\ImagesAbout\babyYodaFrame3.svg" />
     <Content Include="Content\ImagesAbout\babyYodaFrame4.svg" />
