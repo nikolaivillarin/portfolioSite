@@ -950,7 +950,19 @@ PolyShard.prototype = {
             }
         }
     },
-    dataRegex: /(?=[MLlZ])/
+    dataRegex: /(?=[MLlZ])/,
+    normalTriangles: [
+        'M0,0l-356.48-446.3,500.88-506.84Z',
+        'M0,0l-499.19-244.48,578.66-376.16Z',
+        'M0,0l-22.48-383.79,518.11,412.56Z',
+        'M0,0l-434.4,29.64,76.365-179.55Z',
+        'M0,0l55.37-324.98,250.44,195.83Z',
+        'M0,0l55.37-324.98,250.44,195.83Z',
+        'M0,0l-333.18,581.05-250.44-199.55Z',
+        'M0,0l421.36-142.8,89.09,140.97Z',
+        'M0,0l107.98-147.79-26.4,456.72Z',
+        'M0,0l-436.4,541.92,95.024-308.25Z'
+    ]
 }
 
 PolyShard.prototype.Initialize = function () {
@@ -1289,6 +1301,17 @@ PolyShard.prototype.GetNormalizedTriangleData = function (currentData) {
         areaOfTriangle < minAreaOfTriangle &&
         currentIterations < maxIterations
     );
+
+    if (currentIterations === maxIterations) {
+        const normalTriangle = this.ConvertDataToSameFormat(
+            this.normalTriangles[GetRandomFromRange(0, 9)]
+        ).split(this.dataRegex);
+        
+        updatedPath = [
+            updatedPath[0],
+            ...normalTriangle.slice(1)
+        ];
+    }
 
     return updatedPath;
 };
