@@ -874,7 +874,7 @@ $color-dial--ring3: #2294e5;*/
   100% {
     fill: #553935; } }
 
-.about_bomb-btn--babyYoda {
+.about-screen.about-screen--babyYoda .about_bomb-btn--babyYoda {
   left: -170px; }
 
 .about-screen.about-screen--polyDog .about-screen__svg {
@@ -2550,7 +2550,7 @@ $color-dial--ring3: #2294e5;*/
 .about-screen--animState4 .about-screen__splash .about-screen__target {
   opacity: 0; }
 
-.about-screen--animState5 .about-bomb-btn .about_bombIcon {
+.about-screen--animState6 .about-bomb-btn .about_bombIcon {
   opacity: 1; }
 
 .about-PageIndicatorContainer {

@@ -452,45 +452,62 @@ PolyEffect.prototype.GetLastFrameNum = function () {
     return lastFrameNum;
 };
 
-PolyEffect.prototype.StartFrameAnimation = function () {
+PolyEffect.prototype.StartFrameAnimation = function (completeCallback) {
     const that = this;
     const startFrameNum = 2;
     const endFrameNum = this.GetLastFrameNum();
-    
-    let currentFrameNum = startFrameNum;
-    let completedAnimationCount = 0;
-    let incrementer = 1;
 
-    (function drawFrame() {
-        let shardsWithFrameCount = 0;
+    if (endFrameNum !== 0) {
+        let currentFrameNum = startFrameNum;
+        let completedAnimationCount = 0;
+        let incrementer = 1;
 
-        for (let i = 0; i < that.shardElmts.length; i++) {
-            if (that.shardElmts[i].GetFrameData(currentFrameNum)) {
-                shardsWithFrameCount++;
+        this.TranslateAnimationComplete = false;
 
-                that.shardElmts[i].NextFrame(currentFrameNum, function () {
-                    // Callback function
-                    completedAnimationCount++;
+        (function drawFrame() {
+            let shardsWithFrameCount = 0;
 
-                    if (completedAnimationCount === shardsWithFrameCount &&
-                        currentFrameNum <= endFrameNum) {
-                        completedAnimationCount = 0;
+            for (let i = 0; i < that.shardElmts.length; i++) {
+                if (that.shardElmts[i].GetFrameData(currentFrameNum)) {
+                    shardsWithFrameCount++;
 
-                        window.setTimeout(function () {
-                            drawFrame();
-                        }, 100);
-                    }
-                });
+                    that.shardElmts[i].NextFrame(currentFrameNum, function () {
+                        // Callback function
+                        completedAnimationCount++;
+
+                        if (completedAnimationCount === shardsWithFrameCount &&
+                            currentFrameNum <= endFrameNum) {
+                            completedAnimationCount = 0;
+
+                            window.setTimeout(function () {
+                                drawFrame();
+                            }, 100);
+                        }
+                    });
+                }
             }
-        }
 
-        if (currentFrameNum === endFrameNum) {
-            // Go in reverse
-            incrementer = incrementer * -1;
-        }
+            if (currentFrameNum === endFrameNum) {
+                // Go in reverse
+                incrementer = incrementer * -1;
+            }
 
-        currentFrameNum += incrementer;
-    }());
+            if (currentFrameNum === 0) {
+                // Frame is complete and has returned back to the start
+                that.TranslateAnimationComplete = true;
+
+                if (completeCallback) {
+                    completeCallback();
+                }
+            }
+
+            currentFrameNum += incrementer;
+        }());
+    } else {
+        if (completeCallback) {
+            completeCallback();
+        }
+    }
 
     return this;
 };

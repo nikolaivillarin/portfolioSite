@@ -269,6 +269,9 @@ $frameDuration: 0.8s;
             opacity: 0;
             z-index: 1;
 
+            @include transition(opacity 0.5s linear);
+            @include transform(scale(1));
+
             img {
                 cursor: pointer;
 
@@ -283,9 +286,6 @@ $frameDuration: 0.8s;
                 @include transform(rotate(90deg));
                 @include transition(opacity 0.3s linear);
             }
-
-            @include transition(opacity 0.5s linear);
-            @include transform(scale(1));
         }
 
         .about_bombIcon--expanded {
@@ -457,6 +457,10 @@ $frameDuration: 0.8s;
 }
 
 .about-screen--animState5 {
+    // Currently used by JS
+}
+
+.about-screen--animState6 {
     .about-bomb-btn {
         .about_bombIcon {
             opacity: 1;

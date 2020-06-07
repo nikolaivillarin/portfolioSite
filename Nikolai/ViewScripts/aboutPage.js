@@ -143,7 +143,9 @@ AboutPage.prototype.OnDialDropped = function () {
                             window.setTimeout(() => {
                                 $page.addClass('about-screen--animState5');
 
-                                pageGraphic.StartFrameAnimation();
+                                pageGraphic.StartFrameAnimation(() => {
+                                    $page.addClass('about-screen--animState6');
+                                });
                             }, 1500);
                         }, 500);
                     }, 300);
@@ -161,7 +163,8 @@ AboutPage.prototype.OnDialDropped = function () {
                 .removeClass('about-screen--animState2')
                 .removeClass('about-screen--animState3')
                 .removeClass('about-screen--animState4')
-                .removeClass('about-screen--animState5');
+                .removeClass('about-screen--animState5')
+                .removeClass('about-screen--animState6');
 
             $('[data-nv-drop-target="explode"]', $page)
                 .removeClass('about-bomb-btn--expanded');
