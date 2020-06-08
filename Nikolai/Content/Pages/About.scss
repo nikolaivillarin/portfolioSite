@@ -188,7 +188,7 @@ $frameDuration: 0.8s;
         [class^="cls-"] {
             position: relative;
 
-            @include transition(fill $frameDuration cubic-bezier(0, 0.55, 0.45, 1), transform $frameDuration linear);
+            @include transition(fill $frameDuration linear, transform $frameDuration linear);
         }
 
         [class^="cls-"]:nth-child(odd) {

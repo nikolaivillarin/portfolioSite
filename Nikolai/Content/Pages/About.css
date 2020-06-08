@@ -910,6 +910,21 @@ $color-dial--ring3: #2294e5;*/
   .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-2 {
     fill: #ffc993; }
     .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-2.shard--shimmer {
+      -moz-animation: polyDog-shimmer-cls-1 2s linear forwards;
+      -o-animation: polyDog-shimmer-cls-1 2s linear forwards;
+      -webkit-animation: polyDog-shimmer-cls-1 2s linear forwards;
+      animation: polyDog-shimmer-cls-1 2s linear forwards; }
+
+@keyframes polyDog-shimmer-cls-1 {
+  0% {
+    fill: #ffc993; }
+  35% {
+    fill: #ffdab4; }
+  100% {
+    fill: #ffc993; } }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-3 {
+    fill: #ffcf9f; }
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-3.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-2 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-2 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-2 2s linear forwards;
@@ -917,14 +932,14 @@ $color-dial--ring3: #2294e5;*/
 
 @keyframes polyDog-shimmer-cls-2 {
   0% {
-    fill: #ffc993; }
-  35% {
-    fill: #f7d1ab; }
-  100% {
-    fill: #ffc993; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-3 {
     fill: #ffcf9f; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-3.shard--shimmer {
+  35% {
+    fill: #ffdfbf; }
+  100% {
+    fill: #ffcf9f; } }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-4 {
+    fill: #ffc290; }
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-4.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-3 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-3 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-3 2s linear forwards;
@@ -932,14 +947,14 @@ $color-dial--ring3: #2294e5;*/
 
 @keyframes polyDog-shimmer-cls-3 {
   0% {
-    fill: #ffcf9f; }
-  35% {
-    fill: #fcdbb9; }
-  100% {
-    fill: #ffcf9f; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-4 {
     fill: #ffc290; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-4.shard--shimmer {
+  35% {
+    fill: #fcd7b8; }
+  100% {
+    fill: #ffc290; } }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-5 {
+    fill: #ffdeb1; }
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-5.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-4 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-4 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-4 2s linear forwards;
@@ -947,14 +962,14 @@ $color-dial--ring3: #2294e5;*/
 
 @keyframes polyDog-shimmer-cls-4 {
   0% {
-    fill: #ffc290; }
-  35% {
-    fill: #fccba3; }
-  100% {
-    fill: #ffc290; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-5 {
     fill: #ffdeb1; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-5.shard--shimmer {
+  35% {
+    fill: #fae7cc; }
+  100% {
+    fill: #ffdeb1; } }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-6 {
+    fill: #febc7b; }
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-6.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-5 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-5 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-5 2s linear forwards;
@@ -962,14 +977,14 @@ $color-dial--ring3: #2294e5;*/
 
 @keyframes polyDog-shimmer-cls-5 {
   0% {
-    fill: #ffdeb1; }
+    fill: #febc7b; }
   35% {
-    fill: #fee7c9; }
+    fill: #f8cda3; }
   100% {
-    fill: #ffdeb1; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-6 {
+    fill: #febc7b; } }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-7 {
     fill: #ffd8a6; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-6.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-7.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-6 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-6 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-6 2s linear forwards;
@@ -982,9 +997,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #faead5; }
   100% {
     fill: #ffd8a6; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-7 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-8 {
     fill: #ffbd87; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-7.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-8.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-7 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-7 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-7 2s linear forwards;
@@ -997,9 +1012,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #f1aa70; }
   100% {
     fill: #ffbd87; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-8 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-9 {
     fill: #ffc38b; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-8.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-9.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-8 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-8 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-8 2s linear forwards;
@@ -1012,9 +1027,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #f3b67d; }
   100% {
     fill: #ffc38b; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-9 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-10 {
     fill: #ffb77b; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-9.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-10.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-9 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-9 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-9 2s linear forwards;
@@ -1027,9 +1042,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #fabf8f; }
   100% {
     fill: #ffb77b; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-10 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-11 {
     fill: #f5a061; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-10.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-11.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-10 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-10 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-10 2s linear forwards;
@@ -1042,9 +1057,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #e0843f; }
   100% {
     fill: #f5a061; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-11 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-12 {
     fill: #ff273a; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-11.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-12.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-11 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-11 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-11 2s linear forwards;
@@ -1057,9 +1072,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #fc4050; }
   100% {
     fill: #ff273a; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-12 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-13 {
     fill: #ff335f; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-12.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-13.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-12 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-12 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-12 2s linear forwards;
@@ -1072,9 +1087,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #d71740; }
   100% {
     fill: #ff335f; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-13 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-14 {
     fill: #ff707f; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-13.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-14.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-13 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-13 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-13 2s linear forwards;
@@ -1087,9 +1102,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #fb8a96; }
   100% {
     fill: #ff707f; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-14 {
-    fill: #ffd5a0; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-14.shard--shimmer {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-15 {
+    fill: #ffd49f; }
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-15.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-14 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-14 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-14 2s linear forwards;
@@ -1097,14 +1112,14 @@ $color-dial--ring3: #2294e5;*/
 
 @keyframes polyDog-shimmer-cls-14 {
   0% {
-    fill: #ffd5a0; }
+    fill: #ffd49f; }
   35% {
-    fill: #fbefe0; }
+    fill: #fbdeb9; }
   100% {
-    fill: #ffd5a0; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-15 {
-    fill: #ffaf6f; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-15.shard--shimmer {
+    fill: #ffd49f; } }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-16 {
+    fill: #ffb47d; }
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-16.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-15 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-15 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-15 2s linear forwards;
@@ -1112,14 +1127,14 @@ $color-dial--ring3: #2294e5;*/
 
 @keyframes polyDog-shimmer-cls-15 {
   0% {
-    fill: #ffaf6f; }
+    fill: #ffb47d; }
   35% {
-    fill: #ffbc87; }
+    fill: #f7c19a; }
   100% {
-    fill: #ffaf6f; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-16 {
-    fill: #ffa664; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-16.shard--shimmer {
+    fill: #ffb47d; } }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-17 {
+    fill: #ffd5a0; }
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-17.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-16 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-16 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-16 2s linear forwards;
@@ -1127,14 +1142,14 @@ $color-dial--ring3: #2294e5;*/
 
 @keyframes polyDog-shimmer-cls-16 {
   0% {
-    fill: #ffa664; }
+    fill: #ffd5a0; }
   35% {
-    fill: #ee8f49; }
+    fill: #fae6cc; }
   100% {
-    fill: #ffa664; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-17 {
-    fill: #ffd49f; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-17.shard--shimmer {
+    fill: #ffd5a0; } }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-18 {
+    fill: #ffaf6f; }
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-18.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-17 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-17 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-17 2s linear forwards;
@@ -1142,14 +1157,14 @@ $color-dial--ring3: #2294e5;*/
 
 @keyframes polyDog-shimmer-cls-17 {
   0% {
-    fill: #ffd49f; }
+    fill: #ffaf6f; }
   35% {
-    fill: #fcecd7; }
+    fill: #fabe8d; }
   100% {
-    fill: #ffd49f; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-18 {
-    fill: #ffb47d; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-18.shard--shimmer {
+    fill: #ffaf6f; } }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-19 {
+    fill: #ffa664; }
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-19.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-18 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-18 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-18 2s linear forwards;
@@ -1157,14 +1172,14 @@ $color-dial--ring3: #2294e5;*/
 
 @keyframes polyDog-shimmer-cls-18 {
   0% {
-    fill: #ffb47d; }
+    fill: #ffa664; }
   35% {
-    fill: #ea904e; }
+    fill: #fbbc8e; }
   100% {
-    fill: #ffb47d; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-19 {
+    fill: #ffa664; } }
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-20 {
     fill: #ffc28b; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-19.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-20.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-19 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-19 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-19 2s linear forwards;
@@ -1177,9 +1192,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #fcca9d; }
   100% {
     fill: #ffc28b; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-20 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-21 {
     fill: #ffd39f; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-20.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-21.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-20 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-20 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-20 2s linear forwards;
@@ -1192,9 +1207,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #fff8f0; }
   100% {
     fill: #ffd39f; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-21 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-22 {
     fill: #f6a566; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-21.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-22.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-21 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-21 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-21 2s linear forwards;
@@ -1207,9 +1222,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #f5b37f; }
   100% {
     fill: #f6a566; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-22 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-23 {
     fill: #ffb47c; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-22.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-23.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-22 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-22 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-22 2s linear forwards;
@@ -1222,9 +1237,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #faebdf; }
   100% {
     fill: #ffb47c; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-23 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-24 {
     fill: #ffca92; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-23.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-24.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-23 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-23 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-23 2s linear forwards;
@@ -1237,9 +1252,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #fceede; }
   100% {
     fill: #ffca92; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-24 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-25 {
     fill: #ffbc81; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-24.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-25.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-24 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-24 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-24 2s linear forwards;
@@ -1252,9 +1267,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #fadbc0; }
   100% {
     fill: #ffbc81; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-25 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-26 {
     fill: #fdaf73; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-25.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-26.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-25 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-25 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-25 2s linear forwards;
@@ -1267,9 +1282,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #f3b585; }
   100% {
     fill: #fdaf73; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-26 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-27 {
     fill: #ffc48b; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-26.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-27.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-26 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-26 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-26 2s linear forwards;
@@ -1282,9 +1297,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #fed3a9; }
   100% {
     fill: #ffc48b; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-27 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-28 {
     fill: #f8ac78; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-27.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-28.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-27 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-27 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-27 2s linear forwards;
@@ -1297,9 +1312,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #f8bb90; }
   100% {
     fill: #f8ac78; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-28 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-29 {
     fill: #f2975b; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-28.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-29.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-28 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-28 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-28 2s linear forwards;
@@ -1312,9 +1327,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #e58c52; }
   100% {
     fill: #f2975b; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-29 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-30 {
     fill: #e99358; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-29.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-30.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-29 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-29 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-29 2s linear forwards;
@@ -1327,9 +1342,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #eba16f; }
   100% {
     fill: #e99358; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-30 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-31 {
     fill: #259be9; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-30.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-31.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-30 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-30 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-30 2s linear forwards;
@@ -1342,9 +1357,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #3ca4e9; }
   100% {
     fill: #259be9; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-31 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-32 {
     fill: #68d1ff; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-31.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-32.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-31 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-31 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-31 2s linear forwards;
@@ -1357,9 +1372,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #b9e6fa; }
   100% {
     fill: #68d1ff; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-32 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-33 {
     fill: #4ecafa; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-32.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-33.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-32 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-32 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-32 2s linear forwards;
@@ -1372,9 +1387,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #65d0fa; }
   100% {
     fill: #4ecafa; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-33 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-34 {
     fill: #2aa4eb; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-33.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-34.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-33 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-33 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-33 2s linear forwards;
@@ -1387,9 +1402,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #41afef; }
   100% {
     fill: #2aa4eb; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-34 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-35 {
     fill: #86c9fc; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-34.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-35.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-34 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-34 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-34 2s linear forwards;
@@ -1402,9 +1417,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #aed7f6; }
   100% {
     fill: #86c9fc; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-35 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-36 {
     fill: #faa769; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-35.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-36.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-35 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-35 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-35 2s linear forwards;
@@ -1417,9 +1432,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #e88e4b; }
   100% {
     fill: #faa769; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-36 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-37 {
     fill: #ffe1b2; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-36.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-37.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-36 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-36 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-36 2s linear forwards;
@@ -1432,9 +1447,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #fbf2e3; }
   100% {
     fill: #ffe1b2; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-37 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-38 {
     fill: #f9d7a2; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-37.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-38.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-37 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-37 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-37 2s linear forwards;
@@ -1447,9 +1462,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #f8e4c5; }
   100% {
     fill: #f9d7a2; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-38 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-39 {
     fill: #f5a161; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-38.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-39.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-38 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-38 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-38 2s linear forwards;
@@ -1462,9 +1477,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #ed924d; }
   100% {
     fill: #f5a161; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-39 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-40 {
     fill: #ffe0b2; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-39.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-40.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-39 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-39 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-39 2s linear forwards;
@@ -1477,9 +1492,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #faedd9; }
   100% {
     fill: #ffe0b2; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-40 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-41 {
     fill: #969595; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-40.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-41.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-40 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-40 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-40 2s linear forwards;
@@ -1492,9 +1507,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #a5a2a2; }
   100% {
     fill: #969595; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-41 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-42 {
     fill: #9b9a99; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-41.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-42.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-41 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-41 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-41 2s linear forwards;
@@ -1507,9 +1522,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #c1bfbe; }
   100% {
     fill: #9b9a99; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-42 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-43 {
     fill: #8b8b8b; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-42.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-43.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-42 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-42 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-42 2s linear forwards;
@@ -1522,9 +1537,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #9b9898; }
   100% {
     fill: #8b8b8b; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-43 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-44 {
     fill: #a2a2a2; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-43.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-44.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-43 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-43 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-43 2s linear forwards;
@@ -1537,9 +1552,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #ccc9c9; }
   100% {
     fill: #a2a2a2; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-44 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-45 {
     fill: #b2b2b2; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-44.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-45.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-44 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-44 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-44 2s linear forwards;
@@ -1552,9 +1567,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #e9e3e3; }
   100% {
     fill: #b2b2b2; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-45 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-46 {
     fill: #a3a3a3; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-45.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-46.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-45 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-45 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-45 2s linear forwards;
@@ -1567,9 +1582,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #b0adad; }
   100% {
     fill: #a3a3a3; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-46 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-47 {
     fill: #c3c3c3; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-46.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-47.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-46 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-46 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-46 2s linear forwards;
@@ -1582,9 +1597,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #f3f1f1; }
   100% {
     fill: #c3c3c3; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-47 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-48 {
     fill: #b9b7b7; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-47.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-48.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-47 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-47 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-47 2s linear forwards;
@@ -1597,9 +1612,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #d5cfcf; }
   100% {
     fill: #b9b7b7; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-48 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-49 {
     fill: #ababab; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-48.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-49.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-48 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-48 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-48 2s linear forwards;
@@ -1612,9 +1627,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #c7bcbc; }
   100% {
     fill: #ababab; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-49 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-50 {
     fill: #a1a1a1; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-49.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-50.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-49 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-49 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-49 2s linear forwards;
@@ -1627,9 +1642,9 @@ $color-dial--ring3: #2294e5;*/
     fill: #aaa9a9; }
   100% {
     fill: #a1a1a1; } }
-  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-50 {
+  .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-51 {
     fill: #b9b9b9; }
-    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-50.shard--shimmer {
+    .about-screen .about-screen__img.about-screen__img-polyDog .AnimateToOriginalComplete.cls-51.shard--shimmer {
       -moz-animation: polyDog-shimmer-cls-50 2s linear forwards;
       -o-animation: polyDog-shimmer-cls-50 2s linear forwards;
       -webkit-animation: polyDog-shimmer-cls-50 2s linear forwards;
@@ -2319,10 +2334,10 @@ $color-dial--ring3: #2294e5;*/
     overflow: visible; }
     .about-screen__img [class^="cls-"] {
       position: relative;
-      -moz-transition: fill 0.8s cubic-bezier(0, 0.55, 0.45, 1), transform 0.8s linear;
-      -o-transition: fill 0.8s cubic-bezier(0, 0.55, 0.45, 1), transform 0.8s linear;
-      -webkit-transition: fill 0.8s cubic-bezier(0, 0.55, 0.45, 1), transform 0.8s linear;
-      transition: fill 0.8s cubic-bezier(0, 0.55, 0.45, 1), transform 0.8s linear; }
+      -moz-transition: fill 0.8s linear, transform 0.8s linear;
+      -o-transition: fill 0.8s linear, transform 0.8s linear;
+      -webkit-transition: fill 0.8s linear, transform 0.8s linear;
+      transition: fill 0.8s linear, transform 0.8s linear; }
     .about-screen__img [class^="cls-"]:nth-child(odd) {
       fill: #d9d9d9; }
     .about-screen__img [class^="cls-"]:nth-child(even) {
