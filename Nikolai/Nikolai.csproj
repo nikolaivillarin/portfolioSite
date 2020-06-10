@@ -183,6 +183,12 @@
     <Content Include="Content\ImagesAbout\kakashi.png" />
     <Content Include="Content\ImagesAbout\polyDog.png" />
     <Content Include="Content\ImagesAbout\polyDog.svg" />
+    <Content Include="Content\ImagesAbout\polyDogFrame2.svg" />
+    <Content Include="Content\ImagesAbout\polyDogFrame3.svg" />
+    <Content Include="Content\ImagesAbout\polyDogFrame4.svg" />
+    <Content Include="Content\ImagesAbout\polyDogFrame5.svg" />
+    <Content Include="Content\ImagesAbout\polyDogFrame6.svg" />
+    <Content Include="Content\ImagesAbout\polyDogFrame7.svg" />
     <Content Include="Content\ImagesAbout\profilePic.png" />
     <Content Include="Content\ImagesAbout\nikolaivillarin.png" />
     <Content Include="Content\ImagesAbout\vsLogo.png" />

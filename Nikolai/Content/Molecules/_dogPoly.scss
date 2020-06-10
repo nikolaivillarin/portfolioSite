@@ -1127,9 +1127,9 @@
                     fill: #b9b9b9;
 
                     &.shard--shimmer {
-                        @include animation( polyDog-shimmer-cls-50 2s linear forwards );
+                        @include animation( polyDog-shimmer-cls-51 2s linear forwards );
 
-                        @keyframes polyDog-shimmer-cls-50 {
+                        @keyframes polyDog-shimmer-cls-51 {
                             0% {
                                 fill: #b9b9b9;
                             }
@@ -1140,6 +1140,138 @@
 
                             100% {
                                 fill: #b9b9b9;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-52 {
+                    fill: #808080;
+
+                    &.shard--shimmer {
+                        @include animation( polyDog-shimmer-cls-52 2s linear forwards );
+
+                        @keyframes polyDog-shimmer-cls-52 {
+                            0% {
+                                fill: #808080;
+                            }
+
+                            35% {
+                                fill: #a0a0a0;
+                            }
+
+                            100% {
+                                fill: #808080;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-53 {
+                    fill: #949494;
+
+                    &.shard--shimmer {
+                        @include animation( polyDog-shimmer-cls-53 2s linear forwards );
+
+                        @keyframes polyDog-shimmer-cls-53 {
+                            0% {
+                                fill: #949494;
+                            }
+
+                            35% {
+                                fill: #b0b0b0;
+                            }
+
+                            100% {
+                                fill: #949494;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-54 {
+                    fill: #d4d4d4;
+
+                    &.shard--shimmer {
+                        @include animation( polyDog-shimmer-cls-54 2s linear forwards );
+
+                        @keyframes polyDog-shimmer-cls-54 {
+                            0% {
+                                fill: #d4d4d4;
+                            }
+
+                            35% {
+                                fill: #e5e5e5;
+                            }
+
+                            100% {
+                                fill: #d4d4d4;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-55 {
+                    fill: #dbdbdb;
+
+                    &.shard--shimmer {
+                        @include animation( polyDog-shimmer-cls-55 2s linear forwards );
+
+                        @keyframes polyDog-shimmer-cls-55 {
+                            0% {
+                                fill: #dbdbdb;
+                            }
+
+                            35% {
+                                fill: #efefef;
+                            }
+
+                            100% {
+                                fill: #dbdbdb;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-56 {
+                    fill: #404040;
+
+                    &.shard--shimmer {
+                        @include animation( polyDog-shimmer-cls-56 2s linear forwards );
+
+                        @keyframes polyDog-shimmer-cls-56 {
+                            0% {
+                                fill: #404040;
+                            }
+
+                            35% {
+                                fill: #6b6b6b;
+                            }
+
+                            100% {
+                                fill: #404040;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-57 {
+                    fill: #4a4a4a;
+
+                    &.shard--shimmer {
+                        @include animation( polyDog-shimmer-cls-57 2s linear forwards );
+
+                        @keyframes polyDog-shimmer-cls-57 {
+                            0% {
+                                fill: #4a4a4a;
+                            }
+
+                            35% {
+                                fill: #6f6f6f;
+                            }
+
+                            100% {
+                                fill: #4a4a4a;
                             }
                         }
                     }

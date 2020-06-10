@@ -1,0 +1,330 @@
+<svg id="Frame3" xmlns="http://www.w3.org/2000/svg" width="4423" height="3296" viewBox="0 0 4423 3296">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #b9b9b9;
+      }
+
+      .cls-1, .cls-10, .cls-11, .cls-12, .cls-13, .cls-14, .cls-15, .cls-16, .cls-17, .cls-18, .cls-19, .cls-2, .cls-20, .cls-21, .cls-22, .cls-23, .cls-24, .cls-25, .cls-26, .cls-27, .cls-28, .cls-29, .cls-3, .cls-30, .cls-31, .cls-32, .cls-33, .cls-34, .cls-35, .cls-36, .cls-37, .cls-38, .cls-39, .cls-4, .cls-40, .cls-41, .cls-42, .cls-43, .cls-44, .cls-45, .cls-46, .cls-47, .cls-48, .cls-49, .cls-5, .cls-50, .cls-51, .cls-52, .cls-53, .cls-54, .cls-55, .cls-56, .cls-57, .cls-6, .cls-7, .cls-8, .cls-9 {
+        fill-rule: evenodd;
+      }
+
+      .cls-2 {
+        fill: #8b8b8b;
+      }
+
+      .cls-3 {
+        fill: #ababab;
+      }
+
+      .cls-4 {
+        fill: gray;
+      }
+
+      .cls-5 {
+        fill: #949494;
+      }
+
+      .cls-6 {
+        fill: #d4d4d4;
+      }
+
+      .cls-7 {
+        fill: #dbdbdb;
+      }
+
+      .cls-8 {
+        fill: #404040;
+      }
+
+      .cls-9 {
+        fill: #4a4a4a;
+      }
+
+      .cls-10 {
+        fill: #ffd2a5;
+      }
+
+      .cls-11 {
+        fill: #ffc993;
+      }
+
+      .cls-12 {
+        fill: #ffcf9f;
+      }
+
+      .cls-13 {
+        fill: #ffc290;
+      }
+
+      .cls-14 {
+        fill: #ffdeb1;
+      }
+
+      .cls-15 {
+        fill: #febc7b;
+      }
+
+      .cls-16 {
+        fill: #ffd8a6;
+      }
+
+      .cls-17 {
+        fill: #ffbd87;
+      }
+
+      .cls-18 {
+        fill: #ffc38b;
+      }
+
+      .cls-19 {
+        fill: #ffb77b;
+      }
+
+      .cls-20 {
+        fill: #f5a061;
+      }
+
+      .cls-21 {
+        fill: #ff273a;
+      }
+
+      .cls-22 {
+        fill: #ff335f;
+      }
+
+      .cls-23 {
+        fill: #ff707f;
+      }
+
+      .cls-24 {
+        fill: #ffd49f;
+      }
+
+      .cls-25 {
+        fill: #ffb47d;
+      }
+
+      .cls-26 {
+        fill: #ffd5a0;
+      }
+
+      .cls-27 {
+        fill: #ffaf6f;
+      }
+
+      .cls-28 {
+        fill: #ffa664;
+      }
+
+      .cls-29 {
+        fill: #ffc28b;
+      }
+
+      .cls-30 {
+        fill: #ffd39f;
+      }
+
+      .cls-31 {
+        fill: #f6a566;
+      }
+
+      .cls-32 {
+        fill: #ffb47c;
+      }
+
+      .cls-33 {
+        fill: #ffca92;
+      }
+
+      .cls-34 {
+        fill: #ffbc81;
+      }
+
+      .cls-35 {
+        fill: #fdaf73;
+      }
+
+      .cls-36 {
+        fill: #ffc48b;
+      }
+
+      .cls-37 {
+        fill: #f8ac78;
+      }
+
+      .cls-38 {
+        fill: #f2975b;
+      }
+
+      .cls-39 {
+        fill: #e99358;
+      }
+
+      .cls-40 {
+        fill: #259be9;
+      }
+
+      .cls-41 {
+        fill: #68d1ff;
+      }
+
+      .cls-42 {
+        fill: #4ecafa;
+      }
+
+      .cls-43 {
+        fill: #2aa4eb;
+      }
+
+      .cls-44 {
+        fill: #86c9fc;
+      }
+
+      .cls-45 {
+        fill: #faa769;
+      }
+
+      .cls-46 {
+        fill: #ffe1b2;
+      }
+
+      .cls-47 {
+        fill: #f9d7a2;
+      }
+
+      .cls-48 {
+        fill: #f5a161;
+      }
+
+      .cls-49 {
+        fill: #ffe0b2;
+      }
+
+      .cls-50 {
+        fill: #969595;
+      }
+
+      .cls-51 {
+        fill: #9b9a99;
+      }
+
+      .cls-52 {
+        fill: #a2a2a2;
+      }
+
+      .cls-53 {
+        fill: #b2b2b2;
+      }
+
+      .cls-54 {
+        fill: #a3a3a3;
+      }
+
+      .cls-55 {
+        fill: #c3c3c3;
+      }
+
+      .cls-56 {
+        fill: #b9b7b7;
+      }
+
+      .cls-57 {
+        fill: #a1a1a1;
+      }
+    </style>
+  </defs>
+  <g id="Laptop">
+    <path id="Polygon_56" data-name="Polygon 56" class="cls-1" d="M3013,3175l740,80-1.91-75.9Z"/>
+    <path id="Polygon_57" data-name="Polygon 57" class="cls-2" d="M3753,3255l-740-80,1.91,75.9Z"/>
+    <path id="Polygon_58" data-name="Polygon 58" class="cls-3" d="M4316.32,2744.7l-567.54,436.2,1.25,74.04Z"/>
+    <path id="Polygon_59" data-name="Polygon 59" class="cls-1" d="M3747.77,3184.95l567.55-436.2-31.25-38.04Z"/>
+    <path id="Polygon_60" data-name="Polygon 60" class="cls-4" d="M4311.57,2749.21L3750.2,3255l186.84-110.41Z"/>
+    <path id="Polygon_61" data-name="Polygon 61" class="cls-5" d="M3946.91,3133.73L4424,2716.76l-112.36,30.76Z"/>
+    <path id="Polygon_62" data-name="Polygon 62" class="cls-6" d="M4424.99,2717.02l-143.35-5.25L4313,2752Z"/>
+    <path id="Polygon_63" data-name="Polygon 63" class="cls-7" d="M4283.43,2712.84l136.15,4.5-31.13-17.07Z"/>
+    <path id="Polygon_64" data-name="Polygon 64" class="cls-8" d="M3014,3175l734.79,7.01,116.22-97.02Z"/>
+    <path id="Polygon_65" data-name="Polygon 65" class="cls-9" d="M3014.81,3175.37l850.12-88.19L3417,3082Z"/>
+  </g>
+  <g id="Face">
+    <path id="Polygon_1" data-name="Polygon 1" class="cls-10" d="M4093.06,2542.73l-305.08,152.89,150.2-559.61Z"/>
+    <path id="Polygon_2" data-name="Polygon 2" class="cls-11" d="M3010.71,2238.34l935.3-86.26-145.08,541.24Z"/>
+    <path id="Polygon_3" data-name="Polygon 3" class="cls-12" d="M3015.16,2243.98l940.13-575.41-2.11,494.91Z"/>
+    <path id="Polygon_4" data-name="Polygon 4" class="cls-13" d="M3011.73,2250.72l156.59-1006.19,786.02,433.92Z"/>
+  </g>
+  <g id="Ear">
+    <path id="Polygon_5" data-name="Polygon 5" class="cls-14" d="M2975.51,1149.9l632.16-178.849,349.38,731.129Z"/>
+    <path id="Polygon_55" data-name="Polygon 55" class="cls-15" d="M4204.46,1743.77l-252.77,354.54,2.32-377.2Z"/>
+    <path id="Polygon_6" data-name="Polygon 6" class="cls-16" d="M4197.58,1743.14l-238.7-8.9-108.47-248.37Z"/>
+  </g>
+  <g id="Neck">
+    <path id="Polygon_7" data-name="Polygon 7" class="cls-17" d="M3081.16,2236.17l-436.12-501.78,524.27-475.92Z"/>
+    <path id="Polygon_8" data-name="Polygon 8" class="cls-18" d="M2658.12,1722.2l439.71,522.06-309.11,175.93Z"/>
+    <path id="Polygon_9" data-name="Polygon 9" class="cls-19" d="M2998.51,2748.58L2785.8,2405.77l304.67-172.1Z"/>
+    <path id="Polygon_10" data-name="Polygon 10" class="cls-20" d="M3078.05,2239.17l246.58,177.12-331.27,329.02Z"/>
+  </g>
+  <g id="Colar">
+    <path id="Polygon_11" data-name="Polygon 11" class="cls-21" d="M3106.56,2805.74l-258.72,63.17,270.31-242.12Z"/>
+    <path id="Polygon_12" data-name="Polygon 12" class="cls-22" d="M2788.75,2406.47l211.16,337.83-154.7,137.33Z"/>
+    <path id="Polygon_13" data-name="Polygon 13" class="cls-23" d="M2863.4,2863.7L2397.07,1790.15l281.45-88.2Z"/>
+  </g>
+  <g id="LeftLeg">
+    <path id="Polygon_17" data-name="Polygon 17" class="cls-24" d="M2704.19,3089.83L2960.2,2851.2l487.97,249.89Z"/>
+    <path id="Polygon_18" data-name="Polygon 18" class="cls-25" d="M3450.57,3107.29L2960.8,2855.8l414.25,91.59Z"/>
+  </g>
+  <g id="Chest">
+    <path id="Polygon_14" data-name="Polygon 14" class="cls-26" d="M2400.41,1786l445.62,1029.2-223.89-73.72Z"/>
+    <path id="Polygon_15" data-name="Polygon 15" class="cls-27" d="M2962,2857.36l-167.94,146.93-179.38-278.5Z"/>
+    <path id="Polygon_16" data-name="Polygon 16" class="cls-28" d="M2704,3099l-83.41-375.79,178.25,279.71Z"/>
+    <path id="Polygon_19" data-name="Polygon 19" class="cls-29" d="M2174.76,2513.49l233.79-731.46,214.59,950.37Z"/>
+  </g>
+  <g id="RightLeg">
+    <path id="Polygon_20" data-name="Polygon 20" class="cls-30" d="M2011.34,3069.34l173.58-562.28,434.63,215.86Z"/>
+    <path id="Polygon_21" data-name="Polygon 21" class="cls-31" d="M2237,3223l-232-153,608.46-342.92Z"/>
+    <path id="Polygon_22" data-name="Polygon 22" class="cls-32" d="M2404.2,2997.38L2646,3253l-410-34.23Z"/>
+  </g>
+  <g id="UpperBody">
+    <path id="Polygon_23" data-name="Polygon 23" class="cls-33" d="M2191.61,2512.39l-20.94-726.62,247.46,2.24Z"/>
+    <path id="Polygon_24" data-name="Polygon 24" class="cls-34" d="M2177.31,1789.13l19.68,721.37-149.14,152.41Z"/>
+    <path id="Polygon_25" data-name="Polygon 25" class="cls-35" d="M2050.42,2608.08l150.95-103.53-147.39,434.83Z"/>
+    <path id="Polygon_26" data-name="Polygon 26" class="cls-36" d="M2054.29,2935.99l-219.38-722.48,344.4-427.46Z"/>
+    <path id="Polygon_27" data-name="Polygon 27" class="cls-37" d="M2057,2929.97l-881.83-566.11,670.76-162.58Z"/>
+    <path id="Polygon_28" data-name="Polygon 28" class="cls-38" d="M2057.59,2927.15l-834.37-271.01,24.07-304.17Z"/>
+    <path id="Polygon_29" data-name="Polygon 29" class="cls-39" d="M1251.08,2353.73L1236.23,2658,950.437,2555.39Z"/>
+  </g>
+  <g id="Strap">
+    <path id="Polygon_30" data-name="Polygon 30" class="cls-40" d="M2284.13,1653l120.31,139.15-248.56,2.56Z"/>
+    <path id="Polygon_31" data-name="Polygon 31" class="cls-41" d="M1844.31,2209.58l54.81-506.48,393.61-47.2Z"/>
+    <path id="Polygon_32" data-name="Polygon 32" class="cls-42" d="M1905.15,1699.46l-49.96,507.34-261.72-82.62Z"/>
+    <path id="Polygon_33" data-name="Polygon 33" class="cls-43" d="M1249.43,2359.67l340.92-248.69,261.88,89.31Z"/>
+    <path id="Polygon_34" data-name="Polygon 34" class="cls-44" d="M1620.34,2108.76L930.648,2576.2l73.5-348.87Z"/>
+  </g>
+  <g id="Butt">
+    <path id="Polygon_35" data-name="Polygon 35" class="cls-45" d="M978.84,2291.17l929.22-587.97-305.08,412.74Z"/>
+    <path id="Polygon_36" data-name="Polygon 36" class="cls-18" d="M1898.92,1708.11L985.161,2299.38,319.774,2030.73Z"/>
+    <path id="Polygon_37" data-name="Polygon 37" class="cls-46" d="M1877.14,1715.2L324.126,2033.33l426.968-530.88Z"/>
+    <path id="Polygon_38" data-name="Polygon 38" class="cls-47" d="M757.437,1503.82l-436.4,541.92,95.024-308.25Z"/>
+    <path id="Polygon_39" data-name="Polygon 39" class="cls-48" d="M318.084,2018.3l168.338,71.82-113.361,83.81Z"/>
+  </g>
+  <g id="Tail">
+    <path id="Polygon_40" data-name="Polygon 40" class="cls-46" d="M452.819,878.5l54.437,796.461-73.694,50.93Z"/>
+    <path id="Polygon_41" data-name="Polygon 41" class="cls-29" d="M433.89,1726L363.272,998.691,464.843,880.51Z"/>
+    <path id="Polygon_42" data-name="Polygon 42" class="cls-49" d="M215.577,496.188L467.2,885.575l-92.607,141.6Z"/>
+  </g>
+  <g id="LeftTire">
+    <path id="Polygon_49" data-name="Polygon 49" class="cls-50" d="M1311.13,2744.55l301.88,395.14-455.97,20.2Z"/>
+    <path id="Polygon_50" data-name="Polygon 50" class="cls-51" d="M1313.15,2753.97l-151.66,408.14-132.25-143.46Z"/>
+    <path id="Polygon_51" data-name="Polygon 51" class="cls-2" d="M1323.77,2755.64l-294.99,264.19L1008,2568.38Z"/>
+    <path id="Polygon_52" data-name="Polygon 52" class="cls-52" d="M1315.14,2766.86l-281.52-182.6,713.78,241.4Z"/>
+    <path id="Polygon_53" data-name="Polygon 53" class="cls-53" d="M1309.3,2759.58l437.48,61.75-35.84,80.84Z"/>
+    <path id="Polygon_54" data-name="Polygon 54" class="cls-54" d="M1609.51,3136.91l-316.08-394.48,449.88,88.77Z"/>
+  </g>
+  <g id="RightTire">
+    <path id="Polygon_43" data-name="Polygon 43" class="cls-55" d="M561.5,2658.18L35.938,2421.16l445.786-341.1Z"/>
+    <path id="Polygon_44" data-name="Polygon 44" class="cls-56" d="M561.47,2650.73L101.8,2989.98,40.052,2407.95Z"/>
+    <path id="Polygon_45" data-name="Polygon 45" class="cls-3" d="M552.57,2647.4l68.688,556.28L93.075,2972.53Z"/>
+    <path id="Polygon_46" data-name="Polygon 46" class="cls-57" d="M547.645,2647.36l521.445,215.08-460.131,345.6Z"/>
+    <path id="Polygon_47" data-name="Polygon 47" class="cls-54" d="M540.7,2648.05l463.36-351.49,61.62,575.24Z"/>
+    <path id="Polygon_48" data-name="Polygon 48" class="cls-1" d="M546.794,2651.38l-65.148-565.81,525.934,210.8Z"/>
+  </g>
+</svg>
