@@ -181,6 +181,7 @@
     <Content Include="Content\ImagesAbout\icon_code.svg" />
     <Content Include="Content\ImagesAbout\icon_windows.svg" />
     <Content Include="Content\ImagesAbout\kakashi.png" />
+    <Content Include="Content\ImagesAbout\ninjaFrame1.svg" />
     <Content Include="Content\ImagesAbout\polyDog.png" />
     <Content Include="Content\ImagesAbout\polyDog.svg" />
     <Content Include="Content\ImagesAbout\polyDogFrame2.svg" />
@@ -623,6 +624,11 @@
     <Content Include="Views\Work\_topnav.cshtml" />
     <Content Include="Views\Work\_dashboard.cshtml" />
     <Content Include="Views\Work\Dashboard.cshtml" />
+    <Content Include="Views\About\_aboutProfile.cshtml" />
+    <Content Include="Views\About\_aboutChallenge.cshtml" />
+    <Content Include="Views\About\_aboutCoding.cshtml" />
+    <Content Include="Views\About\_aboutAccessibility.cshtml" />
+    <Content Include="Views\About\_aboutHobbies.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
