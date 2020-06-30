@@ -1,0 +1,2717 @@
+﻿$frameDuration: 0.8s;
+
+.about-screen {
+    &.about-screen--ninja {
+        .about-screen__svg {
+            min-width: 30%;
+        }
+
+        .about-screen__splash {
+            @include transform(translate(-27%, -4.5em));
+
+            .about-screen__target {
+                bottom: -4em;
+            }
+        }
+    }
+}
+
+.about-screen {
+    .about-screen__img {
+        &.about-screen__img-ninja {
+            display: block;
+            overflow: visible;
+
+            .AnimateToOriginalComplete {
+                &.cls-1 {
+                    fill: #2d2c2e;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-1 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-1 {
+                            0% {
+                                fill: #2d2c2e;
+                            }
+
+                            35% {
+                                fill: #4e4c4f;
+                            }
+
+                            100% {
+                                fill: #2d2c2e;
+                            }
+                        }
+                    }
+                }
+
+
+                &.cls-2 {
+                    fill: #393e49;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-2 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-2 {
+                            0% {
+                                fill: #393e49;
+                            }
+
+                            35% {
+                                fill: #4e5460;
+                            }
+
+                            100% {
+                                fill: #393e49;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-3 {
+                    fill: #393e47;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-3 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-3 {
+                            0% {
+                                fill: #393e47;
+                            }
+
+                            35% {
+                                fill: #4d535e;
+                            }
+
+                            100% {
+                                fill: #393e47;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-4 {
+                    fill: #3c4351;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-4 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-4 {
+                            0% {
+                                fill: #3c4351;
+                            }
+
+                            35% {
+                                fill: #5f6572;
+                            }
+
+                            100% {
+                                fill: #3c4351;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-5 {
+                    fill: #424a5a;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-5 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-5 {
+                            0% {
+                                fill: #424a5a;
+                            }
+
+                            35% {
+                                fill: #565f71;
+                            }
+
+                            100% {
+                                fill: #424a5a;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-6 {
+                    fill: #434c5d;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-6 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-6 {
+                            0% {
+                                fill: #434c5d;
+                            }
+
+                            35% {
+                                fill: #555e71;
+                            }
+
+                            100% {
+                                fill: #434c5d;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-7 {
+                    fill: #434a5b;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-7 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-7 {
+                            0% {
+                                fill: #434a5b;
+                            }
+
+                            35% {
+                                fill: #21242b;
+                            }
+
+                            100% {
+                                fill: #434a5b;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-8 {
+                    fill: #33353c;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-8 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-8 {
+                            0% {
+                                fill: #33353c;
+                            }
+
+                            35% {
+                                fill: #1d1f23;
+                            }
+
+                            100% {
+                                fill: #33353c;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-9 {
+                    fill: #c6a9a1;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-9 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-9 {
+                            0% {
+                                fill: #c6a9a1;
+                            }
+
+                            35% {
+                                fill: #d9c0b9;
+                            }
+
+                            100% {
+                                fill: #c6a9a1;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-10 {
+                    fill: #47505f;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-10 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-10 {
+                            0% {
+                                fill: #47505f;
+                            }
+
+                            35% {
+                                fill: #636d7d;
+                            }
+
+                            100% {
+                                fill: #47505f;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-11 {
+                    fill: #393f49;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-11 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-11 {
+                            0% {
+                                fill: #393f49;
+                            }
+
+                            35% {
+                                fill: #545d6c;
+                            }
+
+                            100% {
+                                fill: #393f49;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-12 {
+                    fill: #2f2f31;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-12 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-12 {
+                            0% {
+                                fill: #2f2f31;
+                            }
+
+                            35% {
+                                fill: #5e5e65;
+                            }
+
+                            100% {
+                                fill: #2f2f31;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-13 {
+                    fill: #a0a0a4;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-13 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-13 {
+                            0% {
+                                fill: #a0a0a4;
+                            }
+
+                            35% {
+                                fill: #dddde9;
+                            }
+
+                            100% {
+                                fill: #a0a0a4;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-14 {
+                    fill: #b7b7b9;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-14 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-14 {
+                            0% {
+                                fill: #b7b7b9;
+                            }
+
+                            35% {
+                                fill: #e0e0e5;
+                            }
+
+                            100% {
+                                fill: #b7b7b9;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-15 {
+                    fill: #d0d0d1;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-15 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-15 {
+                            0% {
+                                fill: #d0d0d1;
+                            }
+
+                            35% {
+                                fill: #f8f8f8;
+                            }
+
+                            100% {
+                                fill: #d0d0d1;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-16 {
+                    fill: #ececed;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-16 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-16 {
+                            0% {
+                                fill: #ececed;
+                            }
+
+                            35% {
+                                fill: #ffffff;
+                            }
+
+                            100% {
+                                fill: #ececed;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-17 {
+                    fill: #707073;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-17 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-17 {
+                            0% {
+                                fill: #707073;
+                            }
+
+                            35% {
+                                fill: #4d4d4f;
+                            }
+
+                            100% {
+                                fill: #707073;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-18 {
+                    fill: #ababac;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-18 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-18 {
+                            0% {
+                                fill: #ababac;
+                            }
+
+                            35% {
+                                fill: #dedee5;
+                            }
+
+                            100% {
+                                fill: #ababac;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-19 {
+                    fill: #afafb1;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-19 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-19 {
+                            0% {
+                                fill: #afafb1;
+                            }
+
+                            35% {
+                                fill: #fefefe;
+                            }
+
+                            100% {
+                                fill: #afafb1;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-20 {
+                    fill: #363639;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-20 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-20 {
+                            0% {
+                                fill: #363639;
+                            }
+
+                            35% {
+                                fill: #202022;
+                            }
+
+                            100% {
+                                fill: #363639;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-21 {
+                    fill: #383c47;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-21 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-21 {
+                            0% {
+                                fill: #383c47;
+                            }
+
+                            35% {
+                                fill: #60687d;
+                            }
+
+                            100% {
+                                fill: #383c47;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-22 {
+                    fill: #343235;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-22 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-22 {
+                            0% {
+                                fill: #343235;
+                            }
+
+                            35% {
+                                fill: #131214;
+                            }
+
+                            100% {
+                                fill: #343235;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-23 {
+                    fill: #dcb9b0;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-23 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-23 {
+                            0% {
+                                fill: #dcb9b0;
+                            }
+
+                            35% {
+                                fill: #f5ece9;
+                            }
+
+                            100% {
+                                fill: #dcb9b0;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-24 {
+                    fill: #40495a;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-24 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-24 {
+                            0% {
+                                fill: #40495a;
+                            }
+
+                            35% {
+                                fill: #677286;
+                            }
+
+                            100% {
+                                fill: #40495a;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-25 {
+                    fill: #434d5f;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-25 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-25 {
+                            0% {
+                                fill: #434d5f;
+                            }
+
+                            35% {
+                                fill: #637089;
+                            }
+
+                            100% {
+                                fill: #434d5f;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-26 {
+                    fill: #424c5f;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-26 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-26 {
+                            0% {
+                                fill: #424c5f;
+                            }
+
+                            35% {
+                                fill: #97a4bb;
+                            }
+
+                            100% {
+                                fill: #424c5f;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-27 {
+                    fill: #2d2d30;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-27 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-27 {
+                            0% {
+                                fill: #2d2d30;
+                            }
+
+                            35% {
+                                fill: #0f0f10;
+                            }
+
+                            100% {
+                                fill: #2d2d30;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-28 {
+                    fill: #465060;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-28 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-28 {
+                            0% {
+                                fill: #465060;
+                            }
+
+                            35% {
+                                fill: #6e7c92;
+                            }
+
+                            100% {
+                                fill: #465060;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-29 {
+                    fill: #4d5768;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-29 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-29 {
+                            0% {
+                                fill: #4d5768;
+                            }
+
+                            35% {
+                                fill: #788498;
+                            }
+
+                            100% {
+                                fill: #4d5768;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-30 {
+                    fill: #2b2b2d;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-30 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-30 {
+                            0% {
+                                fill: #2b2b2d;
+                            }
+
+                            35% {
+                                fill: #101011;
+                            }
+
+                            100% {
+                                fill: #2b2b2d;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-31 {
+                    fill: #7b8474;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-31 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-31 {
+                            0% {
+                                fill: #7b8474;
+                            }
+
+                            35% {
+                                fill: #cdd3c8;
+                            }
+
+                            100% {
+                                fill: #7b8474;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-32 {
+                    fill: #828b7a;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-32 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-32 {
+                            0% {
+                                fill: #828b7a;
+                            }
+
+                            35% {
+                                fill: #cad4c1;
+                            }
+
+                            100% {
+                                fill: #828b7a;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-33 {
+                    fill: #838c7b;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-33 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-33 {
+                            0% {
+                                fill: #838c7b;
+                            }
+
+                            35% {
+                                fill: #cad5c0;
+                            }
+
+                            100% {
+                                fill: #838c7b;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-34 {
+                    fill: #737367;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-34 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-34 {
+                            0% {
+                                fill: #737367;
+                            }
+
+                            35% {
+                                fill: #b6b6a8;
+                            }
+
+                            100% {
+                                fill: #737367;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-35 {
+                    fill: #778071;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-35 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-35 {
+                            0% {
+                                fill: #778071;
+                            }
+
+                            35% {
+                                fill: #c2cbbc;
+                            }
+
+                            100% {
+                                fill: #778071;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-36 {
+                    fill: #717a6c;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-36 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-36 {
+                            0% {
+                                fill: #717a6c;
+                            }
+
+                            35% {
+                                fill: #adb7a8;
+                            }
+
+                            100% {
+                                fill: #717a6c;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-37 {
+                    fill: #7f897a;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-37 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-37 {
+                            0% {
+                                fill: #7f897a;
+                            }
+
+                            35% {
+                                fill: #c6cfc1;
+                            }
+
+                            100% {
+                                fill: #7f897a;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-38 {
+                    fill: #90938f;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-38 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-38 {
+                            0% {
+                                fill: #90938f;
+                            }
+
+                            35% {
+                                fill: #d5d8d4;
+                            }
+
+                            100% {
+                                fill: #90938f;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-39 {
+                    fill: #727a6f;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-39 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-39 {
+                            0% {
+                                fill: #727a6f;
+                            }
+
+                            35% {
+                                fill: #b8c1b5;
+                            }
+
+                            100% {
+                                fill: #727a6f;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-40 {
+                    fill: #7a8173;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-40 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-40 {
+                            0% {
+                                fill: #7a8173;
+                            }
+
+                            35% {
+                                fill: #afb6a8;
+                            }
+
+                            100% {
+                                fill: #7a8173;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-41 {
+                    fill: #7f8778;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-41 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-41 {
+                            0% {
+                                fill: #7f8778;
+                            }
+
+                            35% {
+                                fill: #c5cbc0;
+                            }
+
+                            100% {
+                                fill: #7f8778;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-42 {
+                    fill: #71796c;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-42 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-42 {
+                            0% {
+                                fill: #71796c;
+                            }
+
+                            35% {
+                                fill: #b4bdaf;
+                            }
+
+                            100% {
+                                fill: #71796c;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-43 {
+                    fill: #e1c0b3;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-43 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-43 {
+                            0% {
+                                fill: #e1c0b3;
+                            }
+
+                            35% {
+                                fill: #faf6f5;
+                            }
+
+                            100% {
+                                fill: #e1c0b3;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-44 {
+                    fill: #f8dece;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-44 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-44 {
+                            0% {
+                                fill: #f8dece;
+                            }
+
+                            35% {
+                                fill: #ffffff;
+                            }
+
+                            100% {
+                                fill: #f8dece;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-45 {
+                    fill: #e8c9bb;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-45 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-45 {
+                            0% {
+                                fill: #e8c9bb;
+                            }
+
+                            35% {
+                                fill: #f1e6e1;
+                            }
+
+                            100% {
+                                fill: #e8c9bb;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-46 {
+                    fill: #e3c0b4;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-46 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-46 {
+                            0% {
+                                fill: #e3c0b4;
+                            }
+
+                            35% {
+                                fill: #f3ebe8;
+                            }
+
+                            100% {
+                                fill: #e3c0b4;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-47 {
+                    fill: #ddb8ad;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-47 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-47 {
+                            0% {
+                                fill: #ddb8ad;
+                            }
+
+                            35% {
+                                fill: #786863;
+                            }
+
+                            100% {
+                                fill: #ddb8ad;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-48 {
+                    fill: #dbb2a5;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-48 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-48 {
+                            0% {
+                                fill: #dbb2a5;
+                            }
+
+                            35% {
+                                fill: #9f867f;
+                            }
+
+                            100% {
+                                fill: #dbb2a5;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-49 {
+                    fill: #262324;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-49 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-49 {
+                            0% {
+                                fill: #262324;
+                            }
+
+                            35% {
+                                fill: #0a0a0a;
+                            }
+
+                            100% {
+                                fill: #262324;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-50 {
+                    fill: #2d2d2f;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-50 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-50 {
+                            0% {
+                                fill: #2d2d2f;
+                            }
+
+                            35% {
+                                fill: #131314;
+                            }
+
+                            100% {
+                                fill: #2d2d2f;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-51 {
+                    fill: #424044;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-51 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-51 {
+                            0% {
+                                fill: #424044;
+                            }
+
+                            35% {
+                                fill: #0f0f10;
+                            }
+
+                            100% {
+                                fill: #424044;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-52 {
+                    fill: #2c2b2e;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-52 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-52 {
+                            0% {
+                                fill: #2c2b2e;
+                            }
+
+                            35% {
+                                fill: #090909;
+                            }
+
+                            100% {
+                                fill: #2c2b2e;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-53 {
+                    fill: #9fa793;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-53 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-53 {
+                            0% {
+                                fill: #9fa793;
+                            }
+
+                            35% {
+                                fill: #e7eae3;
+                            }
+
+                            100% {
+                                fill: #9fa793;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-54 {
+                    fill: #6c7466;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-54 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-54 {
+                            0% {
+                                fill: #6c7466;
+                            }
+
+                            35% {
+                                fill: #b4bfab;
+                            }
+
+                            100% {
+                                fill: #6c7466;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-55 {
+                    fill: #98a290;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-55 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-55 {
+                            0% {
+                                fill: #98a290;
+                            }
+
+                            35% {
+                                fill: #dbe2d6;
+                            }
+
+                            100% {
+                                fill: #98a290;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-56 {
+                    fill: #434a3f;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-56 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-56 {
+                            0% {
+                                fill: #434a3f;
+                            }
+
+                            35% {
+                                fill: #1b1d19;
+                            }
+
+                            100% {
+                                fill: #434a3f;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-57 {
+                    fill: #899282;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-57 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-57 {
+                            0% {
+                                fill: #899282;
+                            }
+
+                            35% {
+                                fill: #d9eacb;
+                            }
+
+                            100% {
+                                fill: #899282;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-58 {
+                    fill: #7e8778;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-58 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-58 {
+                            0% {
+                                fill: #7e8778;
+                            }
+
+                            35% {
+                                fill: #d3dccd;
+                            }
+
+                            100% {
+                                fill: #7e8778;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-59 {
+                    fill: #687163;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-59 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-59 {
+                            0% {
+                                fill: #687163;
+                            }
+
+                            35% {
+                                fill: #d0d5cd;
+                            }
+
+                            100% {
+                                fill: #687163;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-60 {
+                    fill: #575c55;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-60 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-60 {
+                            0% {
+                                fill: #575c55;
+                            }
+
+                            35% {
+                                fill: #202220;
+                            }
+
+                            100% {
+                                fill: #575c55;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-61 {
+                    fill: #333434;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-61 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-61 {
+                            0% {
+                                fill: #333434;
+                            }
+
+                            35% {
+                                fill: #050505;
+                            }
+
+                            100% {
+                                fill: #333434;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-62 {
+                    fill: #2c2c2e;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-62 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-62 {
+                            0% {
+                                fill: #2c2c2e;
+                            }
+
+                            35% {
+                                fill: #0c0c0c;
+                            }
+
+                            100% {
+                                fill: #2c2c2e;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-63 {
+                    fill: #202121;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-63 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-63 {
+                            0% {
+                                fill: #202121;
+                            }
+
+                            35% {
+                                fill: #767e7e;
+                            }
+
+                            100% {
+                                fill: #202121;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-64 {
+                    fill: #51564e;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-64 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-64 {
+                            0% {
+                                fill: #51564e;
+                            }
+
+                            35% {
+                                fill: #b9beb6;
+                            }
+
+                            100% {
+                                fill: #51564e;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-65 {
+                    fill: #818a7a;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-65 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-65 {
+                            0% {
+                                fill: #818a7a;
+                            }
+
+                            35% {
+                                fill: #d1d9ca;
+                            }
+
+                            100% {
+                                fill: #818a7a;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-66 {
+                    fill: #889282;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-66 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-66 {
+                            0% {
+                                fill: #889282;
+                            }
+
+                            35% {
+                                fill: #cdd5c7;
+                            }
+
+                            100% {
+                                fill: #889282;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-67 {
+                    fill: #697164;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-67 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-67 {
+                            0% {
+                                fill: #697164;
+                            }
+
+                            35% {
+                                fill: #c8d1c2;
+                            }
+
+                            100% {
+                                fill: #697164;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-68 {
+                    fill: #6b7367;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-68 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-68 {
+                            0% {
+                                fill: #6b7367;
+                            }
+
+                            35% {
+                                fill: #c4cebf;
+                            }
+
+                            100% {
+                                fill: #6b7367;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-69 {
+                    fill: #5c6258;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-69 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-69 {
+                            0% {
+                                fill: #5c6258;
+                            }
+
+                            35% {
+                                fill: #a0ac99;
+                            }
+
+                            100% {
+                                fill: #5c6258;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-70 {
+                    fill: #88523c;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-70 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-70 {
+                            0% {
+                                fill: #88523c;
+                            }
+
+                            35% {
+                                fill: #cf967e;
+                            }
+
+                            100% {
+                                fill: #88523c;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-71 {
+                    fill: #9e5e44;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-71 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-71 {
+                            0% {
+                                fill: #9e5e44;
+                            }
+
+                            35% {
+                                fill: #d8a997;
+                            }
+
+                            100% {
+                                fill: #9e5e44;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-72 {
+                    fill: #bc7152;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-72 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-72 {
+                            0% {
+                                fill: #bc7152;
+                            }
+
+                            35% {
+                                fill: #d9a894;
+                            }
+
+                            100% {
+                                fill: #bc7152;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-73 {
+                    fill: #ababab;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-73 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-73 {
+                            0% {
+                                fill: #ababab;
+                            }
+
+                            35% {
+                                fill: #6b6b6b;
+                            }
+
+                            100% {
+                                fill: #ababab;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-74 {
+                    fill: #d88b6e;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-74 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-74 {
+                            0% {
+                                fill: #d88b6e;
+                            }
+
+                            35% {
+                                fill: #e5c6ba;
+                            }
+
+                            100% {
+                                fill: #d88b6e;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-75 {
+                    fill: #eb9c81;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-75 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-75 {
+                            0% {
+                                fill: #eb9c81;
+                            }
+
+                            35% {
+                                fill: #f2d8cf;
+                            }
+
+                            100% {
+                                fill: #eb9c81;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-76 {
+                    fill: #f2f1ef;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-76 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-76 {
+                            0% {
+                                fill: #f2f1ef;
+                            }
+
+                            35% {
+                                fill: #ffffff;
+                            }
+
+                            100% {
+                                fill: #f2f1ef;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-77 {
+                    fill: #d0a79d;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-77 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-77 {
+                            0% {
+                                fill: #d0a79d;
+                            }
+
+                            35% {
+                                fill: #f8e3de;
+                            }
+
+                            100% {
+                                fill: #d0a79d;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-78 {
+                    fill: #f5daca;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-78 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-78 {
+                            0% {
+                                fill: #f5daca;
+                            }
+
+                            35% {
+                                fill: #fcf8f6;
+                            }
+
+                            100% {
+                                fill: #f5daca;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-79 {
+                    fill: #debeb3;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-79 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-79 {
+                            0% {
+                                fill: #debeb3;
+                            }
+
+                            35% {
+                                fill: #f3e9e6;
+                            }
+
+                            100% {
+                                fill: #debeb3;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-80 {
+                    fill: #323032;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-80 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-80 {
+                            0% {
+                                fill: #323032;
+                            }
+
+                            35% {
+                                fill: #111011;
+                            }
+
+                            100% {
+                                fill: #323032;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-81 {
+                    fill: #3a404a;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-81 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-81 {
+                            0% {
+                                fill: #3a404a;
+                            }
+
+                            35% {
+                                fill: #272b30;
+                            }
+
+                            100% {
+                                fill: #3a404a;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-82 {
+                    fill: #525b74;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-82 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-82 {
+                            0% {
+                                fill: #525b74;
+                            }
+
+                            35% {
+                                fill: #929ab2;
+                            }
+
+                            100% {
+                                fill: #525b74;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-83 {
+                    fill: #444c5d;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-83 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-83 {
+                            0% {
+                                fill: #444c5d;
+                            }
+
+                            35% {
+                                fill: #8692ac;
+                            }
+
+                            100% {
+                                fill: #444c5d;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-84 {
+                    fill: #4a515d;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-84 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-84 {
+                            0% {
+                                fill: #4a515d;
+                            }
+
+                            35% {
+                                fill: #a5b0c2;
+                            }
+
+                            100% {
+                                fill: #4a515d;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-85 {
+                    fill: #2c2d2f;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-85 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-85 {
+                            0% {
+                                fill: #2c2d2f;
+                            }
+
+                            35% {
+                                fill: #0c0d0d;
+                            }
+
+                            100% {
+                                fill: #2c2d2f;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-86 {
+                    fill: #404858;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-86 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-86 {
+                            0% {
+                                fill: #404858;
+                            }
+
+                            35% {
+                                fill: #23272f;
+                            }
+
+                            100% {
+                                fill: #404858;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-87 {
+                    fill: #4b5464;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-87 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-87 {
+                            0% {
+                                fill: #4b5464;
+                            }
+
+                            35% {
+                                fill: #9ba3b1;
+                            }
+
+                            100% {
+                                fill: #4b5464;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-88 {
+                    fill: #d4aaa3;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-88 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-88 {
+                            0% {
+                                fill: #d4aaa3;
+                            }
+
+                            35% {
+                                fill: #ebe0de;
+                            }
+
+                            100% {
+                                fill: #d4aaa3;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-89 {
+                    fill: #f7decf;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-89 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-89 {
+                            0% {
+                                fill: #f7decf;
+                            }
+
+                            35% {
+                                fill: #ffffff;
+                            }
+
+                            100% {
+                                fill: #f7decf;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-90 {
+                    fill: #d9aea5;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-90 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-90 {
+                            0% {
+                                fill: #d9aea5;
+                            }
+
+                            35% {
+                                fill: #f1e3e0;
+                            }
+
+                            100% {
+                                fill: #d9aea5;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-91 {
+                    fill: #f4d8c8;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-91 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-91 {
+                            0% {
+                                fill: #f4d8c8;
+                            }
+
+                            35% {
+                                fill: #f7f2ee;
+                            }
+
+                            100% {
+                                fill: #f4d8c8;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-92 {
+                    fill: #1c191c;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-92 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-92 {
+                            0% {
+                                fill: #1c191c;
+                            }
+
+                            35% {
+                                fill: #000000;
+                            }
+
+                            100% {
+                                fill: #1c191c;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-93 {
+                    fill: #303235;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-93 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-93 {
+                            0% {
+                                fill: #303235;
+                            }
+
+                            35% {
+                                fill: #6a6f75;
+                            }
+
+                            100% {
+                                fill: #303235;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-94 {
+                    fill: #2c2c2f;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-94 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-94 {
+                            0% {
+                                fill: #2c2c2f;
+                            }
+
+                            35% {
+                                fill: #707076;
+                            }
+
+                            100% {
+                                fill: #2c2c2f;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-95 {
+                    fill: #414856;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-95 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-95 {
+                            0% {
+                                fill: #414856;
+                            }
+
+                            35% {
+                                fill: #a2adc3;
+                            }
+
+                            100% {
+                                fill: #414856;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-96 {
+                    fill: #535e72;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-96 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-96 {
+                            0% {
+                                fill: #535e72;
+                            }
+
+                            35% {
+                                fill: #2e333d;
+                            }
+
+                            100% {
+                                fill: #535e72;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-97 {
+                    fill: #8792a7;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-97 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-97 {
+                            0% {
+                                fill: #8792a7;
+                            }
+
+                            35% {
+                                fill: #bfc8db;
+                            }
+
+                            100% {
+                                fill: #8792a7;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-98 {
+                    fill: #606878;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-98 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-98 {
+                            0% {
+                                fill: #606878;
+                            }
+
+                            35% {
+                                fill: #97a3ba;
+                            }
+
+                            100% {
+                                fill: #606878;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-99 {
+                    fill: #424a58;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-99 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-99 {
+                            0% {
+                                fill: #424a58;
+                            }
+
+                            35% {
+                                fill: #242930;
+                            }
+
+                            100% {
+                                fill: #424a58;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-100 {
+                    fill: #878c98;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-100 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-100 {
+                            0% {
+                                fill: #878c98;
+                            }
+
+                            35% {
+                                fill: #dce2ef;
+                            }
+
+                            100% {
+                                fill: #878c98;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-101 {
+                    fill: #969ca3;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-101 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-101 {
+                            0% {
+                                fill: #969ca3;
+                            }
+
+                            35% {
+                                fill: #dde4eb;
+                            }
+
+                            100% {
+                                fill: #969ca3;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-102 {
+                    fill: #bdc3cc;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-102 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-102 {
+                            0% {
+                                fill: #bdc3cc;
+                            }
+
+                            35% {
+                                fill: #eef2f7;
+                            }
+
+                            100% {
+                                fill: #bdc3cc;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-103 {
+                    fill: #bfc6ce;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-103 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-103 {
+                            0% {
+                                fill: #bfc6ce;
+                            }
+
+                            35% {
+                                fill: #eef2f6;
+                            }
+
+                            100% {
+                                fill: #bfc6ce;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-104 {
+                    fill: #a4a8b3;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-104 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-104 {
+                            0% {
+                                fill: #a4a8b3;
+                            }
+
+                            35% {
+                                fill: #767982;
+                            }
+
+                            100% {
+                                fill: #a4a8b3;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-105 {
+                    fill: #a9acb8;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-105 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-105 {
+                            0% {
+                                fill: #a9acb8;
+                            }
+
+                            35% {
+                                fill: #8c8e97;
+                            }
+
+                            100% {
+                                fill: #a9acb8;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-106 {
+                    fill: #a8abb7;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-106 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-106 {
+                            0% {
+                                fill: #a8abb7;
+                            }
+
+                            35% {
+                                fill: #dddfe6;
+                            }
+
+                            100% {
+                                fill: #a8abb7;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-107 {
+                    fill: #a7a9b6;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-107 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-107 {
+                            0% {
+                                fill: #a7a9b6;
+                            }
+
+                            35% {
+                                fill: #717279;
+                            }
+
+                            100% {
+                                fill: #a7a9b6;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-108 {
+                    fill: #abafba;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-108 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-108 {
+                            0% {
+                                fill: #abafba;
+                            }
+
+                            35% {
+                                fill: #f6f7fa;
+                            }
+
+                            100% {
+                                fill: #abafba;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-109 {
+                    fill: #aaadb9;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-109 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-109 {
+                            0% {
+                                fill: #aaadb9;
+                            }
+
+                            35% {
+                                fill: #ebedf5;
+                            }
+
+                            100% {
+                                fill: #aaadb9;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-110 {
+                    fill: #acb0bb;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-110 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-110 {
+                            0% {
+                                fill: #acb0bb;
+                            }
+
+                            35% {
+                                fill: #73767e;
+                            }
+
+                            100% {
+                                fill: #acb0bb;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-111 {
+                    fill: #a7aab5;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-111 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-111 {
+                            0% {
+                                fill: #a7aab5;
+                            }
+
+                            35% {
+                                fill: #f6f7fb;
+                            }
+
+                            100% {
+                                fill: #a7aab5;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-112 {
+                    fill: #a7abb6;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-112 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-112 {
+                            0% {
+                                fill: #a7abb6;
+                            }
+
+                            35% {
+                                fill: #e8eaf1;
+                            }
+
+                            100% {
+                                fill: #a7abb6;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-113 {
+                    fill: #afb2be;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-113 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-113 {
+                            0% {
+                                fill: #afb2be;
+                            }
+
+                            35% {
+                                fill: #e2e4ed;
+                            }
+
+                            100% {
+                                fill: #afb2be;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-114 {
+                    fill: #c9ced8;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-114 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-114 {
+                            0% {
+                                fill: #c9ced8;
+                            }
+
+                            35% {
+                                fill: #f5f6fa;
+                            }
+
+                            100% {
+                                fill: #c9ced8;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-115 {
+                    fill: #d1d6e1;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-115 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-115 {
+                            0% {
+                                fill: #d1d6e1;
+                            }
+
+                            35% {
+                                fill: #f0f2f8;
+                            }
+
+                            100% {
+                                fill: #d1d6e1;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-116 {
+                    fill: #ced3de;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-116 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-116 {
+                            0% {
+                                fill: #ced3de;
+                            }
+
+                            35% {
+                                fill: #f2f6ff;
+                            }
+
+                            100% {
+                                fill: #ced3de;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-117 {
+                    fill: #cfd5e0;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-117 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-117 {
+                            0% {
+                                fill: #cfd5e0;
+                            }
+
+                            35% {
+                                fill: #fcfcfc;
+                            }
+
+                            100% {
+                                fill: #cfd5e0;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-118 {
+                    fill: #c5cbd4;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-118 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-118 {
+                            0% {
+                                fill: #c5cbd4;
+                            }
+
+                            35% {
+                                fill: #f5f7fa;
+                            }
+
+                            100% {
+                                fill: #c5cbd4;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-119 {
+                    fill: #ced4de;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-119 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-119 {
+                            0% {
+                                fill: #ced4de;
+                            }
+
+                            35% {
+                                fill: #fafbfc;
+                            }
+
+                            100% {
+                                fill: #ced4de;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-120 {
+                    fill: #cacfda;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-120 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-120 {
+                            0% {
+                                fill: #cacfda;
+                            }
+
+                            35% {
+                                fill: #f9f9fa;
+                            }
+
+                            100% {
+                                fill: #cacfda;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-121 {
+                    fill: #c9cdd8;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-121 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-121 {
+                            0% {
+                                fill: #c9cdd8;
+                            }
+
+                            35% {
+                                fill: #f7f8f8;
+                            }
+
+                            100% {
+                                fill: #c9cdd8;
+                            }
+                        }
+                    }
+                }
+
+                &.cls-122 {
+                    fill: #cdd2dd;
+
+                    &.shard--shimmer {
+                        @include animation( polyNinja-shimmer-cls-122 2s linear forwards );
+
+                        @keyframes polyNinja-shimmer-cls-122 {
+                            0% {
+                                fill: #cdd2dd;
+                            }
+
+                            35% {
+                                fill: #f1f3f8;
+                            }
+
+                            100% {
+                                fill: #cdd2dd;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.about_bomb-btn--ninja {
+    left: -170px;
+}

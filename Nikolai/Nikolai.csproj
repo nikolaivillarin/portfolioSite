@@ -516,6 +516,7 @@
     <Content Include="Content\Molecules\_msLogoPoly.scss" />
     <Content Include="Content\Molecules\_babyYodaPoly.scss" />
     <Content Include="Content\Molecules\_dogPoly.scss" />
+    <Content Include="Content\Molecules\_ninjaPoly.scss" />
     <None Include="Properties\PublishProfiles\Local Host.pubxml" />
     <None Include="Properties\PublishProfiles\Winhost Release.pubxml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />

@@ -531,11 +531,9 @@ AboutPage.prototype.TooglePageGraphicAnimation = function (direction) {
     if (selectedPage.pageGraphic &&
         selectedPage.pageGraphic.TranslateAnimationComplete) {
         // Ensure no pending animations are occuring before animating further
-        let animationDuration = 800;
         let groupAnimScalar = 50;
 
         if (selectedPage.pageGraphic.IsScattered === false) {
-            animationDuration = 800;
             groupAnimScalar = 15;
         }
 
@@ -543,26 +541,26 @@ AboutPage.prototype.TooglePageGraphicAnimation = function (direction) {
             case 'up':
                 window.setTimeout(() => {
                     selectedPage.pageGraphic.IsScattered ?
-                        selectedPage.pageGraphic.TransitionBottomToTop(animationDuration, groupAnimScalar) :
-                        selectedPage.pageGraphic.TransitionIndividualShardsBottomToTop(animationDuration, groupAnimScalar);
+                        selectedPage.pageGraphic.TransitionBottomToTop(500, groupAnimScalar) :
+                        selectedPage.pageGraphic.TransitionIndividualShardsBottomToTop(300, groupAnimScalar);
                 }, 300);
                 break;
             case 'down':
                 window.setTimeout(() => {
                     selectedPage.pageGraphic.IsScattered ?
-                        selectedPage.pageGraphic.TransitionTopToBottom(animationDuration, groupAnimScalar) :
-                        selectedPage.pageGraphic.TransitionIndividualShardsTopToBottom(animationDuration, groupAnimScalar);
+                        selectedPage.pageGraphic.TransitionTopToBottom(500, groupAnimScalar) :
+                        selectedPage.pageGraphic.TransitionIndividualShardsTopToBottom(300, groupAnimScalar);
                 }, 300);
                 break;
             case 'left':
                 selectedPage.pageGraphic.IsScattered ?
-                    selectedPage.pageGraphic.TransitionRightToLeft(animationDuration, groupAnimScalar) :
-                    selectedPage.pageGraphic.TransitionIndividualShardsRightToLeft(animationDuration, groupAnimScalar);
+                    selectedPage.pageGraphic.TransitionRightToLeft(800, groupAnimScalar) :
+                    selectedPage.pageGraphic.TransitionIndividualShardsRightToLeft(800, groupAnimScalar);
                 break;
             case 'right':
                 selectedPage.pageGraphic.IsScattered ?
-                    selectedPage.pageGraphic.TransitionLeftToRight(animationDuration, groupAnimScalar) :
-                    selectedPage.pageGraphic.TransitionIndividualShardsLeftToRight(animationDuration, groupAnimScalar);
+                    selectedPage.pageGraphic.TransitionLeftToRight(800, groupAnimScalar) :
+                    selectedPage.pageGraphic.TransitionIndividualShardsLeftToRight(800, groupAnimScalar);
                 break;
         }
 
