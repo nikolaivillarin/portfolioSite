@@ -260,13 +260,15 @@ AboutPage.prototype.OnPageMouseWheel = function (evt) {
         that.scroll.isThrottled = false;
     }, this.scroll.throttleDuration);
 
-    if (evt.deltaY < 0) {
+    // Delay to prevent scrolling of multiple pages
+    console.log(evt.deltaY);
+    if (evt.deltaY < 0 && evt.deltaY <= -30) {
         if (this.selectedPageIndex === 0) {
             return false;
         } else {
             this.UpSection();
         }
-    } else {
+    } else if (evt.deltaY >= 30) {
         if (this.selectedPageIndex >= this.totalPages - 1) {
             return false;
         } else {

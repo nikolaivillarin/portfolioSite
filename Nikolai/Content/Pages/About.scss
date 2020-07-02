@@ -26,8 +26,16 @@
 }
 
 .about-profile-pic {
-    height: 360px;
-    overflow: hidden;
+
+    img {
+        width: 100%;
+    }
+
+    @include breakpoint(min-width $breakpoint-phablet) {
+        img {
+            width: auto;
+        }
+    }
 }
 
 .about-profile-pic--motionAnim {
@@ -38,22 +46,27 @@
 
     @keyframes imgMotion {
         0% {
-            filter: grayscale(50%);
             @include transform(scale(1) translateY(0px));
         }
 
         100% {
-            filter: grayscale(0%);
             @include transform(scale(1.05) translateY(20px));
         }
     }
 }
 
 .about-me {
-    padding: 3em;
+    background-color: $color-background--grey;
+    padding: 2em 0;
+
+    @include breakpoint(min-width $breakpoint-phablet) {
+        padding: 3em;
+    }
 
     .header-main {
+        font-size: 3em;
         flex: 0 0 2em;
+        margin-bottom: -0.5em;
     }
 
     &__content {
@@ -62,15 +75,32 @@
     }
 
     .about-text {
-        max-width: 460px;
+        display: none;
         position: absolute;
-        right: -20px;
         top: 25%;
+
+        @include breakpoint(min-width $breakpoint-phablet) {
+            display: block;
+            max-width: 400px;
+            right: 130px;
+        }
+
+        @include breakpoint(min-width $breakpoint-tablet) {
+            max-width: 460px;
+            right: 50px;
+        }
+
+        @include breakpoint(min-width $breakpoint-netbook) {
+            right: -20px;
+        }
     }
 
     .about-me__content {
-        padding-right: 10em;
         position: relative;
+
+        @include breakpoint(min-width $breakpoint-netbook) {
+            padding-right: 10em;
+        }
     }
 }
 
@@ -454,6 +484,10 @@ $frameDuration: 0.8s;
         .about-screen__target {
             opacity: 0;
         }
+
+        .header-main .about-screen_header {
+            text-align: left;
+        }
     }
 }
 
@@ -473,15 +507,19 @@ $frameDuration: 0.8s;
     display: none;
     position: absolute;
     right: 2.5em;
-    top: 50%;
+    top: 3.8em;
     width: 1em;
-
-    @include transform(translateY(-50%));
 
     @extend %box-level--modular;
 
     @include breakpoint(max-width $breakpoint-phablet) {
         right: 1.8em;
+    }
+
+    @include breakpoint(min-width $breakpoint-netbook) {
+        top: 50%;
+
+        @include transform(translateY(-50%));
     }
 }
 
