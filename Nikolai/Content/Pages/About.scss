@@ -61,7 +61,7 @@
     padding: 2em 0;
 
     @include breakpoint(min-width $breakpoint-phablet) {
-        padding: 3em;
+        padding: 3em !important;
     }
 
     .header-main {
@@ -76,9 +76,7 @@
     }
 
     .about-text {
-        display: none;
         position: absolute;
-        top: 259px;
 
         @include breakpoint(min-width $breakpoint-phablet) {
             display: block;
@@ -89,6 +87,17 @@
         @include breakpoint(min-width $breakpoint-tablet) {
             max-width: 460px;
             right: 50px;
+        }
+
+        &.header-small {
+            font-size: 1em;
+            width: 100%;
+            padding: 1em;
+
+            @include breakpoint(min-width $breakpoint-phablet) {
+                font-size: 1.333em;
+                top: 259px;
+            }
         }
     }
 
@@ -112,33 +121,60 @@ $frameDuration: 0.8s;
     background-color: $color-background--lightGrey;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     height: 100vh;
+    padding-top: 3em;
     width: 100%;
+
+    @include breakpoint(min-width $breakpoint-phablet) {
+        padding-top: 0;
+        justify-content: center;
+    }
 
     h1 {
         margin-bottom: 0.3em;
     }
 
     .about-screen__svg {
-        min-width: 30%;
+        width: 50%;
         position: relative;
+
+        @include breakpoint(min-width $breakpoint-phablet) {
+            width: auto;
+            min-width: 30%;
+        }
     }
 
     .about-screen__splash {
-        padding-left: 5em;
         text-align: center;
+        padding: 3em 1em;
 
         @include transition(transform 0.2s linear);
-        @include transform(translate(-27%, -4.5em));
+        @include transform(translate(0%, -9em));
+
+        @include breakpoint(min-width $breakpoint-mobileBig) {
+            padding-top: 8em;
+        }
+
+        @include breakpoint(min-width $breakpoint-phablet) {
+            padding: 0;
+            padding-left: 5em;
+
+            @include transform(translate(-27%, -4.5em));
+        }
 
         .header-main {
+            font-size: 2em;
             margin-bottom: 1.2em;
             padding-left: 0px;
             width: 100%;
 
             @include transition(transform 0.2s linear);
             @include transform(translateX(50%));
+
+            @include breakpoint(min-width $breakpoint-phablet) {
+                font-size: 4em;
+            }
 
             .about-screen_header, .about-screen_subHeader {
                 display: block;
@@ -188,13 +224,18 @@ $frameDuration: 0.8s;
                 content: "";
                 display: block;
                 left: 50%;
-                height: 150px;
+                height: 130px;
                 position: absolute;
                 top: 50%;
-                width: 150px;
+                width: 130px;
 
                 @include transition(background-color $frameDuration linear);
                 @include transform(translate(-50%, -50%));
+
+                @include breakpoint(min-width $breakpoint-phablet) {
+                    height: 150px;
+                    width: 150px;
+                }
             }
 
             &:focus {
@@ -202,9 +243,14 @@ $frameDuration: 0.8s;
             }
 
             .target-text {
+                font-size: 0.9em;
                 opacity: 1;
 
                 @include transition(opacity $frameDuration linear);
+
+                @include breakpoint(min-width $breakpoint-phablet) {
+                    font-size: 1em;
+                }
             }
         }
     }
@@ -279,16 +325,26 @@ $frameDuration: 0.8s;
     &__content {
         align-items: center;
         display: flex;
+        flex-direction: column;
         max-width: 1050px;
         position: relative;
+
+        @include breakpoint(min-width $breakpoint-phablet) {
+            flex-direction: row;
+        }
     }
 
     .about-bomb-btn {
+        display: none;
         cursor: pointer;
         position: absolute;
         top: 50%;
 
         @include transform(translateY(-60%));
+
+        @include breakpoint(min-width 1250px) {
+            display: block;
+        }
 
         .about_bombIcon {
             display: flex;
@@ -448,10 +504,14 @@ $frameDuration: 0.8s;
         }
 
         .about-screen__target {
-            @include transform(translate(-325%, -65%));
+            @include transform(translate(-50%, -285%));
+
+            @include breakpoint(min-width $breakpoint-phablet) {
+                @include transform(translate(-325%, -65%));
+            }
         }
 
-        .header-main .about-screen_subHeader {
+        .header-main .about-screen_subHeader, .header-main .about-screen_header {
             text-align: left;
         }
     }
@@ -460,7 +520,11 @@ $frameDuration: 0.8s;
 .about-screen--animState3 {
     .about-screen__splash {
         .about-screen__target {
-            @include transform(translate(-325%, -65%) scale(0.2));
+            @include transform(translate(-50%, -285%) scale(0.2));
+
+            @include breakpoint(min-width $breakpoint-phablet) {
+                @include transform(translate(-325%, -65%) scale(0.2));
+            }
 
             .target-text {
                 opacity: 0;
