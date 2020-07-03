@@ -45,7 +45,7 @@ MicroInteraction.prototype.WrapWords = function (str, tmpl) {
     /// The given input split by words wrapped in a span
     /// </returns>
 
-    return str.replace(/[\w\.\-,'"]+/g, tmpl || "<span>$&</span>");
+    return str.replace(/[\w\.\-?,'"]+/g, tmpl || "<span>$&</span>");
 };
 
 MicroInteraction.prototype.SetupTextAnimation = function () {

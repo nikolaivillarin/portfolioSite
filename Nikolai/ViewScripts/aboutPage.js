@@ -261,7 +261,6 @@ AboutPage.prototype.OnPageMouseWheel = function (evt) {
     }, this.scroll.throttleDuration);
 
     // Delay to prevent scrolling of multiple pages
-    console.log(evt.deltaY);
     if (evt.deltaY < 0 && evt.deltaY <= -30) {
         if (this.selectedPageIndex === 0) {
             return false;

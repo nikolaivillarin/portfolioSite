@@ -26,6 +26,7 @@
 }
 
 .about-profile-pic {
+    overflow: hidden;
 
     img {
         width: 100%;
@@ -46,11 +47,11 @@
 
     @keyframes imgMotion {
         0% {
-            @include transform(scale(1) translateY(0px));
+            @include transform(scale(1));
         }
 
         100% {
-            @include transform(scale(1.05) translateY(20px));
+            @include transform(scale(1.05));
         }
     }
 }
@@ -77,7 +78,7 @@
     .about-text {
         display: none;
         position: absolute;
-        top: 25%;
+        top: 259px;
 
         @include breakpoint(min-width $breakpoint-phablet) {
             display: block;
@@ -88,10 +89,6 @@
         @include breakpoint(min-width $breakpoint-tablet) {
             max-width: 460px;
             right: 50px;
-        }
-
-        @include breakpoint(min-width $breakpoint-netbook) {
-            right: -20px;
         }
     }
 
@@ -136,7 +133,7 @@ $frameDuration: 0.8s;
         @include transform(translate(-27%, -4.5em));
 
         .header-main {
-            margin-bottom: 2.2em;
+            margin-bottom: 1.2em;
             padding-left: 0px;
             width: 100%;
 
@@ -453,6 +450,10 @@ $frameDuration: 0.8s;
         .about-screen__target {
             @include transform(translate(-325%, -65%));
         }
+
+        .header-main .about-screen_subHeader {
+            text-align: left;
+        }
     }
 }
 
@@ -483,10 +484,6 @@ $frameDuration: 0.8s;
     .about-screen__splash {
         .about-screen__target {
             opacity: 0;
-        }
-
-        .header-main .about-screen_header {
-            text-align: left;
         }
     }
 }
