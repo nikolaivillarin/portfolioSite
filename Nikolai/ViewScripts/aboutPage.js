@@ -261,13 +261,13 @@ AboutPage.prototype.OnPageMouseWheel = function (evt) {
     }, this.scroll.throttleDuration);
 
     // Delay to prevent scrolling of multiple pages
-    if (evt.deltaY < 0 && evt.deltaY <= -30) {
+    if (evt.deltaY < 0 && evt.deltaY <= -20) {
         if (this.selectedPageIndex === 0) {
             return false;
         } else {
             this.UpSection();
         }
-    } else if (evt.deltaY >= 30) {
+    } else if (evt.deltaY >= 20) {
         if (this.selectedPageIndex >= this.totalPages - 1) {
             return false;
         } else {
