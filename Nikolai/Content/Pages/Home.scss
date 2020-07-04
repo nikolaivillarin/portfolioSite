@@ -98,21 +98,3 @@
         padding-top: 5em;
     }
 }
-
-.home-header {
-    @extend %slide-top--initialState;
-}
-
-.home-header.in-view {
-    @extend %slide-top--endState;
-}
-
-.home-subHeader {
-    @extend %slide-top--initialState;
-    @include transition-delay(0);
-}
-
-.home-subHeader.in-view {
-    @include transition-delay(0.5s);
-    @extend %slide-top--endState;
-}

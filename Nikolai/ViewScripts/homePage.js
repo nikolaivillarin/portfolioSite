@@ -13,7 +13,8 @@ HomePage.prototype = {
     , $Canvas: null
     , BubbleCanvas: null
     , DialJiggleIntervalID: 0
-    , ScrollAnimation: null
+    , MicroInteraction: null
+    , PageDisable: true
 };
 
 HomePage.prototype.Initialize = function () {
@@ -21,7 +22,7 @@ HomePage.prototype.Initialize = function () {
         $.proxy(this.OnPageChange, this)
     );
 
-    this.ScrollAnimation = new window.ScrollAnimation('home');
+    this.MicroInteraction = new window.MicroInteraction('home');
 
     this.SetupCanvas();
 
@@ -53,26 +54,44 @@ HomePage.prototype.EnableCanvas = function () {
     this.BubbleCanvas.StartAnimation();
 };
 
-HomePage.prototype.OnPageChange = function (pageId) {
+HomePage.prototype.OnPageChange = function (pageId, previousPageId) {
     /// <summary>
     /// Function which is called when page is changed
     /// </summary>
-    if (pageId && pageId === 'home' && this.$Element.width() > 0) {
+    if (pageId && pageId === 'home' &&
+        this.$Element.width() > 0 &&
+        previousPageId && previousPageId === 'work') {
         this.EnableCanvas();
 
         this.EnableDialJiggle();
 
-        this.ScrollAnimation.Enable();
+        this.PageDisable = false;
 
-        $('#pnlNavOnboarding').addClass('in-view');
+        this.MicroInteraction.TriggerAnimation(
+            'left',
+            this.$Element
+        );
+    } else if (pageId && pageId === 'home' && this.$Element.width() > 0) {
+        this.EnableCanvas();
+
+        this.EnableDialJiggle();
+
+        this.PageDisable = false;
+
+        this.MicroInteraction.TriggerAnimation(
+            'up',
+            this.$Element
+        );
     } else {
         this.DisableCanvas();
 
         this.DisableDialJiggle();
 
-        this.ScrollAnimation.Disable();
+        if (this.PageDisable === false) {
+            this.MicroInteraction.ResetAnimation();
 
-        $('#pnlNavOnboarding').removeClass('in-view');
+            this.PageDisable = true;
+        }
     }
 };
 
