@@ -9,7 +9,6 @@
     font-size: 1.2em;
     text-align: center;
     -webkit-overflow-scrolling: auto !important; // To fix bug on iPhone. Without this images disappear
-
     @extend %box--fullPage;
     @extend %box-level--modular;
 
@@ -25,48 +24,28 @@
 
         @extend %box-level--back;
     }
+
+    .contact__socialIcons {
+        padding: 0;
+
+        .socialIcon {
+            display: inline-block;
+            float: none;
+            margin-right: 0;
+
+            &.socialIcon--github {
+                background-position: 1px 0px;
+
+                &::before {
+                    margin-left: -2px;
+                }
+            }
+        }
+    }
 }
 
 .menu-links {
     @extend %box--squished;
-}
-
-.menu-links--1 {
-    @extend %slide-top--initialState;
-}
-
-.menu-links--1.in-view {
-    @extend %slide-top--endState;
-}
-
-.menu-links--2 {
-    @include transition-delay(0);
-    @extend %slide-top--initialState;
-}
-
-.menu-links--2.in-view {
-    @include transition-delay(0.5s);
-    @extend %slide-top--endState;
-}
-
-.menu-links--3 {
-    @include transition-delay(0);
-    @extend %slide-top--initialState;
-}
-
-.menu-links--3.in-view {
-    @include transition-delay(0.7s);
-    @extend %slide-top--endState;
-}
-
-.menu-links--4 {
-    @include transition-delay(0);
-    @extend %slide-top--initialState;
-}
-
-.menu-links--4.in-view {
-    @include transition-delay(0.9s);
-    @extend %slide-top--endState;
 }
 
 %menu-selectedLine {

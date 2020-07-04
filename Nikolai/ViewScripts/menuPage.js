@@ -9,7 +9,8 @@
 
 MenuPage.prototype = {
     $Element: null
-    , ScrollAnimation: null
+    , MicroInteraction: null
+    , PageDisable: true
 };
 
 MenuPage.prototype.Initialize = function () {
@@ -21,7 +22,7 @@ MenuPage.prototype.Initialize = function () {
         $.proxy(this.CloseMenuClick, this)
     );
 
-    this.ScrollAnimation = new window.ScrollAnimation('menu');
+    this.MicroInteraction = new window.MicroInteraction('menu');
 };
 
 MenuPage.prototype.CloseMenuClick = function (selectedPageId, previousPageId) {
@@ -56,9 +57,18 @@ MenuPage.prototype.OnPageChange = function (selectedPageId) {
     }
 
     if (selectedPageId && selectedPageId === 'menu') {
-        this.ScrollAnimation.Enable();
+        this.PageDisable = false;
+
+        this.MicroInteraction.TriggerAnimation(
+            'up',
+            this.$Element
+        );
     } else {
-        this.ScrollAnimation.Disable();
+        if (this.PageDisable === false) {
+            this.MicroInteraction.ResetAnimation();
+
+            this.PageDisable = true;
+        }
     }
 };
 
