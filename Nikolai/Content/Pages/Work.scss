@@ -15,8 +15,9 @@
     height: 100vh;
     position: relative;
     text-align: center;
+    overflow: hidden;
     width: 100%;
-    
+
     @include box-sizing(border-box);
 
     @include breakpoint($breakpoint-phablet $breakpoint-netbook) {
@@ -54,13 +55,21 @@
 
     h1, h2, .work-header.in-view, .work-subHeader.in-view {
         /*opacity: 1;*/
-
         @include transition(0.3s opacity cubic-bezier(0.55, 0.055, 0.675, 0.19));
+    }
+
+    .header-large {
+        /* 
+            Override default font size due to bug. Since the size of the copy dictates the width of a column
+            on 4em in certain screen resolutions (1024px) the four column layout becomes three with an empty 
+            space to the right
+        */
+        font-size: 3em;
     }
 }
 
 %workItem--active {
-     h1, h2, .work-header.in-view, .work-subHeader.in-view {
+    h1, h2, .work-header.in-view, .work-subHeader.in-view {
         opacity: 0;
 
         @include transition-delay(0);
@@ -70,6 +79,10 @@
         opacity: 0.2;
 
         @include transition-delay(0);
+    }
+
+    .work-imgTile {
+        @include transform(scale(1.05));
     }
 }
 
@@ -115,6 +128,11 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+
+    @include transition(transform 5s ease-in-out);
 }
 
 .work-closeTarget {

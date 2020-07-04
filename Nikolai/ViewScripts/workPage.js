@@ -3,13 +3,16 @@ function WorkPage() {
     /// <summary>
     /// Default Constructor
     /// </summary>
+    this.$Element = $('#work');
+
     this.Initialize();
 }
 //#endregion
 
 //#region Properties
 WorkPage.prototype = {
-    IsSelected: false
+    $Element: null
+    , IsSelected: false
     // Specifies if the slider is animating
     , IsAnimating: false
     // Slider Container
@@ -17,6 +20,8 @@ WorkPage.prototype = {
     , $selectedItem: null
     // Used for scroll optimization
     , HasScrollTicked: false
+    , MicroInteraction: null
+    , PageDisable: true
 };
 //#endregion
 
@@ -29,6 +34,8 @@ WorkPage.prototype.Initialize = function () {
     );
 
     $('#work [data-nv-bgimage]').click(this.ItemClick);
+
+    this.MicroInteraction = new window.MicroInteraction('work');
 
     // Global Event Handlers
     $(window).resize(
@@ -140,22 +147,36 @@ WorkPage.prototype.UnsubscribeToPageSpecificEvents = function () {
     );
 };
 
-WorkPage.prototype.OnPageChange = function (pageId) {
+WorkPage.prototype.OnPageChange = function (pageId, previousPageId) {
     /// <summary>
     /// Function which is called when page is changed
     /// </summary>
     var that = this;
-
-    if (pageId && pageId === 'work') {
+    var enablePage = (microInteractionDirection) => {
         this.IsSelected = true;
 
         this.EnablePageIndicator();
 
         this.SubscribeToPageSpecificEvents();
 
+        this.MicroInteraction.TriggerAnimation(
+            microInteractionDirection,
+            this.$Element
+        );
+
         window.setTimeout(function () {
             that.HideViewMoreInstructions();
         }, 1000);
+    };
+
+    if (pageId && pageId === 'work' &&
+        previousPageId && previousPageId === 'home') {
+        enablePage('left');
+    } else if (pageId && pageId === 'work' &&
+        previousPageId && previousPageId === 'about') {
+        enablePage('right');
+    } else if (pageId && pageId === 'work') {
+        enablePage('up');
     } else {
         this.IsSelected = false;
 
@@ -164,6 +185,8 @@ WorkPage.prototype.OnPageChange = function (pageId) {
         this.UnsubscribeToPageSpecificEvents();
 
         this.ShowViewMoreInstructions();
+
+        this.MicroInteraction.ResetAnimation();
     }
 };
 
