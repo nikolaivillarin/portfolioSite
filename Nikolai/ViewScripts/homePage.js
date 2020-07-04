@@ -3,6 +3,7 @@
     /// Home page default constructor
     /// </summary>
     this.$Element = $('#home');
+    this.$ElementOnboarding = $('#pnlNavOnboarding');
     this.$Canvas = $('#heroImageCanvas');
 
     this.Initialize();
@@ -10,6 +11,7 @@
 
 HomePage.prototype = {
     $Element: null
+    , $ElementOnboarding: null
     , $Canvas: null
     , BubbleCanvas: null
     , DialJiggleIntervalID: 0
@@ -71,6 +73,8 @@ HomePage.prototype.OnPageChange = function (pageId, previousPageId) {
             'left',
             this.$Element
         );
+
+        this.$ElementOnboarding.addClass('in-view');
     } else if (pageId && pageId === 'home' && this.$Element.width() > 0) {
         this.EnableCanvas();
 
@@ -82,6 +86,8 @@ HomePage.prototype.OnPageChange = function (pageId, previousPageId) {
             'up',
             this.$Element
         );
+
+        this.$ElementOnboarding.addClass('in-view');
     } else {
         this.DisableCanvas();
 
@@ -89,6 +95,8 @@ HomePage.prototype.OnPageChange = function (pageId, previousPageId) {
 
         if (this.PageDisable === false) {
             this.MicroInteraction.ResetAnimation();
+
+            this.$ElementOnboarding.removeClass('in-view');
 
             this.PageDisable = true;
         }
