@@ -70,7 +70,7 @@ HomePage.prototype.OnPageChange = function (pageId, previousPageId) {
         this.PageDisable = false;
 
         this.MicroInteraction.TriggerAnimation(
-            'left',
+            'right',
             this.$Element
         );
 

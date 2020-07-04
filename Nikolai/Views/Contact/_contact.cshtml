@@ -6,18 +6,32 @@
         <div data-nv-bgimage="true" class="contact">
             <section class="contact__container cf">
                 <div id="contactSummary" class="contact__content contact__summary">
-                    <h1 class="contact__header header-main--onDark header-medium">Contact Me</h1>
+                    <h1 data-nv-animate
+                        data-nv-animate-delay="0"
+                        data-nv-animate-type="text"
+                        class="contact__header header-main--onDark header-medium">
+                        Contact Me
+                    </h1>
                     <div class="contact__text">
-                        <p class="contact__summary-content text-secondary--OnDark">
+                        <p data-nv-animate="noWrap"
+                           data-nv-animate-delay="300"
+                           data-nv-animate-type="block"
+                           class="contact__summary-content text-secondary--OnDark">
                             I don’t bite and I’m always available to chat. Reach out anytime and I will get back as soon as I can.
                         </p>
                         <br />
-                        <p class="contact__summary-content text-secondary--OnDark">
+                        <p data-nv-animate="noWrap"
+                           data-nv-animate-delay="600"
+                           data-nv-animate-type="block"
+                           class="contact__summary-content text-secondary--OnDark">
                             If you prefer to contact me directly email me at
                             <a href="mailto:hello@nikolaivillarin.com" data-nv-ignore="true" target="_top" class="link--blue">hello@nikolaivillarin.com</a>
                         </p>
                         <br />
-                        <div class="contact__socialIcons cf">
+                        <div data-nv-animate="noWrap"
+                             data-nv-animate-delay="900"
+                             data-nv-animate-type="block"
+                             class="contact__socialIcons cf">
                             <a href="https://www.linkedin.com/in/nikolai-villarin-b13b61130/" data-nv-ignore="true" class="socialIcon socialIcon--linkedin" target="_blank" title="LinkedIn">&nbsp;</a>
                             <a href="https://github.com/nikolaivillarin" data-nv-ignore="true" class="socialIcon socialIcon--github" target="_blank" title="GitHub">&nbsp;</a>
                         </div>
@@ -26,7 +40,12 @@
                 @using (Html.BeginForm("Message", "Contact", FormMethod.Post, new { id = "frmContact", @class = "contact__content contact__form" }))
                 {
                     <div class="contact__form-content">
-                        <h1 class="contact__header header-main--onDark header-medium">Leave a Message</h1>
+                        <h1 data-nv-animate
+                            data-nv-animate-delay="0"
+                            data-nv-animate-type="text"
+                            class="contact__header header-main--onDark header-medium">
+                            Leave a Message
+                        </h1>
                     </div>
                     <div class="contact__form-sentMsg">
                         <h1 class="contact__header header-main--onDark header-medium">
@@ -34,17 +53,26 @@
                         </h1>
                     </div>
                     <div class="contact__form-content contact__formFields cf">
-                        <div class="contact__inputGroup">
+                        <div data-nv-animate="noWrap"
+                             data-nv-animate-delay="300"
+                             data-nv-animate-type="block"
+                             class="contact__inputGroup">
                             @Html.LabelFor(x => x.Name, new { @class = "text-primary--OnDark contact__label" })
                             <br />
                             @Html.TextBoxFor(x => x.Name, new { @class = "contact__textbox" })
                         </div>
-                        <div class="contact__inputGroup">
+                        <div data-nv-animate="noWrap"
+                             data-nv-animate-delay="600"
+                             data-nv-animate-type="block"
+                             class="contact__inputGroup">
                             @Html.LabelFor(x => x.Email, new { @class = "text-primary--OnDark contact__label" })
                             <br />
                             @Html.TextBoxFor(x => x.Email, new { @class = "contact__textbox" })
                         </div>
-                        <div class="contact__inputGroup">
+                        <div data-nv-animate="noWrap"
+                             data-nv-animate-delay="900"
+                             data-nv-animate-type="block"
+                             class="contact__inputGroup">
                             @Html.LabelFor(x => x.Message, new { @class = "text-primary--OnDark contact__label" })
                             <br />
                             @Html.TextBoxFor(x => x.Message, new { @class = "contact__textbox" })

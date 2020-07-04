@@ -3,13 +3,16 @@ function ContactPage() {
     /// <summary>
     /// Default Constructor
     /// </summary>
+    this.$Element = $('#contact');
+
     this.Initialize();
 }
 //#endregion
 
 //#region Properties
 ContactPage.prototype = {
-    $form: null
+    $Element: null
+    , $form: null
     , $AccordionItem1: null
     , $AccordionItem2: null
     , AccordionItem2_SendBtnPositionAdjust: -75
@@ -31,6 +34,7 @@ ContactPage.prototype = {
         /// </summary>
         return this.TransitionEndEventNames[window.Modernizr.prefixed('transition')];
     }
+    , MicroInteraction: null
 };
 //#endregion
 
@@ -44,6 +48,8 @@ ContactPage.prototype.Initialize = function () {
     this.$AccordionItem2 = $('.contact__formFields', this.$form);
 
     this.$AccordionItem2_SendBtn = $('#sendBtnPlaceholder');
+
+    this.MicroInteraction = new window.MicroInteraction('contact');
 
     // Events
     window.MainNav.SubscribeToOnPageChange(
@@ -82,11 +88,29 @@ ContactPage.prototype.OnPageChange = function (pageId, previousPageId) {
     /// <summary>
     /// Function which is called when page is changed
     /// </summary>
-    if (pageId && pageId === 'contact') {
+    if (pageId && pageId === 'contact' &&
+        previousPageId && previousPageId === 'about') {
         this.ClearForm();
+
+        this.MicroInteraction.TriggerAnimation(
+            'left',
+            this.$Element
+        );
+
+        this.PositionDial();
+    } else if (pageId && pageId === 'contact') {
+        this.ClearForm();
+
+        this.MicroInteraction.TriggerAnimation(
+            'up',
+            this.$Element
+        );
 
         this.PositionDial();
     } else if (previousPageId && previousPageId === 'contact') {
+        // Leaving page event
+        this.MicroInteraction.ResetAnimation();
+
         if ($(window).width() <= this.ScreenThreshold) {
             this.CompactStateNoAnimation();
             this.EnableClickableHeaders();

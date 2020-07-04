@@ -21,7 +21,6 @@ WorkPage.prototype = {
     // Used for scroll optimization
     , HasScrollTicked: false
     , MicroInteraction: null
-    , PageDisable: true
 };
 //#endregion
 
