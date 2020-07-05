@@ -100,6 +100,11 @@ AboutPage.prototype.OnPageChanging = function (pageId, previousPageId) {
 
 AboutPage.prototype.OnDialDropped = function () {
     const pageGraphic = this.pages[this.selectedPageIndex].pageGraphic;
+
+    window.setTimeout(() => {
+        window.addEventListener("touchstart", this.OnTouchStart);
+        window.addEventListener("touchend", this.OnTouchEnd);
+    }, 1000);
     
     if (pageGraphic && pageGraphic.TranslateAnimationComplete === false) {
         if (window.MainNav.NavBar.DialControl.$Element.hasClass('nvDial--pulsing') === true) {
@@ -195,6 +200,9 @@ AboutPage.prototype.TogglePageDescription = function (direction = 'up') {
 };
 
 AboutPage.prototype.OnDialDragged = function () {
+    window.removeEventListener("touchstart", this.OnTouchStart);
+    window.removeEventListener("touchend", this.OnTouchEnd);
+
     if (!this.pages[this.selectedPageIndex].pageGraphic) {
         // No page graphic so no drop target
         return;
