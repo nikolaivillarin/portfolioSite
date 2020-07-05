@@ -245,6 +245,30 @@ AboutPage.prototype.OnTargetClick = function () {
     });
 };
 
+AboutPage.prototype.OnTouchStart = function (evt) {
+    this.touchStartYPos = evt.touches[0].clientY;
+};
+
+AboutPage.prototype.OnTouchEnd = function (evt) {
+    this.touchEndYPos = evt.changedTouches[0].clientY;
+    
+    const deltaY = this.touchStartYPos - this.touchEndYPos;
+
+    if (deltaY < 0) {
+        if (this.selectedPageIndex === 0) {
+            return false;
+        } else {
+            this.UpSection();
+        }
+    } else {
+        if (this.selectedPageIndex >= this.totalPages - 1) {
+            return false;
+        } else {
+            this.DownSection();
+        }
+    }
+};
+
 AboutPage.prototype.OnPageMouseWheel = function (evt) {
     var that = this;
 
@@ -297,6 +321,8 @@ AboutPage.prototype.Initialize = function () {
 
     // Bind Scope
     this.OnPageMouseWheel = $.proxy(this.OnPageMouseWheel, this);
+    this.OnTouchStart = $.proxy(this.OnTouchStart, this);
+    this.OnTouchEnd = $.proxy(this.OnTouchEnd, this);
 
     // Event Handlers
     window.MainNav.SubscribeToOnPageChange(
@@ -369,6 +395,8 @@ AboutPage.prototype.SubscribeToPageSpecificEvents = function () {
     );
 
     window.addEventListener("wheel", this.OnPageMouseWheel, { passive: false });
+    window.addEventListener("touchstart", this.OnTouchStart);
+    window.addEventListener("touchend", this.OnTouchEnd);
 
     $('[data-nv-drop-target]').on('click', this.OnTargetClick);
 };
@@ -383,6 +411,8 @@ AboutPage.prototype.UnsubscribeToPageSpecificEvents = function () {
     );
 
     window.removeEventListener("wheel", this.OnPageMouseWheel, { passive: false });
+    window.removeEventListener("touchstart", this.OnTouchStart);
+    window.removeEventListener("touchend", this.OnTouchEnd);
 
     $('[data-nv-drop-target]').off('click', this.OnTargetClick);
 };

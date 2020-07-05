@@ -80,20 +80,24 @@
 
         @include transition-delay(0);
     }
-
-    .work-imgTile {
-        @include transform(scale(1.05));
-    }
 }
 
 .no-touch .work--hoverable {
     &:hover {
-       @extend %workItem--active;
+        @extend %workItem--active;
+
+        .work-imgTile {
+            @include transform(scale(1.05));
+        }
     }
 }
 
 .button-container-viewMore--active {
     @extend %workItem--active;
+
+    .work-imgTile {
+        @include transform(scale(1.05));
+    }
 }
 
 .button-container-viewMore--onBoarding {

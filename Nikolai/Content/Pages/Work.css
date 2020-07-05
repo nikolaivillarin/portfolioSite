@@ -103,7 +103,14 @@ $color-dial--ring3: #2294e5;*/
   -webkit-transition-delay: 0;
   transition-delay: 0; }
 
-.no-touch .work--hoverable:hover .work-imgTile, .button-container-viewMore--active .work-imgTile, .button-container-viewMore--onBoarding .work-imgTile {
+.no-touch .work--hoverable:hover .work-imgTile {
+  -moz-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  -o-transform: scale(1.05);
+  -webkit-transform: scale(1.05);
+  transform: scale(1.05); }
+
+.button-container-viewMore--active .work-imgTile {
   -moz-transform: scale(1.05);
   -ms-transform: scale(1.05);
   -o-transform: scale(1.05);
