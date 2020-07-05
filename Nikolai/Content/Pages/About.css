@@ -327,7 +327,7 @@ $color-dial--ring3: #2294e5;*/
     max-width: 142px;
     opacity: 0;
     position: absolute;
-    top: 16.5vw;
+    top: 15.5vw;
     width: 27%;
     -moz-transition: opacity 1s linear;
     -o-transition: opacity 1s linear;
@@ -348,12 +348,12 @@ $color-dial--ring3: #2294e5;*/
   @media (min-width: 800px) {
     .about-screen.about-screen--babyYoda .about-screen__splash {
       padding: 0;
-      padding-left: 5em;
-      -moz-transform: translate(-58%, -4.5em);
-      -ms-transform: translate(-58%, -4.5em);
-      -o-transform: translate(-58%, -4.5em);
-      -webkit-transform: translate(-58%, -4.5em);
-      transform: translate(-58%, -4.5em); } }
+      padding-left: 2em;
+      -moz-transform: translate(-54%, -4.5em);
+      -ms-transform: translate(-54%, -4.5em);
+      -o-transform: translate(-54%, -4.5em);
+      -webkit-transform: translate(-54%, -4.5em);
+      transform: translate(-54%, -4.5em); } }
   .about-screen.about-screen--babyYoda .about-screen__splash .about-screen__target {
     top: -5em; }
 
@@ -3626,6 +3626,12 @@ $color-dial--ring3: #2294e5;*/
 .about .work-IndicatorContainer {
   bottom: 100px; }
 
+.about .scroll-indicator {
+  display: none; }
+  @media (min-width: 1200px) {
+    .about .scroll-indicator {
+      display: block; } }
+
 .about-text {
   text-align: left; }
 
@@ -4402,6 +4408,7 @@ $color-dial--ring3: #2294e5;*/
     flex-direction: column;
     margin-top: -5em;
     max-width: 1050px;
+    padding: 0 2em;
     position: relative; }
     @media (min-width: 600px) {
       .about-screen__content {
@@ -4511,6 +4518,8 @@ $color-dial--ring3: #2294e5;*/
   background-color: #262626; }
   .about-screen--darkTheme h1, .about-screen--darkTheme p {
     color: #FFF; }
+  .about-screen--darkTheme .header-main {
+    text-shadow: none; }
   .about-screen--darkTheme .about-screen__splash .about-screen__target {
     color: #FFF; }
     .about-screen--darkTheme .about-screen__splash .about-screen__target::before {
@@ -4622,7 +4631,7 @@ $color-dial--ring3: #2294e5;*/
   @media (max-width: 600px) {
     .about-PageIndicatorContainer {
       right: 1.8em; } }
-  @media (min-width: 1000px) {
+  @media (min-width: 1200px) {
     .about-PageIndicatorContainer {
       top: 50%;
       -moz-transform: translateY(-50%);
@@ -4697,4 +4706,8 @@ $color-dial--ring3: #2294e5;*/
       -ms-transform: translate(-70%, 0%);
       -o-transform: translate(-70%, 0%);
       -webkit-transform: translate(-70%, 0%);
-      transform: translate(-70%, 0%); } } }
+      transform: translate(-70%, 0%);
+      -moz-transition: transform 0.8s linear, scale 0.8s linear, opacity 0.8s linear;
+      -o-transition: transform 0.8s linear, scale 0.8s linear, opacity 0.8s linear;
+      -webkit-transition: transform 0.8s linear, scale 0.8s linear, opacity 0.8s linear;
+      transition: transform 0.8s linear, scale 0.8s linear, opacity 0.8s linear; } } }

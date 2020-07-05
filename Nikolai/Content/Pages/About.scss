@@ -13,6 +13,14 @@
     .work-IndicatorContainer {
         bottom: 100px;
     }
+
+    .scroll-indicator {
+        display: none;
+
+        @include breakpoint(min-width $breakpoint-notebook) {
+            display: block;
+        }
+    }
 }
 
 .about-text {
@@ -328,6 +336,7 @@ $frameDuration: 0.8s;
         flex-direction: column;
         margin-top: -5em;
         max-width: 1050px;
+        padding: 0 2em;
         position: relative;
 
         @include breakpoint(min-width $breakpoint-phablet) {
@@ -425,6 +434,10 @@ $frameDuration: 0.8s;
 
     h1, p {
         color: $color-font--primaryOnDark;
+    }
+
+    .header-main {
+        text-shadow: none;
     }
 
     .about-screen__splash {
@@ -578,7 +591,7 @@ $frameDuration: 0.8s;
         right: 1.8em;
     }
 
-    @include breakpoint(min-width $breakpoint-netbook) {
+    @include breakpoint(min-width $breakpoint-notebook) {
         top: 50%;
 
         @include transform(translateY(-50%));
@@ -653,6 +666,7 @@ $frameDuration: 0.8s;
             .about-screen__splash {
                 .about-screen__target {
                     @include transform(translate(-70%, 0%));
+                    @include transition(transform $frameDuration linear, scale $frameDuration linear, opacity $frameDuration linear );
                 }
             }
         }

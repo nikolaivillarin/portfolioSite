@@ -11,7 +11,7 @@
                 max-width: 142px;
                 opacity: 0;
                 position: absolute;
-                top: 16.5vw;
+                top: 15.5vw;
                 width: 27%;
 
                 @include transition(opacity 1s linear);
@@ -30,9 +30,9 @@
 
             @include breakpoint(min-width $breakpoint-tablet) {
                 padding: 0;
-                padding-left: 5em;
+                padding-left: 2em;
 
-                @include transform(translate(-58%, -4.5em));
+                @include transform(translate(-54%, -4.5em));
             }
 
             .about-screen__target {
