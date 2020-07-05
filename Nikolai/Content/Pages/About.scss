@@ -211,7 +211,7 @@ $frameDuration: 0.8s;
             cursor: pointer;
             left: 50%;
             line-height: 1.5em;
-            padding: 3em;
+            padding: 3em; /* Padding to increase touch target */
             position: absolute;
 
             @include transition(transform $frameDuration cubic-bezier(0.68, -0.6, 0.32, 1.6), scale $frameDuration cubic-bezier(0.36, 0, 0.66, -0.56), opacity $frameDuration linear );
@@ -326,6 +326,7 @@ $frameDuration: 0.8s;
         align-items: center;
         display: flex;
         flex-direction: column;
+        margin-top: -5em;
         max-width: 1050px;
         position: relative;
 
@@ -643,5 +644,17 @@ $frameDuration: 0.8s;
 
     &:hover {
         background-color: #2294E5;
+    }
+}
+
+@media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance:none) and (stroke-color:transparent) {
+        .about-screen {
+            .about-screen__splash {
+                .about-screen__target {
+                    @include transform(translate(-70%, 0%));
+                }
+            }
+        }
     }
 }

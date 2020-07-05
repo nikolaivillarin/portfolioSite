@@ -25,7 +25,7 @@
     .header-large {
         font-size: 3em;
 
-        @include breakpoint($breakpoint-mobileBig $breakpoint-phablet) {
+        @include breakpoint(min-width $breakpoint-phablet) {
             font-size: 4em;
         }
     }

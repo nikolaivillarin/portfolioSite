@@ -24,7 +24,7 @@ $color-dial--ring3: #2294e5;*/
 /*------------------------------------*    CSS Breakpoints for different devices
 \*------------------------------------*/
 .about-screen.about-screen--msLogo .about-screen__splash .about-screen__target {
-  bottom: -6em; }
+  top: -3em; }
 
 .about-screen--darkTheme .about-screen__img.about-screen__img-certification {
   display: block;
@@ -338,18 +338,24 @@ $color-dial--ring3: #2294e5;*/
         left: 154px;
         top: 173px; } }
 
-@media (min-width: 600px) {
-  .about-screen.about-screen--babyYoda .about-screen__splash {
-    padding: 0;
-    padding-left: 5em;
-    -moz-transform: translate(-58%, -4.5em);
-    -ms-transform: translate(-58%, -4.5em);
-    -o-transform: translate(-58%, -4.5em);
-    -webkit-transform: translate(-58%, -4.5em);
-    transform: translate(-58%, -4.5em); } }
-
-.about-screen.about-screen--babyYoda .about-screen__splash .about-screen__target {
-  bottom: -2em; }
+.about-screen.about-screen--babyYoda .about-screen__splash {
+  padding-left: 0;
+  -moz-transform: translate(-50%, -4.5em);
+  -ms-transform: translate(-50%, -4.5em);
+  -o-transform: translate(-50%, -4.5em);
+  -webkit-transform: translate(-50%, -4.5em);
+  transform: translate(-50%, -4.5em); }
+  @media (min-width: 800px) {
+    .about-screen.about-screen--babyYoda .about-screen__splash {
+      padding: 0;
+      padding-left: 5em;
+      -moz-transform: translate(-58%, -4.5em);
+      -ms-transform: translate(-58%, -4.5em);
+      -o-transform: translate(-58%, -4.5em);
+      -webkit-transform: translate(-58%, -4.5em);
+      transform: translate(-58%, -4.5em); } }
+  .about-screen.about-screen--babyYoda .about-screen__splash .about-screen__target {
+    top: -5em; }
 
 .about-screen.about-screen--babyYoda.about-screen--animState5 .about-screen__svg .babyYodaEyes {
   opacity: 1; }
@@ -898,7 +904,7 @@ $color-dial--ring3: #2294e5;*/
     transform: translate(-47%, -4.5em); } }
 
 .about-screen.about-screen--polyDog .about-screen__splash .about-screen__target {
-  bottom: -4em; }
+  top: -2em; }
 
 .about-screen .about-screen__img.about-screen__img-polyDog {
   display: block;
@@ -1774,7 +1780,7 @@ $color-dial--ring3: #2294e5;*/
     transform: translate(-27%, -4.5em); } }
 
 .about-screen.about-screen--ninja .about-screen__splash .about-screen__target {
-  bottom: -4em; }
+  top: -4em; }
 
 .about-screen .about-screen__img.about-screen__img-ninja {
   display: block;
@@ -4296,6 +4302,7 @@ $color-dial--ring3: #2294e5;*/
       left: 50%;
       line-height: 1.5em;
       padding: 3em;
+      /* Padding to increase touch target */
       position: absolute;
       -moz-transition: transform 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6), scale 0.8s cubic-bezier(0.36, 0, 0.66, -0.56), opacity 0.8s linear;
       -o-transition: transform 0.8s cubic-bezier(0.68, -0.6, 0.32, 1.6), scale 0.8s cubic-bezier(0.36, 0, 0.66, -0.56), opacity 0.8s linear;
@@ -4393,6 +4400,7 @@ $color-dial--ring3: #2294e5;*/
     align-items: center;
     display: flex;
     flex-direction: column;
+    margin-top: -5em;
     max-width: 1050px;
     position: relative; }
     @media (min-width: 600px) {
@@ -4681,3 +4689,12 @@ $color-dial--ring3: #2294e5;*/
   background-color: #2294E5; }
   .about-PageIndicator--selected:hover {
     background-color: #2294E5; }
+
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+    .about-screen .about-screen__splash .about-screen__target {
+      -moz-transform: translate(-70%, 0%);
+      -ms-transform: translate(-70%, 0%);
+      -o-transform: translate(-70%, 0%);
+      -webkit-transform: translate(-70%, 0%);
+      transform: translate(-70%, 0%); } } }

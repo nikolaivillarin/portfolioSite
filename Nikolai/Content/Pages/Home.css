@@ -44,7 +44,7 @@ $color-dial--ring3: #2294e5;*/
       min-height: 650px; } }
   .home .header-large {
     font-size: 3em; }
-    @media (min-width: 400px) and (max-width: 600px) {
+    @media (min-width: 600px) {
       .home .header-large {
         font-size: 4em; } }
 
