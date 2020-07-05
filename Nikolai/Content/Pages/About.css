@@ -335,8 +335,8 @@ $color-dial--ring3: #2294e5;*/
     transition: opacity 1s linear; }
     @media (min-width: 1045px) {
       .about-screen.about-screen--babyYoda .about-screen__svg .babyYodaEyes {
-        left: 154px;
-        top: 173px; } }
+        left: 143px;
+        top: 164px; } }
 
 .about-screen.about-screen--babyYoda .about-screen__splash {
   padding-left: 0;
