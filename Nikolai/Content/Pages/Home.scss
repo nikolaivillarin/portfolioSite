@@ -8,7 +8,6 @@
 .home {
     background-color: #FFF;
     height: 100vh;
-    
     position: relative;
 
     @include breakpoint(max-width $breakpoint-mobileBig) {
@@ -21,6 +20,14 @@
 
     @include breakpoint(min-width $breakpoint-phablet) {
         min-height: 650px;
+    }
+
+    .header-large {
+        font-size: 3em;
+
+        @include breakpoint($breakpoint-mobileBig $breakpoint-phablet) {
+            font-size: 4em;
+        }
     }
 }
 
