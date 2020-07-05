@@ -261,14 +261,14 @@ AboutPage.prototype.OnTouchEnd = function (evt) {
     this.touchEndYPos = evt.changedTouches[0].clientY;
     
     const deltaY = this.touchStartYPos - this.touchEndYPos;
-
-    if (deltaY < 0) {
+    
+    if (deltaY < 0 && deltaY <= -50) {
         if (this.selectedPageIndex === 0) {
             return false;
         } else {
             this.UpSection();
         }
-    } else {
+    } else if (deltaY >= 50) {
         if (this.selectedPageIndex >= this.totalPages - 1) {
             return false;
         } else {
