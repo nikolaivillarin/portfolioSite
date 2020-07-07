@@ -350,7 +350,7 @@ $color-dial--ring3: #2294e5;*/
 
 .about-screen.about-screen--babyYoda .about-screen__splash {
   padding-left: 0; }
-  @media (min-width: 800px) {
+  @media (min-width: 600px) {
     .about-screen.about-screen--babyYoda .about-screen__splash {
       padding: 0;
       padding-left: 2em;

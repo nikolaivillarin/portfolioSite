@@ -10,7 +10,6 @@
                 width: auto;
                 min-width: 50%;
             }
-
             // Used to fix positioning, otherwise the top position
             // does not have any effect
             #babyYodaEyes {
@@ -34,7 +33,7 @@
         .about-screen__splash {
             padding-left: 0;
 
-            @include breakpoint(min-width $breakpoint-tablet) {
+            @include breakpoint(min-width $breakpoint-phablet) {
                 padding: 0;
                 padding-left: 2em;
 
