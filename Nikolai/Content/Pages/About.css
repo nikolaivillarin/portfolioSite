@@ -4317,6 +4317,7 @@ $color-dial--ring3: #2294e5;*/
       cursor: pointer;
       left: 50%;
       line-height: 1.5em;
+      min-width: 205px;
       padding: 3em;
       /* Padding to increase touch target */
       position: absolute;
@@ -4714,11 +4715,11 @@ $color-dial--ring3: #2294e5;*/
 @media not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) and (stroke-color: transparent) {
     .about-screen .about-screen__splash .about-screen__target {
-      -moz-transform: translate(-70%, 0%);
-      -ms-transform: translate(-70%, 0%);
-      -o-transform: translate(-70%, 0%);
-      -webkit-transform: translate(-70%, 0%);
-      transform: translate(-70%, 0%);
+      -moz-transform: translate(-55%, 0%);
+      -ms-transform: translate(-55%, 0%);
+      -o-transform: translate(-55%, 0%);
+      -webkit-transform: translate(-55%, 0%);
+      transform: translate(-55%, 0%);
       -moz-transition: transform 0.8s linear, scale 0.8s linear, opacity 0.8s linear;
       -o-transition: transform 0.8s linear, scale 0.8s linear, opacity 0.8s linear;
       -webkit-transition: transform 0.8s linear, scale 0.8s linear, opacity 0.8s linear;

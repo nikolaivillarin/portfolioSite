@@ -219,6 +219,7 @@ $frameDuration: 0.8s;
             cursor: pointer;
             left: 50%;
             line-height: 1.5em;
+            min-width: 205px;
             padding: 3em; /* Padding to increase touch target */
             position: absolute;
 
@@ -667,7 +668,7 @@ $frameDuration: 0.8s;
         .about-screen {
             .about-screen__splash {
                 .about-screen__target {
-                    @include transform(translate(-70%, 0%));
+                    @include transform(translate(-55%, 0%));
                     @include transition(transform $frameDuration linear, scale $frameDuration linear, opacity $frameDuration linear );
                 }
             }
