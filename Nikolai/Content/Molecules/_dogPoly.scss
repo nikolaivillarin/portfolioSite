@@ -12,7 +12,11 @@
             }
 
             .about-screen__target {
-                top: -2em;
+                top: -8em;
+
+                @include breakpoint(min-width $breakpoint-phablet) {
+                    top: -2em;
+                }
             }
         }
     }

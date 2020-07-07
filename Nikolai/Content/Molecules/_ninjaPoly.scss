@@ -3,7 +3,7 @@
 .about-screen {
     &.about-screen--ninja {
         .about-screen__svg {
-            min-width: 30%;
+            width: 50%;
         }
 
         .about-screen__splash {
@@ -12,7 +12,11 @@
             }
 
             .about-screen__target {
-                top: -4em;
+                top: -8em;
+
+                @include breakpoint(min-width $breakpoint-phablet) {
+                    top: -4em;
+                }
             }
         }
     }
@@ -22,12 +26,7 @@
     .about-screen__img {
         &.about-screen__img-ninja {
             display: block;
-            margin-top: -100px;
             overflow: visible;
-
-            @include breakpoint(min-width $breakpoint-phablet) {
-                margin-top: 0;
-            }
 
             .AnimateToOriginalComplete {
                 &.cls-1 {

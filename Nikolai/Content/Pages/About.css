@@ -24,7 +24,13 @@ $color-dial--ring3: #2294e5;*/
 /*------------------------------------*    CSS Breakpoints for different devices
 \*------------------------------------*/
 .about-screen.about-screen--msLogo .about-screen__splash .about-screen__target {
-  top: -3em; }
+  top: -8em; }
+  @media (min-width: 600px) {
+    .about-screen.about-screen--msLogo .about-screen__splash .about-screen__target {
+      top: -3em; } }
+
+.about-screen.about-screen--msLogo .about-screen__svg {
+  width: 60%; }
 
 .about-screen--darkTheme .about-screen__img.about-screen__img-certification {
   display: block;
@@ -321,41 +327,43 @@ $color-dial--ring3: #2294e5;*/
   left: -180px; }
 
 .about-screen.about-screen--babyYoda .about-screen__svg {
-  min-width: 50%; }
+  width: 100%; }
+  @media (min-width: 600px) {
+    .about-screen.about-screen--babyYoda .about-screen__svg {
+      width: auto;
+      min-width: 50%; } }
+  .about-screen.about-screen--babyYoda .about-screen__svg #babyYodaEyes {
+    height: 100%;
+    position: absolute;
+    width: 100%; }
   .about-screen.about-screen--babyYoda .about-screen__svg .babyYodaEyes {
-    left: 29.5%;
+    left: 29%;
     max-width: 142px;
     opacity: 0;
     position: absolute;
-    top: 15.5vw;
+    top: 40.5%;
     width: 27%;
     -moz-transition: opacity 1s linear;
     -o-transition: opacity 1s linear;
     -webkit-transition: opacity 1s linear;
     transition: opacity 1s linear; }
-    @media (min-width: 1045px) {
-      .about-screen.about-screen--babyYoda .about-screen__svg .babyYodaEyes {
-        left: 143px;
-        top: 164px; } }
 
 .about-screen.about-screen--babyYoda .about-screen__splash {
-  padding-left: 0;
-  -moz-transform: translate(-50%, -4.5em);
-  -ms-transform: translate(-50%, -4.5em);
-  -o-transform: translate(-50%, -4.5em);
-  -webkit-transform: translate(-50%, -4.5em);
-  transform: translate(-50%, -4.5em); }
+  padding-left: 0; }
   @media (min-width: 800px) {
     .about-screen.about-screen--babyYoda .about-screen__splash {
       padding: 0;
       padding-left: 2em;
-      -moz-transform: translate(-54%, -4.5em);
-      -ms-transform: translate(-54%, -4.5em);
-      -o-transform: translate(-54%, -4.5em);
-      -webkit-transform: translate(-54%, -4.5em);
-      transform: translate(-54%, -4.5em); } }
+      -moz-transform: translate(-53%, -4.5em);
+      -ms-transform: translate(-53%, -4.5em);
+      -o-transform: translate(-53%, -4.5em);
+      -webkit-transform: translate(-53%, -4.5em);
+      transform: translate(-53%, -4.5em); } }
   .about-screen.about-screen--babyYoda .about-screen__splash .about-screen__target {
-    top: -5em; }
+    top: -8em; }
+    @media (min-width: 600px) {
+      .about-screen.about-screen--babyYoda .about-screen__splash .about-screen__target {
+        top: -5em; } }
 
 .about-screen.about-screen--babyYoda.about-screen--animState5 .about-screen__svg .babyYodaEyes {
   opacity: 1; }
@@ -904,7 +912,10 @@ $color-dial--ring3: #2294e5;*/
     transform: translate(-47%, -4.5em); } }
 
 .about-screen.about-screen--polyDog .about-screen__splash .about-screen__target {
-  top: -2em; }
+  top: -8em; }
+  @media (min-width: 600px) {
+    .about-screen.about-screen--polyDog .about-screen__splash .about-screen__target {
+      top: -2em; } }
 
 .about-screen .about-screen__img.about-screen__img-polyDog {
   display: block;
@@ -1769,7 +1780,7 @@ $color-dial--ring3: #2294e5;*/
   left: -170px; }
 
 .about-screen.about-screen--ninja .about-screen__svg {
-  min-width: 30%; }
+  width: 50%; }
 
 @media (min-width: 600px) {
   .about-screen.about-screen--ninja .about-screen__splash {
@@ -1780,15 +1791,14 @@ $color-dial--ring3: #2294e5;*/
     transform: translate(-27%, -4.5em); } }
 
 .about-screen.about-screen--ninja .about-screen__splash .about-screen__target {
-  top: -4em; }
+  top: -8em; }
+  @media (min-width: 600px) {
+    .about-screen.about-screen--ninja .about-screen__splash .about-screen__target {
+      top: -4em; } }
 
 .about-screen .about-screen__img.about-screen__img-ninja {
   display: block;
-  margin-top: -100px;
   overflow: visible; }
-  @media (min-width: 600px) {
-    .about-screen .about-screen__img.about-screen__img-ninja {
-      margin-top: 0; } }
   .about-screen .about-screen__img.about-screen__img-ninja .AnimateToOriginalComplete.cls-1 {
     fill: #2d2c2e; }
     .about-screen .about-screen__img.about-screen__img-ninja .AnimateToOriginalComplete.cls-1.shard--shimmer {
@@ -3733,7 +3743,7 @@ $color-dial--ring3: #2294e5;*/
   .about-screen h1 {
     margin-bottom: 0.3em; }
   .about-screen .about-screen__svg {
-    width: 50%;
+    width: 100%;
     position: relative; }
     @media (min-width: 600px) {
       .about-screen .about-screen__svg {
@@ -4406,6 +4416,8 @@ $color-dial--ring3: #2294e5;*/
     align-items: center;
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    justify-content: center;
     margin-top: -5em;
     max-width: 1050px;
     padding: 0 2em;

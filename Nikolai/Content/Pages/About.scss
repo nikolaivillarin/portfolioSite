@@ -144,7 +144,7 @@ $frameDuration: 0.8s;
     }
 
     .about-screen__svg {
-        width: 50%;
+        width: 100%;
         position: relative;
 
         @include breakpoint(min-width $breakpoint-phablet) {
@@ -334,6 +334,8 @@ $frameDuration: 0.8s;
         align-items: center;
         display: flex;
         flex-direction: column;
+        height: 100vh;
+        justify-content: center;
         margin-top: -5em;
         max-width: 1050px;
         padding: 0 2em;

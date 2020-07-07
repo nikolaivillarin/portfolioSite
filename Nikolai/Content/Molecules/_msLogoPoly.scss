@@ -4,8 +4,16 @@
     &.about-screen--msLogo {
         .about-screen__splash {
             .about-screen__target {
-                top: -3em;
+                top: -8em;
+
+                @include breakpoint(min-width $breakpoint-phablet) {
+                    top: -3em;
+                }
             }
+        }
+
+        .about-screen__svg {
+            width: 60%;
         }
     }
 }
