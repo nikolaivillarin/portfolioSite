@@ -24,6 +24,10 @@ HomePage.prototype.Initialize = function () {
         $.proxy(this.OnPageChange, this)
     );
 
+    window.MainNav.SubscribeToOnPageChanging(
+        $.proxy(this.OnPageChanging, this)
+    );
+
     this.MicroInteraction = new window.MicroInteraction('home');
 
     this.SetupCanvas();
@@ -60,32 +64,12 @@ HomePage.prototype.OnPageChange = function (pageId, previousPageId) {
     /// <summary>
     /// Function which is called when page is changed
     /// </summary>
-    if (pageId && pageId === 'home' &&
-        this.$Element.width() > 0 &&
-        previousPageId && previousPageId === 'work') {
+    if (pageId && pageId === 'home' && this.$Element.width() > 0) {
         this.EnableCanvas();
 
         this.EnableDialJiggle();
 
         this.PageDisable = false;
-
-        this.MicroInteraction.TriggerAnimation(
-            'right',
-            this.$Element
-        );
-
-        this.$ElementOnboarding.addClass('in-view');
-    } else if (pageId && pageId === 'home' && this.$Element.width() > 0) {
-        this.EnableCanvas();
-
-        this.EnableDialJiggle();
-
-        this.PageDisable = false;
-
-        this.MicroInteraction.TriggerAnimation(
-            'up',
-            this.$Element
-        );
 
         this.$ElementOnboarding.addClass('in-view');
     } else {
@@ -100,6 +84,30 @@ HomePage.prototype.OnPageChange = function (pageId, previousPageId) {
 
             this.PageDisable = true;
         }
+    }
+
+    if (pageId && pageId === 'home' &&
+        previousPageId && previousPageId === 'loading') {
+        // Coming from loading screen so OnPageChanging event handler would have
+        // not been called since this was still initializing. So call it now to 
+        // trigger animations.
+
+        this.OnPageChanging(pageId);
+    }
+};
+
+HomePage.prototype.OnPageChanging = function (pageId, previousPageId) {
+    if (pageId && pageId === 'home') {
+        let transitionDirection = 'up';
+
+        if (previousPageId === 'work') {
+            transitionDirection = 'left';
+        }
+
+        this.MicroInteraction.TriggerAnimation(
+            transitionDirection,
+            this.$Element
+        );
     }
 };
 

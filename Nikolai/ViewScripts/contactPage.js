@@ -56,6 +56,10 @@ ContactPage.prototype.Initialize = function () {
         $.proxy(this.OnPageChange, this)
     );
 
+    window.MainNav.SubscribeToOnPageChanging(
+        $.proxy(this.OnPageChanging, this)
+    );
+
     window.MainNav.SubscribeToDialClick(
         $.proxy(this.SendMessage, this)
     );
@@ -88,23 +92,8 @@ ContactPage.prototype.OnPageChange = function (pageId, previousPageId) {
     /// <summary>
     /// Function which is called when page is changed
     /// </summary>
-    if (pageId && pageId === 'contact' &&
-        previousPageId && previousPageId === 'about') {
+    if (pageId && pageId === 'contact') {
         this.ClearForm();
-
-        this.MicroInteraction.TriggerAnimation(
-            'left',
-            this.$Element
-        );
-
-        this.PositionDial();
-    } else if (pageId && pageId === 'contact') {
-        this.ClearForm();
-
-        this.MicroInteraction.TriggerAnimation(
-            'up',
-            this.$Element
-        );
 
         this.PositionDial();
     } else if (previousPageId && previousPageId === 'contact') {
@@ -118,6 +107,30 @@ ContactPage.prototype.OnPageChange = function (pageId, previousPageId) {
             this.ExpandedState();
             this.DisableClickableHeaders();
         }
+    }
+
+    if (pageId && pageId === 'contact' &&
+        previousPageId && previousPageId === 'loading') {
+        // Coming from loading screen so OnPageChanging event handler would have
+        // not been called since this was still initializing. So call it now to 
+        // trigger animations.
+
+        this.OnPageChanging(pageId);
+    }
+};
+
+ContactPage.prototype.OnPageChanging = function (pageId, previousPageId) {
+    if (pageId && pageId === 'contact') {
+        let transitionDirection = 'up';
+
+        if (previousPageId === 'about') {
+            transitionDirection = 'left';
+        }
+
+        this.MicroInteraction.TriggerAnimation(
+            transitionDirection,
+            this.$Element
+        );
     }
 };
 

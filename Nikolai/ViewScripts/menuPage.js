@@ -18,6 +18,10 @@ MenuPage.prototype.Initialize = function () {
         $.proxy(this.OnPageChange, this)
     );
 
+    window.MainNav.SubscribeToOnPageChanging(
+        $.proxy(this.OnPageChanging, this)
+    );
+
     window.MainNav.SubscribeToDialClick(
         $.proxy(this.CloseMenuClick, this)
     );
@@ -40,35 +44,48 @@ MenuPage.prototype.CloseMenuClick = function (selectedPageId, previousPageId) {
     }
 };
 
-MenuPage.prototype.OnPageChange = function (selectedPageId) {
+MenuPage.prototype.OnPageChange = function (pageId, previousPageId) {
     /// <summary>
     /// Function which is called when page is changed
     /// </summary>
 
     // Make sure we don't try to highlight the menu page
-    if (selectedPageId !== this.$Element.attr('id').toLowerCase()) {
+    if (pageId !== this.$Element.attr('id').toLowerCase()) {
         $('li', this.$Element).removeClass('menu-links--selected');
 
         var $selectedLink = $('a', this.$Element).filter(function () {
-            return $(this).attr('href').toLowerCase().indexOf(selectedPageId) > -1;
+            return $(this).attr('href').toLowerCase().indexOf(pageId) > -1;
         });
 
         $selectedLink.parent().addClass('menu-links--selected');
     }
 
-    if (selectedPageId && selectedPageId === 'menu') {
+    if (pageId && pageId === 'menu') {
         this.PageDisable = false;
-
-        this.MicroInteraction.TriggerAnimation(
-            'up',
-            this.$Element
-        );
     } else {
         if (this.PageDisable === false) {
             this.MicroInteraction.ResetAnimation();
 
             this.PageDisable = true;
         }
+    }
+
+    if (pageId && pageId === 'menu' &&
+        previousPageId && previousPageId === 'loading') {
+        // Coming from loading screen so OnPageChanging event handler would have
+        // not been called since this was still initializing. So call it now to 
+        // trigger animations.
+
+        this.OnPageChanging(pageId);
+    }
+};
+
+MenuPage.prototype.OnPageChanging = function (pageId) {
+    if (pageId && pageId === 'menu') {
+        this.MicroInteraction.TriggerAnimation(
+            'up',
+            this.$Element
+        );
     }
 };
 

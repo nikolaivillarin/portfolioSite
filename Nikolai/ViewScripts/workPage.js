@@ -32,6 +32,10 @@ WorkPage.prototype.Initialize = function () {
         $.proxy(this.OnPageChange, this)
     );
 
+    window.MainNav.SubscribeToOnPageChanging(
+        $.proxy(this.OnPageChanging, this)
+    );
+
     $('#work [data-nv-bgimage]').click(this.ItemClick);
 
     this.MicroInteraction = new window.MicroInteraction('work');
@@ -151,6 +155,34 @@ WorkPage.prototype.OnPageChange = function (pageId, previousPageId) {
     /// Function which is called when page is changed
     /// </summary>
     var that = this;
+
+    if (pageId && pageId === 'work') {
+        window.setTimeout(function () {
+            that.HideViewMoreInstructions();
+        }, 1000);
+    } else {
+        this.IsSelected = false;
+
+        this.DisablePageIndicator();
+
+        this.UnsubscribeToPageSpecificEvents();
+
+        this.ShowViewMoreInstructions();
+
+        this.MicroInteraction.ResetAnimation();
+    }
+
+    if (pageId && pageId === 'work' &&
+        previousPageId && previousPageId === 'loading') {
+        // Coming from loading screen so OnPageChanging event handler would have
+        // not been called since this was still initializing. So call it now to 
+        // trigger animations.
+
+        this.OnPageChanging(pageId);
+    }
+};
+
+WorkPage.prototype.OnPageChanging = function (pageId, previousPageId) {
     var enablePage = (microInteractionDirection) => {
         this.IsSelected = true;
 
@@ -162,30 +194,18 @@ WorkPage.prototype.OnPageChange = function (pageId, previousPageId) {
             microInteractionDirection,
             this.$Element
         );
-
-        window.setTimeout(function () {
-            that.HideViewMoreInstructions();
-        }, 1000);
     };
 
-    if (pageId && pageId === 'work' &&
-        previousPageId && previousPageId === 'home') {
-        enablePage('left');
-    } else if (pageId && pageId === 'work' &&
-        previousPageId && previousPageId === 'about') {
-        enablePage('right');
-    } else if (pageId && pageId === 'work') {
-        enablePage('up');
-    } else {
-        this.IsSelected = false;
+    if (pageId && pageId === 'work') {
+        let transitionDirection = 'up';
 
-        this.DisablePageIndicator();
+        if (previousPageId === 'home') {
+            transitionDirection = 'left';
+        } else if (previousPageId === 'about') {
+            transitionDirection = 'right';
+        }
 
-        this.UnsubscribeToPageSpecificEvents();
-
-        this.ShowViewMoreInstructions();
-
-        this.MicroInteraction.ResetAnimation();
+        enablePage(transitionDirection);
     }
 };
 
