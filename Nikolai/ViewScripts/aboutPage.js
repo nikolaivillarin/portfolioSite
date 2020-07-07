@@ -42,7 +42,8 @@ AboutPage.prototype = {
         return this.AnimEndEventNames[window.Modernizr.prefixed('animation')];
     },
     MicroInteraction: null,
-    PageDisable: true
+    PageDisable: true,
+    PreviousDeltaY: 0
 };
 //#endregion
 
@@ -292,14 +293,26 @@ AboutPage.prototype.OnPageMouseWheel = function (evt) {
         that.scroll.isThrottled = false;
     }, this.scroll.throttleDuration);
 
-    // Delay to prevent scrolling of multiple pages
-    if (evt.deltaY < 0 && evt.deltaY <= -20) {
+    // Prevent momentum scroll from going multiple pages. Makes the experience feel
+    // jarring. The concept is momentum scroll throws multiple scroll events
+    // however each subsequent deltaY is less than the previous
+    if (this.PreviousDeltaY <= Math.abs(evt.deltaY)) {
+        this.PreviousDeltaY = Math.abs(evt.deltaY);
+
+        window.setTimeout(function () {
+            that.PreviousDeltaY = 0;
+        }, 2000); // Tested on the Dell XPS - momentum events occurs past 1 second
+    } else {
+        return;
+    }
+    
+    if (evt.deltaY < 0) {
         if (this.selectedPageIndex === 0) {
             return false;
         } else {
             this.UpSection();
         }
-    } else if (evt.deltaY >= 20) {
+    } else if (evt.deltaY >= 0) {
         if (this.selectedPageIndex >= this.totalPages - 1) {
             return false;
         } else {
