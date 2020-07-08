@@ -940,9 +940,12 @@ $color-dial--ring3: #2294e5;*/
   width: 35px; }
 
 .nav-instructions {
-  bottom: 70px;
+  bottom: 80px;
   position: absolute;
   right: 10px; }
+  @media (min-width: 600px) {
+    .nav-instructions {
+      bottom: 70px; } }
   .nav-instructions .nav-arrow {
     float: right;
     margin-right: 50px; }
@@ -1101,8 +1104,11 @@ $color-dial--ring3: #2294e5;*/
   width: 100%; }
 
 .nav-container--footer {
-  bottom: 0;
+  bottom: 30px;
   position: absolute; }
+  @media (min-width: 600px) {
+    .nav-container--footer {
+      bottom: 0; } }
 
 .nav-bar {
   display: block;
@@ -2569,7 +2575,8 @@ body {
   font-style: normal;
   font-size: 14px;
   line-height: 1.3em;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  position: relative; }
   @media (min-width: 800px) {
     body {
       font-size: 16px; } }

@@ -13,7 +13,11 @@
         }
 
         .about-screen__svg {
-            width: 60%;
+            width: 40%;
+
+            @include breakpoint(min-width $breakpoint-phablet) {
+                width: 60%;
+            }
         }
     }
 }

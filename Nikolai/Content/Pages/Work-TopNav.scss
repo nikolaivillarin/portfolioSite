@@ -122,10 +122,14 @@
 .topnav__finalScreensContainer {
     background-color: #171717;
     overflow: hidden;
-    padding: 3em;
+    padding: 3em 1em;
     position: relative;
     text-align: center;
     width: 100%;
+
+    @include breakpoint(min-width $breakpoint-phablet) {
+        padding: 3em;
+    }
 }
 
 .topnav__videoContainer {

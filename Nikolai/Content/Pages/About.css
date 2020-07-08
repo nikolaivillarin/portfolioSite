@@ -30,7 +30,10 @@ $color-dial--ring3: #2294e5;*/
       top: -3em; } }
 
 .about-screen.about-screen--msLogo .about-screen__svg {
-  width: 60%; }
+  width: 40%; }
+  @media (min-width: 600px) {
+    .about-screen.about-screen--msLogo .about-screen__svg {
+      width: 60%; } }
 
 .about-screen--darkTheme .about-screen__img.about-screen__img-certification {
   display: block;
@@ -327,7 +330,7 @@ $color-dial--ring3: #2294e5;*/
   left: -180px; }
 
 .about-screen.about-screen--babyYoda .about-screen__svg {
-  width: 100%; }
+  width: 70%; }
   @media (min-width: 600px) {
     .about-screen.about-screen--babyYoda .about-screen__svg {
       width: auto;
@@ -1780,7 +1783,12 @@ $color-dial--ring3: #2294e5;*/
   left: -170px; }
 
 .about-screen.about-screen--ninja .about-screen__svg {
-  width: 50%; }
+  width: 40%;
+  margin-top: -80px; }
+  @media (min-width: 600px) {
+    .about-screen.about-screen--ninja .about-screen__svg {
+      width: 50%;
+      margin-top: 0; } }
 
 @media (min-width: 600px) {
   .about-screen.about-screen--ninja .about-screen__splash {
@@ -3743,7 +3751,7 @@ $color-dial--ring3: #2294e5;*/
   .about-screen h1 {
     margin-bottom: 0.3em; }
   .about-screen .about-screen__svg {
-    width: 100%;
+    width: 70%;
     position: relative; }
     @media (min-width: 600px) {
       .about-screen .about-screen__svg {

@@ -3,7 +3,13 @@
 .about-screen {
     &.about-screen--ninja {
         .about-screen__svg {
-            width: 50%;
+            width: 40%;
+            margin-top: -80px;
+
+            @include breakpoint(min-width $breakpoint-phablet) {
+                width: 50%;
+                margin-top: 0;
+            }
         }
 
         .about-screen__splash {

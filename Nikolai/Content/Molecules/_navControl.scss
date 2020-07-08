@@ -49,9 +49,13 @@ $total-pages: 4;
 }
 
 .nav-instructions {
-    bottom: 70px;
+    bottom: 80px;
     position: absolute;
     right: 10px;
+
+    @include breakpoint(min-width $breakpoint-phablet) {
+        bottom: 70px;
+    }
 
     @extend %pop--initialState;
     @extend %box-level--dial;
@@ -255,10 +259,14 @@ $total-pages: 4;
 }
 
 .nav-container--footer {
-    bottom: 0;
+    bottom: 30px;
     position: absolute;
 
     @extend %box-level--modular;
+
+    @include breakpoint(min-width $breakpoint-phablet) {
+        bottom: 0;
+    }
 }
 
 .nav-bar {

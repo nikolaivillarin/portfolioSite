@@ -179,10 +179,13 @@
     position: absolute; }
   .dashboard-page4 .dashboard-page4-content-container {
     max-width: 570px;
-    padding: 4em;
+    padding: 0 2em;
     position: absolute;
     top: 0;
     left: 0; }
+    @media (min-width: 600px) {
+      .dashboard-page4 .dashboard-page4-content-container {
+        padding: 4em; } }
     @media (min-width: 1200px) {
       .dashboard-page4 .dashboard-page4-content-container {
         left: 4em;
@@ -316,10 +319,13 @@
 .dashboard-page5 {
   background-color: #171717;
   overflow: hidden;
-  padding: 3em;
+  padding: 3em 1em;
   position: relative;
   text-align: center;
   width: 100%; }
+  @media (min-width: 600px) {
+    .dashboard-page5 {
+      padding: 3em; } }
   .dashboard-page5 .dashboard__videoContainer {
     background-color: #000;
     border-radius: 20px;

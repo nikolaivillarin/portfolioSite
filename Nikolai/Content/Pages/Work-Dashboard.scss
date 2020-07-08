@@ -245,10 +245,14 @@ $content-max-width: 570px;
 
     .dashboard-page4-content-container {
         max-width: $content-max-width;
-        padding: 4em;
+        padding: 0 2em;
         position: absolute;
         top: 0;
         left: 0;
+
+        @include breakpoint(min-width $breakpoint-phablet) {
+            padding: 4em;
+        }
 
         @include breakpoint(min-width $breakpoint-notebook) {
             left: 4em;
@@ -420,10 +424,14 @@ $content-max-width: 570px;
 .dashboard-page5 {
     background-color: #171717;
     overflow: hidden;
-    padding: 3em;
+    padding: 3em 1em;
     position: relative;
     text-align: center;
     width: 100%;
+
+    @include breakpoint(min-width $breakpoint-phablet) {
+        padding: 3em;
+    }
 
     .dashboard__videoContainer {
         background-color: #000;

@@ -15,6 +15,7 @@ body {
     font-size: 14px;
     line-height: 1.3em;
     overflow-x: hidden;
+    position: relative;
 
     @include breakpoint(min-width $breakpoint-tablet) {
         font-size: 16px;

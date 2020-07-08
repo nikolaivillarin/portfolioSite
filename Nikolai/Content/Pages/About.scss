@@ -144,7 +144,7 @@ $frameDuration: 0.8s;
     }
 
     .about-screen__svg {
-        width: 100%;
+        width: 70%;
         position: relative;
 
         @include breakpoint(min-width $breakpoint-phablet) {

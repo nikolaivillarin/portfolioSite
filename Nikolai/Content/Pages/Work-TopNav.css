@@ -116,10 +116,13 @@
 .topnav__finalScreensContainer {
   background-color: #171717;
   overflow: hidden;
-  padding: 3em;
+  padding: 3em 1em;
   position: relative;
   text-align: center;
   width: 100%; }
+  @media (min-width: 600px) {
+    .topnav__finalScreensContainer {
+      padding: 3em; } }
 
 .topnav__videoContainer {
   background-color: #000;
