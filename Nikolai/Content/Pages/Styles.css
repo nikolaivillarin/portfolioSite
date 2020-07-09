@@ -284,7 +284,7 @@ $color-dial--ring3: #2294e5;*/
 .nvDial {
   cursor: pointer;
   height: 76px;
-  position: relative;
+  position: absolute;
   width: 76px;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2575,8 +2575,17 @@ body {
   font-style: normal;
   font-size: 14px;
   line-height: 1.3em;
-  overflow-x: hidden;
-  position: relative; }
+  overflow-x: hidden; }
+  @media (max-width: 600px) {
+    body {
+      /* 
+            Fix for momentum scroll on mobile devices.
+            The issue that was occurring is even though the body has overflow
+            hidden momentum scroll allowed this to scroll which reveals the black
+            background. Changing position appears to resolve this but breaks
+            the nav positioning in the contact page
+        */
+      position: relative; } }
   @media (min-width: 800px) {
     body {
       font-size: 16px; } }

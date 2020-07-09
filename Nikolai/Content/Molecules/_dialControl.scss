@@ -52,7 +52,7 @@ $button-position: (($spinner-diameter--outer - $button-diameter) / 2);
 .nvDial {
     cursor: pointer;
     height: $button-diameter;
-    position: relative;
+    position: absolute;
     width: $button-diameter;
 
     @include user-select(none);

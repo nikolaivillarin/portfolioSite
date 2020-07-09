@@ -15,7 +15,17 @@ body {
     font-size: 14px;
     line-height: 1.3em;
     overflow-x: hidden;
-    position: relative;
+
+    @include breakpoint(max-width $breakpoint-phablet) {
+        /* 
+            Fix for momentum scroll on mobile devices.
+            The issue that was occurring is even though the body has overflow
+            hidden momentum scroll allowed this to scroll which reveals the black
+            background. Changing position appears to resolve this but breaks
+            the nav positioning in the contact page
+        */
+        position: relative;
+    }
 
     @include breakpoint(min-width $breakpoint-tablet) {
         font-size: 16px;
