@@ -325,9 +325,10 @@ WorkPage.prototype.UpdatePageIndicator = function () {
 
 };
 
-WorkPage.prototype.PageScrolled = function () {
+WorkPage.prototype.PageScrolled = function (evt) {
     var that = this;
-
+    console.log('PageScrolled');
+    console.log(evt);
     var $pnlWorkPageIndicator = $('#pnlWorkPageIndicator');
 
     if ($pnlWorkPageIndicator.hasClass('work-PageIndicatorContainer--active') === true) {

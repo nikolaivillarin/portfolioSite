@@ -20,7 +20,9 @@ AboutPage.prototype = {
     totalPages: 0,
     scroll: {
         isThrottled: false,
-        throttleDuration: 1000
+        throttleDuration: 2000,
+        ThresholdDeltaY: 0,
+        NextSectionCalled: false
     },
     debug: {
         // Debugging for poly positioning
@@ -43,7 +45,6 @@ AboutPage.prototype = {
     },
     MicroInteraction: null,
     PageDisable: true,
-    PreviousDeltaY: 0
 };
 //#endregion
 
@@ -106,7 +107,7 @@ AboutPage.prototype.OnDialDropped = function () {
         window.addEventListener("touchstart", this.OnTouchStart);
         window.addEventListener("touchend", this.OnTouchEnd);
     }, 1000);
-    
+
     if (pageGraphic && pageGraphic.TranslateAnimationComplete === false) {
         if (window.MainNav.NavBar.DialControl.$Element.hasClass('nvDial--pulsing') === true) {
             window.MainNav.NavBar.DialControl.$Element.removeClass('nvDial--pulsing');
@@ -213,7 +214,7 @@ AboutPage.prototype.OnDialDragged = function () {
 
     let isInBounds = false;
     let $targetElmt = null;
-    
+
     if (this.pages[this.selectedPageIndex].pageGraphic.IsScattered) {
         $targetElmt = $('[data-nv-drop-target="moreDetails"]', $page);
     } else {
@@ -260,9 +261,9 @@ AboutPage.prototype.OnTouchStart = function (evt) {
 
 AboutPage.prototype.OnTouchEnd = function (evt) {
     this.touchEndYPos = evt.changedTouches[0].clientY;
-    
+
     const deltaY = this.touchStartYPos - this.touchEndYPos;
-    
+
     if (deltaY < 0 && deltaY <= -50) {
         if (this.selectedPageIndex === 0) {
             return false;
@@ -280,8 +281,28 @@ AboutPage.prototype.OnTouchEnd = function (evt) {
 
 AboutPage.prototype.OnPageMouseWheel = function (evt) {
     var that = this;
-
+    console.log(evt);
     evt.preventDefault();
+    evt.stopPropagation();
+
+    function NextSection(deltaY) {
+        //console.log('next section');
+        if (deltaY < 0) {
+            if (that.selectedPageIndex === 0) {
+                return false;
+            } else {
+                that.UpSection();
+                return true;
+            }
+        } else if (deltaY >= 0) {
+            if (that.selectedPageIndex >= that.totalPages - 1) {
+                return false;
+            } else {
+                that.DownSection();
+                return true;
+            }
+        }
+    }
 
     if (this.scroll.isThrottled) {
         return false;
@@ -293,32 +314,19 @@ AboutPage.prototype.OnPageMouseWheel = function (evt) {
         that.scroll.isThrottled = false;
     }, this.scroll.throttleDuration);
 
-    // Prevent momentum scroll from going multiple pages. Makes the experience feel
-    // jarring. The concept is momentum scroll throws multiple scroll events
-    // however each subsequent deltaY is less than the previous
-    if (this.PreviousDeltaY <= Math.abs(evt.deltaY)) {
-        this.PreviousDeltaY = Math.abs(evt.deltaY);
+    if (!this.scrollTarget ||
+        this.scrollTarget && this.scrollTarget !== evt.target) {
 
-        window.setTimeout(function () {
-            that.PreviousDeltaY = 0;
-        }, 2000); // Tested on the Dell XPS - momentum events occurs past 1 second
-    } else {
-        return;
-    }
-    
-    if (evt.deltaY < 0) {
-        if (this.selectedPageIndex === 0) {
-            return false;
+        var hasChangedPage = NextSection(evt.deltaY);
+
+        if (hasChangedPage) {
+            this.scrollTarget = evt.target;
         } else {
-            this.UpSection();
-        }
-    } else if (evt.deltaY >= 0) {
-        if (this.selectedPageIndex >= this.totalPages - 1) {
-            return false;
-        } else {
-            this.DownSection();
+            this.scrollTarget = undefined;
         }
     }
+
+    return false;
 };
 
 AboutPage.prototype.NavDotOnClick = function (evt) {
@@ -365,7 +373,7 @@ AboutPage.prototype.InitializePages = function () {
         const $svgElmt = $('[data-nv-about-page-svg]', elmt);
 
         let pageGraphic = null;
-        
+
         if ($svgElmt.length === 1) {
             const scalarTop = Number($svgElmt.attr('data-nv-about-page-graphic-scalar-top'));
             const scalarBottom = Number($svgElmt.attr('data-nv-about-page-graphic-scalar-bottom'));
@@ -382,7 +390,7 @@ AboutPage.prototype.InitializePages = function () {
 
             pageGraphic.ScatterShards();
         }
-        
+
         this.pages.push({
             $elmt: $pageElmt,
             pageGraphic: pageGraphic,
