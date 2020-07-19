@@ -22,7 +22,8 @@ AboutPage.prototype = {
         isThrottled: false,
         throttleDuration: 2000,
         ThresholdDeltaY: 0,
-        NextSectionCalled: false
+        NextSectionCalled: false,
+        scrollComplete: true
     },
     debug: {
         // Debugging for poly positioning
@@ -280,8 +281,9 @@ AboutPage.prototype.OnTouchEnd = function (evt) {
 };
 
 AboutPage.prototype.OnPageMouseWheel = function (evt) {
+    // Debounce strategy
     var that = this;
-    console.log(evt);
+    //console.log(evt);
     evt.preventDefault();
     evt.stopPropagation();
 
@@ -304,26 +306,34 @@ AboutPage.prototype.OnPageMouseWheel = function (evt) {
         }
     }
 
-    if (this.scroll.isThrottled) {
-        return false;
-    } else {
-        this.scroll.isThrottled = true;
+    if (this.MouseWheelTimeoutID && this.MouseWheelTimeoutID !== 0) {
+        window.clearTimeout(this.MouseWheelTimeoutID);
+
+        this.MouseWheelTimeoutID = 0;
     }
 
-    window.setTimeout(function () {
-        that.scroll.isThrottled = false;
-    }, this.scroll.throttleDuration);
+    if (this.scroll.scrollComplete === true) {
+        NextSection(evt.deltaY);
 
-    if (!this.scrollTarget ||
-        this.scrollTarget && this.scrollTarget !== evt.target) {
+        this.scroll.scrollComplete = false
 
-        var hasChangedPage = NextSection(evt.deltaY);
+        this.scroll.ThresholdDeltaY = 0;
+    }
 
-        if (hasChangedPage) {
-            this.scrollTarget = evt.target;
-        } else {
-            this.scrollTarget = undefined;
-        }
+    this.MouseWheelTimeoutID = window.setTimeout(function () {
+        that.scroll.scrollComplete = true;
+
+        this.scroll.ThresholdDeltaY = 0;
+    }, 300);
+
+    // If the user keep scrolling the debounce will never be called
+    // so have a threshold to when to call it
+    this.scroll.ThresholdDeltaY++;
+
+    if (this.scroll.ThresholdDeltaY === 100) {
+        this.scroll.scrollComplete = true;
+
+        this.scroll.ThresholdDeltaY = 0;
     }
 
     return false;
