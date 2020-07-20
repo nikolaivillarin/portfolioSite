@@ -13,6 +13,7 @@ AboutPage.prototype = {
     //    graphicCss: ''
     //}],
     pages: [],
+    PrevPage: {},
     $ContainerElmt: null,
     $NavDotsElmt: null,
     selectedPageIndex: 0,
@@ -687,7 +688,15 @@ AboutPage.prototype.NavigateToSection = function (previousPageIndex, selectedPag
     // For performance hide previous page
     selectedPage.$elmt.show();
 
-    window.setTimeout(() => {
+    if (this.PrevPage && this.PrevPage['TimeoutID' + this.selectedPageIndex]) {
+        // Fix for bug if user switches pages before hide timeout is called
+        // make sure the current page is not suddenly hidden
+        window.clearTimeout(
+            this.PrevPage['TimeoutID' + this.selectedPageIndex]
+        );
+    }
+
+    this.PrevPage['TimeoutID' + this.previousPageIndex] = window.setTimeout(() => {
         previousPage.$elmt.hide();
     }, 1000);
 
