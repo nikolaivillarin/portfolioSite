@@ -684,6 +684,13 @@ AboutPage.prototype.NavigateToSection = function (previousPageIndex, selectedPag
         }
     };
 
+    // For performance hide previous page
+    selectedPage.$elmt.show();
+
+    window.setTimeout(() => {
+        previousPage.$elmt.hide();
+    }, 1000);
+
     previousPage.$elmt.addClass(transitionClasses[direction].previous);
 
     selectedPage.$elmt.addClass(transitionClasses[direction].selected);
