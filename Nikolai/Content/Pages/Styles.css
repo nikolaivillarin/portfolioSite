@@ -1638,46 +1638,46 @@ $color-dial--ring3: #2294e5;*/
   width: 100vw; }
 
 .expand-moveToTop {
-  -moz-animation: moveToTop 0.6s ease both;
-  -o-animation: moveToTop 0.6s ease both;
-  -webkit-animation: moveToTop 0.6s ease both;
-  animation: moveToTop 0.6s ease both; }
+  -moz-animation: moveToTop 0.8s cubic-bezier(0.76, 0, 0.24, 1) both;
+  -o-animation: moveToTop 0.8s cubic-bezier(0.76, 0, 0.24, 1) both;
+  -webkit-animation: moveToTop 0.8s cubic-bezier(0.76, 0, 0.24, 1) both;
+  animation: moveToTop 0.8s cubic-bezier(0.76, 0, 0.24, 1) both; }
 
 .expand-moveToBottom {
-  -moz-animation: moveToBottom 0.6s ease both;
-  -o-animation: moveToBottom 0.6s ease both;
-  -webkit-animation: moveToBottom 0.6s ease both;
-  animation: moveToBottom 0.6s ease both; }
+  -moz-animation: moveToBottom 0.8s cubic-bezier(0.76, 0, 0.24, 1) both;
+  -o-animation: moveToBottom 0.8s cubic-bezier(0.76, 0, 0.24, 1) both;
+  -webkit-animation: moveToBottom 0.8s cubic-bezier(0.76, 0, 0.24, 1) both;
+  animation: moveToBottom 0.8s cubic-bezier(0.76, 0, 0.24, 1) both; }
 
 .expand-moveFromTop {
-  -moz-animation: moveFromTop 0.6s ease both;
-  -o-animation: moveFromTop 0.6s ease both;
-  -webkit-animation: moveFromTop 0.6s ease both;
-  animation: moveFromTop 0.6s ease both; }
+  -moz-animation: moveFromTop 0.8s cubic-bezier(0.76, 0, 0.24, 1) both;
+  -o-animation: moveFromTop 0.8s cubic-bezier(0.76, 0, 0.24, 1) both;
+  -webkit-animation: moveFromTop 0.8s cubic-bezier(0.76, 0, 0.24, 1) both;
+  animation: moveFromTop 0.8s cubic-bezier(0.76, 0, 0.24, 1) both; }
 
 .expand-moveFromBottom {
-  -moz-animation: moveFromBottom 0.6s ease both;
-  -o-animation: moveFromBottom 0.6s ease both;
-  -webkit-animation: moveFromBottom 0.6s ease both;
-  animation: moveFromBottom 0.6s ease both; }
+  -moz-animation: moveFromBottom 0.8s cubic-bezier(0.76, 0, 0.24, 1) both;
+  -o-animation: moveFromBottom 0.8s cubic-bezier(0.76, 0, 0.24, 1) both;
+  -webkit-animation: moveFromBottom 0.8s cubic-bezier(0.76, 0, 0.24, 1) both;
+  animation: moveFromBottom 0.8s cubic-bezier(0.76, 0, 0.24, 1) both; }
 
 .expand-moveFromLeft {
-  -moz-animation: moveFromLeft 0.6s ease both;
-  -o-animation: moveFromLeft 0.6s ease both;
-  -webkit-animation: moveFromLeft 0.6s ease both;
-  animation: moveFromLeft 0.6s ease both; }
+  -moz-animation: moveFromLeft 0.8s cubic-bezier(0.76, 0, 0.24, 1) both;
+  -o-animation: moveFromLeft 0.8s cubic-bezier(0.76, 0, 0.24, 1) both;
+  -webkit-animation: moveFromLeft 0.8s cubic-bezier(0.76, 0, 0.24, 1) both;
+  animation: moveFromLeft 0.8s cubic-bezier(0.76, 0, 0.24, 1) both; }
 
 .expand-moveFromRight {
-  -moz-animation: moveFromRight 0.6s ease both;
-  -o-animation: moveFromRight 0.6s ease both;
-  -webkit-animation: moveFromRight 0.6s ease both;
-  animation: moveFromRight 0.6s ease both; }
+  -moz-animation: moveFromRight 0.8s cubic-bezier(0.76, 0, 0.24, 1) both;
+  -o-animation: moveFromRight 0.8s cubic-bezier(0.76, 0, 0.24, 1) both;
+  -webkit-animation: moveFromRight 0.8s cubic-bezier(0.76, 0, 0.24, 1) both;
+  animation: moveFromRight 0.8s cubic-bezier(0.76, 0, 0.24, 1) both; }
 
 .expand-scaleDown {
-  -moz-animation: scaleDown 0.7s ease both;
-  -o-animation: scaleDown 0.7s ease both;
-  -webkit-animation: scaleDown 0.7s ease both;
-  animation: scaleDown 0.7s ease both; }
+  -moz-animation: scaleDown 0.7s cubic-bezier(0.76, 0, 0.24, 1) both;
+  -o-animation: scaleDown 0.7s cubic-bezier(0.76, 0, 0.24, 1) both;
+  -webkit-animation: scaleDown 0.7s cubic-bezier(0.76, 0, 0.24, 1) both;
+  animation: scaleDown 0.7s cubic-bezier(0.76, 0, 0.24, 1) both; }
 
 .expand-rotateFall {
   -moz-transform-origin: 0% 0%;

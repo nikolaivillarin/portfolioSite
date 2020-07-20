@@ -44,31 +44,31 @@
 }
 
 .expand-moveToTop {
-    @include animation(moveToTop 0.6s ease both);
+    @include animation(moveToTop 0.8s cubic-bezier(0.76, 0, 0.24, 1) both);
 }
 
 .expand-moveToBottom {
-    @include animation(moveToBottom 0.6s ease both);
+    @include animation(moveToBottom 0.8s cubic-bezier(0.76, 0, 0.24, 1) both);
 }
 
 .expand-moveFromTop {
-    @include animation(moveFromTop 0.6s ease both);
+    @include animation(moveFromTop 0.8s cubic-bezier(0.76, 0, 0.24, 1) both);
 }
 
 .expand-moveFromBottom {
-    @include animation(moveFromBottom 0.6s ease both);
+    @include animation(moveFromBottom 0.8s cubic-bezier(0.76, 0, 0.24, 1) both);
 }
 
 .expand-moveFromLeft {
-    @include animation(moveFromLeft 0.6s ease both);
+    @include animation(moveFromLeft 0.8s cubic-bezier(0.76, 0, 0.24, 1) both);
 }
 
 .expand-moveFromRight {
-    @include animation(moveFromRight 0.6s ease both);
+    @include animation(moveFromRight 0.8s cubic-bezier(0.76, 0, 0.24, 1) both);
 }
 
 .expand-scaleDown {
-    @include animation(scaleDown 0.7s ease both);
+    @include animation(scaleDown 0.7s cubic-bezier(0.76, 0, 0.24, 1) both);
 }
 
 .expand-rotateFall {
