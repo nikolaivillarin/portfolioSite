@@ -353,7 +353,7 @@ $frameDuration: 0.8s;
         position: absolute;
         top: 50%;
 
-        @include transform(translateY(-60%));
+        @include transform(translateY(-70%));
 
         @include breakpoint(min-width 1250px) {
             display: block;
@@ -372,13 +372,13 @@ $frameDuration: 0.8s;
             img {
                 cursor: pointer;
 
-                @include transform(rotate(45deg) scale(0.65) translate(-11px, -31px));
+                @include transform(rotate(45deg) scale(0.2) translate(57px, -31px));
 
                 @include transition(transform 0.3s cubic-bezier(0, 0.55, 0.45, 1));
             }
 
             p {
-                margin-top: 75px;
+                margin-top: -25px;
 
                 @include transform(rotate(90deg));
                 @include transition(opacity 0.3s linear);

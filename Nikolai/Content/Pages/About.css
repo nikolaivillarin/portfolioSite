@@ -4439,11 +4439,11 @@ $color-dial--ring3: #2294e5;*/
     cursor: pointer;
     position: absolute;
     top: 50%;
-    -moz-transform: translateY(-60%);
-    -ms-transform: translateY(-60%);
-    -o-transform: translateY(-60%);
-    -webkit-transform: translateY(-60%);
-    transform: translateY(-60%); }
+    -moz-transform: translateY(-70%);
+    -ms-transform: translateY(-70%);
+    -o-transform: translateY(-70%);
+    -webkit-transform: translateY(-70%);
+    transform: translateY(-70%); }
     @media (min-width: 1250px) {
       .about-screen .about-bomb-btn {
         display: block; } }
@@ -4464,17 +4464,17 @@ $color-dial--ring3: #2294e5;*/
       transform: scale(1); }
       .about-screen .about-bomb-btn .about_bombIcon img {
         cursor: pointer;
-        -moz-transform: rotate(45deg) scale(0.65) translate(-11px, -31px);
-        -ms-transform: rotate(45deg) scale(0.65) translate(-11px, -31px);
-        -o-transform: rotate(45deg) scale(0.65) translate(-11px, -31px);
-        -webkit-transform: rotate(45deg) scale(0.65) translate(-11px, -31px);
-        transform: rotate(45deg) scale(0.65) translate(-11px, -31px);
+        -moz-transform: rotate(45deg) scale(0.2) translate(57px, -31px);
+        -ms-transform: rotate(45deg) scale(0.2) translate(57px, -31px);
+        -o-transform: rotate(45deg) scale(0.2) translate(57px, -31px);
+        -webkit-transform: rotate(45deg) scale(0.2) translate(57px, -31px);
+        transform: rotate(45deg) scale(0.2) translate(57px, -31px);
         -moz-transition: transform 0.3s cubic-bezier(0, 0.55, 0.45, 1);
         -o-transition: transform 0.3s cubic-bezier(0, 0.55, 0.45, 1);
         -webkit-transition: transform 0.3s cubic-bezier(0, 0.55, 0.45, 1);
         transition: transform 0.3s cubic-bezier(0, 0.55, 0.45, 1); }
       .about-screen .about-bomb-btn .about_bombIcon p {
-        margin-top: 75px;
+        margin-top: -25px;
         -moz-transform: rotate(90deg);
         -ms-transform: rotate(90deg);
         -o-transform: rotate(90deg);
